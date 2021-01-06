@@ -272,6 +272,18 @@ defaults:
       related: true
       sidebar:
         nav: "postside"
+  - scope:
+      path: ""
+      type: home
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      sidebar:
+        nav: "postside"
   # _docs
   - scope:
       path: ""

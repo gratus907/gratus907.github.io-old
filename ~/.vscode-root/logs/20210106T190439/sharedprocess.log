@@ -1,2 +1,0 @@
-[2021-01-06 19:04:42.822] [sharedprocess] [info] main {"machineId":"b028f0678f6f163dd1450d8c2ad3cb057f89220e8589553c28a3a1e30b09c46c","windowId":2}
-[2021-01-06 19:04:42.867] [sharedprocess] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/gratus/Desktop/gratus907.github.io/~/.vscode-root/User/snippets'

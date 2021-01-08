@@ -12,20 +12,20 @@ $type-size-4-5: 1.12em !default; // Ubuntu Mono is a bit small
 
 html {
     font-size: 12px; // change to whatever
-    
+
     @include breakpoint($medium) {
       font-size: 14px; // change to whatever
     }
-  
+
     @include breakpoint($large) {
       font-size: 16px; // change to whatever
     }
-  
+
     @include breakpoint($x-large) {
       font-size: 18px; // change to whatever
     }
 }
-  
+
 .highlight {
     font-family: $monospace;
     font-size: $type-size-4-5;
@@ -43,5 +43,20 @@ html {
 
 .page {
     width: calc(100% - 300px);
-    padding-right: 150px;
+    padding-right: 0px;
+    line-height: 1.8;
+}
+
+table {
+    width: 80%;
+    display: table;
+    font-size: 15px;
+}
+
+a {
+    color : #000000;
+}
+
+a:visited {
+    color : #000000;
 }

@@ -103,16 +103,13 @@
 
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-        TeX: {
-          equationNumbers: {
-            autoNumber: "AMS"
-          }
-        },
-        tex2jax: {
-        inlineMath: [ ['$', '$'] ],
-        displayMath: [ ['$$', '$$'] ],
-        processEscapes: true,
-      }
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+    inlineMath: [ ['$', '$']],
+    displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']] ,
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
     });
     MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
           alert("Math Processing Error: "+message[1]);
@@ -124,6 +121,8 @@
 <script type="text/javascript" async
     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
+<p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\norm}[1]{ \left\| #1 \right\|}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}$$</p>
+
   </head>
 
   <body class="layout--page">

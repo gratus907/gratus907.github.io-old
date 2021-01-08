@@ -6,16 +6,15 @@ main:
     url: /tags/
   - title: "About me"
     url: /about-me/
-  
+
 
 sidepost:
-  - title: Getting Started
+  - title: Posts on Algorithms
+    url: /categories/algorithms/
     children:
-      - title: "Quick-Start Guide"
-        url: /docs/quick-start-guide/
-      - title: "Structure"
-        url: /docs/structure/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
+      - title: "Weekly PS"
+        url: /categories/weekly-ps/
+  - title: "대회별로 보기"
+    url: /find-contest/
+  - title: Posts on Mathematics
+    url: /categories/math/

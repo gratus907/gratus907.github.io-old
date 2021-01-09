@@ -8,6 +8,7 @@ tags:
 sidebar:
   nav: "sidepost"
 comment: true
+comments: true
 ---
 ## Jekyll Blog
 Jekyll은 Markdown을 이용해서 (주로 이런 주제의) 블로그를 쉽게 작성할 수 있도록 해주는 놀라운 툴입니다. Theme을 원하는 대로 적용해서 커스터마이즈 할 수 있고, 저는 아직 잘 모르겠지만 .scss 파일을 잘 만지면 생각보다 많이 손댈 수 있어 보입니다.

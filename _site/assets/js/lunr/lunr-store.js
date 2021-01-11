@@ -10,4 +10,10 @@ var store = [{
         "tags": ["boj","경기과학고-2019"],
         "url": "http://localhost:4000/algorithms/BOJ18194/",
         "teaser": null
+      },{
+        "title": "Fibonacci Heap",
+        "excerpt":"참고자료 : CLRS Chapter 19, MIT Lecture Note Motivation Minimum Spanning Tree를 찾는 Prim’s algorithm이나, 최단 거리를 찾는 Dijkstra Algorithm에서 매우 중요한 역할을 하는 자료구조로 Priority queue가 있다. 두 알고리즘의 실행 과정을 보면, 다음 두 연산이 필요함을 알 수 있다. insert(x, e) : 자료구조에 간선 또는 정점과 그 가중치를 넣는다....","categories": ["algorithms"],
+        "tags": ["data-structures","advanced-data-structures"],
+        "url": "http://localhost:4000/algorithms/Fibonacci-heaps/",
+        "teaser": null
       }]

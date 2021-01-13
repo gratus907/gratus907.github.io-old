@@ -1,3 +1,1 @@
-User-agent: *
-Allow: /
-Sitemap: http://gratus907.github.io/sitemap.xml
+Sitemap: http://localhost:4000/sitemap.xml

@@ -33,7 +33,7 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 
 | Topic               | Link                               |
 |---------------------|------------------------------------|
-| Fibonacci Heaps     | [링크](/algorithms/Fibonacci-heaps/) |
+| Fibonacci Heaps     | [Link](/algorithms/Fibonacci-heaps/) |
 | van Emde Boas Trees |                                    |
 | Splay trees         |                                    |
 | Dynamic trees       |                                    |
@@ -53,3 +53,9 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 | Cycle Finding              |      |
 | Girth                      |      |
 | All-Pairs Shortest Path    |      |
+
+#### Algorithms used in CP
+
+| Topic                           | Link                          |
+|---------------------------------|-------------------------------|
+| Divide and conquer optimization | [Link](/algorithms/DP-DnC-Opt/) |

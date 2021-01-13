@@ -16,4 +16,10 @@ var store = [{
         "tags": ["data-structures","advanced-data-structures"],
         "url": "http://localhost:4000/algorithms/Fibonacci-heaps/",
         "teaser": null
+      },{
+        "title": "다이나믹 프로그래밍 : 분할 정복 최적화",
+        "excerpt":"이 글에서는 다이나믹 프로그래밍에 대한 분할 정복 최적화 를 다루고자 한다. 참고 : Koosaga - 동적 계획법 최적화. 무려 9가지의 DP 최적화 방식을 망라해서 다루고 있고, 전체적인 기법에 대한 깊은 insight가 묻어나는 글이다. 갈길이 너무나 멀다는걸 체감하게 한다… Motivation 다음과 같은 형태의 점화식을 생각하자. 여기서 $k$는 1부터 $K$까지, $i$ 는...","categories": ["algorithms"],
+        "tags": ["algorithms"],
+        "url": "http://localhost:4000/algorithms/DP-DnC-Opt/",
+        "teaser": null
       }]

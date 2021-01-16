@@ -9,6 +9,7 @@ sidebar:
   nav: "sidepost"
 comment: true
 comments : true
+toc: true
 ---
 
 **참고자료** : CLRS Chapter 19, [MIT Lecture Note](http://courses.csail.mit.edu/6.854/05/scribe/fibheaps.ps)

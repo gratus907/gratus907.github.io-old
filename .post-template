@@ -8,4 +8,10 @@ sidebar:
   nav: "sidepost"
 comment: true
 comments : true
+toc : true
 ---
+<div id="toc">
+Contents
+</div>
+* TOC
+{:toc}

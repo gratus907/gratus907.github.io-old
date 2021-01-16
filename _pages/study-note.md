@@ -6,6 +6,11 @@ sidebar:
     nav: "sidepost"
 author_profile: true
 ---
+<div id="toc">
+Contents
+</div>
+* TOC
+{:toc}
 
 이 목록은 제가 공부한 내용을 정리하는 일종의 정리노트형 포스트들을 주제별로 모아두기 위해 만들었습니다. 개인적으로 설명하듯이 글을 작성해보면 내가 정말 이해한게 맞는지 확인하기도 좋고, 이해를 높이기에 아무튼 정말 많은 도움이 되는것 같았습니다.
 
@@ -31,12 +36,12 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 
 #### Advanced Data Structures  
 
-| Topic               | Link                               |
-|---------------------|------------------------------------|
+| Topic               | Link                                 |
+|---------------------|--------------------------------------|
 | Fibonacci Heaps     | [Link](/algorithms/Fibonacci-heaps/) |
-| van Emde Boas Trees |                                    |
-| Splay trees         |                                    |
-| Dynamic trees       |                                    |
+| van Emde Boas Trees |                                      |
+| Splay trees         |                                      |
+| Dynamic trees       |                                      |
 
 #### Approximation Algorithms
 
@@ -56,6 +61,6 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 
 #### Algorithms used in CP
 
-| Topic                           | Link                          |
-|---------------------------------|-------------------------------|
+| Topic                           | Link                            |
+|---------------------------------|---------------------------------|
 | Divide and conquer optimization | [Link](/algorithms/DP-DnC-Opt/) |

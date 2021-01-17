@@ -40,4 +40,10 @@ var store = [{
         "tags": ["boj","graph"],
         "url": "http://localhost:4000/algorithms/BOJ2533/",
         "teaser": null
+      },{
+        "title": "BOJ 1126 같은 탑",
+        "excerpt":"solved ac class 7 essential Contents 풀이 Code 풀이 Dynamic programming 을 이용해서 어렵지 않게 해결할 수 있다. 다음과 같이 정의하자. DP[i][j] : 1번부터 $i$번까지의 블록만 고려할 때, $H_A - H_B = j$ 가 되면서 만들 수 있는 $H_A$의 최대 높이 이렇게 정의하면, 크기가 $h$인 다음 블록을 추가할 때, A에...","categories": ["algorithms"],
+        "tags": ["dynamic-programming"],
+        "url": "http://localhost:4000/algorithms/BOJ1126/",
+        "teaser": null
       }]

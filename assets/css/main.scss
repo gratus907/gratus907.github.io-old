@@ -10,6 +10,9 @@ $sans-serif: 'Noto Sans KR';
 $monospace: 'Ubuntu Mono';
 $type-size-4-5: 1.12em !default; // Ubuntu Mono is a bit small
 
+.page__content p {
+    margin: 0.75em 0 0.75em 0;
+}
 html {
     font-size: 12px; // change to whatever
 
@@ -99,4 +102,26 @@ a:visited {
     font-weight: bold;
     font-size:   1.25em;
     margin: 1.5em 0em 0.5em 0em;
+}
+
+div.highlighter-rouge, figure.highlight {
+    color : #ffffff;
+}
+
+.pseudocode {
+    background-color : #dddddd;
+    border-style: groove;
+    padding : 0.5em;
+    font-weight: 500;
+    font-family: "Lucida Console";
+}
+
+fieldset {
+    padding:0;
+    border-width:0px;
+    margin: 0 0 0.5em 0;
+}
+
+legend {
+    font-family: "Lucida Console";
 }

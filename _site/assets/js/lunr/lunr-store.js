@@ -46,4 +46,16 @@ var store = [{
         "tags": ["dynamic-programming"],
         "url": "http://localhost:4000/algorithms/BOJ1126/",
         "teaser": null
+      },{
+        "title": "BOJ 18600, Ptz Camp Summer 2019 Day 3, Valentine's Day",
+        "excerpt":"난이도 : Platinum 1 출처 : Petrozavodsk Summer 2019 Day 3 C Contents 풀이 코드 풀이 $n$개의 확률이 주어지고, 이들을 모두 더해서 1이라고 할 때, 적당한 subset을 골라서 사건이 단 한 번만 일어날 확률을 최대화하는 문제이다. 사건이 한 번 일어날 확률은 다음과 같이 계산할 수 있다. $S$라는 subset을 골랐을 때,...","categories": ["algorithms"],
+        "tags": ["probability","greedy"],
+        "url": "http://localhost:4000/algorithms/BOJ18600/",
+        "teaser": null
+      },{
+        "title": "Graph Algorithms, Lecture 1 : Fixed subgraph Isomorphism",
+        "excerpt":"Contents Subgraph Isomorphism Finding Triangles $O(mn)$ 알고리즘 $O(n^w)$ 알고리즘 $O(m^{(w + 1)/2})$ 알고리즘 Why triangles? Nesetril-Poljak Subgraph isomorphism 참고 : Stanford CS267 lecture note Subgraph Isomorphism 그래프 $G(V_G, E_G)$와, 다른 그래프 $H = (V_H, E_H)$ 에 대해, subgraph isomorphism $f : V_H \\to V_G$ 는 $(u, v) \\in E_H$ 이면...","categories": ["algorithms"],
+        "tags": ["graph"],
+        "url": "http://localhost:4000/algorithms/graph-algorithms-lec1/",
+        "teaser": null
       }]

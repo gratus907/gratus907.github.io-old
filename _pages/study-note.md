@@ -45,20 +45,20 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 
 #### Approximation Algorithms
 
-| Topic                 | Link |
-| ---- | ----------- |
-|       |                                      |
+| Topic | Link |
+|-------|------|
+|       |      |
 
 
 #### Graph Algorithms
 - 메인 자료는 Stanford CS 267 : Graph Algorithms 입니다.
 
-| Topic                      | Link |
-|----------------------------|------|
-| Fixed Subgraph Isomorphism |      |
-| Cycle Finding              |      |
-| Girth                      |      |
-| All-Pairs Shortest Path    |      |
+| Topic                      | Link                                       |
+|----------------------------|--------------------------------------------|
+| Fixed Subgraph Isomorphism | [Link](/algorithms/graph-algorithms-lec1/) |
+| Cycle Finding              |                                            |
+| Girth                      |                                            |
+| All-Pairs Shortest Path    |                                            |
 
 #### Algorithms used in CP
 

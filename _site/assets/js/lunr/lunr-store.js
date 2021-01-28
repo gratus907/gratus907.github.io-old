@@ -76,4 +76,16 @@ var store = [{
         "tags": ["data-structures","algorithms"],
         "url": "http://localhost:4000/algorithms/BOJ13548/",
         "teaser": null
+      },{
+        "title": "Coursera Machine Learning 수강 시작",
+        "excerpt":"이제 CS 전공자에게 딥러닝/머신러닝에 대한 이해는 있으면 좋은게 아니라 없으면 안되는 정도라는 생각이 든다. 대표적으로, 우리 학교의 경우 소프트웨어 개발의 원리 및 실제 강의에서 머신러닝 사용을 강제 하며, 창의적 통합 설계 과목은 팀별로 주어진 프로젝트중 하나를 골라서 수행하는 과목이지만 주어진 프로젝트의 80% 이상이 머신러닝 관련이기 때문에 사실상 선택권이 없다. 이런...","categories": ["ml-study"],
+        "tags": ["machine-learning"],
+        "url": "http://localhost:4000/ml-study/Starting-coursera-ml/",
+        "teaser": null
+      },{
+        "title": "Coursera Machine Learning, Week 1 필기노트",
+        "excerpt":"Contents What is Machine Learning? 응용 분야 Supervised Learning Unsupervised Learning What is Machine Learning? A. Samuel (1959) : 컴퓨터가 explicitly program 되지 않은 내용을 학습하게 하는 분야 T. Mitchell (1998) : Task T, Performance measure P, Experience E가 있고, E에 의해 P가 발전하는 Learning problem. Supervised / Unsupervised Learning...","categories": ["ml-study"],
+        "tags": ["machine-learning"],
+        "url": "http://localhost:4000/ml-study/Coursera-ML-week1/",
+        "teaser": null
       }]

@@ -9,12 +9,14 @@ main:
 
 
 sidepost:
+  - title: "Study Note"
+    url : /study-note/
   - title: Posts on Algorithms
     url: /categories/algorithms/
     children:
-      - title: "Weekly PS"
-        url: /categories/weekly-ps/
-  - title: "대회별로 보기"
-    url: /find-contest/
+      - title: "대회별로 보기"
+        url: /find-contest/
+      - title: "solved.ac class"
+        url: /sac-class/
   - title: Posts on Mathematics
     url: /categories/math/

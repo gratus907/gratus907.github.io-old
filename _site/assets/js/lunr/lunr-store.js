@@ -58,4 +58,22 @@ var store = [{
         "tags": ["graph"],
         "url": "http://localhost:4000/algorithms/graph-algorithms-lec1/",
         "teaser": null
+      },{
+        "title": "BOJ 19693, Singapore NOI 2018 Safety",
+        "excerpt":"난이도 : Diamond 4 출처 : Singapore National Olympiad in Informatics, 2018 - 5번 Contents 풀이 Subtask 1, 2, 5 (+13점) Subtask 4 (+5점) Full solution 구현 코드 Thinking 파트가 끝난 후에도 어떻게 구현할지 정말 많은 고민을 했고, 결국 구현을 성공하지 못해서 다른 사람 구현을 참고했다. 구현 트릭이 상당히 배울점이...","categories": ["algorithm"],
+        "tags": ["algorithm","dp"],
+        "url": "http://localhost:4000/algorithm/BOJ19693/",
+        "teaser": null
+      },{
+        "title": "SOLVED.AC exp 300,000,000",
+        "excerpt":"   300,000,000점을 찍었다. 겨울방학 중 D2 찍는게 목표.   클래스 7을 쭉 풀고 있다.  ","categories": ["misc"],
+        "tags": ["misc"],
+        "url": "http://localhost:4000/misc/solvedAC-300M-exp/",
+        "teaser": null
+      },{
+        "title": "BOJ 13548, 수열과 쿼리 6",
+        "excerpt":"Solved AC Platinum 1 SAC Class 7 Essential Contents 풀이 코드 풀이 수열과 쿼리 5 링크 와 거의 같은데, 조금 덜 자명한 문제이다. 먼저, 수열과 쿼리 5를 어떻게 푸는지 모른다면 이 글 을 권한다. Mo’s Algorithm이라는 마법의 알고리즘이 있어서, 쿼리당 $O(N)$ 이 걸리는 구간 쿼리를 오프라인에 처리함으로써 쿼리당 평균 $O(\\sqrt{n})$...","categories": ["algorithms"],
+        "tags": ["data-structures","algorithms"],
+        "url": "http://localhost:4000/algorithms/BOJ13548/",
+        "teaser": null
       }]

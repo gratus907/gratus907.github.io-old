@@ -19,8 +19,8 @@
 
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>BOJ 17371, UCPC 2019 인터넷예선 J번 이사 - Gratus907’s Study Note</title>
-<meta name="description" content="난이도 : Gold 2   출처 : UCPC 2019 인터넷 예선 J번   solved ac class 6 essential">
+<!-- begin _includes/seo.html --><title>SOLVED.AC exp 300,000,000 - Gratus907’s Study Note</title>
+<meta name="description" content="">
 
 
   <meta name="author" content="Wonseok Shin">
@@ -32,30 +32,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Gratus907's Study Note">
-<meta property="og:title" content="BOJ 17371, UCPC 2019 인터넷예선 J번 이사">
-<meta property="og:url" content="http://localhost:4000/algorithms/BOJ17371/">
+<meta property="og:title" content="SOLVED.AC exp 300,000,000">
+<meta property="og:url" content="http://localhost:4000/misc/solvedAC-300M-exp/">
 
 
-  <meta property="og:description" content="난이도 : Gold 2   출처 : UCPC 2019 인터넷 예선 J번   solved ac class 6 essential">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-01-16T00:00:00+09:00">
+  <meta property="og:description" content="">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-01-27T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/algorithms/BOJ17371/">
+
+<link rel="canonical" href="http://localhost:4000/misc/solvedAC-300M-exp/">
 
 
 
@@ -351,15 +351,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="BOJ 17371, UCPC 2019 인터넷예선 J번 이사">
-    <meta itemprop="description" content="  난이도 : Gold 2  출처 : UCPC 2019 인터넷 예선 J번  solved ac class 6 essential">
-    <meta itemprop="datePublished" content="2021-01-16T00:00:00+09:00">
+    <meta itemprop="headline" content="SOLVED.AC exp 300,000,000">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2021-01-27T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">BOJ 17371, UCPC 2019 인터넷예선 J번 이사
+          <h1 id="page-title" class="page__title" itemprop="headline">SOLVED.AC exp 300,000,000
 </h1>
           
 
@@ -374,7 +374,7 @@
 
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          212 words
+          12 words
       </span>
     
   </p>
@@ -388,66 +388,16 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu">
-  <li><a href="#풀이">풀이</a></li>
-  <li><a href="#code">Code</a></li>
-</ul>
+              
 
             </nav>
           </aside>
         
-        <ul>
-  <li><strong>난이도</strong> : Gold 2</li>
-  <li><strong>출처</strong> : UCPC 2019 인터넷 예선 J번</li>
-  <li>solved ac class 6 essential</li>
-</ul>
+        <p><img src="../../images/dab4bd9c1ef695fdd600bf833c585bba3578a893d4044a2cacc319fc66734238.png" alt="picture 1" /></p>
 
-<h2 id="풀이">풀이</h2>
-<p>주어진 점들 중 하나가 반드시 답이 됨을 보이자.</p>
+<p>300,000,000점을 찍었다. 겨울방학 중 D2 찍는게 목표.</p>
 
-<p>먼저, 평균을 최소화하는 대신 합을 최소화하는 것으로 생각하자. 답이 되는 점이 $X$ 라고 하고, 주어진 점들 중 $X$에 가장 가까운 점을 $A$, 가장 먼 점을 $B$라고 하자. 이때, 우리가 최소화하는 것은 $\overline{XA} + \overline{XB}$ 이다. 이때, 삼각 부등식으로부터 이 값이 $\overline{AB}$보다 크거나 같기 때문에, $X$ 대신 $A$를 택함으로써 반드시 거리의 합 상 이득을 얻게 된다. 따라서, 반드시 주어진 점들 중 하나가 답이 된다.</p>
-
-<h2 id="code">Code</h2>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;bits/stdc++.h&gt;
-#define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="k">struct</span> <span class="nc">pt</span>
-<span class="p">{</span>
-    <span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">dt</span><span class="p">(</span><span class="n">pt</span> <span class="o">&amp;</span><span class="n">o</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">o</span><span class="p">.</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">o</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">o</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">o</span><span class="p">.</span><span class="n">y</span><span class="p">));</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="n">pt</span> <span class="n">pts</span><span class="p">[</span><span class="mi">1010</span><span class="p">];</span>
-<span class="kt">int32_t</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">usecppio</span>
-    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="n">y</span><span class="p">;</span>
-        <span class="n">pts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">};</span>
-    <span class="p">}</span>
-    <span class="kt">int</span> <span class="n">best</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">score</span> <span class="o">=</span> <span class="mf">1e12</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">double</span> <span class="n">MD</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-            <span class="n">MD</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">MD</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dt</span><span class="p">(</span><span class="n">pts</span><span class="p">[</span><span class="n">j</span><span class="p">]));</span>
-        <span class="kt">double</span> <span class="n">sc</span> <span class="o">=</span> <span class="n">MD</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="n">sc</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">score</span> <span class="o">=</span> <span class="n">sc</span><span class="p">;</span>
-            <span class="n">best</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">pts</span><span class="p">[</span><span class="n">best</span><span class="p">].</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span> <span class="o">&lt;&lt;</span> <span class="n">pts</span><span class="p">[</span><span class="n">best</span><span class="p">].</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="sc">'\n'</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>클래스 7을 쭉 풀고 있다.</p>
 
         
       </section>
@@ -468,11 +418,7 @@
     
       
       
-      <a href="/tags/#boj" class="page__taxonomy-item" rel="tag">boj</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#geometry" class="page__taxonomy-item" rel="tag">geometry</a>
+      <a href="/tags/#misc" class="page__taxonomy-item" rel="tag">misc</a>
     
     </span>
   </p>
@@ -493,14 +439,14 @@
     
       
       
-      <a href="/categories/#algorithms" class="page__taxonomy-item" rel="tag">algorithms</a>
+      <a href="/categories/#misc" class="page__taxonomy-item" rel="tag">misc</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-01-16T00:00:00+09:00">January 16, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-01-27T00:00:00+09:00">January 27, 2021</time></p>
 
 
       </footer>
@@ -508,11 +454,11 @@
       
   <nav class="pagination">
     
-      <a href="/algorithms/BOJ12928/" class="pagination--pager" title="BOJ 12928 트리와 경로의 길이
+      <a href="/algorithm/BOJ19693/" class="pagination--pager" title="BOJ 19693, Singapore NOI 2018 Safety
 ">이전</a>
     
     
-      <a href="/algorithms/BOJ2533/" class="pagination--pager" title="BOJ 2533 사회망 서비스
+      <a href="/algorithms/BOJ13548/" class="pagination--pager" title="BOJ 13548, 수열과 쿼리 6
 ">다음</a>
     
   </nav>
@@ -600,45 +546,6 @@ Contents
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/misc/solvedAC-300M-exp/" rel="permalink">SOLVED.AC exp 300,000,000
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          14 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/algorithm/BOJ19693/" rel="permalink">BOJ 19693, Singapore NOI 2018 Safety
 </a>
       
@@ -656,7 +563,7 @@ Contents
 
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          840 words
+          881 words
       </span>
     
   </p>
@@ -701,13 +608,58 @@ Contents
 
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          1015 words
+          1020 words
       </span>
     
   </p>
 
 
     <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithms/BOJ18600/" rel="permalink">BOJ 18600, Ptz Camp Summer 2019 Day 3, Valentine’s Day
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          549 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  난이도 : Platinum 1
+  출처 : Petrozavodsk Summer 2019 Day 3 C
+
+
 Contents
 
 

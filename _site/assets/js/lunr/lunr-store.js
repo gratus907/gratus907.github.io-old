@@ -83,9 +83,15 @@ var store = [{
         "url": "http://localhost:4000/ml-study/Starting-coursera-ml/",
         "teaser": null
       },{
-        "title": "Coursera Machine Learning, Week 1 필기노트",
+        "title": "Coursera ML, Lecture 1 : Introduction",
         "excerpt":"Contents What is Machine Learning? 응용 분야 Supervised Learning Unsupervised Learning What is Machine Learning? A. Samuel (1959) : 컴퓨터가 explicitly program 되지 않은 내용을 학습하게 하는 분야 T. Mitchell (1998) : Task T, Performance measure P, Experience E가 있고, E에 의해 P가 발전하는 Learning problem. Supervised / Unsupervised Learning...","categories": ["ml-study"],
         "tags": ["machine-learning"],
-        "url": "http://localhost:4000/ml-study/Coursera-ML-week1/",
+        "url": "http://localhost:4000/ml-study/Coursera-ML-Lec1/",
+        "teaser": null
+      },{
+        "title": "Coursera ML, Lecture 2 : Linear Regression, Gradient Descent",
+        "excerpt":"Contents Linear Regression Cost funtion Gradient Descent Gradient Descent on Linear Regression 강의 기준 1주차 Linear regression - Gradient Descent. Linear Regression Regression Problem에 대한 Linear Fitting $m$개의 Training data 들이 $(x_i, y_i)$ 형태로 주어지고, 이 data로부터 best-predicting line 찾기. Learning Algorithm을 만들어서, hypothesis $h$ 를 만든다. 이 $h$는, $x$를...","categories": ["ml-study"],
+        "tags": ["machine-learning","linear-regression"],
+        "url": "http://localhost:4000/ml-study/Coursera-ML-Lec2/",
         "teaser": null
       }]

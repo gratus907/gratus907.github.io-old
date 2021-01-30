@@ -19,7 +19,7 @@
 
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Coursera Machine Learning, Week 1 필기노트 - Gratus907’s Study Note</title>
+<!-- begin _includes/seo.html --><title>Coursera ML, Lecture 1 : Introduction - Gratus907’s Study Note</title>
 <meta name="description" content="Contents">
 
 
@@ -32,8 +32,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Gratus907's Study Note">
-<meta property="og:title" content="Coursera Machine Learning, Week 1 필기노트">
-<meta property="og:url" content="http://localhost:4000/ml-study/Coursera-ML-week1/">
+<meta property="og:title" content="Coursera ML, Lecture 1 : Introduction">
+<meta property="og:url" content="http://localhost:4000/ml-study/Coursera-ML-Lec1/">
 
 
   <meta property="og:description" content="Contents">
@@ -55,7 +55,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/ml-study/Coursera-ML-week1/">
+<link rel="canonical" href="http://localhost:4000/ml-study/Coursera-ML-Lec1/">
 
 
 
@@ -115,25 +115,20 @@
 
 <!-- end custom head snippets -->
 
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    jax: ["input/TeX", "output/HTML-CSS"],
-    tex2jax: {
-    inlineMath: [ ['$', '$']],
-    displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']] ,
-    processEscapes: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-          alert("Math Processing Error: "+message[1]);
-        });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-          alert("Math Processing Error: "+message[1]);
-        });
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']],
+      packages: {'[+]': ['physics']}
+    },
+    loader: {
+      load: ["input/tex", "output/chtml", '[tex]/physics']
+    },
+  };
 </script>
-<script type="text/javascript" async
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 <p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\norm}[1]{ \left\| #1 \right\|}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}$$</p>
 
@@ -353,7 +348,7 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Coursera Machine Learning, Week 1 필기노트">
+    <meta itemprop="headline" content="Coursera ML, Lecture 1 : Introduction">
     <meta itemprop="description" content="Contents">
     <meta itemprop="datePublished" content="2021-01-29T00:00:00+09:00">
     
@@ -361,7 +356,7 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Coursera Machine Learning, Week 1 필기노트
+          <h1 id="page-title" class="page__title" itemprop="headline">Coursera ML, Lecture 1 : Introduction
 </h1>
           
 
@@ -414,6 +409,7 @@ Contents
   <li><a href="#supervised-learning" id="markdown-toc-supervised-learning">Supervised Learning</a></li>
   <li><a href="#unsupervised-learning" id="markdown-toc-unsupervised-learning">Unsupervised Learning</a></li>
 </ul>
+<hr />
 
 <h3 id="what-is-machine-learning">What is Machine Learning?</h3>
 <ul>
@@ -548,7 +544,8 @@ Contents
 ">이전</a>
     
     
-      <a href="#" class="pagination--pager disabled">다음</a>
+      <a href="/ml-study/Coursera-ML-Lec2/" class="pagination--pager" title="Coursera ML, Lecture 2 : Linear Regression, Gradient Descent
+">다음</a>
     
   </nav>
 
@@ -582,6 +579,48 @@ Contents
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ml-study/Coursera-ML-Lec2/" rel="permalink">Coursera ML, Lecture 2 : Linear Regression, Gradient Descent
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          392 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
         
           
 
@@ -696,51 +735,6 @@ Contents
 
 
     <p class="archive__item-excerpt" itemprop="description">
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/BOJ19693/" rel="permalink">BOJ 19693, Singapore NOI 2018 Safety
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          881 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-  난이도 : Diamond 4
-  출처 : Singapore National Olympiad in Informatics, 2018 - 5번
-
-
-Contents
-
 
 </p>
   </article>

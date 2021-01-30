@@ -132,3 +132,8 @@ legend {
 .sidebar p, .sidebar li {
     line-height: 2;
 }
+
+p>code:before, p>code:after, a>code:before, a>code:after, li>code:before, li>code:after, figcaption>code:before, figcaption>code:after, td>code:before, td>code:after {
+    letter-spacing: 0em;
+    content: "\00a0";
+}

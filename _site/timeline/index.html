@@ -111,25 +111,20 @@
 
 <!-- end custom head snippets -->
 
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    jax: ["input/TeX", "output/HTML-CSS"],
-    tex2jax: {
-    inlineMath: [ ['$', '$']],
-    displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']] ,
-    processEscapes: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-          alert("Math Processing Error: "+message[1]);
-        });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-          alert("Math Processing Error: "+message[1]);
-        });
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']],
+      packages: {'[+]': ['physics']}
+    },
+    loader: {
+      load: ["input/tex", "output/chtml", '[tex]/physics']
+    },
+  };
 </script>
-<script type="text/javascript" async
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 <p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\norm}[1]{ \left\| #1 \right\|}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}$$</p>
 
@@ -309,7 +304,7 @@
 
   
     
-    <p>2021 Coursera Machine Learning, Week 1 필기노트</p>
+    <p>2021 Coursera ML, Lecture 2 : Linear Regression, Gradient Descent</p>
     
 
     
@@ -319,6 +314,17 @@
       <div class="collection-title" route="/">
         <h2 class="archive-year motion-element" id="archive-year-2021">2021</h2>
       </div>
+    
+    
+
+
+  
+    
+    <p>2021 Coursera ML, Lecture 1 : Introduction</p>
+    
+
+    
+    
     
     
 
@@ -364,6 +370,11 @@
     
     
     
+      
+      <div class="collection-title" route="/page2/">
+        <h2 class="archive-year motion-element" id="archive-year-2021">2021</h2>
+      </div>
+    
     
 
 
@@ -374,11 +385,6 @@
 
     
     
-    
-      
-      <div class="collection-title" route="/page2/">
-        <h2 class="archive-year motion-element" id="archive-year-2021">2021</h2>
-      </div>
     
     
 
@@ -424,6 +430,11 @@
     
     
     
+      
+      <div class="collection-title" route="/page3/">
+        <h2 class="archive-year motion-element" id="archive-year-2021">2021</h2>
+      </div>
+    
     
 
 
@@ -434,11 +445,6 @@
 
     
     
-    
-      
-      <div class="collection-title" route="/page3/">
-        <h2 class="archive-year motion-element" id="archive-year-2021">2021</h2>
-      </div>
     
     
 
@@ -483,6 +489,11 @@
 
     
     
+    
+      
+      <div class="collection-title" route="/page4/">
+        <h2 class="archive-year motion-element" id="archive-year-2021">2021</h2>
+      </div>
     
     
 

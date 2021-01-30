@@ -115,25 +115,20 @@
 
 <!-- end custom head snippets -->
 
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    jax: ["input/TeX", "output/HTML-CSS"],
-    tex2jax: {
-    inlineMath: [ ['$', '$']],
-    displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']] ,
-    processEscapes: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-          alert("Math Processing Error: "+message[1]);
-        });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-          alert("Math Processing Error: "+message[1]);
-        });
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']],
+      packages: {'[+]': ['physics']}
+    },
+    loader: {
+      load: ["input/tex", "output/chtml", '[tex]/physics']
+    },
+  };
 </script>
-<script type="text/javascript" async
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 <p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\norm}[1]{ \left\| #1 \right\|}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}$$</p>
 
@@ -664,7 +659,7 @@ $\Delta \phi$ 를 명확히 잡기 어려운데, 이렇게 생각해 보자. 일
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/ml-study/Coursera-ML-week1/" rel="permalink">Coursera Machine Learning, Week 1 필기노트
+        <a href="/ml-study/Coursera-ML-Lec2/" rel="permalink">Coursera ML, Lecture 2 : Linear Regression, Gradient Descent
 </a>
       
     </h2>
@@ -681,7 +676,7 @@ $\Delta \phi$ 를 명확히 잡기 어려운데, 이렇게 생각해 보자. 일
 
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          274 words
+          392 words
       </span>
     
   </p>
@@ -689,6 +684,49 @@ $\Delta \phi$ 를 명확히 잡기 어려운데, 이렇게 생각해 보자. 일
 
     <p class="archive__item-excerpt" itemprop="description">
 Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ml-study/Coursera-ML-Lec1/" rel="permalink">Coursera ML, Lecture 1 : Introduction
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          275 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
 
 
 </p>
@@ -770,45 +808,6 @@ SAC Class 7 Essential
 
 Contents
 
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/misc/solvedAC-300M-exp/" rel="permalink">SOLVED.AC exp 300,000,000
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          14 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
 
 </p>
   </article>

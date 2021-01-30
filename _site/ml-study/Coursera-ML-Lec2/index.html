@@ -19,8 +19,8 @@
 
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>BOJ 17371, UCPC 2019 인터넷예선 J번 이사 - Gratus907’s Study Note</title>
-<meta name="description" content="난이도 : Gold 2   출처 : UCPC 2019 인터넷 예선 J번   solved ac class 6 essential">
+<!-- begin _includes/seo.html --><title>Coursera ML, Lecture 2 : Linear Regression, Gradient Descent - Gratus907’s Study Note</title>
+<meta name="description" content="Contents">
 
 
   <meta name="author" content="Wonseok Shin">
@@ -32,30 +32,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Gratus907's Study Note">
-<meta property="og:title" content="BOJ 17371, UCPC 2019 인터넷예선 J번 이사">
-<meta property="og:url" content="http://localhost:4000/algorithms/BOJ17371/">
+<meta property="og:title" content="Coursera ML, Lecture 2 : Linear Regression, Gradient Descent">
+<meta property="og:url" content="http://localhost:4000/ml-study/Coursera-ML-Lec2/">
 
 
-  <meta property="og:description" content="난이도 : Gold 2   출처 : UCPC 2019 인터넷 예선 J번   solved ac class 6 essential">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-01-16T00:00:00+09:00">
+  <meta property="og:description" content="Contents">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-01-30T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/algorithms/BOJ17371/">
+
+<link rel="canonical" href="http://localhost:4000/ml-study/Coursera-ML-Lec2/">
 
 
 
@@ -348,15 +348,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="BOJ 17371, UCPC 2019 인터넷예선 J번 이사">
-    <meta itemprop="description" content="  난이도 : Gold 2  출처 : UCPC 2019 인터넷 예선 J번  solved ac class 6 essential">
-    <meta itemprop="datePublished" content="2021-01-16T00:00:00+09:00">
+    <meta itemprop="headline" content="Coursera ML, Lecture 2 : Linear Regression, Gradient Descent">
+    <meta itemprop="description" content="Contents">
+    <meta itemprop="datePublished" content="2021-01-30T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">BOJ 17371, UCPC 2019 인터넷예선 J번 이사
+          <h1 id="page-title" class="page__title" itemprop="headline">Coursera ML, Lecture 2 : Linear Regression, Gradient Descent
 </h1>
           
 
@@ -371,7 +371,7 @@
 
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          212 words
+          375 words
       </span>
     
   </p>
@@ -386,65 +386,77 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
               <ul class="toc__menu">
-  <li><a href="#풀이">풀이</a></li>
-  <li><a href="#code">Code</a></li>
+  <li><a href="#linear-regression">Linear Regression</a></li>
+  <li><a href="#cost-funtion">Cost funtion</a></li>
+  <li><a href="#gradient-descent">Gradient Descent</a></li>
+  <li><a href="#gradient-descent-on-linear-regression">Gradient Descent on Linear Regression</a></li>
 </ul>
 
             </nav>
           </aside>
         
-        <ul>
-  <li><strong>난이도</strong> : Gold 2</li>
-  <li><strong>출처</strong> : UCPC 2019 인터넷 예선 J번</li>
-  <li>solved ac class 6 essential</li>
+        <div id="toc">
+Contents
+</div>
+<ul id="markdown-toc">
+  <li><a href="#linear-regression" id="markdown-toc-linear-regression">Linear Regression</a></li>
+  <li><a href="#cost-funtion" id="markdown-toc-cost-funtion">Cost funtion</a></li>
+  <li><a href="#gradient-descent" id="markdown-toc-gradient-descent">Gradient Descent</a></li>
+  <li><a href="#gradient-descent-on-linear-regression" id="markdown-toc-gradient-descent-on-linear-regression">Gradient Descent on Linear Regression</a></li>
+</ul>
+<hr />
+
+<p>강의 기준 1주차 Linear regression - Gradient Descent.</p>
+
+<h3 id="linear-regression">Linear Regression</h3>
+<ul>
+  <li>Regression Problem에 대한 <strong>Linear Fitting</strong></li>
+  <li>$m$개의 <strong>Training data</strong> 들이 $(x_i, y_i)$ 형태로 주어지고, 이 data로부터 <strong>best-predicting line</strong> 찾기.</li>
+  <li>Learning Algorithm을 만들어서, hypothesis $h$ 를 만든다. 이 $h$는, $x$를 받아서 Estimated value $y$를 만드는 함수.</li>
+  <li>Hypothesis로 Linear function $y = \theta_0 + \theta_1 x$ 를 쓰는 것이 <code class="language-plaintext highlighter-rouge">Linear Regression</code>.</li>
+  <li>이 Parameter를 어떻게 결정할 것인가? $h_\theta (x)$가 우리가 알고 있는 $m$개의 data들에 가깝게 하고 싶다.</li>
 </ul>
 
-<h2 id="풀이">풀이</h2>
-<p>주어진 점들 중 하나가 반드시 답이 됨을 보이자.</p>
+<h3 id="cost-funtion">Cost funtion</h3>
+<ul>
+  <li>Minimize할 <strong>목표</strong> 를 잡아서 parameter를 맞추려고 한다.
+\(\text{minimize }_{\theta_0, \theta_1} \quad \frac{1}{2m}\sum_{i = 1}^{m} \ (h_\theta(x_i) - y_i)^2\)</li>
+  <li>각 Data point까지의 제곱 거리의 평균을 minimize하려는 목표.</li>
+  <li>이 함수를 $J(\theta_0, \theta_1)$ 로 써서, $\text{minimize }_{\theta_0, \theta_1} \ J(\theta_0, \theta_1)$ 처럼 쓰고 square error function이라고 부르자.</li>
+  <li>Why square? 가장 일반적인 regression에서의 reasonable choice.</li>
+  <li>결국은 이변수함수 $J(\theta_0, \theta_1)$의 Minimum을 얻는 $\theta_0, \theta_1$을 찾는 문제.</li>
+</ul>
 
-<p>먼저, 평균을 최소화하는 대신 합을 최소화하는 것으로 생각하자. 답이 되는 점이 $X$ 라고 하고, 주어진 점들 중 $X$에 가장 가까운 점을 $A$, 가장 먼 점을 $B$라고 하자. 이때, 우리가 최소화하는 것은 $\overline{XA} + \overline{XB}$ 이다. 이때, 삼각 부등식으로부터 이 값이 $\overline{AB}$보다 크거나 같기 때문에, $X$ 대신 $A$를 택함으로써 반드시 거리의 합 상 이득을 얻게 된다. 따라서, 반드시 주어진 점들 중 하나가 답이 된다.</p>
+<h3 id="gradient-descent">Gradient Descent</h3>
+<ul>
+  <li>어떻게 그 <strong>minimum</strong> 을 찾을 것인가?</li>
+  <li>작은 step을 밟되, <strong>지금 이 순간 가장 가파른 경사를 타고 내려갈 수 있는 방향으로</strong> 조금씩 내려간다면 나름대로 빠르게 local minimum으로 갈 수 있지 않을까?</li>
+  <li>이런 방법으로 다변수함수의 gradient를 타고 가는 것이 <strong>Gradient Descent</strong>.</li>
+  <li>초기점이 아주 살짝 달라졌을 때, gradient를 타고 가다 보면 다른 local optimum에 도착할 수도 있다.</li>
+</ul>
 
-<h2 id="code">Code</h2>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;bits/stdc++.h&gt;
-#define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<p>다음과 같은 수식으로 쓸 수 있다.</p>
 
-<span class="k">struct</span> <span class="nc">pt</span>
-<span class="p">{</span>
-    <span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">dt</span><span class="p">(</span><span class="n">pt</span> <span class="o">&amp;</span><span class="n">o</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">o</span><span class="p">.</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">o</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">o</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">o</span><span class="p">.</span><span class="n">y</span><span class="p">));</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+<p>\(\theta_j := \theta_j - \alpha \pdv{}{\theta_j} J(\theta_0, \theta_1)\)
+(실제로는, 이를 <strong>simulatneous update</strong> 로 구현해야 한다.)</p>
 
-<span class="n">pt</span> <span class="n">pts</span><span class="p">[</span><span class="mi">1010</span><span class="p">];</span>
-<span class="kt">int32_t</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">usecppio</span>
-    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="n">y</span><span class="p">;</span>
-        <span class="n">pts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">};</span>
-    <span class="p">}</span>
-    <span class="kt">int</span> <span class="n">best</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">score</span> <span class="o">=</span> <span class="mf">1e12</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">double</span> <span class="n">MD</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-            <span class="n">MD</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">MD</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">dt</span><span class="p">(</span><span class="n">pts</span><span class="p">[</span><span class="n">j</span><span class="p">]));</span>
-        <span class="kt">double</span> <span class="n">sc</span> <span class="o">=</span> <span class="n">MD</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="n">sc</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">score</span> <span class="o">=</span> <span class="n">sc</span><span class="p">;</span>
-            <span class="n">best</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">pts</span><span class="p">[</span><span class="n">best</span><span class="p">].</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span> <span class="o">&lt;&lt;</span> <span class="n">pts</span><span class="p">[</span><span class="n">best</span><span class="p">].</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="sc">'\n'</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<ul>
+  <li>$\alpha$ 는 <strong>Learning rate</strong> 으로 생각할 수 있다. 이때, $\alpha$ 가 너무 작으면 gradient descent 자체가 느리게 수렴할 것이고, $\alpha$가 너무 크면 overshoot (minimum을 지나쳐서 수렴하지 않는 경우) 발생 가능성이 있다.</li>
+</ul>
+
+<h3 id="gradient-descent-on-linear-regression">Gradient Descent on Linear Regression</h3>
+<ul>
+  <li>Linear Regression 문제에 Gradient Descent를 적용해 보자.</li>
+</ul>
+
+\[\begin{aligned} \pdv{}{\theta_0}  \frac{1}{2m}\sum_{i = 1}^{m} \ (\theta_0 + \theta_1 x_i - y_i)^2 &amp;= \frac{1}{m} \sum_{i = 1}^{m} (\theta_0 + \theta_1 x_i - y_i)\\ \pdv{}{\theta_1}  \frac{1}{2m}\sum_{i = 1}^{m} \ (\theta_0 + \theta_1 x_i - y_i)^2 &amp;= \frac{1}{m} \sum_{i = 1}^{m} (\theta_0 + \theta_1 x_i - y_i) \cdot x_i \end{aligned}\]
+
+<p>이를 그냥 적용해서 simulatneous update 하면 끝.</p>
+
+<ul>
+  <li>Linear Regression은 <strong>convex objective function</strong>을 가지고 있기 때문에, global optima 외의 local optima를 갖지 않는다. 따라서, Gradient descent가 local optima로 빠지지 않고 항상 잘 작동한다.</li>
+  <li>이 문제의 경우, 모든 training set 을 이용해서 한 스텝의 gradient descent를 밟았는데 이를 <strong>Batch</strong> Gradient Descent 라고 부른다. 한 스템에서 모든 test set을 통째로 확인한다는 의미.</li>
+</ul>
 
         
       </section>
@@ -465,11 +477,11 @@
     
       
       
-      <a href="/tags/#boj" class="page__taxonomy-item" rel="tag">boj</a><span class="sep">, </span>
+      <a href="/tags/#linear-regression" class="page__taxonomy-item" rel="tag">linear-regression</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#geometry" class="page__taxonomy-item" rel="tag">geometry</a>
+      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine-learning</a>
     
     </span>
   </p>
@@ -490,14 +502,14 @@
     
       
       
-      <a href="/categories/#algorithms" class="page__taxonomy-item" rel="tag">algorithms</a>
+      <a href="/categories/#ml-study" class="page__taxonomy-item" rel="tag">ml-study</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-01-16T00:00:00+09:00">January 16, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-01-30T00:00:00+09:00">January 30, 2021</time></p>
 
 
       </footer>
@@ -505,12 +517,11 @@
       
   <nav class="pagination">
     
-      <a href="/algorithms/BOJ12928/" class="pagination--pager" title="BOJ 12928 트리와 경로의 길이
+      <a href="/ml-study/Coursera-ML-Lec1/" class="pagination--pager" title="Coursera ML, Lecture 1 : Introduction
 ">이전</a>
     
     
-      <a href="/algorithms/BOJ2533/" class="pagination--pager" title="BOJ 2533 사회망 서비스
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -554,48 +565,6 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/ml-study/Coursera-ML-Lec2/" rel="permalink">Coursera ML, Lecture 2 : Linear Regression, Gradient Descent
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          392 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-Contents
-
-
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/ml-study/Coursera-ML-Lec1/" rel="permalink">Coursera ML, Lecture 1 : Introduction
 </a>
       
@@ -613,7 +582,7 @@ Contents
 
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          275 words
+          243 words
       </span>
     
   </p>
@@ -692,7 +661,7 @@ Contents
 
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          606 words
+          761 words
       </span>
     
   </p>
@@ -703,6 +672,45 @@ SAC Class 7 Essential
 
 Contents
 
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/misc/solvedAC-300M-exp/" rel="permalink">SOLVED.AC exp 300,000,000
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          12 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
 
 </p>
   </article>

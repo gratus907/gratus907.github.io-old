@@ -57,6 +57,8 @@
   <link rel="prev" href="http://localhost:4000/page2/">
 
 
+  <link rel="next" href="http://localhost:4000/page4/">
+
 
 <script type="application/ld+json">
   {
@@ -113,25 +115,20 @@
 
 <!-- end custom head snippets -->
 
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    jax: ["input/TeX", "output/HTML-CSS"],
-    tex2jax: {
-    inlineMath: [ ['$', '$']],
-    displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']] ,
-    processEscapes: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-          alert("Math Processing Error: "+message[1]);
-        });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-          alert("Math Processing Error: "+message[1]);
-        });
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']],
+      packages: {'[+]': ['physics']}
+    },
+    loader: {
+      load: ["input/tex", "output/chtml", '[tex]/physics']
+    },
+  };
 </script>
-<script type="text/javascript" async
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 <p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\norm}[1]{ \left\| #1 \right\|}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}$$</p>
 
@@ -320,6 +317,49 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/algorithms/BOJ17371/" rel="permalink">BOJ 17371, UCPC 2019 인터넷예선 J번 이사
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          212 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  난이도 : Gold 2
+  출처 : UCPC 2019 인터넷 예선 J번
+  solved ac class 6 essential
+
+
+</p>
+  </article>
+</div>
+
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/algorithms/BOJ12928/" rel="permalink">BOJ 12928 트리와 경로의 길이
 </a>
       
@@ -474,44 +514,6 @@
 </div>
 
   
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/jekyll/Hello-Jekyll/" rel="permalink">Hello, Jekyll!
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          302 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Jekyll Blog
-Jekyll은 Markdown을 이용해서 (주로 이런 주제의) 블로그를 쉽게 작성할 수 있도록 해주는 놀라운 툴입니다. Theme을 원하는 대로 적용해서 커스터마이즈 할 수 있고, 저는 아직 잘 모르겠지만 .scss 파일을 잘 만지면 생각보다 많이 손댈 수 있...</p>
-  </article>
-</div>
-
-  
 </div>
 
 
@@ -545,17 +547,21 @@ Jekyll은 Markdown을 이용해서 (주로 이런 주제의) 블로그를 쉽게
         <li><a href="/page2/">2</a></li>
       
     
-
-    
-    
-
-    
-      <li><a href="#" class="disabled current">3</a></li>
+      
+        <li><a href="/page3/" class="disabled current">3</a></li>
+      
     
 
     
     
-      <li><a href="#" class="disabled"><span aria-hidden="true">다음</span></a></li>
+
+    
+      <li><a href="/page4/">4</a></li>
+    
+
+    
+    
+      <li><a href="/page4/">다음</a></li>
     
   </ul>
 </nav>

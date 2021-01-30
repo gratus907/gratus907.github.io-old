@@ -111,25 +111,20 @@
 
 <!-- end custom head snippets -->
 
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    jax: ["input/TeX", "output/HTML-CSS"],
-    tex2jax: {
-    inlineMath: [ ['$', '$']],
-    displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']] ,
-    processEscapes: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-          alert("Math Processing Error: "+message[1]);
-        });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-          alert("Math Processing Error: "+message[1]);
-        });
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']],
+      packages: {'[+]': ['physics']}
+    },
+    loader: {
+      load: ["input/tex", "output/chtml", '[tex]/physics']
+    },
+  };
 </script>
-<script type="text/javascript" async
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 <p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\norm}[1]{ \left\| #1 \right\|}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}$$</p>
 
@@ -347,6 +342,8 @@
     
       
     
+      
+    
   
     
       
@@ -383,6 +380,14 @@
     
       
     
+      
+    
+      
+        <li>
+          <a href="#machine-learning">
+            <strong>machine-learning</strong> <span class="taxonomy__count">3</span>
+          </a>
+        </li>
       
     
       
@@ -438,11 +443,7 @@
       
     
       
-        <li>
-          <a href="#machine-learning">
-            <strong>machine-learning</strong> <span class="taxonomy__count">2</span>
-          </a>
-        </li>
+    
       
     
   
@@ -537,6 +538,14 @@
         </li>
       
     
+      
+    
+      
+        <li>
+          <a href="#linear-regression">
+            <strong>linear-regression</strong> <span class="taxonomy__count">1</span>
+          </a>
+        </li>
       
     
   
@@ -754,6 +763,8 @@
   
     
   
+    
+  
 
   
     
@@ -917,6 +928,137 @@ Contents
   
     
   
+    
+  
+    
+      <section id="machine-learning" class="taxonomy__section">
+        <h2 class="archive__subtitle">machine-learning</h2>
+        <div class="entries-list">
+          
+            
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ml-study/Coursera-ML-Lec2/" rel="permalink">Coursera ML, Lecture 2 : Linear Regression, Gradient Descent
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          375 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ml-study/Coursera-ML-Lec1/" rel="permalink">Coursera ML, Lecture 1 : Introduction
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          243 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ml-study/Starting-coursera-ml/" rel="permalink">Coursera Machine Learning 수강 시작
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          172 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">이제 CS 전공자에게 딥러닝/머신러닝에 대한 이해는 있으면 좋은게 아니라 없으면 안되는 정도라는 생각이 든다. 대표적으로, 우리 학교의 경우 소프트웨어 개발의 원리 및 실제 강의에서 머신러닝 사용을 강제 하며, 창의적 통합 설계 과목은 팀별로 주어진 프로젝트중 하나를 골라서 수행하...</p>
+  </article>
+</div>
+
+          
+        </div>
+        <a href="#page-title" class="back-to-top">맨 위로 이동 &uarr;</a>
+      </section>
     
   
     
@@ -1224,91 +1366,7 @@ Contents
     
   
     
-      <section id="machine-learning" class="taxonomy__section">
-        <h2 class="archive__subtitle">machine-learning</h2>
-        <div class="entries-list">
-          
-            
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/ml-study/Coursera-ML-week1/" rel="permalink">Coursera Machine Learning, Week 1 필기노트
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          243 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-Contents
-
-
-</p>
-  </article>
-</div>
-
-          
-            
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/ml-study/Starting-coursera-ml/" rel="permalink">Coursera Machine Learning 수강 시작
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          172 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">이제 CS 전공자에게 딥러닝/머신러닝에 대한 이해는 있으면 좋은게 아니라 없으면 안되는 정도라는 생각이 든다. 대표적으로, 우리 학교의 경우 소프트웨어 개발의 원리 및 실제 강의에서 머신러닝 사용을 강제 하며, 창의적 통합 설계 과목은 팀별로 주어진 프로젝트중 하나를 골라서 수행하...</p>
-  </article>
-</div>
-
-          
-        </div>
-        <a href="#page-title" class="back-to-top">맨 위로 이동 &uarr;</a>
-      </section>
+  
     
   
 
@@ -1846,6 +1904,58 @@ Contents
       </section>
     
   
+    
+  
+    
+      <section id="linear-regression" class="taxonomy__section">
+        <h2 class="archive__subtitle">linear-regression</h2>
+        <div class="entries-list">
+          
+            
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ml-study/Coursera-ML-Lec2/" rel="permalink">Coursera ML, Lecture 2 : Linear Regression, Gradient Descent
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          375 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+          
+        </div>
+        <a href="#page-title" class="back-to-top">맨 위로 이동 &uarr;</a>
+      </section>
     
   
 

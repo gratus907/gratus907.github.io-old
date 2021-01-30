@@ -57,8 +57,12 @@
 <lastmod>2021-01-28T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/ml-study/Coursera-ML-week1/</loc>
+<loc>http://localhost:4000/ml-study/Coursera-ML-Lec1/</loc>
 <lastmod>2021-01-29T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ml-study/Coursera-ML-Lec2/</loc>
+<lastmod>2021-01-30T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/404/</loc>
@@ -98,6 +102,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/page3/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page4/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/navere133bbae47e70cd9311ce1c7d5cf18d7.html</loc>

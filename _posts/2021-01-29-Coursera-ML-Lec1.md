@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Coursera Machine Learning, Week 1 필기노트"
+title: "Coursera ML, Lecture 1 : Introduction"
 categories: ml-study
 tags:
   - machine-learning
@@ -16,6 +16,7 @@ Contents
 </div>
 * TOC
 {:toc}
+----------------------------------------------------------------
 
 ### What is Machine Learning?
 - A. Samuel (1959) : 컴퓨터가 `explicitly program` 되지 않은 내용을 학습하게 하는 분야

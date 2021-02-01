@@ -11,10 +11,13 @@ main:
 sidepost:
   - title: "Study Note"
     url : /study-note/
+    children:
+      - title: "Coursera ML Note (2021 Feb)"
+        url: /study-note/#coursera-ml-andrew-ng 
   - title: Posts on Algorithms
     url: /categories/algorithms/
     children:
-      - title: "대회별로 보기"
+      - title: "문제 출처별로 보기"
         url: /find-contest/
       - title: "solved.ac class"
         url: /sac-class/

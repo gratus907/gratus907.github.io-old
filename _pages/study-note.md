@@ -19,6 +19,7 @@ Contents
 ## Computer Science
 
 ### Advanced Algorithms / Data structures
+
 - PS에서 쓰는 알고리즘들 외에도 더 theoretical한 자료구조/알고리즘들에 대한 이해가 부족한 것 같아서 공부해 보기로 했습니다. PS에서도 요즘은 더 높은 레벨로 가면 splay tree / link cut tree 같은건 좀 나오는것 같기도 하구요.
 PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 - 계획 : 고급 자료구조 / 알고리즘 내용들, CLRS에서 아직 제대로 공부하지 않은 부분 몇가지,   
@@ -65,3 +66,12 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 | Topic                           | Link                            |
 |---------------------------------|---------------------------------|
 | Divide and conquer optimization | [Link](/algorithms/DP-DnC-Opt/) |
+
+
+### Machine Learning
+#### Coursera ML (Andrew Ng)
+
+| Topic                                | Link                                |
+|--------------------------------------|-------------------------------------|
+| Introduction                         | [Link](/ml-study/Coursera-ML-Lec1/) |
+| Linear Regression / Gradient Descent | [Link](/ml-study/Coursera-ML-Lec2/) |

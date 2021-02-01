@@ -60,9 +60,9 @@ var store = [{
         "teaser": null
       },{
         "title": "BOJ 19693, Singapore NOI 2018 Safety",
-        "excerpt":"난이도 : Diamond 4 출처 : Singapore National Olympiad in Informatics, 2018 - 5번 Contents 풀이 Subtask 1, 2, 5 (+13점) Subtask 4 (+5점) Full solution 구현 코드 Thinking 파트가 끝난 후에도 어떻게 구현할지 정말 많은 고민을 했고, 결국 구현을 성공하지 못해서 다른 사람 구현을 참고했다. 구현 트릭이 상당히 배울점이...","categories": ["algorithm"],
+        "excerpt":"난이도 : Diamond 4 출처 : Singapore National Olympiad in Informatics, 2018 - 5번 Contents 풀이 Subtask 1, 2, 5 (+13점) Subtask 4 (+5점) Full solution 구현 코드 Thinking 파트가 끝난 후에도 어떻게 구현할지 정말 많은 고민을 했고, 결국 구현을 성공하지 못해서 다른 사람 구현을 참고했다. 구현 트릭이 상당히 배울점이...","categories": ["algorithms"],
         "tags": ["algorithm","dp"],
-        "url": "http://localhost:4000/algorithm/BOJ19693/",
+        "url": "http://localhost:4000/algorithms/BOJ19693/",
         "teaser": null
       },{
         "title": "SOLVED.AC exp 300,000,000",
@@ -93,5 +93,17 @@ var store = [{
         "excerpt":"Contents Linear Regression Cost funtion Gradient Descent Gradient Descent on Linear Regression 강의 기준 1주차 Linear regression - Gradient Descent. Linear Regression Regression Problem에 대한 Linear Fitting $m$개의 Training data 들이 $(x_i, y_i)$ 형태로 주어지고, 이 data로부터 best-predicting line 찾기. Learning Algorithm을 만들어서, hypothesis $h$ 를 만든다. 이 $h$는, $x$를...","categories": ["ml-study"],
         "tags": ["machine-learning","linear-regression"],
         "url": "http://localhost:4000/ml-study/Coursera-ML-Lec2/",
+        "teaser": null
+      },{
+        "title": "BOJ 20176, ICPC Seoul 2020 Needle",
+        "excerpt":"Contents 풀이 코드 풀이 결국 문제의 요점은, 위 / 중간/ 아래를 $u_i, m_i, l_i$ 라고 할 때, $u_i + l_j = 2m_k$ 인 순서쌍 $(i, j, k)$의 개수를 세는 문제이다. 이 문제는 매우 잘 알려진 Convolution 문제로, 수열을 카운팅 다항식으로 인코딩하면 쉽게 풀 수 있다. 수열이 1, 3, 4, 5,...","categories": ["algorithm"],
+        "tags": ["algorithms","fast-fourier-transform"],
+        "url": "http://localhost:4000/algorithm/BOJ20176/",
+        "teaser": null
+      },{
+        "title": "BOJ 4002, APIO 2012 닌자배치(Dispatching)",
+        "excerpt":"Contents 풀이 문제 해석 Algorithm Small-to-Large Technique 코드 풀이 문제 해석 번역이 상당히 난해하게 작성되어 있다. 요점을 정리하자면 루트 있는 트리가 주어진다. 각 노드에는 $L_i, C_i$ 값이 주어진다. 트리의 어떤 노드 하나 (매니저) 를 고른다. 그 트리를 루트로 하는 서브트리에서 몇 개의 노드(닌자)를 고른다. 매니저를 닌자로 삼을 수 있다. 이때,...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/BOJ4002/",
         "teaser": null
       }]

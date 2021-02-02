@@ -39,7 +39,7 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 
 | Topic               | Link                                 |
 |---------------------|--------------------------------------|
-| Fibonacci Heaps     | [Link](/algorithms/Fibonacci-heaps/) |
+| **Fibonacci Heaps**     | [Link](/algorithms/Fibonacci-heaps/) |
 | van Emde Boas Trees |                                      |
 | Splay trees         |                                      |
 | Dynamic trees       |                                      |
@@ -56,7 +56,7 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 
 | Topic                      | Link                                       |
 |----------------------------|--------------------------------------------|
-| Fixed Subgraph Isomorphism | [Link](/algorithms/graph-algorithms-lec1/) |
+| **Fixed Subgraph Isomorphism** | [Link](/algorithms/graph-algorithms-lec1/) |
 | Cycle Finding              |                                            |
 | Girth                      |                                            |
 | All-Pairs Shortest Path    |                                            |
@@ -65,13 +65,14 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 
 | Topic                           | Link                            |
 |---------------------------------|---------------------------------|
-| Divide and conquer optimization | [Link](/algorithms/DP-DnC-Opt/) |
+| **Divide and conquer optimization** | [Link](/algorithms/DP-DnC-Opt/) |
 
 
 ### Machine Learning
 #### Coursera ML (Andrew Ng)
 
-| Topic                                | Link                                |
-|--------------------------------------|-------------------------------------|
-| Introduction                         | [Link](/ml-study/Coursera-ML-Lec1/) |
-| Linear Regression / Gradient Descent | [Link](/ml-study/Coursera-ML-Lec2/) |
+| Topic                                                          | Link                                |
+|----------------------------------------------------------------|-------------------------------------|
+| **Introduction**                                              | [Link](/ml-study/Coursera-ML-Lec1/) |
+| **Linear Regression / Gradient Descent**                      | [Link](/ml-study/Coursera-ML-Lec2/) |
+| **Multivariable Linear Regression / More on Gradient Descent** | [Link](/ml-study/Coursera-ML-Lec3/) |

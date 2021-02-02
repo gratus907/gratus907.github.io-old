@@ -101,9 +101,21 @@ var store = [{
         "url": "http://localhost:4000/algorithm/BOJ20176/",
         "teaser": null
       },{
+        "title": "BOJ 15977, KOI 2018 고등부 3번 조화로운 행렬",
+        "excerpt":"Contents 풀이 29점 풀이 100점 풀이 Dynamic Segment Tree 코드 풀이 29점 풀이 서브태스크 1과 3만 먼저 해결하자. 즉, $n = 2$ 인 경우. 문제를 잘 해석해 보면, 다음 풀이에 도달하는 것은 어렵지 않다. 1행의 원소를 기준으로 전체 배열을 정렬한 다음 2행에서 Longest Increasing Subseqeunce를 찾으면 정답이 된다. 이 풀이는...","categories": ["algorithms"],
+        "tags": ["data-structures","segment-tree"],
+        "url": "http://localhost:4000/algorithms/BOJ15977/",
+        "teaser": null
+      },{
         "title": "BOJ 4002, APIO 2012 닌자배치(Dispatching)",
         "excerpt":"Contents 풀이 문제 해석 Algorithm Small-to-Large Technique 코드 풀이 문제 해석 번역이 상당히 난해하게 작성되어 있다. 요점을 정리하자면 루트 있는 트리가 주어진다. 각 노드에는 $L_i, C_i$ 값이 주어진다. 트리의 어떤 노드 하나 (매니저) 를 고른다. 그 트리를 루트로 하는 서브트리에서 몇 개의 노드(닌자)를 고른다. 매니저를 닌자로 삼을 수 있다. 이때,...","categories": [],
         "tags": [],
         "url": "http://localhost:4000/BOJ4002/",
+        "teaser": null
+      },{
+        "title": "Coursera ML, Lecture 3 : Multivarite Linear Regression",
+        "excerpt":"Contents Multivariate Linear Regression Multivariate Gradient Descent Feature Scaling Learning Rate More on features / Regression Multivariate Linear Regression 다수의 Feature $(x_1, x_2, x_3, \\dots)$ 로부터, output variable $y$ 를 predict하고 싶다. Notation 정리: Data $i$번째의 $j$번째 feature를 $x^{(i)}_j$ 로 쓰기로 하자. 이제, $x^{(i)}$ 는 하나의 training data인데, 이는 n-vector...","categories": ["ml-study"],
+        "tags": ["machine-learning","linear-regression"],
+        "url": "http://localhost:4000/ml-study/Coursera-ML-Lec3/",
         "teaser": null
       }]

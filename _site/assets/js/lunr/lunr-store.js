@@ -108,9 +108,9 @@ var store = [{
         "teaser": null
       },{
         "title": "BOJ 4002, APIO 2012 닌자배치(Dispatching)",
-        "excerpt":"Contents 풀이 문제 해석 Algorithm Small-to-Large Technique 코드 풀이 문제 해석 번역이 상당히 난해하게 작성되어 있다. 요점을 정리하자면 루트 있는 트리가 주어진다. 각 노드에는 $L_i, C_i$ 값이 주어진다. 트리의 어떤 노드 하나 (매니저) 를 고른다. 그 트리를 루트로 하는 서브트리에서 몇 개의 노드(닌자)를 고른다. 매니저를 닌자로 삼을 수 있다. 이때,...","categories": [],
-        "tags": [],
-        "url": "http://localhost:4000/BOJ4002/",
+        "excerpt":"Contents 풀이 문제 해석 Algorithm Small-to-Large Technique 코드 풀이 문제 해석 번역이 상당히 난해하게 작성되어 있다. 요점을 정리하자면 루트 있는 트리가 주어진다. 각 노드에는 $L_i, C_i$ 값이 주어진다. 트리의 어떤 노드 하나 (매니저) 를 고른다. 그 트리를 루트로 하는 서브트리에서 몇 개의 노드(닌자)를 고른다. 매니저를 닌자로 삼을 수 있다. 이때,...","categories": ["algorithms"],
+        "tags": ["algorithms"],
+        "url": "http://localhost:4000/algorithms/BOJ4002/",
         "teaser": null
       },{
         "title": "Coursera ML, Lecture 3 : Multivarite Linear Regression",

@@ -48,13 +48,13 @@ Contents
 - 꼭 그 범위인 것은 아니고... 대충 비슷한 범위 내로 feature들이 들어오게 하는 것.
 - **Mean Normalization** : $x_i$ 를 $x_i - \mu_i$ 로 대체하여, approximately zero mean을 유지하게 하기.
 
-### Learning Rate 
+### Learning Rate
   $$\theta_j := \theta_j - \alpha \pdv{}{\theta_j} J(\theta_0, \theta_1)$$
-- How to choose $\alpha$ ? 
+- How to choose $\alpha$ ?
 - Practical tips.
   - Gradient descent iteration 횟수 ($t$) 에 대한 $J(\theta)$ 의 값을 계속 plotting 한다.
   - 이 값이 감소함수이게 하고 싶다. 우리 목적은 $J$를 minimize하는 것이니까.
-  - Convergence test를 잘 만들어도 되고... ex) 몇번 더돌렸는데 $k$만큼 값이 떨어지지 않으면~ ... 
+  - Convergence test를 잘 만들어도 되고... ex) 몇번 더돌렸는데 $k$만큼 값이 떨어지지 않으면~ ...
 - Not working?
   - $J$ 증가 : 아마도 $\alpha$가 너무 크기 때문.
   - Overshooting : 아마도 $\alpha$가 너무 크기 때문.

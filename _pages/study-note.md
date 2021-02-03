@@ -39,7 +39,7 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 
 | Topic               | Link                                 |
 |---------------------|--------------------------------------|
-| **Fibonacci Heaps**     | [Link](/algorithms/Fibonacci-heaps/) |
+| **Fibonacci Heaps** | [Link](/algorithms/Fibonacci-heaps/) |
 | van Emde Boas Trees |                                      |
 | Splay trees         |                                      |
 | Dynamic trees       |                                      |
@@ -54,17 +54,17 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 #### Graph Algorithms
 - 메인 자료는 Stanford CS 267 : Graph Algorithms 입니다.
 
-| Topic                      | Link                                       |
-|----------------------------|--------------------------------------------|
+| Topic                          | Link                                       |
+|--------------------------------|--------------------------------------------|
 | **Fixed Subgraph Isomorphism** | [Link](/algorithms/graph-algorithms-lec1/) |
-| Cycle Finding              |                                            |
-| Girth                      |                                            |
-| All-Pairs Shortest Path    |                                            |
+| Cycle Finding                  |                                            |
+| Girth                          |                                            |
+| All-Pairs Shortest Path        |                                            |
 
 #### Algorithms used in CP
 
-| Topic                           | Link                            |
-|---------------------------------|---------------------------------|
+| Topic                               | Link                            |
+|-------------------------------------|---------------------------------|
 | **Divide and conquer optimization** | [Link](/algorithms/DP-DnC-Opt/) |
 
 
@@ -73,6 +73,7 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 
 | Topic                                                          | Link                                |
 |----------------------------------------------------------------|-------------------------------------|
-| **Introduction**                                              | [Link](/ml-study/Coursera-ML-Lec1/) |
-| **Linear Regression / Gradient Descent**                      | [Link](/ml-study/Coursera-ML-Lec2/) |
+| **Introduction**                                               | [Link](/ml-study/Coursera-ML-Lec1/) |
+| **Linear Regression / Gradient Descent**                       | [Link](/ml-study/Coursera-ML-Lec2/) |
 | **Multivariable Linear Regression / More on Gradient Descent** | [Link](/ml-study/Coursera-ML-Lec3/) |
+| **Analytic Methods for Linear Regression**                     | [Link](/ml-study/Coursera-ML-Lec4/) |

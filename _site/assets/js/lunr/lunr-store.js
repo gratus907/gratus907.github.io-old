@@ -96,9 +96,9 @@ var store = [{
         "teaser": null
       },{
         "title": "BOJ 20176, ICPC Seoul 2020 Needle",
-        "excerpt":"Contents 풀이 코드 풀이 결국 문제의 요점은, 위 / 중간/ 아래를 $u_i, m_i, l_i$ 라고 할 때, $u_i + l_j = 2m_k$ 인 순서쌍 $(i, j, k)$의 개수를 세는 문제이다. 이 문제는 매우 잘 알려진 Convolution 문제로, 수열을 카운팅 다항식으로 인코딩하면 쉽게 풀 수 있다. 수열이 1, 3, 4, 5,...","categories": ["algorithm"],
+        "excerpt":"Contents 풀이 코드 풀이 결국 문제의 요점은, 위 / 중간/ 아래를 $u_i, m_i, l_i$ 라고 할 때, $u_i + l_j = 2m_k$ 인 순서쌍 $(i, j, k)$의 개수를 세는 문제이다. 이 문제는 매우 잘 알려진 Convolution 문제로, 수열을 카운팅 다항식으로 인코딩하면 쉽게 풀 수 있다. 수열이 1, 3, 4, 5,...","categories": ["algorithms"],
         "tags": ["algorithms","fast-fourier-transform"],
-        "url": "http://localhost:4000/algorithm/BOJ20176/",
+        "url": "http://localhost:4000/algorithms/BOJ20176/",
         "teaser": null
       },{
         "title": "BOJ 15977, KOI 2018 고등부 3번 조화로운 행렬",
@@ -117,5 +117,11 @@ var store = [{
         "excerpt":"Contents Multivariate Linear Regression Multivariate Gradient Descent Feature Scaling Learning Rate More on features / Regression Multivariate Linear Regression 다수의 Feature $(x_1, x_2, x_3, \\dots)$ 로부터, output variable $y$ 를 predict하고 싶다. Notation 정리: Data $i$번째의 $j$번째 feature를 $x^{(i)}_j$ 로 쓰기로 하자. 이제, $x^{(i)}$ 는 하나의 training data인데, 이는 n-vector...","categories": ["ml-study"],
         "tags": ["machine-learning","linear-regression"],
         "url": "http://localhost:4000/ml-study/Coursera-ML-Lec3/",
+        "teaser": null
+      },{
+        "title": "Coursera ML, Lecture 4 : Analytic Computation",
+        "excerpt":"Contents Normal Equation Noninvertible Case Normal Equation Iteration을 통해 극소점에 수렴하는 것이 아니라, Analytically 최적해 $\\theta$를 구하는 방법. ex) $J(\\theta) = a\\theta^2 + b\\theta + c$ ($a &gt; 0$) 를 최소화하는 $\\theta$ 는 $-\\frac{b}{2a}$ 임을 쉽게 알 수 있다. How to do for vector parameter $J$? =&gt; Vector Calculus. $\\pdv{}{\\theta_i}...","categories": ["ml-study"],
+        "tags": ["machine-learning","linear-regression"],
+        "url": "http://localhost:4000/ml-study/Coursera-ML-Lec4/",
         "teaser": null
       }]

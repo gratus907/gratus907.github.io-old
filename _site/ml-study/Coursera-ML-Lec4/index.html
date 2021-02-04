@@ -19,8 +19,8 @@
 
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>BOJ 1126 같은 탑 - Gratus907’s Study Note</title>
-<meta name="description" content="solved ac class 7 essential">
+<!-- begin _includes/seo.html --><title>Coursera ML, Lecture 4 : Analytic Computation - Gratus907’s Study Note</title>
+<meta name="description" content="Contents">
 
 
   <meta name="author" content="Wonseok Shin">
@@ -32,30 +32,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Gratus907's Study Note">
-<meta property="og:title" content="BOJ 1126 같은 탑">
-<meta property="og:url" content="http://localhost:4000/algorithms/BOJ1126/">
+<meta property="og:title" content="Coursera ML, Lecture 4 : Analytic Computation">
+<meta property="og:url" content="http://localhost:4000/ml-study/Coursera-ML-Lec4/">
 
 
-  <meta property="og:description" content="solved ac class 7 essential">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-01-17T00:00:00+09:00">
+  <meta property="og:description" content="Contents">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-02-03T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/algorithms/BOJ1126/">
+
+<link rel="canonical" href="http://localhost:4000/ml-study/Coursera-ML-Lec4/">
 
 
 
@@ -354,15 +354,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="BOJ 1126 같은 탑">
-    <meta itemprop="description" content="  solved ac class 7 essential">
-    <meta itemprop="datePublished" content="2021-01-17T00:00:00+09:00">
+    <meta itemprop="headline" content="Coursera ML, Lecture 4 : Analytic Computation">
+    <meta itemprop="description" content="Contents">
+    <meta itemprop="datePublished" content="2021-02-03T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">BOJ 1126 같은 탑
+          <h1 id="page-title" class="page__title" itemprop="headline">Coursera ML, Lecture 4 : Analytic Computation
 </h1>
           
 
@@ -377,7 +377,7 @@
 
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          377 words
+          168 words
       </span>
     
   </p>
@@ -392,77 +392,66 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
               <ul class="toc__menu">
-  <li><a href="#풀이">풀이</a></li>
-  <li><a href="#code">Code</a></li>
+  <li><a href="#normal-equation">Normal Equation</a>
+    <ul>
+      <li><a href="#noninvertible-case">Noninvertible Case</a></li>
+    </ul>
+  </li>
 </ul>
 
             </nav>
           </aside>
         
-        <ul>
-  <li><strong>solved ac class 7 essential</strong></li>
-</ul>
-
-<div id="toc">
+        <div id="toc">
 Contents
 </div>
 <ul id="markdown-toc">
-  <li><a href="#풀이" id="markdown-toc-풀이">풀이</a></li>
-  <li><a href="#code" id="markdown-toc-code">Code</a></li>
+  <li><a href="#normal-equation" id="markdown-toc-normal-equation">Normal Equation</a>    <ul>
+      <li><a href="#noninvertible-case" id="markdown-toc-noninvertible-case">Noninvertible Case</a></li>
+    </ul>
+  </li>
+</ul>
+<hr />
+
+<h3 id="normal-equation">Normal Equation</h3>
+<ul>
+  <li>Iteration을 통해 극소점에 수렴하는 것이 아니라, <strong>Analytically</strong> 최적해 $\theta$를 구하는 방법.</li>
+  <li>ex) $J(\theta) = a\theta^2 + b\theta + c$ ($a &gt; 0$) 를 최소화하는 $\theta$ 는 $-\frac{b}{2a}$ 임을 쉽게 알 수 있다.</li>
+  <li>How to do for vector parameter $J$?</li>
+  <li>=&gt; Vector Calculus. $\pdv{}{\theta_i} J(\theta)$ 가 모두 0이 되는 $\theta$ 를 찾으면 된다.</li>
+  <li>Parameter들을 행렬 $X$로 만들고, 이에 대응하는 값들을 $y$로 만들자.</li>
+  <li>$\theta = (X^T X)^{-1} X^T y$ 가 우리의 <strong>Linear Regression</strong>에 대응함이 알려져 있다.</li>
+  <li>Feature scaling 같은 테크닉 불필요.</li>
+  <li>Gradient Descent에 대비하여..
+    <ul>
+      <li><strong>장점</strong> : $\alpha$를 생각하지 않아도 되고, 반복적으로 적절한 $\alpha$를 찾을 필요가 없다.</li>
+      <li><strong>단점</strong> : 행렬곱셈 및 inverse는 굉장히 느림. 특히 $n$이 크면 행렬곱셈을 쓰기 어렵다.</li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="풀이">풀이</h2>
-<p>Dynamic programming 을 이용해서 어렵지 않게 해결할 수 있다. 다음과 같이 정의하자.</p>
-
-<p><code class="language-plaintext highlighter-rouge">DP[i][j]</code> : 1번부터 $i$번까지의 블록만 고려할 때, $H_A - H_B = j$ 가 되면서 만들 수 있는 $H_A$의 최대 높이</p>
-
-<p>이렇게 정의하면, 크기가 $h$인 다음 블록을 추가할 때, A에 얹는 경우와 B에 얹는 경우를 나누어 생각할 수 있다. A에 얹는 경우에는, 차가 $j + h$ 로 늘어나면서 $H_A$의 크기도 실제로 늘어나고, B에 얹는 경우에는 차가 $j-h$로 줄어들면서 $H_A$의 크기는 그대로 유지된다. 같은 $j$일 때 $H_A$가 크면 자명하게 $H_B$가 커지기 때문에 이렇게 관리해도 충분함을 쉽게 알 수 있다.</p>
-
-<p>다만 $j$의 범위가 $-500,000$ 에서 $500,000$이기 때문에, 실제로는 100만 칸의 DP를 잡아서 $j$ 대신 $j + 5e5$ 로 생각하고 움직이면 된다. 이렇게 관리하면 복잡도 $2 * n * \sum H$ 칸의 DP 테이블을 채우는 것이므로 시간 내에 잘 관리가 된다.</p>
-
-<p>5천만 칸의 int를 잡고 싶지 않다면, 바로 직전 DP 테이블만 있으면 된다는 사실을 이용해서 100만 * 2개만 있으면 된다. 아래 코드는 그렇게 구현되어 있다. 이를 간혹 토글링이라고 부르는데, 구현에서는 토글링을 하지는 않았고 그냥 tmp에다가 매번 <code class="language-plaintext highlighter-rouge">memset</code> 하면서 가는데, 5천만 칸 memset정도는 라이브러리가 매우 빠르므로 그냥 믿어도 충분하다.</p>
-
-<p>구현의 편의상, 0개의 블록을 써서 A = B = 0 을 만들 수 있다고 보는 것이 자연스럽다. 그러나 이는 실제로 불가능한 칸과 실제로 가능한 칸의 구분에 혼란을 주기 때문에, 나는 그냥 편하게 가상의 높이 1을 준 다음 나중에 빼 주는 식으로 구현했다. 결과적으로 다 짜고 보니 굳이 그럴 필요는 없었고, 첫 DP에서만 잘 처리해주는게 더 간단했을것 같기도 하다.</p>
-
-<h2 id="code">Code</h2>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;bits/stdc++.h&gt;
-#define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="n">M</span> <span class="o">=</span> <span class="mi">500000</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="mi">1010101</span><span class="p">];</span>
-<span class="kt">int</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">1010101</span><span class="p">];</span>
-<span class="kt">int32_t</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">usecppio</span>
-    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
-    <span class="n">dp</span><span class="p">[</span><span class="n">M</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">h</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">h</span><span class="p">;</span>
-        <span class="n">memset</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">tmp</span><span class="p">));</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="o">*</span><span class="n">M</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">h</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
-                    <span class="n">tmp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">h</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
-            <span class="p">}</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="n">h</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">M</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
-                    <span class="n">tmp</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">h</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">h</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">M</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-            <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">M</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="sc">'\n'</span><span class="p">;</span>
-    <span class="k">else</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">dp</span><span class="p">[</span><span class="n">M</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="sc">'\n'</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre></div></div>
+<h4 id="noninvertible-case">Noninvertible Case</h4>
+<ul>
+  <li>$(X^T X)$가 invertible하지 않으면??</li>
+  <li>Pseudoinverse (octave pinv 함수)</li>
+  <li>크게 두 가지 경우
+    <ul>
+      <li>두 feature가 사실 linear 관계에 있는 경우.
+        <ul>
+          <li>ex) size in feet^2 와 size in m^2</li>
+          <li>Design matrix $X$가 dependent column 가진다.</li>
+          <li>Redundant features -&gt; Throw away.</li>
+        </ul>
+      </li>
+      <li>Too many features.
+        <ul>
+          <li>Data는 적은데 feature는 많은 경우.</li>
+          <li>Feature 몇개 버리기 / 또는 Regularization.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
         
       </section>
@@ -483,7 +472,11 @@ Contents
     
       
       
-      <a href="/tags/#dynamic-programming" class="page__taxonomy-item" rel="tag">dynamic-programming</a>
+      <a href="/tags/#linear-regression" class="page__taxonomy-item" rel="tag">linear-regression</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine-learning</a>
     
     </span>
   </p>
@@ -504,14 +497,14 @@ Contents
     
       
       
-      <a href="/categories/#algorithms" class="page__taxonomy-item" rel="tag">algorithms</a>
+      <a href="/categories/#ml-study" class="page__taxonomy-item" rel="tag">ml-study</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-01-17T00:00:00+09:00">January 17, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-02-03T00:00:00+09:00">February 3, 2021</time></p>
 
 
       </footer>
@@ -519,12 +512,11 @@ Contents
       
   <nav class="pagination">
     
-      <a href="/algorithms/BOJ2533/" class="pagination--pager" title="BOJ 2533 사회망 서비스
+      <a href="/ml-study/Coursera-ML-Lec3/" class="pagination--pager" title="Coursera ML, Lecture 3 : Multivarite Linear Regression
 ">이전</a>
     
     
-      <a href="/algorithms/BOJ18600/" class="pagination--pager" title="BOJ 18600, Ptz Camp Summer 2019 Day 3, Valentine’s Day
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -568,48 +560,6 @@ Contents
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/ml-study/Coursera-ML-Lec4/" rel="permalink">Coursera ML, Lecture 4 : Analytic Computation
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          190 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-Contents
-
-
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/ml-study/Coursera-ML-Lec3/" rel="permalink">Coursera ML, Lecture 3 : Multivarite Linear Regression
 </a>
       
@@ -627,7 +577,7 @@ Contents
 
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          511 words
+          477 words
       </span>
     
   </p>
@@ -669,7 +619,7 @@ Contents
 
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          752 words
+          768 words
       </span>
     
   </p>
@@ -711,7 +661,49 @@ Contents
 
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          924 words
+          1266 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithms/BOJ20176/" rel="permalink">BOJ 20176, ICPC Seoul 2020 Needle
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          380 words
       </span>
     
   </p>

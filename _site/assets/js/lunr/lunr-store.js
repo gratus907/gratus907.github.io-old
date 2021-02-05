@@ -124,4 +124,10 @@ var store = [{
         "tags": ["machine-learning","linear-regression"],
         "url": "http://localhost:4000/ml-study/Coursera-ML-Lec4/",
         "teaser": null
+      },{
+        "title": "Coursera ML, Lecture 5 : Logistic Regression",
+        "excerpt":"Contents Classification Multiple Features Logistic Regression Advanced Optimization Ideas Multiclass Classification Classification Binary 하게 (또는 Discrete하게) 뭔가를 결정하는 형태의 문제. ex) 종양의 양성/음성, 메일이 스팸이다/아니다 등등… Idea : Linear Regression + Threshold. Linear하게 hypothesis를 잡고, 어떤 값 (0.5) 이상이면 1로 예측하는 형태. 한계점 : 예를 들어, 양성 데이터가 (3, 4,...","categories": ["ml-study"],
+        "tags": ["machine-learning","logistic-regression"],
+        "url": "http://localhost:4000/ml-study/Coursera-ML-Lec5/",
+        "teaser": null
       }]

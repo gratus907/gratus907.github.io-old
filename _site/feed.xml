@@ -1,4 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-02-04T05:33:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">Coursera ML, Lecture 4 : Analytic Computation</title><link href="http://localhost:4000/ml-study/Coursera-ML-Lec4/" rel="alternate" type="text/html" title="Coursera ML, Lecture 4 : Analytic Computation" /><published>2021-02-03T00:00:00+09:00</published><updated>2021-02-03T00:00:00+09:00</updated><id>http://localhost:4000/ml-study/Coursera-ML-Lec4</id><content type="html" xml:base="http://localhost:4000/ml-study/Coursera-ML-Lec4/">&lt;div id=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-02-05T23:13:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">Coursera ML, Lecture 5 : Logistic Regression</title><link href="http://localhost:4000/ml-study/Coursera-ML-Lec5/" rel="alternate" type="text/html" title="Coursera ML, Lecture 5 : Logistic Regression" /><published>2021-02-05T00:00:00+09:00</published><updated>2021-02-05T00:00:00+09:00</updated><id>http://localhost:4000/ml-study/Coursera-ML-Lec5</id><content type="html" xml:base="http://localhost:4000/ml-study/Coursera-ML-Lec5/">&lt;div id=&quot;toc&quot;&gt;
+Contents
+&lt;/div&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#classification&quot; id=&quot;markdown-toc-classification&quot;&gt;Classification&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#multiple-features&quot; id=&quot;markdown-toc-multiple-features&quot;&gt;Multiple Features&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#logistic-regression&quot; id=&quot;markdown-toc-logistic-regression&quot;&gt;Logistic Regression&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#advanced-optimization-ideas&quot; id=&quot;markdown-toc-advanced-optimization-ideas&quot;&gt;Advanced Optimization Ideas&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#multiclass-classification&quot; id=&quot;markdown-toc-multiclass-classification&quot;&gt;Multiclass Classification&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;classification&quot;&gt;Classification&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Binary 하게 (또는 Discrete하게) 뭔가를 결정하는 형태의 문제.&lt;/li&gt;
+  &lt;li&gt;ex) 종양의 양성/음성, 메일이 스팸이다/아니다 등등…&lt;/li&gt;
+  &lt;li&gt;Idea : Linear Regression + Threshold. Linear하게 hypothesis를 잡고, 어떤 값 (0.5) 이상이면 1로 예측하는 형태.&lt;/li&gt;
+  &lt;li&gt;한계점 : 예를 들어, 양성 데이터가 (3, 4, 5, 100) 이고 음성 데이터가 (1, 2, 2) 이면? Linear hypothesis가 별로 적절하지 않은 경우가 많다. 100에 의해 threshold가 지나치게 오른쪽으로 이동하게 되기 때문.&lt;/li&gt;
+  &lt;li&gt;개선 : 위 문제점은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Linear&lt;/code&gt; 때문에 생기는 문제다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Linear&lt;/code&gt; 보다 더 이런 형태에 적합하게 생긴 함수를 쓰면 어떨까? $h$ 함수의 최소와 최대도 뭔가 0과 1로 고정하고 싶다. $h_\theta(x)$ 가 1보다 크거나 0보다 작은 것은 뭔가 바람직하지 않은 상태인것으로 보인다.&lt;/li&gt;
+  &lt;li&gt;Logistic regression : 다음과 같은 형태의 sigmoid 함수를 사용한다.
+\(h_\theta(x) = \frac{1}{1 + e^{-\theta^T x}}\)&lt;/li&gt;
+  &lt;li&gt;Why? 그래프가 매우 유용한 성질들을 보이기 때문.&lt;br /&gt;
+&lt;img src=&quot;../../images/21689f9a1d965b538462169d7391a7e2fc2bccd3c9283289da2d4fb09b9867b8.png&quot; alt=&quot;picture 2&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Interpretation : $h_\theta(x)$ = $y = 1$일 &lt;strong&gt;확률&lt;/strong&gt; 을 돌려준다고 생각하자.
+\(h_\theta(x) = \mathsf{P}(y = 1 \ |\  x ; \theta)\)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;multiple-features&quot;&gt;Multiple Features&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;$\theta$ 와 $x$를 벡터로 생각하는 앞서의 방법을 그대로 이용하면, Logistic regression도 똑같이 multiple feature에 적용 가능.&lt;/li&gt;
+  &lt;li&gt;이때는, $h_\theta(x) = 0.5$ 인 경계면이 $\R^n$ 상의 초평면으로 제공하는 형태가 된다.&lt;/li&gt;
+  &lt;li&gt;이를 Decision boundary 라고 부른다.&lt;/li&gt;
+  &lt;li&gt;Logistic regression도 다음과 같은 형태로 일반화할 수 있다.
+    &lt;ul&gt;
+      &lt;li&gt;$h_\theta(x) = g(p(\theta, x))$, such that $g(z) = \frac{1}{1 + e^{-z}}$ 로 쓸 수 있고,&lt;/li&gt;
+      &lt;li&gt;$p$에는 다양한 함수들이 들어갈 수 있다. 예를 들어, $p(\theta, x) = \theta_0 + \theta_1 x_1^2 + \theta_2 x_2^2$ 같은 다항식…&lt;/li&gt;
+      &lt;li&gt;이경우, Decision boundary가 원이나 타원, 또는 다른 형태로 나타나는 문제들도 해결 가능하다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;logistic-regression&quot;&gt;Logistic Regression&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Cost function 과 그 편도함수들을 안다면, gradient descent를 쓸 수 있다. $h$는 이미 정했으므로…&lt;/li&gt;
+  &lt;li&gt;Linear regression에서처럼, $\frac{1}{2m}\sum_{i = 1}^{m} \ (h_\theta(x_i) - y_i)^2$ 를 쓴다면, 이 함수는 &lt;strong&gt;Convex&lt;/strong&gt;하지 않다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Convex&lt;/strong&gt;하지 않으면 Gradient Descent의 수렴성이 보장되지 않는다!&lt;/li&gt;
+  &lt;li&gt;가능하면 Convex한 함수를 잡아서 써야 한다. 다음 함수가 잘 작동함이 알려져 있다.
+\(Cost_\theta(x, y) = \begin{cases}
+  -\log(h_\theta(x)) &amp;amp; \text{if } y = 1 \\
+  -\log(1 - h_\theta(x)) &amp;amp; \text{if } y = 0
+\end{cases}\)&lt;/li&gt;
+  &lt;li&gt;$y = 1, h_\theta(x) = 1$ 이라면, cost가 0이다. 이는 &lt;strong&gt;올바른 예측&lt;/strong&gt;에서 cost 함수가 0이 된다는 것이므로, desirable하다.&lt;/li&gt;
+  &lt;li&gt;$y = 1, h_\theta(x) \to 0$ 일 때, cost가 무한대로 발산한다. 이는, 1이어야 할 값을 0으로 예측하면 큰 penalty term을 주겠다는 의미가 된다. 이러한 intuition은 우리가 logistic regression에서 원하는 바와 잘 맞아떨어진다. $y = 0$에서도 위 두 가지가 마찬가지로 성립한다.&lt;/li&gt;
+  &lt;li&gt;위 식은 경우로 나누어져 있어서 복잡하다 (특히 Grad-descent 쓰기에). 이를 잘 정리해서…
+\(Cost_\theta(x, y) = -y\log(h_\theta(x)) - (1-y)\log(1 - h_\theta(x))\)&lt;/li&gt;
+  &lt;li&gt;이제, Gradient descent를 쓸 수 있다! $(x_i, y_i)$ 가 training set이라고 하면..
+\(J(\theta) = -\frac{1}{m}\left(\sum_{i = 1}^{m} y_i\log(h_\theta(x_i)) + (1-y_i)\log(1 - h_\theta(x_i))\right)\)
+\(\pdv{}{x_j}J(\theta) = \sum_{i = 1}^{m} (h_\theta(x_i) - y_i) x_j\)&lt;/li&gt;
+  &lt;li&gt;Linear regression 때의 gradient descent와 &lt;strong&gt;똑같은 형태의&lt;/strong&gt; 편도함수를 얻는다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;advanced-optimization-ideas&quot;&gt;Advanced Optimization Ideas&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Optimization Algorithm은 다양하다. 더 강한 알고리즘들이 있다.
+    &lt;ul&gt;
+      &lt;li&gt;Gradient Descent&lt;/li&gt;
+      &lt;li&gt;Conjuagte Gradient&lt;/li&gt;
+      &lt;li&gt;BFGS algorithm, L-BFGS algorithm&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;주로 Gradient Descent보다 빠르고, $\alpha$를 직접 고르지 않아도 되는 (Line Search) 고급 알고리즘들. 대체로 훨씬 복잡하지만 더 좋은 성능을 보인다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;multiclass-classification&quot;&gt;Multiclass Classification&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;0/1이 아닌, 여러 개 중 하나를 고르는 형태의 Classification&lt;/li&gt;
+  &lt;li&gt;ex) Email Classification : Work / Friends / Family / Hobby를 0 / 1 / 2 / 3 으로.&lt;/li&gt;
+  &lt;li&gt;One-vs-All : 문제를 one-vs-all 형태의 binary classification으로 바꾸어, classifier $h_\theta$를 각각 맞춘다.&lt;/li&gt;
+  &lt;li&gt;각각의 클래스에 대한 best $h$를 학습한 후, 새로운 데이터에 대해서는 모든 $h$들을 돌려보고 확률이 가장 높게 나오는 클래스로 판정한다.&lt;/li&gt;
+  &lt;li&gt;가장 자연스러운? 형태의 extension.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ml-study" /><category term="machine-learning" /><category term="logistic-regression" /><summary type="html">Contents</summary></entry><entry><title type="html">Coursera ML, Lecture 4 : Analytic Computation</title><link href="http://localhost:4000/ml-study/Coursera-ML-Lec4/" rel="alternate" type="text/html" title="Coursera ML, Lecture 4 : Analytic Computation" /><published>2021-02-03T00:00:00+09:00</published><updated>2021-02-03T00:00:00+09:00</updated><id>http://localhost:4000/ml-study/Coursera-ML-Lec4</id><content type="html" xml:base="http://localhost:4000/ml-study/Coursera-ML-Lec4/">&lt;div id=&quot;toc&quot;&gt;
 Contents
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -978,8 +1058,4 @@ Contents
 
 &lt;p&gt;이후에는 MIT Deep Learning 책이 좋다고 해서 그 책을 조금 볼 것 같은데, 나는 매우 의지가 박약하기 때문에 (…) 동기가 없다면 (같이 공부하는 친구가 되었든, 정말 재미있어하는 내용이 되었든) 뭔가를 끝내지 못하는 편이다. 이런 난국을 타개하기 위해 무료로 들어도 거의 다 들을 수 있는 Coursera 강의에 79달러를 써서 의지력을 구입(…) 하기로 했다.&lt;/p&gt;
 
-&lt;p&gt;이 블로그에 이 강의 필기 내용을 정리해서 업로드할 생각이다. 마크다운 필기는 친구들이 많이들 하던데, 잘 될지는 모르겠다. ㅋㅋ..&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ml-study" /><category term="machine-learning" /><summary type="html">이제 CS 전공자에게 딥러닝/머신러닝에 대한 이해는 있으면 좋은게 아니라 없으면 안되는 정도라는 생각이 든다. 대표적으로, 우리 학교의 경우 소프트웨어 개발의 원리 및 실제 강의에서 머신러닝 사용을 강제 하며, 창의적 통합 설계 과목은 팀별로 주어진 프로젝트중 하나를 골라서 수행하는 과목이지만 주어진 프로젝트의 80% 이상이 머신러닝 관련이기 때문에 사실상 선택권이 없다.</summary></entry><entry><title type="html">SOLVED.AC exp 300,000,000</title><link href="http://localhost:4000/misc/solvedAC-300M-exp/" rel="alternate" type="text/html" title="SOLVED.AC exp 300,000,000" /><published>2021-01-27T00:00:00+09:00</published><updated>2021-01-27T00:00:00+09:00</updated><id>http://localhost:4000/misc/solvedAC-300M-exp</id><content type="html" xml:base="http://localhost:4000/misc/solvedAC-300M-exp/">&lt;p&gt;&lt;img src=&quot;../../images/dab4bd9c1ef695fdd600bf833c585bba3578a893d4044a2cacc319fc66734238.png&quot; alt=&quot;picture 1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;300,000,000점을 찍었다. 겨울방학 중 D2 찍는게 목표.&lt;/p&gt;
-
-&lt;p&gt;클래스 7을 쭉 풀고 있다.&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="misc" /><category term="misc" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;이 블로그에 이 강의 필기 내용을 정리해서 업로드할 생각이다. 마크다운 필기는 친구들이 많이들 하던데, 잘 될지는 모르겠다. ㅋㅋ..&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ml-study" /><category term="machine-learning" /><summary type="html">이제 CS 전공자에게 딥러닝/머신러닝에 대한 이해는 있으면 좋은게 아니라 없으면 안되는 정도라는 생각이 든다. 대표적으로, 우리 학교의 경우 소프트웨어 개발의 원리 및 실제 강의에서 머신러닝 사용을 강제 하며, 창의적 통합 설계 과목은 팀별로 주어진 프로젝트중 하나를 골라서 수행하는 과목이지만 주어진 프로젝트의 80% 이상이 머신러닝 관련이기 때문에 사실상 선택권이 없다.</summary></entry></feed>

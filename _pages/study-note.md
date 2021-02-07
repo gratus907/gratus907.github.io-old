@@ -26,10 +26,10 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
   MIT 고급 자료구조 6.851 [링크](https://courses.csail.mit.edu/6.851/fall17/lectures/) 이나 고급 알고리즘 [링크 1](http://people.csail.mit.edu/moitra/854.html) [링크 2](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-854j-advanced-algorithms-fall-2008/) 같은 내용들 중 몇가지 재밌어 보이거나 이건 알아야 한다고 추천받은 내용들을 볼 계획입니다.
 - 2021년 겨울 이후로도 내용이 추가될 수도 있습니다. 그때는 소주제별로 뺄 생각입니다.
 
-#### Various topics 
+#### Various topics
 
 | Topic              | Link |
-|--------------------|------|
+|:-------------------|:-----|
 | Amortized Analysis |      |
 | Hashing            |      |
 | Network Flows      |      |
@@ -38,7 +38,7 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 #### Advanced Data Structures  
 
 | Topic               | Link                                 |
-|---------------------|--------------------------------------|
+|:--------------------|:-------------------------------------|
 | **Fibonacci Heaps** | [Link](/algorithms/Fibonacci-heaps/) |
 | van Emde Boas Trees |                                      |
 | Splay trees         |                                      |
@@ -47,7 +47,7 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 #### Approximation Algorithms
 
 | Topic | Link |
-|-------|------|
+|:------|:-----|
 |       |      |
 
 
@@ -55,7 +55,7 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 - 메인 자료는 Stanford CS 267 : Graph Algorithms 입니다.
 
 | Topic                          | Link                                       |
-|--------------------------------|--------------------------------------------|
+|:-------------------------------|:-------------------------------------------|
 | **Fixed Subgraph Isomorphism** | [Link](/algorithms/graph-algorithms-lec1/) |
 | Cycle Finding                  |                                            |
 | Girth                          |                                            |
@@ -64,7 +64,7 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 #### Algorithms used in CP
 
 | Topic                               | Link                            |
-|-------------------------------------|---------------------------------|
+|:------------------------------------|:--------------------------------|
 | **Divide and conquer optimization** | [Link](/algorithms/DP-DnC-Opt/) |
 
 
@@ -72,8 +72,9 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 #### Coursera ML (Andrew Ng)
 
 | Topic                                                          | Link                                |
-|----------------------------------------------------------------|-------------------------------------|
+|:---------------------------------------------------------------|:------------------------------------|
 | **Introduction**                                               | [Link](/ml-study/Coursera-ML-Lec1/) |
 | **Linear Regression / Gradient Descent**                       | [Link](/ml-study/Coursera-ML-Lec2/) |
 | **Multivariable Linear Regression / More on Gradient Descent** | [Link](/ml-study/Coursera-ML-Lec3/) |
 | **Analytic Methods for Linear Regression**                     | [Link](/ml-study/Coursera-ML-Lec4/) |
+| **Logistic Regression**                                        | [Link](/ml-study/Coursera-ML-Lec5/) |

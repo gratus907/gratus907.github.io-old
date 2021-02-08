@@ -130,4 +130,10 @@ var store = [{
         "tags": ["machine-learning","logistic-regression"],
         "url": "http://localhost:4000/ml-study/Coursera-ML-Lec5/",
         "teaser": null
+      },{
+        "title": "Coursera ML, Lecture 6 : Overfitting / Regularization",
+        "excerpt":"Contents Overfitting Issue How to deal with? Regularization Regularized Linear Regression Regularized Logistic Regression Overfitting Issue Underfitting : 데이터가 Linear하지 않음에도 불구하고, Linear function fitting을 하는 등의 이유로 fitting되지 않는 현상 Overfitting : 5개의 데이터를 4차함수로 fitting한다면? 데이터에 대해서는 100%의 정확도를 갖지만, 실제로 좋은 모델링은 아님. 이를 High-variance라고 한다. High-order...","categories": ["ml-study"],
+        "tags": ["machine-learning","logistic-regression"],
+        "url": "http://localhost:4000/ml-study/Coursera-ML-Lec6/",
+        "teaser": null
       }]

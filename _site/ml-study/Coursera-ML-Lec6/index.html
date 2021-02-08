@@ -19,8 +19,8 @@
 
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>BOJ 18194, 경기과학고 2019 Bad Hair Day와 기댓값 - Gratus907’s Study Note</title>
-<meta name="description" content="난이도 : Platinum 1   출처 : 경기과학고 프로그래밍 대회 2019">
+<!-- begin _includes/seo.html --><title>Coursera ML, Lecture 6 : Overfitting / Regularization - Gratus907’s Study Note</title>
+<meta name="description" content="Contents">
 
 
   <meta name="author" content="Wonseok Shin">
@@ -32,30 +32,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Gratus907's Study Note">
-<meta property="og:title" content="BOJ 18194, 경기과학고 2019 Bad Hair Day와 기댓값">
-<meta property="og:url" content="http://localhost:4000/algorithms/BOJ18194/">
+<meta property="og:title" content="Coursera ML, Lecture 6 : Overfitting / Regularization">
+<meta property="og:url" content="http://localhost:4000/ml-study/Coursera-ML-Lec6/">
 
 
-  <meta property="og:description" content="난이도 : Platinum 1   출처 : 경기과학고 프로그래밍 대회 2019">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-01-08T00:00:00+09:00">
+  <meta property="og:description" content="Contents">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-02-08T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/algorithms/BOJ18194/">
+
+<link rel="canonical" href="http://localhost:4000/ml-study/Coursera-ML-Lec6/">
 
 
 
@@ -354,15 +354,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="BOJ 18194, 경기과학고 2019 Bad Hair Day와 기댓값">
-    <meta itemprop="description" content="  난이도 : Platinum 1  출처 : 경기과학고 프로그래밍 대회 2019">
-    <meta itemprop="datePublished" content="2021-01-08T00:00:00+09:00">
+    <meta itemprop="headline" content="Coursera ML, Lecture 6 : Overfitting / Regularization">
+    <meta itemprop="description" content="Contents">
+    <meta itemprop="datePublished" content="2021-02-08T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">BOJ 18194, 경기과학고 2019 Bad Hair Day와 기댓값
+          <h1 id="page-title" class="page__title" itemprop="headline">Coursera ML, Lecture 6 : Overfitting / Regularization
 </h1>
           
 
@@ -379,7 +379,7 @@
       <span class="page__meta-readtime">
         <img style="width: 75px;" src="http://hits.dwyl.com/gratus907.github.io.svg" alt="hit count image"/>
         <i class="far fa-clock" aria-hidden="true"></i>
-          465 words
+          352 words
       </span>
     
   </p>
@@ -394,93 +394,77 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
               <ul class="toc__menu">
-  <li><a href="#풀이">풀이</a></li>
-  <li><a href="#code">Code</a></li>
+  <li><a href="#overfitting-issue">Overfitting Issue</a></li>
+  <li><a href="#how-to-deal-with">How to deal with?</a></li>
+  <li><a href="#regularization">Regularization</a></li>
+  <li><a href="#regularized-linear-regression">Regularized Linear Regression</a></li>
+  <li><a href="#regularized-logistic-regression">Regularized Logistic Regression</a></li>
 </ul>
 
             </nav>
           </aside>
         
-        <ul>
-  <li><strong>난이도</strong> : Platinum 1</li>
-  <li><strong>출처</strong> : 경기과학고 프로그래밍 대회 2019</li>
+        <div id="toc">
+Contents
+</div>
+<ul id="markdown-toc">
+  <li><a href="#overfitting-issue" id="markdown-toc-overfitting-issue">Overfitting Issue</a></li>
+  <li><a href="#how-to-deal-with" id="markdown-toc-how-to-deal-with">How to deal with?</a></li>
+  <li><a href="#regularization" id="markdown-toc-regularization">Regularization</a></li>
+  <li><a href="#regularized-linear-regression" id="markdown-toc-regularized-linear-regression">Regularized Linear Regression</a></li>
+  <li><a href="#regularized-logistic-regression" id="markdown-toc-regularized-logistic-regression">Regularized Logistic Regression</a></li>
 </ul>
+<hr />
 
-<h2 id="풀이">풀이</h2>
-<p>각 소 $i$ 에 대해, $n!$ 개의 가능한 배치 중 $i$ 가 $j$ 를 볼 수 있는 경우의 수를 센다고 생각하자. 이때 이 값을 $f(i, j)$ 라고 하면, 우리가 구하는 값은 (기댓값의 선형성에 의해) \(\frac{1}{n!}\sum_{i, j} f(i, j)\) 가 될 것이다. 그러나, 구해야 하는 $f(i, j)$ 의 개수가 $O(n^2)$ 개이기 때문에, 이 방법으로는 어려워 보인다.</p>
-
-<p>기준이 되는 한 마리 $i$ 번을 잡자. 이때, $i$ 번이 볼 수 있는 소의 마릿수의 기댓값을 빠르게 구할 수 있다면 전체 문제를 풀 수 있을 것이다. 이를 위해, 다음과 같이 생각하자.</p>
+<h3 id="overfitting-issue">Overfitting Issue</h3>
 <ul>
-  <li>어차피, $i$ 입장에서 자기보다 큰 소는 절대 볼 수 없다. 즉, 볼 수 있는 수는 최대 자기보다 작은 소 $k$ 마리이다.</li>
-  <li>자기보다 크거나 같은 (본인을 포함) 소들 $n-k$ 마리를 먼저 아무렇게나 배치했다고 치자. 이제, 이들 사이사이에 작은 소들을 집어넣는다고 생각할 것이다.</li>
+  <li>Underfitting : 데이터가 Linear하지 않음에도 불구하고, Linear function fitting을 하는 등의 이유로 fitting되지 않는 현상</li>
+  <li>Overfitting : 5개의 데이터를 4차함수로 fitting한다면? 데이터에 대해서는 100%의 정확도를 갖지만, 실제로 좋은 모델링은 아님.</li>
+  <li>이를 High-variance라고 한다. High-order 다항식을 쓸 때의 문제점. 지나치게 많은 자유도의 가설을 허용하여, 별로 좋은 결과가 아니게 됨.</li>
+  <li>Too many features -&gt; Cost function이 매우 작지만 실용적으로 도움이 되지 않는 경우 있음.</li>
+  <li>지나치게 정확한 Fitting 과정 때문에, 파악해야 할 경향성을 놓치는 현상!!</li>
 </ul>
 
-<p>그림으로 생각해 보면, 자기 바로 오른쪽 자리 (본인보다 크거나 같은 소들만을 기준으로) 에 자기보다 작은 소들이 배치된다면 이 소를 볼 수 있고, 그렇지 않다면 볼 수 없다. 즉, $a_1 \dots a_{n-k}$ 까지의 사이사이에 $b_0 \dots b_{n-k}$ 를 배치한다고 할 때, 다음 조건을 만족하며 (소 $k$ 마리를 잘 배치하는 것이므로)
-\(\sum_{t = 0}^{n-k}b_t = k\)
-이때, 우리가 기준으로 하는 $i$ 번 소의 바로 오른쪽인 $b_{i+1}$ 마리의 머리를 볼 수 있으므로, 우리가 알고자 하는 값은 $\mathbb{E}(b_{i+1})$ 이다. 자명하게, 각 $b_t$ 자리에는 전혀 차이가 없으므로, \(\mathbb{E}(b_{i+1}) = \frac{k}{n - k + 1}\)
-따라서, 우리가 구하고자 하는 값은, $i$번 소보다 작은 소의 수를 $k_i$ 라고 할 떄,
-\(\sum_{i = 1}^{n}\frac{k_i}{n - k_i + 1}\) 이다. 여기서 $k_i$ 는 binary search를 이용해서 $O(\log n)$ 시간에 구할 수 있으므로, 전체 풀이는 $O(n \log n)$이고, 모듈러 연산을 해야 하므로 실제로는 나눗셈 한번에 $O(\log p)$ 시간이 걸려 $O(n \log n + n \log p)$ 시간이 된다.</p>
+<h3 id="how-to-deal-with">How to deal with?</h3>
+<ul>
+  <li>Feature개수 줄이기. 이부분은 Manual하게 할 수도 있고, Model selection algorithm을 쓸 수도 있음.
+    <ul>
+      <li>이 과정에서 진짜 필요한 정보를 놓칠 수도 있음. 실제 Feature가 정말 불필요한지 판정하기가 어렵다.</li>
+    </ul>
+  </li>
+  <li>Regularization. Feature는 그대로 들고 가되, magnitude / value of parameter를 줄이는 방법.</li>
+</ul>
 
-<h2 id="code">Code</h2>
+<h3 id="regularization">Regularization</h3>
+<ul>
+  <li>ex) 페널티를 통해 $\theta_3, \theta_4$ 를 작은 값으로 유지하도록 강제하기. \(J_{\text{new}}(\theta) = J(\theta) + 1000\theta_3^2 + 1000\theta_4^2\)</li>
+  <li>결국은 Hypothesis를 더 간단하게 하는 것. Overfitting 문제가 줄어든다.</li>
+  <li>ex) Regularization parameter를 사용하여, tradeoff를 강제하기.
+\(J(\theta) = \frac{1}{2m}\left(\sum_{i = 1}^{m} (h_{\theta}(x_i) - y_i)^2 + \lambda \sum_{i = 1}^{n} \theta_j^2\right)\)</li>
+  <li>$\lambda$가 너무 크면 -&gt; 지나치게 큰 Penalty term 때문에 Underfitting 발생.</li>
+</ul>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;bits/stdc++.h&gt;
-#pragma GCC optimize("O3")
-#pragma GCC optimize("Ofast")
-#pragma GCC target("avx,avx2,fma")
-#define ll long long
-#define int ll
-#define eps 1e-7
-#define all(x) ((x).begin()),((x).end())
-#define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">pii</span> <span class="o">=</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
+<h3 id="regularized-linear-regression">Regularized Linear Regression</h3>
+<p>\(\begin{aligned} \pdv{}{\theta_j}J(\theta) = \frac{1}{m} \sum_{i = 1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x^{(i)}_j + \frac{\lambda}{m}\theta_j \end{aligned}\)</p>
+<ul>
+  <li>편미분식을 잘 보면, 다음과 같은 업데이트가 이루어질 것임을 안다.
+\(\theta_j := \theta_j \left( 1- \alpha \frac{\lambda}{m}\right) - \alpha \frac{1}{m} \sum_{i = 1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x^{(i)}_j\)</li>
+  <li>
+    <p>$\left( 1- \alpha \frac{\lambda}{m}\right)$ 을 매번 곱하는 느낌의 Gradient Descent.</p>
+  </li>
+  <li>Normal equation을 이용해서도 비슷하게 할 수 있다.
+\(\theta = \left(X^T X + \lambda L\right)^{-1} X^T y\)
+이때 $L$ 은, Identity에서 맨 왼쪽 위 항이 0인 matrix이다. <code class="language-plaintext highlighter-rouge">[[0, 0, 0], [0, 1, 0], [0, 0, 1]]</code> 정도 느낌.</li>
+  <li>원래의 Linear regression은 Example보다 Feature가 많으면 Non-invertible하다. 이때, Regularization을 쓰면, $\lambda &gt; 0$일 때, $X^T X + \lambda L$가 반드시 invertible함을 보일 수 있다.</li>
+</ul>
 
-<span class="k">const</span> <span class="kt">int</span> <span class="n">mod</span> <span class="o">=</span> <span class="mi">1000000007</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">ans</span><span class="p">;</span>
-<span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">height</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="nf">modpow</span><span class="p">(</span><span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">e</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(;</span> <span class="n">e</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">b</span> <span class="o">%</span> <span class="n">mod</span><span class="p">,</span> <span class="n">e</span> <span class="o">/=</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">e</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">r</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">b</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">r</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">modmul</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">moddiv</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">ib</span> <span class="o">=</span> <span class="n">modpow</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">mod</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">modmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">ib</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kt">int32_t</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">usecppio</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">h</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">h</span><span class="p">;</span>
-        <span class="n">height</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">h</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="n">sort</span><span class="p">(</span><span class="n">all</span><span class="p">(</span><span class="n">height</span><span class="p">));</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">h</span> <span class="o">:</span> <span class="n">height</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">le</span> <span class="o">=</span> <span class="n">lower_bound</span><span class="p">(</span><span class="n">all</span><span class="p">(</span><span class="n">height</span><span class="p">),</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">height</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-        <span class="n">tmp</span> <span class="o">=</span> <span class="n">modmul</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">le</span><span class="p">);</span>
-        <span class="n">tmp</span> <span class="o">=</span> <span class="n">moddiv</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="n">le</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-        <span class="n">ans</span> <span class="o">+=</span> <span class="n">tmp</span><span class="p">;</span>
-        <span class="n">ans</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span> <span class="o">&lt;&lt;</span> <span class="sc">'\n'</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<h3 id="regularized-logistic-regression">Regularized Logistic Regression</h3>
+<ul>
+  <li>다음과 같은 update를 수행한다.
+\(\theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_{i = 1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x^{(i)}_0\)
+\(\theta_j := \theta_j \left( 1- \alpha \frac{\lambda}{m}\right) - \alpha \frac{1}{m} \sum_{i = 1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x^{(i)}_j\)</li>
+  <li>마찬가지로, 식은 Linear 버전과 똑같이 생겼다. 차이는 $h_\theta$뿐.</li>
+</ul>
 
         
       </section>
@@ -501,15 +485,11 @@
     
       
       
-      <a href="/tags/#boj" class="page__taxonomy-item" rel="tag">boj</a><span class="sep">, </span>
+      <a href="/tags/#logistic-regression" class="page__taxonomy-item" rel="tag">logistic-regression</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#combinatorics" class="page__taxonomy-item" rel="tag">combinatorics</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#%EA%B2%BD%EA%B8%B0%EA%B3%BC%ED%95%99%EA%B3%A0-2019" class="page__taxonomy-item" rel="tag">경기과학고-2019</a>
+      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine-learning</a>
     
     </span>
   </p>
@@ -530,14 +510,14 @@
     
       
       
-      <a href="/categories/#algorithms" class="page__taxonomy-item" rel="tag">algorithms</a>
+      <a href="/categories/#ml-study" class="page__taxonomy-item" rel="tag">ml-study</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-01-08T00:00:00+09:00">January 8, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-02-08T00:00:00+09:00">February 8, 2021</time></p>
 
 
       </footer>
@@ -545,12 +525,11 @@
       
   <nav class="pagination">
     
-      <a href="/jekyll/Hello-Jekyll/" class="pagination--pager" title="Hello, Jekyll!
+      <a href="/ml-study/Coursera-ML-Lec5/" class="pagination--pager" title="Coursera ML, Lecture 5 : Logistic Regression
 ">이전</a>
     
     
-      <a href="/algorithms/Fibonacci-heaps/" class="pagination--pager" title="Fibonacci Heap
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -594,50 +573,6 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/ml-study/Coursera-ML-Lec6/" rel="permalink">Coursera ML, Lecture 6 : Overfitting / Regularization
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <img style="width: 75px;" src="http://hits.dwyl.com/gratus907.github.io/ml-study/Coursera-ML-Lec6/.svg" alt="hit count image"/>
-        <i class="far fa-clock" aria-hidden="true"></i>
-          374 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-Contents
-
-
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/ml-study/Coursera-ML-Lec5/" rel="permalink">Coursera ML, Lecture 5 : Logistic Regression
 </a>
       
@@ -657,7 +592,7 @@ Contents
       <span class="page__meta-readtime">
         <img style="width: 75px;" src="http://hits.dwyl.com/gratus907.github.io/ml-study/Coursera-ML-Lec5/.svg" alt="hit count image"/>
         <i class="far fa-clock" aria-hidden="true"></i>
-          574 words
+          539 words
       </span>
     
   </p>
@@ -701,7 +636,7 @@ Contents
       <span class="page__meta-readtime">
         <img style="width: 75px;" src="http://hits.dwyl.com/gratus907.github.io/ml-study/Coursera-ML-Lec4/.svg" alt="hit count image"/>
         <i class="far fa-clock" aria-hidden="true"></i>
-          190 words
+          168 words
       </span>
     
   </p>
@@ -745,7 +680,51 @@ Contents
       <span class="page__meta-readtime">
         <img style="width: 75px;" src="http://hits.dwyl.com/gratus907.github.io/ml-study/Coursera-ML-Lec3/.svg" alt="hit count image"/>
         <i class="far fa-clock" aria-hidden="true"></i>
-          511 words
+          477 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithms/BOJ4002/" rel="permalink">BOJ 4002, APIO 2012 닌자배치(Dispatching)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <img style="width: 75px;" src="http://hits.dwyl.com/gratus907.github.io/algorithms/BOJ4002/.svg" alt="hit count image"/>
+        <i class="far fa-clock" aria-hidden="true"></i>
+          768 words
       </span>
     
   </p>

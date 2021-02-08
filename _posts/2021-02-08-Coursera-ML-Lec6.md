@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Coursera ML, Lecture 6 : Overfitting Problem / Regularization"
+title: "Coursera ML, Lecture 6 : Overfitting / Regularization"
 categories: ml-study
 tags:
   - machine-learning

@@ -78,3 +78,5 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 | **Multivariable Linear Regression / More on Gradient Descent** | [Link](/ml-study/Coursera-ML-Lec3/) |
 | **Analytic Methods for Linear Regression**                     | [Link](/ml-study/Coursera-ML-Lec4/) |
 | **Logistic Regression**                                        | [Link](/ml-study/Coursera-ML-Lec5/) |
+| **Overfitting / Regularization**                               | [Link](/ml-study/Coursera-ML-Lec6/) |
+| **Neural Networks**                                            | [Link](/ml-study/Coursera-ML-Lec7/) |

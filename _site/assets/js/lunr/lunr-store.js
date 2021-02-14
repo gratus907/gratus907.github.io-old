@@ -136,4 +136,22 @@ var store = [{
         "tags": ["machine-learning","logistic-regression"],
         "url": "http://localhost:4000/ml-study/Coursera-ML-Lec6/",
         "teaser": null
+      },{
+        "title": "BOJ 8904, ICPC Korea 2011 가구 공장",
+        "excerpt":"Contents 풀이 코드 풀이 전형적인 형태의 Maximum Flow 문제로 생각할 수 있다. Source와 사람 을 용량 무한대의 간선으로 잇는다. 사람 은 각 시간에 항상 1만큼씩 일을 할 수 있으므로, 용량 1의 간선으로 사람 $m$개 노드와 시간 노드들을 모두 잇는다. 시간 에는 가구가 1만큼 만들어질 수 있지만, 각 가구는 $[S_i, E_i]$...","categories": ["algorithms"],
+        "tags": ["flow"],
+        "url": "http://localhost:4000/algorithms/BOJ8904/",
+        "teaser": null
+      },{
+        "title": "BOJ 9373, ICPC-BAPC 2013 복도 뚫기(Getting Through)",
+        "excerpt":"Contents 풀이 코드 풀이 반지름 $r_i$인 원을 커버하는 센서 들이 주어진다. 이때 최대한의 반지름 $x$를 가진 원형 로봇을 보내서, 이 센서들에 하나도 걸리지 않고 통과해야 한다. 벽과 각 센서를 모두 정점으로 생각하고, 각 센서들 (벽을 포함) 간의 거리를 길이로 갖는 간선으로 이들 모두를 잇자. 이제, 어떤 경로가 양쪽 벽 정점을...","categories": ["algorithms"],
+        "tags": ["graph","mst"],
+        "url": "http://localhost:4000/algorithms/BOJ9373/",
+        "teaser": null
+      },{
+        "title": "Coursera ML, Lecture 7 : Neural networks",
+        "excerpt":"Contents Motivation Background Neuron Model Motivation Complex, nonlinear hypothesis 많은 수의 polynomial feature을 쓸 수도 있겠지만… 여러 개의 feature를 가진 문제에 적용하기는 어렵다. 100개의 feature가 있다면? 그 이상이라면? 적절한 고차항을 쓰기는 매우 어려운 일. ex) Computer Vision. 이 이미지는 차량인가? Pixel intensity matrix를 보고 원래의 이미지를 인식할 수 있는가? Classification...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/Coursera-ML-Lec7/",
+        "teaser": null
       }]

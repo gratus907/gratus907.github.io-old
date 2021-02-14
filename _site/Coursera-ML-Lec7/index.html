@@ -19,28 +19,32 @@
 
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>알고리즘 문제풀이 포스팅 출처별로 보기 - Gratus907’s Study Note</title>
-<meta name="description" content="Hello World!">
+<!-- begin _includes/seo.html --><title>Coursera ML, Lecture 7 : Neural networks - Gratus907’s Study Note</title>
+<meta name="description" content="Contents">
 
 
   <meta name="author" content="Wonseok Shin">
   
+  <meta property="article:author" content="Wonseok Shin">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Gratus907's Study Note">
-<meta property="og:title" content="알고리즘 문제풀이 포스팅 출처별로 보기">
-<meta property="og:url" content="http://localhost:4000/find-contest/">
+<meta property="og:title" content="Coursera ML, Lecture 7 : Neural networks">
+<meta property="og:url" content="http://localhost:4000/Coursera-ML-Lec7/">
 
 
-  <meta property="og:description" content="Hello World!">
-
-
-
+  <meta property="og:description" content="Contents">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2021-02-12T00:00:00+09:00">
 
 
 
@@ -51,7 +55,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/find-contest/">
+<link rel="canonical" href="http://localhost:4000/Coursera-ML-Lec7/">
 
 
 
@@ -324,7 +328,7 @@
         
         <ul>
           
-            <li><a href="/find-contest/" class="active">문제 출처별로 보기</a></li>
+            <li><a href="/find-contest/">문제 출처별로 보기</a></li>
           
             <li><a href="/sac-class/">solved.ac class</a></li>
           
@@ -350,280 +354,118 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="알고리즘 문제풀이 포스팅 출처별로 보기">
-    
-    
+    <meta itemprop="headline" content="Coursera ML, Lecture 7 : Neural networks">
+    <meta itemprop="description" content="Contents">
+    <meta itemprop="datePublished" content="2021-02-12T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">알고리즘 문제풀이 포스팅 출처별로 보기
+          <h1 id="page-title" class="page__title" itemprop="headline">Coursera ML, Lecture 7 : Neural networks
 </h1>
           
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          243 words
+      </span>
+    
+  </p>
 
 
         </header>
       
-      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/find-contest/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/Coursera-ML-Lec7/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
       <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#motivation">Motivation</a></li>
+  <li><a href="#background">Background</a></li>
+  <li><a href="#neuron-model">Neuron Model</a></li>
+</ul>
+
+            </nav>
+          </aside>
         
         <div id="toc">
 Contents
 </div>
 <ul id="markdown-toc">
-  <li><a href="#icpc" id="markdown-toc-icpc">ICPC</a>    <ul>
-      <li><a href="#benelux-algorithm-programming-contest-bapc" id="markdown-toc-benelux-algorithm-programming-contest-bapc">Benelux Algorithm Programming Contest (BAPC)</a></li>
-      <li><a href="#korea-seoul--daejeon-regional" id="markdown-toc-korea-seoul--daejeon-regional">Korea (Seoul / Daejeon) Regional</a>        <ul>
-          <li><a href="#2011" id="markdown-toc-2011">2011</a></li>
-          <li><a href="#2020" id="markdown-toc-2020">2020</a></li>
+  <li><a href="#motivation" id="markdown-toc-motivation">Motivation</a></li>
+  <li><a href="#background" id="markdown-toc-background">Background</a></li>
+  <li><a href="#neuron-model" id="markdown-toc-neuron-model">Neuron Model</a></li>
+</ul>
+<hr />
+
+<h3 id="motivation">Motivation</h3>
+<ul>
+  <li>Complex, nonlinear hypothesis
+    <ul>
+      <li>많은 수의 polynomial feature을 쓸 수도 있겠지만… 여러 개의 feature를 가진 문제에 적용하기는 어렵다.</li>
+      <li>100개의 feature가 있다면? 그 이상이라면? 적절한 고차항을 쓰기는 매우 어려운 일.</li>
+    </ul>
+  </li>
+  <li>ex) Computer Vision. <strong>이 이미지는 차량인가?</strong>
+    <ul>
+      <li>Pixel intensity matrix를 보고 원래의 이미지를 인식할 수 있는가?</li>
+      <li>Classification problem.</li>
+      <li>Feature size = 픽셀의 수 (x3 if RGB)
+        <ul>
+          <li>이렇게 많은 feature로는 logistic regression같은 알고리즘을 쓸 수가 없다.</li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><a href="#high-school-contests" id="markdown-toc-high-school-contests">High School Contests</a>    <ul>
-      <li><a href="#경기과학고" id="markdown-toc-경기과학고">경기과학고</a>        <ul>
-          <li><a href="#2019" id="markdown-toc-2019">2019</a></li>
-        </ul>
-      </li>
+  <li>Goal : Algorithm that mimics brain.</li>
+</ul>
+
+<h3 id="background">Background</h3>
+<ul>
+  <li>80년대-90년대 초에 크게 유행했으나, 90년대 말에는 별로..</li>
+  <li>Computationally expensive.</li>
+  <li>현대에는 이정도 자원은 사용할 만 하다 =&gt; STATE OF THE ART</li>
+  <li>뇌는 수많은 기능을 처리한다 -&gt; 이 많은 기능 (언어, 시각, 청각…) 을 각각 구현해야 하는가?</li>
+  <li>NO. <code class="language-plaintext highlighter-rouge">ONE LEARNING ALGORITHM HYPOTHESIS</code>에 의하면, 실제로 뇌에서 작동하는 것은 단 하나의 학습 알고리즘.
+    <ul>
+      <li>청각 관련 기능을 끊고 시각 관련 부분에 이를 연결하면, 뇌가 알아서 잘 매핑해서 작동하더라.</li>
+      <li>Brain rewiring experiment</li>
+      <li>뇌에 다른 센서도 잘 연결하면 (direction 등) 대략 잘 작동하더라.</li>
+      <li>아마도 각각의 기능은 별개의 sw가 아닐것이다.</li>
     </ul>
   </li>
-  <li><a href="#olympiads" id="markdown-toc-olympiads">Olympiads</a>    <ul>
-      <li><a href="#asia-pacific-informatics-olympiad" id="markdown-toc-asia-pacific-informatics-olympiad">Asia-Pacific Informatics Olympiad</a></li>
-      <li><a href="#singapore-national-oi" id="markdown-toc-singapore-national-oi">Singapore National OI</a></li>
-      <li><a href="#korea-olympiad-of-informatics" id="markdown-toc-korea-olympiad-of-informatics">Korea Olympiad of Informatics</a></li>
-    </ul>
-  </li>
-  <li><a href="#various-contests" id="markdown-toc-various-contests">Various Contests</a>    <ul>
-      <li><a href="#ucpc" id="markdown-toc-ucpc">UCPC</a>        <ul>
-          <li><a href="#2019-인터넷예선" id="markdown-toc-2019-인터넷예선">2019 인터넷예선</a></li>
-        </ul>
-      </li>
-      <li><a href="#petrozavodsk-camp" id="markdown-toc-petrozavodsk-camp">Petrozavodsk Camp</a>        <ul>
-          <li><a href="#2019-summer" id="markdown-toc-2019-summer">2019 Summer</a></li>
-        </ul>
-      </li>
+  <li>Neuron : 신경계를 구성하는 기본 세포.
+    <ul>
+      <li>Inputs (Dendrites)</li>
+      <li>Outputs (Axons)</li>
+      <li>I/O를 가진 기본적인 계산 단위처럼 생각할 수 있다.</li>
     </ul>
   </li>
 </ul>
 
-<p>Jekyll 블로그를 만들기로 한 가장 큰 이유는 이렇게 생긴 페이지가 만들고 싶어서였습니다 :)<br />
-막상 보니 깎아야 할 CSS가 너무 많네요..</p>
-
-<h2 id="icpc">ICPC</h2>
-<h3 id="benelux-algorithm-programming-contest-bapc">Benelux Algorithm Programming Contest (BAPC)</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>번호</th>
-      <th>난이도</th>
-      <th>문제</th>
-      <th>포스팅 링크</th>
-      <th>문제 링크</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>2013-G</strong></td>
-      <td>Platinum 3</td>
-      <td>Getting Through(복도 뚫기)</td>
-      <td><a href="/algorithms/BOJ9373/">링크</a></td>
-      <td><a href="https://www.acmicpc.net/problem/9373">문제 링크 (BOJ)</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="korea-seoul--daejeon-regional">Korea (Seoul / Daejeon) Regional</h3>
-<h4 id="2011">2011</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>번호</th>
-      <th>난이도</th>
-      <th>문제</th>
-      <th>포스팅 링크</th>
-      <th>문제 링크</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>E</strong></td>
-      <td>Platinum 2</td>
-      <td>Furniture Factory(가구 공장)</td>
-      <td><a href="/algorithms/BOJ8904/">링크</a></td>
-      <td><a href="https://www.acmicpc.net/problem/8904">문제 링크 (BOJ)</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="2020">2020</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>번호</th>
-      <th>난이도</th>
-      <th>문제</th>
-      <th>포스팅 링크</th>
-      <th>문제 링크</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>H</strong></td>
-      <td>Platinum 1</td>
-      <td>Needle</td>
-      <td><a href="/algorithms/BOJ20176/">링크</a></td>
-      <td><a href="https://www.acmicpc.net/problem/20176">문제 링크 (BOJ)</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="high-school-contests">High School Contests</h2>
-<h3 id="경기과학고">경기과학고</h3>
-<h4 id="2019">2019</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>번호</th>
-      <th>난이도</th>
-      <th>문제</th>
-      <th>포스팅 링크</th>
-      <th>문제 링크</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>J</strong></td>
-      <td>Platinum 1</td>
-      <td>Bad Hair Day와 기댓값</td>
-      <td><a href="/algorithms/BOJ18194/">링크</a></td>
-      <td><a href="https://www.acmicpc.net/problem/18194">문제 링크 (BOJ)</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="olympiads">Olympiads</h2>
-<h3 id="asia-pacific-informatics-olympiad">Asia-Pacific Informatics Olympiad</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>번호</th>
-      <th>난이도</th>
-      <th>문제</th>
-      <th>포스팅 링크</th>
-      <th>문제 링크</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>2012-1</strong></td>
-      <td>Diamond 5</td>
-      <td>Dispatching</td>
-      <td><a href="/algorithms/BOJ4002/">링크</a></td>
-      <td><a href="https://www.acmicpc.net/problem/4002">문제 링크 (BOJ)</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="singapore-national-oi">Singapore National OI</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>번호</th>
-      <th>난이도</th>
-      <th>문제</th>
-      <th>포스팅 링크</th>
-      <th>문제 링크</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>2018-5</strong></td>
-      <td>Diamond 4</td>
-      <td>Safety</td>
-      <td><a href="/algorithms/BOJ19693/">링크</a></td>
-      <td><a href="https://www.acmicpc.net/problem/19693">문제 링크 (BOJ)</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="korea-olympiad-of-informatics">Korea Olympiad of Informatics</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>번호</th>
-      <th>난이도</th>
-      <th>문제</th>
-      <th>포스팅 링크</th>
-      <th>문제 링크</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>2018-3</strong></td>
-      <td>Diamond 4</td>
-      <td>조화로운 행렬</td>
-      <td><a href="/algorithms/BOJ15977/">링크</a></td>
-      <td><a href="https://www.acmicpc.net/problem/15977">문제 링크 (BOJ)</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="various-contests">Various Contests</h2>
-<h3 id="ucpc">UCPC</h3>
-<h4 id="2019-인터넷예선">2019 인터넷예선</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>번호</th>
-      <th>난이도</th>
-      <th>문제</th>
-      <th>포스팅 링크</th>
-      <th>문제 링크</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>J</strong></td>
-      <td>Gold 2</td>
-      <td>이사</td>
-      <td><a href="/algorithms/BOJ17371/">링크</a></td>
-      <td><a href="https://www.acmicpc.net/problem/17371">문제 링크 (BOJ)</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="petrozavodsk-camp">Petrozavodsk Camp</h3>
-<h4 id="2019-summer">2019 Summer</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>번호</th>
-      <th>난이도</th>
-      <th>문제</th>
-      <th>포스팅 링크</th>
-      <th>문제 링크</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Day3-C</strong></td>
-      <td>Platinum 1</td>
-      <td>Valentine’s Day</td>
-      <td><a href="/algorithms/BOJ18600/">링크</a></td>
-      <td><a href="https://www.acmicpc.net/problem/18600">문제 링크 (BOJ)</a></td>
-    </tr>
-  </tbody>
-</table>
+<h3 id="neuron-model">Neuron Model</h3>
+<ul>
+  <li>Logistic Unit : $x_1, x_2, x_3$ 을 입력받아서 $h_\theta(x)$를 compute하는 neuron을 생각.</li>
+  <li>Layer structure (Neural Network) : Neuron들의 output을 다시 받아서 새로운 값을 계산하는 neuron간의 layer를 쌓는 느낌.</li>
+  <li>Layer 1 (Input Layer) - 맨 끝 (Output Layer) 사이에 Hidden layer들이 위치하는 구조.</li>
+  <li>Bias unit 같은 추가 테크닉들 사용.</li>
+  <li>$a_i^{(j)}$ : “Activation” of unit $i$ in layer $j$</li>
+  <li>$\Theta^(j)$ : Matrix of weights, 다음 layer로 넘어가는 값들.  <br />
+<img src="../../images/604f33448a52a8789feb7a13bf3141a4fad0ac1759963e4497c23feeffe8c7f4.png" alt="picture 1" /></li>
+</ul>
 
         
       </section>
@@ -634,15 +476,227 @@ Contents
 
 
         
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-02-12T00:00:00+09:00">February 12, 2021</time></p>
+
 
       </footer>
 
       
+  <nav class="pagination">
+    
+      <a href="/algorithms/BOJ9373/" class="pagination--pager" title="BOJ 9373, ICPC-BAPC 2013 복도 뚫기(Getting Through)
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
     </div>
+    
+      <div id="disqus_thread"></div>
+      <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+        var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://gratus907-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
     
   </article>
 
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithms/BOJ9373/" rel="permalink">BOJ 9373, ICPC-BAPC 2013 복도 뚫기(Getting Through)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          463 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithms/BOJ8904/" rel="permalink">BOJ 8904, ICPC Korea 2011 가구 공장
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          663 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ml-study/Coursera-ML-Lec6/" rel="permalink">Coursera ML, Lecture 6 : Overfitting / Regularization
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          352 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ml-study/Coursera-ML-Lec5/" rel="permalink">Coursera ML, Lecture 5 : Logistic Regression
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          539 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
   
   
 </div>

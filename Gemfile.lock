@@ -269,8 +269,9 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll (~> 3.9)
   jekyll-include-cache
   jekyll-toc
 
 BUNDLED WITH
-   2.2.4
+   2.2.9

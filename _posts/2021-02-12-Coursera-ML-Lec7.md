@@ -1,9 +1,10 @@
 ---
 layout: single
 title: "Coursera ML, Lecture 7 : Neural networks"
-categories: 
+categories: ml-study
 tags:
-  - 
+  - machine-learning
+  - neural-networks
 sidebar:
   nav: "sidepost"
 comment: true
@@ -51,3 +52,8 @@ Contents
 - $a_i^{(j)}$ : "Activation" of unit $i$ in layer $j$ 
 - $\Theta^(j)$ : Matrix of weights, 다음 layer로 넘어가는 값들.  <br/>
   ![picture 1](../../images/604f33448a52a8789feb7a13bf3141a4fad0ac1759963e4497c23feeffe8c7f4.png)  
+- Forward Propagation은 Vectorize를 통해 비교적 효율적으로 연산 가능하다.
+- 이 방법이 왜 좋은가?
+  - 맨 끝 Layer (Output Layer) 는 일종의 Logistic regression
+  - 그 이전의 Hidden layer는 그 자체가 Learning된 결과물. 즉, feature 자체가 학습을 통해 발전한다.
+  - Flexible한 방법.

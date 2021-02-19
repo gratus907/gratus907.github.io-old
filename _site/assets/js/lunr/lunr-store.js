@@ -150,8 +150,14 @@ var store = [{
         "teaser": null
       },{
         "title": "Coursera ML, Lecture 7 : Neural networks",
-        "excerpt":"Contents Motivation Background Neuron Model Motivation Complex, nonlinear hypothesis 많은 수의 polynomial feature을 쓸 수도 있겠지만… 여러 개의 feature를 가진 문제에 적용하기는 어렵다. 100개의 feature가 있다면? 그 이상이라면? 적절한 고차항을 쓰기는 매우 어려운 일. ex) Computer Vision. 이 이미지는 차량인가? Pixel intensity matrix를 보고 원래의 이미지를 인식할 수 있는가? Classification...","categories": [],
-        "tags": [],
-        "url": "http://localhost:4000/Coursera-ML-Lec7/",
+        "excerpt":"Contents Motivation Background Neuron Model Motivation Complex, nonlinear hypothesis 많은 수의 polynomial feature을 쓸 수도 있겠지만… 여러 개의 feature를 가진 문제에 적용하기는 어렵다. 100개의 feature가 있다면? 그 이상이라면? 적절한 고차항을 쓰기는 매우 어려운 일. ex) Computer Vision. 이 이미지는 차량인가? Pixel intensity matrix를 보고 원래의 이미지를 인식할 수 있는가? Classification...","categories": ["ml-study"],
+        "tags": ["machine-learning","neural-networks"],
+        "url": "http://localhost:4000/ml-study/Coursera-ML-Lec7/",
+        "teaser": null
+      },{
+        "title": "Coursera ML, Lecture 8 : Neural Network Application",
+        "excerpt":"Contents 예시 : XOR / XNOR Classification Multiclass Classification 예시 : XOR / XNOR Classification XOR (0, 0 / 1, 1) 과 XNOR (1, 0 / 0, 1)로 구분하는 classification 문제. 먼저, AND를 $(x_1, x_2)$ 를 받아서 값을 출력하는 네트워크로 표현하자. 적당히 Logistic classification하면 잘 돌아간다. $g(20 x_1 + 20...","categories": ["ml-study"],
+        "tags": ["machine-learning","neural-networks"],
+        "url": "http://localhost:4000/ml-study/Coursera-ML-Lec8/",
         "teaser": null
       }]

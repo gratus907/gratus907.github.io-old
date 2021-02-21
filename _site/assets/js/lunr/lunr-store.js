@@ -160,4 +160,16 @@ var store = [{
         "tags": ["machine-learning","neural-networks"],
         "url": "http://localhost:4000/ml-study/Coursera-ML-Lec8/",
         "teaser": null
+      },{
+        "title": "BOJ 15907, Shake 2018 Acka의 리듬 세상",
+        "excerpt":"Contents 풀이 코드 풀이 문제를 간단히 요약하면, 자연수들이 주어질 때 $f(k, I)$ 를 $k$로 나눈 나머지가 $I$인 수들로 정의한다. 이때 이 값을 최대한 크게 하는 문제이다. 단순하게 접근한다면 한 $(k, I)$ 값이 주어졌을 때 $O(n)$에 $f$값을 계산해 볼 수 있지만, 어차피 계속 $k$로 나눈 모듈러값을 쓸 것이므로 잘 계산하면 $O(n)$에...","categories": ["algorithms"],
+        "tags": ["number-theory","algorithms"],
+        "url": "http://localhost:4000/algorithms/BOJ15907/",
+        "teaser": null
+      },{
+        "title": "BOJ 16532, ICPC Latin 2018 Looking for the Risk Factor",
+        "excerpt":"Contents 풀이 코드 풀이 문제를 요약하자면, 매 쿼리 $(x, y)$ 마다, 2부터 $x$까지의 수 중 소인수가 모두 $y$ 이하인 수의 개수를 세는 문제이다. 두가지 서로 다른 웰노운 문제를 잘 해결할 수 있다면 합쳐서 어렵지 않게 해결할 수 있다. 에라토스테네스의 체를 살짝 응용하면, 2부터 $M$ 까지의 주어진 수들에 대해서 가장 큰...","categories": ["algorithms"],
+        "tags": ["number-theory","data-structures","merge-sort-tree","algorithms"],
+        "url": "http://localhost:4000/algorithms/BOJ16532/",
+        "teaser": null
       }]

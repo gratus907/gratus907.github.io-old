@@ -19,7 +19,7 @@
 
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Coursera ML, Lecture 7 : Neural networks - Gratus907’s Study Note</title>
+<!-- begin _includes/seo.html --><title>BOJ 15907, Shake 2018 Acka의 리듬 세상 - Gratus907’s Study Note</title>
 <meta name="description" content="Contents">
 
 
@@ -32,8 +32,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Gratus907's Study Note">
-<meta property="og:title" content="Coursera ML, Lecture 7 : Neural networks">
-<meta property="og:url" content="http://localhost:4000/ml-study/Coursera-ML-Lec7/">
+<meta property="og:title" content="BOJ 15907, Shake 2018 Acka의 리듬 세상">
+<meta property="og:url" content="http://localhost:4000/algorithms/BOJ15907/">
 
 
   <meta property="og:description" content="Contents">
@@ -44,7 +44,7 @@
 
 
 
-  <meta property="article:published_time" content="2021-02-12T00:00:00+09:00">
+  <meta property="article:published_time" content="2021-02-21T00:00:00+09:00">
 
 
 
@@ -55,7 +55,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/ml-study/Coursera-ML-Lec7/">
+<link rel="canonical" href="http://localhost:4000/algorithms/BOJ15907/">
 
 
 
@@ -354,15 +354,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Coursera ML, Lecture 7 : Neural networks">
+    <meta itemprop="headline" content="BOJ 15907, Shake 2018 Acka의 리듬 세상">
     <meta itemprop="description" content="Contents">
-    <meta itemprop="datePublished" content="2021-02-12T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2021-02-21T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Coursera ML, Lecture 7 : Neural networks
+          <h1 id="page-title" class="page__title" itemprop="headline">BOJ 15907, Shake 2018 Acka의 리듬 세상
 </h1>
           
 
@@ -378,7 +378,7 @@
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          280 words
+          333 words
       </span>
     
   </p>
@@ -386,16 +386,15 @@
 
         </header>
       
-      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/ml-study/Coursera-ML-Lec7/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/algorithms/BOJ15907/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
       <section class="page__content" itemprop="text">
         
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
               <ul class="toc__menu">
-  <li><a href="#motivation">Motivation</a></li>
-  <li><a href="#background">Background</a></li>
-  <li><a href="#neuron-model">Neuron Model</a></li>
+  <li><a href="#풀이">풀이</a></li>
+  <li><a href="#코드">코드</a></li>
 </ul>
 
             </nav>
@@ -405,75 +404,65 @@
 Contents
 </div>
 <ul id="markdown-toc">
-  <li><a href="#motivation" id="markdown-toc-motivation">Motivation</a></li>
-  <li><a href="#background" id="markdown-toc-background">Background</a></li>
-  <li><a href="#neuron-model" id="markdown-toc-neuron-model">Neuron Model</a></li>
+  <li><a href="#풀이" id="markdown-toc-풀이">풀이</a></li>
+  <li><a href="#코드" id="markdown-toc-코드">코드</a></li>
 </ul>
 <hr />
 
-<h3 id="motivation">Motivation</h3>
-<ul>
-  <li>Complex, nonlinear hypothesis
-    <ul>
-      <li>많은 수의 polynomial feature을 쓸 수도 있겠지만… 여러 개의 feature를 가진 문제에 적용하기는 어렵다.</li>
-      <li>100개의 feature가 있다면? 그 이상이라면? 적절한 고차항을 쓰기는 매우 어려운 일.</li>
-    </ul>
-  </li>
-  <li>ex) Computer Vision. <strong>이 이미지는 차량인가?</strong>
-    <ul>
-      <li>Pixel intensity matrix를 보고 원래의 이미지를 인식할 수 있는가?</li>
-      <li>Classification problem.</li>
-      <li>Feature size = 픽셀의 수 (x3 if RGB)
-        <ul>
-          <li>이렇게 많은 feature로는 logistic regression같은 알고리즘을 쓸 수가 없다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>Goal : Algorithm that mimics brain.</li>
-</ul>
+<h2 id="풀이">풀이</h2>
+<p>문제를 간단히 요약하면, 자연수들이 주어질 때 $f(k, I)$ 를 $k$로 나눈 나머지가 $I$인 수들로 정의한다. 이때 이 값을 최대한 크게 하는 문제이다.</p>
 
-<h3 id="background">Background</h3>
-<ul>
-  <li>80년대-90년대 초에 크게 유행했으나, 90년대 말에는 별로..</li>
-  <li>Computationally expensive.</li>
-  <li>현대에는 이정도 자원은 사용할 만 하다 =&gt; STATE OF THE ART</li>
-  <li>뇌는 수많은 기능을 처리한다 -&gt; 이 많은 기능 (언어, 시각, 청각…) 을 각각 구현해야 하는가?</li>
-  <li>NO. <code class="language-plaintext highlighter-rouge">ONE LEARNING ALGORITHM HYPOTHESIS</code>에 의하면, 실제로 뇌에서 작동하는 것은 단 하나의 학습 알고리즘.
-    <ul>
-      <li>청각 관련 기능을 끊고 시각 관련 부분에 이를 연결하면, 뇌가 알아서 잘 매핑해서 작동하더라.</li>
-      <li>Brain rewiring experiment</li>
-      <li>뇌에 다른 센서도 잘 연결하면 (direction 등) 대략 잘 작동하더라.</li>
-      <li>아마도 각각의 기능은 별개의 sw가 아닐것이다.</li>
-    </ul>
-  </li>
-  <li>Neuron : 신경계를 구성하는 기본 세포.
-    <ul>
-      <li>Inputs (Dendrites)</li>
-      <li>Outputs (Axons)</li>
-      <li>I/O를 가진 기본적인 계산 단위처럼 생각할 수 있다.</li>
-    </ul>
-  </li>
-</ul>
+<p>단순하게 접근한다면 한 $(k, I)$ 값이 주어졌을 때 $O(n)$에 $f$값을 계산해 볼 수 있지만, 어차피 계속 $k$로 나눈 모듈러값을 쓸 것이므로 잘 계산하면 $O(n)$에 $k$ 하나와 해당하는 모든 $I$값에 대해 함수값을 동시에 계산할 수 있다. 이렇게 계산하면 시간 복잡도는 $O(mn)$ ($m$은 최대 범위) 인데, 이는 아직 시간 초과를 피하기 힘들다.</p>
 
-<h3 id="neuron-model">Neuron Model</h3>
-<ul>
-  <li>Logistic Unit : $x_1, x_2, x_3$ 을 입력받아서 $h_\theta(x)$를 compute하는 neuron을 생각.</li>
-  <li>Layer structure (Neural Network) : Neuron들의 output을 다시 받아서 새로운 값을 계산하는 neuron간의 layer를 쌓는 느낌.</li>
-  <li>Layer 1 (Input Layer) - 맨 끝 (Output Layer) 사이에 Hidden layer들이 위치하는 구조.</li>
-  <li>Bias unit 같은 추가 테크닉들 사용.</li>
-  <li>$a_i^{(j)}$ : “Activation” of unit $i$ in layer $j$</li>
-  <li>$\Theta^(j)$ : Matrix of weights, 다음 layer로 넘어가는 값들.  <br />
-<img src="../../images/604f33448a52a8789feb7a13bf3141a4fad0ac1759963e4497c23feeffe8c7f4.png" alt="picture 1" /></li>
-  <li>Forward Propagation은 Vectorize를 통해 비교적 효율적으로 연산 가능하다.</li>
-  <li>이 방법이 왜 좋은가?
-    <ul>
-      <li>맨 끝 Layer (Output Layer) 는 일종의 Logistic regression</li>
-      <li>그 이전의 Hidden layer는 그 자체가 Learning된 결과물. 즉, feature 자체가 학습을 통해 발전한다.</li>
-      <li>Flexible한 방법.</li>
-    </ul>
-  </li>
-</ul>
+<p>여기서 비둘기집의 원리를 이용한 최적화를 하는데, $k = 2$인 경우를 생각해 보면, $f(2, 0)$은 주어진 수 중 짝수의 개수, $f(2, 1)$은 홀수의 개수이므로 둘 중 하나는 반드시 $n / 2$ 를 넘게 된다. 따라서, 답의 하한이 $n / 2$임을 알 수 있다.</p>
+
+<p>모든 수가 <strong>다르다</strong> 는 것에 주목하자. $f(k, I)$값이 크려면, $I, k + I, 2k + I, \dots$ 형태의 수들이 많아야 한다. 그런데 만약 $k &gt; 2m / n$ 이면, 모든 수가 $m$ 이하이므로, 이 수들이 $n / 2$ 개 이상 될 수 없다. 따라서 $k$의 값을 $2m / n$ 까지만 보면 충분하고, 이렇게 계산하면 시간 복잡도는 $O(m)$ 이 된다.</p>
+
+<p>$O(n)$에 모든 $I$값에 대해 한번에 계산하는 부분이 조금 어려워서 (memset을 매번 하면 시간이 꼬였었다) 고민을 많이 하다가 따로 풀이를 듣고 알았다. :( 상당히 clever하다는 생각이 들었다.</p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;bits/stdc++.h&gt;
+#define ll long long
+#define eps 1e-7
+#define all(x) ((x).begin()),((x).end())
+#define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">pii</span> <span class="o">=</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="mf">2e6</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1010</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">rem</span><span class="p">[</span><span class="mi">2020202</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">vst</span><span class="p">[</span><span class="mi">2020202</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">chk</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="n">c</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">vst</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">!=</span> <span class="n">c</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">vst</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+            <span class="n">rem</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+            <span class="n">rem</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">rem</span><span class="p">[</span><span class="n">r</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int32_t</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">usecppio</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">mv</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">m</span> <span class="o">/</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">mv</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">chk</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span> <span class="o">&lt;&lt;</span> <span class="sc">'\n'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
         
       </section>
@@ -494,11 +483,11 @@ Contents
     
       
       
-      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine-learning</a><span class="sep">, </span>
+      <a href="/tags/#algorithms" class="page__taxonomy-item" rel="tag">algorithms</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#neural-networks" class="page__taxonomy-item" rel="tag">neural-networks</a>
+      <a href="/tags/#number-theory" class="page__taxonomy-item" rel="tag">number-theory</a>
     
     </span>
   </p>
@@ -519,14 +508,14 @@ Contents
     
       
       
-      <a href="/categories/#ml-study" class="page__taxonomy-item" rel="tag">ml-study</a>
+      <a href="/categories/#algorithms" class="page__taxonomy-item" rel="tag">algorithms</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-02-12T00:00:00+09:00">February 12, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-02-21T00:00:00+09:00">February 21, 2021</time></p>
 
 
       </footer>
@@ -534,11 +523,11 @@ Contents
       
   <nav class="pagination">
     
-      <a href="/algorithms/BOJ9373/" class="pagination--pager" title="BOJ 9373, ICPC-BAPC 2013 복도 뚫기(Getting Through)
+      <a href="/ml-study/Coursera-ML-Lec8/" class="pagination--pager" title="Coursera ML, Lecture 8 : Neural Network Application
 ">이전</a>
     
     
-      <a href="/ml-study/Coursera-ML-Lec8/" class="pagination--pager" title="Coursera ML, Lecture 8 : Neural Network Application
+      <a href="/algorithms/BOJ16532/" class="pagination--pager" title="BOJ 16532, ICPC Latin 2018 Looking for the Risk Factor
 ">다음</a>
     
   </nav>
@@ -626,7 +615,7 @@ Contents
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/algorithms/BOJ15907/" rel="permalink">BOJ 15907, Shake 2018 Acka의 리듬 세상
+        <a href="/ml-study/Coursera-ML-Lec8/" rel="permalink">Coursera ML, Lecture 8 : Neural Network Application
 </a>
       
     </h2>
@@ -644,7 +633,7 @@ Contents
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          298 words
+          176 words
       </span>
     
   </p>
@@ -669,7 +658,7 @@ Contents
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/ml-study/Coursera-ML-Lec8/" rel="permalink">Coursera ML, Lecture 8 : Neural Network Application
+        <a href="/ml-study/Coursera-ML-Lec7/" rel="permalink">Coursera ML, Lecture 7 : Neural networks
 </a>
       
     </h2>
@@ -687,7 +676,7 @@ Contents
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          186 words
+          280 words
       </span>
     
   </p>

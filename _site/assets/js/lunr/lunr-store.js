@@ -172,4 +172,16 @@ var store = [{
         "tags": ["number-theory","data-structures","merge-sort-tree","algorithms"],
         "url": "http://localhost:4000/algorithms/BOJ16532/",
         "teaser": null
+      },{
+        "title": "Google Hash Code 2021 : Global #211 (2%) 후기",
+        "excerpt":"이 글은 올해 해시코드 대회 과정에 대한 후기이고, 준비 과정은 앞 글(링크)에 있습니다. Contents 결과 문제 설명 데이터 설명 대회 전략의 실패 Algorithm : Demand - Proportional - Scheduling Fine Tuning 결과 / Discussion 앞으로를 위해 결과 A - An Example 2,000 B - By the Ocean 4,566,842 C -...","categories": [],
+        "tags": ["algorithms","competition"],
+        "url": "http://localhost:4000/Hashcode-2021-prelim/",
+        "teaser": null
+      },{
+        "title": "Google Hash Code 2021 : Team Little Piplup 준비과정",
+        "excerpt":"이 글은 올해 해시코드를 준비하는 과정 등에 대한 이야기이고, 해시코드 2021에 Specific한 (문제 등) 은 다음 글(링크에서 다룹니다. 내년에 해시코드를 준비하려는 분들이 읽었을때 재밌게 쓰고 싶었는데 어떤지 모르겠네요. :( Contents Google Hashcode Team Little Piplup Preperation 전략 작년 팀연습들 팀연습 : 2020 Hashcode WF Google Hashcode Google Hashcode는 구글에서 개최하는...","categories": [],
+        "tags": ["algorithms","competition"],
+        "url": "http://localhost:4000/Hashcode-2021-prep/",
+        "teaser": null
       }]

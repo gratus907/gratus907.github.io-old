@@ -141,3 +141,7 @@ p>code:before, p>code:after, a>code:before, a>code:after, li>code:before, li>cod
     letter-spacing: -0.45em;
     content: "\00a0";
 }
+
+.sidebar {
+    width: calc(250px - 1em);
+}

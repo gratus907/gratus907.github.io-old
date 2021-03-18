@@ -69,9 +69,10 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 
 #### Algorithms used in CP
 
-| Topic                               | Link                            |
-|:------------------------------------|:--------------------------------|
-| **Divide and conquer optimization** | [Link](/algorithms/DP-DnC-Opt/) |
+| Topic                               | Link                              |
+|:------------------------------------|:----------------------------------|
+| **Divide and conquer optimization** | [Link](/algorithms/DP-DnC-Opt/)   |
+| **Pollard's Rho Algorithm**         | [Link](/algorithms/Pollards-Rho/) |
 
 
 ### Machine Learning

@@ -190,4 +190,10 @@ var store = [{
         "tags": ["number-theory"],
         "url": "http://localhost:4000/mathematics/Number-Theory-Lec3/",
         "teaser": null
+      },{
+        "title": "폴라드-로 소인수분해 알고리즘",
+        "excerpt":"Contents Motivation 생일 문제 (Birthday Problem) 가정 Algorithm 예시 구현 시간 복잡도 Motivation 소인수분해는 매우 어려운 과정이다. 실제로 소인수분해는 (입력 비트 수에 대해) 다항 시간에 결정론적으로 풀 수 있는 방법이 알려져 있지 않다. 그러나, 약간의 랜덤성 (확률에 대한 의존) 을 허용한다면 상당히 clever한 알고리즘을 통해 빠르게 소인수분해를 할 수 있는데,...","categories": ["algorithms"],
+        "tags": ["number-theory","algorithms"],
+        "url": "http://localhost:4000/algorithms/Pollards-Rho/",
+        "teaser": null
       }]

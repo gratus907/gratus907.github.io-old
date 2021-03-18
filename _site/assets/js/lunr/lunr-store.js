@@ -184,4 +184,10 @@ var store = [{
         "tags": ["algorithms","competition"],
         "url": "http://localhost:4000/Hashcode-2021-prep/",
         "teaser": null
+      },{
+        "title": "정수론 : 2장 1절 Congruences",
+        "excerpt":"Contents Congruence Congruence $a, b, m \\in \\Z$, $m \\neq 0$에 대해, $a \\equiv b \\mod m \\iff m \\di (a - b)$. 이때, $a$를 $m$으로 나눈 나머지를 $[a]_m$으로 나타낸다. 이 Congruence relation은 equivalence이다. 덧셈, 뺄셈, 곱셈은 잘 보존된다. 즉, $a \\equiv b, c \\equiv d$이면 $a + b \\equiv...","categories": ["mathematics"],
+        "tags": ["number-theory"],
+        "url": "http://localhost:4000/mathematics/Number-Theory-Lec3/",
+        "teaser": null
       }]

@@ -1,9 +1,10 @@
 ---
 title: "About me"
 layout: single
-permalink: /about-me/
+permalink: /about-me/eng/
 author_profile: true
 ---
+[한국어로 보기 In Korean : Link](/about-me/)
 ## Profile
 - Name : Wonseok Shin
 - Current : Undergraduate student, Seoul National University

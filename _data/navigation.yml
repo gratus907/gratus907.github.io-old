@@ -15,7 +15,7 @@ sidepost:
       - title: "Coursera ML Note (2021 Feb)"
         url: /study-note/#coursera-ml-andrew-ng 
       - title: "SNU Discrete Mathematics (2021 Spring)"
-        url: /study-note/snu/#discrete-math
+        url: /study-note/snu/#이산수학-2021-spring
   - title: "Algorithm Problem Solving"
     url : /categories/#algorithms
     children:

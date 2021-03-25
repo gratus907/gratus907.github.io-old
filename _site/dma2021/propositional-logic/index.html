@@ -19,7 +19,7 @@
 
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Coursera ML, Lecture 6 : Overfitting / Regularization - Gratus907’s Study Note</title>
+<!-- begin _includes/seo.html --><title>이산수학 주제 1 : Propositional Logic - Gratus907’s Study Note</title>
 <meta name="description" content="Contents">
 
 
@@ -32,8 +32,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Gratus907's Study Note">
-<meta property="og:title" content="Coursera ML, Lecture 6 : Overfitting / Regularization">
-<meta property="og:url" content="http://localhost:4000/ml-study/Coursera-ML-Lec6/">
+<meta property="og:title" content="이산수학 주제 1 : Propositional Logic">
+<meta property="og:url" content="http://localhost:4000/dma2021/propositional-logic/">
 
 
   <meta property="og:description" content="Contents">
@@ -44,7 +44,7 @@
 
 
 
-  <meta property="article:published_time" content="2021-02-08T00:00:00+09:00">
+  <meta property="article:published_time" content="2021-03-23T00:00:00+09:00">
 
 
 
@@ -55,7 +55,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/ml-study/Coursera-ML-Lec6/">
+<link rel="canonical" href="http://localhost:4000/dma2021/propositional-logic/">
 
 
 
@@ -358,15 +358,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Coursera ML, Lecture 6 : Overfitting / Regularization">
+    <meta itemprop="headline" content="이산수학 주제 1 : Propositional Logic">
     <meta itemprop="description" content="Contents">
-    <meta itemprop="datePublished" content="2021-02-08T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2021-03-23T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Coursera ML, Lecture 6 : Overfitting / Regularization
+          <h1 id="page-title" class="page__title" itemprop="headline">이산수학 주제 1 : Propositional Logic
 </h1>
           
 
@@ -382,7 +382,7 @@
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          352 words
+          540 words
       </span>
     
   </p>
@@ -390,18 +390,17 @@
 
         </header>
       
-      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/ml-study/Coursera-ML-Lec6/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/dma2021/propositional-logic/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
       <section class="page__content" itemprop="text">
         
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
               <ul class="toc__menu">
-  <li><a href="#overfitting-issue">Overfitting Issue</a></li>
-  <li><a href="#how-to-deal-with">How to deal with?</a></li>
-  <li><a href="#regularization">Regularization</a></li>
-  <li><a href="#regularized-linear-regression">Regularized Linear Regression</a></li>
-  <li><a href="#regularized-logistic-regression">Regularized Logistic Regression</a></li>
+  <li><a href="#propositional-logic">Propositional Logic</a></li>
+  <li><a href="#명제의-역이대우">명제의 역/이/대우</a></li>
+  <li><a href="#well-formed-formula">Well-Formed Formula</a></li>
+  <li><a href="#logical-facts">Logical Facts</a></li>
 </ul>
 
             </nav>
@@ -411,62 +410,99 @@
 Contents
 </div>
 <ul id="markdown-toc">
-  <li><a href="#overfitting-issue" id="markdown-toc-overfitting-issue">Overfitting Issue</a></li>
-  <li><a href="#how-to-deal-with" id="markdown-toc-how-to-deal-with">How to deal with?</a></li>
-  <li><a href="#regularization" id="markdown-toc-regularization">Regularization</a></li>
-  <li><a href="#regularized-linear-regression" id="markdown-toc-regularized-linear-regression">Regularized Linear Regression</a></li>
-  <li><a href="#regularized-logistic-regression" id="markdown-toc-regularized-logistic-regression">Regularized Logistic Regression</a></li>
+  <li><a href="#propositional-logic" id="markdown-toc-propositional-logic">Propositional Logic</a></li>
+  <li><a href="#명제의-역이대우" id="markdown-toc-명제의-역이대우">명제의 역/이/대우</a></li>
+  <li><a href="#well-formed-formula" id="markdown-toc-well-formed-formula">Well-Formed Formula</a></li>
+  <li><a href="#logical-facts" id="markdown-toc-logical-facts">Logical Facts</a></li>
 </ul>
 <hr />
 
-<h3 id="overfitting-issue">Overfitting Issue</h3>
 <ul>
-  <li>Underfitting : 데이터가 Linear하지 않음에도 불구하고, Linear function fitting을 하는 등의 이유로 fitting되지 않는 현상</li>
-  <li>Overfitting : 5개의 데이터를 4차함수로 fitting한다면? 데이터에 대해서는 100%의 정확도를 갖지만, 실제로 좋은 모델링은 아님.</li>
-  <li>이를 High-variance라고 한다. High-order 다항식을 쓸 때의 문제점. 지나치게 많은 자유도의 가설을 허용하여, 별로 좋은 결과가 아니게 됨.</li>
-  <li>Too many features -&gt; Cost function이 매우 작지만 실용적으로 도움이 되지 않는 경우 있음.</li>
-  <li>지나치게 정확한 Fitting 과정 때문에, 파악해야 할 경향성을 놓치는 현상!!</li>
+  <li>
+    <p>Logic : Formal system for describing knowledge, implement reasoning on knowledge.</p>
+  </li>
+  <li>
+    <p>Set of rules deducing entailments of a set of sentences.</p>
+  </li>
+  <li>
+    <p>Ambiguity 없이 명제를 표현하고 사고를 전개하는 언어 (Syntax, Semantics, Rules).</p>
+  </li>
 </ul>
 
-<h3 id="how-to-deal-with">How to deal with?</h3>
+<h2 id="propositional-logic">Propositional Logic</h2>
 <ul>
-  <li>Feature개수 줄이기. 이부분은 Manual하게 할 수도 있고, Model selection algorithm을 쓸 수도 있음.
+  <li>기본적인 문장들을 Atomic entity로 간주하고, Boolean connective를 이용하여 복잡한 문장을 전개.</li>
+  <li>Boolean Connective : $\land, \lor \dots$</li>
+  <li>Proposition : Assertion, declarative sentence with definite meaning. 참/거짓을 명확히 판별할 수 있는 문장.</li>
+  <li>Proposition variable ($P, Q, R \dots$) 로 임의의 ‘명제’ 를 기술한다.</li>
+  <li>다음과 같은 Boolean Operator들을 쓴다.
     <ul>
-      <li>이 과정에서 진짜 필요한 정보를 놓칠 수도 있음. 실제 Feature가 정말 불필요한지 판정하기가 어렵다.</li>
+      <li>$\lnot$ : NOT</li>
+      <li>$\land$ : AND</li>
+      <li>$\lor$ : OR</li>
+      <li>$\lxor$ : XOR</li>
+      <li>$\limply$ : IMPLIES</li>
+      <li>$\leftrightarrow$ : IFF</li>
     </ul>
   </li>
-  <li>Regularization. Feature는 그대로 들고 가되, magnitude / value of parameter를 줄이는 방법.</li>
-</ul>
-
-<h3 id="regularization">Regularization</h3>
-<ul>
-  <li>ex) 페널티를 통해 $\theta_3, \theta_4$ 를 작은 값으로 유지하도록 강제하기. \(J_{\text{new}}(\theta) = J(\theta) + 1000\theta_3^2 + 1000\theta_4^2\)</li>
-  <li>결국은 Hypothesis를 더 간단하게 하는 것. Overfitting 문제가 줄어든다.</li>
-  <li>ex) Regularization parameter를 사용하여, tradeoff를 강제하기.
-\(J(\theta) = \frac{1}{2m}\left(\sum_{i = 1}^{m} (h_{\theta}(x_i) - y_i)^2 + \lambda \sum_{i = 1}^{n} \theta_j^2\right)\)</li>
-  <li>$\lambda$가 너무 크면 -&gt; 지나치게 큰 Penalty term 때문에 Underfitting 발생.</li>
-</ul>
-
-<h3 id="regularized-linear-regression">Regularized Linear Regression</h3>
-<p>\(\begin{aligned} \pdv{}{\theta_j}J(\theta) = \frac{1}{m} \sum_{i = 1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x^{(i)}_j + \frac{\lambda}{m}\theta_j \end{aligned}\)</p>
-<ul>
-  <li>편미분식을 잘 보면, 다음과 같은 업데이트가 이루어질 것임을 안다.
-\(\theta_j := \theta_j \left( 1- \alpha \frac{\lambda}{m}\right) - \alpha \frac{1}{m} \sum_{i = 1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x^{(i)}_j\)</li>
-  <li>
-    <p>$\left( 1- \alpha \frac{\lambda}{m}\right)$ 을 매번 곱하는 느낌의 Gradient Descent.</p>
+  <li>Implication의 Truth table : $P \to Q$ 는 $P$가 참이지만 $Q$가 거짓일 때만 거짓이고, 그 외에는 참이다. $P$가 거짓이면 반드시 참임을 주의하자. 예를 들어…
+$(1 = 0) \to (2 = 0)$ 은 $P$가 거짓이므로, 반드시 참이다.
+    <ul>
+      <li>$P$를 hypothesis / antecendent / premise 라고 부르고, $Q$를 conclusion / consequence라고 부른다.</li>
+    </ul>
   </li>
-  <li>Normal equation을 이용해서도 비슷하게 할 수 있다.
-\(\theta = \left(X^T X + \lambda L\right)^{-1} X^T y\)
-이때 $L$ 은, Identity에서 맨 왼쪽 위 항이 0인 matrix이다. <code class="language-plaintext highlighter-rouge">[[0, 0, 0], [0, 1, 0], [0, 0, 1]]</code> 정도 느낌.</li>
-  <li>원래의 Linear regression은 Example보다 Feature가 많으면 Non-invertible하다. 이때, Regularization을 쓰면, $\lambda &gt; 0$일 때, $X^T X + \lambda L$가 반드시 invertible함을 보일 수 있다.</li>
+  <li>Biconditional Operator의 경우, $P \leftrightarrow Q$는 $P, Q$의 Truth value가 같으면 참이다. $P \leftrightarrow Q = \lnot (P \lxor Q)$.</li>
 </ul>
 
-<h3 id="regularized-logistic-regression">Regularized Logistic Regression</h3>
+<h2 id="명제의-역이대우">명제의 역/이/대우</h2>
 <ul>
-  <li>다음과 같은 update를 수행한다.
-\(\theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_{i = 1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x^{(i)}_0\)
-\(\theta_j := \theta_j \left( 1- \alpha \frac{\lambda}{m}\right) - \alpha \frac{1}{m} \sum_{i = 1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x^{(i)}_j\)</li>
-  <li>마찬가지로, 식은 Linear 버전과 똑같이 생겼다. 차이는 $h_\theta$뿐.</li>
+  <li>명제 $P \rightarrow Q$에 대하여 다음과 같이 용어를 정의한다.
+    <ul>
+      <li>Converse (이) : $Q \rightarrow P$</li>
+      <li>Inverse (역) : $\lnot P \rightarrow \lnot Q$</li>
+      <li>Contrapositive (대우) : $\lnot Q \rightarrow \lnot P$</li>
+    </ul>
+  </li>
+  <li>셋 중 Contrapositive만이 원래 명제의 Truth table을 보존한다.</li>
+</ul>
+
+<h2 id="well-formed-formula">Well-Formed Formula</h2>
+<p>다음과 같이 Well-Formed Formula라는 개념을 정의한다. 이하 WFF.</p>
+<ul>
+  <li>Proposition variable은 WFF</li>
+  <li>WFF $P$에 대해 $\lnot P$ 는 WFF</li>
+  <li>WFF $P, Q$에 대해 $(P \lor Q), (P \land Q), (P \rightarrow Q)$ 는 WFF</li>
+  <li>위 과정으로 만들어진 논리식들 (문자열들) 만이 WFF이다.</li>
+</ul>
+
+<h2 id="logical-facts">Logical Facts</h2>
+<ul>
+  <li><strong>Tautology</strong> : WFF $T$ 가 주어질 때, $T$의 모든 variable의 모든 truth value assignment에 대해서 $T$가 항상 참이면 $T$를 Tautology라고 부른다.
+예를 들어, $(P \lor \lnot P)$ 는 tautology. Truth table의 모든 row에서 결과가 T이면 tautology이다.</li>
+  <li><strong>Contradiction</strong> : WFF $T$ 가 주어질 때, $T$의 모든 variable의 모든 truth value assignment에 대해서 $T$가 항상 거짓이면 $T$를 Contradiction이라고 부른다.</li>
+  <li><strong>Contingency</strong> : Tautology나 Contradiction이 아닌 WFF를 Contingency라고 부른다.</li>
+  <li>두 WFF $T, S$가 주어질 때, 모든 variable의 모든 truth value assignment에 대해서 $T$와 $S$의 참/거짓이 같으면 두 식을 Logically Equivalent하다고 부른다. 즉, $T \leftrightarrow S$가 Tautology이면 두 식이 Logically Equivalent.
+    <ul>
+      <li>Identity : $P \land T \Leftrightarrow P,\quad P \lor F \Leftrightarrow P$</li>
+      <li>Domination : $P \lor T \Leftrightarrow T,\quad P \land F \Leftrightarrow F$</li>
+      <li>Idempotent : $P \lor P \Leftrightarrow P,\quad P \land P \Leftrightarrow P$</li>
+      <li>Double Negation : $\lnot \lnot P \Leftrightarrow P$</li>
+      <li>Commutatitive : $\land, \lor$ are commutative</li>
+      <li>Associative : $\land, \lor$ are associative</li>
+      <li>Distributive : $P \lor (Q \land R) \Leftrightarrow (P \lor Q) \land (P \lor R), \quad$<br />
+$P \land (Q \lor R) \Leftrightarrow (P \land Q) \lor (P \land R)$</li>
+      <li>De Morgan’s : $\lnot (P \land Q) \Leftrightarrow \lnot P \lor \lnot Q, \quad$<br />
+$\lnot (P \land Q) \Leftrightarrow \lnot P \lor \lnot Q$</li>
+      <li>Trivial Tautology/Contradiction : $P \lor \lnot P \Leftrightarrow T, \quad P \land \lnot P \Leftrightarrow F$</li>
+    </ul>
+  </li>
+  <li>Operator들 간의 동치 관계.
+    <ul>
+      <li>XOR : $P \lxor Q \Leftrightarrow (P \lor Q) \land \lnot (P \land Q) \Leftrightarrow (P \land \lnot Q) \lor (\lnot P \land Q)$</li>
+      <li>Conditional : $P \to Q \Leftrightarrow \lnot P \lor Q$</li>
+      <li>Biconditional : $P \leftrightarrow Q \Leftrightarrow (P \to Q) \land (\lnot P \to \lnot Q) \Leftrightarrow \lnot (P \lxor Q)$</li>
+    </ul>
+  </li>
 </ul>
 
         
@@ -488,11 +524,7 @@ Contents
     
       
       
-      <a href="/tags/#logistic-regression" class="page__taxonomy-item" rel="tag">logistic-regression</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine-learning</a>
+      <a href="/tags/#logic" class="page__taxonomy-item" rel="tag">logic</a>
     
     </span>
   </p>
@@ -513,14 +545,14 @@ Contents
     
       
       
-      <a href="/categories/#ml-study" class="page__taxonomy-item" rel="tag">ml-study</a>
+      <a href="/categories/#dma2021" class="page__taxonomy-item" rel="tag">dma2021</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-02-08T00:00:00+09:00">February 8, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-23T00:00:00+09:00">March 23, 2021</time></p>
 
 
       </footer>
@@ -528,12 +560,11 @@ Contents
       
   <nav class="pagination">
     
-      <a href="/ml-study/Coursera-ML-Lec5/" class="pagination--pager" title="Coursera ML, Lecture 5 : Logistic Regression
+      <a href="/algorithms/Pollards-Rho/" class="pagination--pager" title="폴라드-로 소인수분해 알고리즘
 ">이전</a>
     
     
-      <a href="/algorithms/BOJ8904/" class="pagination--pager" title="BOJ 8904, ICPC Korea 2011 가구 공장
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -577,49 +608,6 @@ Contents
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/dma2021/propositional-logic/" rel="permalink">이산수학 주제 1 : Propositional Logic
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          583 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-Contents
-
-
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/algorithms/Pollards-Rho/" rel="permalink">폴라드-로 소인수분해 알고리즘
 </a>
       
@@ -638,7 +626,7 @@ Contents
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          821 words
+          815 words
       </span>
     
   </p>
@@ -681,7 +669,7 @@ Contents
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          741 words
+          774 words
       </span>
     
   </p>
@@ -724,13 +712,53 @@ Contents
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          1099 words
+          1079 words
       </span>
     
   </p>
 
 
     <p class="archive__item-excerpt" itemprop="description">이 글은 올해 해시코드를 준비하는 과정 등에 대한 이야기이고, 해시코드 2021에 Specific한 (문제 등) 은 다음 글(링크에서 다룹니다.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Hashcode-2021-prelim/" rel="permalink">Google Hash Code 2021 : Global #211 (2%) 후기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          1296 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">이 글은 올해 해시코드 대회 과정에 대한 후기이고, 준비 과정은 앞 글(링크)에 있습니다.
 
 </p>
   </article>

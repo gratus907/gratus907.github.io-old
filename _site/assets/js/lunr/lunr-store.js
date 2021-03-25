@@ -196,4 +196,10 @@ var store = [{
         "tags": ["number-theory","algorithms"],
         "url": "http://localhost:4000/algorithms/Pollards-Rho/",
         "teaser": null
+      },{
+        "title": "이산수학 주제 1 : Propositional Logic",
+        "excerpt":"Contents Propositional Logic 명제의 역/이/대우 Well-Formed Formula Logical Facts Logic : Formal system for describing knowledge, implement reasoning on knowledge. Set of rules deducing entailments of a set of sentences. Ambiguity 없이 명제를 표현하고 사고를 전개하는 언어 (Syntax, Semantics, Rules). Propositional Logic 기본적인 문장들을 Atomic entity로 간주하고, Boolean connective를 이용하여...","categories": ["dma2021"],
+        "tags": ["logic"],
+        "url": "http://localhost:4000/dma2021/propositional-logic/",
+        "teaser": null
       }]

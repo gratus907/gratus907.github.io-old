@@ -185,21 +185,15 @@ var store = [{
         "url": "http://localhost:4000/Hashcode-2021-prep/",
         "teaser": null
       },{
-        "title": "정수론 : 2장 1절 Congruences",
-        "excerpt":"Contents Congruence Congruence $a, b, m \\in \\Z$, $m \\neq 0$에 대해, $a \\equiv b \\mod m \\iff m \\di (a - b)$. 이때, $a$를 $m$으로 나눈 나머지를 $[a]_m$으로 나타낸다. 이 Congruence relation은 equivalence이다. 덧셈, 뺄셈, 곱셈은 잘 보존된다. 즉, $a \\equiv b, c \\equiv d$이면 $a + b \\equiv...","categories": ["mathematics"],
-        "tags": ["number-theory"],
-        "url": "http://localhost:4000/mathematics/Number-Theory-Lec3/",
-        "teaser": null
-      },{
         "title": "폴라드-로 소인수분해 알고리즘",
         "excerpt":"Contents Motivation 생일 문제 (Birthday Problem) 가정 Algorithm 예시 구현 시간 복잡도 Motivation 소인수분해는 매우 어려운 과정이다. 실제로 소인수분해는 (입력 비트 수에 대해) 다항 시간에 결정론적으로 풀 수 있는 방법이 알려져 있지 않다. 그러나, 약간의 랜덤성 (확률에 대한 의존) 을 허용한다면 상당히 clever한 알고리즘을 통해 빠르게 소인수분해를 할 수 있는데,...","categories": ["algorithms"],
         "tags": ["number-theory","algorithms"],
         "url": "http://localhost:4000/algorithms/Pollards-Rho/",
         "teaser": null
       },{
-        "title": "이산수학 주제 1 : Propositional Logic",
-        "excerpt":"Contents Propositional Logic 명제의 역/이/대우 Well-Formed Formula Logical Facts Logic : Formal system for describing knowledge, implement reasoning on knowledge. Set of rules deducing entailments of a set of sentences. Ambiguity 없이 명제를 표현하고 사고를 전개하는 언어 (Syntax, Semantics, Rules). Propositional Logic 기본적인 문장들을 Atomic entity로 간주하고, Boolean connective를 이용하여...","categories": ["dma2021"],
-        "tags": ["logic"],
-        "url": "http://localhost:4000/dma2021/propositional-logic/",
+        "title": "2021 1학기 중간점검",
+        "excerpt":"블로그 포스팅 오랜만이네요. 기록상 3월 19일에 폴라드-로 알고리즘에 대해 쓴 게 마지막이니, 대략 한달 만입니다. 과제랑 중간고사에 치여서 나름대로 바쁜 삶을 살고 있습니다. 잠깐 이번학기 중간점검 하는 느낌으로, 쭉 적어보려고 합니다. Major Updates 수리과학부 복수전공을 (원래도 계획하고 있었지만) 시작하게 되었습니다. 원래는 부전공 중이었는데 조금더 제대로 수학공부를 해보고 싶기도 했고 원래...","categories": ["retrospects-and-plans"],
+        "tags": [],
+        "url": "http://localhost:4000/retrospects-and-plans/halfway-through-2021-spring/",
         "teaser": null
       }]

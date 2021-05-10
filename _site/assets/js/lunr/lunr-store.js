@@ -196,4 +196,16 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/retrospects-and-plans/halfway-through-2021-spring/",
         "teaser": null
+      },{
+        "title": "Iterative methods : Jacobi, GS, SOR",
+        "excerpt":"Contents Iterative methods Convergence Richardson method Convergence Jacobi method Gauss-Seidel Method SOR (Successive OverRelaxation) Iterative methods 수치선형대수 수업에서 배운 내용을 조금 정리해 보려고 한다. 구체적으로, 행렬 $A$와 벡터 $b$에 대해, $Ax = b$를 푸는 여러 방법들 중 iterative methods를 몇 포스팅에 걸쳐 다루어 본다. 우선, 행렬 $A$ 의 inverse를 구하기가...","categories": ["numerical-analysis"],
+        "tags": ["algorithms","mathematics"],
+        "url": "http://localhost:4000/numerical-analysis/im-1/",
+        "teaser": null
+      },{
+        "title": "5월 1주차 Weekly PS",
+        "excerpt":"Contents Google Codejam 2021, Round 1B Broken Clock, Small-Middle Subtransmutation, Full Problems BOJ 20191 줄임말 (KOI 2020) BOJ 3006 터보소트 (COCI 2007) Apr 26 - May 09, 2021. 이번 주차는 4월 말 것들도 포함되어 있다. 이전 블로그에서 했었던 weekly PS를 다시 써보려고 한다. 알고리즘 공부도 요새 너무 못한거 같아서… 시험기간...","categories": ["algorithms"],
+        "tags": ["weekly-ps"],
+        "url": "http://localhost:4000/algorithms/ps-weekly-21may1/",
+        "teaser": null
       }]

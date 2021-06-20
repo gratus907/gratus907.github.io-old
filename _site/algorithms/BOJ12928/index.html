@@ -20,7 +20,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>BOJ 12928 트리와 경로의 길이 - Gratus907’s Study Note</title>
-<meta name="description" content="난이도 : Platinum 3   solved ac class 8">
+<meta name="description" content="난이도 : Platinum 3   solved ac class 8   풀이 주어진 조건은 총 정점의 수 $N$과 2-경로의 수 $S$개이고, 조금만 생각해 보면 2-경로의 수는 트리의 각 정점의 degree를 $d_i$ 라고 할 때 $\sum \binom{d_i}{2}$ 임을 쉽게 알 수 있다. 우리가 원하는 것은 $\sum d_i = 2N-2$, $\sum \binom{d_i}{2} = S$이다. Tree의 degree이므로 $0 &lt; d_i &lt; N$ 여야 할 것이다.  만약 이 조건이 전부라면, 우리는 degree에 대한 DP로 쉽게 문제를 풀 수 있다. 이 조건이 전부라는 것을 보이자. 즉, 임의의 degree sequence에 대해 $0 &lt; d_i &lt; n$이고 $\sum d_i = 2N-2$이면 반드시 대응하는 tree가 실제로 존재함을 보이면 된다. 증명을 매우 정확하게 적으려면 상당히 귀찮으므로, 대충 argument만 적어보자면…  $\sum d_i = 2N - 2$에서, $N$개의 자연수의 합이 $2N - 2$ 이므로 우리는 적어도 하나가 1임을 안다. 일반성을 잃지 않고 이를 $d_1$ 이라 하자. 이제, 1번을 리프로 생각하면, 리프가 달려 있는 parent node가 필요하다. 나머지 노드들 중 degree가 2 이상인 노드들 중 하나를 택하여 degree를 1 줄이고, 거기에 매달았다고 생각하면 $N-1$개의 degree의 합이 $2N - 4$ 이다. 이를 반복하여 귀납적으로 적용할 수 있다.  그러면, 풀이는 결국, $0 &lt; d_i &lt; N$ 인 자연수 $N$ 개의 합이 $2N - 2$이고, $\binom{d_i}{2}$의 합이 $S$가 될 수 있는지 여부를 확인하면 된다. 가장 간단한 방법은, dp[i][j][k] 를 i 개를 써서 합이 j 이고 dC2의 합이 k 인지를 boolean으로 기록하면 된다.  simple DP의 시간 복잡도는 총 $n$개의 $d$를 골라야 하고, 각각이 $n$개일 수 있으며, $nS$ 칸의 DP 테이블을 갱신하는 것이므로 무려 $O(n^3S)$ 이지만, $n = 50, S = 1000$ 이고 단순 연산이므로 그래도 넉넉하다.  사실 시간 복잡도에서 $n$을 하나 떼는 방법이 있지만, 현 제약에서는 이렇게 짜도 문제없이 잘 돌아간다 :)  Code #include &lt;bits/stdc++.h&gt; #define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0); using namespace std; using pii = pair&lt;int, int&gt;;  bool dp[55][105][1010];  int32_t main() {     usecppio     int n, s; cin &gt;&gt; n &gt;&gt; s;     int dsum = 2 * n - 2;     int sqsum = s;     dp[0][0][0] = 1;     for (int i = 1; i &lt;= n; i++)     {         for (int d = 1; d &lt; n; d++)         {             for (int t = 0; t &lt; dsum; t++)             {                 if (t + d &gt; dsum) break;                 for (int st = 0; st &lt; sqsum; st++)                 {                     int p = st + d * (d-1) / 2;                     if (p &gt; sqsum) break;                     if (dp[i-1][t][st])                         dp[i][t+d][p] = true;                 }             }         }     }     if (dp[n][dsum][s])         cout &lt;&lt; 1 &lt;&lt; &#39;\n&#39;;     else cout &lt;&lt; 0 &lt;&lt; &#39;\n&#39;; }">
 
 
   <meta name="author" content="Wonseok Shin">
@@ -36,7 +36,7 @@
 <meta property="og:url" content="http://localhost:4000/algorithms/BOJ12928/">
 
 
-  <meta property="og:description" content="난이도 : Platinum 3   solved ac class 8">
+  <meta property="og:description" content="난이도 : Platinum 3   solved ac class 8   풀이 주어진 조건은 총 정점의 수 $N$과 2-경로의 수 $S$개이고, 조금만 생각해 보면 2-경로의 수는 트리의 각 정점의 degree를 $d_i$ 라고 할 때 $\sum \binom{d_i}{2}$ 임을 쉽게 알 수 있다. 우리가 원하는 것은 $\sum d_i = 2N-2$, $\sum \binom{d_i}{2} = S$이다. Tree의 degree이므로 $0 &lt; d_i &lt; N$ 여야 할 것이다.  만약 이 조건이 전부라면, 우리는 degree에 대한 DP로 쉽게 문제를 풀 수 있다. 이 조건이 전부라는 것을 보이자. 즉, 임의의 degree sequence에 대해 $0 &lt; d_i &lt; n$이고 $\sum d_i = 2N-2$이면 반드시 대응하는 tree가 실제로 존재함을 보이면 된다. 증명을 매우 정확하게 적으려면 상당히 귀찮으므로, 대충 argument만 적어보자면…  $\sum d_i = 2N - 2$에서, $N$개의 자연수의 합이 $2N - 2$ 이므로 우리는 적어도 하나가 1임을 안다. 일반성을 잃지 않고 이를 $d_1$ 이라 하자. 이제, 1번을 리프로 생각하면, 리프가 달려 있는 parent node가 필요하다. 나머지 노드들 중 degree가 2 이상인 노드들 중 하나를 택하여 degree를 1 줄이고, 거기에 매달았다고 생각하면 $N-1$개의 degree의 합이 $2N - 4$ 이다. 이를 반복하여 귀납적으로 적용할 수 있다.  그러면, 풀이는 결국, $0 &lt; d_i &lt; N$ 인 자연수 $N$ 개의 합이 $2N - 2$이고, $\binom{d_i}{2}$의 합이 $S$가 될 수 있는지 여부를 확인하면 된다. 가장 간단한 방법은, dp[i][j][k] 를 i 개를 써서 합이 j 이고 dC2의 합이 k 인지를 boolean으로 기록하면 된다.  simple DP의 시간 복잡도는 총 $n$개의 $d$를 골라야 하고, 각각이 $n$개일 수 있으며, $nS$ 칸의 DP 테이블을 갱신하는 것이므로 무려 $O(n^3S)$ 이지만, $n = 50, S = 1000$ 이고 단순 연산이므로 그래도 넉넉하다.  사실 시간 복잡도에서 $n$을 하나 떼는 방법이 있지만, 현 제약에서는 이렇게 짜도 문제없이 잘 돌아간다 :)  Code #include &lt;bits/stdc++.h&gt; #define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0); using namespace std; using pii = pair&lt;int, int&gt;;  bool dp[55][105][1010];  int32_t main() {     usecppio     int n, s; cin &gt;&gt; n &gt;&gt; s;     int dsum = 2 * n - 2;     int sqsum = s;     dp[0][0][0] = 1;     for (int i = 1; i &lt;= n; i++)     {         for (int d = 1; d &lt; n; d++)         {             for (int t = 0; t &lt; dsum; t++)             {                 if (t + d &gt; dsum) break;                 for (int st = 0; st &lt; sqsum; st++)                 {                     int p = st + d * (d-1) / 2;                     if (p &gt; sqsum) break;                     if (dp[i-1][t][st])                         dp[i][t+d][p] = true;                 }             }         }     }     if (dp[n][dsum][s])         cout &lt;&lt; 1 &lt;&lt; &#39;\n&#39;;     else cout &lt;&lt; 0 &lt;&lt; &#39;\n&#39;; }">
 
 
 
@@ -359,7 +359,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="BOJ 12928 트리와 경로의 길이">
-    <meta itemprop="description" content="  난이도 : Platinum 3  solved ac class 8">
+    <meta itemprop="description" content="  난이도 : Platinum 3  solved ac class 8풀이주어진 조건은 총 정점의 수 $N$과 2-경로의 수 $S$개이고, 조금만 생각해 보면 2-경로의 수는 트리의 각 정점의 degree를 $d_i$ 라고 할 때 $\sum \binom{d_i}{2}$ 임을 쉽게 알 수 있다. 우리가 원하는 것은 $\sum d_i = 2N-2$, $\sum \binom{d_i}{2} = S$이다. Tree의 degree이므로 $0 &lt; d_i &lt; N$ 여야 할 것이다.만약 이 조건이 전부라면, 우리는 degree에 대한 DP로 쉽게 문제를 풀 수 있다. 이 조건이 전부라는 것을 보이자. 즉, 임의의 degree sequence에 대해 $0 &lt; d_i &lt; n$이고 $\sum d_i = 2N-2$이면 반드시 대응하는 tree가 실제로 존재함을 보이면 된다. 증명을 매우 정확하게 적으려면 상당히 귀찮으므로, 대충 argument만 적어보자면…$\sum d_i = 2N - 2$에서, $N$개의 자연수의 합이 $2N - 2$ 이므로 우리는 적어도 하나가 1임을 안다. 일반성을 잃지 않고 이를 $d_1$ 이라 하자. 이제, 1번을 리프로 생각하면, 리프가 달려 있는 parent node가 필요하다. 나머지 노드들 중 degree가 2 이상인 노드들 중 하나를 택하여 degree를 1 줄이고, 거기에 매달았다고 생각하면 $N-1$개의 degree의 합이 $2N - 4$ 이다. 이를 반복하여 귀납적으로 적용할 수 있다.그러면, 풀이는 결국, $0 &lt; d_i &lt; N$ 인 자연수 $N$ 개의 합이 $2N - 2$이고, $\binom{d_i}{2}$의 합이 $S$가 될 수 있는지 여부를 확인하면 된다. 가장 간단한 방법은, dp[i][j][k] 를 i 개를 써서 합이 j 이고 dC2의 합이 k 인지를 boolean으로 기록하면 된다.simple DP의 시간 복잡도는 총 $n$개의 $d$를 골라야 하고, 각각이 $n$개일 수 있으며, $nS$ 칸의 DP 테이블을 갱신하는 것이므로 무려 $O(n^3S)$ 이지만, $n = 50, S = 1000$ 이고 단순 연산이므로 그래도 넉넉하다.사실 시간 복잡도에서 $n$을 하나 떼는 방법이 있지만, 현 제약에서는 이렇게 짜도 문제없이 잘 돌아간다 :)Code#include &lt;bits/stdc++.h&gt;#define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);using namespace std;using pii = pair&lt;int, int&gt;;bool dp[55][105][1010];int32_t main(){    usecppio    int n, s; cin &gt;&gt; n &gt;&gt; s;    int dsum = 2 * n - 2;    int sqsum = s;    dp[0][0][0] = 1;    for (int i = 1; i &lt;= n; i++)    {        for (int d = 1; d &lt; n; d++)        {            for (int t = 0; t &lt; dsum; t++)            {                if (t + d &gt; dsum) break;                for (int st = 0; st &lt; sqsum; st++)                {                    int p = st + d * (d-1) / 2;                    if (p &gt; sqsum) break;                    if (dp[i-1][t][st])                        dp[i][t+d][p] = true;                }            }        }    }    if (dp[n][dsum][s])        cout &lt;&lt; 1 &lt;&lt; &#39;\n&#39;;    else cout &lt;&lt; 0 &lt;&lt; &#39;\n&#39;;}  ">
     <meta itemprop="datePublished" content="2021-01-16T00:00:00+09:00">
     
 
@@ -569,6 +569,132 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/retrospects-and-plans/finishing-2021-spring/" rel="permalink">2021 1학기 종강
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          314 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">장기적으로 블로그를 https://gratus907.github.io 로 옮기고자 하는 생각을 가지고 있습니다. 그 이유는 크게 두가지입니다.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithms/Codejam-2021-R2/" rel="permalink">Codejam 2021 Round 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          786 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithms/ps-weekly-21may2/" rel="permalink">5월 2주차 Weekly PS
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          260 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/algorithms/ps-weekly-21may1/" rel="permalink">5월 1주차 Weekly PS
 </a>
       
@@ -588,132 +714,6 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
           333 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-Contents
-
-
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/numerical-analysis/im-1/" rel="permalink">Iterative methods : Jacobi, GS, SOR
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          501 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-Contents
-
-
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/retrospects-and-plans/halfway-through-2021-spring/" rel="permalink">2021 1학기 중간점검
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          485 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">블로그 포스팅 오랜만이네요. 기록상 3월 19일에 폴라드-로 알고리즘에 대해 쓴 게 마지막이니, 대략 한달 만입니다. 과제랑 중간고사에 치여서 나름대로 바쁜 삶을 살고 있습니다.
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithms/Pollards-Rho/" rel="permalink">폴라드-로 소인수분해 알고리즘
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          821 words
       </span>
     
   </p>

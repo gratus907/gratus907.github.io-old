@@ -15,12 +15,15 @@ author_profile: true
     - 주전공 : 컴퓨터공학부 (전공학점 : 3.89 / 4.3)
     - 복수전공 : 수리과학부 (전공학점 : 3.99 / 4.3)
 
+## Publications 
+### Domestic Conference
+1. 민승환, **신원석**, 김채원, 박근수, *부분 그래프 매칭 문제를 위한 향상된 동적 매칭 순서*, 2021 한국컴퓨터종합학술대회(KCC), 2021.6
+
 ## Experience
 - 학부생 연구참여 프로그램 (인턴십) (2020.8 ~ 2021.4)
     - 서울대학교 학부생 연구참여 프로그램 (UROP)
     - 컴퓨터공학부 Computer Theory Lab (컴퓨터 이론 연구실)
-    - Subgraph Isomorphism 알고리즘의 minor한 개선에 관해 진행하였습니다.
-    - 결과를 (TBD) 에 (TBD) 할 예정입니다.
+    - Subgraph Isomorphism 알고리즘의 Adaptive Matching Order에 있어서의 minor한 개선에 관해 진행하였습니다.
 
 ## Projects
 - FRIDGE 
@@ -43,12 +46,12 @@ author_profile: true
 - Baekjoon OJ : gratus907
 - AtCoder : Gratus 
 
-### 대회 참여
-#### Global
+### Global
 - Google Hash Code 2021 : 글로벌 211등 (글로벌 참여팀 약 1만 팀 중 상위 2%)
 - Google Hash Code 2020 : 글로벌 468등 (글로벌 참여팀 약 1만 팀 중 상위 5%)
+- Google Codejam 2021 : Round 3 진출, 504등
 
-#### Domestic
+### Domestic
 - ICPC 2020 인터넷예선 : 26위 (Team : Swift Turtwig)
 - UCPC 2019 : 31위 (Team : Little Piplup)
 - SNUPC (서울대학교 프로그래밍 경시대회) 2020 : Div.2 7위

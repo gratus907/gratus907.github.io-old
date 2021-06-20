@@ -208,4 +208,22 @@ var store = [{
         "tags": ["weekly-ps"],
         "url": "http://localhost:4000/algorithms/ps-weekly-21may1/",
         "teaser": null
+      },{
+        "title": "5월 2주차 Weekly PS",
+        "excerpt":"Contents Google Codejam 2021, Round 2 [Virtual] Google Codejam 2018, Round 2 Falling Balls Graceful Chainsaw Jugglers (small) Costume Change May 10 - May 17, 2021. Google Codejam 2021, Round 2 PS를 시작하고 세 번째 Codejam이다. 처음으로 Round 3에 진출하고 Codejam 티셔츠를 얻었다. 순위는 855등으로, 거의 막차를 탔지만 아무튼 티셔츠를...","categories": ["algorithms"],
+        "tags": ["weekly-ps"],
+        "url": "http://localhost:4000/algorithms/ps-weekly-21may2/",
+        "teaser": null
+      },{
+        "title": "Codejam 2021 Round 2",
+        "excerpt":"Contents Preperation Preliminary &amp; Round 1 Problem 1 : Minimum Sort Problem 2 : Matrygons Problem 3 : Hidden Pancakes Round 총평 올해 Codejam의 (나한테 있어) 사실상 마지막 round이므로 (R3 는 재밌게 하겠지만 competition으로써는 얻을게 없다) Hashcode 때처럼 prep과 과정을 좀 적어보려고 한다. 앞으로 메이저한 대회는 이렇게 적어볼 생각이다. Preperation...","categories": ["algorithms"],
+        "tags": ["competitive-programming"],
+        "url": "http://localhost:4000/algorithms/Codejam-2021-R2/",
+        "teaser": null
+      },{
+        "title": "2021 1학기 종강",
+        "excerpt":"장기적으로 블로그를 https://gratus907.github.io 로 옮기고자 하는 생각을 가지고 있습니다. 그 이유는 크게 두가지입니다. 티스토리보다 높은 자유도 네이버 블로그에서 티스토리로 넘어왔던 이유인데, .md파일을 작성할 뿐 아니라 다양한 페이지를 만들 수 있고 필요하면 직접 html을 뜯어서라도 정확히 내가 원하는걸 만들 수 있는 github.io (Jekyll 블로그) 에 비해, 티스토리는 약간 자유도가 낮습니다. 이부분이 여러모로...","categories": ["retrospects-and-plans"],
+        "tags": [],
+        "url": "http://localhost:4000/retrospects-and-plans/finishing-2021-spring/",
+        "teaser": null
       }]

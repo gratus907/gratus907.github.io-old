@@ -145,3 +145,20 @@ p>code:before, p>code:after, a>code:before, a>code:after, li>code:before, li>cod
 .sidebar {
     width: calc(250px - 1em);
 }
+
+#postlist {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+#postlist li {
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+#postlist li:hover {
+    background-color: #ffeeee;
+}

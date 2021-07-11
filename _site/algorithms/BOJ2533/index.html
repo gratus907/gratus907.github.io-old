@@ -20,7 +20,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>BOJ 2533 사회망 서비스 - Gratus907’s Study Note</title>
-<meta name="description" content="난이도 : Gold 3   solved ac class 6 essential   풀이 트리에서 최소한의 노드를 골라서, 모든 간선을 커버하도록 하는, minimum vertex cover 문제이다. 일반적인 그래프에서는 NP-Hard이지만, 트리에는 쉽게 해결할 수 있다.  임의로 루트를 잡았을 때, 리프 노드는 반드시 마킹하지 않는 것이 유리함을 알 수 있다. 리프 노드는 바로 그 위 부모 노드만 마킹되면 되고, 그 노드가 여러 개의 리프를 가질 수도 있으므로, 리프 노드는 항상 마킹하지 않는 것이 유리하다. 따라서, 리프 노드의 부모가 되는 노드는 반드시 마킹해야 한다.  이를 반복해서, 마킹할 필요가 있는 노드를 트리의 아래쪽에서부터 찾으면 되고, 이는 DFS를 역순으로 돌면서 마킹하는 셈이 된다. 위 규칙을 적용해 본 후, 자식노드중 마킹되지 않은 노드가 있으면 지금 보는 노드를 마킹하고, 그렇지 않으면 나를 마킹하지 않음으로써 부모노드를 마킹해야 함을 기억하면 된다.  Code #include &lt;bits/stdc++.h&gt; #define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0); using namespace std;  vector &lt;int&gt; T[1010101]; int ea[1010101], e;  bool dfs(int r, int p) {     if (T[r].size() == 1 &amp;&amp; T[r][0] == p)         return false;     bool cea = true;     for (auto it:T[r])         if (it != p)             cea &amp;= dfs(it, r);     return ea[r] = !cea; }  int32_t main() {     usecppio     int n; cin &gt;&gt; n;     for (int i = 1; i &lt; n; i++)     {         int u, v; cin &gt;&gt; u &gt;&gt; v;         T[u].push_back(v);         T[v].push_back(u);     }     dfs(1, 0);     for (int i = 1; i &lt;= n; i++)         if (ea[i])             e++;     cout &lt;&lt; e &lt;&lt; &#39;\n&#39;; }">
+<meta name="description" content="난이도 : Gold 3   solved ac class 6 essential">
 
 
   <meta name="author" content="Wonseok Shin">
@@ -36,7 +36,7 @@
 <meta property="og:url" content="http://localhost:4000/algorithms/BOJ2533/">
 
 
-  <meta property="og:description" content="난이도 : Gold 3   solved ac class 6 essential   풀이 트리에서 최소한의 노드를 골라서, 모든 간선을 커버하도록 하는, minimum vertex cover 문제이다. 일반적인 그래프에서는 NP-Hard이지만, 트리에는 쉽게 해결할 수 있다.  임의로 루트를 잡았을 때, 리프 노드는 반드시 마킹하지 않는 것이 유리함을 알 수 있다. 리프 노드는 바로 그 위 부모 노드만 마킹되면 되고, 그 노드가 여러 개의 리프를 가질 수도 있으므로, 리프 노드는 항상 마킹하지 않는 것이 유리하다. 따라서, 리프 노드의 부모가 되는 노드는 반드시 마킹해야 한다.  이를 반복해서, 마킹할 필요가 있는 노드를 트리의 아래쪽에서부터 찾으면 되고, 이는 DFS를 역순으로 돌면서 마킹하는 셈이 된다. 위 규칙을 적용해 본 후, 자식노드중 마킹되지 않은 노드가 있으면 지금 보는 노드를 마킹하고, 그렇지 않으면 나를 마킹하지 않음으로써 부모노드를 마킹해야 함을 기억하면 된다.  Code #include &lt;bits/stdc++.h&gt; #define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0); using namespace std;  vector &lt;int&gt; T[1010101]; int ea[1010101], e;  bool dfs(int r, int p) {     if (T[r].size() == 1 &amp;&amp; T[r][0] == p)         return false;     bool cea = true;     for (auto it:T[r])         if (it != p)             cea &amp;= dfs(it, r);     return ea[r] = !cea; }  int32_t main() {     usecppio     int n; cin &gt;&gt; n;     for (int i = 1; i &lt; n; i++)     {         int u, v; cin &gt;&gt; u &gt;&gt; v;         T[u].push_back(v);         T[v].push_back(u);     }     dfs(1, 0);     for (int i = 1; i &lt;= n; i++)         if (ea[i])             e++;     cout &lt;&lt; e &lt;&lt; &#39;\n&#39;; }">
+  <meta property="og:description" content="난이도 : Gold 3   solved ac class 6 essential">
 
 
 
@@ -170,6 +170,8 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/postings/">Posts</a>
+            </li><li class="masthead__menu-item">
               <a href="/categories/">Categories</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/">Tags</a>
@@ -324,9 +326,7 @@
         
         <ul>
           
-            <li><a href="/study-note/#coursera-ml-andrew-ng">Coursera ML Note (2021 Feb)</a></li>
-          
-            <li><a href="/study-note/snu/#%EC%9D%B4%EC%82%B0%EC%88%98%ED%95%99-2021-spring">SNU Discrete Mathematics (2021 Spring)</a></li>
+            <li><a href="/study-note/#coursera-ml-andrew-ng">Coursera ML Note (2021)</a></li>
           
         </ul>
         
@@ -348,6 +348,14 @@
         
       </li>
     
+      <li>
+        
+          <a href="/cs-adventure/"><span class="nav__sub-title">Adventure to Computer Science</span></a>
+        
+
+        
+      </li>
+    
   </ul>
 </nav>
 
@@ -359,7 +367,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="BOJ 2533 사회망 서비스">
-    <meta itemprop="description" content="  난이도 : Gold 3  solved ac class 6 essential풀이트리에서 최소한의 노드를 골라서, 모든 간선을 커버하도록 하는, minimum vertex cover 문제이다. 일반적인 그래프에서는 NP-Hard이지만, 트리에는 쉽게 해결할 수 있다.임의로 루트를 잡았을 때, 리프 노드는 반드시 마킹하지 않는 것이 유리함을 알 수 있다. 리프 노드는 바로 그 위 부모 노드만 마킹되면 되고, 그 노드가 여러 개의 리프를 가질 수도 있으므로, 리프 노드는 항상 마킹하지 않는 것이 유리하다. 따라서, 리프 노드의 부모가 되는 노드는 반드시 마킹해야 한다.이를 반복해서, 마킹할 필요가 있는 노드를 트리의 아래쪽에서부터 찾으면 되고, 이는 DFS를 역순으로 돌면서 마킹하는 셈이 된다. 위 규칙을 적용해 본 후, 자식노드중 마킹되지 않은 노드가 있으면 지금 보는 노드를 마킹하고, 그렇지 않으면 나를 마킹하지 않음으로써 부모노드를 마킹해야 함을 기억하면 된다.Code#include &lt;bits/stdc++.h&gt;#define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);using namespace std;vector &lt;int&gt; T[1010101];int ea[1010101], e;bool dfs(int r, int p){    if (T[r].size() == 1 &amp;&amp; T[r][0] == p)        return false;    bool cea = true;    for (auto it:T[r])        if (it != p)            cea &amp;= dfs(it, r);    return ea[r] = !cea;}int32_t main(){    usecppio    int n; cin &gt;&gt; n;    for (int i = 1; i &lt; n; i++)    {        int u, v; cin &gt;&gt; u &gt;&gt; v;        T[u].push_back(v);        T[v].push_back(u);    }    dfs(1, 0);    for (int i = 1; i &lt;= n; i++)        if (ea[i])            e++;    cout &lt;&lt; e &lt;&lt; &#39;\n&#39;;}">
+    <meta itemprop="description" content="  난이도 : Gold 3  solved ac class 6 essential">
     <meta itemprop="datePublished" content="2021-01-16T00:00:00+09:00">
     
 
@@ -561,6 +569,49 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/algorithms/ps-weekly-21Jul1/" rel="permalink">7월 1-2주차 Weekly PS
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          1052 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/retrospects-and-plans/finishing-2021-spring/" rel="permalink">2021 1학기 종강
 </a>
       
@@ -579,13 +630,13 @@
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          314 words
+          1166 words
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">장기적으로 블로그를 https://gratus907.github.io 로 옮기고자 하는 생각을 가지고 있습니다. 그 이유는 크게 두가지입니다.
+    <p class="archive__item-excerpt" itemprop="description">이번학기도 무사히…ㅋㅋㅋㅋ 학기에 뭘 배웠는지도 돌아보고, 공부했던거에 대한 생각을 적어보려고 합니다.
 
 </p>
   </article>
@@ -663,49 +714,6 @@ Contents
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
           260 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-Contents
-
-
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithms/ps-weekly-21may1/" rel="permalink">5월 1주차 Weekly PS
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          333 words
       </span>
     
   </p>

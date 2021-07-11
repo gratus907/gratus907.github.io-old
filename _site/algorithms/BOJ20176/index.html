@@ -20,7 +20,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>BOJ 20176, ICPC Seoul 2020 Needle - Gratus907’s Study Note</title>
-<meta name="description" content="Contents     풀이   코드    풀이 결국 문제의 요점은, 위 / 중간/ 아래를 $u_i, m_i, l_i$ 라고 할 때, $u_i + l_j = 2m_k$ 인 순서쌍 $(i, j, k)$의 개수를 세는 문제이다.  이 문제는 매우 잘 알려진 Convolution 문제로, 수열을 카운팅 다항식으로 인코딩하면 쉽게 풀 수 있다. 수열이 1, 3, 4, 5, 5면 $x + x^3 + x^4 + 2x^5$ 인 식으로. 이렇게 인코딩해서 $u(x), m(x), l(x)$ 를 만든 다음,  $u(x)l(x)$을 계산하면 그 $n$차항의 계수가 $u_i + l_j = n$ 인 순서쌍 $i, j$ 의 개수가 된다. 따라서, 각 $n$에 대해, $m_k = n$인 $k$의 개수와 $u(x)l(x)$의 $2n$차 항의 계수를 곱해서 더하면 그대로 구하는 답이 되고, 이를 FFT를 이용하여 $O(n \log n)$에 구할 수 있음이 잘 알려져 있다.  여담으로… ICPC 서울 리저널은 이런 Do you know *** 문제가 꽤 많이 나오는 편인 것 같다. 2017 FFT, 2017 인예 FFT, 2019 인예 LiChaoTree / LR Flow …  코드  #include &lt;bits/stdc++.h&gt; #pragma GCC optimize(&quot;O3&quot;) #pragma GCC optimize(&quot;Ofast&quot;) #pragma GCC target(&quot;avx,avx2,fma&quot;) #define ll long long #define int ll #define eps 1e-7 #define all(x) ((x).begin()),((x).end()) #define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0); using namespace std; using pii = pair&lt;int, int&gt;;  #define sz(v) ((int)(v).size()) typedef vector&lt;int&gt; vi; typedef complex&lt;double&gt; base;  void fft(vector &lt;base&gt; &amp;a, bool invert) {     int n = sz(a);     for (int i=1,j=0;i&lt;n;i++){         int bit = n &gt;&gt; 1;         for (;j&gt;=bit;bit&gt;&gt;=1) j -= bit;         j += bit;         if (i &lt; j) swap(a[i],a[j]);     }     for (int len=2;len&lt;=n;len&lt;&lt;=1){         double ang = 2*M_PI/len*(invert?-1:1);         base wlen(cos(ang),sin(ang));         for (int i=0;i&lt;n;i+=len){             base w(1);             for (int j=0;j&lt;len/2;j++){                 base u = a[i+j], v = a[i+j+len/2]*w;                 a[i+j] = u+v;                 a[i+j+len/2] = u-v;                 w *= wlen;             }         }     }     if (invert){         for (int i=0;i&lt;n;i++) a[i] /= n;     } }  void multiply(const vi &amp;a,const vi &amp;b,vi &amp;res) {     vector &lt;base&gt; fa(all(a)), fb(all(b));     int n = 1;     while (n &lt; max(sz(a),sz(b))) n &lt;&lt;= 1;     fa.resize(n); fb.resize(n);     fft(fa,false); fft(fb,false);     for (int i=0;i&lt;n;i++) fa[i] *= fb[i];     fft(fa,true);     res.resize(n);     for (int i=0;i&lt;n;i++)         res[i] = (int)(fa[i].real()+(fa[i].real()&gt;0?0.5:-0.5)); }  vi u(121212, 0), m(121212, 0), l(121212, 0), c;  void input(vi &amp;v) {     int n; cin &gt;&gt; n;     for (int i = 0; i &lt; n; i++)     {         int x; cin &gt;&gt; x;         v[x+30000]++;     } }  int32_t main() {     usecppio     input(u); input(m); input(l);     multiply(u, l, c);     int ans = 0;     for (int i = 0; i &lt;= 60000; i++)         ans += m[i] * c[2*i];     cout &lt;&lt; ans &lt;&lt; &#39;\n&#39;; }">
+<meta name="description" content="Contents">
 
 
   <meta name="author" content="Wonseok Shin">
@@ -36,7 +36,7 @@
 <meta property="og:url" content="http://localhost:4000/algorithms/BOJ20176/">
 
 
-  <meta property="og:description" content="Contents     풀이   코드    풀이 결국 문제의 요점은, 위 / 중간/ 아래를 $u_i, m_i, l_i$ 라고 할 때, $u_i + l_j = 2m_k$ 인 순서쌍 $(i, j, k)$의 개수를 세는 문제이다.  이 문제는 매우 잘 알려진 Convolution 문제로, 수열을 카운팅 다항식으로 인코딩하면 쉽게 풀 수 있다. 수열이 1, 3, 4, 5, 5면 $x + x^3 + x^4 + 2x^5$ 인 식으로. 이렇게 인코딩해서 $u(x), m(x), l(x)$ 를 만든 다음,  $u(x)l(x)$을 계산하면 그 $n$차항의 계수가 $u_i + l_j = n$ 인 순서쌍 $i, j$ 의 개수가 된다. 따라서, 각 $n$에 대해, $m_k = n$인 $k$의 개수와 $u(x)l(x)$의 $2n$차 항의 계수를 곱해서 더하면 그대로 구하는 답이 되고, 이를 FFT를 이용하여 $O(n \log n)$에 구할 수 있음이 잘 알려져 있다.  여담으로… ICPC 서울 리저널은 이런 Do you know *** 문제가 꽤 많이 나오는 편인 것 같다. 2017 FFT, 2017 인예 FFT, 2019 인예 LiChaoTree / LR Flow …  코드  #include &lt;bits/stdc++.h&gt; #pragma GCC optimize(&quot;O3&quot;) #pragma GCC optimize(&quot;Ofast&quot;) #pragma GCC target(&quot;avx,avx2,fma&quot;) #define ll long long #define int ll #define eps 1e-7 #define all(x) ((x).begin()),((x).end()) #define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0); using namespace std; using pii = pair&lt;int, int&gt;;  #define sz(v) ((int)(v).size()) typedef vector&lt;int&gt; vi; typedef complex&lt;double&gt; base;  void fft(vector &lt;base&gt; &amp;a, bool invert) {     int n = sz(a);     for (int i=1,j=0;i&lt;n;i++){         int bit = n &gt;&gt; 1;         for (;j&gt;=bit;bit&gt;&gt;=1) j -= bit;         j += bit;         if (i &lt; j) swap(a[i],a[j]);     }     for (int len=2;len&lt;=n;len&lt;&lt;=1){         double ang = 2*M_PI/len*(invert?-1:1);         base wlen(cos(ang),sin(ang));         for (int i=0;i&lt;n;i+=len){             base w(1);             for (int j=0;j&lt;len/2;j++){                 base u = a[i+j], v = a[i+j+len/2]*w;                 a[i+j] = u+v;                 a[i+j+len/2] = u-v;                 w *= wlen;             }         }     }     if (invert){         for (int i=0;i&lt;n;i++) a[i] /= n;     } }  void multiply(const vi &amp;a,const vi &amp;b,vi &amp;res) {     vector &lt;base&gt; fa(all(a)), fb(all(b));     int n = 1;     while (n &lt; max(sz(a),sz(b))) n &lt;&lt;= 1;     fa.resize(n); fb.resize(n);     fft(fa,false); fft(fb,false);     for (int i=0;i&lt;n;i++) fa[i] *= fb[i];     fft(fa,true);     res.resize(n);     for (int i=0;i&lt;n;i++)         res[i] = (int)(fa[i].real()+(fa[i].real()&gt;0?0.5:-0.5)); }  vi u(121212, 0), m(121212, 0), l(121212, 0), c;  void input(vi &amp;v) {     int n; cin &gt;&gt; n;     for (int i = 0; i &lt; n; i++)     {         int x; cin &gt;&gt; x;         v[x+30000]++;     } }  int32_t main() {     usecppio     input(u); input(m); input(l);     multiply(u, l, c);     int ans = 0;     for (int i = 0; i &lt;= 60000; i++)         ans += m[i] * c[2*i];     cout &lt;&lt; ans &lt;&lt; &#39;\n&#39;; }">
+  <meta property="og:description" content="Contents">
 
 
 
@@ -170,6 +170,8 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/postings/">Posts</a>
+            </li><li class="masthead__menu-item">
               <a href="/categories/">Categories</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/">Tags</a>
@@ -324,9 +326,7 @@
         
         <ul>
           
-            <li><a href="/study-note/#coursera-ml-andrew-ng">Coursera ML Note (2021 Feb)</a></li>
-          
-            <li><a href="/study-note/snu/#%EC%9D%B4%EC%82%B0%EC%88%98%ED%95%99-2021-spring">SNU Discrete Mathematics (2021 Spring)</a></li>
+            <li><a href="/study-note/#coursera-ml-andrew-ng">Coursera ML Note (2021)</a></li>
           
         </ul>
         
@@ -348,6 +348,14 @@
         
       </li>
     
+      <li>
+        
+          <a href="/cs-adventure/"><span class="nav__sub-title">Adventure to Computer Science</span></a>
+        
+
+        
+      </li>
+    
   </ul>
 </nav>
 
@@ -359,7 +367,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="BOJ 20176, ICPC Seoul 2020 Needle">
-    <meta itemprop="description" content="Contents  풀이  코드풀이결국 문제의 요점은, 위 / 중간/ 아래를 $u_i, m_i, l_i$ 라고 할 때, $u_i + l_j = 2m_k$ 인 순서쌍 $(i, j, k)$의 개수를 세는 문제이다.이 문제는 매우 잘 알려진 Convolution 문제로, 수열을 카운팅 다항식으로 인코딩하면 쉽게 풀 수 있다. 수열이 1, 3, 4, 5, 5면 $x + x^3 + x^4 + 2x^5$ 인 식으로.이렇게 인코딩해서 $u(x), m(x), l(x)$ 를 만든 다음,$u(x)l(x)$을 계산하면 그 $n$차항의 계수가 $u_i + l_j = n$ 인 순서쌍 $i, j$ 의 개수가 된다. 따라서, 각 $n$에 대해, $m_k = n$인 $k$의 개수와 $u(x)l(x)$의 $2n$차 항의 계수를 곱해서 더하면 그대로 구하는 답이 되고, 이를 FFT를 이용하여 $O(n \log n)$에 구할 수 있음이 잘 알려져 있다.여담으로… ICPC 서울 리저널은 이런 Do you know *** 문제가 꽤 많이 나오는 편인 것 같다. 2017 FFT, 2017 인예 FFT, 2019 인예 LiChaoTree / LR Flow …코드#include &lt;bits/stdc++.h&gt;#pragma GCC optimize(&quot;O3&quot;)#pragma GCC optimize(&quot;Ofast&quot;)#pragma GCC target(&quot;avx,avx2,fma&quot;)#define ll long long#define int ll#define eps 1e-7#define all(x) ((x).begin()),((x).end())#define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);using namespace std;using pii = pair&lt;int, int&gt;;#define sz(v) ((int)(v).size())typedef vector&lt;int&gt; vi;typedef complex&lt;double&gt; base;void fft(vector &lt;base&gt; &amp;a, bool invert){    int n = sz(a);    for (int i=1,j=0;i&lt;n;i++){        int bit = n &gt;&gt; 1;        for (;j&gt;=bit;bit&gt;&gt;=1) j -= bit;        j += bit;        if (i &lt; j) swap(a[i],a[j]);    }    for (int len=2;len&lt;=n;len&lt;&lt;=1){        double ang = 2*M_PI/len*(invert?-1:1);        base wlen(cos(ang),sin(ang));        for (int i=0;i&lt;n;i+=len){            base w(1);            for (int j=0;j&lt;len/2;j++){                base u = a[i+j], v = a[i+j+len/2]*w;                a[i+j] = u+v;                a[i+j+len/2] = u-v;                w *= wlen;            }        }    }    if (invert){        for (int i=0;i&lt;n;i++) a[i] /= n;    }}void multiply(const vi &amp;a,const vi &amp;b,vi &amp;res){    vector &lt;base&gt; fa(all(a)), fb(all(b));    int n = 1;    while (n &lt; max(sz(a),sz(b))) n &lt;&lt;= 1;    fa.resize(n); fb.resize(n);    fft(fa,false); fft(fb,false);    for (int i=0;i&lt;n;i++) fa[i] *= fb[i];    fft(fa,true);    res.resize(n);    for (int i=0;i&lt;n;i++)        res[i] = (int)(fa[i].real()+(fa[i].real()&gt;0?0.5:-0.5));}vi u(121212, 0), m(121212, 0), l(121212, 0), c;void input(vi &amp;v){    int n; cin &gt;&gt; n;    for (int i = 0; i &lt; n; i++)    {        int x; cin &gt;&gt; x;        v[x+30000]++;    }}int32_t main(){    usecppio    input(u); input(m); input(l);    multiply(u, l, c);    int ans = 0;    for (int i = 0; i &lt;= 60000; i++)        ans += m[i] * c[2*i];    cout &lt;&lt; ans &lt;&lt; &#39;\n&#39;;}">
+    <meta itemprop="description" content="Contents">
     <meta itemprop="datePublished" content="2021-02-01T00:00:00+09:00">
     
 
@@ -614,6 +622,49 @@ Contents
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/algorithms/ps-weekly-21Jul1/" rel="permalink">7월 1-2주차 Weekly PS
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          1052 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/retrospects-and-plans/finishing-2021-spring/" rel="permalink">2021 1학기 종강
 </a>
       
@@ -632,13 +683,13 @@ Contents
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          314 words
+          1166 words
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">장기적으로 블로그를 https://gratus907.github.io 로 옮기고자 하는 생각을 가지고 있습니다. 그 이유는 크게 두가지입니다.
+    <p class="archive__item-excerpt" itemprop="description">이번학기도 무사히…ㅋㅋㅋㅋ 학기에 뭘 배웠는지도 돌아보고, 공부했던거에 대한 생각을 적어보려고 합니다.
 
 </p>
   </article>
@@ -716,49 +767,6 @@ Contents
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
           260 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-Contents
-
-
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithms/ps-weekly-21may1/" rel="permalink">5월 1주차 Weekly PS
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          333 words
       </span>
     
   </p>

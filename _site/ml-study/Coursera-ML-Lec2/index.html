@@ -20,7 +20,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Coursera ML, Lecture 2 : Linear Regression, Gradient Descent - Gratus907’s Study Note</title>
-<meta name="description" content="Contents     Linear Regression   Cost funtion   Gradient Descent   Gradient Descent on Linear Regression    강의 기준 1주차 Linear regression - Gradient Descent.  Linear Regression    Regression Problem에 대한 Linear Fitting   $m$개의 Training data 들이 $(x_i, y_i)$ 형태로 주어지고, 이 data로부터 best-predicting line 찾기.   Learning Algorithm을 만들어서, hypothesis $h$ 를 만든다. 이 $h$는, $x$를 받아서 Estimated value $y$를 만드는 함수.   Hypothesis로 Linear function $y = \theta_0 + \theta_1 x$ 를 쓰는 것이 Linear Regression.   이 Parameter를 어떻게 결정할 것인가? $h_\theta (x)$가 우리가 알고 있는 $m$개의 data들에 가깝게 하고 싶다.   Cost funtion    Minimize할 목표 를 잡아서 parameter를 맞추려고 한다. \(\text{minimize }_{\theta_0, \theta_1} \quad \frac{1}{2m}\sum_{i = 1}^{m} \ (h_\theta(x_i) - y_i)^2\)   각 Data point까지의 제곱 거리의 평균을 minimize하려는 목표.   이 함수를 $J(\theta_0, \theta_1)$ 로 써서, $\text{minimize }_{\theta_0, \theta_1} \ J(\theta_0, \theta_1)$ 처럼 쓰고 square error function이라고 부르자.   Why square? 가장 일반적인 regression에서의 reasonable choice.   결국은 이변수함수 $J(\theta_0, \theta_1)$의 Minimum을 얻는 $\theta_0, \theta_1$을 찾는 문제.   Gradient Descent    어떻게 그 minimum 을 찾을 것인가?   작은 step을 밟되, 지금 이 순간 가장 가파른 경사를 타고 내려갈 수 있는 방향으로 조금씩 내려간다면 나름대로 빠르게 local minimum으로 갈 수 있지 않을까?   이런 방법으로 다변수함수의 gradient를 타고 가는 것이 Gradient Descent.   초기점이 아주 살짝 달라졌을 때, gradient를 타고 가다 보면 다른 local optimum에 도착할 수도 있다.   다음과 같은 수식으로 쓸 수 있다.  \(\theta_j := \theta_j - \alpha \pdv{}{\theta_j} J(\theta_0, \theta_1)\) (실제로는, 이를 simulatneous update 로 구현해야 한다.)     $\alpha$ 는 Learning rate 으로 생각할 수 있다. 이때, $\alpha$ 가 너무 작으면 gradient descent 자체가 느리게 수렴할 것이고, $\alpha$가 너무 크면 overshoot (minimum을 지나쳐서 수렴하지 않는 경우) 발생 가능성이 있다.   Gradient Descent on Linear Regression    Linear Regression 문제에 Gradient Descent를 적용해 보자.   [\begin{aligned} \pdv{}{\theta_0}  \frac{1}{2m}\sum_{i = 1}^{m} \ (\theta_0 + \theta_1 x_i - y_i)^2 &amp;= \frac{1}{m} \sum_{i = 1}^{m} (\theta_0 + \theta_1 x_i - y_i)\ \pdv{}{\theta_1}  \frac{1}{2m}\sum_{i = 1}^{m} \ (\theta_0 + \theta_1 x_i - y_i)^2 &amp;= \frac{1}{m} \sum_{i = 1}^{m} (\theta_0 + \theta_1 x_i - y_i) \cdot x_i \end{aligned}]  이를 그냥 적용해서 simulatneous update 하면 끝.     Linear Regression은 convex objective function을 가지고 있기 때문에, global optima 외의 local optima를 갖지 않는다. 따라서, Gradient descent가 local optima로 빠지지 않고 항상 잘 작동한다.   이 문제의 경우, 모든 training set 을 이용해서 한 스텝의 gradient descent를 밟았는데 이를 Batch Gradient Descent 라고 부른다. 한 스템에서 모든 test set을 통째로 확인한다는 의미.">
+<meta name="description" content="Contents">
 
 
   <meta name="author" content="Wonseok Shin">
@@ -36,7 +36,7 @@
 <meta property="og:url" content="http://localhost:4000/ml-study/Coursera-ML-Lec2/">
 
 
-  <meta property="og:description" content="Contents     Linear Regression   Cost funtion   Gradient Descent   Gradient Descent on Linear Regression    강의 기준 1주차 Linear regression - Gradient Descent.  Linear Regression    Regression Problem에 대한 Linear Fitting   $m$개의 Training data 들이 $(x_i, y_i)$ 형태로 주어지고, 이 data로부터 best-predicting line 찾기.   Learning Algorithm을 만들어서, hypothesis $h$ 를 만든다. 이 $h$는, $x$를 받아서 Estimated value $y$를 만드는 함수.   Hypothesis로 Linear function $y = \theta_0 + \theta_1 x$ 를 쓰는 것이 Linear Regression.   이 Parameter를 어떻게 결정할 것인가? $h_\theta (x)$가 우리가 알고 있는 $m$개의 data들에 가깝게 하고 싶다.   Cost funtion    Minimize할 목표 를 잡아서 parameter를 맞추려고 한다. \(\text{minimize }_{\theta_0, \theta_1} \quad \frac{1}{2m}\sum_{i = 1}^{m} \ (h_\theta(x_i) - y_i)^2\)   각 Data point까지의 제곱 거리의 평균을 minimize하려는 목표.   이 함수를 $J(\theta_0, \theta_1)$ 로 써서, $\text{minimize }_{\theta_0, \theta_1} \ J(\theta_0, \theta_1)$ 처럼 쓰고 square error function이라고 부르자.   Why square? 가장 일반적인 regression에서의 reasonable choice.   결국은 이변수함수 $J(\theta_0, \theta_1)$의 Minimum을 얻는 $\theta_0, \theta_1$을 찾는 문제.   Gradient Descent    어떻게 그 minimum 을 찾을 것인가?   작은 step을 밟되, 지금 이 순간 가장 가파른 경사를 타고 내려갈 수 있는 방향으로 조금씩 내려간다면 나름대로 빠르게 local minimum으로 갈 수 있지 않을까?   이런 방법으로 다변수함수의 gradient를 타고 가는 것이 Gradient Descent.   초기점이 아주 살짝 달라졌을 때, gradient를 타고 가다 보면 다른 local optimum에 도착할 수도 있다.   다음과 같은 수식으로 쓸 수 있다.  \(\theta_j := \theta_j - \alpha \pdv{}{\theta_j} J(\theta_0, \theta_1)\) (실제로는, 이를 simulatneous update 로 구현해야 한다.)     $\alpha$ 는 Learning rate 으로 생각할 수 있다. 이때, $\alpha$ 가 너무 작으면 gradient descent 자체가 느리게 수렴할 것이고, $\alpha$가 너무 크면 overshoot (minimum을 지나쳐서 수렴하지 않는 경우) 발생 가능성이 있다.   Gradient Descent on Linear Regression    Linear Regression 문제에 Gradient Descent를 적용해 보자.   [\begin{aligned} \pdv{}{\theta_0}  \frac{1}{2m}\sum_{i = 1}^{m} \ (\theta_0 + \theta_1 x_i - y_i)^2 &amp;= \frac{1}{m} \sum_{i = 1}^{m} (\theta_0 + \theta_1 x_i - y_i)\ \pdv{}{\theta_1}  \frac{1}{2m}\sum_{i = 1}^{m} \ (\theta_0 + \theta_1 x_i - y_i)^2 &amp;= \frac{1}{m} \sum_{i = 1}^{m} (\theta_0 + \theta_1 x_i - y_i) \cdot x_i \end{aligned}]  이를 그냥 적용해서 simulatneous update 하면 끝.     Linear Regression은 convex objective function을 가지고 있기 때문에, global optima 외의 local optima를 갖지 않는다. 따라서, Gradient descent가 local optima로 빠지지 않고 항상 잘 작동한다.   이 문제의 경우, 모든 training set 을 이용해서 한 스텝의 gradient descent를 밟았는데 이를 Batch Gradient Descent 라고 부른다. 한 스템에서 모든 test set을 통째로 확인한다는 의미.">
+  <meta property="og:description" content="Contents">
 
 
 
@@ -170,6 +170,8 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/postings/">Posts</a>
+            </li><li class="masthead__menu-item">
               <a href="/categories/">Categories</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/">Tags</a>
@@ -324,9 +326,7 @@
         
         <ul>
           
-            <li><a href="/study-note/#coursera-ml-andrew-ng">Coursera ML Note (2021 Feb)</a></li>
-          
-            <li><a href="/study-note/snu/#%EC%9D%B4%EC%82%B0%EC%88%98%ED%95%99-2021-spring">SNU Discrete Mathematics (2021 Spring)</a></li>
+            <li><a href="/study-note/#coursera-ml-andrew-ng">Coursera ML Note (2021)</a></li>
           
         </ul>
         
@@ -348,6 +348,14 @@
         
       </li>
     
+      <li>
+        
+          <a href="/cs-adventure/"><span class="nav__sub-title">Adventure to Computer Science</span></a>
+        
+
+        
+      </li>
+    
   </ul>
 </nav>
 
@@ -359,7 +367,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Coursera ML, Lecture 2 : Linear Regression, Gradient Descent">
-    <meta itemprop="description" content="Contents  Linear Regression  Cost funtion  Gradient Descent  Gradient Descent on Linear Regression강의 기준 1주차 Linear regression - Gradient Descent.Linear Regression  Regression Problem에 대한 Linear Fitting  $m$개의 Training data 들이 $(x_i, y_i)$ 형태로 주어지고, 이 data로부터 best-predicting line 찾기.  Learning Algorithm을 만들어서, hypothesis $h$ 를 만든다. 이 $h$는, $x$를 받아서 Estimated value $y$를 만드는 함수.  Hypothesis로 Linear function $y = \theta_0 + \theta_1 x$ 를 쓰는 것이 Linear Regression.  이 Parameter를 어떻게 결정할 것인가? $h_\theta (x)$가 우리가 알고 있는 $m$개의 data들에 가깝게 하고 싶다.Cost funtion  Minimize할 목표 를 잡아서 parameter를 맞추려고 한다.\(\text{minimize }_{\theta_0, \theta_1} \quad \frac{1}{2m}\sum_{i = 1}^{m} \ (h_\theta(x_i) - y_i)^2\)  각 Data point까지의 제곱 거리의 평균을 minimize하려는 목표.  이 함수를 $J(\theta_0, \theta_1)$ 로 써서, $\text{minimize }_{\theta_0, \theta_1} \ J(\theta_0, \theta_1)$ 처럼 쓰고 square error function이라고 부르자.  Why square? 가장 일반적인 regression에서의 reasonable choice.  결국은 이변수함수 $J(\theta_0, \theta_1)$의 Minimum을 얻는 $\theta_0, \theta_1$을 찾는 문제.Gradient Descent  어떻게 그 minimum 을 찾을 것인가?  작은 step을 밟되, 지금 이 순간 가장 가파른 경사를 타고 내려갈 수 있는 방향으로 조금씩 내려간다면 나름대로 빠르게 local minimum으로 갈 수 있지 않을까?  이런 방법으로 다변수함수의 gradient를 타고 가는 것이 Gradient Descent.  초기점이 아주 살짝 달라졌을 때, gradient를 타고 가다 보면 다른 local optimum에 도착할 수도 있다.다음과 같은 수식으로 쓸 수 있다.\(\theta_j := \theta_j - \alpha \pdv{}{\theta_j} J(\theta_0, \theta_1)\)(실제로는, 이를 simulatneous update 로 구현해야 한다.)  $\alpha$ 는 Learning rate 으로 생각할 수 있다. 이때, $\alpha$ 가 너무 작으면 gradient descent 자체가 느리게 수렴할 것이고, $\alpha$가 너무 크면 overshoot (minimum을 지나쳐서 수렴하지 않는 경우) 발생 가능성이 있다.Gradient Descent on Linear Regression  Linear Regression 문제에 Gradient Descent를 적용해 보자.[\begin{aligned} \pdv{}{\theta_0}  \frac{1}{2m}\sum_{i = 1}^{m} \ (\theta_0 + \theta_1 x_i - y_i)^2 &amp;= \frac{1}{m} \sum_{i = 1}^{m} (\theta_0 + \theta_1 x_i - y_i)\ \pdv{}{\theta_1}  \frac{1}{2m}\sum_{i = 1}^{m} \ (\theta_0 + \theta_1 x_i - y_i)^2 &amp;= \frac{1}{m} \sum_{i = 1}^{m} (\theta_0 + \theta_1 x_i - y_i) \cdot x_i \end{aligned}]이를 그냥 적용해서 simulatneous update 하면 끝.  Linear Regression은 convex objective function을 가지고 있기 때문에, global optima 외의 local optima를 갖지 않는다. 따라서, Gradient descent가 local optima로 빠지지 않고 항상 잘 작동한다.  이 문제의 경우, 모든 training set 을 이용해서 한 스텝의 gradient descent를 밟았는데 이를 Batch Gradient Descent 라고 부른다. 한 스템에서 모든 test set을 통째로 확인한다는 의미.">
+    <meta itemprop="description" content="Contents">
     <meta itemprop="datePublished" content="2021-01-30T00:00:00+09:00">
     
 
@@ -577,6 +585,49 @@ Contents
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/algorithms/ps-weekly-21Jul1/" rel="permalink">7월 1-2주차 Weekly PS
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          1052 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/retrospects-and-plans/finishing-2021-spring/" rel="permalink">2021 1학기 종강
 </a>
       
@@ -595,13 +646,13 @@ Contents
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          314 words
+          1166 words
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">장기적으로 블로그를 https://gratus907.github.io 로 옮기고자 하는 생각을 가지고 있습니다. 그 이유는 크게 두가지입니다.
+    <p class="archive__item-excerpt" itemprop="description">이번학기도 무사히…ㅋㅋㅋㅋ 학기에 뭘 배웠는지도 돌아보고, 공부했던거에 대한 생각을 적어보려고 합니다.
 
 </p>
   </article>
@@ -679,49 +730,6 @@ Contents
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
           260 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-Contents
-
-
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithms/ps-weekly-21may1/" rel="permalink">5월 1주차 Weekly PS
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          333 words
       </span>
     
   </p>

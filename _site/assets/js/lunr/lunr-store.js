@@ -222,8 +222,14 @@ var store = [{
         "teaser": null
       },{
         "title": "2021 1학기 종강",
-        "excerpt":"장기적으로 블로그를 https://gratus907.github.io 로 옮기고자 하는 생각을 가지고 있습니다. 그 이유는 크게 두가지입니다. 티스토리보다 높은 자유도 네이버 블로그에서 티스토리로 넘어왔던 이유인데, .md파일을 작성할 뿐 아니라 다양한 페이지를 만들 수 있고 필요하면 직접 html을 뜯어서라도 정확히 내가 원하는걸 만들 수 있는 github.io (Jekyll 블로그) 에 비해, 티스토리는 약간 자유도가 낮습니다. 이부분이 여러모로...","categories": ["retrospects-and-plans"],
+        "excerpt":"이번학기도 무사히…ㅋㅋㅋㅋ 학기에 뭘 배웠는지도 돌아보고, 공부했던거에 대한 생각을 적어보려고 합니다. Academic Spring Semester Courses Hardware System Design (CSE, 3) Verilog를 이용하여 행렬곱셈 하드웨어 가속기를 만들고, CNN을 빨리돌리는..뭐 그런걸 배우는 과목입니다. 저는 베릴로그 코딩을 굉장히 힘들어하기 때문에 팀원이 좀 많이 고생했습니다. 논리설계때 좀 열심히 들을걸 하는 깊은 후회와 미안함을 느끼고...","categories": ["retrospects-and-plans"],
         "tags": [],
         "url": "http://localhost:4000/retrospects-and-plans/finishing-2021-spring/",
+        "teaser": null
+      },{
+        "title": "7월 1-2주차 Weekly PS",
+        "excerpt":"Contents Recent Updates Rounds Atcoder Beginner Round 208 (Virtual) Codeforces Round 490 (Div.3) Problems ICPC Mid Atlantic 2006, BOJ 1849 순열 CERC 2010D, BOJ 3429 방어선 UCPC 2018 예선F, BOJ 15899 트리와 색깔 BOJ 14287 회사 문화 3 BAPC 2005E, BOJ 5419 북서풍 SCCC 2019E, BOJ 17131 여우가 정보섬에 올라온...","categories": ["algorithms"],
+        "tags": ["weekly-ps"],
+        "url": "http://localhost:4000/algorithms/ps-weekly-21Jul1/",
         "teaser": null
       }]

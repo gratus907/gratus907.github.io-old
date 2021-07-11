@@ -1,0 +1,885 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TNVQ3G5D5B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TNVQ3G5D5B');
+</script>
+
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>7월 1-2주차 Weekly PS - Gratus907’s Study Note</title>
+<meta name="description" content="Contents">
+
+
+  <meta name="author" content="Wonseok Shin">
+  
+  <meta property="article:author" content="Wonseok Shin">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Gratus907's Study Note">
+<meta property="og:title" content="7월 1-2주차 Weekly PS">
+<meta property="og:url" content="http://localhost:4000/algorithms/ps-weekly-21Jul1/">
+
+
+  <meta property="og:description" content="Contents">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-07-08T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/algorithms/ps-weekly-21Jul1/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Wonseok Shin",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Gratus907's Study Note Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']],
+      packages: {'[+]': ['physics']}
+    },
+    loader: {
+      load: ["input/tex", "output/chtml", '[tex]/physics']
+    },
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}\newcommand{\di}{\mathrel{|}}\newcommand{\limply}{\rightarrow}\newcommand{\fa}{\forall}\newcommand{\e}{\exists}\newcommand{\lxor}{\oplus}\newcommand{\liff}{\leftrightarrow}\newcommand{\lequiv}{\Leftrightarrow}$$</p>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M2LK7DWFS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9M2LK7DWFS');
+    </script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Gratus907's Study Note
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/postings/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about-me/">About me</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Wonseok Shin</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>2018- SNU CSE, interested in algorithms, mathematics</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:gratus907@snu.ac.kr">
+            <meta itemprop="email" content="gratus907@snu.ac.kr" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/study-note/"><span class="nav__sub-title">Study Note</span></a>
+        
+
+        
+        <ul>
+          
+            <li><a href="/study-note/#coursera-ml-andrew-ng">Coursera ML Note (2021)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/#algorithms"><span class="nav__sub-title">Algorithm Problem Solving</span></a>
+        
+
+        
+        <ul>
+          
+            <li><a href="/find-contest/">PS 문제 출처별로 보기</a></li>
+          
+            <li><a href="/sac-class/">solved.ac class별로 보기</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <a href="/cs-adventure/"><span class="nav__sub-title">Adventure to Computer Science</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="7월 1-2주차 Weekly PS">
+    <meta itemprop="description" content="Contents">
+    <meta itemprop="datePublished" content="2021-07-08T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">7월 1-2주차 Weekly PS
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          1105 words
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/algorithms/ps-weekly-21Jul1/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
+      <section class="page__content" itemprop="text">
+        
+        <div id="toc">
+Contents
+</div>
+<ul id="markdown-toc">
+  <li><a href="#recent-updates" id="markdown-toc-recent-updates">Recent Updates</a></li>
+  <li><a href="#rounds" id="markdown-toc-rounds">Rounds</a>    <ul>
+      <li><a href="#atcoder-beginner-round-208" id="markdown-toc-atcoder-beginner-round-208">Atcoder Beginner Round 208</a></li>
+      <li><a href="#virtual-codeforces-round-490-div3" id="markdown-toc-virtual-codeforces-round-490-div3">(Virtual) Codeforces Round 490 (Div.3)</a></li>
+    </ul>
+  </li>
+  <li><a href="#problems" id="markdown-toc-problems">Problems</a>    <ul>
+      <li><a href="#icpc-mid-atlantic-2006-boj-1849-순열" id="markdown-toc-icpc-mid-atlantic-2006-boj-1849-순열">ICPC Mid Atlantic 2006, BOJ 1849 순열</a></li>
+      <li><a href="#cerc-2010d-boj-3429-방어선" id="markdown-toc-cerc-2010d-boj-3429-방어선">CERC 2010D, BOJ 3429 방어선</a></li>
+      <li><a href="#ucpc-2018-예선f-boj-15899-트리와-색깔" id="markdown-toc-ucpc-2018-예선f-boj-15899-트리와-색깔">UCPC 2018 예선F, BOJ 15899 트리와 색깔</a></li>
+      <li><a href="#boj-14287-회사-문화-3" id="markdown-toc-boj-14287-회사-문화-3">BOJ 14287 회사 문화 3</a></li>
+      <li><a href="#bapc-2005e-boj-5419-북서풍" id="markdown-toc-bapc-2005e-boj-5419-북서풍">BAPC 2005E, BOJ 5419 북서풍</a></li>
+      <li><a href="#sccc-2019e-boj-17131-여우가-정보섬에-올라온-이유" id="markdown-toc-sccc-2019e-boj-17131-여우가-정보섬에-올라온-이유">SCCC 2019E, BOJ 17131 여우가 정보섬에 올라온 이유</a></li>
+      <li><a href="#boj-16993-연속합과-쿼리" id="markdown-toc-boj-16993-연속합과-쿼리">BOJ 16993, 연속합과 쿼리</a></li>
+    </ul>
+  </li>
+</ul>
+<hr />
+
+<p>July 01 - July 11, 2021</p>
+
+<h2 id="recent-updates">Recent Updates</h2>
+<ul>
+  <li>2021 UCPC에 (팀명은 미정) 참여할 예정입니다. 현재 계획된 팀원은 <code class="language-plaintext highlighter-rouge">dlwocks31</code> 과 <code class="language-plaintext highlighter-rouge">gyuni</code> 로, dlwocks31은 지난 2년간 PS를 같이 돌아왔었고 <code class="language-plaintext highlighter-rouge">gyuni</code>님과는 2019 UCPC쯤에 팀연습 스파링(?) 으로 만나본적이 있습니다.</li>
+  <li>2021 SCPC도 일단은 출전합니다.</li>
+</ul>
+
+<h2 id="rounds">Rounds</h2>
+<h3 id="atcoder-beginner-round-208">Atcoder Beginner Round 208</h3>
+<ul>
+  <li><a href="https://atcoder.jp/contests/abc208/tasks">라운드 링크</a></li>
+  <li>420등, +4 (1840 -&gt; 1844).</li>
+  <li>D번까지 무난하게 풀었는데 E번 구현에서 너무 심하게 말렸습니다. 딱히 재밌지는 않고… F번은 좀 재밌는 수학문제같던데 E에 말려서 읽어보지도 못했네요.</li>
+</ul>
+
+<h3 id="virtual-codeforces-round-490-div3">(Virtual) Codeforces Round 490 (Div.3)</h3>
+<ul>
+  <li>E번이 좀 재밌는 문제였습니다. 나머지는 딱히.</li>
+</ul>
+
+<h2 id="problems">Problems</h2>
+<p>집나간 실력을 되찾기 위한 목적으로 몇개 밀었습니다. 주로 세그먼트 트리 문제를 밀기로 했습니다 :)</p>
+
+<p>세그먼트 트리 구현은 재귀 트리와 비재귀 트리를 섞어 쓰는 편입니다. 간단히 논의하자면, 양쪽에는 다음과 같은 장단점이 있습니다.</p>
+<ul>
+  <li>재귀트리는 밑바닥부터 제가 짰기 때문에, 동작을 보다 정확하게 이해하고 있어 변형문제를 풀기에 편합니다.</li>
+  <li>재귀트리가 근본적으로 (Fundamentally의 좋은 번역어가 떠오르지 않네요) 좀더 직관적입니다.</li>
+  <li>반면, 비재귀트리는 확실히 더 빠릅니다. 상수가 영향을 주는 문제를 많이 본적은 없지만, $O(n \log n)$ 솔루션이 있는 문제의 경우 가끔 빠른 $O(n \log^2 n)$은 통과하고 똑같은 솔루션에 상수가 크면 짤립니다. 이떄 가끔 유용합니다.</li>
+  <li>비재귀트리는 널리 알려진 구현체인 <a href="https://codeforces.com/blog/entry/18051">Efficient and Easy Segment Trees</a> 를 가져와서 조금 고쳐 쓰고 있습니다. 많은 사람들이 공유하는 라이브러리를 쓴다는 것은 그 자체로 장점입니다.</li>
+</ul>
+
+<h3 id="icpc-mid-atlantic-2006-boj-1849-순열">ICPC Mid Atlantic 2006, BOJ 1849 순열</h3>
+<ul>
+  <li>$1, 2, \dots n$ 의 permutation을 찾는 문제인데, 각 $i$에 대해, $i$ 앞에 있는 수들 중 $i$보다 큰 수의 개수 $A_i$ 가 주어집니다.</li>
+  <li>기본적인 아이디어는, 각 $i$가 들어갈 위치를 찾아주는 것입니다. 1을 제외한 모든 수가 1보다 크기 때문에, $A_1$이 주어지면 1이 들어가야 할 위치를 그냥 알 수 있습니다. 1을 찾고 나면, 2는 남은 자리들 중 $A_2$번째 자리에 들어가야 한다는 것을 어렵지 않게 알 수 있습니다.</li>
+  <li>결국은 $1, 2, \dots n$ 에 대해, 이 집합에서 수를 하나 뽑아내고, 남아 있는 수들 중 $k$번째를 빠르게 구하는 자료구조가 필요합니다.</li>
+  <li>Order statistics tree를 이용하여 $O(n \log n)$에 쉽게 해결할 수 있고, segment tree로도 같은 복잡도로 구현할 수 있습니다.</li>
+</ul>
+
+<h3 id="cerc-2010d-boj-3429-방어선">CERC 2010D, BOJ 3429 방어선</h3>
+<ul>
+  <li>수열 $A_i$가 하나 주어지고, 수열에서 <strong>최장 길이의 연속하는 증가 부분</strong> 을 찾는 문제입니다. 단, 딱 한 번 원래 수열에서 연속한 부분 하나를 들어낼 수 있습니다.</li>
+  <li>예를 들어, 5, 3, 4, 9, 2, 8, 6, 7, 1 에서 (9, 2, 8) 부분을 떼어내고 가운데 3, 4, 6, 7을 취하는 식입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">DP1[i]</code>, <code class="language-plaintext highlighter-rouge">DP2[i]</code> 를 각각 $i$번째를 오른쪽 / 왼쪽 끝으로 하는 최장 길이의 연속하는 증가 부분이라고 합시다. 이제, 우리가 원하는 값은 모든 $i &lt; j$, $A_i &lt; A_j$에 대해, $D_1(i) + D_2(j)$ 를 계산하여 이를 maximize하는 것입니다.</li>
+  <li>위 표현을 Naive하게 계산하려고 시도하면 ‘모든 $i &lt; j$, $A_i &lt; A_j$’ 에서 이미 $O(n^2)$ 시간이 걸립니다.</li>
+  <li>대신, $A_i$가 큰 것부터 $D_2(i)$의 값들을 세그먼트 트리 같은 자료구조에 업데이트하고, 여기에 $[i, n]$ 구간의 최댓값을 쿼리하는 식으로 생각하면 $O(n \log n)$ 시간에 문제를 해결할 수 있습니다. 코어 로직의 코드는…
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">q</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+      <span class="n">s</span><span class="p">.</span><span class="n">modify</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">dp2</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span>
+      <span class="n">dp</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp1</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="n">q</span><span class="p">;</span>
+      <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span> <span class="o">&lt;&lt;</span> <span class="sc">'\n'</span><span class="p">;</span>
+<span class="err">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i].second</code> 는 $A_i$ 순으로 정렬한 후 다시 인덱스를 가져오기 위함입니다. 대략적인 업데이트 순서는 바로 눈으로 보는 대로입니다.</li>
+  <li>주의할 점은, $A_i = A_j$ 인 $i, j$가 없음이 보장되어있지 않기 때문에, 쿼리할 때 업데이트 순서를 조심해야 합니다. $A_i$가 같을 때 뭐부터 $D_2(i)$ 를 세그트리에 넣어주는지가 중요한데, $A_i = A_j$이면 $D_2(i)$의 유무가 후속하는 $j$ 쿼리에 영향을 줄 수 없도록, 왼쪽부터 업데이트해야 합니다.</li>
+</ul>
+
+<h3 id="ucpc-2018-예선f-boj-15899-트리와-색깔">UCPC 2018 예선F, BOJ 15899 트리와 색깔</h3>
+<ul>
+  <li>트리의 각 정점이 1부터 $C$ 사이의 색깔을 가지고 있고, $f(v, c)$ 를 $v$를 루트로 하는 서브트리에서 색깔이 $c$이하인 정점의 개수로 정의할 때 이를 빨리 계산하는 문제입니다.</li>
+  <li>Euler Tour 라는 테크닉을 이용, 트리를 배열로 펴 주면 서브트리에 대한 쿼리가 우리가 잘 이해하고 있는 구간에 대한 쿼리로 바뀝니다.</li>
+  <li>쿼리를 오프라인 처리해서, 색깔이 작은 쿼리부터 처리하겠습니다.</li>
+  <li>이제, 색깔이 작은 것부터 업데이트하면서 중간중간 타이밍이 될때마다 쿼리를 처리해 주면 됩니다.</li>
+</ul>
+
+<h3 id="boj-14287-회사-문화-3">BOJ 14287 회사 문화 3</h3>
+<ul>
+  <li>위 문제와 똑같이 Euler Tour 를 이용하여 트리를 배열로 펴고</li>
+  <li>칭찬받은 노드에 값을 더한 다음</li>
+  <li>쿼리가 들어오면 그 노드의 서브트리가 받은 칭찬의 값을 합하면 끝입니다.</li>
+  <li>구현이 매우 단순해서, 오일러투어 구현을 확인하기에 적절합니다.</li>
+  <li>나름대로 깨끗하게 구현하려고 노력한 <a href="https://www.acmicpc.net/source/30906316">링크</a> 참고.</li>
+</ul>
+
+<h3 id="bapc-2005e-boj-5419-북서풍">BAPC 2005E, BOJ 5419 북서풍</h3>
+<ul>
+  <li>전형적인 ‘스위핑 + 세그트리’ 입니다.</li>
+  <li>문제를 단순화하기 위해, 좌표평면에 N개의 점이 있고, 남동쪽 대신 북동쪽으로 간다고 생각해 봅시다. 좌표압축을 한다음 Y좌표들을 뒤집어 버리면 이렇게 만드는 것은 어렵지 않게 가능합니다.</li>
+  <li>이제, 각 점들을 $(x_i, y_i)$ 라고 하고, 1차원 세그먼트 트리 하나를 만듭니다. 각 점을 세그트리의 $x_i$ 번 위치에 추가할 것입니다.</li>
+  <li>우리가 원하는 것은, $(x_i, y_i)$에 서서 세그트리에 $[x_i, \infty]$ 쿼리를 날렸을때 여기서부터 북동쪽으로 갈수있는 점의 개수를 얻는 것입니다. 그러나 우리의 세그트리는 $y$좌표를 기억하지 않고 그냥 무작정 점의 개수를 세기 때문에, $y$좌표는 우리가 스위핑해야 합니다.</li>
+  <li>$y$좌표가 큰 순서대로, 즉 위에서부터 세그트리에 점을 하나씩 넣으면서, 이 점까지 넣은 다음 동쪽을 바라보면 나보다 아래 (y좌표 기준) 점들을 아직 아예 추가가 되지 않았기 때문에 북동쪽 점들만 보이게 됩니다.</li>
+  <li>주의할 점은, 점을 정확히 세기 위해서는 $y$좌표가 같은 점들은 $x$좌표가 큰 쪽부터 처리해야 합니다.</li>
+</ul>
+
+<h3 id="sccc-2019e-boj-17131-여우가-정보섬에-올라온-이유">SCCC 2019E, BOJ 17131 여우가 정보섬에 올라온 이유</h3>
+<ul>
+  <li>바로 위 문제와 거의 똑같습니다.</li>
+  <li>$y$ 좌표 순서대로 내려오면서 업데이트하고 쿼리합니다. 이문제는 $[0, x_i - 1]$ 과 $[x_i+1, \infty]$ 를 쿼리해서 곱하는 방식입니다.</li>
+  <li>딱 하나 주의할 점은, 위 문제와는 달리 $y$좌표가 같은 점들을 업데이트하는 순서를 어떻게 줘도 꼬이게 됩니다. $y$좌표가 같은 점들을 따로 기억해 놨다가 한번에 업데이트해야 합니다. 코드를 참고해 주세요.</li>
+</ul>
+
+<h3 id="boj-16993-연속합과-쿼리">BOJ 16993, 연속합과 쿼리</h3>
+<ul>
+  <li>연속합과 쿼리는 소위 ‘금광세그’ 를 이용하여 풀 수 있음이 매우 잘 알려져 있습니다.</li>
+  <li>세그먼트 트리를 사용하되, 다음과 같은 정보들을 저장합니다. 세그트리의 한 노드가 구간 $[l, r]$ 에 대응한다는 사실을 기억합시다.
+    <ul>
+      <li>자기가 담당하는 구간의 왼쪽 끝에서 시작해서 얻을 수 있는 최대 구간합</li>
+      <li>자기가 담당하는 구간의 오른쪽 끝에서 시작해서 얻을 수 있는 최대 구간합</li>
+      <li>자기가 담당하는 구간의 최대 구간합</li>
+      <li>자기가 담당하는 구간의 합</li>
+    </ul>
+  </li>
+  <li>이 네 정보를 ls, rs, ms, s라고 하면, 두 노드를 합칠 때 다음과 같이 생각하면 됩니다.
+    <ul>
+      <li>노드 $a$, $b$를 합쳐서 $e$로 만들 때,</li>
+      <li><code class="language-plaintext highlighter-rouge">e.s</code> 는 자명합니다.</li>
+      <li><code class="language-plaintext highlighter-rouge">e.ls</code> 는, <code class="language-plaintext highlighter-rouge">e</code>의 왼쪽 끝에서 시작해야 하므로 <code class="language-plaintext highlighter-rouge">a.ls</code> 가 답일 수도 있고, a를 다 먹고 b의 왼쪽 일부를 먹는 경우가 답일 수도 있습니다. 후자는 <code class="language-plaintext highlighter-rouge">a.s + b.ls</code> 가 최대일 것입니다 (ls의 정의). 따라서, 두 값 중 최대를 취합니다.</li>
+      <li>같은 원리로, <code class="language-plaintext highlighter-rouge">e.rs</code>는 <code class="language-plaintext highlighter-rouge">b.rs</code> 와 <code class="language-plaintext highlighter-rouge">b.s + a.rs</code> 중 큰 값을 고르면 됩니다.</li>
+      <li>마지막은 <code class="language-plaintext highlighter-rouge">e.ms</code> 입니다. 이는 다시 경우를 나누어 생각하면, <code class="language-plaintext highlighter-rouge">a</code>구간에 포함된 답을 갖거나 (<code class="language-plaintext highlighter-rouge">a.ms</code>), <code class="language-plaintext highlighter-rouge">b</code>구간에 포함된 답을 갖거나 (<code class="language-plaintext highlighter-rouge">b.ms</code>), 두 구간에 걸친 답을 갖거나 (이 답이 <code class="language-plaintext highlighter-rouge">a.rs + b.ls</code>가 최선임을 관찰합니다) 세가지 경우 (대칭을 제외하면 두가지) 밖에 없습니다.</li>
+    </ul>
+  </li>
+  <li>따라서, 상수배의 시간을 지불하여 모든 정보를 관리할 수 있고, 연속합 쿼리를 똑같이 날려줄 수 있습니다.</li>
+  <li>두 노드를 합칠때, 단순합에서는 좌우가 상관없지만 이런 특수한 연산을 할 때는 좌우를 조심해야 합니다.</li>
+</ul>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#weekly-ps" class="page__taxonomy-item" rel="tag">weekly-ps</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#algorithms" class="page__taxonomy-item" rel="tag">algorithms</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-07-08T00:00:00+09:00">July 8, 2021</time></p>
+
+
+      </footer>
+
+      
+  <nav class="pagination">
+    
+      <a href="/retrospects-and-plans/finishing-2021-spring/" class="pagination--pager" title="2021 1학기 종강
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+    
+      <div id="disqus_thread"></div>
+      <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+        var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://gratus907-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/retrospects-and-plans/finishing-2021-spring/" rel="permalink">2021 1학기 종강
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          1128 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">이번학기도 무사히…ㅋㅋㅋㅋ 학기에 뭘 배웠는지도 돌아보고, 공부했던거에 대한 생각을 적어보려고 합니다.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithms/Codejam-2021-R2/" rel="permalink">Codejam 2021 Round 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          791 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithms/ps-weekly-21may2/" rel="permalink">5월 2주차 Weekly PS
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          270 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithms/ps-weekly-21may1/" rel="permalink">5월 1주차 Weekly PS
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          344 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'G-TNVQ3G5D5B']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

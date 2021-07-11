@@ -20,7 +20,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>BOJ 17371, UCPC 2019 인터넷예선 J번 이사 - Gratus907’s Study Note</title>
-<meta name="description" content="난이도 : Gold 2   출처 : UCPC 2019 인터넷 예선 J번   solved ac class 6 essential   풀이 주어진 점들 중 하나가 반드시 답이 됨을 보이자.  먼저, 평균을 최소화하는 대신 합을 최소화하는 것으로 생각하자. 답이 되는 점이 $X$ 라고 하고, 주어진 점들 중 $X$에 가장 가까운 점을 $A$, 가장 먼 점을 $B$라고 하자. 이때, 우리가 최소화하는 것은 $\overline{XA} + \overline{XB}$ 이다. 이때, 삼각 부등식으로부터 이 값이 $\overline{AB}$보다 크거나 같기 때문에, $X$ 대신 $A$를 택함으로써 반드시 거리의 합 상 이득을 얻게 된다. 따라서, 반드시 주어진 점들 중 하나가 답이 된다.  Code #include &lt;bits/stdc++.h&gt; #define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0); using namespace std;  struct pt {     double x, y;     double dt(pt &amp;o)     {         return sqrt((x-o.x)*(x-o.x) + (y-o.y)*(y-o.y));     } };  pt pts[1010]; int32_t main() {     usecppio     int n; cin &gt;&gt; n;     for (int i = 1; i &lt;= n; i++)     {         double x, y; cin &gt;&gt; x &gt;&gt; y;         pts[i] = {x, y};     }     int best = -1;     double score = 1e12;     for (int i = 1; i &lt;= n; i++)     {         double MD = 0;         for (int j = 1; j &lt;= n; j++)             MD = max(MD, pts[i].dt(pts[j]));         double sc = MD / 2;         if (score &gt;= sc)         {             score = sc;             best = i;         }     }     cout &lt;&lt; pts[best].x &lt;&lt; &#39; &#39; &lt;&lt; pts[best].y &lt;&lt; &#39;\n&#39;; }">
+<meta name="description" content="난이도 : Gold 2   출처 : UCPC 2019 인터넷 예선 J번   solved ac class 6 essential">
 
 
   <meta name="author" content="Wonseok Shin">
@@ -36,7 +36,7 @@
 <meta property="og:url" content="http://localhost:4000/algorithms/BOJ17371/">
 
 
-  <meta property="og:description" content="난이도 : Gold 2   출처 : UCPC 2019 인터넷 예선 J번   solved ac class 6 essential   풀이 주어진 점들 중 하나가 반드시 답이 됨을 보이자.  먼저, 평균을 최소화하는 대신 합을 최소화하는 것으로 생각하자. 답이 되는 점이 $X$ 라고 하고, 주어진 점들 중 $X$에 가장 가까운 점을 $A$, 가장 먼 점을 $B$라고 하자. 이때, 우리가 최소화하는 것은 $\overline{XA} + \overline{XB}$ 이다. 이때, 삼각 부등식으로부터 이 값이 $\overline{AB}$보다 크거나 같기 때문에, $X$ 대신 $A$를 택함으로써 반드시 거리의 합 상 이득을 얻게 된다. 따라서, 반드시 주어진 점들 중 하나가 답이 된다.  Code #include &lt;bits/stdc++.h&gt; #define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0); using namespace std;  struct pt {     double x, y;     double dt(pt &amp;o)     {         return sqrt((x-o.x)*(x-o.x) + (y-o.y)*(y-o.y));     } };  pt pts[1010]; int32_t main() {     usecppio     int n; cin &gt;&gt; n;     for (int i = 1; i &lt;= n; i++)     {         double x, y; cin &gt;&gt; x &gt;&gt; y;         pts[i] = {x, y};     }     int best = -1;     double score = 1e12;     for (int i = 1; i &lt;= n; i++)     {         double MD = 0;         for (int j = 1; j &lt;= n; j++)             MD = max(MD, pts[i].dt(pts[j]));         double sc = MD / 2;         if (score &gt;= sc)         {             score = sc;             best = i;         }     }     cout &lt;&lt; pts[best].x &lt;&lt; &#39; &#39; &lt;&lt; pts[best].y &lt;&lt; &#39;\n&#39;; }">
+  <meta property="og:description" content="난이도 : Gold 2   출처 : UCPC 2019 인터넷 예선 J번   solved ac class 6 essential">
 
 
 
@@ -170,6 +170,8 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/postings/">Posts</a>
+            </li><li class="masthead__menu-item">
               <a href="/categories/">Categories</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/">Tags</a>
@@ -324,9 +326,7 @@
         
         <ul>
           
-            <li><a href="/study-note/#coursera-ml-andrew-ng">Coursera ML Note (2021 Feb)</a></li>
-          
-            <li><a href="/study-note/snu/#%EC%9D%B4%EC%82%B0%EC%88%98%ED%95%99-2021-spring">SNU Discrete Mathematics (2021 Spring)</a></li>
+            <li><a href="/study-note/#coursera-ml-andrew-ng">Coursera ML Note (2021)</a></li>
           
         </ul>
         
@@ -348,6 +348,14 @@
         
       </li>
     
+      <li>
+        
+          <a href="/cs-adventure/"><span class="nav__sub-title">Adventure to Computer Science</span></a>
+        
+
+        
+      </li>
+    
   </ul>
 </nav>
 
@@ -359,7 +367,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="BOJ 17371, UCPC 2019 인터넷예선 J번 이사">
-    <meta itemprop="description" content="  난이도 : Gold 2  출처 : UCPC 2019 인터넷 예선 J번  solved ac class 6 essential풀이주어진 점들 중 하나가 반드시 답이 됨을 보이자.먼저, 평균을 최소화하는 대신 합을 최소화하는 것으로 생각하자. 답이 되는 점이 $X$ 라고 하고, 주어진 점들 중 $X$에 가장 가까운 점을 $A$, 가장 먼 점을 $B$라고 하자. 이때, 우리가 최소화하는 것은 $\overline{XA} + \overline{XB}$ 이다. 이때, 삼각 부등식으로부터 이 값이 $\overline{AB}$보다 크거나 같기 때문에, $X$ 대신 $A$를 택함으로써 반드시 거리의 합 상 이득을 얻게 된다. 따라서, 반드시 주어진 점들 중 하나가 답이 된다.Code#include &lt;bits/stdc++.h&gt;#define usecppio ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);using namespace std;struct pt{    double x, y;    double dt(pt &amp;o)    {        return sqrt((x-o.x)*(x-o.x) + (y-o.y)*(y-o.y));    }};pt pts[1010];int32_t main(){    usecppio    int n; cin &gt;&gt; n;    for (int i = 1; i &lt;= n; i++)    {        double x, y; cin &gt;&gt; x &gt;&gt; y;        pts[i] = {x, y};    }    int best = -1;    double score = 1e12;    for (int i = 1; i &lt;= n; i++)    {        double MD = 0;        for (int j = 1; j &lt;= n; j++)            MD = max(MD, pts[i].dt(pts[j]));        double sc = MD / 2;        if (score &gt;= sc)        {            score = sc;            best = i;        }    }    cout &lt;&lt; pts[best].x &lt;&lt; &#39; &#39; &lt;&lt; pts[best].y &lt;&lt; &#39;\n&#39;;}">
+    <meta itemprop="description" content="  난이도 : Gold 2  출처 : UCPC 2019 인터넷 예선 J번  solved ac class 6 essential">
     <meta itemprop="datePublished" content="2021-01-16T00:00:00+09:00">
     
 
@@ -565,6 +573,49 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/algorithms/ps-weekly-21Jul1/" rel="permalink">7월 1-2주차 Weekly PS
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          1052 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/retrospects-and-plans/finishing-2021-spring/" rel="permalink">2021 1학기 종강
 </a>
       
@@ -583,13 +634,13 @@
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          314 words
+          1166 words
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">장기적으로 블로그를 https://gratus907.github.io 로 옮기고자 하는 생각을 가지고 있습니다. 그 이유는 크게 두가지입니다.
+    <p class="archive__item-excerpt" itemprop="description">이번학기도 무사히…ㅋㅋㅋㅋ 학기에 뭘 배웠는지도 돌아보고, 공부했던거에 대한 생각을 적어보려고 합니다.
 
 </p>
   </article>
@@ -667,49 +718,6 @@ Contents
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
           260 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-Contents
-
-
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithms/ps-weekly-21may1/" rel="permalink">5월 1주차 Weekly PS
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          333 words
       </span>
     
   </p>

@@ -72,14 +72,14 @@ Code : `gratus907` (00:58, 1WA)
 ------
 
 ## Phase 2 : 3 Graph Problems
-### D. 사탕 배달 
+### E. 사탕 배달 
 Solve : `dlwocks31`, `gyuni`  
 Code : `dlwocks31` (00:52, 1WA)  
 뭔지 잘 모르겠지만 트리에서 뭔가를 하는 문제입니다. 제가 파이썬 구현으로 싸우고 있는 사이에 팀원 두명이 AC를 받아왔습니다. 
 
 ------
 
-### A. 에어컨 설치
+### D. 에어컨 설치
 Solve : `gyuni`, `dlwocks31`, `gratus907`  
 Code : `gyuni` (01:36)  
 문제는 다음과 같습니다.

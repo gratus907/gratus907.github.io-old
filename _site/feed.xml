@@ -1,4 +1,170 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-12T04:50:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">7월 1-2주차 Weekly PS</title><link href="http://localhost:4000/algorithms/ps-weekly-21Jul1/" rel="alternate" type="text/html" title="7월 1-2주차 Weekly PS" /><published>2021-07-08T00:00:00+09:00</published><updated>2021-07-08T00:00:00+09:00</updated><id>http://localhost:4000/algorithms/ps-weekly-21Jul1</id><content type="html" xml:base="http://localhost:4000/algorithms/ps-weekly-21Jul1/">&lt;div id=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-14T21:18:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">2021 UCPC 팀연습 #1 : 서강대학교 2020 Div 1</title><link href="http://localhost:4000/cp_practice/team_practice_1/" rel="alternate" type="text/html" title="2021 UCPC 팀연습 #1 : 서강대학교 2020 Div 1" /><published>2021-07-14T00:00:00+09:00</published><updated>2021-07-14T00:00:00+09:00</updated><id>http://localhost:4000/cp_practice/team_practice_1</id><content type="html" xml:base="http://localhost:4000/cp_practice/team_practice_1/">&lt;div id=&quot;toc&quot;&gt;
+Contents
+&lt;/div&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#our-team&quot; id=&quot;markdown-toc-our-team&quot;&gt;Our Team&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#practice--sogang-2020-div1&quot; id=&quot;markdown-toc-practice--sogang-2020-div1&quot;&gt;Practice : Sogang 2020 Div1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#phase-0--start&quot; id=&quot;markdown-toc-phase-0--start&quot;&gt;Phase 0 : Start&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#phase-1--easy-problems&quot; id=&quot;markdown-toc-phase-1--easy-problems&quot;&gt;Phase 1 : Easy Problems&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#a-파일-정리&quot; id=&quot;markdown-toc-a-파일-정리&quot;&gt;A. 파일 정리&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#f-폰친구&quot; id=&quot;markdown-toc-f-폰친구&quot;&gt;F. 폰친구&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#c-연료가-부족해&quot; id=&quot;markdown-toc-c-연료가-부족해&quot;&gt;C. 연료가 부족해&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#b-컨설팅&quot; id=&quot;markdown-toc-b-컨설팅&quot;&gt;B. 컨설팅&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#phase-2--3-graph-problems&quot; id=&quot;markdown-toc-phase-2--3-graph-problems&quot;&gt;Phase 2 : 3 Graph Problems&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#c-사탕-배달&quot; id=&quot;markdown-toc-c-사탕-배달&quot;&gt;C. 사탕 배달&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#a-에어컨-설치&quot; id=&quot;markdown-toc-a-에어컨-설치&quot;&gt;A. 에어컨 설치&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#g-confuzzle&quot; id=&quot;markdown-toc-g-confuzzle&quot;&gt;G. Confuzzle&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#phase-3--pizza-madness&quot; id=&quot;markdown-toc-phase-3--pizza-madness&quot;&gt;Phase 3 : Pizza Madness&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#후기&quot; id=&quot;markdown-toc-후기&quot;&gt;후기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;our-team&quot;&gt;Our Team&lt;/h2&gt;
+&lt;p&gt;이번 UCPC 팀은 이렇게 구성되게 되었습니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt; : DGIST에서 석사과정을 올 8월에 마무리하고 졸업합니다. ICPC는 석사 1년차까지, UCPC는 석사과정 (석박통합 2년차까지) 임을 감안하면 사실상 이번 UCPC가 대학생 프로그래밍 대회의 마지막을 장식하게 될 것인지라, 저 개인적으로 매우 영광으로 생각하고 있습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt; : 병특 중에 있습니다. 제 블로그에도 여러번 언급되었지만… 해시코드를 함께하고 있는 Little Piplup 팀으로, 둘이서 1:1 연습을 많이 해봤습니다만 전통적인 CP대회를 같이뛰는건 처음입니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;세명의 Codeforces max rating은 2100+지만, 저랑 dlwocks는 파킹에 실패해서 퍼플로 낙하했습니다. 퍼플+퍼플+오렌지 팀 정도로 볼 수 있을것 같습니다.&lt;/p&gt;
+
+&lt;p&gt;전력을 잠깐 생각해 보자면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;님의 스타일은 제가 잘 모르지만 저랑 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;은 동일 레이팅의 2인 팀치고는 아마도 꽤 강할 것 같습니다. 제가 상대적으로 조합/정수를 잘 풀고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;이 자료구조/구현 문제를 잘 풀다 보니… 그래서, 3인팀도 나름대로 스타일은 명확하고 잘 맞는것 같습니다.&lt;/p&gt;
+
+&lt;p&gt;작년에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;coffeetea&lt;/code&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;diordhd&lt;/code&gt; 팀이 2020 ICPC 예선에서 12등인가 하는 놀라운 성적을 얻었는데, 객관적인 전력은 그 근처 어딘가라고 생각합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;practice--sogang-2020-div1&quot;&gt;Practice : Sogang 2020 Div1&lt;/h2&gt;
+&lt;p&gt;3시간 정도밖에 시간이 없어서, 돌만한 셋이 별로 없었습니다. Japan ICPC 예선전 정도가 3시간인데, 난이도가 널뛰기하는데다가 백준에서 푼사람이 아무도 없어서 데이터의 올바름을 확신하기 어렵기도 하고… 
+서강대학교 대회는 Div 1 과 Div 2로 나뉘어 있고, 원래는 개인대회 3시간짜리 대회입니다. 난이도가 실-골-플-다 문제가 1-2-3-2로 분포된 형태가 UCPC 예선이랑 비슷할것이라고 판단, 이 대회를 3시간 3PC로 돌아보기로 했습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;phase-0--start&quot;&gt;Phase 0 : Start&lt;/h2&gt;
+&lt;p&gt;리얼리티를 위해 문제 순서를 Random shuffle 하고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni-gratus907-dlwocks31&lt;/code&gt; 순서로 3 3 2씩 나눠 읽기로 랬습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;phase-1--easy-problems&quot;&gt;Phase 1 : Easy Problems&lt;/h2&gt;
+&lt;h3 id=&quot;a-파일-정리&quot;&gt;A. 파일 정리&lt;/h3&gt;
+&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;&lt;br /&gt;
+Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt; (00:07)
+‘쉬운 구현문제니까 그냥 잡을게요’ 라고 말하고 7분에 AC를 받아왔습니다. 무슨문제인지 안읽어서 모르겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;f-폰친구&quot;&gt;F. 폰친구&lt;/h3&gt;
+&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt;&lt;br /&gt;
+Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt; (00:30) 
+재밌는 조합 문제였습니다.&lt;br /&gt;
+$N$ 명에게 $K$ 개를 나눠주는데 1인당 $m$개 이상 $M$개 이하를 받는 경우의 수를 계산하는 문제입니다. 미리 $m$개씩 나눠주고 시작하면, $L = K - mN$ 개의 사탕을 $N$명에게 나눠주되 각자가 $x = M - m$ 개 이하로만 받는 경우의 수를 세면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;먼저, $x$개 조건이 없다면 답은 중복조합을 이용하여 $_N H _L$ 개입니다. $x$개 조건은 여사건을 이용하여 계산할 수 있습니다. 반대로, ‘누가 $x+1$개 이상을 받을지’ 를 미리 정하고 갑시다. $u$명이 $x+1$개 이상을 받는다면, 미리 얘네들한테 $x+1$개씩 나눠주고 나머지들에게 사탕을 잘 나눠주는 경우를 생각하면 됩니다. 따라서, $_N H _{L - (x+1)u}$ 가 될 것입니다.&lt;/p&gt;
+
+&lt;p&gt;그러나, 이 방법의 문제는 ‘나머지들에게 잘 나눠줄때’ 나머지들 중에 또 $x+1$개 이상을 받는 사람이 있을수도 있다는 것입니다. 이를 포함-배제 원리를 이용하여, 다음과 같이 처리하면 됩니다.
+\(\sum_{u = 1}^{n} (-1)^u \times {_N C _u} \times {_N H _{L - (x + 1)u}}\)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;c-연료가-부족해&quot;&gt;C. 연료가 부족해&lt;/h3&gt;
+&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;&lt;br /&gt;
+Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt; (00:33, 1WA)
+역시 쉬운문제라고 판단하고 30분 정도 시간에 AC를 받았습니다. DP였다고 합니다. 역시 무슨문제인지 안읽어서 잘 모르겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;b-컨설팅&quot;&gt;B. 컨설팅&lt;/h3&gt;
+&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt;
+Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt; (00:58, 1WA)
+쉬운 문제인데 구현이 귀찮아서 조금 시간이 걸렸습니다. 요점은, Greedy하게 정말 필요할때만 WAIT를 걸어주면 된다는 것을 어렵지 않게 알 수 있고, WRITE의 시작점들 / 도착점들 / (시작, 도착)Pair 들을 각각, READ의 대상을 하나. 이렇게 해서 집합들을 관리하고 조건을 잘 그대로 코딩하면 됩니다. 파이썬 썼는데 set같은걸 shallow copy한다는걸 까먹어서 1틀했습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;phase-2--3-graph-problems&quot;&gt;Phase 2 : 3 Graph Problems&lt;/h2&gt;
+&lt;h3 id=&quot;c-사탕-배달&quot;&gt;C. 사탕 배달&lt;/h3&gt;
+&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;
+Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt; (00:52, 1WA)
+뭔지 잘 모르겠지만 트리에서 뭔가를 하는 문제입니다. 제가 파이썬 구현으로 싸우고 있는 사이에 팀원 두명이 AC를 받아왔습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;a-에어컨-설치&quot;&gt;A. 에어컨 설치&lt;/h3&gt;
+&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt;
+Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt; (01:36)
+문제는 다음과 같습니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$\Z^3$에 정점들이 뿌려져 있고 거리가 1인 정점들을 ‘인접하다’ 고 정의하여 그래프를 만듭니다.&lt;/li&gt;
+  &lt;li&gt;그래프에 ‘에어컨’ 을 설치합니다. 이 에어컨 한 대는 설치한 정점과 그 인접한 정점을 커버합니다.&lt;/li&gt;
+  &lt;li&gt;이제, 최소 개수의 에어컨을 달아서 모든 정점을 커버하는 문제입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;제가 B번을 맞고 갔을때는 이미 어느정도 둘이 솔루션을 discuss하고 있었던 중이었습니다. 여기에 같이 아이디어를 구상하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;님이 코딩을 바로 들어갔습니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;먼저, 어차피 각 connected component별로 생각해야 하므로 그래프가 연결되어 있다고 하겠습니다.&lt;/li&gt;
+  &lt;li&gt;이제, 이 문제는 &lt;strong&gt;최소 버텍스 커버&lt;/strong&gt; 와 같은 문제임을 압니다.&lt;/li&gt;
+  &lt;li&gt;이 문제는 NP-Complete이지만, 이분 그래프에 대해서는 빨리 풀 수 있음이 알려져 있습니다.&lt;/li&gt;
+  &lt;li&gt;$(a, b, c)$ 에 대해, $a + b + c$의 홀짝성에 따라 정점에 색깔을 칠해주면 이 그래프가 이분 그래프임을 보일 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;따라서, 이 그래프에서 최소 버텍스 커버를 짜면 됩니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;저는 이걸 알아도 이분그래프에서 최소 버텍스 커버를 어떻게 짜는지 자신이 없었지만, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;님이 그건 짤수 있다고 확신을 줬기 때문에 (:fan:) 맡기고 저랑 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;은 남은 2문제를 잡으러 갔습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;코딩을 맡긴게 대략 01:00 시점쯤이고, 5AC에 1문제는 코딩만 남은 상황이었기 때문에 난이도에 대해 심각한 의심이 있었습니다. 실버 1, 골드 2, 플레 2문제 + 1문제 구상까지를 1시간에 밀었다는것도 그렇지만, 지금까지 문제들 중 플레급이라고 생각이 드는건 A번 정도였기 때문입니다. C번은 제가 직접 문제를 보지 않아서 뭐라고 할수가 없고, F번은 나중에 생각해보면 포함배제 쓰는 조합문제가 익숙하지 않다면 어려울것 같기도 합니다만 그럭저럭 꽤 많이 나온 스타일의 문제였지 않나 싶습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;g-confuzzle&quot;&gt;G. Confuzzle&lt;/h3&gt;
+&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt;
+Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;정점 $n$개의 트리가 주어지고, 각 노드가 $1 \leq c_i \leq n$ 의 색깔을 가집니다. 이때, 색깔이 같은 노드 페어 $v_i, v_j$들 중, 서로의 거리가 가장 가까운 노드 간의 거리를 계산하는 문제입니다.&lt;/li&gt;
+  &lt;li&gt;트리에서 두 정점 사이의 거리는 LCA를 이용하면 ($O(n \log n)$ 전처리를 하고) $O(\log n)$에 계산할 수 있습니다. Range Minimum Query를 잘 이용하면 $O(1)$에도 할 수 있음이 알려져 있지만, 실제로 이게 필요한 상황은 본적이 없는것 같습니다.&lt;/li&gt;
+  &lt;li&gt;다만, 이때 $O(n^2)$ 개의 pair를 확인해야 하므로, $O(n^2 \log n)$ 시간이 걸리는데, 이는 도저히 답이 없는 복잡도입니다.&lt;/li&gt;
+  &lt;li&gt;각 점마다 map에, “이 노드를 루트로 하는 서브트리에서, 색깔이 $c$ 인 노드들 중 이 노드에서 가장 가까운 노드까지의 거리” 를 저장한다고 생각합니다. 이를 $M_i$ 맵이라고 생각하겠습니다.&lt;/li&gt;
+  &lt;li&gt;내 자녀 노드의 $M_i$들을 모두 알고 있다면, 이들을 합치는 과정에서 두개 이상의 서브트리가 같은 색깔의 노드를 가지고 있다면 이들까지의 거리를 이용하여 페어의 거리를 계산할 수 있습니다. 이 방법이 최단 거리 페어를 항상 찾을 수 있음은 서브트리에 대해 재귀적으로 증명 가능합니다.&lt;/li&gt;
+  &lt;li&gt;그러나, 이 방법은 잘 생각해보면 맵을 합치는 데 $O(n \log n)$ 시간까지 걸리기 때문에, $O(n^2 \log n)$ 시간이 걸립니다.&lt;/li&gt;
+  &lt;li&gt;트리에서 두 Map을 합치는데, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;small-to-large&lt;/code&gt; 테크닉을 적용 &lt;a href=&quot;/algorithms/BOJ4002/&quot;&gt;(ex : BOJ 4002번 풀이 링크)&lt;/a&gt; 하면, $O(n \log^2 n)$ 시간으로 줄일 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Small to Large 테크닉을 적용하자는 말을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;이 거의 5분만에 했고(:fan:), 10분만에 코딩했으나 사소한 실수로 디버깅에 40분이 걸렸습니다. 무려 $n^2 \log n$ 솔루션을 코딩해서 스트레스테스트로 반례를 찾아야만 했습니다. :(&lt;br /&gt;
+별론으로, 정해가 상당히 멋집니다. 각 색깔에 대해 그 색깔의 노드가 몇개 없으면 ($k \leq \sqrt{n}$) $O(k^2 \log k)$ 알고리즘을 돌리고, 노드가 많으면 멀티소스 BFS를 돌리는… sqrt decomp스타일 아이디어였습니다.&lt;br /&gt;
+하지만 여전히 dlwocks31의 스몰투라지가 복잡도면에서 더 좋은 풀이일 뿐 아니라, 코딩도 매우 간단합니다. :fan:&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;phase-3--pizza-madness&quot;&gt;Phase 3 : Pizza Madness&lt;/h2&gt;
+
+&lt;p&gt;해결하지 못한 H번에 대한 이야기입니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;어떤 수열 $A$와 작은 수열 $B$가 주어지고, $A$를 원형으로 연결했을 때 $B$에 해당하는 패턴을 매칭하는 문제입니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;단, 패턴이 실제로 맞을 필요는 없고, ‘원소들 간의 순서’ 가 맞으면 됩니다. 예를 들어, (4, 3, 6) 과 (2, 1, 3) 을 매칭된 것으로 본다는 것입니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;다양한 아이디어들이 등장했습니다. 각 수를 좌표압축해서, 좌표압축된 $n$개의 수를 라빈카프처럼 해싱하자는 아이디어라던가…&lt;/li&gt;
+  &lt;li&gt;해싱된 수열의 일부를 오른쪽 / 왼쪽으로 미는 연산이 기존의 해싱에서 불가능합니다.&lt;/li&gt;
+  &lt;li&gt;미는 부분이 구간을 연산한다는 점에 착안하여 각 노드가 구간의 라빈카프 해시값을 가지고 있는 세그먼트 트리 같은 아이디어가 나오고&lt;/li&gt;
+  &lt;li&gt;세그먼트 트리도 중간에 노드를 날리지는 못하기 때문에, 여기에 무슨 스플레이 트리를 써서…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;=&amp;gt; 이게 될리가 없습니다. 그렇게 한시간동안 셋이서 해괴한 트리들을 꺼내다가 연습을 종료했습니다.&lt;br /&gt;
+결국 답은 KMP 알고리즘의 변형이던데, 꽤 멋진 문제인것 같네요.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;후기&quot;&gt;후기&lt;/h2&gt;
+&lt;p&gt;비대면 팀연습이지만 굉장히 재밌었습니다. 배울것도 많았고..ㅋㅋㅋ 특히 작년 ICPC같은경우는 제가 나이로나 PS짬밥으로나 맏이였는데 이번에는 양쪽으로 다 막내인 팀이라서 (?) ㅋㅋㅋ 또 색다른 팀인듯 합니다.&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cp_practice" /><summary type="html">Contents</summary></entry><entry><title type="html">논문읽기 : DELTACON</title><link href="http://localhost:4000/cs-adventure/deltacon/" rel="alternate" type="text/html" title="논문읽기 : DELTACON" /><published>2021-07-12T00:00:00+09:00</published><updated>2021-07-12T00:00:00+09:00</updated><id>http://localhost:4000/cs-adventure/deltacon</id><content type="html" xml:base="http://localhost:4000/cs-adventure/deltacon/">&lt;div id=&quot;toc&quot;&gt;
+Contents
+&lt;/div&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#introduction&quot; id=&quot;markdown-toc-introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;처음으로 정리해볼 논문은 2013년 SDM(SIAM International Conference on Data Mining)에 발표된 DeltaCon입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;두 그래프 $G_1 = (V_1, E_1), G_2 = (V_2, E_2)$ 가 주어졌을 때, 우리는 두 그래프의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유사도&lt;/code&gt; 를 측정하는 어떤 좋은 메트릭을 갖고 싶습니다. 이 메트릭이 있으면&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cs-adventure" /><category term="graph theory" /><summary type="html">Contents</summary></entry><entry><title type="html">7월 1-2주차 Weekly PS</title><link href="http://localhost:4000/algorithms/ps-weekly-21Jul1/" rel="alternate" type="text/html" title="7월 1-2주차 Weekly PS" /><published>2021-07-08T00:00:00+09:00</published><updated>2021-07-08T00:00:00+09:00</updated><id>http://localhost:4000/algorithms/ps-weekly-21Jul1</id><content type="html" xml:base="http://localhost:4000/algorithms/ps-weekly-21Jul1/">&lt;div id=&quot;toc&quot;&gt;
 Contents
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -597,235 +763,4 @@ $1, 2, 5, 26, 677, 22886, 2439, 33941, 24380, 3341, 22173, 25652, 26685, 29425, 
 &lt;h2 id=&quot;시간-복잡도&quot;&gt;시간 복잡도&lt;/h2&gt;
 &lt;p&gt;앞서 설명한 바와 같이, Birthday Paradox에 의해 실제로 구해야 하는 $u$의 값은 $O(\sqrt p)$개이다. $n$에 대해서는 $p \leq \sqrt{n}$ 임을 가정하면 (소수가 아님은 밀러라빈 등으로 확인하자) $O(n^{1/4})$ 알고리즘이라고 할 수 있다. 이는 다항식 $x^2 + 1$ 이 진짜 랜덤한 수들을 준다는 가정 하에 이루어진 계산인데, 실제로는 당연히 뭔가 더 복잡하고 끔찍한 분석이 필요하다. 이쪽은 잘 모르기도 하니 일단은 넘어가기로 하자.&lt;/p&gt;
 
-&lt;p&gt;당연히, 매우 큰 수를 다룰 때는 곱셈이나 모듈러 등이 유의미하게 오래 걸린다. 이 경우 적절하게 시간 복잡도에도 이런 항들을 곱해야 할 것이다. 우선은 64비트 (곱셈이 $O(1)$에 수행) 가정 하에서의 복잡도가 위와 같다고 알아두면 된다.&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="algorithms" /><category term="number-theory" /><category term="algorithms" /><summary type="html">Contents</summary></entry><entry><title type="html">Google Hash Code 2021 : Team Little Piplup 준비과정</title><link href="http://localhost:4000/Hashcode-2021-prep/" rel="alternate" type="text/html" title="Google Hash Code 2021 : Team Little Piplup 준비과정" /><published>2021-02-26T00:00:00+09:00</published><updated>2021-02-26T00:00:00+09:00</updated><id>http://localhost:4000/Hashcode-2021-prep</id><content type="html" xml:base="http://localhost:4000/Hashcode-2021-prep/">&lt;p&gt;이 글은 올해 해시코드를 준비하는 과정 등에 대한 이야기이고, 해시코드 2021에 Specific한 (문제 등) 은 다음 글(&lt;a href=&quot;/Hashcode-2021-prelim/&quot;&gt;링크&lt;/a&gt;에서 다룹니다.&lt;/p&gt;
-
-&lt;p&gt;내년에 해시코드를 준비하려는 분들이 읽었을때 재밌게 쓰고 싶었는데 어떤지 모르겠네요. :(&lt;/p&gt;
-
-&lt;div id=&quot;toc&quot;&gt;
-Contents
-&lt;/div&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#google-hashcode&quot; id=&quot;markdown-toc-google-hashcode&quot;&gt;Google Hashcode&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#team-little-piplup&quot; id=&quot;markdown-toc-team-little-piplup&quot;&gt;Team Little Piplup&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#preperation&quot; id=&quot;markdown-toc-preperation&quot;&gt;Preperation&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#전략&quot; id=&quot;markdown-toc-전략&quot;&gt;전략&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#작년-팀연습들&quot; id=&quot;markdown-toc-작년-팀연습들&quot;&gt;작년 팀연습들&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#팀연습--2020-hashcode-wf&quot; id=&quot;markdown-toc-팀연습--2020-hashcode-wf&quot;&gt;팀연습 : 2020 Hashcode WF&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;google-hashcode&quot;&gt;Google Hashcode&lt;/h2&gt;
-&lt;p&gt;Google Hashcode는 구글에서 개최하는 Coding competition 중 최적화와 휴리스틱을 겨루는 대회입니다. NP한 문제가 주어지고, 이 문제에 대해 좋은 휴리스틱과 적절한 알고리즘적 최적화를 통해 주어진 데이터셋에서 좋은 점수를 받는 경쟁인데, 모든 데이터셋이 공개되기 때문에 데이터셋의 성질을 잘 활용한다거나 하는, Data science틱한 면이 조금 있다고도 할 수 있겠습니다.&lt;/p&gt;
-
-&lt;p&gt;이런 형태의 대회는 기존의 PS와는 또 다르지만, 필요한 스킬셋은 어느정도 비슷하고, 최상위권 레벨에서는 기존 PS 스러운 테크닉들이 유의미합니다. PS 실력과 매우 높은 상관관계가 있지만, Hashcode 형 대회에 특히 강한 팀들도 있습니다.&lt;/p&gt;
-
-&lt;p&gt;문제가 상당히 Real-world 스럽게 출제되며, 실제로 Google Loon 같은 구글의 product와 깊은 연관이 있습니다. 문제를 풀다 보면 뭔가 진짜 실제로 유의미한 문제를 해결하는 느낌을 받기도 합니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;team-little-piplup&quot;&gt;Team Little Piplup&lt;/h2&gt;
-&lt;p&gt;이 팀은 2019년도 ICPC를 기점으로 저와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Coffeetea&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DHDroid&lt;/code&gt; 로 출발했습니다. 이후 두 사람이 병역특례를 위해 휴학을 하게 되었는데, 휴학생은 ICPC 본선 출전권이 없기 때문에 제가 다른 팀을 찾게 되었습니다. (결과적으로, 서울대에서 본선에 진출하는 난이도를 생각해 보면 별로 그럴 필요가 없었다는 생각이 들기도 합니다만…) 2020년부터 그 자리는 병특중이었고 저랑 계속 PS를 같이 공부했던 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Dlwocks31&lt;/code&gt; 이 들어가게 되었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Dlwocks31&lt;/code&gt;이 들어간 시점의 팀명은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Army Piplup&lt;/code&gt;으로 개칭되었고, 2020 ICPC 예선에서 11등을 거두는 놀라운 실력을 보여주었습니다. 코드포스 레이팅 (Max)를 기준으로 dlwocks는 2200++, 저는 2100, Coffeetea와 DHDroid는 1900인데 dlwocks31은 몰라도 저는 거품레이팅이었기 때문에 거품이 꺼진 지금은 1900 정도, 잘쳐주면 퍼플 중간쯤의 CP 실력을 가지고 있는 것으로 보입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gratus907&lt;/code&gt; : 수학적인 문제에 비교적 강하고, 말리지 않을때까지는 구현이 빠르지만 말리면 한없이 말리는 경향이 있습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Dlwocks31&lt;/code&gt; : 가장 C++ 구현을 깔끔하게 잘 하고, 구현에서 덜 말리는 편입니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DHDroid&lt;/code&gt; : Constructive한 문제에 매우 강하고, 관찰을 정당화 (증명) 하는 능력이 뛰어납니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Coffeetea&lt;/code&gt; : 그리디하거나 휴리스틱한 관찰, 대략적인 경향성의 파악에 강합니다. 뭔가 문제에 빙의하는 특성이 있어서 글쓸때 Coffeetea의 표현을 많이 빌리게 됩니다 :)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;preperation&quot;&gt;Preperation&lt;/h2&gt;
-&lt;p&gt;Hashcode 대회를 준비하기 위해서 올해는 많은 노력을 기울이지 못했습니다. 작년에는 비교적 많은 노력을 했는데, 여러가지 교훈을 얻었습니다. 작년 대회 후기는 제 티스토리 블로그에서(&lt;a href=&quot;https://gratus907.com/92&quot;&gt;링크&lt;/a&gt;) 볼 수 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;문제의 구현량이 상당히 많아서, 구현에서 말리면 상당히 힘듭니다. 기본적으로 dlwocks31이 구현이 가장 덜 말리니까 전체적인 구현을 맡되, 필요하다면 언제든 구현에 저나 다른 팀원들이 참여해야 합니다.&lt;/li&gt;
-  &lt;li&gt;Parameter Tuning이 많은 도움이 됩니다. 파인 튜닝을 자동화하는 코드를 미리 준비했는데, 이를 위해서는 신속하고 정확하게 채점을 받고 싶습니다.
-    &lt;ul&gt;
-      &lt;li&gt;채점을 웹 환경에서 제출하는 데 많은 시간이 걸립니다. 이는 상당히 불편하기 때문에, 경우에 따라 &lt;strong&gt;채점기를 짜는&lt;/strong&gt; 것이 의미가 있습니다.&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;채점기를 작성하는&lt;/strong&gt; 것의 단점은 당연하게도 4시간이라는 짧은 대회시간에서 한명이 빠져서 1시간정도를 채점기에 써야 한다는 점입니다.&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;그럼에도 불구하고&lt;/strong&gt;, 채점기 작성을 통해 문제 상황을 좀더 깊이 이해할 수 있다는 점, 경우에 따라 채점기의 시뮬레이션 같은 부분들은 본 솔루션에서도 응용할 수 있다는 점이 있어서 고려할만 합니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;결국 상위권(5-10%)에서 최상위권(1%)을 결정하는 것은, (작년에는) 엔드스펙급 알고리즘 최적화였습니다. 구체적으로는, 특정 데이터의 경우 적절한 환원을 통해 3-SAT 같은 문제로 바꿀 수 있었고, 이를 적절한 3SAT 솔버에 먹여서 답을 구한다거나, greedy 대신 MCMF를 쓴다던가 하는 솔루션들이 최상위권을 겨루었습니다. 다시 같은 최상위권 내에서는 Parameter Tuning이 세부등수를 결정합니다.
-    &lt;ul&gt;
-      &lt;li&gt;그래서, 이번에는 상용 NP-Complete Solver들을 준비했습니다. 이런쪽에 비교적 제가 조금더 해본게 많기 때문에, 이것저것 찾아 모으고, 제 최대의 목표는 &lt;strong&gt;이거 사실 3SAT인데&lt;/strong&gt; 를 찾는 것이라고 스스로 생각했습니다. (결국 틀렸습니다)&lt;/li&gt;
-      &lt;li&gt;Glucose SAT Solver, Concorde TSP Solver, Google ORTools(LP, Flow, IP) 정도는 세팅되어 있었습니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;생각보다 높은 Computation power가 필요한 경우가 있습니다. 팀원 전원이 i7급 이상의 노트북을 사용했으며 필요할때 사용할 수 있는 i7급 데스크탑 2대가 세팅되었습니다. 카카오 클라우드, 네이버 클라우드 등이 준비되어있었던 다른 팀에 비하면 부족할지도 모르지만 저희가 확보할 수 있는 컴퓨팅 파워는 나쁘지 않았고, 결국 그 무엇도 필요 없었습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;전략&quot;&gt;전략&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;첫 1시간 정도, 제가 Grader를 짜기로 했습니다.&lt;/li&gt;
-  &lt;li&gt;그동안, DHDroid와 Coffeetea는 데이터를 분석하기로 했습니다. 예를 들어 그래프 데이터가 주어진다면, 몇개의 허브가 존재하는 데이터인지, Degree-bounded인지 등의 정보가 있으면 일반적인 그래프에서는 상상도 못할 것들이 가능하기 때문에 이런 정보는 정말 필수적입니다. 경우에 따라 이 두명이 어느정도의 그리디한 솔루션을 제공해 줄 것입니다. Grader 작성은 그냥 깡 시뮬이기 때문에, 이 두명의 논의를 제가 어느정도 들으면서 짤 수 있습니다,&lt;/li&gt;
-  &lt;li&gt;Dlwocks31이 이때 튜닝가능한 제네릭 솔루션을 작성하기로 했습니다. 이 코드는 나중에 같이 돌아가면서 고치고 튜닝해야 하므로, 비교적 읽기 쉽게 짜야 하고, IO같은 (다른 사람들이 몰라도 되는) 부분들을 분리하기로 했습니다.&lt;/li&gt;
-  &lt;li&gt;이후 2-3시간 동안, 네명이 같이 솔루션을 잡으면서 알고리즘 개선과 파라미터 튜닝을 반복하며 계속 제출하는 방식입니다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;전반적으로 첫 1시간동안 저랑 dlwocks31의 코딩실력에 조금 의존하는 감이 있습니다만, 저희가 할 수 있는 최선이었고 지난 몇년치 예선을 풀어봤을 때는 말이 되는 전략이었습니다. 이정도 복잡도의 구현은 저희 둘은 어떻게든 가능하긴 했었고, 평소 PS때와는 달리 1초의 Strict time limit이 없으므로 set, map 같은 것들을 마구 남용하며 짜도 되긴 합니다.&lt;/p&gt;
-
-&lt;p&gt;이 전략은 올해 해시코드에서 한계에 부딪히게 됩니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;작년-팀연습들&quot;&gt;작년 팀연습들&lt;/h3&gt;
-&lt;p&gt;몇몇 해시코드 예선 문제를 작년에 같이 풀어보았었습니다. 그때 위 1-4 전략도 정립했는데, 몇가지 전략적인 튜닝도 있었습니다.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;문제의 구현 복잡도가 높다면, 체커를 짜는 것은 별로 바람직하지 못합니다. 이건 2016 Qual라운드의 DRONE이라는 문제에서 느꼈습니다. 해시코드를 준비한다면 꼭 풀어보길 바랍니다.&lt;br /&gt;
-반면, 구현 복잡도는 적절한데 Simulated annealing같은걸 박을수있는 문제라면 무조건 체커를 짜야 합니다.&lt;/li&gt;
-  &lt;li&gt;어떤 문제는, 아예 독립적인 두개이상의 알고리즘을 요구한다는 사실을 알게 되었습니다. 예를 들어 그래프 문제에서 어떤 데이터는 Deg-bounded고 어떤 데이터는 다섯개의 허브와 9995개의 가지정점으로 구성되어 있다면, 두 문제는 사실 아예 다른 문제이기 때문입니다. 이경우 구현페이즈가 n배 힘들어지는데, 이를 빠르게 파악해야 하므로 두명이 데이터를 생각보다 많이 분석해야 한다는 결론을 내렸습니다. 구현이 아닌 데이터 분석에 2명을 배정한 이유가 여기 있습니다.&lt;/li&gt;
-  &lt;li&gt;이를 위해 dlwocks31이 구현을 정말 &lt;strong&gt;최대한 제네릭하게&lt;/strong&gt; 짜야 함을 깨달았습니다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;팀연습--2020-hashcode-wf&quot;&gt;팀연습 : 2020 Hashcode WF&lt;/h3&gt;
-&lt;p&gt;가장 좋은 해시코드 연습셋은 해시코드기 때문에, 작년 해시코드 월파를 같이 돌았습니다. 정말 충격적인 난이도의 문제로 인해 저희 전략의 한계가 느껴졌습니다.&lt;/p&gt;
-
-&lt;p&gt;대충 얘기하자면 정말 빡센 구현 문제였고, 대충 시뮬레이션만 성공해도 월파 중간쯤의 점수가 나오는 미친 셋이었습니다. 위 전략이 다음과 같이 실패했습니다.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;팀연습때는 온라인 채점을 받을 수 없으므로, 한명을 지정해서 한명이 미리 체커를 짜 옵니다. 제가 체커를 짜 왔는데, 집에서 혼자 체커를 짜는데 일단 1시간보다 훨씬 오래걸렸고, 정확성도 별로 보장되지 않았습니다. 그래도 그럭저럭 말이 되는 것 같았는데 뭐 이부분은 잘 모르겠습니다. 중요한 것은 체커를 1시간 내로 짜지 못했다는 것입니다.&lt;/li&gt;
-  &lt;li&gt;데이터를 분석하고 그리디를 떠올려야 하는데, 그리디하게 뭘 할 수 있을지도 난해했습니다. 지나치게 구현난이도가 높아서, Coffeetea의 장점을 살린 아이디어들이 쏟아졌지만 구현가능해 보이는 솔루션이 없었습니다.&lt;/li&gt;
-  &lt;li&gt;dlwocks31이 1시간은커녕 2-3시간에 걸쳐서도 가능한 C++ 코드를 작성하지 못했습니다. 이건 blame할 일은 절대 아닌게, 다른 3명이 잡았으면 하루 종일 짰어도 못 짰을 것입니다.&lt;/li&gt;
-  &lt;li&gt;솔루션이 없으므로 튜닝할 파라미터도 개선할 알고리즘도 코드를 작성할수가 없습니다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;2020 WF를 풀면서, 저희 전략이 dlwocks31의 구현력에 얼마나 의존하는지 깨닫게 되었습니다. 경우에 따라 체커를 던지더라도 이 구현은 피할 수 없고, 이 구현에서 말리면 0점으로 대회를 마무리하는 참사가 벌어지기 때문입니다.&lt;/p&gt;
-
-&lt;p&gt;필요하다면 구현을 나누어야 한다는 직감이 들었으므로, 처음으로 이런 대회 중에도 Git을 이용하기로 했습니다. 최대한 같은 파일을 동시에 2명이 만지는 일을 피하면서, 필요하다면 파일을 많이 늘려서라도 코드를 적절히 공유할 필요가 있었기 때문입니다. 여러 파일로 나누어 구현한 다음 합치는 방법을 포함해서, 부족한 구현력을 전략으로 메우기 위한 많은 시도가 있었습니다.&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="algorithms" /><category term="competition" /><summary type="html">이 글은 올해 해시코드를 준비하는 과정 등에 대한 이야기이고, 해시코드 2021에 Specific한 (문제 등) 은 다음 글(링크에서 다룹니다.</summary></entry><entry><title type="html">Google Hash Code 2021 : Global #211 (2%) 후기</title><link href="http://localhost:4000/Hashcode-2021-prelim/" rel="alternate" type="text/html" title="Google Hash Code 2021 : Global #211 (2%) 후기" /><published>2021-02-26T00:00:00+09:00</published><updated>2021-02-26T00:00:00+09:00</updated><id>http://localhost:4000/Hashcode-2021-prelim</id><content type="html" xml:base="http://localhost:4000/Hashcode-2021-prelim/">&lt;p&gt;이 글은 올해 해시코드 대회 과정에 대한 후기이고, 준비 과정은 앞 글(&lt;a href=&quot;/Hashcode-2021-prep/&quot;&gt;링크&lt;/a&gt;)에 있습니다.&lt;/p&gt;
-
-&lt;div id=&quot;toc&quot;&gt;
-Contents
-&lt;/div&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#결과&quot; id=&quot;markdown-toc-결과&quot;&gt;결과&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#문제-설명&quot; id=&quot;markdown-toc-문제-설명&quot;&gt;문제 설명&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#데이터-설명&quot; id=&quot;markdown-toc-데이터-설명&quot;&gt;데이터 설명&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#대회-전략의-실패&quot; id=&quot;markdown-toc-대회-전략의-실패&quot;&gt;대회 전략의 실패&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#algorithm--demand---proportional---scheduling&quot; id=&quot;markdown-toc-algorithm--demand---proportional---scheduling&quot;&gt;Algorithm : Demand - Proportional - Scheduling&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#fine-tuning&quot; id=&quot;markdown-toc-fine-tuning&quot;&gt;Fine Tuning&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#결과--discussion&quot; id=&quot;markdown-toc-결과--discussion&quot;&gt;결과 / Discussion&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#앞으로를-위해&quot; id=&quot;markdown-toc-앞으로를-위해&quot;&gt;앞으로를 위해&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;결과&quot;&gt;결과&lt;/h2&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A - An Example       2,000
-B - By the Ocean     4,566,842
-C - Checkmate        1,300,355
-D - Daily Commute    1,574,469
-E - Etoile           716,984
-F - Forever Jammed   1,417,038
-TOTAL SCORE          9,577,688
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Global rank #211 / 9,000+ teams&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Korea rank #11&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;문제-설명&quot;&gt;문제 설명&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;교차로&lt;/strong&gt;, &lt;strong&gt;도로&lt;/strong&gt;, &lt;strong&gt;차량&lt;/strong&gt; 들이 주어집니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;도로&lt;/strong&gt; 들은 그래프에서 &lt;strong&gt;방향 있는 간선&lt;/strong&gt; 입니다. &lt;strong&gt;교차로&lt;/strong&gt; 에서 &lt;strong&gt;교차로&lt;/strong&gt; 로 이어져 있고, &lt;strong&gt;길이&lt;/strong&gt; 가 있습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;교차로&lt;/strong&gt; 는 그래프에서 &lt;strong&gt;정점&lt;/strong&gt; 입니다. 교차로에는 &lt;strong&gt;신호등&lt;/strong&gt; 이 있는데, 특정 시점(초)에는 &lt;strong&gt;정확히 1개의 incoming edge&lt;/strong&gt; 에만 초록불이 켜져 있어야 합니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Incoming edge&lt;/strong&gt; 에 초록불이 들어와 있다면, 그 교차로의 그 도로에 서 있는 차량들 중 1초에 1대씩만 그 교차로에서 출발하는 간선들 중 하나로 이동할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;차량&lt;/strong&gt; 들은 가고 싶은 경로가 주어집니다. 경로는 간선들의 순서로 주어지고, 시작점은 첫 간선의 ending intersection에 서 있는 것으로 주어집니다. 차량들은 1초에 1씩 이동하는데, &lt;strong&gt;교차로&lt;/strong&gt;를 만나면 내가 지금 서 있는 도로의 초록불이 켜질때까지 기다립니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;예를 들어, 교차로 A에서 B로, B에서 C로, A에서 C로, C에서 D로 도로가 있다고 가정해 봅시다. 여기서 차량 1이 A-B에서 출발, 차량 2가 A-C에서 출발한다고 생각해 봅시다. 차량 1이 B 앞에 서 있을 때, B교차로는 (A-B) 도로 외의 다른 incoming 도로가 없으므로 여기에 초록불을 켜 주면 됩니다. 이러면 교차로를 바로 지나쳐서 B-C 도로로 올라탈 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;위 예시에서 C 교차로는 B-C 간선과 A-C 간선 두개의 endpoint입니다. 이때, B-C 간선에 초록불이 켜 있다면, 앞에 차가 없더라도 A-C 간선에는 빨간불이 켜 있으므로 A-C간선의 끝에서 C교차로를 바라보는 차량은 통행할 수 없습니다.&lt;/p&gt;
-
-&lt;p&gt;또한, 차들은 겹치지 않는다는 점도 (1초에 차량은 1대씩만 통행합니다) 중요합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;신호등&lt;/strong&gt; 은 교차로마다 설치되어 있는데, incoming edge들을 도는 사이클 형태로 신호등 스케쥴링이 가능합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;신호등 스케쥴링&lt;/strong&gt; 이란, 위 예시를 다시 빌리자면 C교차로에서 다음과 같이 스케쥴링합니다.&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{B-C, 2} {A-C, 1}&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;이 표현의 해석은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B-C&lt;/code&gt; 간선에 2초간 초록불을 켜주고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A-C&lt;/code&gt; 간선으로 1초간 바꿨다가, 다시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B-C&lt;/code&gt; 간선을 2초간 켜주는 식으로 반복한다는 뜻입니다.&lt;/li&gt;
-      &lt;li&gt;즉, 사이클로만 돌릴 수 있고, 세부적으로 신호등을 조작할 수는 없습니다. 대충 생각해 보면, 교차로의 각 도로들을 위해 신호를 켜주는 순서와 그 비중을 조정할 수 있는 것입니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Hashcode 문제는 여기서 &lt;strong&gt;신호등 스케쥴링 사이클&lt;/strong&gt; 을 만드는 문제입니다. 다른 모든 것은 주어집니다.&lt;/p&gt;
-
-&lt;p&gt;점수는, &lt;strong&gt;제한 시간 내에 도착한 차의 개수&lt;/strong&gt; 에 따라 점수를 받으며, &lt;strong&gt;빨리 도착할수록&lt;/strong&gt; 보너스 점수가 있습니다. 타임아웃 난 차량은 0점입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;데이터-설명&quot;&gt;데이터 설명&lt;/h2&gt;
-&lt;p&gt;데이터는 총 6개로 구성되어 있습니다. A는 예제고, 나머지 데이터들은..&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;B : 그냥 평범한 데이터입니다. 큰 특징은 없습니다.&lt;/li&gt;
-  &lt;li&gt;C : 격자형태로 도로가 구성된 데이터입니다.&lt;/li&gt;
-  &lt;li&gt;D : 시간이 굉장히 빡빡해서, 조금만 지체해도 모든 차들이 타임아웃납니다. 몇개의 허브정점들과 다수의 정점들이 포도송이처럼 연결된 형태입니다.&lt;/li&gt;
-  &lt;li&gt;E : 모든 정점들이 하나의 허브에 연결된 STAR 형태의 그래프입니다. Etoile는 프랑스어로 별이라고 합니다.&lt;/li&gt;
-  &lt;li&gt;F : 교차로가 매우 많고, 차량들이 교차로에 Stuck하는 데이터입니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;대회-전략의-실패&quot;&gt;대회 전략의 실패&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;구현 복잡도가 높아서, 체커를 작성하지 못했습니다. 저 혼자 대략 1시간 정도 시간을 써 보고, 포기하기로 결정했는데, 그 이유는
-    &lt;ul&gt;
-      &lt;li&gt;Coffeetea와 DHDroid가 제시한 알고리즘은 기본적으로 차의 운행을 Simulation해야 합니다. 만약 그런 알고리즘을 실제로 코드로 옮긴다면, Simulation을 통해 점수를 연산하는 별도의 체커 없이도, 코드에 시뮬레이션을 내장할 수 있습니다.&lt;/li&gt;
-      &lt;li&gt;더이상 체커를 잡기에는 시간이 너무 아까웠기 때문입니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;마찬가지 이유로, dlwocks31이 시뮬레이션 코드 작성에 실패했습니다. 대회 후반부에는 시뮬레이션 비슷한게 돌아갔는데, 정확히 성공했는지 여부는 잘 모르겠습니다. 예상 점수와 실제 점수 간에 조금의 오차가 있는 것으로 보아 어딘가 문제가 여전히 있는 것으로 보입니다.&lt;/li&gt;
-  &lt;li&gt;Coffeetea / DHDroid 듀오의 데이터분석 및 구상은 탁월했습니다.&lt;/li&gt;
-  &lt;li&gt;결과적으로 거의 이 두명이 대회를 캐리해 버렸습니다. 저랑 dlwocks31은 계속 고통받은 대회였습니다 :(&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;algorithm--demand---proportional---scheduling&quot;&gt;Algorithm : Demand - Proportional - Scheduling&lt;/h2&gt;
-&lt;p&gt;앞서 &lt;strong&gt;신호를 켜주는 순서와 그 비중을 조정할 수 있다&lt;/strong&gt; 라고 했는데, 저희는 그중 비중에 집중했습니다. 구체적으로는, 시뮬레이션을 돌리면서, 각 차량들이 특정 교차로의 특정 도로에 잡혀있을 때마다, 그 정보를 report 합니다.&lt;/p&gt;
-
-&lt;p&gt;이런 정보들을 모아둔다면, 교차로 X에서 도로 a, b의 total jam-time을 계산할 수 있고, 이 total jam-time이 높은 도로의 신호를 더 많이 열어 줄 필요가 있음이 자명해 보입니다. (거기 잡혀있는 차가 많으니까, 더 넉넉하게 열어 주는 것입니다) 따라서 이 &lt;strong&gt;DEMAND&lt;/strong&gt; 에 비례하는 (또는 뭐 적당히 루트라던가…) 시간가중치를 주어 사이클을 돌리는 방식입니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;fine-tuning&quot;&gt;Fine Tuning&lt;/h3&gt;
-&lt;p&gt;위 알고리즘에서 튜닝할 수 있는 아이디어는 제가 추가로 들어가고 나서 잠깐씩 Discuss하면서 계속 발전시켜나갔습니다. 대표적으로 이런 것들이 있습니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;$t = 1$ 에서의 demand와 $t = 1000$에서의 demand의 가치는 동등하지 않다고 보았습니다. 둘중 하나라면 초반이 빠른 편이 유리하기 때문인데, 똑같이 1초만큼 빨라진다면 초반에 빨라져야 빠르게 차들이 줄어들어서 후반이 덜 막히기 때문입니다.&lt;/li&gt;
-  &lt;li&gt;구현하지는 못했지만, 본래 계획에는 실제 시뮬레이션을 거친 다음, 아깝게 시간이 지나 통과하지 못한 차들의 demand에 더 큰 가중치를 부여하는 방안이 있었습니다. 이 방안은 (테스트해보지 못했지만) 충분히 의미가 있었을 것이라고 보입니다.&lt;/li&gt;
-  &lt;li&gt;가중치 $w = f(d)$ 는 demand 개수에 대한 함수입니다. $f$를 조금씩 바꾸면서 튜닝할 수 있습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;이 모든 튜닝의 결과가 맨 위에 기록된 결과입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;결과--discussion&quot;&gt;결과 / Discussion&lt;/h2&gt;
-&lt;p&gt;대회가 끝나고, 바로 근처에서 대회를 치른, 평소 잘 아는 사이인 서울대학교 @channel 팀과 간단한 Discussion을 했습니다. 그 팀은 2018년도에 Hashcode World Final에 진출했던 팀으로, 이번 대회에서는 저희보다 20만점 정도 높은 점수로 40등의 높은 성적을 거두었습니다. 서로 성적을 보는 순간 놀랐는데,&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;@channel 팀은 D에서 240만점 가까이 (저희보다 80만점 높은) 성적을 거두었습니다.&lt;/li&gt;
-  &lt;li&gt;반면, F번의 점수는 저희 팀이 60만점 정도 높았습니다. 서로 D와 F를 보며 어떻게 한 거냐고 물으며 디스커션을 진행했는데, 이 팀에게 들은 방법은 (제가 올바르게 이해했다면) 대략 다음과 같습니다.
-    &lt;ul&gt;
-      &lt;li&gt;D번의 경우, Degree가 평균적으로 매우 작습니다. 따라서, 굳이 긴 시간동안 한 길을 열어주기보다는, 1초씩 바로바로 바꿔주더라도 특정 도로의 대기시간이 그렇게까지 길지 않으므로, 모든 신호 사이클은 1초로 고정합니다.&lt;/li&gt;
-      &lt;li&gt;그러나, 어떤 순서로 사이클을 돌릴지는 중요합니다. 이를 실제 시뮬레이션을 진행하면서, 해시테이블에 기록하는 식으로 각 intersection마다 어디에 대기가 걸리는지를 파악해서 사이클의 순서를 최적화합니다.&lt;/li&gt;
-      &lt;li&gt;결론적으로, &lt;strong&gt;신호를 켜주는 순서와 그 비중을 조정할 수 있다&lt;/strong&gt; 에서, &lt;strong&gt;비중&lt;/strong&gt; 을 버리고 &lt;strong&gt;순서&lt;/strong&gt; 에 집중한 형태의 솔루션으로 보입니다. 일종의 &lt;strong&gt;Dynamic Cycle Ordering&lt;/strong&gt; 이라는 이름을 붙일 수 있겠네요.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;1등팀의 점수는 1050만 점 정도고, 1000만점을 넘으면 10위권 팀이었습니다. 결과적으로, 저희의 &lt;strong&gt;Demand-Proportional Scheduling&lt;/strong&gt; 과 @channel의 &lt;strong&gt;Dynamic Cycle Ordering&lt;/strong&gt;이 상호 보완적인 방법이며, 저희가 잘 푸는 케이스 (F) 와 @channel팀이 잘 푼 케이스 (D) 의 max점수를 취하면 1030만 점 정도임을 볼 때, 최상위권 팀은 이 두 가지 전략을 각각 코딩해서 제출했거나, 두 전략을 절충한 방안이 있거나, 또는 우리 모두 생각지 못한 Novel한 방법 (있을지는 모르겠습니다만) 일 것으로 보입니다. 두 가지 모두 어떻게 보면 자연스럽기도 해서, 두가지 모두 구현하는데 성공했으면 월클팀이 아니었나 싶습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;앞으로를-위해&quot;&gt;앞으로를 위해&lt;/h2&gt;
-&lt;p&gt;해시코드류 대회는 사실 저희에게는 매우 재밌기도 하고, 이런 평소에는 생각하기 어려운 것들을 공부하는 기회이기 때문에 나름대로 팀으로써 공부하는 즐거움이 있습니다. 그래서 아마 (적어도 내년에는) 같은 팀으로 나갈 예정인데, 그때를 위해, 또는 다른 프로그래밍 대회를 위해서라도 이번 대회를 통한 교훈을 기록해 두려고 합니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;결국은 구현력이 중요합니다. 특히 Hashcode가 매년 극도로 구현이 빡세지고 있고, 제한시간 4시간 (실제로는 15분동안 스트리밍으로 시간을 날리기 때문에 3시간 45분) 동안 문제의 기본적인 그리디 솔루션을 제시하기조차 어려워지는 현상이 가속되고 있습니다. 결국 이번 대회의 최상위권 전략 중 하나는, &lt;strong&gt;Demand-Proportional Scheduling&lt;/strong&gt; 과 &lt;strong&gt;Dynamic Cycle Ordering&lt;/strong&gt; 이라는 전혀 결이 다른 두가지 방법을 모두 코딩하는데 성공하는 것인데, 이를 위해서는 적어도 2명 이상의 팀원이 안정적으로 솔루션을 코드로 옮기는 능력이 필요합니다.
-    &lt;ul&gt;
-      &lt;li&gt;Dlwocks31이 우리 중에서는 구현을 가장 잘하지만, 나머지 3명의 구현력이 현저히 떨어지는 것은 굉장히 큰 결점입니다. 이를 보충하기 위해, 최대한 저희가 (특히 그나마 C++ 구현력이 나은 제가) dlwocks31을 보조해주기 위해 이번에는 파일을 나누어 GIT을 써보기도 했는데, 결국 대회가 끝나고 느낀 것은 이 모든 방법은 부족한 구현력을 메워보려는 시도였고 근본적인 해결책이 되지 않는다는 것입니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;아이디어 캐칭 이후, 이걸 바로 코드로 옮겨서 테스트해봐야 합니다. 실제로 Coffeetea가 제시한 많은 휴리스틱한 방법들의 반도 채 쓰지 못했는데 이것도 결국 시도해봐야 아는 문제입니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;작년에도 비슷하게 했던 말이지만, 대회 자체는 해보면 정말 재밌습니다. 솔루션 깎는 과정이 뭔가 다른 PS대회랑 굉장히 이질적이면서도 점수 올라갈때 짜릿한 그런 맛이 있는데, 구현보다는 조금더 최적화 맛이 나는 대회가 되었으면 하는 기대가 있지만 반대로 가는것 같습니다.&lt;/p&gt;
-
-&lt;p&gt;여전히 작년 Library처럼, 추한 테크닉으로 가르더라도 결국 진출권은 SAT과 MCMF최적화가 가르는 메타가 옳다는 믿음에는 변화가 없습니다. 그에 비하면 이번 대회는 진짜 구현컵인것 같아서 조금… 하지만 작년에도 그랬듯이, 까보면 누군가 이상한 최적화를 들고왔을수도 있으므로 아직 예단하지는 않으려고 합니다.&lt;/p&gt;
-
-&lt;p&gt;구체적으로 DEF중 하나에 뭔가 플로우로 최적화할수 있는게 있을거라고 의심하고 있습니다. 그래프에서 뭔가 지나가고 어쩌고 하는게 딱 플로우 냄새가 나서요…&lt;/p&gt;
-
-&lt;p&gt;PS를 즐긴다면 그냥 색다른 느낌으로 즐길만한, 그렇지 않고 원래 Data Science 나 Optimization쪽에 관심이 있더라도 한번쯤 해볼만한 대회라고 생각합니다. 내년에도 파이팅!&lt;/p&gt;
-
-&lt;p&gt;Little Piplup 수고 많았어요 :) + @channel팀의 월파 진출을 응원하겠습니다 :)&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="algorithms" /><category term="competition" /><summary type="html">이 글은 올해 해시코드 대회 과정에 대한 후기이고, 준비 과정은 앞 글(링크)에 있습니다.</summary></entry></feed>
+&lt;p&gt;당연히, 매우 큰 수를 다룰 때는 곱셈이나 모듈러 등이 유의미하게 오래 걸린다. 이 경우 적절하게 시간 복잡도에도 이런 항들을 곱해야 할 것이다. 우선은 64비트 (곱셈이 $O(1)$에 수행) 가정 하에서의 복잡도가 위와 같다고 알아두면 된다.&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="algorithms" /><category term="number-theory" /><category term="algorithms" /><summary type="html">Contents</summary></entry></feed>

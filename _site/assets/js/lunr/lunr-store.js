@@ -47,16 +47,16 @@ var store = [{
         "url": "http://localhost:4000/algorithms/BOJ1126/",
         "teaser": null
       },{
-        "title": "BOJ 18600, Ptz Camp Summer 2019 Day 3, Valentine's Day",
-        "excerpt":"난이도 : Platinum 1 출처 : Petrozavodsk Summer 2019 Day 3 C Contents 풀이 코드 풀이 $n$개의 확률이 주어지고, 이들을 모두 더해서 1이라고 할 때, 적당한 subset을 골라서 사건이 단 한 번만 일어날 확률을 최대화하는 문제이다. 사건이 한 번 일어날 확률은 다음과 같이 계산할 수 있다. $S$라는 subset을 골랐을 때,...","categories": ["algorithms"],
-        "tags": ["probability","greedy"],
-        "url": "http://localhost:4000/algorithms/BOJ18600/",
-        "teaser": null
-      },{
         "title": "Graph Algorithms, Lecture 1 : Fixed subgraph Isomorphism",
         "excerpt":"Contents Subgraph Isomorphism Finding Triangles $O(mn)$ 알고리즘 $O(n^w)$ 알고리즘 $O(m^{(w + 1)/2})$ 알고리즘 Why triangles? Nesetril-Poljak Subgraph isomorphism 참고 : Stanford CS267 lecture note Subgraph Isomorphism 그래프 $G(V_G, E_G)$와, 다른 그래프 $H = (V_H, E_H)$ 에 대해, subgraph isomorphism $f : V_H \\to V_G$ 는 $(u, v) \\in E_H$ 이면...","categories": ["algorithms"],
         "tags": ["graph"],
         "url": "http://localhost:4000/algorithms/graph-algorithms-lec1/",
+        "teaser": null
+      },{
+        "title": "BOJ 18600, Ptz Camp Summer 2019 Day 3, Valentine's Day",
+        "excerpt":"난이도 : Platinum 1 출처 : Petrozavodsk Summer 2019 Day 3 C Contents 풀이 코드 풀이 $n$개의 확률이 주어지고, 이들을 모두 더해서 1이라고 할 때, 적당한 subset을 골라서 사건이 단 한 번만 일어날 확률을 최대화하는 문제이다. 사건이 한 번 일어날 확률은 다음과 같이 계산할 수 있다. $S$라는 subset을 골랐을 때,...","categories": ["algorithms"],
+        "tags": ["probability","greedy"],
+        "url": "http://localhost:4000/algorithms/BOJ18600/",
         "teaser": null
       },{
         "title": "BOJ 19693, Singapore NOI 2018 Safety",
@@ -71,16 +71,16 @@ var store = [{
         "url": "http://localhost:4000/misc/solvedAC-300M-exp/",
         "teaser": null
       },{
-        "title": "BOJ 13548, 수열과 쿼리 6",
-        "excerpt":"Solved AC Platinum 1 SAC Class 7 Essential Contents 풀이 코드 풀이 수열과 쿼리 5 링크 와 거의 같은데, 조금 덜 자명한 문제이다. 먼저, 수열과 쿼리 5를 어떻게 푸는지 모른다면 이 글 을 권한다. Mo’s Algorithm이라는 마법의 알고리즘이 있어서, 쿼리당 $O(N)$ 이 걸리는 구간 쿼리를 오프라인에 처리함으로써 쿼리당 평균 $O(\\sqrt{n})$...","categories": ["algorithms"],
-        "tags": ["data-structures","algorithms"],
-        "url": "http://localhost:4000/algorithms/BOJ13548/",
-        "teaser": null
-      },{
         "title": "Coursera Machine Learning 수강 시작",
         "excerpt":"이제 CS 전공자에게 딥러닝/머신러닝에 대한 이해는 있으면 좋은게 아니라 없으면 안되는 정도라는 생각이 든다. 대표적으로, 우리 학교의 경우 소프트웨어 개발의 원리 및 실제 강의에서 머신러닝 사용을 강제 하며, 창의적 통합 설계 과목은 팀별로 주어진 프로젝트중 하나를 골라서 수행하는 과목이지만 주어진 프로젝트의 80% 이상이 머신러닝 관련이기 때문에 사실상 선택권이 없다. 이런...","categories": ["ml-study"],
         "tags": ["machine-learning"],
         "url": "http://localhost:4000/ml-study/Starting-coursera-ml/",
+        "teaser": null
+      },{
+        "title": "BOJ 13548, 수열과 쿼리 6",
+        "excerpt":"Solved AC Platinum 1 SAC Class 7 Essential Contents 풀이 코드 풀이 수열과 쿼리 5 링크 와 거의 같은데, 조금 덜 자명한 문제이다. 먼저, 수열과 쿼리 5를 어떻게 푸는지 모른다면 이 글 을 권한다. Mo’s Algorithm이라는 마법의 알고리즘이 있어서, 쿼리당 $O(N)$ 이 걸리는 구간 쿼리를 오프라인에 처리함으로써 쿼리당 평균 $O(\\sqrt{n})$...","categories": ["algorithms"],
+        "tags": ["data-structures","algorithms"],
+        "url": "http://localhost:4000/algorithms/BOJ13548/",
         "teaser": null
       },{
         "title": "Coursera ML, Lecture 1 : Introduction",
@@ -101,6 +101,12 @@ var store = [{
         "url": "http://localhost:4000/algorithms/BOJ20176/",
         "teaser": null
       },{
+        "title": "Coursera ML, Lecture 3 : Multivarite Linear Regression",
+        "excerpt":"Contents Multivariate Linear Regression Multivariate Gradient Descent Feature Scaling Learning Rate More on features / Regression Multivariate Linear Regression 다수의 Feature $(x_1, x_2, x_3, \\dots)$ 로부터, output variable $y$ 를 predict하고 싶다. Notation 정리: Data $i$번째의 $j$번째 feature를 $x^{(i)}_j$ 로 쓰기로 하자. 이제, $x^{(i)}$ 는 하나의 training data인데, 이는 n-vector...","categories": ["ml-study"],
+        "tags": ["machine-learning","linear-regression"],
+        "url": "http://localhost:4000/ml-study/Coursera-ML-Lec3/",
+        "teaser": null
+      },{
         "title": "BOJ 15977, KOI 2018 고등부 3번 조화로운 행렬",
         "excerpt":"Contents 풀이 29점 풀이 100점 풀이 Dynamic Segment Tree 코드 풀이 29점 풀이 서브태스크 1과 3만 먼저 해결하자. 즉, $n = 2$ 인 경우. 문제를 잘 해석해 보면, 다음 풀이에 도달하는 것은 어렵지 않다. 1행의 원소를 기준으로 전체 배열을 정렬한 다음 2행에서 Longest Increasing Subseqeunce를 찾으면 정답이 된다. 이 풀이는...","categories": ["algorithms"],
         "tags": ["data-structures","segment-tree"],
@@ -111,12 +117,6 @@ var store = [{
         "excerpt":"Contents 풀이 문제 해석 Algorithm Small-to-Large Technique 코드 풀이 문제 해석 번역이 상당히 난해하게 작성되어 있다. 요점을 정리하자면 루트 있는 트리가 주어진다. 각 노드에는 $L_i, C_i$ 값이 주어진다. 트리의 어떤 노드 하나 (매니저) 를 고른다. 그 트리를 루트로 하는 서브트리에서 몇 개의 노드(닌자)를 고른다. 매니저를 닌자로 삼을 수 있다. 이때,...","categories": ["algorithms"],
         "tags": ["algorithms","graph"],
         "url": "http://localhost:4000/algorithms/BOJ4002/",
-        "teaser": null
-      },{
-        "title": "Coursera ML, Lecture 3 : Multivarite Linear Regression",
-        "excerpt":"Contents Multivariate Linear Regression Multivariate Gradient Descent Feature Scaling Learning Rate More on features / Regression Multivariate Linear Regression 다수의 Feature $(x_1, x_2, x_3, \\dots)$ 로부터, output variable $y$ 를 predict하고 싶다. Notation 정리: Data $i$번째의 $j$번째 feature를 $x^{(i)}_j$ 로 쓰기로 하자. 이제, $x^{(i)}$ 는 하나의 training data인데, 이는 n-vector...","categories": ["ml-study"],
-        "tags": ["machine-learning","linear-regression"],
-        "url": "http://localhost:4000/ml-study/Coursera-ML-Lec3/",
         "teaser": null
       },{
         "title": "Coursera ML, Lecture 4 : Analytic Computation",
@@ -137,6 +137,12 @@ var store = [{
         "url": "http://localhost:4000/ml-study/Coursera-ML-Lec6/",
         "teaser": null
       },{
+        "title": "Coursera ML, Lecture 7 : Neural networks",
+        "excerpt":"Contents Motivation Background Neuron Model Motivation Complex, nonlinear hypothesis 많은 수의 polynomial feature을 쓸 수도 있겠지만… 여러 개의 feature를 가진 문제에 적용하기는 어렵다. 100개의 feature가 있다면? 그 이상이라면? 적절한 고차항을 쓰기는 매우 어려운 일. ex) Computer Vision. 이 이미지는 차량인가? Pixel intensity matrix를 보고 원래의 이미지를 인식할 수 있는가? Classification...","categories": ["ml-study"],
+        "tags": ["machine-learning","neural-networks"],
+        "url": "http://localhost:4000/ml-study/Coursera-ML-Lec7/",
+        "teaser": null
+      },{
         "title": "BOJ 8904, ICPC Korea 2011 가구 공장",
         "excerpt":"Contents 풀이 코드 풀이 전형적인 형태의 Maximum Flow 문제로 생각할 수 있다. Source와 사람 을 용량 무한대의 간선으로 잇는다. 사람 은 각 시간에 항상 1만큼씩 일을 할 수 있으므로, 용량 1의 간선으로 사람 $m$개 노드와 시간 노드들을 모두 잇는다. 시간 에는 가구가 1만큼 만들어질 수 있지만, 각 가구는 $[S_i, E_i]$...","categories": ["algorithms"],
         "tags": ["flow"],
@@ -147,12 +153,6 @@ var store = [{
         "excerpt":"Contents 풀이 코드 풀이 반지름 $r_i$인 원을 커버하는 센서 들이 주어진다. 이때 최대한의 반지름 $x$를 가진 원형 로봇을 보내서, 이 센서들에 하나도 걸리지 않고 통과해야 한다. 벽과 각 센서를 모두 정점으로 생각하고, 각 센서들 (벽을 포함) 간의 거리를 길이로 갖는 간선으로 이들 모두를 잇자. 이제, 어떤 경로가 양쪽 벽 정점을...","categories": ["algorithms"],
         "tags": ["graph","mst"],
         "url": "http://localhost:4000/algorithms/BOJ9373/",
-        "teaser": null
-      },{
-        "title": "Coursera ML, Lecture 7 : Neural networks",
-        "excerpt":"Contents Motivation Background Neuron Model Motivation Complex, nonlinear hypothesis 많은 수의 polynomial feature을 쓸 수도 있겠지만… 여러 개의 feature를 가진 문제에 적용하기는 어렵다. 100개의 feature가 있다면? 그 이상이라면? 적절한 고차항을 쓰기는 매우 어려운 일. ex) Computer Vision. 이 이미지는 차량인가? Pixel intensity matrix를 보고 원래의 이미지를 인식할 수 있는가? Classification...","categories": ["ml-study"],
-        "tags": ["machine-learning","neural-networks"],
-        "url": "http://localhost:4000/ml-study/Coursera-ML-Lec7/",
         "teaser": null
       },{
         "title": "Coursera ML, Lecture 8 : Neural Network Application",
@@ -231,5 +231,17 @@ var store = [{
         "excerpt":"Contents Recent Updates Rounds Atcoder Beginner Round 208 (Virtual) Codeforces Round 490 (Div.3) Problems ICPC Mid Atlantic 2006, BOJ 1849 순열 CERC 2010D, BOJ 3429 방어선 UCPC 2018 예선F, BOJ 15899 트리와 색깔 BOJ 14287 회사 문화 3 BAPC 2005E, BOJ 5419 북서풍 SCCC 2019E, BOJ 17131 여우가 정보섬에 올라온...","categories": ["algorithms"],
         "tags": ["weekly-ps"],
         "url": "http://localhost:4000/algorithms/ps-weekly-21Jul1/",
+        "teaser": null
+      },{
+        "title": "논문읽기 : DELTACON",
+        "excerpt":" Contents     Introduction    처음으로 정리해볼 논문은 2013년 SDM(SIAM International Conference on Data Mining)에 발표된 DeltaCon입니다.   Introduction  두 그래프 $G_1 = (V_1, E_1), G_2 = (V_2, E_2)$ 가 주어졌을 때, 우리는 두 그래프의 유사도 를 측정하는 어떤 좋은 메트릭을 갖고 싶습니다. 이 메트릭이 있으면  ","categories": ["cs-adventure"],
+        "tags": ["graph theory"],
+        "url": "http://localhost:4000/cs-adventure/deltacon/",
+        "teaser": null
+      },{
+        "title": "2021 UCPC 팀연습 #1 : 서강대학교 2020 Div 1",
+        "excerpt":"Contents Our Team Practice : Sogang 2020 Div1 Phase 0 : Start Phase 1 : Easy Problems A. 파일 정리 F. 폰친구 C. 연료가 부족해 B. 컨설팅 Phase 2 : 3 Graph Problems C. 사탕 배달 A. 에어컨 설치 G. Confuzzle Phase 3 : Pizza Madness 후기 Our Team 이번...","categories": ["cp_practice"],
+        "tags": [],
+        "url": "http://localhost:4000/cp_practice/team_practice_1/",
         "teaser": null
       }]

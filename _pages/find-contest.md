@@ -23,6 +23,7 @@ Jekyll 블로그를 만들기로 한 가장 큰 이유는 이렇게 생긴 페�
 | **2013-G** | Platinum 3 | Getting Through(복도 뚫기) | [링크](/algorithms/BOJ9373/) | [문제 링크 (BOJ)](https://www.acmicpc.net/problem/9373) |
 
 ### Central Europe Regional Contest (CERC)
+
 | 번호         | 난이도        | 문제                 | 포스팅 링크                              | 문제 링크 |
 |------------|------------|--------------------|-------------------------------------|-------|
 | **2010-D** | Platinum 4 | Defense Lines(방어선) | [링크](/algorithms/ps-weekly-21Jul1/) |       |

@@ -13,13 +13,13 @@ author_profile: true
 
 ## Education
 - Seoul National University (2018.3 ~ present)
-    - Major : Computer Science and Engineering (CSE Major GPA 3.89 / 4.3)
-    - Double Major : Mathematical Science (MTH Major GPA 3.99 / 4.3)
+    - Major : Computer Science and Engineering (CSE Major GPA 3.92 / 4.3)
+    - Double Major : Mathematical Science (MTH Major GPA 4.06 / 4.3)
 
 ## Publications 
 ### Domestic Conference
 1. S.Min, **W.Shin**, C.Kim and K.Park, *Improved Adaptive Matching Order for Subgraph Matching Problem*  
-Korea Computer Congress 2021, 2021.6
+Korea Computer Congress 2021, 2021.6. **Best Paper Award**
 
 ## Experience
 - Research Internship (2020.8 ~ present)

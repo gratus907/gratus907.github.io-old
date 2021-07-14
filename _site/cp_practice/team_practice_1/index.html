@@ -390,7 +390,7 @@
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          1201 words
+          1278 words
       </span>
     
   </p>
@@ -418,7 +418,7 @@
   </li>
   <li><a href="#phase-2--3-graph-problems">Phase 2 : 3 Graph Problems</a>
     <ul>
-      <li><a href="#c-사탕-배달">C. 사탕 배달</a></li>
+      <li><a href="#d-사탕-배달">D. 사탕 배달</a></li>
       <li><a href="#a-에어컨-설치">A. 에어컨 설치</a></li>
       <li><a href="#g-confuzzle">G. Confuzzle</a></li>
     </ul>
@@ -445,7 +445,7 @@ Contents
     </ul>
   </li>
   <li><a href="#phase-2--3-graph-problems" id="markdown-toc-phase-2--3-graph-problems">Phase 2 : 3 Graph Problems</a>    <ul>
-      <li><a href="#c-사탕-배달" id="markdown-toc-c-사탕-배달">C. 사탕 배달</a></li>
+      <li><a href="#d-사탕-배달" id="markdown-toc-d-사탕-배달">D. 사탕 배달</a></li>
       <li><a href="#a-에어컨-설치" id="markdown-toc-a-에어컨-설치">A. 에어컨 설치</a></li>
       <li><a href="#g-confuzzle" id="markdown-toc-g-confuzzle">G. Confuzzle</a></li>
     </ul>
@@ -474,7 +474,7 @@ Contents
 서강대학교 대회는 Div 1 과 Div 2로 나뉘어 있고, 원래는 개인대회 3시간짜리 대회입니다. 난이도가 실-골-플-다 문제가 1-2-3-2로 분포된 형태가 UCPC 예선이랑 비슷할것이라고 판단, 이 대회를 3시간 3PC로 돌아보기로 했습니다.</p>
 
 <h2 id="phase-0--start">Phase 0 : Start</h2>
-<p>리얼리티를 위해 문제 순서를 Random shuffle 하고, <code class="language-plaintext highlighter-rouge">gyuni-gratus907-dlwocks31</code> 순서로 3 3 2씩 나눠 읽기로 랬습니다.</p>
+<p>리얼리티를 위해 문제 순서를 shuffle 하고, <code class="language-plaintext highlighter-rouge">gyuni-gratus907-dlwocks31</code> 순서로 3 3 2 나눠 읽기로 랬습니다.</p>
 
 <h2 id="phase-1--easy-problems">Phase 1 : Easy Problems</h2>
 <h3 id="a-파일-정리">A. 파일 정리</h3>
@@ -486,7 +486,7 @@ Code : <code class="language-plaintext highlighter-rouge">dlwocks31</code> (00:0
 
 <h3 id="f-폰친구">F. 폰친구</h3>
 <p>Solve : <code class="language-plaintext highlighter-rouge">gratus907</code><br />
-Code : <code class="language-plaintext highlighter-rouge">gratus907</code> (00:30) 
+Code : <code class="language-plaintext highlighter-rouge">gratus907</code> (00:30)<br />
 재밌는 조합 문제였습니다.<br />
 $N$ 명에게 $K$ 개를 나눠주는데 1인당 $m$개 이상 $M$개 이하를 받는 경우의 수를 계산하는 문제입니다. 미리 $m$개씩 나눠주고 시작하면, $L = K - mN$ 개의 사탕을 $N$명에게 나눠주되 각자가 $x = M - m$ 개 이하로만 받는 경우의 수를 세면 됩니다.</p>
 
@@ -499,29 +499,29 @@ $N$ 명에게 $K$ 개를 나눠주는데 1인당 $m$개 이상 $M$개 이하를 
 
 <h3 id="c-연료가-부족해">C. 연료가 부족해</h3>
 <p>Solve : <code class="language-plaintext highlighter-rouge">gyuni</code><br />
-Code : <code class="language-plaintext highlighter-rouge">gyuni</code> (00:33, 1WA)
+Code : <code class="language-plaintext highlighter-rouge">gyuni</code> (00:33, 1WA)<br />
 역시 쉬운문제라고 판단하고 30분 정도 시간에 AC를 받았습니다. DP였다고 합니다. 역시 무슨문제인지 안읽어서 잘 모르겠습니다.</p>
 
 <hr />
 
 <h3 id="b-컨설팅">B. 컨설팅</h3>
-<p>Solve : <code class="language-plaintext highlighter-rouge">gratus907</code>
-Code : <code class="language-plaintext highlighter-rouge">gratus907</code> (00:58, 1WA)
+<p>Solve : <code class="language-plaintext highlighter-rouge">gratus907</code><br />
+Code : <code class="language-plaintext highlighter-rouge">gratus907</code> (00:58, 1WA)<br />
 쉬운 문제인데 구현이 귀찮아서 조금 시간이 걸렸습니다. 요점은, Greedy하게 정말 필요할때만 WAIT를 걸어주면 된다는 것을 어렵지 않게 알 수 있고, WRITE의 시작점들 / 도착점들 / (시작, 도착)Pair 들을 각각, READ의 대상을 하나. 이렇게 해서 집합들을 관리하고 조건을 잘 그대로 코딩하면 됩니다. 파이썬 썼는데 set같은걸 shallow copy한다는걸 까먹어서 1틀했습니다.</p>
 
 <hr />
 
 <h2 id="phase-2--3-graph-problems">Phase 2 : 3 Graph Problems</h2>
-<h3 id="c-사탕-배달">C. 사탕 배달</h3>
-<p>Solve : <code class="language-plaintext highlighter-rouge">dlwocks31</code>, <code class="language-plaintext highlighter-rouge">gyuni</code>
-Code : <code class="language-plaintext highlighter-rouge">dlwocks31</code> (00:52, 1WA)
+<h3 id="d-사탕-배달">D. 사탕 배달</h3>
+<p>Solve : <code class="language-plaintext highlighter-rouge">dlwocks31</code>, <code class="language-plaintext highlighter-rouge">gyuni</code><br />
+Code : <code class="language-plaintext highlighter-rouge">dlwocks31</code> (00:52, 1WA)<br />
 뭔지 잘 모르겠지만 트리에서 뭔가를 하는 문제입니다. 제가 파이썬 구현으로 싸우고 있는 사이에 팀원 두명이 AC를 받아왔습니다.</p>
 
 <hr />
 
 <h3 id="a-에어컨-설치">A. 에어컨 설치</h3>
-<p>Solve : <code class="language-plaintext highlighter-rouge">gyuni</code>, <code class="language-plaintext highlighter-rouge">dlwocks31</code>, <code class="language-plaintext highlighter-rouge">gratus907</code>
-Code : <code class="language-plaintext highlighter-rouge">gyuni</code> (01:36)
+<p>Solve : <code class="language-plaintext highlighter-rouge">gyuni</code>, <code class="language-plaintext highlighter-rouge">dlwocks31</code>, <code class="language-plaintext highlighter-rouge">gratus907</code><br />
+Code : <code class="language-plaintext highlighter-rouge">gyuni</code> (01:36)<br />
 문제는 다음과 같습니다.</p>
 <ul>
   <li>$\Z^3$에 정점들이 뿌려져 있고 거리가 1인 정점들을 ‘인접하다’ 고 정의하여 그래프를 만듭니다.</li>
@@ -547,15 +547,15 @@ Code : <code class="language-plaintext highlighter-rouge">gyuni</code> (01:36)
 <hr />
 
 <h3 id="g-confuzzle">G. Confuzzle</h3>
-<p>Solve : <code class="language-plaintext highlighter-rouge">dlwocks31</code>, <code class="language-plaintext highlighter-rouge">gratus907</code>
+<p>Solve : <code class="language-plaintext highlighter-rouge">dlwocks31</code>, <code class="language-plaintext highlighter-rouge">gratus907</code><br />
 Code : <code class="language-plaintext highlighter-rouge">dlwocks31</code></p>
 <ul>
   <li>정점 $n$개의 트리가 주어지고, 각 노드가 $1 \leq c_i \leq n$ 의 색깔을 가집니다. 이때, 색깔이 같은 노드 페어 $v_i, v_j$들 중, 서로의 거리가 가장 가까운 노드 간의 거리를 계산하는 문제입니다.</li>
   <li>트리에서 두 정점 사이의 거리는 LCA를 이용하면 ($O(n \log n)$ 전처리를 하고) $O(\log n)$에 계산할 수 있습니다. Range Minimum Query를 잘 이용하면 $O(1)$에도 할 수 있음이 알려져 있지만, 실제로 이게 필요한 상황은 본적이 없는것 같습니다.</li>
-  <li>다만, 이때 $O(n^2)$ 개의 pair를 확인해야 하므로, $O(n^2 \log n)$ 시간이 걸리는데, 이는 도저히 답이 없는 복잡도입니다.</li>
+  <li>다만, 이때 $O(n^2)$ 개의 pair를 확인해야 하므로, $O(n^2 \log n)$ 시간이 걸리는데, 도저히 답이 없는 복잡도입니다.</li>
   <li>각 점마다 map에, “이 노드를 루트로 하는 서브트리에서, 색깔이 $c$ 인 노드들 중 이 노드에서 가장 가까운 노드까지의 거리” 를 저장한다고 생각합니다. 이를 $M_i$ 맵이라고 생각하겠습니다.</li>
   <li>내 자녀 노드의 $M_i$들을 모두 알고 있다면, 이들을 합치는 과정에서 두개 이상의 서브트리가 같은 색깔의 노드를 가지고 있다면 이들까지의 거리를 이용하여 페어의 거리를 계산할 수 있습니다. 이 방법이 최단 거리 페어를 항상 찾을 수 있음은 서브트리에 대해 재귀적으로 증명 가능합니다.</li>
-  <li>그러나, 이 방법은 잘 생각해보면 맵을 합치는 데 $O(n \log n)$ 시간까지 걸리기 때문에, $O(n^2 \log n)$ 시간이 걸립니다.</li>
+  <li>그러나, 이 방법은 잘 생각해보면 맵을 합치는 데 $O(n \log n)$ 까지 걸리기 때문에, $O(n^2 \log n)$ 시간이 걸립니다.</li>
   <li>트리에서 두 Map을 합치는데, <code class="language-plaintext highlighter-rouge">small-to-large</code> 테크닉을 적용 <a href="/algorithms/BOJ4002/">(ex : BOJ 4002번 풀이 링크)</a> 하면, $O(n \log^2 n)$ 시간으로 줄일 수 있습니다.</li>
 </ul>
 
@@ -579,13 +579,16 @@ Code : <code class="language-plaintext highlighter-rouge">dlwocks31</code></p>
   <li>세그먼트 트리도 중간에 노드를 날리지는 못하기 때문에, 여기에 무슨 스플레이 트리를 써서…</li>
 </ul>
 
-<p>=&gt; 이게 될리가 없습니다. 그렇게 한시간동안 셋이서 해괴한 트리들을 꺼내다가 연습을 종료했습니다.<br />
+<p>=&gt; <strong>이게 될리가 없습니다</strong>. 그렇게 한시간동안 셋이서 해괴한 트리들을 꺼내다가 연습을 종료했습니다.<br />
 결국 답은 KMP 알고리즘의 변형이던데, 꽤 멋진 문제인것 같네요.</p>
 
 <hr />
 
 <h2 id="후기">후기</h2>
-<p>비대면 팀연습이지만 굉장히 재밌었습니다. 배울것도 많았고..ㅋㅋㅋ 특히 작년 ICPC같은경우는 제가 나이로나 PS짬밥으로나 맏이였는데 이번에는 양쪽으로 다 막내인 팀이라서 (?) ㅋㅋㅋ 또 색다른 팀인듯 합니다.</p>
+<p>비대면 팀연습이지만 굉장히 재밌었습니다. 배울것도 많았고..ㅋㅋㅋ 특히 작년 ICPC같은경우는 제가 나이로나 PS짬밥으로나 맏이였는데 이번에는 양쪽으로 다 막내인 팀이라서 (?) ㅋㅋㅋ 또 색다른 팀인듯 합니다.<br />
+남은 기간 공부도 재밌게 하고, 무엇보다 대회를 즐길 수 있을 것 같아서 기대가 됩니다.</p>
+
+<p>Little Piplup을 2명 2명 (저랑 dlwocks / coffeetea와 dhdroid) 먼저 갈라놓고 새 팀원을 찾아보기로 했을때 얘기했던것중 하나가 PS를 즐길수 있었으면 한다는 것이었습니다. 사실 무슨 뉴텔라급이 아닌이상 UCPC는 수상할 수 있는 대회가 아니고, 지금으로써는 예선 통과를 걱정하는 상황도 아니기 때문에 순수하게 문제풀이의 즐거움을 추구하기로 했습니다. 2019년 말~2020년 초에는 정말 PS를 즐겼다고 생각하는데, 그후로 학교공부가 바빠지면서 그러지 못했다가 이제 다시 그때의 마음가짐이 돌아오는것 같아서 개인적으로 굉장히 행복합니다.</p>
 
         
       </section>
@@ -689,7 +692,7 @@ Code : <code class="language-plaintext highlighter-rouge">dlwocks31</code></p>
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          42 words
+          46 words
       </span>
     
   </p>
@@ -732,7 +735,7 @@ Contents
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          1379 words
+          1343 words
       </span>
     
   </p>
@@ -775,7 +778,7 @@ Contents
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          1128 words
+          1166 words
       </span>
     
   </p>
@@ -815,7 +818,7 @@ Contents
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          795 words
+          788 words
       </span>
     
   </p>

@@ -240,8 +240,14 @@ var store = [{
         "teaser": null
       },{
         "title": "2021 UCPC 팀연습 #1 : 서강대학교 2020 Div 1",
-        "excerpt":"Contents Our Team Practice : Sogang 2020 Div1 Phase 0 : Start Phase 1 : Easy Problems A. 파일 정리 F. 폰친구 C. 연료가 부족해 B. 컨설팅 Phase 2 : 3 Graph Problems C. 사탕 배달 A. 에어컨 설치 G. Confuzzle Phase 3 : Pizza Madness 후기 Our Team 이번...","categories": ["cp_practice"],
+        "excerpt":"Contents Our Team Practice : Sogang 2020 Div1 Phase 0 : Start Phase 1 : Easy Problems A. 파일 정리 F. 폰친구 C. 연료가 부족해 B. 컨설팅 Phase 2 : 3 Graph Problems E. 사탕 배달 D. 에어컨 설치 G. Confuzzle Phase 3 : Pizza Madness 후기 Our Team 이번...","categories": ["cp_practice"],
         "tags": [],
         "url": "http://localhost:4000/cp_practice/team_practice_1/",
+        "teaser": null
+      },{
+        "title": "삼성 SCPC 예선 1라운드 풀이 / 후기",
+        "excerpt":"Contents SCPC 문제 풀이 / 후기 Problem 1. 친구들 Problem 2. 이진수 SCPC SCPC는 삼성전자 (정확히는 Samsung Research) 가 주관하는 알고리즘 문제풀이 대회로, 한국에서 열리는 기업 대회중 가장 큰 규모를 자랑하는 대회입니다. 한국의 코드잼이라고나 할까요. ICPC, UCPC 등 팀대회와는 달리 개인전이고, 예선 1라운드 - 예선 2라운드 - 본선으로 구성됩니다. 예선...","categories": ["cp_rounds"],
+        "tags": ["algorithms"],
+        "url": "http://localhost:4000/cp_rounds/SCPC-2021-Round1/",
         "teaser": null
       }]

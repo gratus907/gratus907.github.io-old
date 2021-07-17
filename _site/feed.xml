@@ -1,162 +1,376 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-14T21:25:02+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">2021 UCPC 팀연습 #1 : 서강대학교 2020 Div 1</title><link href="http://localhost:4000/cp_practice/team_practice_1/" rel="alternate" type="text/html" title="2021 UCPC 팀연습 #1 : 서강대학교 2020 Div 1" /><published>2021-07-14T00:00:00+09:00</published><updated>2021-07-14T00:00:00+09:00</updated><id>http://localhost:4000/cp_practice/team_practice_1</id><content type="html" xml:base="http://localhost:4000/cp_practice/team_practice_1/">&lt;div id=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-17T14:31:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">삼성 SCPC 예선 1라운드 풀이 / 후기</title><link href="http://localhost:4000/cp_rounds/SCPC-2021-Round1/" rel="alternate" type="text/html" title="삼성 SCPC 예선 1라운드 풀이 / 후기" /><published>2021-07-16T00:00:00+09:00</published><updated>2021-07-16T00:00:00+09:00</updated><id>http://localhost:4000/cp_rounds/SCPC-2021-Round1</id><content type="html" xml:base="http://localhost:4000/cp_rounds/SCPC-2021-Round1/">&lt;div id=&quot;toc&quot;&gt;
 Contents
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#our-team&quot; id=&quot;markdown-toc-our-team&quot;&gt;Our Team&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#practice--sogang-2020-div1&quot; id=&quot;markdown-toc-practice--sogang-2020-div1&quot;&gt;Practice : Sogang 2020 Div1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#phase-0--start&quot; id=&quot;markdown-toc-phase-0--start&quot;&gt;Phase 0 : Start&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#phase-1--easy-problems&quot; id=&quot;markdown-toc-phase-1--easy-problems&quot;&gt;Phase 1 : Easy Problems&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#a-파일-정리&quot; id=&quot;markdown-toc-a-파일-정리&quot;&gt;A. 파일 정리&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#f-폰친구&quot; id=&quot;markdown-toc-f-폰친구&quot;&gt;F. 폰친구&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#c-연료가-부족해&quot; id=&quot;markdown-toc-c-연료가-부족해&quot;&gt;C. 연료가 부족해&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#b-컨설팅&quot; id=&quot;markdown-toc-b-컨설팅&quot;&gt;B. 컨설팅&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#scpc&quot; id=&quot;markdown-toc-scpc&quot;&gt;SCPC&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#문제-풀이--후기&quot; id=&quot;markdown-toc-문제-풀이--후기&quot;&gt;문제 풀이 / 후기&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#problem-1-친구들&quot; id=&quot;markdown-toc-problem-1-친구들&quot;&gt;Problem 1. 친구들&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#문제설명&quot; id=&quot;markdown-toc-문제설명&quot;&gt;문제설명&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#풀이-disjoint-set&quot; id=&quot;markdown-toc-풀이-disjoint-set&quot;&gt;풀이 (Disjoint Set)&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#problem-2-이진수&quot; id=&quot;markdown-toc-problem-2-이진수&quot;&gt;Problem 2. 이진수&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#문제설명-1&quot; id=&quot;markdown-toc-문제설명-1&quot;&gt;문제설명&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#풀이-greedy&quot; id=&quot;markdown-toc-풀이-greedy&quot;&gt;풀이 (Greedy)&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#problem-3-no-cycle&quot; id=&quot;markdown-toc-problem-3-no-cycle&quot;&gt;Problem 3. No Cycle&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#문제설명-2&quot; id=&quot;markdown-toc-문제설명-2&quot;&gt;문제설명&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#풀이-greedy--graph&quot; id=&quot;markdown-toc-풀이-greedy--graph&quot;&gt;풀이 (Greedy + Graph)&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#problem-4-예약-시스템&quot; id=&quot;markdown-toc-problem-4-예약-시스템&quot;&gt;Problem 4. 예약 시스템&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#문제설명-3&quot; id=&quot;markdown-toc-문제설명-3&quot;&gt;문제설명&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#풀이-greedy--casework&quot; id=&quot;markdown-toc-풀이-greedy--casework&quot;&gt;풀이 (Greedy + Casework)&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#problem-5&quot; id=&quot;markdown-toc-problem-5&quot;&gt;Problem 5&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#문제-설명&quot; id=&quot;markdown-toc-문제-설명&quot;&gt;문제 설명&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#풀이-dsu-based&quot; id=&quot;markdown-toc-풀이-dsu-based&quot;&gt;풀이 (DSU-based)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#후기&quot; id=&quot;markdown-toc-후기&quot;&gt;후기&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#부록--버퍼-이야기-scpc-주의사항&quot; id=&quot;markdown-toc-부록--버퍼-이야기-scpc-주의사항&quot;&gt;부록 : 버퍼 이야기 (SCPC 주의사항)&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#phase-2--3-graph-problems&quot; id=&quot;markdown-toc-phase-2--3-graph-problems&quot;&gt;Phase 2 : 3 Graph Problems&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#d-사탕-배달&quot; id=&quot;markdown-toc-d-사탕-배달&quot;&gt;D. 사탕 배달&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#a-에어컨-설치&quot; id=&quot;markdown-toc-a-에어컨-설치&quot;&gt;A. 에어컨 설치&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#g-confuzzle&quot; id=&quot;markdown-toc-g-confuzzle&quot;&gt;G. Confuzzle&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;scpc&quot;&gt;SCPC&lt;/h1&gt;
+&lt;p&gt;SCPC는 삼성전자 (정확히는 Samsung Research) 가 주관하는 알고리즘 문제풀이 대회로, 한국에서 열리는 기업 대회중 가장 큰 규모를 자랑하는 대회입니다. 한국의 코드잼이라고나 할까요.&lt;/p&gt;
+
+&lt;p&gt;ICPC, UCPC 등 팀대회와는 달리 개인전이고, 예선 1라운드 - 예선 2라운드 - 본선으로 구성됩니다.&lt;/p&gt;
+
+&lt;p&gt;예선 1라운드는 24시간, 예선 2라운드는 12시간이라는 엄청난 시간이 주어지고 지구력을 강하게 요구합니다. 또한 제출 기회가 10번(문제에 따라 20번)으로 제한되어 있다는 점도 특징입니다.&lt;/p&gt;
+
+&lt;p&gt;참고로, 2020년 대회는 예선 1라운드를 통과하고 2라운드를 멋지게 말아먹었습니다. 저는 부분점수 시스템을 탓하기로 했습니다만 작년 대회 문제를 다시 stress-test 해보니 꼭 그렇지는 않은 모양입니다. 작년 대회에 대한 (감정이 많이 실린) 후기는 &lt;a href=&quot;https://gratus-blog.tistory.com/121&quot;&gt;여기&lt;/a&gt; 에 적혀 있습니다.&lt;/p&gt;
+
+&lt;p&gt;작년에는 1차 예선 5번을 해결하지 못했지만, 올해는 시작 약 4시간 만에 모든 문제에서 만점을 받을 수 있었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../images/1884fd79ae1d82e347df360ba2645a98a53fe3170016d0cd18a3e88a4a4dfdd5.png&quot; alt=&quot;picture 1&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;문제-풀이--후기&quot;&gt;문제 풀이 / 후기&lt;/h1&gt;
+&lt;p&gt;시간복잡도에 대한 모든 언급은 테스트케이스 한개당 복잡도입니다.&lt;/p&gt;
+
+&lt;p&gt;구현체를 업로드하긴 하곘지만, 대회중 구현한 코드라서 굉장히 바보같은 실수와 redundant한 구현이 있습니다.&lt;br /&gt;
+코드를 정리해서 쓰지 않고 incremental하게 생각해서 그런데, codeground에 연습이 올라오면 정리를 해볼지도 모르겠습니다. 현재 코드가 라운드 중 제 생각의 과정을 그대로 반영해서 오히려 이런 글에 더 적절하다는 생각도 듭니다.&lt;/p&gt;
+&lt;h2 id=&quot;problem-1-친구들&quot;&gt;Problem 1. 친구들&lt;/h2&gt;
+&lt;h3 id=&quot;문제설명&quot;&gt;문제설명&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;$i$ 번 사람이 $i + D_i$ 번과 친구이고, 친구관계가 equivalence relation을 이룰 때, 친구 관계인 극대 그룹의 개수를 출력하는 문제입니다.&lt;/li&gt;
+  &lt;li&gt;극대 그룹이란 “현재 이 그룹 안에서 뽑은 임의의 2명이 서로 친구이면서”, “이 성질을 깨지 않고 이 그룹에 누군가를 추가할 수 없음” 을 말합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;풀이-disjoint-set&quot;&gt;풀이 (Disjoint Set)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;즉, equivalence class의 개수를 세는 문제입니다.&lt;/li&gt;
+  &lt;li&gt;Disjoint Set Union (DSU) 또는 Union Find (UF) 라고 알려진 자료구조를 써서 쉽게 구현할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;DSU의 구현체와 마지막에 개수를 어떻게 세느냐에 따라 $O(n \log^* n)$ 에도 풀 수 있지만, 저는 그냥 평범하게 merge by size &amp;amp; path compression을 쓰고 set을 써서 $O(n \log n)$ 으로 구현했습니다. 단 한번도 UF가 느려서 문제가 생기는걸 본적이 없습니다.&lt;/li&gt;
+  &lt;li&gt;대략 8분 정도 만에 AC를 받았던것 같습니다. 어떤 대회든 시작하면 순간 심박수가 확 높아지는 제 심각한 단점에 의해 필요 이상으로 힘들었습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;problem-2-이진수&quot;&gt;Problem 2. 이진수&lt;/h2&gt;
+&lt;h3 id=&quot;문제설명-1&quot;&gt;문제설명&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;N비트 비트열 $A$로부터 $B$를 다음과 같이 만듭니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B[i] = A[i - t] || A[i + t]&lt;/code&gt; (단, 인덱스가 1 - N 범위를 벗어나면 무시)&lt;/li&gt;
+  &lt;li&gt;B가 주어질 때, A를 복원하는 문제입니다. 가능한 A가 여러가지이므로 이진수로 볼 때 가장 작은 - 즉, 사전순으로 가장 앞서는 답을 출력해야 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;풀이-greedy&quot;&gt;풀이 (Greedy)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;사전순이라는 조건 때문에, 앞비트를 0으로 만들 수 있다면 무조건 0으로 만들어야 합니다. 따라서, 최대한 앞비트에 0이 많이 오게 Greedy하게 풀면 됩니다.&lt;/li&gt;
+  &lt;li&gt;주의할 점은, $B_i$가 0이면 $A_{i - t}$ 와 $A_{i + t}$ 가 무조건 0이어야 하므로, 어떤 $A_j$ 들은 0으로 고정당합니다. 이것 때문에 앞과 뒤 중 앞을 1로 만들어야만 하는 (사전순으로는 뒤를 1로 만들고 싶겠지만) 상황들이 발생합니다.&lt;/li&gt;
+  &lt;li&gt;저는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fix&lt;/code&gt; 라는 배열을 관리하고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fix&lt;/code&gt; 배열에 True가 켜져 있으면 손을 못댄다고 생각하는 방식으로 구현했습니다.&lt;/li&gt;
+  &lt;li&gt;대략 30분 정도 만에 AC를 받았습니다. fix를 생각하지 않고 그리디하게 했다가 뭔가 답이 안나와서 잠깐 고민했고, 버퍼 이슈 때문에 한번 TLE를 받았습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;problem-3-no-cycle&quot;&gt;Problem 3. No Cycle&lt;/h2&gt;
+&lt;h3 id=&quot;문제설명-2&quot;&gt;문제설명&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Directed Acyclic Graph $G$와, 방향이 정해지지 않은 간선들이 주어집니다.&lt;/li&gt;
+  &lt;li&gt;간선들에 정방향 (입력방향) 또는 역방향 (입력 반대방향) 을 줍니다. (각각을 0과 1로 표시)&lt;/li&gt;
+  &lt;li&gt;목표는 방향을 다 정해서, 결과 그래프가 여전히 Acyclic하게 만드는 것입니다. 당연히 여러 개의 답이 있는 경우들이 있으며, 이런 경우에는 간선들을 0 1 로 표시했을 때 사전순으로 가장 앞서는 답을 출력합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;풀이-greedy--graph&quot;&gt;풀이 (Greedy + Graph)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Subtask 1은 간선개수 10개, 정점개수 10개이므로 $2^{10}$가지 경우의 수를 확인하는 풀이가 가능합니다. 이걸로 41 / 180점을 받습니다.&lt;/li&gt;
+  &lt;li&gt;사전순을 일단 생각하지 말고, 사이클 없는 간선 방향 정하기만 생각해 봅시다. 여기까지는 굉장히 많이 알려진 문제이며, 주어진 DAG를 Topological sorting한 다음 Topological order를 기준으로 간선을 앞 -&amp;gt; 뒤로 모두 정해버리면 사이클이 발생하지 않습니다. 임의의 Directed Graph가 주어졌을때 사이클이 있는지 확인하는 방법 중, 위상정렬하고 back edge가 있는지 보는 방법이 있음을 알고 있다면 이 방법은 쉽게 떠올릴 수 있습니다. 제가 PS를 처음 시작하고 얼마 안되어 codeforces에 이 문제가 한번 나왔는데 한참 생각해서 풀고 기분이 꽤 좋았던 기억이 있습니다.&lt;/li&gt;
+  &lt;li&gt;여기까지, Subtask 2를 해결할 수 있으며, 52 / 180점을 받습니다. 서브태스크 1과 함께하면 93 / 180점입니다.&lt;/li&gt;
+  &lt;li&gt;문제 전체를 해결하기 위해서는 조금더 잘 생각해볼 필요가 있습니다. 먼저, 사전순 조건 때문에 만약 가능하다면 항상 앞간선에 0번방향을 부여하고 싶다는 사실을 기억합시다.&lt;/li&gt;
+  &lt;li&gt;$n \times n$ 의 비트 행렬 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R&lt;/code&gt; 이라는걸 생각하겠습니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R[i][j]&lt;/code&gt; 는, $i$ 에서 $j$로 가는 경로가 있음을 의미합니다.&lt;/li&gt;
+  &lt;li&gt;$(u, v)$ 간선의 방향을 정하는데, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R[v][u]&lt;/code&gt; 가 True이면 $u \to v$ 방향으로 간선을 줄 수 없습니다.&lt;/li&gt;
+  &lt;li&gt;그렇지 않다면, $u \to v$ 방향으로 간선을 줄 수 있으므로 주어야 합니다.&lt;/li&gt;
+  &lt;li&gt;이제, 간선을 추가했다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R&lt;/code&gt; 행렬을 업데이트해야 합니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R&lt;/code&gt; 행렬을 업데이트하는 것은
+    &lt;ul&gt;
+      &lt;li&gt;$u$ 에 도달 가능한 모든 정점 $i$에 대해, 즉 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R[i][u]&lt;/code&gt; 가 참인 모든 $i$에 대해&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R[i][j]&lt;/code&gt; 에 $i \to u \to v \to j$ 경로의 존재성을 반영합니다. 즉, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R[i][j] |= R[v][j]&lt;/code&gt; 를 해줘야 합니다.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#phase-3--pizza-madness&quot; id=&quot;markdown-toc-phase-3--pizza-madness&quot;&gt;Phase 3 : Pizza Madness&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#후기&quot; id=&quot;markdown-toc-후기&quot;&gt;후기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;our-team&quot;&gt;Our Team&lt;/h2&gt;
-&lt;p&gt;이번 UCPC 팀은 이렇게 구성되게 되었습니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt; : DGIST에서 석사과정을 올 8월에 마무리하고 졸업합니다. ICPC는 석사 1년차까지, UCPC는 석사과정 (석박통합 2년차까지) 임을 감안하면 사실상 이번 UCPC가 대학생 프로그래밍 대회의 마지막을 장식하게 될 것인지라, 저 개인적으로 매우 영광으로 생각하고 있습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt; : 병특 중에 있습니다. 제 블로그에도 여러번 언급되었지만… 해시코드를 함께하고 있는 Little Piplup 팀으로, 둘이서 1:1 연습을 많이 해봤습니다만 전통적인 CP대회를 같이뛰는건 처음입니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;따라서, 각 간선을 볼때마다 최대 $O(n^2)$ 칸의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R&lt;/code&gt; 행렬을 업데이트해야 하기 때문에, $O(n^2 k)$ 알고리즘이 됩니다.&lt;/li&gt;
+  &lt;li&gt;$n = 500, k = 2000$ 이므로, 이 시간은 기분이 몹시 나쁩니다. $500 \times 500 \times 2000$ 짜리 테스트케이스 한개면 모를까, 그걸 70개 해결할 수는 없어 보입니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R&lt;/code&gt; 행렬을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;std::bitset&lt;/code&gt; 으로 관리하면, 시간복잡도는 줄어들지 않지만 비트연산을 묶어서 처리함으로써 64배 빨라집니다. 이를 이용하여, $O(n^2 k)$ 알고리즘을 시간내에 구겨넣을 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;bitset을 쓰는 추한 풀이가 싫다면, 매번 간선을 추가할때마다 간선을 0-방향으로 추가해보고 사이클이 있는지 검증하고, 1-방향으로 추가해보는 식으로 $O(nk)$ 에도 풀 수 있다고 합니다. 어떻게 이걸 생각을 못했지????? 이건 라운드가 끝나고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dhdroid&lt;/code&gt;랑 디스커션하다가 알았고, bitset을 쓰는 추한 풀이로 욕을 먹었습니다. ㅎㅎ;;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R&lt;/code&gt; 행렬을 처음에 바보같이 DFS로 계산하는 과정에서 실수를 해서, 이문제 AC를 받는데 무려 1시간 30분 정도가 걸렸습니다. (1시간 58분 AC) 중간에 혹시 못풀수도 있겠다는 공포에 52점을 먹는 등 (22.5시간이 남았음에도…) 24시간 대회는 대회 전략을 고려하지 않고 편한 마음으로 PS를 해야하는데 제가 그게 좀 안 됩니다. 작년 2차 3번의 악몽때문에 제출 기회 제한을 두려워하는 것도 좀 있습니다. 중간에 4번을 좀 생각하다가 돌아와서, 4번은 좀 빨리 풀었습니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;세명의 Codeforces max rating은 2100+지만, 저랑 dlwocks는 파킹에 실패해서 퍼플로 낙하했습니다. 퍼플+퍼플+오렌지 팀 정도로 볼 수 있을것 같습니다.&lt;/p&gt;
-
-&lt;p&gt;전력을 잠깐 생각해 보자면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;님의 스타일은 제가 잘 모르지만 저랑 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;은 동일 레이팅의 2인 팀치고는 아마도 꽤 강할 것 같습니다. 제가 상대적으로 조합/정수를 잘 풀고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;이 자료구조/구현 문제를 잘 풀다 보니… 그래서, 3인팀도 나름대로 스타일은 명확하고 잘 맞는것 같습니다.&lt;/p&gt;
-
-&lt;p&gt;작년에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;coffeetea&lt;/code&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;diordhd&lt;/code&gt; 팀이 2020 ICPC 예선에서 12등인가 하는 놀라운 성적을 얻었는데, 객관적인 전력은 그 근처 어딘가라고 생각합니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;practice--sogang-2020-div1&quot;&gt;Practice : Sogang 2020 Div1&lt;/h2&gt;
-&lt;p&gt;3시간 정도밖에 시간이 없어서, 돌만한 셋이 별로 없었습니다. Japan ICPC 예선전 정도가 3시간인데, 난이도가 널뛰기하는데다가 백준에서 푼사람이 아무도 없어서 데이터의 올바름을 확신하기 어렵기도 하고… 
-서강대학교 대회는 Div 1 과 Div 2로 나뉘어 있고, 원래는 개인대회 3시간짜리 대회입니다. 난이도가 실-골-플-다 문제가 1-2-3-2로 분포된 형태가 UCPC 예선이랑 비슷할것이라고 판단, 이 대회를 3시간 3PC로 돌아보기로 했습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;phase-0--start&quot;&gt;Phase 0 : Start&lt;/h2&gt;
-&lt;p&gt;리얼리티를 위해 문제 순서를 shuffle 하고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni-gratus907-dlwocks31&lt;/code&gt; 순서로 3 3 2 나눠 읽기로 랬습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;phase-1--easy-problems&quot;&gt;Phase 1 : Easy Problems&lt;/h2&gt;
-&lt;h3 id=&quot;a-파일-정리&quot;&gt;A. 파일 정리&lt;/h3&gt;
-&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;&lt;br /&gt;
-Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt; (00:07)
-‘쉬운 구현문제니까 그냥 잡을게요’ 라고 말하고 7분에 AC를 받아왔습니다. 무슨문제인지 안읽어서 모르겠습니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;f-폰친구&quot;&gt;F. 폰친구&lt;/h3&gt;
-&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt;&lt;br /&gt;
-Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt; (00:30)&lt;br /&gt;
-재밌는 조합 문제였습니다.&lt;br /&gt;
-$N$ 명에게 $K$ 개를 나눠주는데 1인당 $m$개 이상 $M$개 이하를 받는 경우의 수를 계산하는 문제입니다. 미리 $m$개씩 나눠주고 시작하면, $L = K - mN$ 개의 사탕을 $N$명에게 나눠주되 각자가 $x = M - m$ 개 이하로만 받는 경우의 수를 세면 됩니다.&lt;/p&gt;
-
-&lt;p&gt;먼저, $x$개 조건이 없다면 답은 중복조합을 이용하여 $_N H _L$ 개입니다. $x$개 조건은 여사건을 이용하여 계산할 수 있습니다. 반대로, ‘누가 $x+1$개 이상을 받을지’ 를 미리 정하고 갑시다. $u$명이 $x+1$개 이상을 받는다면, 미리 얘네들한테 $x+1$개씩 나눠주고 나머지들에게 사탕을 잘 나눠주는 경우를 생각하면 됩니다. 따라서, $_N H _{L - (x+1)u}$ 가 될 것입니다.&lt;/p&gt;
-
-&lt;p&gt;그러나, 이 방법의 문제는 ‘나머지들에게 잘 나눠줄때’ 나머지들 중에 또 $x+1$개 이상을 받는 사람이 있을수도 있다는 것입니다. 이를 포함-배제 원리를 이용하여, 다음과 같이 처리하면 됩니다.
-\(\sum_{u = 1}^{n} (-1)^u \times {_N C _u} \times {_N H _{L - (x + 1)u}}\)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;c-연료가-부족해&quot;&gt;C. 연료가 부족해&lt;/h3&gt;
-&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;&lt;br /&gt;
-Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt; (00:33, 1WA)&lt;br /&gt;
-역시 쉬운문제라고 판단하고 30분 정도 시간에 AC를 받았습니다. DP였다고 합니다. 역시 무슨문제인지 안읽어서 잘 모르겠습니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;b-컨설팅&quot;&gt;B. 컨설팅&lt;/h3&gt;
-&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt;&lt;br /&gt;
-Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt; (00:58, 1WA)&lt;br /&gt;
-쉬운 문제인데 구현이 귀찮아서 조금 시간이 걸렸습니다. 요점은, Greedy하게 정말 필요할때만 WAIT를 걸어주면 된다는 것을 어렵지 않게 알 수 있고, WRITE의 시작점들 / 도착점들 / (시작, 도착)Pair 들을 각각, READ의 대상을 하나. 이렇게 해서 집합들을 관리하고 조건을 잘 그대로 코딩하면 됩니다. 파이썬 썼는데 set같은걸 shallow copy한다는걸 까먹어서 1틀했습니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;phase-2--3-graph-problems&quot;&gt;Phase 2 : 3 Graph Problems&lt;/h2&gt;
-&lt;h3 id=&quot;d-사탕-배달&quot;&gt;D. 사탕 배달&lt;/h3&gt;
-&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;&lt;br /&gt;
-Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt; (00:52, 1WA)&lt;br /&gt;
-뭔지 잘 모르겠지만 트리에서 뭔가를 하는 문제입니다. 제가 파이썬 구현으로 싸우고 있는 사이에 팀원 두명이 AC를 받아왔습니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;a-에어컨-설치&quot;&gt;A. 에어컨 설치&lt;/h3&gt;
-&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt;&lt;br /&gt;
-Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt; (01:36)&lt;br /&gt;
-문제는 다음과 같습니다.&lt;/p&gt;
+&lt;h2 id=&quot;problem-4-예약-시스템&quot;&gt;Problem 4. 예약 시스템&lt;/h2&gt;
+&lt;h3 id=&quot;문제설명-3&quot;&gt;문제설명&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;$\Z^3$에 정점들이 뿌려져 있고 거리가 1인 정점들을 ‘인접하다’ 고 정의하여 그래프를 만듭니다.&lt;/li&gt;
-  &lt;li&gt;그래프에 ‘에어컨’ 을 설치합니다. 이 에어컨 한 대는 설치한 정점과 그 인접한 정점을 커버합니다.&lt;/li&gt;
-  &lt;li&gt;이제, 최소 개수의 에어컨을 달아서 모든 정점을 커버하는 문제입니다.&lt;/li&gt;
+  &lt;li&gt;$2$행 $m$열로 방들이 있고, 같은 열의 위아래 행들과 같은 행의 양 옆 열들을 ‘인접’ 하다고 정의합니다.&lt;/li&gt;
+  &lt;li&gt;사람 $2m$ 명이 각각 스트레스 지수를 가지고 있고, $n$개 그룹으로 나뉘어 있습니다.&lt;/li&gt;
+  &lt;li&gt;인접한 방에 다른 그룹의 사람을 배치하면, 그 두 방에 들어간 사람의 스트레스 지수 합만큼 페널티가 발생합니다.&lt;/li&gt;
+  &lt;li&gt;이를 최소화하는 방 배치를 찾고자 합니다.&lt;/li&gt;
+  &lt;li&gt;재밌게도, 각 그룹은 5명 이상이라는 조건이 있습니다. 이 조건이 없으면 문제가 정말 끔찍할 것입니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;제가 B번을 맞고 갔을때는 이미 어느정도 둘이 솔루션을 discuss하고 있었던 중이었습니다. 여기에 같이 아이디어를 구상하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;님이 코딩을 바로 들어갔습니다.&lt;/p&gt;
+&lt;h3 id=&quot;풀이-greedy--casework&quot;&gt;풀이 (Greedy + Casework)&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;먼저, 어차피 각 connected component별로 생각해야 하므로 그래프가 연결되어 있다고 하겠습니다.&lt;/li&gt;
-  &lt;li&gt;이제, 이 문제는 &lt;strong&gt;최소 버텍스 커버&lt;/strong&gt; 와 같은 문제임을 압니다.&lt;/li&gt;
-  &lt;li&gt;이 문제는 NP-Complete이지만, 이분 그래프에 대해서는 빨리 풀 수 있음이 알려져 있습니다.&lt;/li&gt;
-  &lt;li&gt;$(a, b, c)$ 에 대해, $a + b + c$의 홀짝성에 따라 정점에 색깔을 칠해주면 이 그래프가 이분 그래프임을 보일 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;따라서, 이 그래프에서 최소 버텍스 커버를 짜면 됩니다.&lt;/li&gt;
+  &lt;li&gt;어렵지만 재밌었습니다. 먼저, 그룹 $i$의 사람 숫자가 실제로 몇명인지보다는 홀수인지 짝수인지가 중요함을 관찰합니다.&lt;/li&gt;
+  &lt;li&gt;왜냐면, 어차피 같은 그룹의 사람들끼리 붙여주면 그 벽에서는 페널티가 발생하지 않고, 페널티가 발생하는 경우는 아래 케이스들밖에 없기 때문입니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;저는 이걸 알아도 이분그래프에서 최소 버텍스 커버를 어떻게 짜는지 자신이 없었지만, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;님이 그건 짤수 있다고 확신을 줬기 때문에 (:fan:) 맡기고 저랑 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;은 남은 2문제를 잡으러 갔습니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../images/132e43e2b169d80f9b5245bff9986d0214096cfa2e192ee741ef2c06cb2d20bd.png&quot; alt=&quot;picture 1&quot; /&gt;&lt;/p&gt;
 
-&lt;hr /&gt;
-
-&lt;p&gt;코딩을 맡긴게 대략 01:00 시점쯤이고, 5AC에 1문제는 코딩만 남은 상황이었기 때문에 난이도에 대해 심각한 의심이 있었습니다. 실버 1, 골드 2, 플레 2문제 + 1문제 구상까지를 1시간에 밀었다는것도 그렇지만, 지금까지 문제들 중 플레급이라고 생각이 드는건 A번 정도였기 때문입니다. C번은 제가 직접 문제를 보지 않아서 뭐라고 할수가 없고, F번은 나중에 생각해보면 포함배제 쓰는 조합문제가 익숙하지 않다면 어려울것 같기도 합니다만 그럭저럭 꽤 많이 나온 스타일의 문제였지 않나 싶습니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;g-confuzzle&quot;&gt;G. Confuzzle&lt;/h3&gt;
-&lt;p&gt;Solve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gratus907&lt;/code&gt;&lt;br /&gt;
-Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;정점 $n$개의 트리가 주어지고, 각 노드가 $1 \leq c_i \leq n$ 의 색깔을 가집니다. 이때, 색깔이 같은 노드 페어 $v_i, v_j$들 중, 서로의 거리가 가장 가까운 노드 간의 거리를 계산하는 문제입니다.&lt;/li&gt;
-  &lt;li&gt;트리에서 두 정점 사이의 거리는 LCA를 이용하면 ($O(n \log n)$ 전처리를 하고) $O(\log n)$에 계산할 수 있습니다. Range Minimum Query를 잘 이용하면 $O(1)$에도 할 수 있음이 알려져 있지만, 실제로 이게 필요한 상황은 본적이 없는것 같습니다.&lt;/li&gt;
-  &lt;li&gt;다만, 이때 $O(n^2)$ 개의 pair를 확인해야 하므로, $O(n^2 \log n)$ 시간이 걸리는데, 도저히 답이 없는 복잡도입니다.&lt;/li&gt;
-  &lt;li&gt;각 점마다 map에, “이 노드를 루트로 하는 서브트리에서, 색깔이 $c$ 인 노드들 중 이 노드에서 가장 가까운 노드까지의 거리” 를 저장한다고 생각합니다. 이를 $M_i$ 맵이라고 생각하겠습니다.&lt;/li&gt;
-  &lt;li&gt;내 자녀 노드의 $M_i$들을 모두 알고 있다면, 이들을 합치는 과정에서 두개 이상의 서브트리가 같은 색깔의 노드를 가지고 있다면 이들까지의 거리를 이용하여 페어의 거리를 계산할 수 있습니다. 이 방법이 최단 거리 페어를 항상 찾을 수 있음은 서브트리에 대해 재귀적으로 증명 가능합니다.&lt;/li&gt;
-  &lt;li&gt;그러나, 이 방법은 잘 생각해보면 맵을 합치는 데 $O(n \log n)$ 까지 걸리기 때문에, $O(n^2 \log n)$ 시간이 걸립니다.&lt;/li&gt;
-  &lt;li&gt;트리에서 두 Map을 합치는데, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;small-to-large&lt;/code&gt; 테크닉을 적용 &lt;a href=&quot;/algorithms/BOJ4002/&quot;&gt;(ex : BOJ 4002번 풀이 링크)&lt;/a&gt; 하면, $O(n \log^2 n)$ 시간으로 줄일 수 있습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Small to Large 테크닉을 적용하자는 말을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt;이 거의 5분만에 했고(:fan:), 10분만에 코딩했으나 사소한 실수로 디버깅에 40분이 걸렸습니다. 무려 $n^2 \log n$ 솔루션을 코딩해서 스트레스테스트로 반례를 찾아야만 했습니다. :(&lt;br /&gt;
-별론으로, 정해가 상당히 멋집니다. 각 색깔에 대해 그 색깔의 노드가 몇개 없으면 ($k \leq \sqrt{n}$) $O(k^2 \log k)$ 알고리즘을 돌리고, 노드가 많으면 멀티소스 BFS를 돌리는… sqrt decomp스타일 아이디어였습니다.&lt;br /&gt;
-하지만 여전히 dlwocks31의 스몰투라지가 복잡도면에서 더 좋은 풀이일 뿐 아니라, 코딩도 매우 간단합니다. :fan:&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;phase-3--pizza-madness&quot;&gt;Phase 3 : Pizza Madness&lt;/h2&gt;
-
-&lt;p&gt;해결하지 못한 H번에 대한 이야기입니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;어떤 수열 $A$와 작은 수열 $B$가 주어지고, $A$를 원형으로 연결했을 때 $B$에 해당하는 패턴을 매칭하는 문제입니다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;단, 패턴이 실제로 맞을 필요는 없고, ‘원소들 간의 순서’ 가 맞으면 됩니다. 예를 들어, (4, 3, 6) 과 (2, 1, 3) 을 매칭된 것으로 본다는 것입니다.&lt;/p&gt;
+  &lt;li&gt;잘 관찰해 보면, 홀수 블록이든 짝수 블록이든 끝 4명정도만 중요합니다. 대신 홀수블록이 포함된 연산에서는 2번 페널티를 일으키는 사람이 있게 됩니다.&lt;/li&gt;
+  &lt;li&gt;또한, 가장자리 블록은 스트레스를 덜 발생시킵니다.&lt;/li&gt;
+  &lt;li&gt;홀수 블록과 짝수 블록에 대해 다음을 계산합니다. 각 블록의 스트레스 지수가 작은 사람부터 정렬했다고 합시다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;(홀수 블록)&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l3 = 2 * s[0] + s[1]&lt;/code&gt; 은 가장자리 홀수 블록이 다른 홀수 블록과 만날때 스트레스 값입니다.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;(홀수 블록)&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l5 = 2 * s[0] + s[1] + s[2] + s[3]&lt;/code&gt; 은 가장자리가 아닌 홀수 블록이 한쪽으로 다른 홀수 블록과, 다른 쪽으로 짝수 블록과 만날때 스트레스 값입니다.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;(짝수 블록)&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l2 = s[0] + s[1]&lt;/code&gt; 은 가장자리 짝수 블록이 다른 짝수 블록과 만날때 스트레스 값입니다.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;(짝수 블록)&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l4 = s[0] + s[1] + s[2] + s[3]&lt;/code&gt; 은 가장자리가 아닌 짝수 블록이 좌우로 다른 짝수 블록과 만날때 스트레스 값입니다.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;(짝수 블록)&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l6 = 2 * s[0] + 2 * s[1] + s[2] + s[3]&lt;/code&gt; 은 가장자리가 아닌 짝수 블록이 좌우로 홀수 블록과 만날때 스트레스 값입니다.&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;다양한 아이디어들이 등장했습니다. 각 수를 좌표압축해서, 좌표압축된 $n$개의 수를 라빈카프처럼 해싱하자는 아이디어라던가…&lt;/li&gt;
-  &lt;li&gt;해싱된 수열의 일부를 오른쪽 / 왼쪽으로 미는 연산이 기존의 해싱에서 불가능합니다.&lt;/li&gt;
-  &lt;li&gt;미는 부분이 구간을 연산한다는 점에 착안하여 각 노드가 구간의 라빈카프 해시값을 가지고 있는 세그먼트 트리 같은 아이디어가 나오고&lt;/li&gt;
-  &lt;li&gt;세그먼트 트리도 중간에 노드를 날리지는 못하기 때문에, 여기에 무슨 스플레이 트리를 써서…&lt;/li&gt;
+  &lt;li&gt;서브태스크 1, 모든 그룹이 짝수명일 때는 가장자리 두 블록은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l2&lt;/code&gt;, 나머지 블록들은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l4&lt;/code&gt; 만큼 스트레스를 발생시킵니다. 따라서, 모든 블록의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l4&lt;/code&gt; 를 더한 다음, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l2 - l4&lt;/code&gt; 값이 가장 작은 두 블록에 대해서만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l4&lt;/code&gt;를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l2&lt;/code&gt;로 바꿔치기하면 됩니다.&lt;/li&gt;
+  &lt;li&gt;서브태스크 2, 모든 그룹이 홀수명일 때도 거의 똑같습니다. 다만 이때는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l5&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l3&lt;/code&gt;이 됩니다.&lt;/li&gt;
+  &lt;li&gt;여기까지 해서 88 / 190점을 받을 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;이제, 다시 경우를 나눕니다. 여기서 하나 의문을 가질만한 것은, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l6&lt;/code&gt; 이 어떨때 필요한지 생각하는 것입니다.
+    &lt;ul&gt;
+      &lt;li&gt;(홀수, 짝수 블록 여러개, 홀수) 블록이 있는데, 이 블록들이 가장자리가 아닌 곳에 배치한다면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l5 + l6 + l6 + l6 + ... + l5&lt;/code&gt; 가 될 것입니다. (각 블록의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l5, l6&lt;/code&gt; 값을 보고 있으므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l6 + l6&lt;/code&gt; 이 같은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l6&lt;/code&gt;이 아니라, 각 블록의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l6&lt;/code&gt;-값을 의미합니다)&lt;/li&gt;
+      &lt;li&gt;그런데, (홀수, 홀수, 짝수….) 로 배치를 바꾸면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l5 + l5 + l4 + l4 + .... + l4&lt;/code&gt; 를 지불하게 됩니다. 따라서, ‘가장자리 이득’ 을 보고 싶은 상황이 아니라면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l6&lt;/code&gt;은 아예 필요가 없습니다.&lt;/li&gt;
+      &lt;li&gt;같은 방법으로 (벽, 홀수, 짝수, 짝수, … 홀수) 를 분석하면, 이것도 이득이 없습니다.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l6&lt;/code&gt;이 말이 되는 유일한 상황은, (벽, 홀수, 짝수, 짝수, …., 홀수, 벽) 인 상황입니다.&lt;/li&gt;
+      &lt;li&gt;또한, (홀수, 짝수, 짝수, …, 홀수, 홀수, 짝수, 짝수, … 홀수) 도 잘 분석해 보면 홀수블록들끼리 묶어주는게 이득임을 알 수 있기 때문에, 경우의 수를 잘 나누면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l6&lt;/code&gt;이 말이 되는 유일한 상황은 위 상황에 추가로 홀수가 벽에 붙은 저 두개밖에 없어야 함을 압니다.
+직관적으로 홀수블록의 세번째, 네번째 사람 스트레스값이 너무 커서 이 사람들한테 벽에 붙은 방을 주는게 갈등의 절대적인 개수를 줄이는 것보다 이득이라고 생각하면 됩니다.&lt;/li&gt;
+      &lt;li&gt;따라서, 이 경우는 별도로 계산합니다. 홀수 블록 두개의 l3와 나머지의 l6을 더하는 경우가 되겠습니다.&lt;/li&gt;
+      &lt;li&gt;이외에는, 한쪽 벽에 (홀수, 홀수) 블록이 박히는 경우를 생각해 줘야 합니다. 이것도 l3, l5 더하고 나머지는 다 l4를 더하다가 맨 오른쪽 끝 블록에서는 l2를 더하는 것이므로, 어렵지 않게 계산 가능합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;홀수블록이 2개보다 많이 있다고 가정합시다. 이제, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l6&lt;/code&gt;은 아예 생각할 필요가 없습니다.&lt;/li&gt;
+  &lt;li&gt;홀수블록은 가장자리에 들어가면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l3&lt;/code&gt;, 그외에는 모두 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l5&lt;/code&gt;의 스트레스를, 짝수블록은 각각 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l2&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l4&lt;/code&gt; 를 발생시킵니다.&lt;/li&gt;
+  &lt;li&gt;따라서, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l5&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l4&lt;/code&gt; 들을 모두 더해주고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l3&lt;/code&gt; 나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l2&lt;/code&gt; 로 바꿀 수 있는 기회를 두번 준다고 이해하면 됩니다. 이건 struct에 점수를 계산하는 함수를 몇개 구현하면 정말 이쁘게 구현할수 있습니다.&lt;/li&gt;
+  &lt;li&gt;말하는것보다 코드를 보면 조금더 이해가 쉽습니다.&lt;/li&gt;
+  &lt;li&gt;대략 1시간 정도 걸려서, 3시간 02분 시점에 AC를 받았습니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l6&lt;/code&gt;을 고려하지 못해서 2번 틀렸고, 단순 코딩 실수로 1번 틀렸습니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;=&amp;gt; &lt;strong&gt;이게 될리가 없습니다&lt;/strong&gt;. 그렇게 한시간동안 셋이서 해괴한 트리들을 꺼내다가 연습을 종료했습니다.&lt;br /&gt;
-결국 답은 KMP 알고리즘의 변형이던데, 꽤 멋진 문제인것 같네요.&lt;/p&gt;
+&lt;h2 id=&quot;problem-5&quot;&gt;Problem 5&lt;/h2&gt;
+&lt;h3 id=&quot;문제-설명&quot;&gt;문제 설명&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;두가지 쿼리가 주어집니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1 i j k&lt;/code&gt; 쿼리는, $X_i - X_j = k$ 임을 의미합니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2 i j&lt;/code&gt; 쿼리는 $X_i - X_j$ 값을 묻습니다.&lt;/li&gt;
+  &lt;li&gt;1번쿼리로 주어진 상대적인 정보만을 가지고 2번쿼리의 값을 계산할 수 있다면 계산하고, 계산하지 못한다면 ‘비교 불가능’을 출력합니다.&lt;/li&gt;
+  &lt;li&gt;단, 1번 쿼리가 inconsistent하게 주어질 수 있습니다. 만약 2번쿼리가 들어왔는데 $X_i - X_j$가 여러 가지가 가능해서 계산이 불가능하다면 이를 출력합니다.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;h3 id=&quot;풀이-dsu-based&quot;&gt;풀이 (DSU-based)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;의도한 것인지 알 수 없으나, 백준에 대단히 비슷한 문제가 있습니다. &lt;a href=&quot;https://www.acmicpc.net/problem/3830&quot;&gt;3830번&lt;/a&gt; 입니다.&lt;/li&gt;
+  &lt;li&gt;3830번과 이 문제의 차이는 Inconsistency의 유무밖에 없습니다. 그 외에는 모든점에서 동일합니다.&lt;/li&gt;
+  &lt;li&gt;3830번은 Platinum III 이긴 하지만, 비교적 많이 풀린 문제이므로 구글링해보면 솔루션은 많이 있습니다. 다시 설명하기는 너무 기니까 대충 요약하자면, DSU를 쓰되, DSU에 추가하면서 이 노드와 이 노드가 포함된 집합의 루트와의 차를 기억하면서 DSU를 쓰면 됩니다.&lt;/li&gt;
+  &lt;li&gt;이 코드로 서브태스크 1, 3 (inconsistency 없음) 을 쉽게 풀 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;이제, Inconsistency를 생각해 봅시다. 만약 현재 $x_1, x_2, x_3$ 에 대해 $x_1$ 을 0이라고 할 때 relatively $x_2 = 3, x_3 = 2, x_4 = 6$ 이라는 정보가 있다고 합시다.
+    &lt;ul&gt;
+      &lt;li&gt;$x_2 - x_3 = 1$ 이라는 정보가 주어지면 무시하면 됩니다.&lt;/li&gt;
+      &lt;li&gt;만약, $x_2 - x_3 = 2$ 와 같이 틀린 정보가 주어지면, $x_2$의 relative한 값을 이제 알 수 없게 됩니다.&lt;/li&gt;
+      &lt;li&gt;재밌는 사실은, 아무 상관 없어 보이는 $x_4$ 도 미지의 값이 된다는 점입니다. 그 이유는, $x_3$ 이 ?가 된 상황에서 위 정보로부터 $x_4 - x_3 = 4$ 와 같은 정보도 implicit하게 주어져 있다고 가정해야 하기 때문입니다.&lt;/li&gt;
+      &lt;li&gt;따라서, ?와의 차이를 계산당하는 과정에서 $x_1$을 루트로 하는 트리 전체가 ?가 되어 버립니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;그러므로 DSU를 하면서, 루트와의 차이 뿐 아니라 이 노드가 이미 망했는지 여부까지 같이 들고 다니면 됩니다. 모든 노드에 망했다는 정보를 뿌리기에는 시간이 너무 많이 들기 때문에, 루트에만 저장해 놓고 ‘이 트리가 통째로 망했다’ 라고 기억하면 됩니다. 저는 DSU에서 생각하다가 살짝 꼬여서 find하면서도 정보를 갱신하게 해놨는데 아마 필요 없는 것 같습니다.&lt;/li&gt;
+  &lt;li&gt;3830을 풀어봤기때문에 1시간 정도 걸려서 4시간 쯤에 AC를 받았습니다.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h2 id=&quot;후기&quot;&gt;후기&lt;/h2&gt;
-&lt;p&gt;비대면 팀연습이지만 굉장히 재밌었습니다. 배울것도 많았고..ㅋㅋㅋ 특히 작년 ICPC같은경우는 제가 나이로나 PS짬밥으로나 맏이였는데 이번에는 양쪽으로 다 막내인 팀이라서 (?) ㅋㅋㅋ 또 색다른 팀인듯 합니다.&lt;br /&gt;
-남은 기간 공부도 재밌게 하고, 무엇보다 대회를 즐길 수 있을 것 같아서 기대가 됩니다.&lt;/p&gt;
+&lt;h3 id=&quot;후기&quot;&gt;후기&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;작년 1차보다는 문제가 많이 쉽다고 느껴졌습니다. 특히 후반 문제가 많이 쉬워졌습니다. 작년에는 1차 예선 4번에 금광세그가 출제되고, 5번문제가 충격적으로 어려워서 오전 9시에 시작한 대회가 저녁시간까지 5번 만점자가 한자리수, 4번이 30여명 정도밖에 없었던 기억이 있습니다. 작년에 비해 대회 4시간 만에 4번, 5번 만점자가 40여명 나왔네요.&lt;/li&gt;
+  &lt;li&gt;작년에는 2번부터 DP를 prefix sum으로 최적화하는 등 ‘시간 복잡도를 낮추기 위한 아이디어’ 를 요구했었습니다. 그에 비하면 이번 2번은 그냥 그리디인것도 차이가 명확해 보입니다.&lt;/li&gt;
+  &lt;li&gt;저는 체감상 4번이 5번보다 어려웠습니다. 실제 만점자수도 현재 (대회 절반 시점) 127 : 79인데, 보통 4번을 먼저 읽을 것임을 고려할때 이정도면 4번이 5번보다 어렵다고 느낄만한 여지도 충분하다고 생각합니다. 3번과 4번의 차이도 1.5배밖에 안 나네요.&lt;/li&gt;
+  &lt;li&gt;재밌었습니다. 다만… 2차를 통과할 수 있을지는 솔직히 자신은 별로 없습니다. 반반 정도 봅니다.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Little Piplup을 2명 2명 (저랑 dlwocks / coffeetea와 dhdroid) 먼저 갈라놓고 새 팀원을 찾아보기로 했을때 얘기했던것중 하나가 PS를 즐길수 있었으면 한다는 것이었습니다. 사실 무슨 뉴텔라급이 아닌이상 UCPC는 수상할 수 있는 대회가 아니고, 지금으로써는 예선 통과를 걱정하는 상황도 아니기 때문에 순수하게 문제풀이의 즐거움을 추구하기로 했습니다. 2019년 말~2020년 초에는 정말 PS를 즐겼다고 생각하는데, 그후로 학교공부가 바빠지면서 그러지 못했다가 이제 다시 그때의 마음가짐이 돌아오는것 같아서 개인적으로 굉장히 행복합니다.&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cp_practice" /><summary type="html">Contents</summary></entry><entry><title type="html">논문읽기 : DELTACON</title><link href="http://localhost:4000/cs-adventure/deltacon/" rel="alternate" type="text/html" title="논문읽기 : DELTACON" /><published>2021-07-12T00:00:00+09:00</published><updated>2021-07-12T00:00:00+09:00</updated><id>http://localhost:4000/cs-adventure/deltacon</id><content type="html" xml:base="http://localhost:4000/cs-adventure/deltacon/">&lt;div id=&quot;toc&quot;&gt;
+&lt;h2 id=&quot;부록--버퍼-이야기-scpc-주의사항&quot;&gt;부록 : 버퍼 이야기 (SCPC 주의사항)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;주의 : 제 컴퓨터구조/시스템 프로그래밍 실력은 매우 미약하기 때문에 올바르지 않은 주장이나 사실이 있을 수 있습니다. 건설적인 피드백을 200% 환영합니다.&lt;/li&gt;
+  &lt;li&gt;SCPC의 부분점수 시스템은 굉장히 특이합니다.&lt;/li&gt;
+  &lt;li&gt;구체적으로, 문제가 모두 multi-testcase 형으로, 처음에 testcase의 개수 T를 받고 T개의 TC를 해결하는 식입니다. 예를 들어, TC i의 답이 i라고 하면, 다음과 같이 출력합니다.
+    &lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Case #1
+1
+Case #2
+2
+....
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;서브태스크 1, 2, 3이 있고, 각각이 TC 10개 씩이라면, 1~10, 11~20, 21~30 이런 식입니다.&lt;/li&gt;
+  &lt;li&gt;그래서, 23번 TC가 틀리고 그 전까지 다 맞았다면 서브태스크 1과 2의 점수를 받습니다.&lt;/li&gt;
+  &lt;li&gt;여기서 시간 초과가 발생하는 상황을 생각해 보겠습니다. 예를 들어 23번 테스트케이스를 수행하다가 시간 초과가 났습니다. 우리의 직관은 23번 TC가 WA인것과 TLE인 것이 동치이므로, 역시 서브태스크 2에 대한 점수를 받을 것으로 예측할 것입니다.&lt;/li&gt;
+  &lt;li&gt;하지만, C언어의 출력은 Buffered I/O이기 때문에, (어떤 이유로든) 17번 TC까지는 출력이 되었지만 18~22번 TC까지의 결과는 아직 버퍼에 들어 있을 수도 있습니다. 즉, “현재까지의 출력” 은 17번 TC까지의 정답을 가지고 있고, “버퍼” 가 18번~22번 TC까지의 정답을 가지고 있는데 TLE가 났으면, SCPC는 버퍼에 든 내용물을 무시하고 17번 TC까지 맞은것으로 간주, 서브태스크 1에 대한 점수만 받을 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;이러한 문제를 해결하기 위해, SCPC는 printf를 이용하는 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setbuf(stdout, NULL)&lt;/code&gt; 할 것을 권하고 있습니다.&lt;/li&gt;
+  &lt;li&gt;재밌는 사실은, 저걸 하면 매 printf마다 버퍼를 비우기 때문에, printf할 내용이 많으면 조심해야 합니다. 예를 들어, 5만글자짜리 string을 하나의 string으로 묶어서 출력하는 것에 비해, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;printf&lt;/code&gt; 를 5만번 호출하는 경우 후자는 버퍼를 5만번 처리하기 때문에 후자는 미친듯이 느립니다.&lt;/li&gt;
+  &lt;li&gt;예를 들어, 오늘 2번(이진수) 의 제 코드 중, 이 부분은 시간 초과를 받습니다 ($n$ 은 5만입니다)
+    &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%c&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'1'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;하지만, 이 부분을 이렇게 바꾸면 매우 넉넉하게 통과합니다.
+    &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'1'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%s&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사실 printf를 5만번 호출하면 원래 한번에 찍는것보다 느린게 맞습니다. 그러나, 버퍼를 매번 비우도록 강제하는 setbuf 때문에 원래 느려야 할 것보다 더 많이 느립니다.&lt;/li&gt;
+  &lt;li&gt;결과적으로, 부분점수를 받기 위해서는 코드가 더 느려질 위험을 감수해야 합니다. 특히 출력물이 10만줄씩 되는 5번문제 같은 경우, ‘원래 맞을 수 있는 코드를 버퍼 비우다가 TLE나는게 아닌지’ 도 고민해야 합니다.&lt;/li&gt;
+  &lt;li&gt;이런 방법으로 채점을 하는 장점에 대해서는 전혀 알지 못합니다. 구글 코드잼도 출력 양식이 거의 같은데, 내부적으로 같은 방법으로 채점하고 있는지도 모릅니다. 다만 이 방법이 절대적인 프로그램의 실행 횟수를 줄여서 채점 속도에는 조금 도움이 될 것 같습니다.&lt;/li&gt;
+  &lt;li&gt;여튼, 작년에도 저는 SCPC 2차예선에서 저걸로 한번 당했습니다. 올해도 어김없이 이 이슈로 한번 틀렸기 때문에, 조심해야 할 부분을 같이 공유해보고 싶었습니다.&lt;/li&gt;
+  &lt;li&gt;채점이 특이한 대회는 사실 이거 말고도 꽤 있습니다. 대표적으로 해커컵…&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cp_rounds" /><category term="algorithms" /><summary type="html">Contents</summary></entry><entry><title type="html">2021 UCPC 팀연습 #1 : 서강대학교 2020 Div 1</title><link href="http://localhost:4000/cp_practice/team_practice_1/" rel="alternate" type="text/html" title="2021 UCPC 팀연습 #1 : 서강대학교 2020 Div 1" /><published>2021-07-14T00:00:00+09:00</published><updated>2021-07-14T00:00:00+09:00</updated><id>http://localhost:4000/cp_practice/team_practice_1</id><content type="html" xml:base="http://localhost:4000/cp_practice/team_practice_1/">&lt;div id=&quot;toc&quot;&gt;
+Contents
+&lt;/div&gt;
+* TOC
+{:toc}
+----------
+
+## Our Team
+이번 UCPC 팀은 이렇게 구성되게 되었습니다. 
+- `gyuni` : DGIST에서 석사과정을 올 8월에 마무리하고 졸업합니다. ICPC는 석사 1년차까지, UCPC는 석사과정 (석박통합 2년차까지) 임을 감안하면 사실상 이번 UCPC가 대학생 프로그래밍 대회의 마지막을 장식하게 될 것인지라, 저 개인적으로 매우 영광으로 생각하고 있습니다.
+- `dlwocks31` : 병특 중에 있습니다. 제 블로그에도 여러번 언급되었지만... 해시코드를 함께하고 있는 Little Piplup 팀으로, 둘이서 1:1 연습을 많이 해봤습니다만 전통적인 CP대회를 같이뛰는건 처음입니다.
+- `gratus907`
+
+세명의 Codeforces max rating은 2100+지만, 저랑 dlwocks는 파킹에 실패해서 퍼플로 낙하했습니다. 퍼플+퍼플+오렌지 팀 정도로 볼 수 있을것 같습니다.
+
+전력을 잠깐 생각해 보자면, `gyuni`님의 스타일은 제가 잘 모르지만 저랑 `dlwocks31`은 동일 레이팅의 2인 팀치고는 아마도 꽤 강할 것 같습니다. 제가 상대적으로 조합/정수를 잘 풀고, `dlwocks31`이 자료구조/구현 문제를 잘 풀다 보니... 그래서, 3인팀도 나름대로 스타일은 명확하고 잘 맞는것 같습니다. 
+
+작년에 `dlwocks31` / `coffeetea` / `diordhd` 팀이 2020 ICPC 예선에서 12등인가 하는 놀라운 성적을 얻었는데, 객관적인 전력은 그 근처 어딘가라고 생각합니다. 
+
+## Practice : Sogang 2020 Div1
+3시간 정도밖에 시간이 없어서, 돌만한 셋이 별로 없었습니다. Japan ICPC 예선전 정도가 3시간인데, 난이도가 널뛰기하는데다가 백준에서 푼사람이 아무도 없어서 데이터의 올바름을 확신하기 어렵기도 하고... 
+서강대학교 대회는 Div 1 과 Div 2로 나뉘어 있고, 원래는 개인대회 3시간짜리 대회입니다. 난이도가 실-골-플-다 문제가 1-2-3-2로 분포된 형태가 UCPC 예선이랑 비슷할것이라고 판단, 이 대회를 3시간 3PC로 돌아보기로 했습니다.
+
+## Phase 0 : Start 
+리얼리티를 위해 문제 순서를 shuffle 하고, `gyuni-gratus907-dlwocks31` 순서로 3 3 2 나눠 읽기로 랬습니다. 
+
+## Phase 1 : Easy Problems
+### A. 파일 정리 
+Solve : `dlwocks31`  
+Code : `dlwocks31` (00:07)
+'쉬운 구현문제니까 그냥 잡을게요' 라고 말하고 7분에 AC를 받아왔습니다. 무슨문제인지 안읽어서 모르겠습니다.
+
+------
+
+### F. 폰친구
+Solve : `gratus907`  
+Code : `gratus907` (00:30)  
+재밌는 조합 문제였습니다.  
+$N$ 명에게 $K$ 개를 나눠주는데 1인당 $m$개 이상 $M$개 이하를 받는 경우의 수를 계산하는 문제입니다. 미리 $m$개씩 나눠주고 시작하면, $L = K - mN$ 개의 사탕을 $N$명에게 나눠주되 각자가 $x = M - m$ 개 이하로만 받는 경우의 수를 세면 됩니다.  
+
+먼저, $x$개 조건이 없다면 답은 중복조합을 이용하여 $_N H _L$ 개입니다. $x$개 조건은 여사건을 이용하여 계산할 수 있습니다. 반대로, '누가 $x+1$개 이상을 받을지' 를 미리 정하고 갑시다. $u$명이 $x+1$개 이상을 받는다면, 미리 얘네들한테 $x+1$개씩 나눠주고 나머지들에게 사탕을 잘 나눠주는 경우를 생각하면 됩니다. 따라서, $_N H _{L - (x+1)u}$ 가 될 것입니다.
+
+그러나, 이 방법의 문제는 '나머지들에게 잘 나눠줄때' 나머지들 중에 또 $x+1$개 이상을 받는 사람이 있을수도 있다는 것입니다. 이를 포함-배제 원리를 이용하여, 다음과 같이 처리하면 됩니다.
+$$\sum_{u = 1}^{n} (-1)^u \times {_N C _u} \times {_N H _{L - (x + 1)u}}$$
+
+------
+
+### C. 연료가 부족해
+Solve : `gyuni`  
+Code : `gyuni` (00:33, 1WA)  
+역시 쉬운문제라고 판단하고 30분 정도 시간에 AC를 받았습니다. DP였다고 합니다. 역시 무슨문제인지 안읽어서 잘 모르겠습니다.
+
+------
+
+### B. 컨설팅 
+Solve : `gratus907`  
+Code : `gratus907` (00:58, 1WA)  
+쉬운 문제인데 구현이 귀찮아서 조금 시간이 걸렸습니다. 요점은, Greedy하게 정말 필요할때만 WAIT를 걸어주면 된다는 것을 어렵지 않게 알 수 있고, WRITE의 시작점들 / 도착점들 / (시작, 도착)Pair 들을 각각, READ의 대상을 하나. 이렇게 해서 집합들을 관리하고 조건을 잘 그대로 코딩하면 됩니다. 파이썬 썼는데 set같은걸 shallow copy한다는걸 까먹어서 1틀했습니다.
+
+------
+
+## Phase 2 : 3 Graph Problems
+### E. 사탕 배달 
+Solve : `dlwocks31`, `gyuni`  
+Code : `dlwocks31` (00:52, 1WA)  
+뭔지 잘 모르겠지만 트리에서 뭔가를 하는 문제입니다. 제가 파이썬 구현으로 싸우고 있는 사이에 팀원 두명이 AC를 받아왔습니다. 
+
+------
+
+### D. 에어컨 설치
+Solve : `gyuni`, `dlwocks31`, `gratus907`  
+Code : `gyuni` (01:36)  
+문제는 다음과 같습니다.
+- $\Z^3$에 정점들이 뿌려져 있고 거리가 1인 정점들을 '인접하다' 고 정의하여 그래프를 만듭니다.
+- 그래프에 '에어컨' 을 설치합니다. 이 에어컨 한 대는 설치한 정점과 그 인접한 정점을 커버합니다.
+- 이제, 최소 개수의 에어컨을 달아서 모든 정점을 커버하는 문제입니다.
+
+제가 B번을 맞고 갔을때는 이미 어느정도 둘이 솔루션을 discuss하고 있었던 중이었습니다. 여기에 같이 아이디어를 구상하고 `gyuni`님이 코딩을 바로 들어갔습니다.
+- 먼저, 어차피 각 connected component별로 생각해야 하므로 그래프가 연결되어 있다고 하겠습니다.
+- 이제, 이 문제는 **최소 버텍스 커버** 와 같은 문제임을 압니다.
+- 이 문제는 NP-Complete이지만, 이분 그래프에 대해서는 빨리 풀 수 있음이 알려져 있습니다.
+- $(a, b, c)$ 에 대해, $a + b + c$의 홀짝성에 따라 정점에 색깔을 칠해주면 이 그래프가 이분 그래프임을 보일 수 있습니다.
+- 따라서, 이 그래프에서 최소 버텍스 커버를 짜면 됩니다.
+
+저는 이걸 알아도 이분그래프에서 최소 버텍스 커버를 어떻게 짜는지 자신이 없었지만, `gyuni`님이 그건 짤수 있다고 확신을 줬기 때문에 (:fan:) 맡기고 저랑 `dlwocks31`은 남은 2문제를 잡으러 갔습니다.
+
+------
+
+
+코딩을 맡긴게 대략 01:00 시점쯤이고, 5AC에 1문제는 코딩만 남은 상황이었기 때문에 난이도에 대해 심각한 의심이 있었습니다. 실버 1, 골드 2, 플레 2문제 + 1문제 구상까지를 1시간에 밀었다는것도 그렇지만, 지금까지 문제들 중 플레급이라고 생각이 드는건 A번 정도였기 때문입니다. C번은 제가 직접 문제를 보지 않아서 뭐라고 할수가 없고, F번은 나중에 생각해보면 포함배제 쓰는 조합문제가 익숙하지 않다면 어려울것 같기도 합니다만 그럭저럭 꽤 많이 나온 스타일의 문제였지 않나 싶습니다.
+
+------
+
+### G. Confuzzle
+Solve : `dlwocks31`, `gratus907`  
+Code : `dlwocks31`  
+- 정점 $n$개의 트리가 주어지고, 각 노드가 $1 \leq c_i \leq n$ 의 색깔을 가집니다. 이때, 색깔이 같은 노드 페어 $v_i, v_j$들 중, 서로의 거리가 가장 가까운 노드 간의 거리를 계산하는 문제입니다. 
+- 트리에서 두 정점 사이의 거리는 LCA를 이용하면 ($O(n \log n)$ 전처리를 하고) $O(\log n)$에 계산할 수 있습니다. Range Minimum Query를 잘 이용하면 $O(1)$에도 할 수 있음이 알려져 있지만, 실제로 이게 필요한 상황은 본적이 없는것 같습니다. 
+- 다만, 이때 $O(n^2)$ 개의 pair를 확인해야 하므로, $O(n^2 \log n)$ 시간이 걸리는데, 도저히 답이 없는 복잡도입니다.
+- 각 점마다 map에, &quot;이 노드를 루트로 하는 서브트리에서, 색깔이 $c$ 인 노드들 중 이 노드에서 가장 가까운 노드까지의 거리&quot; 를 저장한다고 생각합니다. 이를 $M_i$ 맵이라고 생각하겠습니다.
+- 내 자녀 노드의 $M_i$들을 모두 알고 있다면, 이들을 합치는 과정에서 두개 이상의 서브트리가 같은 색깔의 노드를 가지고 있다면 이들까지의 거리를 이용하여 페어의 거리를 계산할 수 있습니다. 이 방법이 최단 거리 페어를 항상 찾을 수 있음은 서브트리에 대해 재귀적으로 증명 가능합니다. 
+- 그러나, 이 방법은 잘 생각해보면 맵을 합치는 데 $O(n \log n)$ 까지 걸리기 때문에, $O(n^2 \log n)$ 시간이 걸립니다.
+- 트리에서 두 Map을 합치는데, `small-to-large` 테크닉을 적용 [(ex : BOJ 4002번 풀이 링크)](/algorithms/BOJ4002/) 하면, $O(n \log^2 n)$ 시간으로 줄일 수 있습니다.
+
+Small to Large 테크닉을 적용하자는 말을 `dlwocks31`이 거의 5분만에 했고(:fan:), 10분만에 코딩했으나 사소한 실수로 디버깅에 40분이 걸렸습니다. 무려 $n^2 \log n$ 솔루션을 코딩해서 스트레스테스트로 반례를 찾아야만 했습니다. :(  
+별론으로, 정해가 상당히 멋집니다. 각 색깔에 대해 그 색깔의 노드가 몇개 없으면 ($k \leq \sqrt{n}$) $O(k^2 \log k)$ 알고리즘을 돌리고, 노드가 많으면 멀티소스 BFS를 돌리는... sqrt decomp스타일 아이디어였습니다.  
+하지만 여전히 dlwocks31의 스몰투라지가 복잡도면에서 더 좋은 풀이일 뿐 아니라, 코딩도 매우 간단합니다. :fan:
+
+------
+
+## Phase 3 : Pizza Madness
+
+해결하지 못한 H번에 대한 이야기입니다.
+- 어떤 수열 $A$와 작은 수열 $B$가 주어지고, $A$를 원형으로 연결했을 때 $B$에 해당하는 패턴을 매칭하는 문제입니다.
+- 단, 패턴이 실제로 맞을 필요는 없고, '원소들 간의 순서' 가 맞으면 됩니다. 예를 들어, (4, 3, 6) 과 (2, 1, 3) 을 매칭된 것으로 본다는 것입니다. 
+
+- 다양한 아이디어들이 등장했습니다. 각 수를 좌표압축해서, 좌표압축된 $n$개의 수를 라빈카프처럼 해싱하자는 아이디어라던가...
+- 해싱된 수열의 일부를 오른쪽 / 왼쪽으로 미는 연산이 기존의 해싱에서 불가능합니다. 
+- 미는 부분이 구간을 연산한다는 점에 착안하여 각 노드가 구간의 라빈카프 해시값을 가지고 있는 세그먼트 트리 같은 아이디어가 나오고
+- 세그먼트 트리도 중간에 노드를 날리지는 못하기 때문에, 여기에 무슨 스플레이 트리를 써서...
+
+=&gt; **이게 될리가 없습니다**. 그렇게 한시간동안 셋이서 해괴한 트리들을 꺼내다가 연습을 종료했습니다.  
+결국 답은 KMP 알고리즘의 변형이던데, 꽤 멋진 문제인것 같네요.
+
+------
+
+## 후기 
+비대면 팀연습이지만 굉장히 재밌었습니다. 배울것도 많았고..ㅋㅋㅋ 특히 작년 ICPC같은경우는 제가 나이로나 PS짬밥으로나 맏이였는데 이번에는 양쪽으로 다 막내인 팀이라서 (?) ㅋㅋㅋ 또 색다른 팀인듯 합니다.  
+남은 기간 공부도 재밌게 하고, 무엇보다 대회를 즐길 수 있을 것 같아서 기대가 됩니다.  
+
+
+Little Piplup을 2명 2명 (저랑 dlwocks / coffeetea와 dhdroid) 먼저 갈라놓고 새 팀원을 찾아보기로 했을때 얘기했던것중 하나가 PS를 즐길수 있었으면 한다는 것이었습니다. 사실 무슨 뉴텔라급이 아닌이상 UCPC는 수상할 수 있는 대회가 아니고, 지금으로써는 예선 통과를 걱정하는 상황도 아니기 때문에 순수하게 문제풀이의 즐거움을 추구하기로 했습니다. 2019년 말~2020년 초에는 정말 PS를 즐겼다고 생각하는데, 그후로 학교공부가 바빠지면서 그러지 못했다가 이제 다시 그때의 마음가짐이 돌아오는것 같아서 개인적으로 굉장히 행복합니다.</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cp_practice" /><summary type="html">Contents</summary></entry><entry><title type="html">논문읽기 : DELTACON</title><link href="http://localhost:4000/cs-adventure/deltacon/" rel="alternate" type="text/html" title="논문읽기 : DELTACON" /><published>2021-07-12T00:00:00+09:00</published><updated>2021-07-12T00:00:00+09:00</updated><id>http://localhost:4000/cs-adventure/deltacon</id><content type="html" xml:base="http://localhost:4000/cs-adventure/deltacon/">&lt;div id=&quot;toc&quot;&gt;
 Contents
 &lt;/div&gt;
 * TOC
@@ -550,83 +764,4 @@ $$\norm{x_* - x_k} = \norm{(I - wA)^k x_*} \leq \norm{I - wA}^k \norm{x_*}$$
 - PS는 거의 못하고 있는데, 뭐 조금씩은 다시 해보려고 합니다. 가능하면 여기에 포스팅도 조금 자주 하구요... 난이도 있는 문제들 위주로 포스팅할 계획입니다.
 
 ## For fun 
-- 온라인 체스를 꽤 재밌게 두고 있습니다. Lichess랑 Chess.com 둘다 가끔 하는데 레이팅은 1700 / 1400 정도. 그냥저냥 하는 정도인거 같습니다. 언젠가 여기에 체스 관련 포스팅 할 수도?</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="retrospects-and-plans" /><summary type="html">블로그 포스팅 오랜만이네요. 기록상 3월 19일에 폴라드-로 알고리즘에 대해 쓴 게 마지막이니, 대략 한달 만입니다. 과제랑 중간고사에 치여서 나름대로 바쁜 삶을 살고 있습니다.</summary></entry><entry><title type="html">폴라드-로 소인수분해 알고리즘</title><link href="http://localhost:4000/algorithms/Pollards-Rho/" rel="alternate" type="text/html" title="폴라드-로 소인수분해 알고리즘" /><published>2021-03-19T00:00:00+09:00</published><updated>2021-03-19T00:00:00+09:00</updated><id>http://localhost:4000/algorithms/Pollards-Rho</id><content type="html" xml:base="http://localhost:4000/algorithms/Pollards-Rho/">&lt;div id=&quot;toc&quot;&gt;
-Contents
-&lt;/div&gt;
-* TOC
-{:toc}
-----------
-
-## Motivation
-소인수분해는 매우 어려운 과정이다. 실제로 소인수분해는 (입력 비트 수에 대해) 다항 시간에 결정론적으로 풀 수 있는 방법이 알려져 있지 않다.
-
-그러나, 약간의 랜덤성 (확률에 대한 의존) 을 허용한다면 상당히 clever한 알고리즘을 통해 빠르게 소인수분해를 할 수 있는데, 이 방법이 바로 Pollard's Rho($\rho$) 알고리즘이다.
-
-### 생일 문제 (Birthday Problem)
-고등학교 확/통 교과서에도 실려있는 유명한 문제인데, 다음 문제에 답해 보자.
-- 23명의 사람이 한 방에 모여 있다. 이 중, 적어도 한 쌍 이상이 생일이 겹칠 확률은 얼마인가?
-  
-계산을 직접 해 본다면, 별로 직관적이지 못한 결론을 얻는다. 대략 50%가 넘어가는데, 365개의 생일 중 23명이 골랐을 뿐인데 이렇게 높은 확률이라는 것이 비직관적이기 때문에 이 결과를 Birthday Paradox라고도 부른다.
-
-이 문제의 핵심은, **마구 랜덤하게 뽑으면 생각보다 많이 겹친다** 라는 정보이다. 이를 이용하여, 어떻게 소인수분해를 할 수 있는지 알아보고자 한다.
-
-구체적으로, $\sqrt{n}$ 정도의 사람이 필요하다는 사실을 기억하자. 즉, $n$개 중 $k$개를 뽑아서, 겹치는 쌍을 만들고자 한다면, $k = O(\sqrt{n})$ 정도 뽑으면 겹치는 쌍을 기대할 수 있다. 증명은 생략.
-
-### 가정 
-폴라드-로 알고리즘이 잘 작동하기 위해서는, 큰 수 $m$을 소인수분해하되, $m$의 가장 작은 소인수 $p$가 작아야 한다. 예를 들어, RSA에서 쓰는 좋은 N - 즉, 큰 소수 2개를 곱한 수에서는 그 효율이 현저히 낮다. 100자리 소수를 2개 곱해서 얻은 200자리 합성수보다는, 20자리 소수 10개를 곱해서 얻은 수를 잘 소인수분해하는 알고리즘임을 의미한다. 
-
-## Algorithm
-$k$개의 정수 $u_1, u_2, \dots u_k$ 를 랜덤하게 선택하자. 이때, 생일 문제에 의해, $u_i \equiv u_j \mod p$ 인 $i, j$를 얻을 가능성이 상당히 높다. 그런데, 이는 다시 말하면 $u_i - u_j$가 (일반성을 잃지 않고 양수라고 하자) $m$과 $p$를 공약수로 가질 가능성이 상당히 높다는 뜻이다. 우리는 두 수의 gcd를 입력 비트 수에 대한 다항 시간에 찾는 유클리드 알고리즘을 잘 알고 있으므로, $m$의 어떤 소인수를 빠르게 찾을 수 있다는 의미가 된다. 다시 말해, $\binom{k}{2}$개의 $u_i - u_j$들과 $m$의 gcd를 확인함으로서 $m$의 어떤 약수를 얻을 확률이 상당히 높다는 뜻이다.
-
-그러나, $O(k^2)$ 개의 조합을 모두 검토하기는 너무 느리다. 폴라드-로 아이디어는 이 과정을 줄이는 것인데, $u_i$를 랜덤하게 뽑는 대신 $u_{i+1} = u_i^2 + 1$ 을 사용하는 것이다. 이 다항식 $f(x) = x^2 + 1$ 은 사실 어떤 다항식이든 크게 상관은 없으나, mod $p$에 대한 랜덤성을 해치지 않아야 하고, 계산이 너무 오래 걸리지 않아야 한다. 일반적으로 저렇게 생긴 다항식이 잘 작동함이 알려져 있으나 $x^2 + x + 1$ 같은걸 쓴다고 큰 문제는 없고... 다만 1차식을 쓰면 안 된다는 사실도 잘 알려져 있다. 
-
-이런식으로 결정론적으로 계산하는 것의 장점은, $u_i$ 의 수열이 주기성을 갖게 된다. 우리가 어떤 주기성을 갖는 수열 $u_i$에서 주기를 찾고자 할 때는 Tortoise and Hare 라는 좋은 방법을 쓸 수 있는데, 이 방법은 다음과 같다.
-
-수열의 주기를 $r$이라고 할 때, $s \equiv t \mod r \Rightarrow u_s = u_t$ 가 된다. 따라서, $s$를 적당히 큰 (주기성을 보이는) $r$의 배수로 잡고, $t = 2s$로 잡으면 항상 $u_s \equiv u_{2s}$ 이다. 따라서, 우리는 $k$를 하나씩 늘리면서 $u_{2k} - u_k$ 만 확인하여도 반드시 주기를 놓치지 않음이 보장되며, 이때 주기성을 가지는 첫번째 $r$의 배수가 대략 $O(\sqrt{p})$ 정도 스케일이기 때문에 $k = O(\sqrt p)$ 정도 확인하면 그 안에 gcd$(u_{2k} - u_k, m)$ 가 1이 아닌 $k$를 기대할 수 있다.
-
-### 예시
-Niven 의 정수론 책에 수록된 예시는 다음과 같다.
-
-$m = 36,287$, $f(x) = x^2 + 1 \mod m$, $u_0 = 1$일 때, $u$의 수열을 계산하면...  
-$1, 2, 5, 26, 677, 22886, 2439, 33941, 24380, 3341, 22173, 25652, 26685, 29425, 22806$... 이다. 이때, 각 $k$에 대해 gcd$(u_{2k} - u_k, m)$ 를 계산하면, $u_{14} - u_7$에서 gcd$(u_{14} - u_7, m) = 131$ 이다. 131은 $m$의 약수이다.
-
-### 구현
-위 알고리즘을 그대로 코드로 옮기면 된다.
-- 단, $u$ 수열을 미리 구해놓고 Tortoise-Hare를 돌리는 것은 어디까지 구해야 할지 모르는 상황에서는 별로 적절하지 않다. $x^2 + 1$ 은 구하기 쉬운 다항식이므로, 매 스텝마다 $y$는 두 스텝씩, $x$는 한 스텝씩 나간다고 생각하면서 진행시키자.
-- $u_0$는 랜덤하게 뽑았는데, 별로 상관은 없다. 
-- `is_prime` 부분은 일반적인 소수 판정 함수를 쓰면 된다. 보통은 밀러-라빈 판정법을 많이 쓴다 (그냥 판정하면 느리니까).
-
-```cpp
-inline int64_t mulmod(int64_t x, int64_t y, int64_t m)
-{
-    return ((__int128)x * y % m);
-}
-int32_t PollardRho(int32_t n)
-{
-    if (n==1) return n;
-    if (n % 2 == 0) return 2;
-
-    int32_t x = (rand()%(n-2))+1;
-    int32_t y = x;
-    int32_t c = 1;
-    int32_t d = 1;
-    while (1)
-    {
-        x = (mulmod(x, x, n) + c + n)%n;
-
-        y = (mulmod(y, y, n) + c + n)%n;
-        y = (mulmod(y, y, n) + c + n)%n;
-
-        d = __gcd(abs(x-y), n);
-        if (d == 1) continue;
-        if (is_prime(d))
-            return d;
-        else return PollardRho(d);
-    }
-}
-```
-
-## 시간 복잡도
-앞서 설명한 바와 같이, Birthday Paradox에 의해 실제로 구해야 하는 $u$의 값은 $O(\sqrt p)$개이다. $n$에 대해서는 $p \leq \sqrt{n}$ 임을 가정하면 (소수가 아님은 밀러라빈 등으로 확인하자) $O(n^{1/4})$ 알고리즘이라고 할 수 있다. 이는 다항식 $x^2 + 1$ 이 진짜 랜덤한 수들을 준다는 가정 하에 이루어진 계산인데, 실제로는 당연히 뭔가 더 복잡하고 끔찍한 분석이 필요하다. 이쪽은 잘 모르기도 하니 일단은 넘어가기로 하자.
-
-당연히, 매우 큰 수를 다룰 때는 곱셈이나 모듈러 등이 유의미하게 오래 걸린다. 이 경우 적절하게 시간 복잡도에도 이런 항들을 곱해야 할 것이다. 우선은 64비트 (곱셈이 $O(1)$에 수행) 가정 하에서의 복잡도가 위와 같다고 알아두면 된다.</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="algorithms" /><category term="number-theory" /><category term="algorithms" /><summary type="html">Contents</summary></entry></feed>
+- 온라인 체스를 꽤 재밌게 두고 있습니다. Lichess랑 Chess.com 둘다 가끔 하는데 레이팅은 1700 / 1400 정도. 그냥저냥 하는 정도인거 같습니다. 언젠가 여기에 체스 관련 포스팅 할 수도?</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="retrospects-and-plans" /><summary type="html">블로그 포스팅 오랜만이네요. 기록상 3월 19일에 폴라드-로 알고리즘에 대해 쓴 게 마지막이니, 대략 한달 만입니다. 과제랑 중간고사에 치여서 나름대로 바쁜 삶을 살고 있습니다.</summary></entry></feed>

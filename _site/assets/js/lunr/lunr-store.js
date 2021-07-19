@@ -246,8 +246,14 @@ var store = [{
         "teaser": null
       },{
         "title": "삼성 SCPC 예선 1라운드 풀이 / 후기",
-        "excerpt":"Contents SCPC 문제 풀이 / 후기 Problem 1. 친구들 Problem 2. 이진수 SCPC SCPC는 삼성전자 (정확히는 Samsung Research) 가 주관하는 알고리즘 문제풀이 대회로, 한국에서 열리는 기업 대회중 가장 큰 규모를 자랑하는 대회입니다. 한국의 코드잼이라고나 할까요. ICPC, UCPC 등 팀대회와는 달리 개인전이고, 예선 1라운드 - 예선 2라운드 - 본선으로 구성됩니다. 예선...","categories": ["cp_rounds"],
+        "excerpt":"Contents SCPC 문제 풀이 / 후기 Problem 1. 친구들 문제설명 풀이 (Disjoint Set) Problem 2. 이진수 문제설명 풀이 (Greedy) Problem 3. No Cycle 문제설명 풀이 (Greedy + Graph) Problem 4. 예약 시스템 문제설명 풀이 (Greedy + Casework) Problem 5 문제 설명 풀이 (DSU-based) 후기 부록 : 버퍼 이야기 (SCPC 주의사항)...","categories": ["cp_rounds"],
         "tags": ["algorithms"],
         "url": "http://localhost:4000/cp_rounds/SCPC-2021-Round1/",
+        "teaser": null
+      },{
+        "title": "7월 3주차 Weekly PS",
+        "excerpt":"Contents Recent Updates Rounds (팀연습) 서강대학교 2020 SPC Div.1 (Champion) (대회) SCPC 2021 Round 1 (Atcoder) Atcoder Beginner Round 210 Problems IOI 2009-4, Raisins (BOJ 5463 건포도) 서강대학교 SPC 2015-1F, 몬스터 (BOJ 11573) 연세대학교 2018-C 나무 위의 입자 (BOJ 15669) 연세대학교 2018-L 연세워터파크 (BOJ 15678) IOI 2002-4, Batch Scheduling (BOJ...","categories": ["ps_weekly"],
+        "tags": ["algorithms"],
+        "url": "http://localhost:4000/ps_weekly/ps-weekly-21Jul3/",
         "teaser": null
       }]

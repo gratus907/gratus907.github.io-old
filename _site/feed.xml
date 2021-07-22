@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-22T12:26:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">7월 3주차 Weekly PS</title><link href="http://localhost:4000/ps_weekly/ps-weekly-21Jul3/" rel="alternate" type="text/html" title="7월 3주차 Weekly PS" /><published>2021-07-18T00:00:00+09:00</published><updated>2021-07-18T00:00:00+09:00</updated><id>http://localhost:4000/ps_weekly/ps-weekly-21Jul3</id><content type="html" xml:base="http://localhost:4000/ps_weekly/ps-weekly-21Jul3/">&lt;div id=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-22T19:54:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">UCPC 팀 해체</title><link href="http://localhost:4000/ucpc_team_broken/" rel="alternate" type="text/html" title="UCPC 팀 해체" /><published>2021-07-22T00:00:00+09:00</published><updated>2021-07-22T00:00:00+09:00</updated><id>http://localhost:4000/ucpc_team_broken</id><content type="html" xml:base="http://localhost:4000/ucpc_team_broken/">&lt;div id=&quot;toc&quot;&gt;
+Contents
+&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;이번 UCPC는 개인 신청 후 팀 신청을 따로 해야 하는데, 이 과정을 3명 모두가 동시에 잊고 있었던 어처구니없는 이유로 UCPC에 참여하지 못하게 되었습니다.&lt;/p&gt;
+
+&lt;p&gt;주최측에 메일을 보내 보기도 했고, 여러가지 방법으로 contact를 시도해 보았으나 원칙적으로 불가하다는 답변을 받았습니다.&lt;/p&gt;
+
+&lt;p&gt;처음에는 솔직히 조금 받아들이지 못하기도 했습니다. 개인신청을 진행하기도 했으니 어떻게든 추가로 등록이 되지 않을까 하는 생각도 했었던 것 같습니다. 
+그래서인지, 전대프연측에 보낸 메일을 쓰면서 솔직히 깊게 생각하지 못하고, 감정적으로 대처한 부분도 있지 않나 싶습니다. 여기를 보실 확률은 매우 낮지만 진심으로 죄송하게 생각하고, 언젠가 이부분은 정리가 되고나면 개인적으로라도 꼭 연락을 드리려 합니다.&lt;/p&gt;
+
+&lt;p&gt;저희가 잊고 있었던 탓이니 누구를 탓할수 있는것도 아니고… 그냥 좀 허탈하네요. 원래는 PS에 대한 동력도 확 잃었었는데, SCPC도 있고, 올해 ICPC도 있으니 나름대로 동력을 잃지 않고 해보려고 합니다.&lt;/p&gt;
+
+&lt;p&gt;여튼 굉장히 기대했던 UCPC 팀은 여기까지로 마무리하게 되었습니다. 올해가 마지막 UCPC 참가가 되었던 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;님께 특히 죄송한 마음입니다. 팀연습하고 디스커션하고 정말 재밌게 했는데 이렇게되어 너무 아쉽네요.&lt;/p&gt;
+
+&lt;p&gt;멘탈이 돌아온다면 이 멤버로 Open contest라도 돌 수 있을지도 모르겠습니다. 지금은 UCPC는 의도적으로 더 생각하지 않으려고 합니다.&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><summary type="html">Contents</summary></entry><entry><title type="html">7월 3주차 Weekly PS</title><link href="http://localhost:4000/ps_weekly/ps-weekly-21Jul3/" rel="alternate" type="text/html" title="7월 3주차 Weekly PS" /><published>2021-07-18T00:00:00+09:00</published><updated>2021-07-18T00:00:00+09:00</updated><id>http://localhost:4000/ps_weekly/ps-weekly-21Jul3</id><content type="html" xml:base="http://localhost:4000/ps_weekly/ps-weekly-21Jul3/">&lt;div id=&quot;toc&quot;&gt;
 Contents
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -983,55 +999,4 @@ Contents
 
 &lt;p&gt;세그먼트 트리에 각 element의 위치를 저장하고, segment tree를 이용하여 다이나믹하게 뭔가를 갱신하는 좋은 연습문제지만 기본적인 개념을 파악하고 나면 어렵지 않다. Segtree를 이용하면 구간 $(a, b)$ 의 1의 개수 (남아 있는 원소의 개수) 를 쉽게 셀 수 있다.&lt;/p&gt;
 
-&lt;p&gt;코드 : &lt;a href=&quot;https://github.com/gratus907/Gratus_PS/blob/master/Contests/Olympiads/%5BCOCI%5D%20Croatian%20Open%20Competition%20in%20Informatics/COCI%202007-2008/2_TURBO.cpp&quot;&gt;링크&lt;/a&gt;&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="algorithms" /><category term="weekly-ps" /><summary type="html">Contents</summary></entry><entry><title type="html">Iterative methods : Jacobi, GS, SOR</title><link href="http://localhost:4000/numerical-analysis/im-1/" rel="alternate" type="text/html" title="Iterative methods : Jacobi, GS, SOR" /><published>2021-04-28T00:00:00+09:00</published><updated>2021-04-28T00:00:00+09:00</updated><id>http://localhost:4000/numerical-analysis/im-1</id><content type="html" xml:base="http://localhost:4000/numerical-analysis/im-1/">&lt;div id=&quot;toc&quot;&gt;
-Contents
-&lt;/div&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#iterative-methods&quot; id=&quot;markdown-toc-iterative-methods&quot;&gt;Iterative methods&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#convergence&quot; id=&quot;markdown-toc-convergence&quot;&gt;Convergence&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#richardson-method&quot; id=&quot;markdown-toc-richardson-method&quot;&gt;Richardson method&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#convergence-1&quot; id=&quot;markdown-toc-convergence-1&quot;&gt;Convergence&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#jacobi-method&quot; id=&quot;markdown-toc-jacobi-method&quot;&gt;Jacobi method&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#gauss-seidel-method&quot; id=&quot;markdown-toc-gauss-seidel-method&quot;&gt;Gauss-Seidel Method&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#sor-successive-overrelaxation&quot; id=&quot;markdown-toc-sor-successive-overrelaxation&quot;&gt;SOR (Successive OverRelaxation)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;iterative-methods&quot;&gt;Iterative methods&lt;/h2&gt;
-&lt;p&gt;수치선형대수 수업에서 배운 내용을 조금 정리해 보려고 한다. 구체적으로, 행렬 $A$와 벡터 $b$에 대해, $Ax = b$를 푸는 여러 방법들 중 iterative methods를 몇 포스팅에 걸쳐 다루어 본다.&lt;/p&gt;
-
-&lt;p&gt;우선, 행렬 $A$ 의 inverse를 구하기가 쉽다면 $x = A^{-1} b$ 를 계산하면 간단하다. 당연히 이상한 방법을 필요로 하는 이유는 이 inverse를 구하기가 어렵기 때문이다. 어렵다는 것은 두 가지 의미가 있는데…&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Numerically unstable 해서 수치 오차가 우려되는 경우&lt;/li&gt;
-  &lt;li&gt;Complexity 관점에서, 계산 시간이 큰 경우
-두 경우 모두 “계산이 어렵다” 라는 말로 퉁치기로 하자.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;한번에 정확히 $x = A^{-1} b$를 구하는 대신, 임의의 $x_0$에서 시작해서, $x_i$들의 sequence가 $x$로 수렴하게 하려고 한다. 이때 $x_{i+1}$ 은 $x_i$ 및 그 이전 항들을 이용하여 귀납적으로 연산할 수 있어야 하고, 각 step은 계산이 쉬워야 할 것이다.&lt;/p&gt;
-
-&lt;p&gt;어떤 행렬 $Q$에 대해, $A = Q - (Q - A)$ 로 쓰면, $Ax = b$의 해 $x$는 $Qx = (Q - A) x + b$ 를 만족해야 할 것이다. 따라서, $Qx_k = (Q - A)x_{k-1} + b$ 를 우리의 iteration으로 쓸 것이다.&lt;/p&gt;
-
-&lt;p&gt;또한, $A = L + D + U$ 를, $L$을 diagonal 아래의 (strictly) lower triangular한 행렬로, $U$를 그 반대의 upper triangluar 행렬로, $D$를 $A$의 diagonal로 잡기로 한다.&lt;/p&gt;
-
-&lt;p&gt;이번 포스팅에서는 가급적 증명들을 생략하고 method들에 대해서만 간략히 살펴보고, 증명은 나중에 여력이 되면 쓸 예정이다.&lt;/p&gt;
-
-&lt;h3 id=&quot;convergence&quot;&gt;Convergence&lt;/h3&gt;
-&lt;p&gt;위 iteration이 올바른 답을 낸다는 사실은 상당히 nontrivial하다. 우선 $x_k = Q^{-1}((Q-A)x_{k-1} + b) = f(x_{k-1})$ 이라고 쓰면, 우리의 목표는 $f$의 fixed point를 찾는 것임을 알 수 있다. 이 iteration은 사실 이러한 $f$에 대해 FPI (Fixed Point Iteration) 을 수행하는 과정으로 이해할 수 있다. FPI가 언제 어떻게 수렴하는지를 이해하는 것은 쉽지 않은데, $f$가 Lipschitz continuous w/ $L &amp;lt; 1$ 임을 보이거나, 훨씬 더 어려운 수학적 내용들을 공부해야 한다. 작년에 최적화 이론 수업에서 이러한 수렴 정리들을 배웠는데, Averaged operator에 대한 수렴정리가 상당히 어렵지만 재밌었던 기억이 있다. 직접 링크를 거는 것이 적절한지 모르겠는데, Ernest K. Ryu 교수님의 최적화 이론 수업 자료가 웹사이트에 공개되어 있으므로 찾아보면 (해석개론 정도의 해석학 지식 배경 위에서) 이해할 수 있을 것 같다. (&lt;strong&gt;Monotone Operators and Base Splitting Schemes&lt;/strong&gt; 의 &lt;strong&gt;Theorem 1&lt;/strong&gt; 부분을 확인하면 된다)&lt;/p&gt;
-
-&lt;h2 id=&quot;richardson-method&quot;&gt;Richardson method&lt;/h2&gt;
-&lt;p&gt;Richardson method는 $Q = \frac{1}{w}I$ 를 쓰는 방법이다. 즉, $x_k = (I - wA) x_{k-1} + wb$ 를 생각할 것이다. $I - wA$를 한번 구한 다음부터는 계속 행렬-벡터 곱셈만 반복해도 되므로, 각 step이 $O(n^2)$이고, $I - wA$를 한번 구하는데 $O(n^2)$ 이 들게 되므로 iteration 횟수 $m$에 대해 $O(n^2 m)$ 시간에 연산할 수 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;convergence-1&quot;&gt;Convergence&lt;/h3&gt;
-&lt;p&gt;$x_* - x_i$ 를 직접 계산하면, $(I - wA)x_* + wb - (I - wA)x_{i-1} - wb$ 가 되고, 이를 반복적으로 적용하면 다음 식을 얻는다.
-\(x_* - x_k = (I - wA)^k (x_* - x_0)\)
-편의상, $x_0$ 을 영벡터로 놓으면, 우리는 다음과 같은 식을 얻는다.
-\(\norm{x_* - x_k} = \norm{(I - wA)^k x_*} \leq \norm{I - wA}^k \norm{x_*}\)
-이제 $\norm{I - wA}$ 부분을 evaluate 해야 함을 알 수 있고, 선형대수의 지식을 잘 써서 계산해 보면 수렴 속도는 $\lambda_n / \lambda_1$, 즉 가장 큰 eigenvalue와 가장 작은 eigenvalue의 비에 의존함을 파악할 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;jacobi-method&quot;&gt;Jacobi method&lt;/h2&gt;
-&lt;h2 id=&quot;gauss-seidel-method&quot;&gt;Gauss-Seidel Method&lt;/h2&gt;
-&lt;h2 id=&quot;sor-successive-overrelaxation&quot;&gt;SOR (Successive OverRelaxation)&lt;/h2&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="numerical-analysis" /><category term="algorithms" /><category term="mathematics" /><summary type="html">Contents</summary></entry></feed>
+&lt;p&gt;코드 : &lt;a href=&quot;https://github.com/gratus907/Gratus_PS/blob/master/Contests/Olympiads/%5BCOCI%5D%20Croatian%20Open%20Competition%20in%20Informatics/COCI%202007-2008/2_TURBO.cpp&quot;&gt;링크&lt;/a&gt;&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="algorithms" /><category term="weekly-ps" /><summary type="html">Contents</summary></entry></feed>

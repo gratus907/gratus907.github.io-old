@@ -256,4 +256,10 @@ var store = [{
         "tags": ["algorithms"],
         "url": "http://localhost:4000/ps_weekly/ps-weekly-21Jul3/",
         "teaser": null
+      },{
+        "title": "UCPC 팀 해체",
+        "excerpt":"Contents 이번 UCPC는 개인 신청 후 팀 신청을 따로 해야 하는데, 이 과정을 3명 모두가 동시에 잊고 있었던 어처구니없는 이유로 UCPC에 참여하지 못하게 되었습니다. 주최측에 메일을 보내 보기도 했고, 여러가지 방법으로 contact를 시도해 보았으나 원칙적으로 불가하다는 답변을 받았습니다. 처음에는 솔직히 조금 받아들이지 못하기도 했습니다. 개인신청을 진행하기도 했으니 어떻게든 추가로 등록이...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/ucpc_team_broken/",
+        "teaser": null
       }]

@@ -253,7 +253,7 @@ var store = [{
       },{
         "title": "7월 3주차 Weekly PS",
         "excerpt":"Contents Recent Updates Rounds (팀연습) 서강대학교 2020 SPC Div.1 (Champion) (대회) SCPC 2021 Round 1 (Atcoder) Atcoder Beginner Round 210 Problems IOI 2009-4, Raisins (BOJ 5463 건포도) 서강대학교 SPC 2015-1F, 몬스터 (BOJ 11573) 연세대학교 2018-C 나무 위의 입자 (BOJ 15669) 연세대학교 2018-L 연세워터파크 (BOJ 15678) IOI 2002-4, Batch Scheduling (BOJ...","categories": ["ps_weekly"],
-        "tags": ["algorithms"],
+        "tags": ["weekly-ps"],
         "url": "http://localhost:4000/ps_weekly/ps-weekly-21Jul3/",
         "teaser": null
       },{
@@ -261,5 +261,11 @@ var store = [{
         "excerpt":"Contents 이번 UCPC는 개인 신청 후 팀 신청을 따로 해야 하는데, 이 과정을 3명 모두가 동시에 잊고 있었던 어처구니없는 이유로 UCPC에 참여하지 못하게 되었습니다. 주최측에 메일을 보내 보기도 했고, 여러가지 방법으로 contact를 시도해 보았으나 원칙적으로 불가하다는 답변을 받았습니다. 처음에는 솔직히 조금 받아들이지 못하기도 했습니다. 개인신청을 진행하기도 했으니 어떻게든 추가로 등록이...","categories": [],
         "tags": [],
         "url": "http://localhost:4000/ucpc_team_broken/",
+        "teaser": null
+      },{
+        "title": "Karger-Stein Minimum Cut",
+        "excerpt":"Contents Min Cut s-t min cut Karger’s Algorithm Edge contraction Algorithm Proof Time Complexity Karger-Stein Algorithm Time Complexity of iteration Probability of Success Min Cut Min Cut 문제란, 어떤 그래프 $G = (V, E)$ 가 주어졌을 때, $V$의 정점들을 두 집합 $S, T$ 로 나누어서, \\(\\Setcond{(u, v) \\in E}{u \\in...","categories": ["advanced_algorithms"],
+        "tags": ["algorithms","graph_theory"],
+        "url": "http://localhost:4000/advanced_algorithms/karger-stein-mincut/",
         "teaser": null
       }]

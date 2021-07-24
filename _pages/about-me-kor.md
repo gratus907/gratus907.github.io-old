@@ -14,6 +14,7 @@ author_profile: true
 - 서울대학교 (2018.3 ~ 현재)
     - 주전공 : 컴퓨터공학부 (전공학점 : 3.92 / 4.3)
     - 복수전공 : 수리과학부 (전공학점 : 4.06 / 4.3)
+    - 어떤 과목들을 수강했는지, 무엇을 배웠는지를 정리하는 글을 준비 중에 있습니다. 
 
 ## Publications 
 ### Domestic Conference
@@ -27,6 +28,7 @@ author_profile: true
     - 서울대학교 학부생 연구참여 프로그램 (UROP)
     - 컴퓨터공학부 Computer Theory Lab (컴퓨터 이론 연구실)
     - Subgraph Isomorphism 알고리즘의 Adaptive Matching Order에 있어서의 minor한 개선에 관해 진행하였습니다.
+    - 결과는 2021년 KCC에 제출하였고, 최우수논문상을 수상하였습니다. 
 
 ## Projects
 - FRIDGE 
@@ -46,6 +48,7 @@ author_profile: true
 - Java : 자료구조, 알고리즘, 데이터베이스 등 과목을 통해 익혔습니다.
 - Python : FRIDGE 프로젝트를 수행했고 (Django), 2021년에는 컴퓨팅 기초 튜터로 참여하여 데이터 분석 라이브러리 사용법을 튜터링하기도 했습니다.
 - Linux : 개인적으로 Ubuntu Linux를 2년 이상 사용해 왔고, Guardian 활동을 통해 공부했습니다.
+- (Human) Language : 모국어는 한국어고, 영어는 고등학교 때 TEPS (구) 에서 882점 정도를 받은 적 있습니다.
 
 ## Competitive Programming
 다양한 국내외 프로그래밍 대회에 참여하고 있고, 알고리즘을 재밌게 공부하고 있습니다.
@@ -67,3 +70,8 @@ author_profile: true
 ### 기타 관련 경험
 - 2021 신촌지역 연합 프로그래밍 캠프 문제 검수 참여
 - 2020 중앙대학교 프로그래밍 대회 문제 검수 참여
+
+## Miscellaneous (Informal)
+- PS를 좋아하고, 대회도 재밌게 하고 있지만 앞으로는 이론적인 알고리즘 공부에 좀더 집중하려고 노력하고 있습니다. 앞으로 제게 정말 중요한건 그런 쪽 같아서...
+- 약간 PS는 취미의 영역으로 계속 즐기지 않을까 싶습니다. 주변에 그런 분들 많던데요.
+- 새 취미로 체스를 즐기고 있습니다. 사실 대학 와서부터 조금씩 두고 있었는데, Over the Board가 불가능해진 지금은 조금 동력이 떨어졌습니다. Lichess gratus907이나 chess.com wonseokshin 으로 친구추가 및 대국신청은 (제가 시간이 된다면 말이지만요) 환영합니다.

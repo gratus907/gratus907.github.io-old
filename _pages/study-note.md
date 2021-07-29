@@ -52,9 +52,9 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
 
 #### Randomized Algorithms
 
-| Topic | Link |
-|:------|:-----|
-| **Karger-Stein Min Cut**      | [Link](/advanced_algorithms/karger-stein-mincut/)     |
+| Topic                    | Link                                              |
+|:-------------------------|:--------------------------------------------------|
+| **Karger-Stein Min Cut** | [Link](/advanced_algorithms/karger-stein-mincut/) |
 
 
 #### Graph Algorithms

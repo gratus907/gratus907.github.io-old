@@ -141,7 +141,6 @@
 
       gtag('config', 'G-9M2LK7DWFS');
     </script>
-
   </head>
 
   <body class="layout--single">
@@ -232,6 +231,8 @@
         
           
         
+          
+            <li><a href="https://github.com/gratus907" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
           
         
       
@@ -328,6 +329,8 @@
           
             <li><a href="/study-note/#coursera-ml-andrew-ng">Coursera ML Note (2021)</a></li>
           
+            <li><a href="/study-log-math/">Math study log</a></li>
+          
         </ul>
         
       </li>
@@ -340,9 +343,11 @@
         
         <ul>
           
-            <li><a href="/find-contest/">PS 문제 출처별로 보기</a></li>
+            <li><a href="/find-contest/">문제 출처별로 보기</a></li>
           
-            <li><a href="/sac-class/">solved.ac class별로 보기</a></li>
+            <li><a href="/sac-class/">Solved.ac class별로 보기</a></li>
+          
+            <li><a href="/ps-teatime/">PS Teatime</a></li>
           
         </ul>
         
@@ -350,7 +355,7 @@
     
       <li>
         
-          <a href="/cs-adventure/"><span class="nav__sub-title">Adventure to Computer Science</span></a>
+          <a href="/cs-adventure/"><span class="nav__sub-title">Adventure to CS</span></a>
         
 
         
@@ -424,7 +429,7 @@
         <p>이 글은 올해 해시코드 대회 과정에 대한 후기이고, 준비 과정은 앞 글(<a href="/Hashcode-2021-prep/">링크</a>)에 있습니다.</p>
 
 <div id="toc">
-Contents
+  <p>Contents</p>
 </div>
 <ul id="markdown-toc">
   <li><a href="#결과" id="markdown-toc-결과">결과</a></li>
@@ -650,6 +655,49 @@ TOTAL SCORE          9,577,688
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/ps_weekly/ps-weekly-21Jul4/" rel="permalink">7월 4-5주차 Weekly PS
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          610 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/advanced_algorithms/karger-stein-mincut/" rel="permalink">Karger-Stein Minimum Cut
 </a>
       
@@ -668,14 +716,14 @@ TOTAL SCORE          9,577,688
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          1332 words
+          2026 words
       </span>
     
   </p>
 
 
     <p class="archive__item-excerpt" itemprop="description">
-Contents
+  Contents
 
 
 
@@ -718,7 +766,7 @@ Contents
 
 
     <p class="archive__item-excerpt" itemprop="description">
-Contents
+  Contents
 
 
 
@@ -761,50 +809,7 @@ Contents
 
 
     <p class="archive__item-excerpt" itemprop="description">
-Contents
-
-
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/cp_rounds/SCPC-2021-Round1/" rel="permalink">삼성 SCPC 예선 1라운드 풀이 / 후기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          2471 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-Contents
+  Contents
 
 
 
@@ -854,7 +859,7 @@ Contents
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 340fa6c0354a962792cb51e53cec53228e942194</div>
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version c046ce798829bb6ba3e7fb74742bd7bd43469acf</div>
 
       </footer>
     </div>
@@ -885,6 +890,22 @@ Contents
 
 
 
+    <script>
+    
+    var elements = document.querySelectorAll('p');
+    Array.prototype.forEach.call(elements, function(el, i){
+        if(el.innerHTML=='[expand]') {
+            var parentcontent = el.parentNode.innerHTML.replace('<p>[expand]</p>','<div class="expand" style="display: none; height: 0; overflow: hidden;">').replace('<p>[/expand]</p>','</div>');
+            el.parentNode.innerHTML = parentcontent;
+        }
+    });
+
+    var elements = document.querySelectorAll('div.expand');
+    Array.prototype.forEach.call(elements, function(el, i){
+        el.previousElementSibling.innerHTML = el.previousElementSibling.innerHTML + '<span>..&nbsp; <a href="#" style="cursor: pointer;" onclick="this.parentNode.parentNode.nextElementSibling.style.display = \'block\'; this.parentNode.parentNode.nextElementSibling.style.height = \'auto\'; this.parentNode.style.display = \'none\';">read&nbsp;more&nbsp;&rarr;</a></span>';
+    });
+
+</script>
 
   </body>
 </html>

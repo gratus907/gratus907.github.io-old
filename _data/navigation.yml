@@ -16,12 +16,16 @@ sidepost:
     children:
       - title: "Coursera ML Note (2021)"
         url: /study-note/#coursera-ml-andrew-ng 
+      - title: "Math study log"
+        url : /study-log-math/
   - title: "Algorithm Problem Solving"
     url : /categories/#algorithms
     children:
-      - title: "PS 문제 출처별로 보기"
+      - title: "문제 출처별로 보기"
         url: /find-contest/
-      - title: "solved.ac class별로 보기"
+      - title: "Solved.ac class별로 보기"
         url: /sac-class/
-  - title: "Adventure to Computer Science"
+      - title: "PS Teatime"
+        url : /ps-teatime/
+  - title: "Adventure to CS"
     url : /cs-adventure/

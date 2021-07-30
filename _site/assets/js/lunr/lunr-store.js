@@ -234,7 +234,7 @@ var store = [{
         "teaser": null
       },{
         "title": "논문읽기 : DELTACON",
-        "excerpt":" Contents     Introduction    처음으로 정리해볼 논문은 2013년 SDM(SIAM International Conference on Data Mining)에 발표된 DeltaCon입니다.   Introduction  두 그래프 $G_1 = (V_1, E_1), G_2 = (V_2, E_2)$ 가 주어졌을 때, 우리는 두 그래프의 유사도 를 측정하는 어떤 좋은 메트릭을 갖고 싶습니다. 이 메트릭이 있으면  ","categories": ["cs-adventure"],
+        "excerpt":"   Contents      Introduction    처음으로 정리해볼 논문은 2013년 SDM(SIAM International Conference on Data Mining)에 발표된 DeltaCon입니다.   Introduction  두 그래프 $G_1 = (V_1, E_1), G_2 = (V_2, E_2)$ 가 주어졌을 때, 우리는 두 그래프의 유사도 를 측정하는 어떤 좋은 메트릭을 갖고 싶습니다. 이 메트릭이 있으면  ","categories": ["cs-adventure"],
         "tags": ["graph theory"],
         "url": "http://localhost:4000/cs-adventure/deltacon/",
         "teaser": null
@@ -264,8 +264,14 @@ var store = [{
         "teaser": null
       },{
         "title": "Karger-Stein Minimum Cut",
-        "excerpt":"Contents Min Cut s-t min cut Karger’s Algorithm Edge contraction Algorithm Proof Time Complexity Karger-Stein Algorithm Time Complexity of iteration Probability of Success Min Cut Min Cut 문제란, 어떤 그래프 $G = (V, E)$ 가 주어졌을 때, $V$의 정점들을 두 집합 $S, T$ 로 나누어서, \\(\\Setcond{(u, v) \\in E}{u \\in...","categories": ["advanced_algorithms"],
+        "excerpt":"Contents Min Cut s-t min cut Karger’s Algorithm Edge contraction Algorithm Proof Time Complexity Karger-Stein Algorithm Time Complexity of iteration Probability of Success Total time complexity Extension Min Cut Min Cut 문제란, 어떤 그래프 $G = (V, E)$ 가 주어졌을 때, $V$의 정점들을 두 집합 $S, T$ 로 나누어서, \\(\\Setcond{(u,...","categories": ["advanced_algorithms"],
         "tags": ["algorithms","graph_theory"],
         "url": "http://localhost:4000/advanced_algorithms/karger-stein-mincut/",
+        "teaser": null
+      },{
+        "title": "7월 4-5주차 Weekly PS",
+        "excerpt":"Contents Recent Updates Rounds (Testing) Codeforces Global Round 15 Problems BOJ 1766 문제집 POI 1994 Ones and Zeros (BOJ 8111 0과 1) BOJ 1602 도망자 원숭이 ICPC Germany Regional (GCPC) 2010 D Field Plan (BOJ 3977 축구 전술) BOJ 4196 도미노 ICPC Jakarta Regional 2018 Boomerangs (BOJ 16583) July 19...","categories": ["ps_weekly"],
+        "tags": ["weekly-ps"],
+        "url": "http://localhost:4000/ps_weekly/ps-weekly-21Jul4/",
         "teaser": null
       }]

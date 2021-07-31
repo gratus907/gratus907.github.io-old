@@ -7,7 +7,9 @@ author_profile: true
 
 하루에 한문제씩 PS 풀만한거 공유하는 (요새는 그거보단 그냥 대회 시즌 되면 다른 얘기가 더 많지만) 오픈채팅방이 있는데, 뭔가 매일 하나씩 풀이를 쓰면 이런거 쓰는 연습도 될거같고 해서 매일 풀고 정말 간단하게만 정리하려고 합니다. 
 
-각 문제의 풀이는 접어놓은 부분을 클릭해서 확인할 수 있습니다. 
+- 각 문제의 풀이는 접어놓은 부분을 클릭해서 확인할 수 있습니다. 
+- 구현 코드는 (거의 모두) [Github Repo](https://github.com/gratus907/Gratus_PS) 에서 볼 수 있습니다. 
+- 접어놓은 부분을 폈을때 처음에 출처가 나오면 레포의 해당 대회를 찾아가면 되고, 출처가 없으면 BOJ Originals 에 들어 있습니다 (ex : 수쿼 시리즈 등)
 
 <details> <summary markdown = span> <b>2021년 7월 30일 : <a href = "http://boj.kr/14370">BOJ 14370</a> 전화번호 수수께끼 (Large)</b> </summary>
 - Google Codejam 2016 Round 1B : A번 Getting the Digits

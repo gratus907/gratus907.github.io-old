@@ -185,10 +185,22 @@ var store = [{
         "url": "http://localhost:4000/Hashcode-2021-prep/",
         "teaser": null
       },{
+        "title": "정수론 : 2장 1절 Congruences",
+        "excerpt":"Contents Congruence Congruence $a, b, m \\in \\Z$, $m \\neq 0$에 대해, $a \\equiv b \\mod m \\iff m \\di (a - b)$. 이때, $a$를 $m$으로 나눈 나머지를 $[a]_m$으로 나타낸다. 이 Congruence relation은 equivalence이다. 덧셈, 뺄셈, 곱셈은 잘 보존된다. 즉, $a \\equiv b, c \\equiv d$이면 $a + b \\equiv...","categories": ["mathematics"],
+        "tags": ["number-theory"],
+        "url": "http://localhost:4000/mathematics/Number-Theory-Lec3/",
+        "teaser": null
+      },{
         "title": "폴라드-로 소인수분해 알고리즘",
         "excerpt":"Contents Motivation 생일 문제 (Birthday Problem) 가정 Algorithm 예시 구현 시간 복잡도 Motivation 소인수분해는 매우 어려운 과정이다. 실제로 소인수분해는 (입력 비트 수에 대해) 다항 시간에 결정론적으로 풀 수 있는 방법이 알려져 있지 않다. 그러나, 약간의 랜덤성 (확률에 대한 의존) 을 허용한다면 상당히 clever한 알고리즘을 통해 빠르게 소인수분해를 할 수 있는데,...","categories": ["algorithms"],
         "tags": ["number-theory","algorithms"],
         "url": "http://localhost:4000/algorithms/Pollards-Rho/",
+        "teaser": null
+      },{
+        "title": "이산수학 주제 1 : Propositional Logic",
+        "excerpt":"Contents Propositional Logic 명제의 역/이/대우 Well-Formed Formula Logical Facts Logic : Formal system for describing knowledge, implement reasoning on knowledge. Set of rules deducing entailments of a set of sentences. Ambiguity 없이 명제를 표현하고 사고를 전개하는 언어 (Syntax, Semantics, Rules). Propositional Logic 기본적인 문장들을 Atomic entity로 간주하고, Boolean connective를 이용하여...","categories": ["dma2021"],
+        "tags": ["logic"],
+        "url": "http://localhost:4000/dma2021/propositional-logic/",
         "teaser": null
       },{
         "title": "2021 1학기 중간점검",
@@ -267,6 +279,18 @@ var store = [{
         "excerpt":"Contents Min Cut s-t min cut Karger’s Algorithm Edge contraction Algorithm Proof Time Complexity Karger-Stein Algorithm Time Complexity of iteration Probability of Success Total time complexity Extension Min Cut Min Cut 문제란, 어떤 그래프 $G = (V, E)$ 가 주어졌을 때, $V$의 정점들을 두 집합 $S, T$ 로 나누어서, \\(\\Setcond{(u,...","categories": ["advanced_algorithms"],
         "tags": ["algorithms","graph_theory"],
         "url": "http://localhost:4000/advanced_algorithms/karger-stein-mincut/",
+        "teaser": null
+      },{
+        "title": "서울대학교 컴퓨터공학부 전공과목 (주관적인) 소개",
+        "excerpt":"Contents 1학년 과목 컴퓨터의 개념 및 실습 프로그래밍 연습 이산수학 2학년 과목 컴퓨터 프로그래밍 논리설계 자료구조 컴퓨터구조 프로그래밍 언어 전기전자회로 3-4학년 과목 알고리즘 양자 컴퓨팅의 기초 데이터베이스 소프트웨어 개발의 원리 및 실제 시스템 프로그래밍 하드웨어 시스템 설계 창의적 통합 설계 대학원 과목 계산이론 가장 쓸 말이 많은 3설계 과목 (소개원실,...","categories": ["snu-courses"],
+        "tags": [],
+        "url": "http://localhost:4000/snu-courses/SNU-courses-CS/",
+        "teaser": null
+      },{
+        "title": "서울대학교 수리과학부 전공과목 (주관적인) 소개",
+        "excerpt":"Contents 1학년 과목 수학 및 연습 1, 고급수학 및 연습 2 2학년 과목 해석개론 및 연습 1 선형대수학 1 선형대수학 2 정수론 3학년 과목 위상수학개론 1 현대대수학 1 복소변수함수론 수치선형대수 4학년 과목 최적화의 수학적 이론 및 계산 학부 4학년 실변수함수론 / 대학원 실해석학 수학과는 선수과목이 꽤 복잡한데 복전생이 듣자니 전공이랑...","categories": ["snu-courses"],
+        "tags": [],
+        "url": "http://localhost:4000/snu-courses/SNU-courses-MATH/",
         "teaser": null
       },{
         "title": "7월 4-5주차 Weekly PS",

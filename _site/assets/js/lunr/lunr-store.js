@@ -298,4 +298,10 @@ var store = [{
         "tags": ["weekly-ps"],
         "url": "http://localhost:4000/ps_weekly/ps-weekly-21Jul4/",
         "teaser": null
+      },{
+        "title": "8월 1주차 Weekly PS",
+        "excerpt":"Contents Recent Updates Rounds Codeforces Educational Round 112 Codeforces Round 736 (Div 1) Problems CF Edu112 E - Boring Segments CF R736 Div1 B - Integers have friends CF R736 Div1 D1 - Gregor and the Odd Cows (Easy) July 29 - August 07, 2021 이 글에 구현코드 링크가 없더라도...","categories": ["ps_weekly"],
+        "tags": ["weekly-ps"],
+        "url": "http://localhost:4000/ps_weekly/ps-weekly-21Aug1/",
+        "teaser": null
       }]

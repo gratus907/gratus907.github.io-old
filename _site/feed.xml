@@ -1,4 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-01T01:42:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">7월 4-5주차 Weekly PS</title><link href="http://localhost:4000/ps_weekly/ps-weekly-21Jul4/" rel="alternate" type="text/html" title="7월 4-5주차 Weekly PS" /><published>2021-07-28T00:00:00+09:00</published><updated>2021-07-28T00:00:00+09:00</updated><id>http://localhost:4000/ps_weekly/ps-weekly-21Jul4</id><content type="html" xml:base="http://localhost:4000/ps_weekly/ps-weekly-21Jul4/">&lt;div id=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-02T23:16:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">8월 1주차 Weekly PS</title><link href="http://localhost:4000/ps_weekly/ps-weekly-21Aug1/" rel="alternate" type="text/html" title="8월 1주차 Weekly PS" /><published>2021-08-02T00:00:00+09:00</published><updated>2021-08-02T00:00:00+09:00</updated><id>http://localhost:4000/ps_weekly/ps-weekly-21Aug1</id><content type="html" xml:base="http://localhost:4000/ps_weekly/ps-weekly-21Aug1/">&lt;div id=&quot;toc&quot;&gt;
+  &lt;p&gt;Contents&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#recent-updates&quot; id=&quot;markdown-toc-recent-updates&quot;&gt;Recent Updates&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#rounds&quot; id=&quot;markdown-toc-rounds&quot;&gt;Rounds&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#codeforces-educational-round-112&quot; id=&quot;markdown-toc-codeforces-educational-round-112&quot;&gt;Codeforces Educational Round 112&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#codeforces-round-736-div-1&quot; id=&quot;markdown-toc-codeforces-round-736-div-1&quot;&gt;Codeforces Round 736 (Div 1)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#problems&quot; id=&quot;markdown-toc-problems&quot;&gt;Problems&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#cf-edu112-e---boring-segments&quot; id=&quot;markdown-toc-cf-edu112-e---boring-segments&quot;&gt;CF Edu112 E - Boring Segments&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#cf-r736-div1-b---integers-have-friends&quot; id=&quot;markdown-toc-cf-r736-div1-b---integers-have-friends&quot;&gt;CF R736 Div1 B - Integers have friends&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#cf-r736-div1-d1---gregor-and-the-odd-cows-easy&quot; id=&quot;markdown-toc-cf-r736-div1-d1---gregor-and-the-odd-cows-easy&quot;&gt;CF R736 Div1 D1 - Gregor and the Odd Cows (Easy)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;July 29 - August 07, 2021&lt;/p&gt;
+
+&lt;p&gt;이 글에 구현코드 링크가 없더라도 &lt;a href=&quot;https://github.com/gratus907/Gratus_PS&quot;&gt;PS 레포 링크&lt;/a&gt; 에 가서 대회 단위로 들어가면 보통 올려놓은 코드를 볼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;읽는 사람이 문제를 읽고 조금 생각해봤다고 가정하고, 대략적인 아이디어만 간단히 적을 생각입니다 ㅎㅎ&lt;/p&gt;
+
+&lt;h2 id=&quot;recent-updates&quot;&gt;Recent Updates&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;SCPC Round 2에 대한 포스팅은 일요일에 따로 작성 예정입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;rounds&quot;&gt;Rounds&lt;/h2&gt;
+&lt;h3 id=&quot;codeforces-educational-round-112&quot;&gt;Codeforces Educational Round 112&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Div2 기준 274등, Rating 1947 -&amp;gt; 1995 (+48)&lt;/li&gt;
+  &lt;li&gt;Performance 2096&lt;/li&gt;
+  &lt;li&gt;몇달만의 Codeforces 복귀전.&lt;/li&gt;
+  &lt;li&gt;Div2지만 E번까지 풀어서 굉장히 기분이 좋았습니다. 복귀전인것치고는 레이팅도 많이 올랐고…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;codeforces-round-736-div-1&quot;&gt;Codeforces Round 736 (Div 1)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Div2 기준 274등, Rating 1995 -&amp;gt; 2055 (+60)&lt;/li&gt;
+  &lt;li&gt;Performance 2200&lt;/li&gt;
+  &lt;li&gt;UCPC도 못나가고 하다보니 그냥 CP가 하고싶어져서 좀 자주 돌기로 했습니다. 오렌지 파킹하고 ICPC 팀 찾아야죠.&lt;/li&gt;
+  &lt;li&gt;C번에 비해 D1번이 많이 쉬웠습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;problems&quot;&gt;Problems&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;cf-edu112-e---boring-segments&quot;&gt;CF Edu112 E - Boring Segments&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;난이도 2100&lt;/li&gt;
+  &lt;li&gt;어떤 subset을 골라서 전체를 커버하되, 가중치의 최대-최소 값을 최소화해야 합니다.&lt;/li&gt;
+  &lt;li&gt;이러한 문제를 Two pointer라는 방법으로 잘 해결할 수 있습니다. 또는, 각 시작점에 대해 가능한 끝점을 이분 탐색해도 됩니다.&lt;/li&gt;
+  &lt;li&gt;다만, 두 경우의 차이는, $a-b$ 를 쓰다가 $a-(b+1)$ 을 쓰는걸로 전환하는게 빠르면 투포인터를 쓰고, 임의의 $a-b$를 시도하는 쿼리가 빠르면 이분탐색도 쓸 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;이 문제는, 후자의 쿼리가 어렵기 때문에 (가능할거같긴한데 사실 잘 모르겠습니다) 투포인터를 씁니다. 따라서 고른 $[l_i, r_i]$ 들의 집합이 한개만큼 바뀔때 쿼리당 시간이 짧아야 합니다.&lt;/li&gt;
+  &lt;li&gt;하나를 고를 때마다 $[l_i, r_i]$ 에 1을 더하고 (골랐던걸 뺄때는 당연히 -1), 마지막에 $[1, n]$ 의 최소값이 0인지 (커버하지 못함), 0보다 큰지 (커버함) 판정할 수 있습니다. 이 두 연산 모두 Lazy propagation이 적용된 segment tree로 잘 할수 있음을 알고 있습니다. 이경우 구간 하나를 추가하거나 빼는데 걸리는 시간이 $O(\log n)$, 판정 시간도 $O(\log n)$ 입니다.&lt;/li&gt;
+  &lt;li&gt;이제, 마지막으로 생각할 것은 원래 문제에서는 $[1, 3], [4, 5]$ 가 겹치는 것으로 인정되지 않지만 세그트리로 바꿀때는 전체를 커버한다는 False positive의 가능성입니다. $[l_i, r_i]$ 들을 세그에 더할때는 $[l_i, r_i)$ 로 바꿔서 더하면 됩니다.&lt;/li&gt;
+  &lt;li&gt;여담으로, 저는 $m, n$ 의 범위를 헷갈려서 삽질하다가 1시간 59분 51초에 대회종료 9초를 남겨두고 AC를 받았습니다. ㅋㅋ!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;cf-r736-div1-b---integers-have-friends&quot;&gt;CF R736 Div1 B - Integers have friends&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;간단하게 생각할 수 있는 것은, 주어진 수들의 인접한 수들 간의 차를 새로운 배열로 만들고 나면, 이 배열에서 어떤 sub-array를 뽑아서 그 gcd가 1보다 크면 된다는 것입니다.&lt;/li&gt;
+  &lt;li&gt;GCD가 1이 아닌 가장 긴 subarray를 찾는 것은 역시 위 문제와 똑같이, 투포인터 또는 각 시작점에서의 이분탐색으로 해결가능합니다.&lt;/li&gt;
+  &lt;li&gt;어떤 부분구간의 GCD가 1인지 아닌지 빠르게 판정하기 위해서는, 노드에 gcd값을 저장하는 세그먼트 트리를 사용하면 됩니다.&lt;/li&gt;
+  &lt;li&gt;위 문제와 거의 같은 세그 + (투포인터 or 이분탐색) 문제입니다. 저는 위문제는 투포인터를, 이 문제는 이분 탐색을 썼습니다.&lt;/li&gt;
+  &lt;li&gt;투포인터 사용시 $O(n \log A)$, 이분탐색은 $O(n \log n \log A)$인데, 이분탐색도 넉넉합니다. GCD는 생각보다 빨라서요.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;cf-r736-div1-d1---gregor-and-the-odd-cows-easy&quot;&gt;CF R736 Div1 D1 - Gregor and the Odd Cows (Easy)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;픽의 정리에 의하면, 볼록다각형의 넓이 $A$, 경계면에 있는 격자점의 수 $B$, 안쪽에 들어있는 격자점의 수 $C$에 대해 $A = B/2 + C - 1$ 이 성립합니다.&lt;/li&gt;
+  &lt;li&gt;즉, $A$ 와 $B/2$의 홀짝성이 같다면 $C$가 홀수가 될 것입니다.&lt;/li&gt;
+  &lt;li&gt;고를 수 있는 모든 정수점이 짝수좌표를 갖는 상황에서, $A$와 $B/2$의 홀짝성에 대해 생각해 보겠습니다.&lt;/li&gt;
+  &lt;li&gt;$A$, 즉 넓이는 외적공식을 통해 구할 수 있는데, 어차피 mod 4 위에서 구할 것이므로 원래 점의 좌표의 mod 4 값들만 알아도 충분합니다.&lt;/li&gt;
+  &lt;li&gt;$B$ 를 mod 4한 값을 알아야 하는데, 잘 생각해 보면 $(x_1, y_1)$ 에서 $(x_2, y_2)$까지 선분을 이을 때 그 위의 정수 격자점의 개수는 $\gcd(x_2 - x_1, y_2 - y_1)$ 이 4의 배수인지 여부에 따라 결정됩니다.&lt;/li&gt;
+  &lt;li&gt;따라서, 임의의 세 점 $p_i, p_j, p_k$에 대해, 각 점의 $x, y$ 좌표의 mod 4한 나머지값만 안다면, 이 점들은 사실 $A$와 $B/2$의 부호 면에서는 똑같습니다.&lt;/li&gt;
+  &lt;li&gt;점을 네가지로 구분하고 ($x$와 $y$ 좌표를 0 또는 2로), 클래스 0-3의 점들 중 3개를 고르는 경우의 수 64가지를 생각해 줍니다. 같은 클래스의 점을 2개 고를 때 경우의 수는 이항계수로 구해야 함을 기억합시다.&lt;/li&gt;
+  &lt;li&gt;코드는 간단하지만 Casework가 좀 있습니다.&lt;/li&gt;
+  &lt;li&gt;이문제도 끝나기 10분정도 전에 AC를 받았습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ps_weekly" /><category term="weekly-ps" /><summary type="html">Contents</summary></entry><entry><title type="html">7월 4-5주차 Weekly PS</title><link href="http://localhost:4000/ps_weekly/ps-weekly-21Jul4/" rel="alternate" type="text/html" title="7월 4-5주차 Weekly PS" /><published>2021-07-28T00:00:00+09:00</published><updated>2021-07-28T00:00:00+09:00</updated><id>http://localhost:4000/ps_weekly/ps-weekly-21Jul4</id><content type="html" xml:base="http://localhost:4000/ps_weekly/ps-weekly-21Jul4/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -21,7 +119,7 @@
 
 &lt;p&gt;July 19 - July 28, 2021&lt;/p&gt;
 
-&lt;p&gt;이 글에 구현코드 링크가 없더라도 &lt;a href=&quot;https://github.com/gratus907/Gratus_PS&quot;&gt;PS 레포 링크&lt;/a&gt; 에 가서 대회 단위로 들어가면 보통 제가 올려놓은 코드를 볼 수 있습니다.&lt;/p&gt;
+&lt;p&gt;이 글에 구현코드 링크가 없더라도 &lt;a href=&quot;https://github.com/gratus907/Gratus_PS&quot;&gt;PS 레포 링크&lt;/a&gt; 에 가서 대회 단위로 들어가면 보통 올려놓은 코드를 볼 수 있습니다.&lt;/p&gt;
 
 &lt;p&gt;7월 마지막 주는 일반생물학 시험을 비롯, 몇가지 할일이 있어서 PS를 거의 못할듯 합니다 :(&lt;/p&gt;
 
@@ -662,7 +760,7 @@ Weighted graph에서는 간선의 개수가 아니라 weight의 합을 최소화
 
 &lt;p&gt;July 11 - July 18, 2021&lt;/p&gt;
 
-&lt;p&gt;이 글에 구현코드 링크가 없더라도 &lt;a href=&quot;https://github.com/gratus907/Gratus_PS&quot;&gt;PS 레포 링크&lt;/a&gt; 에 가서 대회 단위로 들어가면 보통 제가 올려놓은 코드를 볼 수 있습니다.&lt;/p&gt;
+&lt;p&gt;이 글에 구현코드 링크가 없더라도 &lt;a href=&quot;https://github.com/gratus907/Gratus_PS&quot;&gt;PS 레포 링크&lt;/a&gt; 에 가서 대회 단위로 들어가면 보통 올려놓은 코드를 볼 수 있습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;recent-updates&quot;&gt;Recent Updates&lt;/h2&gt;
 &lt;ul&gt;
@@ -1199,170 +1297,4 @@ Code : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwock
 &lt;p&gt;처음으로 정리해볼 논문은 2013년 SDM(SIAM International Conference on Data Mining)에 발표된 DeltaCon입니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;두 그래프 $G_1 = (V_1, E_1), G_2 = (V_2, E_2)$ 가 주어졌을 때, 우리는 두 그래프의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유사도&lt;/code&gt; 를 측정하는 어떤 좋은 메트릭을 갖고 싶습니다. 이 메트릭이 있으면&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cs-adventure" /><category term="graph theory" /><summary type="html">Contents</summary></entry><entry><title type="html">7월 1-2주차 Weekly PS</title><link href="http://localhost:4000/algorithms/ps-weekly-21Jul1/" rel="alternate" type="text/html" title="7월 1-2주차 Weekly PS" /><published>2021-07-08T00:00:00+09:00</published><updated>2021-07-08T00:00:00+09:00</updated><id>http://localhost:4000/algorithms/ps-weekly-21Jul1</id><content type="html" xml:base="http://localhost:4000/algorithms/ps-weekly-21Jul1/">&lt;div id=&quot;toc&quot;&gt;
-  &lt;p&gt;Contents&lt;/p&gt;
-&lt;/div&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#recent-updates&quot; id=&quot;markdown-toc-recent-updates&quot;&gt;Recent Updates&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#rounds&quot; id=&quot;markdown-toc-rounds&quot;&gt;Rounds&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#atcoder-beginner-round-208&quot; id=&quot;markdown-toc-atcoder-beginner-round-208&quot;&gt;Atcoder Beginner Round 208&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#virtual-codeforces-round-490-div3&quot; id=&quot;markdown-toc-virtual-codeforces-round-490-div3&quot;&gt;(Virtual) Codeforces Round 490 (Div.3)&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#problems&quot; id=&quot;markdown-toc-problems&quot;&gt;Problems&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#icpc-mid-atlantic-2006-boj-1849-순열&quot; id=&quot;markdown-toc-icpc-mid-atlantic-2006-boj-1849-순열&quot;&gt;ICPC Mid Atlantic 2006, BOJ 1849 순열&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#cerc-2010d-boj-3429-방어선&quot; id=&quot;markdown-toc-cerc-2010d-boj-3429-방어선&quot;&gt;CERC 2010D, BOJ 3429 방어선&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ucpc-2018-예선f-boj-15899-트리와-색깔&quot; id=&quot;markdown-toc-ucpc-2018-예선f-boj-15899-트리와-색깔&quot;&gt;UCPC 2018 예선F, BOJ 15899 트리와 색깔&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#boj-14287-회사-문화-3&quot; id=&quot;markdown-toc-boj-14287-회사-문화-3&quot;&gt;BOJ 14287 회사 문화 3&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#bapc-2005e-boj-5419-북서풍&quot; id=&quot;markdown-toc-bapc-2005e-boj-5419-북서풍&quot;&gt;BAPC 2005E, BOJ 5419 북서풍&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#sccc-2019e-boj-17131-여우가-정보섬에-올라온-이유&quot; id=&quot;markdown-toc-sccc-2019e-boj-17131-여우가-정보섬에-올라온-이유&quot;&gt;SCCC 2019E, BOJ 17131 여우가 정보섬에 올라온 이유&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#boj-16993-연속합과-쿼리&quot; id=&quot;markdown-toc-boj-16993-연속합과-쿼리&quot;&gt;BOJ 16993, 연속합과 쿼리&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#review&quot; id=&quot;markdown-toc-review&quot;&gt;Review&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;July 01 - July 11, 2021&lt;/p&gt;
-
-&lt;p&gt;이 글에 구현코드 링크가 없더라도 &lt;a href=&quot;https://github.com/gratus907/Gratus_PS&quot;&gt;PS 레포 링크&lt;/a&gt; 에 가서 대회 단위로 들어가면 보통 제가 올려놓은 코드를 볼 수 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;recent-updates&quot;&gt;Recent Updates&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;2021 UCPC에 (팀명은 미정) 참여할 예정입니다. 현재 계획된 팀원은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dlwocks31&lt;/code&gt; 과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt; 로, dlwocks31은 지난 2년간 PS를 같이 돌아왔었고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gyuni&lt;/code&gt;님과는 2019 UCPC쯤에 팀연습 스파링(?) 으로 만나본적이 있습니다.&lt;/li&gt;
-  &lt;li&gt;2021 SCPC도 일단은 출전합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;rounds&quot;&gt;Rounds&lt;/h2&gt;
-&lt;h3 id=&quot;atcoder-beginner-round-208&quot;&gt;Atcoder Beginner Round 208&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://atcoder.jp/contests/abc208/tasks&quot;&gt;라운드 링크&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;420등, +4 (1840 -&amp;gt; 1844).&lt;/li&gt;
-  &lt;li&gt;D번까지 무난하게 풀었는데 E번 구현에서 너무 심하게 말렸습니다. 딱히 재밌지는 않고… F번은 좀 재밌는 수학문제같던데 E에 말려서 읽어보지도 못했네요.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;virtual-codeforces-round-490-div3&quot;&gt;(Virtual) Codeforces Round 490 (Div.3)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;E번이 좀 재밌는 문제였습니다. 나머지는 딱히.&lt;/li&gt;
-  &lt;li&gt;Directed Graph가 주어지고, 정점 $s$가 있어서 여기서 모든 점이 도달가능하기 위해 최소 개수의 간선을 추가하는 문항입니다. $n, m$은 5천으로 $O(nm)$ 풀이가 무난한 정도 크기.&lt;/li&gt;
-  &lt;li&gt;모든 점에서 BFS를 돌아서 도달가능한 점들을 미리 계산하여, 각 점에서 도달가능한 집합 $R_i$를 들고있기로 합시다. 이제, $s$에서 도달 불가능한 점들을 $T$라고 하고, 어차피 도달가능한 점들은 의미가 없으므로 $R_i$ 대신 $R_i \cap T$를 생각함으로써 모든 $R_i \subset T$가 되게 합니다. 그러면 $R_i$들 중 최소 개수의 집합으로 $T$를 덮는 문제가 됩니다.&lt;/li&gt;
-  &lt;li&gt;이는 set cover라는 매우 유명한 NP-complete 문제이므로 당연히 그대로는 풀 수 없습니다. 그러나, $R_i$들에 대해 순서가 존재함을 기억합시다.&lt;/li&gt;
-  &lt;li&gt;$a$에서 $b$로 갈 수 있다면, $R_a$는 $R_b$를 포함합니다.&lt;/li&gt;
-  &lt;li&gt;따라서, 서로 도달가능한 점들을 묶고 나면, 남은 $R$들은 set inclusion에 의해 어떤 partial order를 이룹니다.&lt;/li&gt;
-  &lt;li&gt;어차피 점 한개를 먹는다면, partial order의 체인을 생각할때 무조건 각 체인의 가장 위에 있는 점들을 먹는것이 이득입니다.&lt;/li&gt;
-  &lt;li&gt;이들을 어떻게 구분할 수 있을까요? 가장 간단한 방법은, $R_i$ 들 중 큰 것부터 먹으면 됩니다. 체인의 머리는 그 아래 노드들보다 크므로, 이렇게 하면 머리를 안 먹은 체인에서 아래 노드를 먹을 일은 없습니다. 머리를 이미 먹었는데 그 아래 노드를 먹는 일을 방지하기 위해, 노드를 먹으면서 그 노드에서 도달가능한 ($R_i$에 포함된) 모든 정점들은 지웁니다.&lt;/li&gt;
-  &lt;li&gt;이 방법이 왜 정당한지 증명은 어렵지 않습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://codeforces.com/contest/999/submission/122143517&quot;&gt;구현 링크&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;별개로, SCC를 잘 활용하면 직접 모든 점에서 BFS를 돌지 않는 Linear time 풀이가 있다고 합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problems&quot;&gt;Problems&lt;/h2&gt;
-&lt;p&gt;집나간 실력을 되찾기 위한 목적으로 몇개 밀었습니다. 주로 세그먼트 트리 문제를 밀기로 했습니다 :)&lt;/p&gt;
-
-&lt;p&gt;세그먼트 트리 구현은 재귀 트리와 비재귀 트리를 섞어 쓰는 편입니다. 간단히 논의하자면, 양쪽에는 다음과 같은 장단점이 있습니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;재귀트리는 밑바닥부터 제가 짰기 때문에, 동작을 보다 정확하게 이해하고 있어 변형문제를 풀기에 편합니다.&lt;/li&gt;
-  &lt;li&gt;재귀트리가 근본적으로 (Fundamentally의 좋은 번역어가 떠오르지 않네요) 좀더 직관적입니다.&lt;/li&gt;
-  &lt;li&gt;반면, 비재귀트리는 확실히 더 빠릅니다. 상수가 영향을 주는 문제를 많이 본적은 없지만, $O(n \log n)$ 솔루션이 있는 문제의 경우 가끔 빠른 $O(n \log^2 n)$은 통과하고 똑같은 솔루션에 상수가 크면 짤립니다. 이떄 가끔 유용합니다.&lt;/li&gt;
-  &lt;li&gt;비재귀트리는 널리 알려진 구현체인 &lt;a href=&quot;https://codeforces.com/blog/entry/18051&quot;&gt;Efficient and Easy Segment Trees&lt;/a&gt; 를 가져와서 조금 고쳐 쓰고 있습니다. 많은 사람들이 공유하는 라이브러리를 쓴다는 것은 그 자체로 장점입니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;제가 쓰는 재귀트리 구현체는 쿼리를 $[l, r]$ 에다 날리고, 비재귀트리 구현체는 가져온 코드라서 $[l, r)$ 에다 날립니다. 혹시 제 코드를 보실일이 있다면 참고해주세요..? ㅋㅋㅋ&lt;/p&gt;
-
-&lt;h3 id=&quot;icpc-mid-atlantic-2006-boj-1849-순열&quot;&gt;ICPC Mid Atlantic 2006, BOJ 1849 순열&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;난이도 : Platinum 4&lt;/li&gt;
-  &lt;li&gt;$1, 2, \dots n$ 의 permutation을 찾는 문제인데, 각 $i$에 대해, $i$ 앞에 있는 수들 중 $i$보다 큰 수의 개수 $A_i$ 가 주어집니다.&lt;/li&gt;
-  &lt;li&gt;기본적인 아이디어는, 각 $i$가 들어갈 위치를 찾아주는 것입니다. 1을 제외한 모든 수가 1보다 크기 때문에, $A_1$이 주어지면 1이 들어가야 할 위치를 그냥 알 수 있습니다. 1을 찾고 나면, 2는 남은 자리들 중 $A_2$번째 자리에 들어가야 한다는 것을 어렵지 않게 알 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;결국은 $1, 2, \dots n$ 에 대해, 이 집합에서 수를 하나 뽑아내고, 남아 있는 수들 중 $k$번째를 빠르게 구하는 자료구조가 필요합니다.&lt;/li&gt;
-  &lt;li&gt;Order statistics tree를 이용하여 $O(n \log n)$에 쉽게 해결할 수 있고, segment tree로도 같은 복잡도로 구현할 수 있습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;cerc-2010d-boj-3429-방어선&quot;&gt;CERC 2010D, BOJ 3429 방어선&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;난이도 : Platinum 4&lt;/li&gt;
-  &lt;li&gt;수열 $A_i$가 하나 주어지고, 수열에서 &lt;strong&gt;최장 길이의 연속하는 증가 부분&lt;/strong&gt; 을 찾는 문제입니다. 단, 딱 한 번 원래 수열에서 연속한 부분 하나를 들어낼 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;예를 들어, 5, 3, 4, 9, 2, 8, 6, 7, 1 에서 (9, 2, 8) 부분을 떼어내고 가운데 3, 4, 6, 7을 취하는 식입니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DP1[i]&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DP2[i]&lt;/code&gt; 를 각각 $i$번째를 오른쪽 / 왼쪽 끝으로 하는 최장 길이의 연속하는 증가 부분이라고 합시다. 이제, 우리가 원하는 값은 모든 $i &amp;lt; j$, $A_i &amp;lt; A_j$에 대해, $D_1(i) + D_2(j)$ 를 계산하여 이를 maximize하는 것입니다.&lt;/li&gt;
-  &lt;li&gt;위 표현을 Naive하게 계산하려고 시도하면 ‘모든 $i &amp;lt; j$, $A_i &amp;lt; A_j$’ 에서 이미 $O(n^2)$ 시간이 걸립니다.&lt;/li&gt;
-  &lt;li&gt;대신, $A_i$가 큰 것부터 $D_2(i)$의 값들을 세그먼트 트리 같은 자료구조에 업데이트하고, 여기에 $[i, n]$ 구간의 최댓값을 쿼리하는 식으로 생각하면 $O(n \log n)$ 시간에 문제를 해결할 수 있습니다. 코어 로직의 코드는…
-    &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;modify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'\n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i].second&lt;/code&gt; 는 $A_i$ 순으로 정렬한 후 다시 인덱스를 가져오기 위함입니다. 대략적인 업데이트 순서는 바로 눈으로 보는 대로입니다.&lt;/li&gt;
-  &lt;li&gt;주의할 점은, $A_i = A_j$ 인 $i, j$가 없음이 보장되어있지 않기 때문에, 쿼리할 때 업데이트 순서를 조심해야 합니다. $A_i$가 같을 때 뭐부터 $D_2(i)$ 를 세그트리에 넣어주는지가 중요한데, $A_i = A_j$이면 $D_2(i)$의 유무가 후속하는 $j$ 쿼리에 영향을 줄 수 없도록, 왼쪽부터 업데이트해야 합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ucpc-2018-예선f-boj-15899-트리와-색깔&quot;&gt;UCPC 2018 예선F, BOJ 15899 트리와 색깔&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;난이도 : Platinum 2&lt;/li&gt;
-  &lt;li&gt;트리의 각 정점이 1부터 $C$ 사이의 색깔을 가지고 있고, $f(v, c)$ 를 $v$를 루트로 하는 서브트리에서 색깔이 $c$이하인 정점의 개수로 정의할 때 이를 빨리 계산하는 문제입니다.&lt;/li&gt;
-  &lt;li&gt;Euler Tour 라는 테크닉을 이용, 트리를 배열로 펴 주면 서브트리에 대한 쿼리가 우리가 잘 이해하고 있는 구간에 대한 쿼리로 바뀝니다.&lt;/li&gt;
-  &lt;li&gt;쿼리를 오프라인 처리해서, 색깔이 작은 쿼리부터 처리하겠습니다.&lt;/li&gt;
-  &lt;li&gt;이제, 색깔이 작은 것부터 업데이트하면서 중간중간 타이밍이 될때마다 쿼리를 처리해 주면 됩니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;boj-14287-회사-문화-3&quot;&gt;BOJ 14287 회사 문화 3&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;난이도 : Platinum 4&lt;/li&gt;
-  &lt;li&gt;위 문제와 똑같이 Euler Tour 를 이용하여 트리를 배열로 펴고&lt;/li&gt;
-  &lt;li&gt;칭찬받은 노드에 값을 더한 다음&lt;/li&gt;
-  &lt;li&gt;쿼리가 들어오면 그 노드의 서브트리가 받은 칭찬의 값을 합하면 끝입니다.&lt;/li&gt;
-  &lt;li&gt;구현이 매우 단순해서, 오일러투어 구현을 확인하기에 적절합니다.&lt;/li&gt;
-  &lt;li&gt;나름대로 깨끗하게 구현하려고 노력한 &lt;a href=&quot;https://www.acmicpc.net/source/30906316&quot;&gt;링크&lt;/a&gt; 참고.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;bapc-2005e-boj-5419-북서풍&quot;&gt;BAPC 2005E, BOJ 5419 북서풍&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;난이도 : Platinum 4&lt;/li&gt;
-  &lt;li&gt;전형적인 ‘스위핑 + 세그트리’ 입니다.&lt;/li&gt;
-  &lt;li&gt;문제를 단순화하기 위해, 좌표평면에 N개의 점이 있고, 남동쪽 대신 북동쪽으로 간다고 생각해 봅시다. 좌표압축을 한다음 Y좌표들을 뒤집어 버리면 이렇게 만드는 것은 어렵지 않게 가능합니다.&lt;/li&gt;
-  &lt;li&gt;이제, 각 점들을 $(x_i, y_i)$ 라고 하고, 1차원 세그먼트 트리 하나를 만듭니다. 각 점을 세그트리의 $x_i$ 번 위치에 추가할 것입니다.&lt;/li&gt;
-  &lt;li&gt;우리가 원하는 것은, $(x_i, y_i)$에 서서 세그트리에 $[x_i, \infty]$ 쿼리를 날렸을때 여기서부터 북동쪽으로 갈수있는 점의 개수를 얻는 것입니다. 그러나 우리의 세그트리는 $y$좌표를 기억하지 않고 그냥 무작정 점의 개수를 세기 때문에, $y$좌표는 우리가 스위핑해야 합니다.&lt;/li&gt;
-  &lt;li&gt;$y$좌표가 큰 순서대로, 즉 위에서부터 세그트리에 점을 하나씩 넣으면서, 이 점까지 넣은 다음 동쪽을 바라보면 나보다 아래 (y좌표 기준) 점들을 아직 아예 추가가 되지 않았기 때문에 북동쪽 점들만 보이게 됩니다.&lt;/li&gt;
-  &lt;li&gt;주의할 점은, 점을 정확히 세기 위해서는 $y$좌표가 같은 점들은 $x$좌표가 큰 쪽부터 처리해야 합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;sccc-2019e-boj-17131-여우가-정보섬에-올라온-이유&quot;&gt;SCCC 2019E, BOJ 17131 여우가 정보섬에 올라온 이유&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;난이도 : Platinum 4&lt;/li&gt;
-  &lt;li&gt;바로 위 문제와 거의 똑같습니다.&lt;/li&gt;
-  &lt;li&gt;$y$ 좌표 순서대로 내려오면서 업데이트하고 쿼리합니다. 이문제는 $[0, x_i - 1]$ 과 $[x_i+1, \infty]$ 를 쿼리해서 곱하는 방식입니다.&lt;/li&gt;
-  &lt;li&gt;딱 하나 주의할 점은, 위 문제와는 달리 $y$좌표가 같은 점들을 업데이트하는 순서를 어떻게 줘도 꼬이게 됩니다. $y$좌표가 같은 점들을 따로 기억해 놨다가 한번에 업데이트해야 합니다. 코드를 참고해 주세요.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;boj-16993-연속합과-쿼리&quot;&gt;BOJ 16993, 연속합과 쿼리&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;난이도 : Platinum 2&lt;/li&gt;
-  &lt;li&gt;연속합과 쿼리는 소위 ‘금광세그’ 를 이용하여 풀 수 있음이 매우 잘 알려져 있습니다.&lt;/li&gt;
-  &lt;li&gt;세그먼트 트리를 사용하되, 다음과 같은 정보들을 저장합니다. 세그트리의 한 노드가 구간 $[l, r]$ 에 대응한다는 사실을 기억합시다.
-    &lt;ul&gt;
-      &lt;li&gt;자기가 담당하는 구간의 왼쪽 끝에서 시작해서 얻을 수 있는 최대 구간합&lt;/li&gt;
-      &lt;li&gt;자기가 담당하는 구간의 오른쪽 끝에서 시작해서 얻을 수 있는 최대 구간합&lt;/li&gt;
-      &lt;li&gt;자기가 담당하는 구간의 최대 구간합&lt;/li&gt;
-      &lt;li&gt;자기가 담당하는 구간의 합&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;이 네 정보를 ls, rs, ms, s라고 하면, 두 노드를 합칠 때 다음과 같이 생각하면 됩니다.
-    &lt;ul&gt;
-      &lt;li&gt;노드 $a$, $b$를 합쳐서 $e$로 만들 때,&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e.s&lt;/code&gt; 는 자명합니다.&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e.ls&lt;/code&gt; 는, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e&lt;/code&gt;의 왼쪽 끝에서 시작해야 하므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a.ls&lt;/code&gt; 가 답일 수도 있고, a를 다 먹고 b의 왼쪽 일부를 먹는 경우가 답일 수도 있습니다. 후자는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a.s + b.ls&lt;/code&gt; 가 최대일 것입니다 (ls의 정의). 따라서, 두 값 중 최대를 취합니다.&lt;/li&gt;
-      &lt;li&gt;같은 원리로, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e.rs&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b.rs&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b.s + a.rs&lt;/code&gt; 중 큰 값을 고르면 됩니다.&lt;/li&gt;
-      &lt;li&gt;마지막은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e.ms&lt;/code&gt; 입니다. 이는 다시 경우를 나누어 생각하면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;구간에 포함된 답을 갖거나 (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a.ms&lt;/code&gt;), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b&lt;/code&gt;구간에 포함된 답을 갖거나 (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b.ms&lt;/code&gt;), 두 구간에 걸친 답을 갖거나 (이 답이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a.rs + b.ls&lt;/code&gt;가 최선임을 관찰합니다) 세가지 경우 (대칭을 제외하면 두가지) 밖에 없습니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;따라서, 상수배의 시간을 지불하여 모든 정보를 관리할 수 있고, 연속합 쿼리를 똑같이 날려줄 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;두 노드를 합칠때, 단순합에서는 좌우가 상관없지만 이런 특수한 연산을 할 때는 좌우를 조심해야 합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;review&quot;&gt;Review&lt;/h2&gt;
-&lt;p&gt;세그먼트 트리 문제를 오랜만에 밀면서 자료구조에 대한 이해를 되짚었다는 정도의 의의가 있는것 같습니다.&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="algorithms" /><category term="weekly-ps" /><summary type="html">Contents</summary></entry></feed>
+&lt;p&gt;두 그래프 $G_1 = (V_1, E_1), G_2 = (V_2, E_2)$ 가 주어졌을 때, 우리는 두 그래프의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유사도&lt;/code&gt; 를 측정하는 어떤 좋은 메트릭을 갖고 싶습니다. 이 메트릭이 있으면&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cs-adventure" /><category term="graph theory" /><summary type="html">Contents</summary></entry></feed>

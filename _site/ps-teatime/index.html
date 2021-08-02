@@ -325,7 +325,11 @@
         
         <p>하루에 한문제씩 PS 풀만한거 공유하는 (요새는 그거보단 그냥 대회 시즌 되면 다른 얘기가 더 많지만) 오픈채팅방이 있는데, 뭔가 매일 하나씩 풀이를 쓰면 이런거 쓰는 연습도 될거같고 해서 매일 풀고 정말 간단하게만 정리하려고 합니다.</p>
 
-<p>각 문제의 풀이는 접어놓은 부분을 클릭해서 확인할 수 있습니다.</p>
+<ul>
+  <li>각 문제의 풀이는 접어놓은 부분을 클릭해서 확인할 수 있습니다.</li>
+  <li>구현 코드는 (거의 모두) <a href="https://github.com/gratus907/Gratus_PS">Github Repo</a> 에서 볼 수 있습니다.</li>
+  <li>접어놓은 부분을 폈을때 처음에 출처가 나오면 레포의 해당 대회를 찾아가면 되고, 출처가 없으면 BOJ Originals 에 들어 있습니다 (ex : 수쿼 시리즈 등)</li>
+</ul>
 
 <details>
   <summary> <b>2021년 7월 30일 : <a href="http://boj.kr/14370">BOJ 14370</a> 전화번호 수수께끼 (Large)</b> </summary>
@@ -345,7 +349,7 @@
 </details>
 
 <details>
-  <summary> <b>2021년 7월 31일 : <a href="http://boj.kr/5529">BOJ 05529</a> 저택</b> </summary>
+  <summary> <b>2021년 7월 31일 : <a href="http://boj.kr/5529">BOJ 5529</a> 저택</b> </summary>
   <ul>
     <li>JOI 2013 Problem 3 現代的な屋敷 (Modern Mansion)</li>
     <li>난이도 Platinum V</li>
@@ -356,6 +360,20 @@
     <li>스위치가 있으면 스위치를 눌러 원래의 집과 거울세계를 오갈수 있되, 비용 1을 지불하면 됩니다.</li>
     <li>시작점 (1, 1) 이나 끝점 (M, N) 에 스위치가 있는 경우를 특히 주의해야 합니다. 특히, 앞서 스위치가 없더라도 (1, 1) 은 스위치가 있다고 간주했는데, 이 가상의 스위치를 누르고 가로방향으로 달려갈 수 없으므로 예외처리해야 합니다.</li>
     <li>끝점의 경우, 원래 집의 끝점 뿐 아니라 거울세계의 끝점에 도착할 수도 있음을 주의해야 합니다.</li>
+  </ul>
+</details>
+
+<details>
+  <summary> <b>2021년 8월 2일 : <a href="http://boj.kr/22357">BOJ 22357</a> 경품 추첨</b> </summary>
+  <ul>
+    <li>UCPC 2021 예선 G번</li>
+    <li>난이도 Platinum V</li>
+    <li>$a_x + b_y = a_z + b_w$ 이기 위해서는 $a_x - a_z = b_w - b_y$ 이면 됩니다.</li>
+    <li>따라서, $n$개짜리 수열 $k$개를 만들되, 각 수열에서 두 수를 뽑아서 얻는 차 $\binom{n}{2}$ 개를 모두 만들어 볼 때 서로 겹쳐서는 안 됩니다.</li>
+    <li>$2000 &lt; p_i \leq 2500$ 을 만족하는 $k$ ($k \leq 30$)개의 소수 $p_1, \dots p_k$ 를 뽑습니다.</li>
+    <li>$i$번째 수열을 $p_i, 2p_i, 3p_i, \dots 2000p_i$ 로 잡습니다.</li>
+    <li>이제, $i$번째 수열에서, 두 수의 차는 항상 $p_i$의 배수입니다. 특히 $kp_i$, $k \leq 2000$ 입니다.</li>
+    <li>$up_i = vp_j$ 이고, $u, v \leq 2000$ 이기 위해서는, $u$ 가 $p_j$의 배수이고 $v$가 $p_i$의 배수여야 하는데 $p$ 들은 2000을 넘으므로 이는 불가능합니다.</li>
   </ul>
 </details>
 
@@ -416,7 +434,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 784f0e1ed9e4b9b092979f8a98ccc751f850bc16</div>
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 3895bdd7bba51b7c10f523b438bfa046146eb119</div>
 
       </footer>
     </div>

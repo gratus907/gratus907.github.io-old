@@ -1,4 +1,341 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-02T23:16:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">8월 1주차 Weekly PS</title><link href="http://localhost:4000/ps_weekly/ps-weekly-21Aug1/" rel="alternate" type="text/html" title="8월 1주차 Weekly PS" /><published>2021-08-02T00:00:00+09:00</published><updated>2021-08-02T00:00:00+09:00</updated><id>http://localhost:4000/ps_weekly/ps-weekly-21Aug1</id><content type="html" xml:base="http://localhost:4000/ps_weekly/ps-weekly-21Aug1/">&lt;div id=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-03T20:33:11+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">서울대학교 컴퓨터공학부 전공과목 (주관적인) 소개</title><link href="http://localhost:4000/snu-courses/SNU-courses-CS/" rel="alternate" type="text/html" title="서울대학교 컴퓨터공학부 전공과목 (주관적인) 소개" /><published>2021-08-03T00:00:00+09:00</published><updated>2021-08-03T00:00:00+09:00</updated><id>http://localhost:4000/snu-courses/SNU-courses-CS</id><content type="html" xml:base="http://localhost:4000/snu-courses/SNU-courses-CS/">&lt;div id=&quot;toc&quot;&gt;
+  &lt;p&gt;Contents&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1학년-과목&quot; id=&quot;markdown-toc-1학년-과목&quot;&gt;1학년 과목&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#컴퓨터의-개념-및-실습&quot; id=&quot;markdown-toc-컴퓨터의-개념-및-실습&quot;&gt;컴퓨터의 개념 및 실습&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#프로그래밍-연습&quot; id=&quot;markdown-toc-프로그래밍-연습&quot;&gt;프로그래밍 연습&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#이산수학&quot; id=&quot;markdown-toc-이산수학&quot;&gt;이산수학&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2학년-과목&quot; id=&quot;markdown-toc-2학년-과목&quot;&gt;2학년 과목&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#컴퓨터-프로그래밍&quot; id=&quot;markdown-toc-컴퓨터-프로그래밍&quot;&gt;컴퓨터 프로그래밍&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#논리설계&quot; id=&quot;markdown-toc-논리설계&quot;&gt;논리설계&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#자료구조&quot; id=&quot;markdown-toc-자료구조&quot;&gt;자료구조&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#컴퓨터구조&quot; id=&quot;markdown-toc-컴퓨터구조&quot;&gt;컴퓨터구조&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#프로그래밍-언어&quot; id=&quot;markdown-toc-프로그래밍-언어&quot;&gt;프로그래밍 언어&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#전기전자회로&quot; id=&quot;markdown-toc-전기전자회로&quot;&gt;전기전자회로&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-4학년-과목&quot; id=&quot;markdown-toc-3-4학년-과목&quot;&gt;3-4학년 과목&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#알고리즘&quot; id=&quot;markdown-toc-알고리즘&quot;&gt;알고리즘&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#양자-컴퓨팅의-기초&quot; id=&quot;markdown-toc-양자-컴퓨팅의-기초&quot;&gt;양자 컴퓨팅의 기초&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#데이터베이스&quot; id=&quot;markdown-toc-데이터베이스&quot;&gt;데이터베이스&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#소프트웨어-개발의-원리-및-실제&quot; id=&quot;markdown-toc-소프트웨어-개발의-원리-및-실제&quot;&gt;소프트웨어 개발의 원리 및 실제&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#시스템-프로그래밍&quot; id=&quot;markdown-toc-시스템-프로그래밍&quot;&gt;시스템 프로그래밍&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#하드웨어-시스템-설계&quot; id=&quot;markdown-toc-하드웨어-시스템-설계&quot;&gt;하드웨어 시스템 설계&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#창의적-통합-설계&quot; id=&quot;markdown-toc-창의적-통합-설계&quot;&gt;창의적 통합 설계&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#대학원-과목&quot; id=&quot;markdown-toc-대학원-과목&quot;&gt;대학원 과목&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#계산이론&quot; id=&quot;markdown-toc-계산이론&quot;&gt;계산이론&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;가장 쓸 말이 많은 3설계 과목 (소개원실, 하시설, 창통설) 은 별개의 글로 남길 예정입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;1학년-과목&quot;&gt;1학년 과목&lt;/h2&gt;
+&lt;h3 id=&quot;컴퓨터의-개념-및-실습&quot;&gt;컴퓨터의 개념 및 실습&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2018년 1학기 (1학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;굉장한 과목입니다. 들을 때는 몰랐는데, 다른 학교의 1학년 첫 컴공과 기초 과목이 보통 파이썬이나 C를 가르치는데 비해 이 과목은 무려 컴퓨터구조에 대해 배웁니다. LC-3라는 toy computer의 어셈블리는 물론, 기계어로 직접 뭔가를 짜게 합니다.&lt;/li&gt;
+  &lt;li&gt;이게 무슨 말이냐면, 보통 C를 배운 후 어셈블리로 넘어가서 C를 통해 어셈블리와 컴퓨터 구조를 이해하는게 일반적인 테크지만, 저희는 반대로 컴퓨터의 폰 노이만 구조와 Program counter, memory model을 먼저 배운 뒤, 어셈블리 (진짜 어셈은 아니지만) 단계에서 이를 이해해보고, 거꾸로 C를 그 위에서 쌓아 나갑니다. 이렇게 배우면 포인터가 안 어렵다는 정도? 장점이 있는것 같습니다.&lt;/li&gt;
+  &lt;li&gt;힘들었지만 재밌었습니다. A-인가? 받았습니다. 저는 입학하고 프로그래밍이라는걸 처음 배워본지라… 이때까지는 과고 친구들과 경쟁자체가 안 되더군요 ㅋㅋ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;프로그래밍-연습&quot;&gt;프로그래밍 연습&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2018년 2학기 (2학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;C언어의 기초를 배웁니다.&lt;/li&gt;
+  &lt;li&gt;기말프로젝트가 카드 뒤집으면서 기억력으로 페어 맞추는 게임 (게임 이름을 까먹었네요) 만드는 거였는데, 재밌었습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;이산수학&quot;&gt;이산수학&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2021년 1학기 (7학기차) 에 수강했습니다. (왜?? ㅋㅋㅋ)&lt;/li&gt;
+  &lt;li&gt;Logic, Group, Probability, Graph, Algorithm 등 종횡무진 뛰어다니며 넓고 얕게 배웁니다.&lt;/li&gt;
+  &lt;li&gt;저는 CS/MATH이고 7학기차였으므로 저는 이 과목에서 배우는 모든 내용을 다른 과목에서 배워본 상태였습니다. 처음 듣는 컴공 전공이라면 증명이나 논증을 체계적으로 하는 법을 익히는 좋은 과목이라고 생각합니다. 저는 그 역할을 해석개론이 대신해 줬습니다.&lt;/li&gt;
+  &lt;li&gt;너무 늦게 들어서 쉬웠습니다. 1학년 때였다면 느낌이 좀 달랐을것 같습니다. A+.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2학년-과목&quot;&gt;2학년 과목&lt;/h2&gt;
+&lt;h3 id=&quot;컴퓨터-프로그래밍&quot;&gt;컴퓨터 프로그래밍&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2019년 1학기 (3학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;객체지향 프로그래밍, 객체지향의 개념에 대해 배웁니다.&lt;/li&gt;
+  &lt;li&gt;기말 과제로 체스를 구현하는 과제가 있었습니다. 처음 하면서 꽤 어려웠던 기억이 있습니다.&lt;/li&gt;
+  &lt;li&gt;이런걸 익히려면 해보는 방법밖에 없다는 말을 체감하게 됩니다. 코딩을 하다보면 아 이게 그런 말이구나 할 때가 있습니다. A+.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;논리설계&quot;&gt;논리설계&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2019년 1학기 (3학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;Boolean Algebra와 카르노 맵으로 시작해서, 논리 게이트, Adder 등 간단한 논리 회로에 대해 배웁니다. 끝부분에는 FSM을 다룹니다.&lt;/li&gt;
+  &lt;li&gt;마지막에는 베릴로그로 CPU 짜는 과제가 있었습니다.&lt;/li&gt;
+  &lt;li&gt;강의가 정말 재밌고 흡입력있었지만 저는 내용에서 고통받았습니다.&lt;/li&gt;
+  &lt;li&gt;Verilog 3부작 중 1부인데, 저는 정말 힘들었습니다. 저는 Verilog와 진짜 안 맞는다는걸 깨달았습니다. B+.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;자료구조&quot;&gt;자료구조&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2019년 2학기 (4학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;저는 입학하자마자 SNUPS에서 kipa00님한테 PS를 배우면서 C++를 익히는 것으로 시작해서, PS를 꽤 열심히 했었기 때문에 이때는 블루~퍼플 근처의 실력이었습니다. (지금도 퍼플을 못 벗어나고 있네요 ㅋㅋ) 2년 더 이때처럼 Training했으면 제가 PS를 더 잘 했을까요? 모르겠네요…&lt;/li&gt;
+  &lt;li&gt;가장 집중적으로 PS를 공부했던 시점이라서 자료구조는 쉽게 공부했습니다. A+.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;컴퓨터구조&quot;&gt;컴퓨터구조&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2019년 2학기 (4학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;컴퓨터공학이 뭔지 알기 위해 딱 2개의 수업만 들을수 있다면 저는 알고리즘과 컴퓨터구조를 뽑겠습니다. 컴퓨터구조에서는 논설의 끝부분을 시작으로, CPU의 내부 구조, Pipelining, Memory Hierarchy, 멀티코어와 멀티스레드 등을 다룹니다.&lt;/li&gt;
+  &lt;li&gt;컴퓨터 자체에 대해 가장 많은 내용을 배울 수 있습니다. 언젠가 고급 컴퓨터 구조를 듣고 싶은데 여력이 될지 모르겠습니다.&lt;/li&gt;
+  &lt;li&gt;Verilog로 파이프라이닝이 있는 CPU를 짜는 과제가 나왔었는데, 여기서 거의 0점에 가까운 점수를 받았습니다. 이 과제가 아니었다면 나머지는 A+를 충분히 받을 수 있는 성적이었는데 이 과제 하나 때문에 A0를 받았습니다. Verilog는 너무 어려워요…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;프로그래밍-언어&quot;&gt;프로그래밍 언어&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2019년 2학기 (4학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;OCaml로 함수형 프로그래밍, 메모리 관리, 재귀 호출 등 PL의 핵심 아이디어들을 배웁니다.&lt;/li&gt;
+  &lt;li&gt;인터프리터 만드는 과제가 꽤 많은데, 과제가 재밌지만 오래 걸렸습니다.&lt;/li&gt;
+  &lt;li&gt;OCaml 프로그래밍이 굉장히 생소했습니다. 그후로 한번도 안써서 이제는 많이 잊어버렸습니다.&lt;/li&gt;
+  &lt;li&gt;과제만 잘 하면 되는, 시험 없는 꿀과목입니다만 시험이 없어서 공부를 덜 한것 같기는 합니다. 학점은 A+ 받았습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;전기전자회로&quot;&gt;전기전자회로&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2019년 2학기 (4학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;일반적인 전기전자회로 수업입니다.&lt;/li&gt;
+  &lt;li&gt;힘들고 어려웠습니다. 돌이켜 생각해보면 내용이 막 어렵진 않았는데, 공부하기가 너무 힘들었습니다.&lt;/li&gt;
+  &lt;li&gt;B+ 받았는데, 논설이랑 이건 좀 얘기가 다릅니다. 이과목은 미적분학이나 공학수학 내용 (미방 풀기) 에 대한 기본 이해가 필요하고, 수식전개를 잘 해야 합니다. 저희과는 지금 고등학교때 문과였던 / 공학수학을 이수하지 않은 복부전생들이 많아서, 이런 과목은 엄청나게 어드밴티지가 있습니다. 그럼에도 불구하고 B+를 받았다는건 제 놀라운 실력을 imply합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-4학년-과목&quot;&gt;3-4학년 과목&lt;/h2&gt;
+&lt;p&gt;컴퓨터공학부의 경우, 3-4학년 과목 상당수가 선수관계에 있지 않고 난이도 면에서 큰 차이가 없다고 느껴 같이 서술합니다.&lt;br /&gt;
+대부분의 빡센 전필 과목이 3학년 과목이라서 그렇기도 합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;알고리즘&quot;&gt;알고리즘&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2020년 1학기 (5학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;자료구조와 같은 이유로 비교적 편하게 들었습니다.&lt;/li&gt;
+  &lt;li&gt;모든 알고리즘 강의에서 강의하는 시간복잡도, 정렬, 탐색, DP, 그리디, 그래프, 최단경로, MST까지 배웁니다.&lt;/li&gt;
+  &lt;li&gt;그 후로는 NP-Complete 문제들과 그 환원, matroid 등 재밌는 개념들을 좀 배웠습니다. 이쪽이 주력이셨던 교수님이셨기 때문에 특히 그랬던듯 합니다.&lt;/li&gt;
+  &lt;li&gt;비슷한 PS 실력의 다른 사람들에 비해, 저는 이론적인 알고리즘에 관심이 많은 편입니다. 이때쯤에는 이쪽 분야 진학을 계획하기 시작했기 때문에, PS 공부를 이 이후로는 거의 못 했습니다. 그와는 별개로 알고리즘 수업은 정말 재밌게 들었습니다.&lt;/li&gt;
+  &lt;li&gt;그리고 뭐… 어쨌든 퍼플이면 학부 알고리즘 수업은 무난하게 들을 수 있습니다. 특히 construction에 강한 사람들보다 (PS를 진짜 잘하는건 이분들입니다) 저처럼 대학와서 PS를 시작해서 academic하게 공부한 사람은 더 그렇습니다. A+ 받았습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;양자-컴퓨팅의-기초&quot;&gt;양자 컴퓨팅의 기초&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2020년 1학기 (5학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;물리학이라고는 1학년 1학기에 교양 B0 맞은 이후로 쳐다본적도 없는데, 갑자기 양자역학의 기초 원리들을 배우게 되어 어려웠습니다.&lt;/li&gt;
+  &lt;li&gt;선형대수학을 열심히 들었다면 할만하고, 그렇지 않다면 듣기 힘든 과목인것 같습니다.&lt;/li&gt;
+  &lt;li&gt;나머지 CSE 과목들과 아예 다른 트랙 위에 서 있어서, 이것만 들어도 들을만 합니다 (Lin Alg를 안다면)&lt;/li&gt;
+  &lt;li&gt;새롭고 재밌었습니다. 아예 새로운 내용을 배우는 과목은 대체로 좋아하는 편입니다. A+ 받았습니다. 코로나버프가 살짝 있었던듯 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;데이터베이스&quot;&gt;데이터베이스&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2020년 1학기 (5학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;제게는 학부 지도교수님이신 교수님께서 강의하시는 과목입니다. 상담때 정말 많은 조언을 받았기 때문에 항상 감사한 마음입니다.&lt;/li&gt;
+  &lt;li&gt;무려 JAVA로 밑바닥부터 SQL 쿼리를 파싱하고, 이를 처리하는 프로젝트가 있습니다.&lt;/li&gt;
+  &lt;li&gt;모든 DB 강의에서 배우는, DB의 원리들, SQL, DB가 가져야할 원칙 등을 배우는, standard한 수업입니다.&lt;/li&gt;
+  &lt;li&gt;공대지만 Engineering스러운 과목은 많이 듣지 못했는데, 이 과목은 좀 CS에서는 Engineering스러운 마인드의 과목이라서 나름의 재미가 있었습니다.&lt;/li&gt;
+  &lt;li&gt;하지만 프로젝트의 코딩량이 정말 충격적입니다. 저는 주언어가 C++이었고 JAVA 코딩은 컴프-자구 과제 해본게 다였기 때문에 정말 어려웠습니다. 솔직히 C++로 짰으면 짤 수 있었을것 같은데, 뭐 이건 제 코딩실력의 문제이므로 수업 자체의 난이도와는 좀 다른 얘기가 아닌가 싶습니다.&lt;/li&gt;
+  &lt;li&gt;지도교수님께서 강의하시는 과목이라서 그런지 나름 더 열심히 들었고, 재밌었지만 제 JAVA 실력에 의해 B+를 받았습니다. 그와는 별개로 여기서 배운 내용은 이후에도 많은 도움이 됩니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;소프트웨어-개발의-원리-및-실제&quot;&gt;소프트웨어 개발의 원리 및 실제&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2020년 2학기 (6학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;실제 개발의 프로세스, 디자인 패턴 등을 배우고, 팀플로 하나의 웹앱을 직접 만들어서 출시해야 하는 과목입니다.&lt;/li&gt;
+  &lt;li&gt;어느순간부터 머신러닝을 포함해야 한다는 요구조건이 붙었습니다.&lt;/li&gt;
+  &lt;li&gt;대략 5,000 단어 분량의 5부작 후기가 준비되어 있었으나, 다양한 사정으로 퇴고를 거듭한 끝에 블로그에 올리지 못했습니다.&lt;/li&gt;
+  &lt;li&gt;학교 다니는 중 가장 힘들었습니다. 4학점 과목이지만 체감 로드는 15학점 이상 됩니다. 저는 2020-1학기 전체 18학점과 이 과목 하나가 비교할 만 하다고 생각합니다.&lt;/li&gt;
+  &lt;li&gt;배우는것은 많습니다. SNULife에 있었던 강의평의 일부를 인용하며 짧은 소개를 마치겠습니다. 참고로, snulife 평점 7.8임에도 당도 1.5에 빛납니다. 
+이 강의평 이상으로 이 과목을 표현할 자신이 없습니다.&lt;br /&gt;
+&lt;strong&gt;“강의가 끝나고 나면 내가 이전의 나와는 다른 프로그래머가 된 것을 느낄 수 있습니다. 그런데 그건 이전의 내가 프로젝트 하다가 죽어서 그런겁니다.”&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;“여튼 이걸 아직 안 들었다면 마음의 준비 단단히 하시고, 윗공대 오실 떄 왠만하면 이불이나 담요 챙겨오시길 바랍니다. 파이팅.”&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;정말 많은 노력을 (15학점 분량 정도) 했고 A-를 받았습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;시스템-프로그래밍&quot;&gt;시스템 프로그래밍&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2020년 2학기 (6학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;컴퓨터구조 수업에 이어서, 컴퓨터 내부의 핵심 원리들을 배웁니다. I/O로 시작해서, Virtual memory, malloc의 원리, Pipe와 프로세스간 통신, 멀티스레딩을 배웁니다. 마지막에는 네트워크 기초를 좀 배웁니다.&lt;/li&gt;
+  &lt;li&gt;Malloc을 직접 구현하는 malloc lab이 상당히 악명 높습니다.&lt;/li&gt;
+  &lt;li&gt;굉장히 유익하고, 배우는게 많으며, 어렵지만 재밌습니다. 컴구와 함께 반드시 들어야 할 컴퓨터공학과 수업입니다. 크게 컴구/시프와 자구/알골 이렇게까지 4개만 들으면 컴공과의 코어 아이디어는 다 가져갔다고 생각합니다. 이후로는 다 개별 과목이라서요…&lt;/li&gt;
+  &lt;li&gt;소개원실 플젝이 모든것을 잡아먹어서 기말을 터트리고 A-를 받았습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;하드웨어-시스템-설계&quot;&gt;하드웨어 시스템 설계&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2021년 1학기 (7학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;FPGA 보드로 행렬곱셈을 가속해서 CNN을 빠르게 돌리는… 뭐 그런걸 합니다. 로직은 C++로 짜고, FPGA는 베릴로그를 씁니다.&lt;/li&gt;
+  &lt;li&gt;베릴로그를 정말 못 하는 제게는 너무 힘든 과목이었지만, 베릴로그 파트는 훌륭한 팀원이 멱살잡고 캐리했습니다. 그 대가로 저는 C++ 코드를 하루종일 들여다보고 포인터 연산을 열심히 해야 했지만 그래도 팀원과 제 로드 배분이 6:4 정도로 제가 조금 버스 탔다고 생각합니다. 이 은혜는 창의통합설계 때 갚아야한다고 다짐했습니다.&lt;/li&gt;
+  &lt;li&gt;짧은 후기를 블로그에 쓸 예정입니다.&lt;/li&gt;
+  &lt;li&gt;어렵지만 돌이켜보면 남은건 꽤 많습니다. 아쉬운 점은, 플젝을 한학기 내내 했음에도 실제 로드는 마지막 한주에 몰아져 있었다는 점입니다.&lt;/li&gt;
+  &lt;li&gt;선배들이 사람에 따라 0.2~0.4 소개원실이라고 조언했는데, 마지막 주가 되기 전까지는 전혀 이해를 못 했습니다. 마지막 주에는 왜 그런지 납득하긴 했지만, 그래도 저는 동의할 수 없습니다. 소개원실 로드의 1/10도 안 됩니다.&lt;/li&gt;
+  &lt;li&gt;혹시 이 글을 보는 19~학번 설컴공이라면 한번쯤 고려해보세요. FPGA같은 유망한 기술에 대해 이정도 이해를 위해 이정도 노력은 들일만한 가치가 있습니다.&lt;/li&gt;
+  &lt;li&gt;학점은 A0 받았습니다. 팀원이 한단계 정도는 버프해줬다고 생각합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;창의적-통합-설계&quot;&gt;창의적 통합 설계&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2021년 2학기 (8학기차) 에 수강예정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;대학원-과목&quot;&gt;대학원 과목&lt;/h2&gt;
+&lt;h3 id=&quot;계산이론&quot;&gt;계산이론&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2021년 2학기 (8학기차) 에 수강예정&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="snu-courses" /><summary type="html">Contents</summary></entry><entry><title type="html">서울대학교 수리과학부 전공과목 (주관적인) 소개</title><link href="http://localhost:4000/snu-courses/SNU-courses-MATH/" rel="alternate" type="text/html" title="서울대학교 수리과학부 전공과목 (주관적인) 소개" /><published>2021-08-03T00:00:00+09:00</published><updated>2021-08-03T00:00:00+09:00</updated><id>http://localhost:4000/snu-courses/SNU-courses-MATH</id><content type="html" xml:base="http://localhost:4000/snu-courses/SNU-courses-MATH/">&lt;div id=&quot;toc&quot;&gt;
+  &lt;p&gt;Contents&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1학년-과목&quot; id=&quot;markdown-toc-1학년-과목&quot;&gt;1학년 과목&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#수학-및-연습-1-고급수학-및-연습-2&quot; id=&quot;markdown-toc-수학-및-연습-1-고급수학-및-연습-2&quot;&gt;수학 및 연습 1, 고급수학 및 연습 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2학년-과목&quot; id=&quot;markdown-toc-2학년-과목&quot;&gt;2학년 과목&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#해석개론-및-연습-1&quot; id=&quot;markdown-toc-해석개론-및-연습-1&quot;&gt;해석개론 및 연습 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#선형대수학-1&quot; id=&quot;markdown-toc-선형대수학-1&quot;&gt;선형대수학 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#선형대수학-2&quot; id=&quot;markdown-toc-선형대수학-2&quot;&gt;선형대수학 2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#정수론&quot; id=&quot;markdown-toc-정수론&quot;&gt;정수론&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3학년-과목&quot; id=&quot;markdown-toc-3학년-과목&quot;&gt;3학년 과목&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#위상수학개론-1&quot; id=&quot;markdown-toc-위상수학개론-1&quot;&gt;위상수학개론 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#현대대수학-1&quot; id=&quot;markdown-toc-현대대수학-1&quot;&gt;현대대수학 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#복소변수함수론&quot; id=&quot;markdown-toc-복소변수함수론&quot;&gt;복소변수함수론&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#수치선형대수&quot; id=&quot;markdown-toc-수치선형대수&quot;&gt;수치선형대수&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4학년-과목&quot; id=&quot;markdown-toc-4학년-과목&quot;&gt;4학년 과목&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#최적화의-수학적-이론-및-계산&quot; id=&quot;markdown-toc-최적화의-수학적-이론-및-계산&quot;&gt;최적화의 수학적 이론 및 계산&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#학부-4학년-실변수함수론--대학원-실해석학&quot; id=&quot;markdown-toc-학부-4학년-실변수함수론--대학원-실해석학&quot;&gt;학부 4학년 실변수함수론 / 대학원 실해석학&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;수학과는 선수과목이 꽤 복잡한데 복전생이 듣자니 전공이랑 시간표가 겹치는게 있었어서 일부 선수과목을 좀 독학했습니다. 그것도 여기에 대략 적어넣었습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;1학년-과목&quot;&gt;1학년 과목&lt;/h2&gt;
+&lt;h3 id=&quot;수학-및-연습-1-고급수학-및-연습-2&quot;&gt;수학 및 연습 1, 고급수학 및 연습 2&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2018년 1, 2학기 (1, 2학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;미적분학 (Calculus) 와 벡터 미적분학 (Vector Calculus) 를 배웁니다.&lt;/li&gt;
+  &lt;li&gt;김홍종 교수님의 미적분학 (1, 2) 책을 배우는데, Stewart 등 미적분학 책보다는 살짝 빡셉니다.&lt;/li&gt;
+  &lt;li&gt;이 책은 각 챕터별로 부록 section이 하나씩 있는데, 고급- 과 일반- 의 차이는 이 부록을 나가느냐 안 나가느냐의 차이입니다.&lt;/li&gt;
+  &lt;li&gt;부록에 실수체계의 구성, 변분법 등 굉장히 재밌는 내용들이 많습니다.&lt;/li&gt;
+  &lt;li&gt;서울대는 입학고사 성적으로 반배정을 하고, 수및연 1에서 A+을 받으면 고급수학 및 연습 2로 바꿀 수 있습니다. 저는 이걸로 바꿔서 고수에서는 A0를 받았었습니다.&lt;/li&gt;
+  &lt;li&gt;별개로, 저는 처음에 면적분과 부피적분, 그린 정리 등을 굉장히 이해하지 못했었습니다. 이런 개념들을 이때 이해하지 못했다는 생각 자체를 잘 못했는데, 나중에 보니 좀 상태가 안 좋다는걸 복소 때 알았습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2학년-과목&quot;&gt;2학년 과목&lt;/h2&gt;
+&lt;h3 id=&quot;해석개론-및-연습-1&quot;&gt;해석개론 및 연습 1&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2019년 1학기 (3학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;본격적인 수리과학부 전공 과목입니다. 서울대에서는 원래 김성기-김도한-계승혁 교수님 저의 해석개론 (소위 김김계라 부릅니다) 을 쓰지만, 저는 영어강의를 들어서 해당사항은 없었습니다.&lt;/li&gt;
+  &lt;li&gt;미분가능성, 연속성, 리만적분 등 고등학교 미적분때부터 대충 배우면서 넘어간 개념들을 체계적으로 배웁니다.&lt;/li&gt;
+  &lt;li&gt;저는 개인적으로, 수학에 관심이 많다면 여기까지 들어보는건 정말 좋다고 생각합니다. 고등학교 미적분을 배우다보면 생기는 의문들, 대학 캘큘을 배우다보면 생길수있는 의문들이 여기까지 하면 정리가 되기 때문입니다.&lt;/li&gt;
+  &lt;li&gt;해개연 1을 들을때는 전공 수학을 공부하는 방법이 익숙하지 않아서…라기 보다는, 수학과 과목은 그냥 증명 흐름만 대략 알면 될것이라고 생각하고 연습문제를 전혀 풀어보지 않는 등 공부 방법을 잘 몰랐었습니다. 어떤 과목 (해석개론) 은 증명을 직접 써보고 손으로 공부해야 한다는걸 깨우쳐주는 계기가 되었습니다. 학점은 B+ 받았습니다.&lt;/li&gt;
+  &lt;li&gt;학점과는 별개로 수학을 더 배우고 싶다는 생각이 든 과목입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;선형대수학-1&quot;&gt;선형대수학 1&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2019년 1학기 (3학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;해석개론과 함께 수학과 전공 진입 과목입니다. 컴공과에게는 사실 꼭 필요한 과목인데, 공학수학에서 어느정도 커버를 하기는 하지만 시간의 문제로 충분하지 않기에 공대 (컴공과) 학생들도 수강하면 많은 도움이 되는것 같습니다.&lt;/li&gt;
+  &lt;li&gt;저는 영어강의를 들어서 선대1은 선대군으로 배우지 않았고 (Friedberg의 선형대수 책으로 진도를 나갔습니다), 교수님께서 학생들 다수가 공대임을 의식하신것인지 수학과스럽게 수업을 나가지는 않아서 편하게 들을 수 있었습니다.&lt;/li&gt;
+  &lt;li&gt;행렬 계산으로 시작해서, 행렬과 선형 사상의 관계, Dimension theorem, Rank 등을 배웁니다.&lt;/li&gt;
+  &lt;li&gt;학점은 A+ 받았습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;선형대수학-2&quot;&gt;선형대수학 2&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2019년 2학기 (4학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;이 수업은 한국어 수업으로 들었습니다. 유명한 이인석 교수님 저의 “선형대수와 군” 으로 나갑니다. (aka 선대군)&lt;/li&gt;
+  &lt;li&gt;Quotient space 같은걸 좀 배우고 나서, $O(n)$ 등 linear group, Bilinear form, Perp theorem 등 핵심적인 선형대수의 아이디어들을 배웁니다. Dual space 부분에서 고통받았습니다.&lt;/li&gt;
+  &lt;li&gt;이때 전공을 너무 많이 들어서 약간 overwhelm된 면이 조금 있습니다. 여기에 더해서 실수와 공부 부족으로 중간고사를 완전히 날려먹으면서 B+를 받았습니다. 중간고사 보고 드랍할지 고민을 정말 많이 했는데, 반 들었는데 드랍하기는 좀 아까웠던 기억이 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;정수론&quot;&gt;정수론&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2021년 1학기 (7학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;다만 교수님께서 원래 Cryptography를 연구하시고, Pollard-Rho 알고리즘의 발전에 지대한 공헌을 하신 등 Computational Number Theory에 가까운 분이시기 때문에 저한테는 정말 재밌는 수업이었습니다.&lt;/li&gt;
+  &lt;li&gt;수업중 Algorithmic한 부분들 - 예를들어 Lenstra의 소인수분해 등 - 에 대한 언급이 많았고, 격자이론이나 동형암호에 대한 특강 등 컴퓨터공학 전공인 저한테는 정말 배울게 많았습니다.&lt;/li&gt;
+  &lt;li&gt;PS하면서 배운 정수론을 좀더 정확히 이해할 수 있었습니다. 초반에 빠르게 일반적인 정수론의 주제들 (중국인의 나머지 정리, 페르마 소정리, 오일러 피 함수, 르장드르 기호, 이차 잉여, 디리클레 합성곱 등) 을 달린 후, 후반에는 타원곡선, 무리수의 유리근사, 소수정리 등의 재밌는 주제들을 다룹니다.&lt;/li&gt;
+  &lt;li&gt;Niven 책 연습문제가 워낙 많고 퀄리티가 좋기로 유명해서 재밌어보이는것만 풀면서도 꽤 많이 배웠습니다.&lt;/li&gt;
+  &lt;li&gt;학기 후기때는 학점 포기하고 들어야 한다고 했는데, 저거 쓰면서는 약간 미지에 대한 공포에 잡혀 있었던게 아닌가 싶습니다. 올림피아드 출신 친구들이 중간고사 때까지는 정말 잘 하지만, 그 후로는 어차피 다같이 처음 보는 내용입니다. 오히려 저는 PS와 알고리즘에 관심이 많아서 뒷부분 내용들을 재밌게 들었던지라 A+을 받을 수 있었습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3학년-과목&quot;&gt;3학년 과목&lt;/h2&gt;
+&lt;h3 id=&quot;위상수학개론-1&quot;&gt;위상수학개론 1&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2020년 1학기 (5학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;모두가 그렇듯 도넛과 커피잔이 위상동형인걸 생각하고 수업을 들으러 갔지만, 세달동안 수많은 정의들을 배웁니다. 마지막에 조금 surface의 분류에 대해 나가면서 클라인 병 등을 머릿속으로 접어보고 뚝배기와 돌이 위상동형임을 깨달을 기회가 주어집니다. 저희는 특이하게 Munkres가 아닌 Kahn 책으로 배우는데, 책이 정말 컴팩트하고 notation이 신기합니다. Product로 $\prod$ 대신 $\times$ 였나? 아무튼…&lt;/li&gt;
+  &lt;li&gt;이 과목은 정의가 너무 많고, 언어를 배우는 기분으로 접근해야 해서 꽤 힘들었습니다. 저는 온라인 수업이 이때부터 시작되었기 때문에 중간중간 멈출 수 있어 조금은 편했던 듯 한데, 실시간 강의였으면 중간에 정신이 혼미했을것 같습니다.&lt;/li&gt;
+  &lt;li&gt;증명 호흡이 긴 과목을 처음 들어 봤는데, Urysohn Lemma 증명처럼 호흡이 긴 증명을 쪼개고 쪼개면서 아이디어를 하나씩 잡아나가는 법을 익힐 수 있었던 것 같습니다.&lt;/li&gt;
+  &lt;li&gt;이때는 수학공부를 그럭저럭 열심히 해서 A+을 받았습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;현대대수학-1&quot;&gt;현대대수학 1&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2020년 1학기 (5학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;위상수학개론과 함께, 정의를 쭉 배우는 과목입니다. 학부 현대대수의 모든 아이디어는 현대대수학 2에 몰려 있다던데, 이건 아직 안 들어서 모르겠습니다. 군 환 체 등 정의, 정의, 정의, 성질 몇개, 다시 정의.&lt;/li&gt;
+  &lt;li&gt;Fraleigh의 현대대수학 책을 쓰는데, 책 자체가 좀 친절한 편이고 특히 Kahn처럼 컴팩트한 책을 보다가 이걸 보면 정말 옆에 붙어서 가르쳐주는 느낌의 책이기 때문에 조금은 편했습니다.&lt;/li&gt;
+  &lt;li&gt;학점은 A0 받았습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;복소변수함수론&quot;&gt;복소변수함수론&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2020년 1학기 (5학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;수리과학부는 타과생용 과목이 있는데, 복소함수론 1의 타과생용 에디션입니다. 실제로 다루는 내용이 많이 다른지 여부는 잘 모르겠습니다. 얘기를 들어보면 교수님에 따라 다르지만 같은 교수님께서 강의하시면 별로 많이 다르지 않은것 같기도 합니다.&lt;/li&gt;
+  &lt;li&gt;Gamelin의 complex analysis책을 배우는데, 한학기만에 달려야 하기 때문에 복소적분, 코시리만, 코시적분공식, 유수정리 등 코어한 내용들만 쭉쭉 나갑니다.&lt;/li&gt;
+  &lt;li&gt;마지막에 소수정리를 복소해석으로 증명하는 내용을 배웠는데, 굉장히 궁금했던 내용이었기때문에 정말 재밌게 들었습니다. 해석적 정수론이 대충 뭐 하는 건지 구경하는 느낌이었는데 적분이 정말 빡세더군요… ㅋㅋㅋ&lt;/li&gt;
+  &lt;li&gt;위상이나 현대는 더 위를 위한 빌드업 느낌이었는데, 이 과목은 그럭저럭 Self-contained된 내용이었기 때문에 저는 특히 재밌게 들었습니다. 복소적분을 할줄안다는게 제 앞으로의 공부에 어떤 도움이 되는지는 사실 잘 모르겠긴 합니다.&lt;/li&gt;
+  &lt;li&gt;학점은 A+ 받았습니다. 코로나버프가 살짝 있었던듯 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;수치선형대수&quot;&gt;수치선형대수&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2021년 1학기 (7학기차) 에 수강했습니다. 제가 학기 끝나고 쓴 학기 후기에서 얘기했던게 있어서 그대로 가져옵니다.&lt;/li&gt;
+  &lt;li&gt;수리과학부 수치해석 루트의 메인 과목입니다. MATLAB 또는 Python을 이용한 프로그래밍도 해야 하고, 과제의 양이 정말 충격적으로 많았는데 그만큼 많이 배웠다고 생각합니다. 중간고사 때까지는 사실 많은 내용을 어디서 주워들은 것들이라고 생각했었는데, 중간고사를 보고 딱히 그렇지 않음을 깨달은 뒤 (…) 기말고사는 열심히 공부하고 봤습니다.&lt;/li&gt;
+  &lt;li&gt;간단히 요약하자면, 행렬에 대한 알고리즘을 배우는 과목입니다. numpy의 수많은 알고리즘들을 그대로 가져다 쓸수도 있겠지만, 누군가는 그런것들을 만들어야 하니까요. 예를 들어, 1000 * 1000 행렬의 eigenvalue를 어떻게 구할지, eigenvalue 전부가 아니라 몇개만 필요하다면 어떻게 구할지… $Ax = b$는 정해진 해 $x = A^{-1} b$ 가 있지만, 세상에는 감히 역행렬을 구할 시도조차 할 수 없는 사이즈의 문제들이 있습니다. 그렇기에 iteration method 등 여러 clever 한 알고리즘들을 써야 하는데, 그런 부분들을 배웁니다.&lt;/li&gt;
+  &lt;li&gt;후반부 내용들은 굉장히 새로웠습니다.&lt;/li&gt;
+  &lt;li&gt;과제를 하다 보니 매트랩도 좀 배울 수 있었습니다. 파이썬/매트랩 선택인데 저는 파이썬을 할줄 알았지만 교재가 매트랩이라 매트랩 쓰는게 정신적으로 덜 고통스럽습니다.&lt;/li&gt;
+  &lt;li&gt;학점은 A+ 받았습니다. 졸논 주제도 이쪽이 되지 않을까 싶습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;4학년-과목&quot;&gt;4학년 과목&lt;/h2&gt;
+&lt;h3 id=&quot;최적화의-수학적-이론-및-계산&quot;&gt;최적화의 수학적 이론 및 계산&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2020년 2학기 (6학기차) 에 수강했습니다.&lt;/li&gt;
+  &lt;li&gt;중간고사 때까지는 제대로 공부를 못 했습니다. 기말고사 전에는 수학과 16학번의 지인과 함께 스터디 식으로 책에 있는 거의 모든 연습문제를 풀어봤고, 증명들 따라가 봤는데 많은 도움이 되었습니다&lt;/li&gt;
+  &lt;li&gt;Convex optimization (Boyd 저) 은 한 5주 정도 Part 1만 나갔고, 그 후에는 교수님께서 저술하신 책으로 주로 monotone operator를 이용한 내용들을 나갔습니다. (Convex도 중요하게 쓰이기는 한다) ADMM 등 알고리즘들을 엔지니어로써 사용하기는 하더라도 그 이면의 원리나 수학적인 이론, 수렴성의 증명과 조건 등등에 대해 명확하게 이해하기가 쉽지 않은데, 그런 틀을 잡을 수 있는 과목이었다고 생각합니다. 해석학적인 베이스가 조금 더 있었다면 훨씬 재밌게, 잘 들을 수 있었을 것 같다는 아쉬움은 조금 남습니다.&lt;/li&gt;
+  &lt;li&gt;SRG라고 해서, Operator를 기하로 옮겨서 놀라운 유클리드 기하의 원리들을 이용하여 수렴성을 증명하는 생전 처음 보는 내용을 배웠는데, 무려 이 과목을 강의하시는 교수님께서 연구해서 창안하신 내용입니다.&lt;/li&gt;
+  &lt;li&gt;예전에는 공부를 더 했으면 더 좋았을텐데 아쉽다는 말을 티스토리 블로그에 적었었는데, 중간고사때는 소개원실 + 시프, 기말고사는 소개원실 + 소개원실 때문에 더 하고 싶어도 할 수가 없었습니다.&lt;/li&gt;
+  &lt;li&gt;LaTeX로 필기노트를 옮긴다면 옮길 과목 1순위입니다.&lt;/li&gt;
+  &lt;li&gt;학점은 A0 받았습니다. 중간고사때 공부를 좀 더 할 수 있었으면 좋았을것 같습니다. Convex Opt의 나머지 내용은 언젠가 따로 공부해봐도 재밌을것 같습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;학부-4학년-실변수함수론--대학원-실해석학&quot;&gt;학부 4학년 실변수함수론 / 대학원 실해석학&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;두 과목을 동시에 2021년 1학기 (7학기차) 에 수강했습니다. 제가 학기 끝나고 쓴 학기 후기에서 얘기했던게 있어서 그대로 가져옵니다.&lt;/li&gt;
+  &lt;li&gt;이 과목을 추천한 수학과 지인을 거의 이틀에 한번씩 욕했지만, 돌이켜 생각해보면 수학과를 복전하면서 이정도 재미와 Challenge는 있어야 하지 않나 싶습니다. 원한다면 수치해석이나 CS스러운 수학과목만 내리 들을 수도 있었겠지만 그러자니 겹치는것도 많고… 대수랑 해석 중 하나를 골라서 좀 높은 레벨의 과목, 본전공생들 수준으로 들을 수 있는 과목을 들어보려고 했는데 해석이 되었네요.&lt;/li&gt;
+  &lt;li&gt;실해석학은 워낙 유명한 과목으로 대학원 1년차 과목임에도 학부생 수강생이 훨씬더 많고 타과생도 많습니다만 제기억에 컴공과는 저밖에 없었습니다. 주로 해석학을 배워야 하는 통계학과, (왜인지 저는 잘 모르겠지만 이론적 공부에는 필요하다고 들은거같은) 경제학과가 많았습니다.&lt;/li&gt;
+  &lt;li&gt;Graduate / Undergraduate을 나눠서 GRA / URA로 구분하자면, GRA는 루딘의 Real and Complex Analysis의 앞부분 반정도를 커버하고, URA는 Folland의 Real Analysis를 기준으로 그중 일부를 나갑니다. 두 과목의 가장 큰 차이는 ‘세팅’ 이었다고 생각하는데, GRA는 Locally Compact Hausdorff space X를 기본 세팅으로 두는데 비해 URA의 기본 세팅은 $\R$ 또는 $\R^2$ 입니다. 예를들어 Fourier Series를 이해하기 위해 URA에서는 직접 적분을 계산하고 Dirichlet Kernel, Fejer Kernel 등등을 이용하여 내용을 진행하는데 비해, GRA에서는 Hilbert space (완비내적공간)에 대한 일반적인 성질들을 공부하고 그걸 $L^2([-\pi, \pi])$ 에 적용하는 식입니다.&lt;/li&gt;
+  &lt;li&gt;그렇다보니 Measure theory, Lebesgue 적분 등을 두가지 관점에서 동시에 보면서 (뚝배기가 박살나긴 했지만) 재밌게 공부할 수 있었습니다. 종합해서 해석학에 대한 이해를 높일 수 있었다고 생각합니다.&lt;/li&gt;
+  &lt;li&gt;다만 저처럼 수학을 찍먹할 사람이면 모를까, 수학 전 분야에 대한 이해를 좀 가져야 할 수리과학 전공생들에게 권할만한 테크인지는 잘 모르겠습니다. Redundancy가 있는건 사실이니까요. 저는 복수전공자니까 전필만 듣고나면 제가 듣고싶은거 적당히 골라듣고 챙기면서 움직여도 뭐 되지 않을까요.&lt;/li&gt;
+  &lt;li&gt;Measure theory를 공부하게 된 계기는, 3학년 2학기 때 수강했던 최적화 이론입니다. 최적화 이론에서 Martingale 등 놀라운 이론들을 통해 수렴성을 얻는게 좀 있었는데, 도대체 수렴하면 수렴하는거지 Almost surely converge한다는건 무슨소리인가??? 에 대해 답할 수 있게 되었습니다. 최적화이론 수업 이후 조언을 구하였을 때, measure theory와 stochastic differential equation에 대한 공부가 최적화 분야의 엄밀한 이해에 도움이 될 것이라는 조언을 얻을 수 있었습니다.&lt;/li&gt;
+  &lt;li&gt;학점은 대학원 실해석은 A+, 학부 실변수는 A0를 받았습니다. 명확히 실해석이 더 상위 과목임에도 학점이 이렇게 된 이유는 단순히 실해석 시험이 좀더 제 스타일에 맞았기 때문입니다. ㅋㅋ!&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="snu-courses" /><summary type="html">Contents</summary></entry><entry><title type="html">8월 1주차 Weekly PS</title><link href="http://localhost:4000/ps_weekly/ps-weekly-21Aug1/" rel="alternate" type="text/html" title="8월 1주차 Weekly PS" /><published>2021-08-02T00:00:00+09:00</published><updated>2021-08-02T00:00:00+09:00</updated><id>http://localhost:4000/ps_weekly/ps-weekly-21Aug1</id><content type="html" xml:base="http://localhost:4000/ps_weekly/ps-weekly-21Aug1/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -207,344 +544,7 @@
   &lt;li&gt;전체 과정을 DFS 2번으로 해결할 수 있습니다. 두번째 BFS인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build_boo(r, p)&lt;/code&gt; 에서, child node 들 중 이미 사용한 노드를 표현하는 등 디테일은 조금 주의해야겠습니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ps_weekly" /><category term="weekly-ps" /><summary type="html">Contents</summary></entry><entry><title type="html">서울대학교 컴퓨터공학부 전공과목 (주관적인) 소개</title><link href="http://localhost:4000/snu-courses/SNU-courses-CS/" rel="alternate" type="text/html" title="서울대학교 컴퓨터공학부 전공과목 (주관적인) 소개" /><published>2021-07-24T00:00:00+09:00</published><updated>2021-07-24T00:00:00+09:00</updated><id>http://localhost:4000/snu-courses/SNU-courses-CS</id><content type="html" xml:base="http://localhost:4000/snu-courses/SNU-courses-CS/">&lt;div id=&quot;toc&quot;&gt;
-  &lt;p&gt;Contents&lt;/p&gt;
-&lt;/div&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1학년-과목&quot; id=&quot;markdown-toc-1학년-과목&quot;&gt;1학년 과목&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#컴퓨터의-개념-및-실습&quot; id=&quot;markdown-toc-컴퓨터의-개념-및-실습&quot;&gt;컴퓨터의 개념 및 실습&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#프로그래밍-연습&quot; id=&quot;markdown-toc-프로그래밍-연습&quot;&gt;프로그래밍 연습&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#이산수학&quot; id=&quot;markdown-toc-이산수학&quot;&gt;이산수학&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2학년-과목&quot; id=&quot;markdown-toc-2학년-과목&quot;&gt;2학년 과목&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#컴퓨터-프로그래밍&quot; id=&quot;markdown-toc-컴퓨터-프로그래밍&quot;&gt;컴퓨터 프로그래밍&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#논리설계&quot; id=&quot;markdown-toc-논리설계&quot;&gt;논리설계&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#자료구조&quot; id=&quot;markdown-toc-자료구조&quot;&gt;자료구조&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#컴퓨터구조&quot; id=&quot;markdown-toc-컴퓨터구조&quot;&gt;컴퓨터구조&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#프로그래밍-언어&quot; id=&quot;markdown-toc-프로그래밍-언어&quot;&gt;프로그래밍 언어&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#전기전자회로&quot; id=&quot;markdown-toc-전기전자회로&quot;&gt;전기전자회로&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3-4학년-과목&quot; id=&quot;markdown-toc-3-4학년-과목&quot;&gt;3-4학년 과목&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#알고리즘&quot; id=&quot;markdown-toc-알고리즘&quot;&gt;알고리즘&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#양자-컴퓨팅의-기초&quot; id=&quot;markdown-toc-양자-컴퓨팅의-기초&quot;&gt;양자 컴퓨팅의 기초&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#데이터베이스&quot; id=&quot;markdown-toc-데이터베이스&quot;&gt;데이터베이스&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#소프트웨어-개발의-원리-및-실제&quot; id=&quot;markdown-toc-소프트웨어-개발의-원리-및-실제&quot;&gt;소프트웨어 개발의 원리 및 실제&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#시스템-프로그래밍&quot; id=&quot;markdown-toc-시스템-프로그래밍&quot;&gt;시스템 프로그래밍&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#하드웨어-시스템-설계&quot; id=&quot;markdown-toc-하드웨어-시스템-설계&quot;&gt;하드웨어 시스템 설계&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#창의적-통합-설계&quot; id=&quot;markdown-toc-창의적-통합-설계&quot;&gt;창의적 통합 설계&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#대학원-과목&quot; id=&quot;markdown-toc-대학원-과목&quot;&gt;대학원 과목&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#계산이론&quot; id=&quot;markdown-toc-계산이론&quot;&gt;계산이론&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;가장 쓸 말이 많은 3설계 과목 (소개원실, 하시설, 창통설) 은 별개의 글로 남길 예정입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;1학년-과목&quot;&gt;1학년 과목&lt;/h2&gt;
-&lt;h3 id=&quot;컴퓨터의-개념-및-실습&quot;&gt;컴퓨터의 개념 및 실습&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2018년 1학기 (1학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;굉장한 과목입니다. 들을 때는 몰랐는데, 다른 학교의 1학년 첫 컴공과 기초 과목이 보통 파이썬이나 C를 가르치는데 비해 이 과목은 무려 컴퓨터구조에 대해 배웁니다. LC-3라는 toy computer의 어셈블리는 물론, 기계어로 직접 뭔가를 짜게 합니다.&lt;/li&gt;
-  &lt;li&gt;이게 무슨 말이냐면, 보통 C를 배운 후 어셈블리로 넘어가서 C를 통해 어셈블리와 컴퓨터 구조를 이해하는게 일반적인 테크지만, 저희는 반대로 컴퓨터의 폰 노이만 구조와 Program counter, memory model을 먼저 배운 뒤, 어셈블리 (진짜 어셈은 아니지만) 단계에서 이를 이해해보고, 거꾸로 C를 그 위에서 쌓아 나갑니다. 이렇게 배우면 포인터가 안 어렵다는 정도? 장점이 있는것 같습니다.&lt;/li&gt;
-  &lt;li&gt;힘들었지만 재밌었습니다. A-인가? 받았습니다. 저는 입학하고 프로그래밍이라는걸 처음 배워본지라… 이때까지는 과고 친구들과 경쟁자체가 안 되더군요 ㅋㅋ&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;프로그래밍-연습&quot;&gt;프로그래밍 연습&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2018년 2학기 (2학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;C언어의 기초를 배웁니다.&lt;/li&gt;
-  &lt;li&gt;기말프로젝트가 카드 뒤집으면서 기억력으로 페어 맞추는 게임 (게임 이름을 까먹었네요) 만드는 거였는데, 재밌었습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;이산수학&quot;&gt;이산수학&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2021년 1학기 (7학기차) 에 수강했습니다. (왜?? ㅋㅋㅋ)&lt;/li&gt;
-  &lt;li&gt;Logic, Group, Probability, Graph, Algorithm 등 종횡무진 뛰어다니며 넓고 얕게 배웁니다.&lt;/li&gt;
-  &lt;li&gt;저는 CS/MATH이고 7학기차였으므로 저는 이 과목에서 배우는 모든 내용을 다른 과목에서 배워본 상태였습니다. 처음 듣는 컴공 전공이라면 증명이나 논증을 체계적으로 하는 법을 익히는 좋은 과목이라고 생각합니다. 저는 그 역할을 해석개론이 대신해 줬습니다.&lt;/li&gt;
-  &lt;li&gt;너무 늦게 들어서 쉬웠습니다. 1학년 때였다면 느낌이 좀 달랐을것 같습니다. A+.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2학년-과목&quot;&gt;2학년 과목&lt;/h2&gt;
-&lt;h3 id=&quot;컴퓨터-프로그래밍&quot;&gt;컴퓨터 프로그래밍&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2019년 1학기 (3학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;객체지향 프로그래밍, 객체지향의 개념에 대해 배웁니다.&lt;/li&gt;
-  &lt;li&gt;기말 과제로 체스를 구현하는 과제가 있었습니다. 처음 하면서 꽤 어려웠던 기억이 있습니다.&lt;/li&gt;
-  &lt;li&gt;이런걸 익히려면 해보는 방법밖에 없다는 말을 체감하게 됩니다. 코딩을 하다보면 아 이게 그런 말이구나 할 때가 있습니다. A+.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;논리설계&quot;&gt;논리설계&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2019년 1학기 (3학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;Boolean Algebra와 카르노 맵으로 시작해서, 논리 게이트, Adder 등 간단한 논리 회로에 대해 배웁니다. 끝부분에는 FSM을 다룹니다.&lt;/li&gt;
-  &lt;li&gt;마지막에는 베릴로그로 CPU 짜는 과제가 있었습니다.&lt;/li&gt;
-  &lt;li&gt;강의가 정말 재밌고 흡입력있었지만 저는 내용에서 고통받았습니다.&lt;/li&gt;
-  &lt;li&gt;Verilog 3부작 중 1부인데, 저는 정말 힘들었습니다. 저는 Verilog와 진짜 안 맞는다는걸 깨달았습니다. B+.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;자료구조&quot;&gt;자료구조&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2019년 2학기 (4학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;저는 입학하자마자 SNUPS에서 kipa00님한테 PS를 배우면서 C++를 익히는 것으로 시작해서, PS를 꽤 열심히 했었기 때문에 이때는 블루~퍼플 근처의 실력이었습니다. (지금도 퍼플을 못 벗어나고 있네요 ㅋㅋ) 2년 더 이때처럼 Training했으면 제가 PS를 더 잘 했을까요? 모르겠네요…&lt;/li&gt;
-  &lt;li&gt;가장 집중적으로 PS를 공부했던 시점이라서 자료구조는 쉽게 공부했습니다. A+.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;컴퓨터구조&quot;&gt;컴퓨터구조&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2019년 2학기 (4학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;컴퓨터공학이 뭔지 알기 위해 딱 2개의 수업만 들을수 있다면 저는 알고리즘과 컴퓨터구조를 뽑겠습니다. 컴퓨터구조에서는 논설의 끝부분을 시작으로, CPU의 내부 구조, Pipelining, Memory Hierarchy, 멀티코어와 멀티스레드 등을 다룹니다.&lt;/li&gt;
-  &lt;li&gt;컴퓨터 자체에 대해 가장 많은 내용을 배울 수 있습니다. 언젠가 고급 컴퓨터 구조를 듣고 싶은데 여력이 될지 모르겠습니다.&lt;/li&gt;
-  &lt;li&gt;Verilog로 파이프라이닝이 있는 CPU를 짜는 과제가 나왔었는데, 여기서 거의 0점에 가까운 점수를 받았습니다. 이 과제가 아니었다면 나머지는 A+를 충분히 받을 수 있는 성적이었는데 이 과제 하나 때문에 A0를 받았습니다. Verilog는 너무 어려워요…&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;프로그래밍-언어&quot;&gt;프로그래밍 언어&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2019년 2학기 (4학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;OCaml로 함수형 프로그래밍, 메모리 관리, 재귀 호출 등 PL의 핵심 아이디어들을 배웁니다.&lt;/li&gt;
-  &lt;li&gt;인터프리터 만드는 과제가 꽤 많은데, 과제가 재밌지만 오래 걸렸습니다.&lt;/li&gt;
-  &lt;li&gt;OCaml 프로그래밍이 굉장히 생소했습니다. 그후로 한번도 안써서 이제는 많이 잊어버렸습니다.&lt;/li&gt;
-  &lt;li&gt;과제만 잘 하면 되는, 시험 없는 꿀과목입니다만 시험이 없어서 공부를 덜 한것 같기는 합니다. 학점은 A+ 받았습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;전기전자회로&quot;&gt;전기전자회로&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2019년 2학기 (4학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;일반적인 전기전자회로 수업입니다.&lt;/li&gt;
-  &lt;li&gt;힘들고 어려웠습니다. 돌이켜 생각해보면 내용이 막 어렵진 않았는데, 공부하기가 너무 힘들었습니다.&lt;/li&gt;
-  &lt;li&gt;B+ 받았는데, 논설이랑 이건 좀 얘기가 다릅니다. 이과목은 미적분학이나 공학수학 내용 (미방 풀기) 에 대한 기본 이해가 필요하고, 수식전개를 잘 해야 합니다. 저희과는 지금 고등학교때 문과였던 / 공학수학을 이수하지 않은 복부전생들이 많아서, 이런 과목은 엄청나게 어드밴티지가 있습니다. 그럼에도 불구하고 B+를 받았다는건 제 놀라운 실력을 imply합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;3-4학년-과목&quot;&gt;3-4학년 과목&lt;/h2&gt;
-&lt;p&gt;컴퓨터공학부의 경우, 3-4학년 과목 상당수가 선수관계에 있지 않고 난이도 면에서 큰 차이가 없다고 느껴 같이 서술합니다.&lt;br /&gt;
-대부분의 빡센 전필 과목이 3학년 과목이라서 그렇기도 합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;알고리즘&quot;&gt;알고리즘&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2020년 1학기 (5학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;자료구조와 같은 이유로 비교적 편하게 들었습니다.&lt;/li&gt;
-  &lt;li&gt;모든 알고리즘 강의에서 강의하는 시간복잡도, 정렬, 탐색, DP, 그리디, 그래프, 최단경로, MST까지 배웁니다.&lt;/li&gt;
-  &lt;li&gt;그 후로는 NP-Complete 문제들과 그 환원, matroid 등 재밌는 개념들을 좀 배웠습니다. 이쪽이 주력이셨던 교수님이셨기 때문에 특히 그랬던듯 합니다.&lt;/li&gt;
-  &lt;li&gt;비슷한 PS 실력의 다른 사람들에 비해, 저는 이론적인 알고리즘에 관심이 많은 편입니다. 이때쯤에는 이쪽 분야 진학을 계획하기 시작했기 때문에, PS 공부를 이 이후로는 거의 못 했습니다. 그와는 별개로 알고리즘 수업은 정말 재밌게 들었습니다.&lt;/li&gt;
-  &lt;li&gt;그리고 뭐… 어쨌든 퍼플이면 학부 알고리즘 수업은 무난하게 들을 수 있습니다. 특히 construction에 강한 사람들보다 (PS를 진짜 잘하는건 이분들입니다) 저처럼 대학와서 PS를 시작해서 academic하게 공부한 사람은 더 그렇습니다. A+ 받았습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;양자-컴퓨팅의-기초&quot;&gt;양자 컴퓨팅의 기초&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2020년 1학기 (5학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;물리학이라고는 1학년 1학기에 교양 B0 맞은 이후로 쳐다본적도 없는데, 갑자기 양자역학의 기초 원리들을 배우게 되어 어려웠습니다.&lt;/li&gt;
-  &lt;li&gt;선형대수학을 열심히 들었다면 할만하고, 그렇지 않다면 듣기 힘든 과목인것 같습니다.&lt;/li&gt;
-  &lt;li&gt;나머지 CSE 과목들과 아예 다른 트랙 위에 서 있어서, 이것만 들어도 들을만 합니다 (Lin Alg를 안다면)&lt;/li&gt;
-  &lt;li&gt;새롭고 재밌었습니다. 아예 새로운 내용을 배우는 과목은 대체로 좋아하는 편입니다. A+ 받았습니다. 코로나버프가 살짝 있었던듯 합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;데이터베이스&quot;&gt;데이터베이스&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2020년 1학기 (5학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;제게는 학부 지도교수님이신 교수님께서 강의하시는 과목입니다. 상담때 정말 많은 조언을 받았기 때문에 항상 감사한 마음입니다.&lt;/li&gt;
-  &lt;li&gt;무려 JAVA로 밑바닥부터 SQL 쿼리를 파싱하고, 이를 처리하는 프로젝트가 있습니다.&lt;/li&gt;
-  &lt;li&gt;모든 DB 강의에서 배우는, DB의 원리들, SQL, DB가 가져야할 원칙 등을 배우는, standard한 수업입니다.&lt;/li&gt;
-  &lt;li&gt;공대지만 Engineering스러운 과목은 많이 듣지 못했는데, 이 과목은 좀 CS에서는 Engineering스러운 마인드의 과목이라서 나름의 재미가 있었습니다.&lt;/li&gt;
-  &lt;li&gt;하지만 프로젝트의 코딩량이 정말 충격적입니다. 저는 주언어가 C++이었고 JAVA 코딩은 컴프-자구 과제 해본게 다였기 때문에 정말 어려웠습니다. 솔직히 C++로 짰으면 짤 수 있었을것 같은데, 뭐 이건 제 코딩실력의 문제이므로 수업 자체의 난이도와는 좀 다른 얘기가 아닌가 싶습니다.&lt;/li&gt;
-  &lt;li&gt;지도교수님께서 강의하시는 과목이라서 그런지 나름 더 열심히 들었고, 재밌었지만 제 JAVA 실력에 의해 B+를 받았습니다. 그와는 별개로 여기서 배운 내용은 이후에도 많은 도움이 됩니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;소프트웨어-개발의-원리-및-실제&quot;&gt;소프트웨어 개발의 원리 및 실제&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2020년 2학기 (6학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;실제 개발의 프로세스, 디자인 패턴 등을 배우고, 팀플로 하나의 웹앱을 직접 만들어서 출시해야 하는 과목입니다.&lt;/li&gt;
-  &lt;li&gt;어느순간부터 머신러닝을 포함해야 한다는 요구조건이 붙었습니다.&lt;/li&gt;
-  &lt;li&gt;대략 5,000 단어 분량의 5부작 후기가 준비되어 있었으나, 다양한 사정으로 퇴고를 거듭한 끝에 블로그에 올리지 못했습니다.&lt;/li&gt;
-  &lt;li&gt;학교 다니는 중 가장 힘들었습니다. 4학점 과목이지만 체감 로드는 15학점 이상 됩니다. 저는 2020-1학기 전체 18학점과 이 과목 하나가 비교할 만 하다고 생각합니다.&lt;/li&gt;
-  &lt;li&gt;배우는것은 많습니다. SNULife에 있었던 강의평의 일부를 인용하며 짧은 소개를 마치겠습니다. 참고로, snulife 평점 7.8임에도 당도 1.5에 빛납니다. 
-이 강의평 이상으로 이 과목을 표현할 자신이 없습니다.&lt;br /&gt;
-&lt;strong&gt;“강의가 끝나고 나면 내가 이전의 나와는 다른 프로그래머가 된 것을 느낄 수 있습니다. 그런데 그건 이전의 내가 프로젝트 하다가 죽어서 그런겁니다.”&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;“여튼 이걸 아직 안 들었다면 마음의 준비 단단히 하시고, 윗공대 오실 떄 왠만하면 이불이나 담요 챙겨오시길 바랍니다. 파이팅.”&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;정말 많은 노력을 (15학점 분량 정도) 했고 A-를 받았습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;시스템-프로그래밍&quot;&gt;시스템 프로그래밍&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2020년 2학기 (6학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;컴퓨터구조 수업에 이어서, 컴퓨터 내부의 핵심 원리들을 배웁니다. I/O로 시작해서, Virtual memory, malloc의 원리, Pipe와 프로세스간 통신, 멀티스레딩을 배웁니다. 마지막에는 네트워크 기초를 좀 배웁니다.&lt;/li&gt;
-  &lt;li&gt;Malloc을 직접 구현하는 malloc lab이 상당히 악명 높습니다.&lt;/li&gt;
-  &lt;li&gt;굉장히 유익하고, 배우는게 많으며, 어렵지만 재밌습니다. 컴구와 함께 반드시 들어야 할 컴퓨터공학과 수업입니다. 크게 컴구/시프와 자구/알골 이렇게까지 4개만 들으면 컴공과의 코어 아이디어는 다 가져갔다고 생각합니다. 이후로는 다 개별 과목이라서요…&lt;/li&gt;
-  &lt;li&gt;소개원실 플젝이 모든것을 잡아먹어서 기말을 터트리고 A-를 받았습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;하드웨어-시스템-설계&quot;&gt;하드웨어 시스템 설계&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2021년 1학기 (7학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;FPGA 보드로 행렬곱셈을 가속해서 CNN을 빠르게 돌리는… 뭐 그런걸 합니다. 로직은 C++로 짜고, FPGA는 베릴로그를 씁니다.&lt;/li&gt;
-  &lt;li&gt;베릴로그를 정말 못 하는 제게는 너무 힘든 과목이었지만, 베릴로그 파트는 훌륭한 팀원이 멱살잡고 캐리했습니다. 그 대가로 저는 C++ 코드를 하루종일 들여다보고 포인터 연산을 열심히 해야 했지만 그래도 팀원과 제 로드 배분이 6:4 정도로 제가 조금 버스 탔다고 생각합니다. 이 은혜는 창의통합설계 때 갚아야한다고 다짐했습니다.&lt;/li&gt;
-  &lt;li&gt;짧은 후기를 블로그에 쓸 예정입니다.&lt;/li&gt;
-  &lt;li&gt;어렵지만 돌이켜보면 남은건 꽤 많습니다. 아쉬운 점은, 플젝을 한학기 내내 했음에도 실제 로드는 마지막 한주에 몰아져 있었다는 점입니다.&lt;/li&gt;
-  &lt;li&gt;선배들이 사람에 따라 0.2~0.4 소개원실이라고 조언했는데, 마지막 주가 되기 전까지는 전혀 이해를 못 했습니다. 마지막 주에는 왜 그런지 납득하긴 했지만, 그래도 저는 동의할 수 없습니다. 소개원실 로드의 1/10도 안 됩니다.&lt;/li&gt;
-  &lt;li&gt;혹시 이 글을 보는 19~학번 설컴공이라면 한번쯤 고려해보세요. FPGA같은 유망한 기술에 대해 이정도 이해를 위해 이정도 노력은 들일만한 가치가 있습니다.&lt;/li&gt;
-  &lt;li&gt;학점은 A0 받았습니다. 팀원이 한단계 정도는 버프해줬다고 생각합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;창의적-통합-설계&quot;&gt;창의적 통합 설계&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2021년 2학기 (8학기차) 에 수강예정&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;대학원-과목&quot;&gt;대학원 과목&lt;/h2&gt;
-&lt;h3 id=&quot;계산이론&quot;&gt;계산이론&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2021년 2학기 (8학기차) 에 수강예정&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="snu-courses" /><summary type="html">Contents</summary></entry><entry><title type="html">서울대학교 수리과학부 전공과목 (주관적인) 소개</title><link href="http://localhost:4000/snu-courses/SNU-courses-MATH/" rel="alternate" type="text/html" title="서울대학교 수리과학부 전공과목 (주관적인) 소개" /><published>2021-07-24T00:00:00+09:00</published><updated>2021-07-24T00:00:00+09:00</updated><id>http://localhost:4000/snu-courses/SNU-courses-MATH</id><content type="html" xml:base="http://localhost:4000/snu-courses/SNU-courses-MATH/">&lt;div id=&quot;toc&quot;&gt;
-  &lt;p&gt;Contents&lt;/p&gt;
-&lt;/div&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1학년-과목&quot; id=&quot;markdown-toc-1학년-과목&quot;&gt;1학년 과목&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#수학-및-연습-1-고급수학-및-연습-2&quot; id=&quot;markdown-toc-수학-및-연습-1-고급수학-및-연습-2&quot;&gt;수학 및 연습 1, 고급수학 및 연습 2&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2학년-과목&quot; id=&quot;markdown-toc-2학년-과목&quot;&gt;2학년 과목&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#해석개론-및-연습-1&quot; id=&quot;markdown-toc-해석개론-및-연습-1&quot;&gt;해석개론 및 연습 1&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#선형대수학-1&quot; id=&quot;markdown-toc-선형대수학-1&quot;&gt;선형대수학 1&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#선형대수학-2&quot; id=&quot;markdown-toc-선형대수학-2&quot;&gt;선형대수학 2&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#정수론&quot; id=&quot;markdown-toc-정수론&quot;&gt;정수론&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3학년-과목&quot; id=&quot;markdown-toc-3학년-과목&quot;&gt;3학년 과목&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#위상수학개론-1&quot; id=&quot;markdown-toc-위상수학개론-1&quot;&gt;위상수학개론 1&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#현대대수학-1&quot; id=&quot;markdown-toc-현대대수학-1&quot;&gt;현대대수학 1&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#복소변수함수론&quot; id=&quot;markdown-toc-복소변수함수론&quot;&gt;복소변수함수론&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#수치선형대수&quot; id=&quot;markdown-toc-수치선형대수&quot;&gt;수치선형대수&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#4학년-과목&quot; id=&quot;markdown-toc-4학년-과목&quot;&gt;4학년 과목&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#최적화의-수학적-이론-및-계산&quot; id=&quot;markdown-toc-최적화의-수학적-이론-및-계산&quot;&gt;최적화의 수학적 이론 및 계산&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#학부-4학년-실변수함수론--대학원-실해석학&quot; id=&quot;markdown-toc-학부-4학년-실변수함수론--대학원-실해석학&quot;&gt;학부 4학년 실변수함수론 / 대학원 실해석학&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;수학과는 선수과목이 꽤 복잡한데 복전생이 듣자니 전공이랑 시간표가 겹치는게 있었어서 일부 선수과목을 좀 독학했습니다. 그것도 여기에 대략 적어넣었습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;1학년-과목&quot;&gt;1학년 과목&lt;/h2&gt;
-&lt;h3 id=&quot;수학-및-연습-1-고급수학-및-연습-2&quot;&gt;수학 및 연습 1, 고급수학 및 연습 2&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2018년 1, 2학기 (1, 2학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;미적분학 (Calculus) 와 벡터 미적분학 (Vector Calculus) 를 배웁니다.&lt;/li&gt;
-  &lt;li&gt;김홍종 교수님의 미적분학 (1, 2) 책을 배우는데, Stewart 등 미적분학 책보다는 살짝 빡셉니다.&lt;/li&gt;
-  &lt;li&gt;이 책은 각 챕터별로 부록 section이 하나씩 있는데, 고급- 과 일반- 의 차이는 이 부록을 나가느냐 안 나가느냐의 차이입니다.&lt;/li&gt;
-  &lt;li&gt;부록에 실수체계의 구성, 변분법 등 굉장히 재밌는 내용들이 많습니다.&lt;/li&gt;
-  &lt;li&gt;서울대는 입학고사 성적으로 반배정을 하고, 수및연 1에서 A+을 받으면 고급수학 및 연습 2로 바꿀 수 있습니다. 저는 이걸로 바꿔서 고수에서는 A0를 받았었습니다.&lt;/li&gt;
-  &lt;li&gt;별개로, 저는 처음에 면적분과 부피적분, 그린 정리 등을 굉장히 이해하지 못했었습니다. 이런 개념들을 이때 이해하지 못했다는 생각 자체를 잘 못했는데, 나중에 보니 좀 상태가 안 좋다는걸 복소 때 알았습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;2학년-과목&quot;&gt;2학년 과목&lt;/h2&gt;
-&lt;h3 id=&quot;해석개론-및-연습-1&quot;&gt;해석개론 및 연습 1&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2019년 1학기 (3학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;본격적인 수리과학부 전공 과목입니다. 서울대에서는 원래 김성기-김도한-계승혁 교수님 저의 해석개론 (소위 김김계라 부릅니다) 을 쓰지만, 저는 영어강의를 들어서 해당사항은 없었습니다.&lt;/li&gt;
-  &lt;li&gt;미분가능성, 연속성, 리만적분 등 고등학교 미적분때부터 대충 배우면서 넘어간 개념들을 체계적으로 배웁니다.&lt;/li&gt;
-  &lt;li&gt;저는 개인적으로, 수학에 관심이 많다면 여기까지 들어보는건 정말 좋다고 생각합니다. 고등학교 미적분을 배우다보면 생기는 의문들, 대학 캘큘을 배우다보면 생길수있는 의문들이 여기까지 하면 정리가 되기 때문입니다.&lt;/li&gt;
-  &lt;li&gt;해개연 1을 들을때는 전공 수학을 공부하는 방법이 익숙하지 않아서…라기 보다는, 수학과 과목은 그냥 증명 흐름만 대략 알면 될것이라고 생각하고 연습문제를 전혀 풀어보지 않는 등 공부 방법을 잘 몰랐었습니다. 어떤 과목 (해석개론) 은 증명을 직접 써보고 손으로 공부해야 한다는걸 깨우쳐주는 계기가 되었습니다. 학점은 B+ 받았습니다.&lt;/li&gt;
-  &lt;li&gt;학점과는 별개로 수학을 더 배우고 싶다는 생각이 든 과목입니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;선형대수학-1&quot;&gt;선형대수학 1&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2019년 1학기 (3학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;해석개론과 함께 수학과 전공 진입 과목입니다. 컴공과에게는 사실 꼭 필요한 과목인데, 공학수학에서 어느정도 커버를 하기는 하지만 시간의 문제로 충분하지 않기에 공대 (컴공과) 학생들도 수강하면 많은 도움이 되는것 같습니다.&lt;/li&gt;
-  &lt;li&gt;저는 영어강의를 들어서 선대1은 선대군으로 배우지 않았고 (Friedberg의 선형대수 책으로 진도를 나갔습니다), 교수님께서 학생들 다수가 공대임을 의식하신것인지 수학과스럽게 수업을 나가지는 않아서 편하게 들을 수 있었습니다.&lt;/li&gt;
-  &lt;li&gt;행렬 계산으로 시작해서, 행렬과 선형 사상의 관계, Dimension theorem, Rank 등을 배웁니다.&lt;/li&gt;
-  &lt;li&gt;학점은 A+ 받았습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;선형대수학-2&quot;&gt;선형대수학 2&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2019년 2학기 (4학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;이 수업은 한국어 수업으로 들었습니다. 유명한 이인석 교수님 저의 “선형대수와 군” 으로 나갑니다. (aka 선대군)&lt;/li&gt;
-  &lt;li&gt;Quotient space 같은걸 좀 배우고 나서, $O(n)$ 등 linear group, Bilinear form, Perp theorem 등 핵심적인 선형대수의 아이디어들을 배웁니다. Dual space 부분에서 고통받았습니다.&lt;/li&gt;
-  &lt;li&gt;이때 전공을 너무 많이 들어서 약간 overwhelm된 면이 조금 있습니다. 여기에 더해서 실수와 공부 부족으로 중간고사를 완전히 날려먹으면서 B+를 받았습니다. 중간고사 보고 드랍할지 고민을 정말 많이 했는데, 반 들었는데 드랍하기는 좀 아까웠던 기억이 있습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;정수론&quot;&gt;정수론&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2021년 1학기 (7학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;다만 교수님께서 원래 Cryptography를 연구하시고, Pollard-Rho 알고리즘의 발전에 지대한 공헌을 하신 등 Computational Number Theory에 가까운 분이시기 때문에 저한테는 정말 재밌는 수업이었습니다.&lt;/li&gt;
-  &lt;li&gt;수업중 Algorithmic한 부분들 - 예를들어 Lenstra의 소인수분해 등 - 에 대한 언급이 많았고, 격자이론이나 동형암호에 대한 특강 등 컴퓨터공학 전공인 저한테는 정말 배울게 많았습니다.&lt;/li&gt;
-  &lt;li&gt;PS하면서 배운 정수론을 좀더 정확히 이해할 수 있었습니다. 초반에 빠르게 일반적인 정수론의 주제들 (중국인의 나머지 정리, 페르마 소정리, 오일러 피 함수, 르장드르 기호, 이차 잉여, 디리클레 합성곱 등) 을 달린 후, 후반에는 타원곡선, 무리수의 유리근사, 소수정리 등의 재밌는 주제들을 다룹니다.&lt;/li&gt;
-  &lt;li&gt;Niven 책 연습문제가 워낙 많고 퀄리티가 좋기로 유명해서 재밌어보이는것만 풀면서도 꽤 많이 배웠습니다.&lt;/li&gt;
-  &lt;li&gt;학기 후기때는 학점 포기하고 들어야 한다고 했는데, 저거 쓰면서는 약간 미지에 대한 공포에 잡혀 있었던게 아닌가 싶습니다. 올림피아드 출신 친구들이 중간고사 때까지는 정말 잘 하지만, 그 후로는 어차피 다같이 처음 보는 내용입니다. 오히려 저는 PS와 알고리즘에 관심이 많아서 뒷부분 내용들을 재밌게 들었던지라 A+을 받을 수 있었습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;3학년-과목&quot;&gt;3학년 과목&lt;/h2&gt;
-&lt;h3 id=&quot;위상수학개론-1&quot;&gt;위상수학개론 1&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2020년 1학기 (5학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;모두가 그렇듯 도넛과 커피잔이 위상동형인걸 생각하고 수업을 들으러 갔지만, 세달동안 수많은 정의들을 배웁니다. 마지막에 조금 surface의 분류에 대해 나가면서 클라인 병 등을 머릿속으로 접어보고 뚝배기와 돌이 위상동형임을 깨달을 기회가 주어집니다. 저희는 특이하게 Munkres가 아닌 Kahn 책으로 배우는데, 책이 정말 컴팩트하고 notation이 신기합니다. Product로 $\prod$ 대신 $\times$ 였나? 아무튼…&lt;/li&gt;
-  &lt;li&gt;이 과목은 정의가 너무 많고, 언어를 배우는 기분으로 접근해야 해서 꽤 힘들었습니다. 저는 온라인 수업이 이때부터 시작되었기 때문에 중간중간 멈출 수 있어 조금은 편했던 듯 한데, 실시간 강의였으면 중간에 정신이 혼미했을것 같습니다.&lt;/li&gt;
-  &lt;li&gt;증명 호흡이 긴 과목을 처음 들어 봤는데, Urysohn Lemma 증명처럼 호흡이 긴 증명을 쪼개고 쪼개면서 아이디어를 하나씩 잡아나가는 법을 익힐 수 있었던 것 같습니다.&lt;/li&gt;
-  &lt;li&gt;이때는 수학공부를 그럭저럭 열심히 해서 A+을 받았습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;현대대수학-1&quot;&gt;현대대수학 1&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2020년 1학기 (5학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;위상수학개론과 함께, 정의를 쭉 배우는 과목입니다. 학부 현대대수의 모든 아이디어는 현대대수학 2에 몰려 있다던데, 이건 아직 안 들어서 모르겠습니다. 군 환 체 등 정의, 정의, 정의, 성질 몇개, 다시 정의.&lt;/li&gt;
-  &lt;li&gt;Fraleigh의 현대대수학 책을 쓰는데, 책 자체가 좀 친절한 편이고 특히 Kahn처럼 컴팩트한 책을 보다가 이걸 보면 정말 옆에 붙어서 가르쳐주는 느낌의 책이기 때문에 조금은 편했습니다.&lt;/li&gt;
-  &lt;li&gt;학점은 A0 받았습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;복소변수함수론&quot;&gt;복소변수함수론&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2020년 1학기 (5학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;수리과학부는 타과생용 과목이 있는데, 복소함수론 1의 타과생용 에디션입니다. 실제로 다루는 내용이 많이 다른지 여부는 잘 모르겠습니다. 얘기를 들어보면 교수님에 따라 다르지만 같은 교수님께서 강의하시면 별로 많이 다르지 않은것 같기도 합니다.&lt;/li&gt;
-  &lt;li&gt;Gamelin의 complex analysis책을 배우는데, 한학기만에 달려야 하기 때문에 복소적분, 코시리만, 코시적분공식, 유수정리 등 코어한 내용들만 쭉쭉 나갑니다.&lt;/li&gt;
-  &lt;li&gt;마지막에 소수정리를 복소해석으로 증명하는 내용을 배웠는데, 굉장히 궁금했던 내용이었기때문에 정말 재밌게 들었습니다. 해석적 정수론이 대충 뭐 하는 건지 구경하는 느낌이었는데 적분이 정말 빡세더군요… ㅋㅋㅋ&lt;/li&gt;
-  &lt;li&gt;위상이나 현대는 더 위를 위한 빌드업 느낌이었는데, 이 과목은 그럭저럭 Self-contained된 내용이었기 때문에 저는 특히 재밌게 들었습니다. 복소적분을 할줄안다는게 제 앞으로의 공부에 어떤 도움이 되는지는 사실 잘 모르겠긴 합니다.&lt;/li&gt;
-  &lt;li&gt;학점은 A+ 받았습니다. 코로나버프가 살짝 있었던듯 합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;수치선형대수&quot;&gt;수치선형대수&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2021년 1학기 (7학기차) 에 수강했습니다. 제가 학기 끝나고 쓴 학기 후기에서 얘기했던게 있어서 그대로 가져옵니다.&lt;/li&gt;
-  &lt;li&gt;수리과학부 수치해석 루트의 메인 과목입니다. MATLAB 또는 Python을 이용한 프로그래밍도 해야 하고, 과제의 양이 정말 충격적으로 많았는데 그만큼 많이 배웠다고 생각합니다. 중간고사 때까지는 사실 많은 내용을 어디서 주워들은 것들이라고 생각했었는데, 중간고사를 보고 딱히 그렇지 않음을 깨달은 뒤 (…) 기말고사는 열심히 공부하고 봤습니다.&lt;/li&gt;
-  &lt;li&gt;간단히 요약하자면, 행렬에 대한 알고리즘을 배우는 과목입니다. numpy의 수많은 알고리즘들을 그대로 가져다 쓸수도 있겠지만, 누군가는 그런것들을 만들어야 하니까요. 예를 들어, 1000 * 1000 행렬의 eigenvalue를 어떻게 구할지, eigenvalue 전부가 아니라 몇개만 필요하다면 어떻게 구할지… $Ax = b$는 정해진 해 $x = A^{-1} b$ 가 있지만, 세상에는 감히 역행렬을 구할 시도조차 할 수 없는 사이즈의 문제들이 있습니다. 그렇기에 iteration method 등 여러 clever 한 알고리즘들을 써야 하는데, 그런 부분들을 배웁니다.&lt;/li&gt;
-  &lt;li&gt;후반부 내용들은 굉장히 새로웠습니다.&lt;/li&gt;
-  &lt;li&gt;과제를 하다 보니 매트랩도 좀 배울 수 있었습니다. 파이썬/매트랩 선택인데 저는 파이썬을 할줄 알았지만 교재가 매트랩이라 매트랩 쓰는게 정신적으로 덜 고통스럽습니다.&lt;/li&gt;
-  &lt;li&gt;학점은 A+ 받았습니다. 졸논 주제도 이쪽이 되지 않을까 싶습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;4학년-과목&quot;&gt;4학년 과목&lt;/h2&gt;
-&lt;h3 id=&quot;최적화의-수학적-이론-및-계산&quot;&gt;최적화의 수학적 이론 및 계산&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;2020년 2학기 (6학기차) 에 수강했습니다.&lt;/li&gt;
-  &lt;li&gt;중간고사 때까지는 제대로 공부를 못 했습니다. 기말고사 전에는 수학과 16학번의 지인과 함께 스터디 식으로 책에 있는 거의 모든 연습문제를 풀어봤고, 증명들 따라가 봤는데 많은 도움이 되었습니다&lt;/li&gt;
-  &lt;li&gt;Convex optimization (Boyd 저) 은 한 5주 정도 Part 1만 나갔고, 그 후에는 교수님께서 저술하신 책으로 주로 monotone operator를 이용한 내용들을 나갔습니다. (Convex도 중요하게 쓰이기는 한다) ADMM 등 알고리즘들을 엔지니어로써 사용하기는 하더라도 그 이면의 원리나 수학적인 이론, 수렴성의 증명과 조건 등등에 대해 명확하게 이해하기가 쉽지 않은데, 그런 틀을 잡을 수 있는 과목이었다고 생각합니다. 해석학적인 베이스가 조금 더 있었다면 훨씬 재밌게, 잘 들을 수 있었을 것 같다는 아쉬움은 조금 남습니다.&lt;/li&gt;
-  &lt;li&gt;SRG라고 해서, Operator를 기하로 옮겨서 놀라운 유클리드 기하의 원리들을 이용하여 수렴성을 증명하는 생전 처음 보는 내용을 배웠는데, 무려 이 과목을 강의하시는 교수님께서 연구해서 창안하신 내용입니다.&lt;/li&gt;
-  &lt;li&gt;예전에는 공부를 더 했으면 더 좋았을텐데 아쉽다는 말을 티스토리 블로그에 적었었는데, 중간고사때는 소개원실 + 시프, 기말고사는 소개원실 + 소개원실 때문에 더 하고 싶어도 할 수가 없었습니다.&lt;/li&gt;
-  &lt;li&gt;LaTeX로 필기노트를 옮긴다면 옮길 과목 1순위입니다.&lt;/li&gt;
-  &lt;li&gt;학점은 A0 받았습니다. 중간고사때 공부를 좀 더 할 수 있었으면 좋았을것 같습니다. Convex Opt의 나머지 내용은 언젠가 따로 공부해봐도 재밌을것 같습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;학부-4학년-실변수함수론--대학원-실해석학&quot;&gt;학부 4학년 실변수함수론 / 대학원 실해석학&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;두 과목을 동시에 2021년 1학기 (7학기차) 에 수강했습니다. 제가 학기 끝나고 쓴 학기 후기에서 얘기했던게 있어서 그대로 가져옵니다.&lt;/li&gt;
-  &lt;li&gt;이 과목을 추천한 수학과 지인을 거의 이틀에 한번씩 욕했지만, 돌이켜 생각해보면 수학과를 복전하면서 이정도 재미와 Challenge는 있어야 하지 않나 싶습니다. 원한다면 수치해석이나 CS스러운 수학과목만 내리 들을 수도 있었겠지만 그러자니 겹치는것도 많고… 대수랑 해석 중 하나를 골라서 좀 높은 레벨의 과목, 본전공생들 수준으로 들을 수 있는 과목을 들어보려고 했는데 해석이 되었네요.&lt;/li&gt;
-  &lt;li&gt;실해석학은 워낙 유명한 과목으로 대학원 1년차 과목임에도 학부생 수강생이 훨씬더 많고 타과생도 많습니다만 제기억에 컴공과는 저밖에 없었습니다. 주로 해석학을 배워야 하는 통계학과, (왜인지 저는 잘 모르겠지만 이론적 공부에는 필요하다고 들은거같은) 경제학과가 많았습니다.&lt;/li&gt;
-  &lt;li&gt;Graduate / Undergraduate을 나눠서 GRA / URA로 구분하자면, GRA는 루딘의 Real and Complex Analysis의 앞부분 반정도를 커버하고, URA는 Folland의 Real Analysis를 기준으로 그중 일부를 나갑니다. 두 과목의 가장 큰 차이는 ‘세팅’ 이었다고 생각하는데, GRA는 Locally Compact Hausdorff space X를 기본 세팅으로 두는데 비해 URA의 기본 세팅은 $\R$ 또는 $\R^2$ 입니다. 예를들어 Fourier Series를 이해하기 위해 URA에서는 직접 적분을 계산하고 Dirichlet Kernel, Fejer Kernel 등등을 이용하여 내용을 진행하는데 비해, GRA에서는 Hilbert space (완비내적공간)에 대한 일반적인 성질들을 공부하고 그걸 $L^2([-\pi, \pi])$ 에 적용하는 식입니다.&lt;/li&gt;
-  &lt;li&gt;그렇다보니 Measure theory, Lebesgue 적분 등을 두가지 관점에서 동시에 보면서 (뚝배기가 박살나긴 했지만) 재밌게 공부할 수 있었습니다. 종합해서 해석학에 대한 이해를 높일 수 있었다고 생각합니다.&lt;/li&gt;
-  &lt;li&gt;다만 저처럼 수학을 찍먹할 사람이면 모를까, 수학 전 분야에 대한 이해를 좀 가져야 할 수리과학 전공생들에게 권할만한 테크인지는 잘 모르겠습니다. Redundancy가 있는건 사실이니까요. 저는 복수전공자니까 전필만 듣고나면 제가 듣고싶은거 적당히 골라듣고 챙기면서 움직여도 뭐 되지 않을까요.&lt;/li&gt;
-  &lt;li&gt;Measure theory를 공부하게 된 계기는, 3학년 2학기 때 수강했던 최적화 이론입니다. 최적화 이론에서 Martingale 등 놀라운 이론들을 통해 수렴성을 얻는게 좀 있었는데, 도대체 수렴하면 수렴하는거지 Almost surely converge한다는건 무슨소리인가??? 에 대해 답할 수 있게 되었습니다. 최적화이론 수업 이후 조언을 구하였을 때, measure theory와 stochastic differential equation에 대한 공부가 최적화 분야의 엄밀한 이해에 도움이 될 것이라는 조언을 얻을 수 있었습니다.&lt;/li&gt;
-  &lt;li&gt;학점은 대학원 실해석은 A+, 학부 실변수는 A0를 받았습니다. 명확히 실해석이 더 상위 과목임에도 학점이 이렇게 된 이유는 단순히 실해석 시험이 좀더 제 스타일에 맞았기 때문입니다. ㅋㅋ!&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="snu-courses" /><summary type="html">Contents</summary></entry><entry><title type="html">Karger-Stein Minimum Cut</title><link href="http://localhost:4000/advanced_algorithms/karger-stein-mincut/" rel="alternate" type="text/html" title="Karger-Stein Minimum Cut" /><published>2021-07-23T00:00:00+09:00</published><updated>2021-07-23T00:00:00+09:00</updated><id>http://localhost:4000/advanced_algorithms/karger-stein-mincut</id><content type="html" xml:base="http://localhost:4000/advanced_algorithms/karger-stein-mincut/">&lt;div id=&quot;toc&quot;&gt;
+&lt;hr /&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ps_weekly" /><category term="weekly-ps" /><summary type="html">Contents</summary></entry><entry><title type="html">Karger-Stein Minimum Cut</title><link href="http://localhost:4000/advanced_algorithms/karger-stein-mincut/" rel="alternate" type="text/html" title="Karger-Stein Minimum Cut" /><published>2021-07-23T00:00:00+09:00</published><updated>2021-07-23T00:00:00+09:00</updated><id>http://localhost:4000/advanced_algorithms/karger-stein-mincut</id><content type="html" xml:base="http://localhost:4000/advanced_algorithms/karger-stein-mincut/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;

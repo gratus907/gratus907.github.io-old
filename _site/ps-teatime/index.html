@@ -391,6 +391,35 @@
   </ul>
 </details>
 
+<details>
+  <summary> <b>2021년 8월 4일 : <a href="http://boj.kr/14462">BOJ 14462</a> 소가 길을 건너간 이유 8</b> </summary>
+  <ul>
+    <li>USACO 2017 Feb Gold Division 2번, Why Did the Cow Cross the Road II (Gold)</li>
+    <li>난이도 Gold III</li>
+    <li>Simple DP. <code class="language-plaintext highlighter-rouge">dp[i][j]</code> 를 왼쪽에서 $i$번까지, 오른쪽에서 $j$번까지만 사용해서 얻는 최대값으로 정의합니다.</li>
+    <li><code class="language-plaintext highlighter-rouge">dp[i][j]</code> 는 <code class="language-plaintext highlighter-rouge">dp[i-1][j]</code>, <code class="language-plaintext highlighter-rouge">dp[i][j-1]</code> 에서 그대로 내려오거나, <code class="language-plaintext highlighter-rouge">dp[i-1][j-1]</code> 에서 하나를 설치하면서 내려오거나 셋중 하나입니다.</li>
+  </ul>
+</details>
+
+<details>
+  <summary> <b>2021년 8월 5일 : <a href="http://boj.kr/17371">BOJ 17371</a> 이사</b> </summary>
+  <ul>
+    <li>UCPC 2019 예선 J번</li>
+    <li>난이도 Gold II</li>
+    <li><strong>CLAIM</strong> : 편의시설까지의 최대+최소 거리를 minimize하는 점은, 편의시설들 중 하나입니다.</li>
+    <li><strong>PROOF</strong> : Proof by Contradiction.
+      <ul>
+        <li>$A$에서 가장 먼 편의시설을 $T$, 가까운 편의시설을 $S$라고 하겠습니다. 즉, $AT + AS$가 $A$로 이사했을 때의 페널티값입니다.</li>
+        <li>이때, $S$를 새로운 이사점으로 잡고, $S$에서 가장 먼 편의시설을 $W$ 라고 하겠습니다. 즉, $SS + SW = SW$ 가 S로 이사했을때의 페널티값입니다.</li>
+        <li>$AT + AS$ 는 $T$의 정의 상, $AW + AS$ 보다 크거나 같습니다 (그렇지 않다면 $T$가 가장 먼 편의시설이 아니므로)</li>
+        <li>이제, $SA + AW$ 는 삼각부등식에 의해 $SW$보다 크거나 같습니다.</li>
+        <li>따라서, $S$로 이사하는 것이 더 적은 페널티값을 갖습니다.</li>
+      </ul>
+    </li>
+    <li>이제, 답의 후보가 $N$ 개이므로, $O(N)$에 각 후보의 점수를 계산하면 $O(N^2)$에 해결되었습니다.</li>
+  </ul>
+</details>
+
         
       </section>
 
@@ -448,7 +477,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version b4f54da809e52922e3feb862f46520d4b2b08fdb</div>
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 53f06b9e624e58b4009acedd345932e52d071697</div>
 
       </footer>
     </div>

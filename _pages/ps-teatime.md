@@ -58,3 +58,23 @@ author_profile: true
 - 정점과 간선은 $NK, MK$ 개이므로 $O((N + M)K)$ 시간에 풀립니다.
 - 사실 실제로 그래프를 복사해서 만들 필요는 없고 dp만 잘 갱신해도 되지만, 전 귀찮아서 그냥 만들었습니다. 1초가 생각보다 빠듯해서 놀랐는데, 벡터 120만개를 만드는 시간이 꽤 긴듯 합니다.
 </details>
+
+<details> <summary markdown = span> <b>2021년 8월 4일 : <a href = "http://boj.kr/14462">BOJ 14462</a> 소가 길을 건너간 이유 8</b> </summary>
+- USACO 2017 Feb Gold Division 2번, Why Did the Cow Cross the Road II (Gold)
+- 난이도 Gold III
+- Simple DP. `dp[i][j]` 를 왼쪽에서 $i$번까지, 오른쪽에서 $j$번까지만 사용해서 얻는 최대값으로 정의합니다.
+- `dp[i][j]` 는 `dp[i-1][j]`, `dp[i][j-1]` 에서 그대로 내려오거나, `dp[i-1][j-1]` 에서 하나를 설치하면서 내려오거나 셋중 하나입니다.
+</details>
+
+<details> <summary markdown = span> <b>2021년 8월 5일 : <a href = "http://boj.kr/17371">BOJ 17371</a> 이사</b> </summary>
+- UCPC 2019 예선 J번  
+- 난이도 Gold II 
+- **CLAIM** : 편의시설까지의 최대+최소 거리를 minimize하는 점은, 편의시설들 중 하나입니다. 
+- **PROOF** : Proof by Contradiction.
+    - $A$에서 가장 먼 편의시설을 $T$, 가까운 편의시설을 $S$라고 하겠습니다. 즉, $AT + AS$가 $A$로 이사했을 때의 페널티값입니다. 
+    - 이때, $S$를 새로운 이사점으로 잡고, $S$에서 가장 먼 편의시설을 $W$ 라고 하겠습니다. 즉, $SS + SW = SW$ 가 S로 이사했을때의 페널티값입니다.
+    - $AT + AS$ 는 $T$의 정의 상, $AW + AS$ 보다 크거나 같습니다 (그렇지 않다면 $T$가 가장 먼 편의시설이 아니므로)
+    - 이제, $SA + AW$ 는 삼각부등식에 의해 $SW$보다 크거나 같습니다.
+    - 따라서, $S$로 이사하는 것이 더 적은 페널티값을 갖습니다.
+- 이제, 답의 후보가 $N$ 개이므로, $O(N)$에 각 후보의 점수를 계산하면 $O(N^2)$에 해결되었습니다. 
+</details>

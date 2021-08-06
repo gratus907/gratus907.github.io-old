@@ -292,4 +292,10 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/snu-courses/SNU-courses-MATH/",
         "teaser": null
+      },{
+        "title": "Random Walk / Pagerank",
+        "excerpt":"Contents PageRank Motivation Algorithm Linear Algebra PoV Random Walk with Restart Motivation Algorithm Fast Computation 그래프 데이터 $G = (V, E)$ 가 주어졌을 때, 우리는 다음과 같은 두 질문에 답하고 싶습니다. 그래프에서 중요한 노드가 어디인가? 그래프의 특정한 정점 $u$ 의 입장에서 볼 때, 가장 연관이 깊은 노드는 어디인가? 전자의 질문에...","categories": ["advanced-algorithms"],
+        "tags": ["graphs","data-science"],
+        "url": "http://localhost:4000/advanced-algorithms/random-walk-on-graphs/",
+        "teaser": null
       }]

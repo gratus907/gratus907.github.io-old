@@ -298,4 +298,10 @@ var store = [{
         "tags": ["graphs","data-science"],
         "url": "http://localhost:4000/advanced-algorithms/random-walk-on-graphs/",
         "teaser": null
+      },{
+        "title": "삼성 SCPC 예선 2라운드 풀이 / 후기",
+        "excerpt":"Contents Intro / Preperation Problem 1. 원 안의 점 (09:09 AC) Problem 2. 직8각형 (09:37 AC) Problem 4. 패턴 매칭 (10:56 209/400점) Problem 3. 산탄총 (16:54 154/300점) Problem 5. Hanoi Tower (20:55 2/500점) 대회를 마치며 Round 1 후기는 여기에, 작년 Round 2 후기는 티스토리 에 있습니다. 작년에 이어, 정말 말도...","categories": ["cp_rounds"],
+        "tags": ["algorithms"],
+        "url": "http://localhost:4000/cp_rounds/SCPC-2021-Round2/",
+        "teaser": null
       }]

@@ -201,6 +201,10 @@
 <lastmod>2021-08-06T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/cp_rounds/SCPC-2021-Round2/</loc>
+<lastmod>2021-08-07T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/404/</loc>
 </url>
 <url>
@@ -283,6 +287,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/page10/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page11/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/assets/pdf/dm-notes.pdf</loc>

@@ -8,6 +8,8 @@ main:
     url: /tags/
   - title: "About me"
     url: /about-me/
+  - title: "About Blog"
+    url: /about-blog/
 
 
 sidepost:
@@ -18,9 +20,12 @@ sidepost:
         url: /study-note/#coursera-ml-andrew-ng 
       - title: "Math study log"
         url : /study-log-math/
+      - title: "Advanced-Algorithms"
+        url: /categories/#advanced-algorithms
   - title: "Algorithm Problem Solving"
-    url : /categories/#algorithms
     children:
+      - title: "대회 (CP Rounds)"
+        url: /categories/#cp-rounds
       - title: "문제 출처별로 보기"
         url: /find-contest/
       - title: "Solved.ac class별로 보기"

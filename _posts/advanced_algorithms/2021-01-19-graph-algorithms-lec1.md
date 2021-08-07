@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Graph Algorithms, Lecture 1 : Fixed subgraph Isomorphism"
-categories: algorithms
+categories: advanced-algorithms
 tags:
   - graph
 sidebar:

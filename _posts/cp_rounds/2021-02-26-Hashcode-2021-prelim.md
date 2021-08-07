@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Google Hash Code 2021 : Global #211 (2%) 후기"
-categories: 
+categories: cp-rounds
 tags:
   - algorithms
   - competition

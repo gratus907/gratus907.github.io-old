@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "폴라드-로 소인수분해 알고리즘"
-categories: algorithms
+categories: advanced-algorithms
 tags:
   - number-theory
   - algorithms

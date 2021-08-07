@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "2021 UCPC 팀연습 #1 : 서강대학교 2020 Div 1"
-categories: cp_practice
+categories: cp-rounds
 tags:
   - 
 sidebar:

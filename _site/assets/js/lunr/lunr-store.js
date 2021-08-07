@@ -12,15 +12,15 @@ var store = [{
         "teaser": null
       },{
         "title": "Fibonacci Heap",
-        "excerpt":"참고자료 : CLRS Chapter 19, MIT Lecture Note Motivation Minimum Spanning Tree를 찾는 Prim’s algorithm이나, 최단 거리를 찾는 Dijkstra Algorithm에서 매우 중요한 역할을 하는 자료구조로 Priority queue가 있다. 두 알고리즘의 실행 과정을 보면, 다음 두 연산이 필요함을 알 수 있다. insert(x, e) : 자료구조에 간선 또는 정점과 그 가중치를 넣는다....","categories": ["algorithms"],
-        "tags": ["data-structures","advanced-data-structures"],
-        "url": "http://localhost:4000/algorithms/Fibonacci-heaps/",
+        "excerpt":"참고자료 : CLRS Chapter 19, MIT Lecture Note Motivation Minimum Spanning Tree를 찾는 Prim’s algorithm이나, 최단 거리를 찾는 Dijkstra Algorithm에서 매우 중요한 역할을 하는 자료구조로 Priority queue가 있다. 두 알고리즘의 실행 과정을 보면, 다음 두 연산이 필요함을 알 수 있다. insert(x, e) : 자료구조에 간선 또는 정점과 그 가중치를 넣는다....","categories": ["advanced-algorithms"],
+        "tags": [],
+        "url": "http://localhost:4000/advanced-algorithms/Fibonacci-heaps/",
         "teaser": null
       },{
         "title": "다이나믹 프로그래밍 : 분할 정복 최적화",
-        "excerpt":"이 글에서는 다이나믹 프로그래밍에 대한 분할 정복 최적화 를 다루고자 한다. 참고 : Koosaga - 동적 계획법 최적화. 무려 9가지의 DP 최적화 방식을 망라해서 다루고 있고, 전체적인 기법에 대한 깊은 insight가 묻어나는 글이다. 갈길이 너무나 멀다는걸 체감하게 한다… Motivation 다음과 같은 형태의 점화식을 생각하자. 여기서 $k$는 1부터 $K$까지, $i$ 는...","categories": ["algorithms"],
-        "tags": ["algorithms","dynamic-programming"],
-        "url": "http://localhost:4000/algorithms/DP-DnC-Opt/",
+        "excerpt":"이 글에서는 다이나믹 프로그래밍에 대한 분할 정복 최적화 를 다루고자 한다. 참고 : Koosaga - 동적 계획법 최적화. 무려 9가지의 DP 최적화 방식을 망라해서 다루고 있고, 전체적인 기법에 대한 깊은 insight가 묻어나는 글이다. 갈길이 너무나 멀다는걸 체감하게 한다… Motivation 다음과 같은 형태의 점화식을 생각하자. 여기서 $k$는 1부터 $K$까지, $i$ 는...","categories": ["advanced-algorithms"],
+        "tags": ["dynamic-programming"],
+        "url": "http://localhost:4000/advanced-algorithms/DP-DnC-Opt/",
         "teaser": null
       },{
         "title": "BOJ 12928 트리와 경로의 길이",
@@ -48,9 +48,9 @@ var store = [{
         "teaser": null
       },{
         "title": "Graph Algorithms, Lecture 1 : Fixed subgraph Isomorphism",
-        "excerpt":"Contents Subgraph Isomorphism Finding Triangles $O(mn)$ 알고리즘 $O(n^w)$ 알고리즘 $O(m^{(w + 1)/2})$ 알고리즘 Why triangles? Nesetril-Poljak Subgraph isomorphism 참고 : Stanford CS267 lecture note Subgraph Isomorphism 그래프 $G(V_G, E_G)$와, 다른 그래프 $H = (V_H, E_H)$ 에 대해, subgraph isomorphism $f : V_H \\to V_G$ 는 $(u, v) \\in E_H$ 이면...","categories": ["algorithms"],
+        "excerpt":"Contents Subgraph Isomorphism Finding Triangles $O(mn)$ 알고리즘 $O(n^w)$ 알고리즘 $O(m^{(w + 1)/2})$ 알고리즘 Why triangles? Nesetril-Poljak Subgraph isomorphism 참고 : Stanford CS267 lecture note Subgraph Isomorphism 그래프 $G(V_G, E_G)$와, 다른 그래프 $H = (V_H, E_H)$ 에 대해, subgraph isomorphism $f : V_H \\to V_G$ 는 $(u, v) \\in E_H$ 이면...","categories": ["advanced-algorithms"],
         "tags": ["graph"],
-        "url": "http://localhost:4000/algorithms/graph-algorithms-lec1/",
+        "url": "http://localhost:4000/advanced-algorithms/graph-algorithms-lec1/",
         "teaser": null
       },{
         "title": "BOJ 18600, Ptz Camp Summer 2019 Day 3, Valentine's Day",
@@ -174,21 +174,21 @@ var store = [{
         "teaser": null
       },{
         "title": "Google Hash Code 2021 : Global #211 (2%) 후기",
-        "excerpt":"이 글은 올해 해시코드 대회 과정에 대한 후기이고, 준비 과정은 앞 글(링크)에 있습니다. Contents 결과 문제 설명 데이터 설명 대회 전략의 실패 Algorithm : Demand - Proportional - Scheduling Fine Tuning 결과 / Discussion 앞으로를 위해 결과 A - An Example 2,000 B - By the Ocean 4,566,842 C -...","categories": [],
+        "excerpt":"이 글은 올해 해시코드 대회 과정에 대한 후기이고, 준비 과정은 앞 글(링크)에 있습니다. Contents 결과 문제 설명 데이터 설명 대회 전략의 실패 Algorithm : Demand - Proportional - Scheduling Fine Tuning 결과 / Discussion 앞으로를 위해 결과 A - An Example 2,000 B - By the Ocean 4,566,842 C -...","categories": ["cp-rounds"],
         "tags": ["algorithms","competition"],
-        "url": "http://localhost:4000/Hashcode-2021-prelim/",
+        "url": "http://localhost:4000/cp-rounds/Hashcode-2021-prelim/",
         "teaser": null
       },{
         "title": "Google Hash Code 2021 : Team Little Piplup 준비과정",
-        "excerpt":"이 글은 올해 해시코드를 준비하는 과정 등에 대한 이야기이고, 해시코드 2021에 Specific한 (문제 등) 은 다음 글(링크에서 다룹니다. 내년에 해시코드를 준비하려는 분들이 읽었을때 재밌게 쓰고 싶었는데 어떤지 모르겠네요. :( Contents Google Hashcode Team Little Piplup Preperation 전략 작년 팀연습들 팀연습 : 2020 Hashcode WF Google Hashcode Google Hashcode는 구글에서 개최하는...","categories": [],
+        "excerpt":"이 글은 올해 해시코드를 준비하는 과정 등에 대한 이야기이고, 해시코드 2021에 Specific한 (문제 등) 은 다음 글(링크에서 다룹니다. 내년에 해시코드를 준비하려는 분들이 읽었을때 재밌게 쓰고 싶었는데 어떤지 모르겠네요. :( Contents Google Hashcode Team Little Piplup Preperation 전략 작년 팀연습들 팀연습 : 2020 Hashcode WF Google Hashcode Google Hashcode는 구글에서 개최하는...","categories": ["cp-rounds"],
         "tags": ["algorithms","competition"],
-        "url": "http://localhost:4000/Hashcode-2021-prep/",
+        "url": "http://localhost:4000/cp-rounds/Hashcode-2021-prep/",
         "teaser": null
       },{
         "title": "폴라드-로 소인수분해 알고리즘",
-        "excerpt":"Contents Motivation 생일 문제 (Birthday Problem) 가정 Algorithm 예시 구현 시간 복잡도 Motivation 소인수분해는 매우 어려운 과정이다. 실제로 소인수분해는 (입력 비트 수에 대해) 다항 시간에 결정론적으로 풀 수 있는 방법이 알려져 있지 않다. 그러나, 약간의 랜덤성 (확률에 대한 의존) 을 허용한다면 상당히 clever한 알고리즘을 통해 빠르게 소인수분해를 할 수 있는데,...","categories": ["algorithms"],
+        "excerpt":"Contents Motivation 생일 문제 (Birthday Problem) 가정 Algorithm 예시 구현 시간 복잡도 Motivation 소인수분해는 매우 어려운 과정이다. 실제로 소인수분해는 (입력 비트 수에 대해) 다항 시간에 결정론적으로 풀 수 있는 방법이 알려져 있지 않다. 그러나, 약간의 랜덤성 (확률에 대한 의존) 을 허용한다면 상당히 clever한 알고리즘을 통해 빠르게 소인수분해를 할 수 있는데,...","categories": ["advanced-algorithms"],
         "tags": ["number-theory","algorithms"],
-        "url": "http://localhost:4000/algorithms/Pollards-Rho/",
+        "url": "http://localhost:4000/advanced-algorithms/Pollards-Rho/",
         "teaser": null
       },{
         "title": "2021 1학기 중간점검",
@@ -216,9 +216,9 @@ var store = [{
         "teaser": null
       },{
         "title": "Codejam 2021 Round 2",
-        "excerpt":"Contents Preperation Preliminary &amp; Round 1 Problem 1 : Minimum Sort Problem 2 : Matrygons Problem 3 : Hidden Pancakes Round 총평 올해 Codejam의 (나한테 있어) 사실상 마지막 round이므로 (R3 는 재밌게 하겠지만 competition으로써는 얻을게 없다) Hashcode 때처럼 prep과 과정을 좀 적어보려고 한다. 앞으로 메이저한 대회는 이렇게 적어볼 생각이다. Preperation...","categories": ["algorithms"],
+        "excerpt":"Contents Preperation Preliminary &amp; Round 1 Problem 1 : Minimum Sort Problem 2 : Matrygons Problem 3 : Hidden Pancakes Round 총평 올해 Codejam의 (나한테 있어) 사실상 마지막 round이므로 (R3 는 재밌게 하겠지만 competition으로써는 얻을게 없다) Hashcode 때처럼 prep과 과정을 좀 적어보려고 한다. 앞으로 메이저한 대회는 이렇게 적어볼 생각이다. Preperation...","categories": ["cp-rounds"],
         "tags": ["competitive-programming"],
-        "url": "http://localhost:4000/algorithms/Codejam-2021-R2/",
+        "url": "http://localhost:4000/cp-rounds/Codejam-2021-R2/",
         "teaser": null
       },{
         "title": "2021 1학기 종강",
@@ -240,15 +240,15 @@ var store = [{
         "teaser": null
       },{
         "title": "2021 UCPC 팀연습 #1 : 서강대학교 2020 Div 1",
-        "excerpt":"Contents Our Team Practice : Sogang 2020 Div1 Phase 0 : Start Phase 1 : Easy Problems A. 파일 정리 F. 폰친구 C. 연료가 부족해 B. 컨설팅 Phase 2 : 3 Graph Problems E. 사탕 배달 D. 에어컨 설치 G. Confuzzle Phase 3 : Pizza Madness 후기 Our Team 이번...","categories": ["cp_practice"],
+        "excerpt":"Contents Our Team Practice : Sogang 2020 Div1 Phase 0 : Start Phase 1 : Easy Problems A. 파일 정리 F. 폰친구 C. 연료가 부족해 B. 컨설팅 Phase 2 : 3 Graph Problems E. 사탕 배달 D. 에어컨 설치 G. Confuzzle Phase 3 : Pizza Madness 후기 Our Team 이번...","categories": ["cp-rounds"],
         "tags": [],
-        "url": "http://localhost:4000/cp_practice/team_practice_1/",
+        "url": "http://localhost:4000/cp-rounds/team_practice_1/",
         "teaser": null
       },{
         "title": "삼성 SCPC 예선 1라운드 풀이 / 후기",
-        "excerpt":"Contents SCPC 문제 풀이 / 후기 Problem 1. 친구들 문제설명 풀이 (Disjoint Set) Problem 2. 이진수 문제설명 풀이 (Greedy) Problem 3. No Cycle 문제설명 풀이 (Greedy + Graph) Problem 4. 예약 시스템 문제설명 풀이 (Greedy + Casework) Problem 5 문제 설명 풀이 (DSU-based) 후기 부록 : 버퍼 이야기 (SCPC 주의사항)...","categories": ["cp_rounds"],
+        "excerpt":"Contents SCPC 문제 풀이 / 후기 Problem 1. 친구들 문제설명 풀이 (Disjoint Set) Problem 2. 이진수 문제설명 풀이 (Greedy) Problem 3. No Cycle 문제설명 풀이 (Greedy + Graph) Problem 4. 예약 시스템 문제설명 풀이 (Greedy + Casework) Problem 5 문제 설명 풀이 (DSU-based) 후기 부록 : 버퍼 이야기 (SCPC 주의사항)...","categories": ["cp-rounds"],
         "tags": ["algorithms"],
-        "url": "http://localhost:4000/cp_rounds/SCPC-2021-Round1/",
+        "url": "http://localhost:4000/cp-rounds/SCPC-2021-Round1/",
         "teaser": null
       },{
         "title": "7월 3주차 Weekly PS",
@@ -264,9 +264,9 @@ var store = [{
         "teaser": null
       },{
         "title": "Karger-Stein Minimum Cut",
-        "excerpt":"Contents Min Cut s-t min cut Karger’s Algorithm Edge contraction Algorithm Proof Time Complexity Karger-Stein Algorithm Time Complexity of iteration Probability of Success Total time complexity Extension Min Cut Min Cut 문제란, 어떤 그래프 $G = (V, E)$ 가 주어졌을 때, $V$의 정점들을 두 집합 $S, T$ 로 나누어서, \\(\\Setcond{(u,...","categories": ["advanced_algorithms"],
+        "excerpt":"Contents Min Cut s-t min cut Karger’s Algorithm Edge contraction Algorithm Proof Time Complexity Karger-Stein Algorithm Time Complexity of iteration Probability of Success Total time complexity Extension Min Cut Min Cut 문제란, 어떤 그래프 $G = (V, E)$ 가 주어졌을 때, $V$의 정점들을 두 집합 $S, T$ 로 나누어서, \\(\\Setcond{(u,...","categories": ["advanced-algorithms"],
         "tags": ["algorithms","graph_theory"],
-        "url": "http://localhost:4000/advanced_algorithms/karger-stein-mincut/",
+        "url": "http://localhost:4000/advanced-algorithms/karger-stein-mincut/",
         "teaser": null
       },{
         "title": "7월 4-5주차 Weekly PS",
@@ -300,8 +300,8 @@ var store = [{
         "teaser": null
       },{
         "title": "삼성 SCPC 예선 2라운드 풀이 / 후기",
-        "excerpt":"Contents Intro / Preperation Problem 1. 원 안의 점 (09:09 AC) Problem 2. 직8각형 (09:37 AC) Problem 4. 패턴 매칭 (10:56 209/400점) Problem 3. 산탄총 (16:54 154/300점) Problem 5. Hanoi Tower (20:55 2/500점) 대회를 마치며 Round 1 후기는 여기에, 작년 Round 2 후기는 티스토리 에 있습니다. 작년에 이어, 정말 말도...","categories": ["cp_rounds"],
+        "excerpt":"Contents Intro / Preperation Problem 1. 원 안의 점 (09:09 AC) Problem 2. 직8각형 (09:37 AC) Problem 4. 패턴 매칭 (10:56 209/400점) Problem 3. 산탄총 (16:54 154/300점) Problem 5. Hanoi Tower (20:55 2/500점) 대회를 마치며 Round 1 후기는 여기에, 작년 Round 2 후기는 티스토리 에 있습니다. 작년에 이어, 정말 말도...","categories": ["cp-rounds"],
         "tags": ["algorithms"],
-        "url": "http://localhost:4000/cp_rounds/SCPC-2021-Round2/",
+        "url": "http://localhost:4000/cp-rounds/SCPC-2021-Round2/",
         "teaser": null
       }]

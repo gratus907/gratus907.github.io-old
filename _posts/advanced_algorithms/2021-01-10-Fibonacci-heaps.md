@@ -1,10 +1,8 @@
 ---
 layout: single
 title: "Fibonacci Heap"
-categories: algorithms
+categories: advanced-algorithms
 tags:
-  - data-structures
-  - advanced-data-structures
 sidebar:
   nav: "sidepost"
 comment: true

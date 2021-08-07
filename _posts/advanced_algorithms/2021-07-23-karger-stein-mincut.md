@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Karger-Stein Minimum Cut"
-categories: advanced_algorithms
+categories: advanced-algorithms
 tags:
   - algorithms
   - graph_theory

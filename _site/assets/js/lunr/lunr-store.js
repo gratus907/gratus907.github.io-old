@@ -185,10 +185,22 @@ var store = [{
         "url": "http://localhost:4000/cp-rounds/Hashcode-2021-prep/",
         "teaser": null
       },{
+        "title": "정수론 : 2장 1절 Congruences",
+        "excerpt":"Contents Congruence Congruence $a, b, m \\in \\Z$, $m \\neq 0$에 대해, $a \\equiv b \\mod m \\iff m \\di (a - b)$. 이때, $a$를 $m$으로 나눈 나머지를 $[a]_m$으로 나타낸다. 이 Congruence relation은 equivalence이다. 덧셈, 뺄셈, 곱셈은 잘 보존된다. 즉, $a \\equiv b, c \\equiv d$이면 $a + b \\equiv...","categories": ["mathematics"],
+        "tags": ["number-theory"],
+        "url": "http://localhost:4000/mathematics/Number-Theory-Lec3/",
+        "teaser": null
+      },{
         "title": "폴라드-로 소인수분해 알고리즘",
         "excerpt":"Contents Motivation 생일 문제 (Birthday Problem) 가정 Algorithm 예시 구현 시간 복잡도 Motivation 소인수분해는 매우 어려운 과정이다. 실제로 소인수분해는 (입력 비트 수에 대해) 다항 시간에 결정론적으로 풀 수 있는 방법이 알려져 있지 않다. 그러나, 약간의 랜덤성 (확률에 대한 의존) 을 허용한다면 상당히 clever한 알고리즘을 통해 빠르게 소인수분해를 할 수 있는데,...","categories": ["advanced-algorithms"],
         "tags": ["number-theory","algorithms"],
         "url": "http://localhost:4000/advanced-algorithms/Pollards-Rho/",
+        "teaser": null
+      },{
+        "title": "이산수학 주제 1 : Propositional Logic",
+        "excerpt":"Contents Propositional Logic 명제의 역/이/대우 Well-Formed Formula Logical Facts Logic : Formal system for describing knowledge, implement reasoning on knowledge. Set of rules deducing entailments of a set of sentences. Ambiguity 없이 명제를 표현하고 사고를 전개하는 언어 (Syntax, Semantics, Rules). Propositional Logic 기본적인 문장들을 Atomic entity로 간주하고, Boolean connective를 이용하여...","categories": ["dma2021"],
+        "tags": ["logic"],
+        "url": "http://localhost:4000/dma2021/propositional-logic/",
         "teaser": null
       },{
         "title": "2021 1학기 중간점검",
@@ -303,5 +315,35 @@ var store = [{
         "excerpt":"Contents Intro / Preperation Problem 1. 원 안의 점 (09:09 AC) Problem 2. 직8각형 (09:37 AC) Problem 4. 패턴 매칭 (10:56 209/400점) Problem 3. 산탄총 (16:54 154/300점) Problem 5. Hanoi Tower (20:55 2/500점) 대회를 마치며 Round 1 후기는 여기에, 작년 Round 2 후기는 티스토리 에 있습니다. 작년에 이어, 정말 말도...","categories": ["cp-rounds"],
         "tags": ["algorithms"],
         "url": "http://localhost:4000/cp-rounds/SCPC-2021-Round2/",
+        "teaser": null
+      },{
+        "title": "I. 시간 복잡도와 Big-O Notation",
+        "excerpt":"Contents Time Complexity Analysis Asymptotic Notation Additional topics and Problems Time Complexity Analysis 알고리즘 (Algorithm) 과 자료구조 (Data Structure) 를 공부하는 우리의 목표는, 같은 문제를 효율적으로 해결하는 것입니다. 뭔가를 효율적으로 하기 위해서는 항상 효율을 측정하는 기준이 필요할 것입니다. 일반적으로 이 기준에는 다음 두 가지가 가장 중요합니다. 프로그램이 얼마나 오래 걸리는가...","categories": ["ds-alg-note"],
+        "tags": [],
+        "url": "http://localhost:4000/ds-alg-note/01-time-complexity/",
+        "teaser": null
+      },{
+        "title": "II. 기본 자료구조",
+        "excerpt":"Contents 자료 구조 : Data structures Linked Lists Stacks / Queues / Deques Implementation Standard Library 자료 구조 : Data structures 이 장은 자료 구조에 대한 이야기입니다. 자료 구조는 알고리즘과 매우 밀접한 관련이 있는데, 어떤 식으로 자료가 저장되어 있는지에 따라 알고리즘의 소요 시간이 크게 달라지기 때문입니다. 특정한 자료구조를 이용해야만 빠르게...","categories": ["ds-alg-note"],
+        "tags": [],
+        "url": "http://localhost:4000/ds-alg-note/02-basic-ds/",
+        "teaser": null
+      },{
+        "title": "III. 정렬과 탐색",
+        "excerpt":"Contents Slow Sorting Algorithm Fast Sorting Algorithms Heap Sort Merge Sort Quick sort Hybrid Sort Selection Algorithms Quickselect Worst-Case Linear Selection Additional topics and Problems Programming Practice 우리의 목표는, $n$개의 원소를 가진 배열을 정렬하는 것입니다. 편의상, 다음과 같은 사실을 가정합니다. 정렬은 작은 것부터 큰 것 순서로 늘어놓는 것을 말합니다. ex)...","categories": ["ds-alg-note"],
+        "tags": [],
+        "url": "http://localhost:4000/ds-alg-note/03-sorting-and-searching/",
+        "teaser": null
+      },{
+        "title": "IV. Binary Search",
+        "excerpt":"Contents Binary Search Bisection (parametric) Search Ternary Search Binary Search Up &amp; Down 게임을 해 보셨나요? 1부터 1000까지의 수 중 하나를, 10번 정도면 맞출 수 있다는 사실을 알고 계시나요? 아마도, 모두가 절반씩 잘라서 확인하는 전략을 사용할 것입니다. 이 전략을 우리는 Binary Search 라고 부릅니다. $N$ 크기의 배열이 정렬되어 있음을 안다면,...","categories": ["ds-alg-note"],
+        "tags": [],
+        "url": "http://localhost:4000/ds-alg-note/04-binary-search/",
+        "teaser": null
+      },{
+        "title": "V. Graph Basics, Heaps",
+        "excerpt":"Contents Graphs Implementation of Graphs Trees / Binary Trees Heaps Heap Operation Heap Sort Heap Implementation Additional topics and Problems Programming Practice 저번 세션에 이어서, 자료구조를 공부하고자 합니다. Graphs 추상적으로, 그래프는 다음과 같이 정의된 $G = (V, E)$를 의미합니다. $V$는 정점의 집합으로, 그냥 원소들을 모은 집합으로 생각하면 됩니다. $E$는 $V...","categories": ["ds-alg-note"],
+        "tags": [],
+        "url": "http://localhost:4000/ds-alg-note/05-graph-basics/",
         "teaser": null
       }]

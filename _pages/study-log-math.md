@@ -21,3 +21,18 @@ author_profile: true
   - Sylow $p$-subgroup
   - First/Second/Third Sylow Theorems
 </details>
+
+<details> <summary markdown = span> <b>8월 8일 (일)</summary>
+- 현대대수학 Fraleigh CH 37. Application of Sylow Theorems
+  - Sylow Theorem 응용.
+  - Order가 $pq$인 group, $p^2$ 인 group 등등...
+</details>
+
+<details> <summary markdown = span> <b>8월 9일 (월)</summary>
+- 확률론 
+  - Measure Theory 복습
+  - Measure의 정의, Lebesgue Integral
+  - Dominated Convergence Thm, Monotone Convergence Thm
+  - Probability Space의 정의, Expectation
+  - Jensen, Holder Inequality
+</details>

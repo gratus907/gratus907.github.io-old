@@ -28,11 +28,8 @@ author_profile: true
   - Order가 $pq$인 group, $p^2$ 인 group 등등...
 </details>
 
-<details> <summary markdown = span> <b>8월 9일 (월)</summary>
-- 확률론 
-  - Measure Theory 복습
-  - Measure의 정의, Lebesgue Integral
-  - Dominated Convergence Thm, Monotone Convergence Thm
-  - Probability Space의 정의, Expectation
-  - Jensen, Holder Inequality
+<details> <summary markdown = span> <b>8월 10일 (화)</summary>
+- 현대대수학 Fraleigh CH 38. Free Abelian Groups
+  - Free Abelian Group, Basis
+  - Fundamental Thm of Finitely generated Abelian groups
 </details>

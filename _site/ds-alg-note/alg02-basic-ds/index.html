@@ -19,7 +19,7 @@
 
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>5월 1주차 Weekly PS - Gratus907’s Study Note</title>
+<!-- begin _includes/seo.html --><title>II. 기본 자료구조 - Gratus907’s Study Note</title>
 <meta name="description" content="Contents">
 
 
@@ -32,8 +32,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Gratus907's Study Note">
-<meta property="og:title" content="5월 1주차 Weekly PS">
-<meta property="og:url" content="http://localhost:4000/algorithms/ps-weekly-21may1/">
+<meta property="og:title" content="II. 기본 자료구조">
+<meta property="og:url" content="http://localhost:4000/ds-alg-note/alg02-basic-ds/">
 
 
   <meta property="og:description" content="Contents">
@@ -44,7 +44,7 @@
 
 
 
-  <meta property="article:published_time" content="2021-05-11T00:00:00+09:00">
+  <meta property="article:published_time" content="2021-08-09T00:00:00+09:00">
 
 
 
@@ -55,7 +55,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/algorithms/ps-weekly-21may1/">
+<link rel="canonical" href="http://localhost:4000/ds-alg-note/alg02-basic-ds/">
 
 
 
@@ -377,15 +377,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="5월 1주차 Weekly PS">
+    <meta itemprop="headline" content="II. 기본 자료구조">
     <meta itemprop="description" content="  Contents">
-    <meta itemprop="datePublished" content="2021-05-11T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2021-08-09T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">5월 1주차 Weekly PS
+          <h1 id="page-title" class="page__title" itemprop="headline">II. 기본 자료구조
 </h1>
           
 
@@ -401,7 +401,7 @@
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          344 words
+          605 words
       </span>
     
   </p>
@@ -409,61 +409,167 @@
 
         </header>
       
-      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/algorithms/ps-weekly-21may1/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/ds-alg-note/alg02-basic-ds/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
       <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#자료-구조--data-structures">자료 구조 : Data structures</a></li>
+  <li><a href="#linked-lists">Linked Lists</a></li>
+  <li><a href="#stacks--queues--deques">Stacks / Queues / Deques</a></li>
+  <li><a href="#implementation">Implementation</a></li>
+  <li><a href="#standard-library">Standard Library</a></li>
+</ul>
+
+            </nav>
+          </aside>
         
         <div id="toc">
   <p>Contents</p>
 </div>
 <ul id="markdown-toc">
-  <li><a href="#google-codejam-2021-round-1b" id="markdown-toc-google-codejam-2021-round-1b">Google Codejam 2021, Round 1B</a>    <ul>
-      <li><a href="#broken-clock-small-middle" id="markdown-toc-broken-clock-small-middle">Broken Clock, Small-Middle</a></li>
-      <li><a href="#subtransmutation-full" id="markdown-toc-subtransmutation-full">Subtransmutation, Full</a></li>
-    </ul>
-  </li>
-  <li><a href="#problems" id="markdown-toc-problems">Problems</a>    <ul>
-      <li><a href="#boj-20191-줄임말-koi-2020" id="markdown-toc-boj-20191-줄임말-koi-2020">BOJ 20191 줄임말 (KOI 2020)</a></li>
-      <li><a href="#boj-3006-터보소트-coci-2007" id="markdown-toc-boj-3006-터보소트-coci-2007">BOJ 3006 터보소트 (COCI 2007)</a></li>
-    </ul>
-  </li>
+  <li><a href="#자료-구조--data-structures" id="markdown-toc-자료-구조--data-structures">자료 구조 : Data structures</a></li>
+  <li><a href="#linked-lists" id="markdown-toc-linked-lists">Linked Lists</a></li>
+  <li><a href="#stacks--queues--deques" id="markdown-toc-stacks--queues--deques">Stacks / Queues / Deques</a></li>
+  <li><a href="#implementation" id="markdown-toc-implementation">Implementation</a></li>
+  <li><a href="#standard-library" id="markdown-toc-standard-library">Standard Library</a></li>
 </ul>
 <hr />
 
-<p>Apr 26 - May 09, 2021. 이번 주차는 4월 말 것들도 포함되어 있다.
-이전 블로그에서 했었던 weekly PS를 다시 써보려고 한다. 알고리즘 공부도 요새 너무 못한거 같아서…
-시험기간 2주씩을 제외하고, 5월에는 아마 1-4주차까지는 있을 예정이다.</p>
+<h2 id="자료-구조--data-structures">자료 구조 : Data structures</h2>
 
-<h2 id="google-codejam-2021-round-1b">Google Codejam 2021, Round 1B</h2>
-<p>1번 Broken clock의 small과 middle, 2번 subtransmutation의 small과 large를 풀고 1101등으로 1B를 통과했다. 올해는 Round 2에는 큰 의미를 두고 있지 않다 (요새 코딩 연습을 너무 못해서..)</p>
+<p>이 장은 자료 구조에 대한 이야기입니다. 자료 구조는 알고리즘과 매우
+밀접한 관련이 있는데, 어떤 식으로 자료가 저장되어 있는지에 따라
+알고리즘의 소요 시간이 크게 달라지기 때문입니다. 특정한 자료구조를
+이용해야만 빠르게 작동하는 알고리즘들도 수없이 많고, 알고리즘 자체에
+명세처럼 이런 자료구조를 써야 한다고 말하는 경우도 많을 것입니다.</p>
 
-<p>놀라운 구현 뇌절이 있을 예정이었기 때문에 미연에 방지하고자 python으로 뛰었고, 그럼에도 불구하고 Broken clock 구현에 1시간 반 정도를 박고 9번을 제출했지만 large를 맞지 못했다는건 좀 충격적이다.</p>
+<h2 id="linked-lists">Linked Lists</h2>
 
-<p>문제 풀이에 대해 간략히 얘기하자면…</p>
+<p>가장 기본적인 자료구조인 Linked List (연결 리스트) 는, 한 줄로 쭉 연결된
+<strong>노드</strong> 들의 연결로 구성됩니다. 대표적은 Dynamic data structure라고 볼
+수 있겠습니다. 우리가 앞서 본 바와 같이, 1개가 있을지 5개가 있을지
+10만개가 있을지 모르는 상황에서 배열을 쓰려면 가능한 최대를 잡아야
+합니다. 이는 매우 비효율적이기 때문에, 이러한 Dynamic data structure에
+대한 고민은 매우 중요하다고 할 수 있습니다.</p>
 
-<h3 id="broken-clock-small-middle">Broken Clock, Small-Middle</h3>
-<p>Middle까지는 가능한 시간이 정수 초 만큼이라서 43,200가지밖에 없고, 이 모든 경우를 직접 확인해도 넉넉한 시간이다.</p>
+<p>링크드 리스트를 구현하는 방법은 매우 간단합니다. 각 노드가 <strong>데이터</strong>
+와, <strong>다음 노드로 가는 포인터</strong> 를 들고 있으면 됩니다. 노드를 <strong>struct
+node</strong> 로 관리하면 좋겠네요. 이제...</p>
 
-<p>코드 : <a href="https://github.com/gratus907/Gratus_PS/blob/master/Contests/Others/%5BGoogle%5D%20Google%20Codejam/2021/Round%201B/A_Broken_Clock.py">링크</a></p>
+<ul>
+  <li>
+    <p>원소를 추가할 때는, 먼저 새 노드를 만든 다음, 추가하려는 위치를
+잡고, 그 앞에 있는 노드의 next pointer를 지금 추가하려는 노드로
+잡아주고, 새로 추가한 노드의 next pointer를 관리하면 간단합니다.</p>
+  </li>
+  <li>
+    <p>원소의 삭제는, 삭제하려는 노드 이전 노드를 찾아서 그 next pointer를
+삭제하려는 노드의 다음 노드로 보내주면 됩니다. Dynamic memory
+alloc/dealloc에 주의해 주세요.</p>
+  </li>
+</ul>
 
-<h3 id="subtransmutation-full">Subtransmutation, Full</h3>
-<p>왜 문제 순서가 이런지 잘 모르겠다. 넉넉히 $K$ 한개로 시작해서 만들 수 있는지를 매번 확인해도 시간이 넉넉하고, 이는 $K$부터 1번까지 거꾸로 오면서 Greedy하게 DP를 계산해주면 된다. 말이 조금 이상한데, 꼭 필요한 개수만큼 빼놓고 나머지는 전부 나중에 쓰일수도 있으니 작은걸로 분해해준다고 생각하면 간단하다. 말보다 코드가 훨씬 쉬운 문제.</p>
+<p>자료구조 / 알고리즘을 공부할 때 좋은 rule of thumb 중 하나는, 뭔가를
+얻었으면 뭔가를 지불해야 한다는 점입니다. 이 손해는 구현의 난이도일수도
+있고, 상수가 크다는 점일 수도 있고, 다른 연산이 느릴 수도 있는데, 링크드
+리스트는 이 대표적인 사례 중 하나입니다. 먼저...</p>
 
-<p>코드 : <a href="https://github.com/gratus907/Gratus_PS/blob/master/Contests/Others/%5BGoogle%5D%20Google%20Codejam/2021/Round%201B/B_Subtransmutation.py">링크</a></p>
+<ul>
+  <li>
+    <p>10만개짜리 리스트 중 5만 6천번째가 뭔지 확인하고 싶으면, head부터
+next포인터를 5만6천번 따라가야 합니다.</p>
+  </li>
+  <li>
+    <p>삭제할때, 이전 노드를 찾는 작업이 굉장히 귀찮습니다. ‘지금 보고 있는
+노드’ 뿐 아니라, ‘그 직전 노드’ 가 뭔지도 관리하면서 Loop를 돌려야
+하기 때문입니다.</p>
+  </li>
+</ul>
 
-<h2 id="problems">Problems</h2>
-<h3 id="boj-20191-줄임말-koi-2020">BOJ 20191 줄임말 (KOI 2020)</h3>
-<p>난이도 : Gold 3 (BOJ)</p>
+<p>후자는 구현상의 문제니 뭐 그렇다고 치더라도, 시간 복잡도로 생각해 보면
+임의 위치의 삽입/삭제/접근이 모두 $O(n)$ 시간이 걸린다고 할 수 있습니다.</p>
 
-<p>문자열 S와 T가 주어질 때, T를 몇 번 concat해야 $T^n$ (concat) 이 $S$를 subseqeunce로 포함하는지 묻는 문제. S의 각 글자에 대해서, 이 글자가 T의 몇번째에 대응될 수 있는지 미리 모두 확인한다. Greedy하게, 내 이전 글자들보다 뒤에 있기만 하다면 대응할 수 있는 위치 중 최대한 앞에 대응해야 무조건 이득이 된다. 그러나 더이상 대응 가능한 위치가 없다면, 새로운 T를 하나 추가해서, 가능한 가장 앞에 대응해야 한다. 이를 이용하면 전처리 $O(S + T)$ 를 수행함으로써, $S$의 각 글자에 대해 $\log T$ 시간에 위치를 찾아줄 수 있으므로 $O(S \log T)$ 시간에 해결된다.</p>
+<p>배열의 경우, 임의 삽입은 개수가 넘어가면 안 될수도 있고, 되더라도 삽입
+삭제는 $O(n)$이 걸리는데 비해 접근은 $O(1)$에 할 수 있으므로, 동적
+리스트를 얻기 위해 임의접근 속도를 포기했다고 보면 되겠습니다.</p>
 
-<p>코드 : <a href="https://github.com/gratus907/Gratus_PS/blob/master/Contests/Olympiads/%5BKOI%5D%20Korean%20Olympiad%20of%20Informatics/KOI%202020/%EA%B3%A0%EB%93%B11-%EC%A4%84%EC%9E%84%EB%A7%90.cpp">링크</a></p>
+<p>변형된 형태의 동적 리스트로, 다음 노드 뿐 아니라 이전 노드로 가는
+포인터도 관리하는 double linked list, 구현상의 편의를 위해 Head와 Tail을
+이어 버리는 circular linked list 등등이 있습니다.</p>
 
-<h3 id="boj-3006-터보소트-coci-2007">BOJ 3006 터보소트 (COCI 2007)</h3>
-<p>난이도 : Platinum 4 (BOJ)</p>
+<h2 id="stacks--queues--deques">Stacks / Queues / Deques</h2>
 
-<p>세그먼트 트리에 각 element의 위치를 저장하고, segment tree를 이용하여 다이나믹하게 뭔가를 갱신하는 좋은 연습문제지만 기본적인 개념을 파악하고 나면 어렵지 않다. Segtree를 이용하면 구간 $(a, b)$ 의 1의 개수 (남아 있는 원소의 개수) 를 쉽게 셀 수 있다.</p>
+<p>스택은 Last-in First-out (LIFO) 형태의 자료구조입니다. 즉, 다음 두
+연산을 지원하는 자료구조를 말합니다.</p>
 
-<p>코드 : <a href="https://github.com/gratus907/Gratus_PS/blob/master/Contests/Olympiads/%5BCOCI%5D%20Croatian%20Open%20Competition%20in%20Informatics/COCI%202007-2008/2_TURBO.cpp">링크</a></p>
+<ul>
+  <li>
+    <p>Element를 맨 위에 추가 (push)</p>
+  </li>
+  <li>
+    <p>맨 위에 쌓은 element를 빠르게 확인하거나 (peek), 가져오기 (pop)</p>
+  </li>
+</ul>
+
+<p>여기서, <strong>할 수 있다</strong> 는 말은 사실 <strong>빠르게 할 수 있다</strong> 는 말입니다.
+당연히 스택에서 맨 밑 원소를 보는것도 그 위에 $n$개의 원소를 다 뽑아내면
+할 수는 있습니다. 다만 위 두 연산을 $O(1)$에 할 수 있음이 중요합니다.</p>
+
+<p>Queue는 First-in First-out (FIFO) 형태의 자료구조입니다. Stack과는 달리,
+Element를 위에서 넣고 뺄 때는 아래에서만 뺀다고 생각하면 됩니다.</p>
+
+<p>Deque는 Queue와 Stack의 기능을 합쳐, Front/Rear access와 insert가 모두
+$O(1)$에 작동하는 자료구조입니다.</p>
+
+<p>이 세 가지에 대한 자세한 설명은 워낙 좋은 내용들이 많고, 어려운 내용도 아니라서 패스하겠습니다.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>세 자료구조 모두 개념적으로는 Doubly Linked List로 구현하면 됩니다.
+구현의 용이성을 위해 Dynamic함을 포기하고 1차원 배열에다가 배열의 양
+끝을 표시하는 index variable 2개를 쓰는 구현도 많이 사용하는데, 이
+경우에는 메모리에만 들어가면 원하는 만큼 많이 넣을 수 있다는 기본적인
+가정을 위배하는데 비해 시간복잡도상의 이득이 있지는 않으므로 우리의
+관심사는 아닙니다.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<h2 id="standard-library">Standard Library</h2>
+
+<p>STL에는 stack, queue, deque가 다 있습니다. <code class="language-plaintext highlighter-rouge">deque&lt;int&gt; dq;</code> 와 같이
+선언하고 쓸 수 있습니다.</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">{push/pop}_{back/front}()</code> 의 4개 함수를 제공합니다. 당연히
+stack이나 queue는 제약이 있습니다.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">top(), front(), back()</code> 등 peek-형 함수들이 있습니다.</p>
+  </li>
+  <li>
+    <p>미세하게 문법이 다른데, 쓰면서 익히면 됩니다. 특히, stack이나
+queue는 어차피 넣고빼는 위치가 정해져 있으므로 그냥 push/pop으로
+사용하도록 되어 있습니다. 위 설명은 deque가 기준입니다.</p>
+  </li>
+  <li>
+    <p>vector는 스택이 할 수 있는 모든 것을 동일한 시간 복잡도에 할 수
+있으므로, stack임을 명시하고 싶은 상황이 아니라면 vector를 써도
+됩니다.</p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>다만... 링크드 리스트는 실제 퍼포먼스가 매우 느립니다. 링크드
+리스트의 $O(1)$ 과 배열의 $O(1)$은 좀 다르긴 합니다. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
         
       </section>
@@ -471,25 +577,6 @@
       <footer class="page__meta">
         
         
-  
-
-
-  
-  
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
-    <span itemprop="keywords">
-    
-      
-      
-      <a href="/tags/#weekly-ps" class="page__taxonomy-item" rel="tag">weekly-ps</a>
-    
-    </span>
-  </p>
-
-
 
 
   
@@ -505,14 +592,14 @@
     
       
       
-      <a href="/categories/#algorithms" class="page__taxonomy-item" rel="tag">algorithms</a>
+      <a href="/categories/#ds-alg-note" class="page__taxonomy-item" rel="tag">ds-alg-note</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-05-11T00:00:00+09:00">May 11, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-08-09T00:00:00+09:00">August 9, 2021</time></p>
 
 
       </footer>
@@ -520,11 +607,11 @@
       
   <nav class="pagination">
     
-      <a href="/numerical-analysis/im-1/" class="pagination--pager" title="Iterative methods : Jacobi, GS, SOR
+      <a href="/ds-alg-note/alg01-time-complexity/" class="pagination--pager" title="I. 시간 복잡도와 Big-O Notation
 ">이전</a>
     
     
-      <a href="/algorithms/ps-weekly-21may2/" class="pagination--pager" title="5월 2주차 Weekly PS
+      <a href="/ds-alg-note/alg03-sorting-and-searching/" class="pagination--pager" title="III. 정렬과 탐색
 ">다음</a>
     
   </nav>
@@ -569,7 +656,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/ds-alg-note/05-graph-basics/" rel="permalink">V. Graph Basics, Heaps
+        <a href="/ds-alg-note/alg05-graph-basics/" rel="permalink">V. Graph Basics, Heaps
 </a>
       
     </h2>
@@ -612,7 +699,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/ds-alg-note/04-binary-search/" rel="permalink">IV. Binary Search
+        <a href="/ds-alg-note/alg04-binary-search/" rel="permalink">IV. Binary Search
 </a>
       
     </h2>
@@ -655,7 +742,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/ds-alg-note/03-sorting-and-searching/" rel="permalink">III. 정렬과 탐색
+        <a href="/ds-alg-note/alg03-sorting-and-searching/" rel="permalink">III. 정렬과 탐색
 </a>
       
     </h2>
@@ -698,7 +785,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/ds-alg-note/02-basic-ds/" rel="permalink">II. 기본 자료구조
+        <a href="/ds-alg-note/alg01-time-complexity/" rel="permalink">I. 시간 복잡도와 Big-O Notation
 </a>
       
     </h2>
@@ -716,7 +803,7 @@
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          611 words
+          1008 words
       </span>
     
   </p>
@@ -773,7 +860,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version ae048286272388301dfa4f193852a8f3c269b64f</div>
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 8b1d6c033a8636d88655539312de4d129f2d826e</div>
 
       </footer>
     </div>

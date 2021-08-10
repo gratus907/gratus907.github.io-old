@@ -33,8 +33,6 @@ PS틱한 내용들 (DP-optimization) 도 섞일 예정입니다.
   MIT 고급 자료구조 6.851 [링크](https://courses.csail.mit.edu/6.851/fall17/lectures/) 이나 고급 알고리즘 [링크 1](http://people.csail.mit.edu/moitra/854.html) [링크 2](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-854j-advanced-algorithms-fall-2008/) 같은 내용들 중 몇가지 재밌어 보이거나 이건 알아야 한다고 추천받은 내용들을 볼 계획입니다.
 
 #### Basic Algorithms / Data structures
-지난 겨울, 이번 여름 해서 두 방학에 자료구조와 알고리즘을 대충 묶어서 자료를 만들어서 그걸로 좀 수업 비슷한 뭔가를 해본 일이 있습니다. 그때의 자료를 공유하고자 합니다.  
-굉장히 재밌게도, 두 번 모두 저한테 배운 사람이 수학 전공이었고 굉장히 뛰어난 수학적 Base를 가지고 있었기 때문에 제가 자료를 만들다가 도중에 급발진했습니다. 
 
 #### Various topics
 

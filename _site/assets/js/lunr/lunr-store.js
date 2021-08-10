@@ -216,15 +216,15 @@ var store = [{
         "teaser": null
       },{
         "title": "5월 1주차 Weekly PS",
-        "excerpt":"Contents Google Codejam 2021, Round 1B Broken Clock, Small-Middle Subtransmutation, Full Problems BOJ 20191 줄임말 (KOI 2020) BOJ 3006 터보소트 (COCI 2007) Apr 26 - May 09, 2021. 이번 주차는 4월 말 것들도 포함되어 있다. 이전 블로그에서 했었던 weekly PS를 다시 써보려고 한다. 알고리즘 공부도 요새 너무 못한거 같아서… 시험기간...","categories": ["algorithms"],
-        "tags": ["weekly-ps"],
-        "url": "http://localhost:4000/algorithms/ps-weekly-21may1/",
+        "excerpt":"Contents Google Codejam 2021, Round 1B Broken Clock, Small-Middle Subtransmutation, Full Problems BOJ 20191 줄임말 (KOI 2020) BOJ 3006 터보소트 (COCI 2007) Apr 26 - May 09, 2021. 이번 주차는 4월 말 것들도 포함되어 있다. 이전 블로그에서 했었던 weekly PS를 다시 써보려고 한다. 알고리즘 공부도 요새 너무 못한거 같아서… 시험기간...","categories": ["ps-weekly"],
+        "tags": [],
+        "url": "http://localhost:4000/ps-weekly/ps-weekly-21may1/",
         "teaser": null
       },{
         "title": "5월 2주차 Weekly PS",
-        "excerpt":"Contents Google Codejam 2021, Round 2 [Virtual] Google Codejam 2018, Round 2 Falling Balls Graceful Chainsaw Jugglers (small) Costume Change May 10 - May 17, 2021. Google Codejam 2021, Round 2 PS를 시작하고 세 번째 Codejam이다. 처음으로 Round 3에 진출하고 Codejam 티셔츠를 얻었다. 순위는 855등으로, 거의 막차를 탔지만 아무튼 티셔츠를...","categories": ["algorithms"],
-        "tags": ["weekly-ps"],
-        "url": "http://localhost:4000/algorithms/ps-weekly-21may2/",
+        "excerpt":"Contents Google Codejam 2021, Round 2 [Virtual] Google Codejam 2018, Round 2 Falling Balls Graceful Chainsaw Jugglers (small) Costume Change May 10 - May 17, 2021. Google Codejam 2021, Round 2 PS를 시작하고 세 번째 Codejam이다. 처음으로 Round 3에 진출하고 Codejam 티셔츠를 얻었다. 순위는 855등으로, 거의 막차를 탔지만 아무튼 티셔츠를...","categories": ["ps-weekly"],
+        "tags": [],
+        "url": "http://localhost:4000/ps-weekly/ps-weekly-21may2/",
         "teaser": null
       },{
         "title": "Codejam 2021 Round 2",
@@ -240,9 +240,9 @@ var store = [{
         "teaser": null
       },{
         "title": "7월 1-2주차 Weekly PS",
-        "excerpt":"Contents Recent Updates Rounds Atcoder Beginner Round 208 (Virtual) Codeforces Round 490 (Div.3) Problems ICPC Mid Atlantic 2006, BOJ 1849 순열 CERC 2010D, BOJ 3429 방어선 UCPC 2018 예선F, BOJ 15899 트리와 색깔 BOJ 14287 회사 문화 3 BAPC 2005E, BOJ 5419 북서풍 SCCC 2019E, BOJ 17131 여우가 정보섬에 올라온...","categories": ["algorithms"],
-        "tags": ["weekly-ps"],
-        "url": "http://localhost:4000/algorithms/ps-weekly-21Jul1/",
+        "excerpt":"Contents Recent Updates Rounds Atcoder Beginner Round 208 (Virtual) Codeforces Round 490 (Div.3) Problems ICPC Mid Atlantic 2006, BOJ 1849 순열 CERC 2010D, BOJ 3429 방어선 UCPC 2018 예선F, BOJ 15899 트리와 색깔 BOJ 14287 회사 문화 3 BAPC 2005E, BOJ 5419 북서풍 SCCC 2019E, BOJ 17131 여우가 정보섬에 올라온...","categories": ["ps-weekly"],
+        "tags": [],
+        "url": "http://localhost:4000/ps-weekly/ps-weekly-21Jul1/",
         "teaser": null
       },{
         "title": "논문읽기 : DELTACON",
@@ -264,9 +264,9 @@ var store = [{
         "teaser": null
       },{
         "title": "7월 3주차 Weekly PS",
-        "excerpt":"Contents Recent Updates Rounds (팀연습) 서강대학교 2020 SPC Div.1 (Champion) (대회) SCPC 2021 Round 1 (Atcoder) Atcoder Beginner Round 210 Problems IOI 2009-4, Raisins (BOJ 5463 건포도) 서강대학교 SPC 2015-1F, 몬스터 (BOJ 11573) 연세대학교 2018-C 나무 위의 입자 (BOJ 15669) 연세대학교 2018-L 연세워터파크 (BOJ 15678) IOI 2002-4, Batch Scheduling (BOJ...","categories": ["ps_weekly"],
-        "tags": ["weekly-ps"],
-        "url": "http://localhost:4000/ps_weekly/ps-weekly-21Jul3/",
+        "excerpt":"Contents Recent Updates Rounds (팀연습) 서강대학교 2020 SPC Div.1 (Champion) (대회) SCPC 2021 Round 1 (Atcoder) Atcoder Beginner Round 210 Problems IOI 2009-4, Raisins (BOJ 5463 건포도) 서강대학교 SPC 2015-1F, 몬스터 (BOJ 11573) 연세대학교 2018-C 나무 위의 입자 (BOJ 15669) 연세대학교 2018-L 연세워터파크 (BOJ 15678) IOI 2002-4, Batch Scheduling (BOJ...","categories": ["ps-weekly"],
+        "tags": [],
+        "url": "http://localhost:4000/ps-weekly/ps-weekly-21Jul3/",
         "teaser": null
       },{
         "title": "UCPC 팀 해체",
@@ -282,15 +282,15 @@ var store = [{
         "teaser": null
       },{
         "title": "7월 4-5주차 Weekly PS",
-        "excerpt":"Contents Recent Updates Rounds (Testing) Codeforces Global Round 15 Problems BOJ 1766 문제집 POI 1994 Ones and Zeros (BOJ 8111 0과 1) BOJ 1602 도망자 원숭이 ICPC Germany Regional (GCPC) 2010 D Field Plan (BOJ 3977 축구 전술) BOJ 4196 도미노 ICPC Jakarta Regional 2018 Boomerangs (BOJ 16583) July 19...","categories": ["ps_weekly"],
-        "tags": ["weekly-ps"],
-        "url": "http://localhost:4000/ps_weekly/ps-weekly-21Jul4/",
+        "excerpt":"Contents Recent Updates Rounds (Testing) Codeforces Global Round 15 Problems BOJ 1766 문제집 POI 1994 Ones and Zeros (BOJ 8111 0과 1) BOJ 1602 도망자 원숭이 ICPC Germany Regional (GCPC) 2010 D Field Plan (BOJ 3977 축구 전술) BOJ 4196 도미노 ICPC Jakarta Regional 2018 Boomerangs (BOJ 16583) July 19...","categories": ["ps-weekly"],
+        "tags": [],
+        "url": "http://localhost:4000/ps-weekly/ps-weekly-21Jul4/",
         "teaser": null
       },{
         "title": "8월 1주차 Weekly PS",
-        "excerpt":"Contents Recent Updates Rounds Codeforces Educational Round 112 Codeforces Round 736 (Div 1) Problems CF Edu112 E - Boring Segments CF R736 Div1 B - Integers have friends CF R736 Div1 D1 - Gregor and the Odd Cows (Easy) July 29 - August 07, 2021 이 글에 구현코드 링크가 없더라도...","categories": ["ps_weekly"],
-        "tags": ["weekly-ps"],
-        "url": "http://localhost:4000/ps_weekly/ps-weekly-21Aug1/",
+        "excerpt":"Contents Recent Updates Rounds Samsung SCPC Round 2 Codeforces Educational Round 112 Codeforces Round 736 (Div 1) Problems CF Edu112 E - Boring Segments CF R736 Div1 B - Integers have friends CF R736 Div1 D1 - Gregor and the Odd Cows (Easy) USACO 2018 February Platinum Problem 3 -...","categories": ["ps-weekly"],
+        "tags": [],
+        "url": "http://localhost:4000/ps-weekly/ps-weekly-21Aug1/",
         "teaser": null
       },{
         "title": "서울대학교 컴퓨터공학부 전공과목 (주관적인) 소개",
@@ -320,30 +320,30 @@ var store = [{
         "title": "I. 시간 복잡도와 Big-O Notation",
         "excerpt":"Contents Time Complexity Analysis Asymptotic Notation Additional topics and Problems Time Complexity Analysis 알고리즘 (Algorithm) 과 자료구조 (Data Structure) 를 공부하는 우리의 목표는, 같은 문제를 효율적으로 해결하는 것입니다. 뭔가를 효율적으로 하기 위해서는 항상 효율을 측정하는 기준이 필요할 것입니다. 일반적으로 이 기준에는 다음 두 가지가 가장 중요합니다. 프로그램이 얼마나 오래 걸리는가...","categories": ["ds-alg-note"],
         "tags": [],
-        "url": "http://localhost:4000/ds-alg-note/01-time-complexity/",
+        "url": "http://localhost:4000/ds-alg-note/alg01-time-complexity/",
         "teaser": null
       },{
         "title": "II. 기본 자료구조",
         "excerpt":"Contents 자료 구조 : Data structures Linked Lists Stacks / Queues / Deques Implementation Standard Library 자료 구조 : Data structures 이 장은 자료 구조에 대한 이야기입니다. 자료 구조는 알고리즘과 매우 밀접한 관련이 있는데, 어떤 식으로 자료가 저장되어 있는지에 따라 알고리즘의 소요 시간이 크게 달라지기 때문입니다. 특정한 자료구조를 이용해야만 빠르게...","categories": ["ds-alg-note"],
         "tags": [],
-        "url": "http://localhost:4000/ds-alg-note/02-basic-ds/",
+        "url": "http://localhost:4000/ds-alg-note/alg02-basic-ds/",
         "teaser": null
       },{
         "title": "III. 정렬과 탐색",
         "excerpt":"Contents Slow Sorting Algorithm Fast Sorting Algorithms Heap Sort Merge Sort Quick sort Hybrid Sort Selection Algorithms Quickselect Worst-Case Linear Selection Additional topics and Problems Programming Practice 우리의 목표는, $n$개의 원소를 가진 배열을 정렬하는 것입니다. 편의상, 다음과 같은 사실을 가정합니다. 정렬은 작은 것부터 큰 것 순서로 늘어놓는 것을 말합니다. ex)...","categories": ["ds-alg-note"],
         "tags": [],
-        "url": "http://localhost:4000/ds-alg-note/03-sorting-and-searching/",
+        "url": "http://localhost:4000/ds-alg-note/alg03-sorting-and-searching/",
         "teaser": null
       },{
         "title": "IV. Binary Search",
         "excerpt":"Contents Binary Search Bisection (parametric) Search Ternary Search Binary Search Up &amp; Down 게임을 해 보셨나요? 1부터 1000까지의 수 중 하나를, 10번 정도면 맞출 수 있다는 사실을 알고 계시나요? 아마도, 모두가 절반씩 잘라서 확인하는 전략을 사용할 것입니다. 이 전략을 우리는 Binary Search 라고 부릅니다. $N$ 크기의 배열이 정렬되어 있음을 안다면,...","categories": ["ds-alg-note"],
         "tags": [],
-        "url": "http://localhost:4000/ds-alg-note/04-binary-search/",
+        "url": "http://localhost:4000/ds-alg-note/alg04-binary-search/",
         "teaser": null
       },{
         "title": "V. Graph Basics, Heaps",
         "excerpt":"Contents Graphs Implementation of Graphs Trees / Binary Trees Heaps Heap Operation Heap Sort Heap Implementation Additional topics and Problems Programming Practice 저번 세션에 이어서, 자료구조를 공부하고자 합니다. Graphs 추상적으로, 그래프는 다음과 같이 정의된 $G = (V, E)$를 의미합니다. $V$는 정점의 집합으로, 그냥 원소들을 모은 집합으로 생각하면 됩니다. $E$는 $V...","categories": ["ds-alg-note"],
         "tags": [],
-        "url": "http://localhost:4000/ds-alg-note/05-graph-basics/",
+        "url": "http://localhost:4000/ds-alg-note/alg05-graph-basics/",
         "teaser": null
       }]

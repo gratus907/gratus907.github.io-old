@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-09T14:39:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">I. 시간 복잡도와 Big-O Notation</title><link href="http://localhost:4000/ds-alg-note/01-time-complexity/" rel="alternate" type="text/html" title="I. 시간 복잡도와 Big-O Notation" /><published>2021-08-09T00:00:00+09:00</published><updated>2021-08-09T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/01-time-complexity</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/01-time-complexity/">&lt;div id=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-10T10:54:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">I. 시간 복잡도와 Big-O Notation</title><link href="http://localhost:4000/ds-alg-note/alg01-time-complexity/" rel="alternate" type="text/html" title="I. 시간 복잡도와 Big-O Notation" /><published>2021-08-09T00:00:00+09:00</published><updated>2021-08-09T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/alg01-time-complexity</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/alg01-time-complexity/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -206,7 +206,7 @@ $f(n) \in O(n^{c - \epsilon})$ 이라고 생각하는 것입니다.&lt;/p&gt;
       &lt;p&gt;이 증명을 알아야 한다는 뜻은 아닙니다 &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents</summary></entry><entry><title type="html">V. Graph Basics, Heaps</title><link href="http://localhost:4000/ds-alg-note/05-graph-basics/" rel="alternate" type="text/html" title="V. Graph Basics, Heaps" /><published>2021-08-09T00:00:00+09:00</published><updated>2021-08-09T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/05-graph-basics</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/05-graph-basics/">&lt;div id=&quot;toc&quot;&gt;
+&lt;/div&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents</summary></entry><entry><title type="html">V. Graph Basics, Heaps</title><link href="http://localhost:4000/ds-alg-note/alg05-graph-basics/" rel="alternate" type="text/html" title="V. Graph Basics, Heaps" /><published>2021-08-09T00:00:00+09:00</published><updated>2021-08-09T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/alg05-graph-basics</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/alg05-graph-basics/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -541,7 +541,7 @@ $2^k$개임을 이용하여, 이 알고리즘이 주어진 Array를 Heap으로 �
   &lt;li&gt;
     &lt;p&gt;BOJ 1655번을 해결해 보세요.&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents</summary></entry><entry><title type="html">IV. Binary Search</title><link href="http://localhost:4000/ds-alg-note/04-binary-search/" rel="alternate" type="text/html" title="IV. Binary Search" /><published>2021-08-09T00:00:00+09:00</published><updated>2021-08-09T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/04-binary-search</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/04-binary-search/">&lt;div id=&quot;toc&quot;&gt;
+&lt;/ol&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents</summary></entry><entry><title type="html">IV. Binary Search</title><link href="http://localhost:4000/ds-alg-note/alg04-binary-search/" rel="alternate" type="text/html" title="IV. Binary Search" /><published>2021-08-09T00:00:00+09:00</published><updated>2021-08-09T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/alg04-binary-search</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/alg04-binary-search/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -628,7 +628,7 @@ Asymptotic하게는 로그의 밑은 무의미하므로 $\log$ 시간 알고리�
 
 &lt;p&gt;이분 탐색이나 삼분 탐색은 그 자체로도 매우 의미있지만, 다른 알고리즘과
 결합되었을 때 그 유용성이 더욱 부각됩니다. 그리고 처음 접했을 때
-생각해내기 어렵기 때문에, 많은 연습이 필요합니다.&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents</summary></entry><entry><title type="html">III. 정렬과 탐색</title><link href="http://localhost:4000/ds-alg-note/03-sorting-and-searching/" rel="alternate" type="text/html" title="III. 정렬과 탐색" /><published>2021-08-09T00:00:00+09:00</published><updated>2021-08-09T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/03-sorting-and-searching</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/03-sorting-and-searching/">&lt;div id=&quot;toc&quot;&gt;
+생각해내기 어렵기 때문에, 많은 연습이 필요합니다.&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents</summary></entry><entry><title type="html">III. 정렬과 탐색</title><link href="http://localhost:4000/ds-alg-note/alg03-sorting-and-searching/" rel="alternate" type="text/html" title="III. 정렬과 탐색" /><published>2021-08-09T00:00:00+09:00</published><updated>2021-08-09T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/alg03-sorting-and-searching</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/alg03-sorting-and-searching/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -997,7 +997,7 @@ case에 $O(n \log n)$ 보다 좋은 비교 기반의 정렬 알고리즘이 없�
       &lt;p&gt;항상 Worst case에 대비하는 mind를 준비하세요! ㅋㅋ &lt;a href=&quot;#fnref:7&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents</summary></entry><entry><title type="html">II. 기본 자료구조</title><link href="http://localhost:4000/ds-alg-note/02-basic-ds/" rel="alternate" type="text/html" title="II. 기본 자료구조" /><published>2021-08-09T00:00:00+09:00</published><updated>2021-08-09T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/02-basic-ds</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/02-basic-ds/">&lt;div id=&quot;toc&quot;&gt;
+&lt;/div&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents</summary></entry><entry><title type="html">II. 기본 자료구조</title><link href="http://localhost:4000/ds-alg-note/alg02-basic-ds/" rel="alternate" type="text/html" title="II. 기본 자료구조" /><published>2021-08-09T00:00:00+09:00</published><updated>2021-08-09T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/alg02-basic-ds</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/alg02-basic-ds/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -1831,12 +1831,13 @@ RWR-vector는 다음 식을 통해 계산됩니다.
   &lt;li&gt;다만 저처럼 수학을 찍먹할 사람이면 모를까, 수학 전 분야에 대한 이해를 좀 가져야 할 수리과학 전공생들에게 권할만한 테크인지는 잘 모르겠습니다. Redundancy가 있는건 사실이니까요. 저는 복수전공자니까 전필만 듣고나면 제가 듣고싶은거 적당히 골라듣고 챙기면서 움직여도 뭐 되지 않을까요.&lt;/li&gt;
   &lt;li&gt;Measure theory를 공부하게 된 계기는, 3학년 2학기 때 수강했던 최적화 이론입니다. 최적화 이론에서 Martingale 등 놀라운 이론들을 통해 수렴성을 얻는게 좀 있었는데, 도대체 수렴하면 수렴하는거지 Almost surely converge한다는건 무슨소리인가??? 에 대해 답할 수 있게 되었습니다. 최적화이론 수업 이후 조언을 구하였을 때, measure theory와 stochastic differential equation에 대한 공부가 최적화 분야의 엄밀한 이해에 도움이 될 것이라는 조언을 얻을 수 있었습니다.&lt;/li&gt;
   &lt;li&gt;학점은 대학원 실해석은 A+, 학부 실변수는 A0를 받았습니다. 명확히 실해석이 더 상위 과목임에도 학점이 이렇게 된 이유는 단순히 실해석 시험이 좀더 제 스타일에 맞았기 때문입니다. ㅋㅋ!&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="snu-courses" /><summary type="html">Contents</summary></entry><entry><title type="html">8월 1주차 Weekly PS</title><link href="http://localhost:4000/ps_weekly/ps-weekly-21Aug1/" rel="alternate" type="text/html" title="8월 1주차 Weekly PS" /><published>2021-08-02T00:00:00+09:00</published><updated>2021-08-02T00:00:00+09:00</updated><id>http://localhost:4000/ps_weekly/ps-weekly-21Aug1</id><content type="html" xml:base="http://localhost:4000/ps_weekly/ps-weekly-21Aug1/">&lt;div id=&quot;toc&quot;&gt;
+&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="snu-courses" /><summary type="html">Contents</summary></entry><entry><title type="html">8월 1주차 Weekly PS</title><link href="http://localhost:4000/ps-weekly/ps-weekly-21Aug1/" rel="alternate" type="text/html" title="8월 1주차 Weekly PS" /><published>2021-08-02T00:00:00+09:00</published><updated>2021-08-02T00:00:00+09:00</updated><id>http://localhost:4000/ps-weekly/ps-weekly-21Aug1</id><content type="html" xml:base="http://localhost:4000/ps-weekly/ps-weekly-21Aug1/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#recent-updates&quot; id=&quot;markdown-toc-recent-updates&quot;&gt;Recent Updates&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#rounds&quot; id=&quot;markdown-toc-rounds&quot;&gt;Rounds&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#samsung-scpc-round-2&quot; id=&quot;markdown-toc-samsung-scpc-round-2&quot;&gt;Samsung SCPC Round 2&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#codeforces-educational-round-112&quot; id=&quot;markdown-toc-codeforces-educational-round-112&quot;&gt;Codeforces Educational Round 112&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#codeforces-round-736-div-1&quot; id=&quot;markdown-toc-codeforces-round-736-div-1&quot;&gt;Codeforces Round 736 (Div 1)&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
@@ -1845,6 +1846,7 @@ RWR-vector는 다음 식을 통해 계산됩니다.
       &lt;li&gt;&lt;a href=&quot;#cf-edu112-e---boring-segments&quot; id=&quot;markdown-toc-cf-edu112-e---boring-segments&quot;&gt;CF Edu112 E - Boring Segments&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#cf-r736-div1-b---integers-have-friends&quot; id=&quot;markdown-toc-cf-r736-div1-b---integers-have-friends&quot;&gt;CF R736 Div1 B - Integers have friends&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#cf-r736-div1-d1---gregor-and-the-odd-cows-easy&quot; id=&quot;markdown-toc-cf-r736-div1-d1---gregor-and-the-odd-cows-easy&quot;&gt;CF R736 Div1 D1 - Gregor and the Odd Cows (Easy)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#usaco-2018-february-platinum-problem-3---cow-gymnasts-boj-15744&quot; id=&quot;markdown-toc-usaco-2018-february-platinum-problem-3---cow-gymnasts-boj-15744&quot;&gt;USACO 2018 February Platinum Problem 3 - Cow Gymnasts (BOJ 15744)&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -1858,10 +1860,15 @@ RWR-vector는 다음 식을 통해 계산됩니다.
 
 &lt;h2 id=&quot;recent-updates&quot;&gt;Recent Updates&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;SCPC Round 2에 대한 포스팅은 일요일에 따로 작성 예정입니다.&lt;/li&gt;
+  &lt;li&gt;SCPC Round 2에서 개고생했습니다. ㅋㅋ!&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;rounds&quot;&gt;Rounds&lt;/h2&gt;
+&lt;h3 id=&quot;samsung-scpc-round-2&quot;&gt;Samsung SCPC Round 2&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/cp-rounds/SCPC-2021-Round2/&quot;&gt;포스팅 링크&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&quot;codeforces-educational-round-112&quot;&gt;Codeforces Educational Round 112&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;Div2 기준 274등, Rating 1947 -&amp;gt; 1995 (+48)&lt;/li&gt;
@@ -1876,7 +1883,6 @@ RWR-vector는 다음 식을 통해 계산됩니다.
   &lt;li&gt;Performance 2200&lt;/li&gt;
   &lt;li&gt;UCPC도 못나가고 하다보니 그냥 CP가 하고싶어져서 좀 자주 돌기로 했습니다. 오렌지 파킹하고 ICPC 팀 찾아야죠.&lt;/li&gt;
   &lt;li&gt;C번에 비해 D1번이 많이 쉬웠습니다.&lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;problems&quot;&gt;Problems&lt;/h2&gt;
@@ -1899,7 +1905,6 @@ RWR-vector는 다음 식을 통해 계산됩니다.
 
 &lt;h3 id=&quot;cf-r736-div1-b---integers-have-friends&quot;&gt;CF R736 Div1 B - Integers have friends&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;/li&gt;
   &lt;li&gt;간단하게 생각할 수 있는 것은, 주어진 수들의 인접한 수들 간의 차를 새로운 배열로 만들고 나면, 이 배열에서 어떤 sub-array를 뽑아서 그 gcd가 1보다 크면 된다는 것입니다.&lt;/li&gt;
   &lt;li&gt;GCD가 1이 아닌 가장 긴 subarray를 찾는 것은 역시 위 문제와 똑같이, 투포인터 또는 각 시작점에서의 이분탐색으로 해결가능합니다.&lt;/li&gt;
   &lt;li&gt;어떤 부분구간의 GCD가 1인지 아닌지 빠르게 판정하기 위해서는, 노드에 gcd값을 저장하는 세그먼트 트리를 사용하면 됩니다.&lt;/li&gt;
@@ -1911,7 +1916,6 @@ RWR-vector는 다음 식을 통해 계산됩니다.
 
 &lt;h3 id=&quot;cf-r736-div1-d1---gregor-and-the-odd-cows-easy&quot;&gt;CF R736 Div1 D1 - Gregor and the Odd Cows (Easy)&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;/li&gt;
   &lt;li&gt;픽의 정리에 의하면, 볼록다각형의 넓이 $A$, 경계면에 있는 격자점의 수 $B$, 안쪽에 들어있는 격자점의 수 $C$에 대해 $A = B/2 + C - 1$ 이 성립합니다.&lt;/li&gt;
   &lt;li&gt;즉, $A$ 와 $B/2$의 홀짝성이 같다면 $C$가 홀수가 될 것입니다.&lt;/li&gt;
   &lt;li&gt;고를 수 있는 모든 정수점이 짝수좌표를 갖는 상황에서, $A$와 $B/2$의 홀짝성에 대해 생각해 보겠습니다.&lt;/li&gt;
@@ -1925,8 +1929,23 @@ RWR-vector는 다음 식을 통해 계산됩니다.
 
 &lt;hr /&gt;
 
-&lt;hr /&gt;
+&lt;h3 id=&quot;usaco-2018-february-platinum-problem-3---cow-gymnasts-boj-15744&quot;&gt;USACO 2018 February Platinum Problem 3 - Cow Gymnasts (BOJ 15744)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;난이도 Diamond 3.&lt;/li&gt;
+  &lt;li&gt;DHdroid가 ‘재밌는 문제’ 라면서 들고왔습니다.&lt;/li&gt;
+  &lt;li&gt;먼저, $N$개의 자리를 통틀어 최소값이 $m$ 이라고 하고, 그 최솟값이 있는 자리를 $k$번이라고 합시다.&lt;/li&gt;
+  &lt;li&gt;$k - 1, k - 2, \dots k - m + 1$ 번 까지는 어쩔 수 없이 $k$번에 Contribute합니다.&lt;/li&gt;
+  &lt;li&gt;$k-m$번은 $k$번에 Contribute해서는 안 되므로, 값이 정확히 $m$이여야 합니다.&lt;/li&gt;
+  &lt;li&gt;이와 같은 논증을 반복하면, 다음 조건을 만족하는 조합이 ‘성공하는 조합’ 임을 알 수 있습니다.
+    &lt;ul&gt;
+      &lt;li&gt;먼저 최솟값 $m$에 대해 주기 $\gcd(m, N)$ 을 갖고,&lt;/li&gt;
+      &lt;li&gt;각 주기 내에서의 값은 $m$ 또는 $m+1$ 이어야 합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;hr /&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ps_weekly" /><category term="weekly-ps" /><summary type="html">Contents</summary></entry></feed>
+&lt;hr /&gt;
+
+&lt;hr /&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ps-weekly" /><summary type="html">Contents</summary></entry></feed>

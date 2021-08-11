@@ -346,4 +346,10 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/ds-alg-note/alg05-graph-basics/",
         "teaser": null
+      },{
+        "title": "BOJ 15744, USACO 2018 Feb P3 Cow Gymnasts",
+        "excerpt":"Contents 풀이 : 관찰 풀이 : 시간 복잡도 줄이기 풀이 : 더 고통받기 출처 : USACO 2018 February Platinum Problem 3 - Cow Gymnasts (BOJ 15744) 난이도 : solved.ac Diamond 3 문제 링크 풀이 : 관찰 DHdroid가 ‘재밌는 문제’ 라면서 들고왔습니다. 나름 재밌게 풀었는데 후반에 좀 허탈했습니다. 먼저, $N$개의 자리를...","categories": ["ps-problems"],
+        "tags": ["number-theory"],
+        "url": "http://localhost:4000/ps-problems/BOJ15744/",
+        "teaser": null
       }]

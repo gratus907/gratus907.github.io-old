@@ -1,4 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-10T10:54:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">I. 시간 복잡도와 Big-O Notation</title><link href="http://localhost:4000/ds-alg-note/alg01-time-complexity/" rel="alternate" type="text/html" title="I. 시간 복잡도와 Big-O Notation" /><published>2021-08-09T00:00:00+09:00</published><updated>2021-08-09T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/alg01-time-complexity</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/alg01-time-complexity/">&lt;div id=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-12T03:12:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">BOJ 15744, USACO 2018 Feb P3 Cow Gymnasts</title><link href="http://localhost:4000/ps-problems/BOJ15744/" rel="alternate" type="text/html" title="BOJ 15744, USACO 2018 Feb P3 Cow Gymnasts" /><published>2021-08-11T00:00:00+09:00</published><updated>2021-08-11T00:00:00+09:00</updated><id>http://localhost:4000/ps-problems/BOJ15744</id><content type="html" xml:base="http://localhost:4000/ps-problems/BOJ15744/">&lt;div id=&quot;toc&quot;&gt;
+  &lt;p&gt;Contents&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#풀이--관찰&quot; id=&quot;markdown-toc-풀이--관찰&quot;&gt;풀이 : 관찰&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#풀이--시간-복잡도-줄이기&quot; id=&quot;markdown-toc-풀이--시간-복잡도-줄이기&quot;&gt;풀이 : 시간 복잡도 줄이기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#풀이--더-고통받기&quot; id=&quot;markdown-toc-풀이--더-고통받기&quot;&gt;풀이 : 더 고통받기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;출처 : USACO 2018 February Platinum Problem 3 - Cow Gymnasts (BOJ 15744)&lt;br /&gt;
+난이도 : solved.ac Diamond 3&lt;br /&gt;
+&lt;a href=&quot;https://www.acmicpc.net/problem/15744&quot;&gt;문제 링크&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;풀이--관찰&quot;&gt;풀이 : 관찰&lt;/h2&gt;
+&lt;p&gt;DHdroid가 ‘재밌는 문제’ 라면서 들고왔습니다. 나름 재밌게 풀었는데 후반에 좀 허탈했습니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;먼저, $N$개의 자리를 통틀어 최소값이 $m$ 이라고 하고, 그 최솟값이 있는 자리를 $k$번이라고 합시다.&lt;/li&gt;
+  &lt;li&gt;$k - 1, k - 2, \dots k - m + 1$ 번 까지는 어쩔 수 없이 $k$번에 Contribute합니다.&lt;/li&gt;
+  &lt;li&gt;$k-m$번은 $k$번에 Contribute해서는 안 되므로, 값이 정확히 $m$이여야 합니다.&lt;/li&gt;
+  &lt;li&gt;이와 같은 논증을 귀납적으로 반복하면, 다음 조건을 만족하는 조합이 ‘성공하는 조합’ 임을 알 수 있습니다.
+    &lt;ul&gt;
+      &lt;li&gt;먼저 최솟값 $m$에 대해 주기 $\gcd(m, N)$ 을 갖고,&lt;/li&gt;
+      &lt;li&gt;각 주기 내에서의 값은 $m$ 또는 $m+1$ 이어야 합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;따라서, 다음 식을 계산하는 것으로 끝납니다.
+\(1 + \sum_{i = 1}^{N - 1} \left(2^{\gcd(i, N)} - 1\right)\)
+이 관찰을 하는 것까지만이었으면 아마도 플래티넘 정도의 문제였을 것입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;풀이--시간-복잡도-줄이기&quot;&gt;풀이 : 시간 복잡도 줄이기&lt;/h2&gt;
+&lt;p&gt;$N = 10^{12}$ 이기 때문에, 이 식을 시간 내에 단순하게는 계산할 수 없습니다.&lt;br /&gt;
+앞의 잡다한 부분은 떼고 $\sum_{i = 1}^{N} 2^{\gcd(i, N)}$ 을 빠르게 계산하는 방법에 대해 생각해 보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;먼저, $\gcd(i, N) = g$ 인 $i \leq N$의 개수를 빠르게 셀 수 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$i$는 $g$의 배수여야 하므로 $i = gk$ 라고 쓰면, $\gcd(k, N/g)$ 이 1이어야 하며&lt;/li&gt;
+  &lt;li&gt;$k &amp;lt; N / g$ 여야 합니다.&lt;/li&gt;
+  &lt;li&gt;따라서, 이러한 $k$는 정확히 $\phi(N / g)$ 개 있고, 다음 식을 계산하면 됩니다. 
+\(\sum_{g \di N} 2^g \phi(N / g)\)&lt;/li&gt;
+  &lt;li&gt;$g \di N$ 을 모두 구하는 것은 $O(\sqrt{N})$ 시간이 걸리며, $g$가 몇 개 있는지는 정확히 쓰기 매우 어렵습니다.
+    &lt;ul&gt;
+      &lt;li&gt;다만, PS에서 일반적으로 쓰는 바운드는 $O(n^{1/3})$ 입니다. 재밌는 사실은, 이 바운드는 수학적으로 찾은 바운드가 아니라, $10^{9}$ 까지의 수들 중 약수가 가장 많은 수가 1,344개, $10^{18}$ 까지의 수들 중 가장 많은 수가 103,680개의 약수를 갖기 때문에 대충 저만큼 잡으면 된다는 것이 알려져 있다는 점입니다.&lt;/li&gt;
+      &lt;li&gt;$O(n^{1/3})$ 개의 약수 각각 $\phi(g)$ 를 구하는 시간은 조금 빡빡합니다. 구체적으로는 개당 $O(n^{1/2})$ 시간인데&lt;/li&gt;
+      &lt;li&gt;실제로는 $g$들 중 상당수가 $N$에 비해 많이 작기 때문에, $O(n^{1/3})$개의 약수에 대해 각각 $\phi$함수를 구하는 풀이는 시간 제한을 통과합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;더 최적화하는 방법은, $\phi$ 함수는 그 수의 소인수분해 형태에 의해 정해지며, $N$의 소인수는 많아야 수십 개 선이라는 점입니다.&lt;/li&gt;
+  &lt;li&gt;각각의 $g \di N$ 은 $N$의 소인수의 부분집합을 갖기 때문에, $p_1^{e_1} p_2^{e_2} p_3^{e_3}\dots$ 에 대해 각 소인수의 개수를 iterate하면 빠르게 구할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;잘 짜면 $O(n^{1/2} \log n)$ 에 구할 수 있다고 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;풀이--더-고통받기&quot;&gt;풀이 : 더 고통받기&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;저는 저 식으로 통과할 자신이 없었기 때문에, 뭔가 새로운 아이디어를 찾아야 한다고 생각했습니다.&lt;/li&gt;
+  &lt;li&gt;Identity function $\iota$, Mobius function $\mu$ 에 대해, $\phi = \mu * \iota$ 임이 알려져 있습니다. (디리클레 합성곱)&lt;/li&gt;
+  &lt;li&gt;$f(n) = 2^n$ 을 $p$ 함수라고 하면, 우리의 문제는 $p * \phi$ 의 값을 구하는 것이므로, $p * \mu * \iota$ 를 구하는 것이고&lt;/li&gt;
+  &lt;li&gt;다시 이를 $\mu * (p * \iota)$ 로 바꾸어 계산할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;처참하게도, $\mu$를 계산하기 위해 포함-배제의 원리를 이용해야 하기 때문에 시간 복잡도는 전혀 줄어들지 않고 $\log$ 항이 하나 더 붙습니다 (뫼비우스 함수의 값을 모두 계산하는게 아니라서, map 같은 자료구조를 이용해야 하기 때문. 심지어 결과적으로 이 풀이는 위 풀이의 $O(n^{5/6}))$ 보다도 훨씬 느렸습니다. 간신히 시간 제한을 통과할 수 있었습니다. :(&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ps-problems" /><category term="number-theory" /><summary type="html">Contents</summary></entry><entry><title type="html">I. 시간 복잡도와 Big-O Notation</title><link href="http://localhost:4000/ds-alg-note/alg01-time-complexity/" rel="alternate" type="text/html" title="I. 시간 복잡도와 Big-O Notation" /><published>2021-08-09T00:00:00+09:00</published><updated>2021-08-09T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/alg01-time-complexity</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/alg01-time-complexity/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -1831,121 +1891,4 @@ RWR-vector는 다음 식을 통해 계산됩니다.
   &lt;li&gt;다만 저처럼 수학을 찍먹할 사람이면 모를까, 수학 전 분야에 대한 이해를 좀 가져야 할 수리과학 전공생들에게 권할만한 테크인지는 잘 모르겠습니다. Redundancy가 있는건 사실이니까요. 저는 복수전공자니까 전필만 듣고나면 제가 듣고싶은거 적당히 골라듣고 챙기면서 움직여도 뭐 되지 않을까요.&lt;/li&gt;
   &lt;li&gt;Measure theory를 공부하게 된 계기는, 3학년 2학기 때 수강했던 최적화 이론입니다. 최적화 이론에서 Martingale 등 놀라운 이론들을 통해 수렴성을 얻는게 좀 있었는데, 도대체 수렴하면 수렴하는거지 Almost surely converge한다는건 무슨소리인가??? 에 대해 답할 수 있게 되었습니다. 최적화이론 수업 이후 조언을 구하였을 때, measure theory와 stochastic differential equation에 대한 공부가 최적화 분야의 엄밀한 이해에 도움이 될 것이라는 조언을 얻을 수 있었습니다.&lt;/li&gt;
   &lt;li&gt;학점은 대학원 실해석은 A+, 학부 실변수는 A0를 받았습니다. 명확히 실해석이 더 상위 과목임에도 학점이 이렇게 된 이유는 단순히 실해석 시험이 좀더 제 스타일에 맞았기 때문입니다. ㅋㅋ!&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="snu-courses" /><summary type="html">Contents</summary></entry><entry><title type="html">8월 1주차 Weekly PS</title><link href="http://localhost:4000/ps-weekly/ps-weekly-21Aug1/" rel="alternate" type="text/html" title="8월 1주차 Weekly PS" /><published>2021-08-02T00:00:00+09:00</published><updated>2021-08-02T00:00:00+09:00</updated><id>http://localhost:4000/ps-weekly/ps-weekly-21Aug1</id><content type="html" xml:base="http://localhost:4000/ps-weekly/ps-weekly-21Aug1/">&lt;div id=&quot;toc&quot;&gt;
-  &lt;p&gt;Contents&lt;/p&gt;
-&lt;/div&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#recent-updates&quot; id=&quot;markdown-toc-recent-updates&quot;&gt;Recent Updates&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#rounds&quot; id=&quot;markdown-toc-rounds&quot;&gt;Rounds&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#samsung-scpc-round-2&quot; id=&quot;markdown-toc-samsung-scpc-round-2&quot;&gt;Samsung SCPC Round 2&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#codeforces-educational-round-112&quot; id=&quot;markdown-toc-codeforces-educational-round-112&quot;&gt;Codeforces Educational Round 112&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#codeforces-round-736-div-1&quot; id=&quot;markdown-toc-codeforces-round-736-div-1&quot;&gt;Codeforces Round 736 (Div 1)&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#problems&quot; id=&quot;markdown-toc-problems&quot;&gt;Problems&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#cf-edu112-e---boring-segments&quot; id=&quot;markdown-toc-cf-edu112-e---boring-segments&quot;&gt;CF Edu112 E - Boring Segments&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#cf-r736-div1-b---integers-have-friends&quot; id=&quot;markdown-toc-cf-r736-div1-b---integers-have-friends&quot;&gt;CF R736 Div1 B - Integers have friends&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#cf-r736-div1-d1---gregor-and-the-odd-cows-easy&quot; id=&quot;markdown-toc-cf-r736-div1-d1---gregor-and-the-odd-cows-easy&quot;&gt;CF R736 Div1 D1 - Gregor and the Odd Cows (Easy)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#usaco-2018-february-platinum-problem-3---cow-gymnasts-boj-15744&quot; id=&quot;markdown-toc-usaco-2018-february-platinum-problem-3---cow-gymnasts-boj-15744&quot;&gt;USACO 2018 February Platinum Problem 3 - Cow Gymnasts (BOJ 15744)&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;July 29 - August 07, 2021&lt;/p&gt;
-
-&lt;p&gt;이 글에 구현코드 링크가 없더라도 &lt;a href=&quot;https://github.com/gratus907/Gratus_PS&quot;&gt;PS 레포 링크&lt;/a&gt; 에 가서 대회 단위로 들어가면 보통 올려놓은 코드를 볼 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;읽는 사람이 문제를 읽고 조금 생각해봤다고 가정하고, 대략적인 아이디어만 간단히 적을 생각입니다 ㅎㅎ&lt;/p&gt;
-
-&lt;h2 id=&quot;recent-updates&quot;&gt;Recent Updates&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;SCPC Round 2에서 개고생했습니다. ㅋㅋ!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;rounds&quot;&gt;Rounds&lt;/h2&gt;
-&lt;h3 id=&quot;samsung-scpc-round-2&quot;&gt;Samsung SCPC Round 2&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/cp-rounds/SCPC-2021-Round2/&quot;&gt;포스팅 링크&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;codeforces-educational-round-112&quot;&gt;Codeforces Educational Round 112&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Div2 기준 274등, Rating 1947 -&amp;gt; 1995 (+48)&lt;/li&gt;
-  &lt;li&gt;Performance 2096&lt;/li&gt;
-  &lt;li&gt;몇달만의 Codeforces 복귀전.&lt;/li&gt;
-  &lt;li&gt;Div2지만 E번까지 풀어서 굉장히 기분이 좋았습니다. 복귀전인것치고는 레이팅도 많이 올랐고…&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;codeforces-round-736-div-1&quot;&gt;Codeforces Round 736 (Div 1)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Div2 기준 274등, Rating 1995 -&amp;gt; 2055 (+60)&lt;/li&gt;
-  &lt;li&gt;Performance 2200&lt;/li&gt;
-  &lt;li&gt;UCPC도 못나가고 하다보니 그냥 CP가 하고싶어져서 좀 자주 돌기로 했습니다. 오렌지 파킹하고 ICPC 팀 찾아야죠.&lt;/li&gt;
-  &lt;li&gt;C번에 비해 D1번이 많이 쉬웠습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problems&quot;&gt;Problems&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;cf-edu112-e---boring-segments&quot;&gt;CF Edu112 E - Boring Segments&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;난이도 2100&lt;/li&gt;
-  &lt;li&gt;어떤 subset을 골라서 전체를 커버하되, 가중치의 최대-최소 값을 최소화해야 합니다.&lt;/li&gt;
-  &lt;li&gt;이러한 문제를 Two pointer라는 방법으로 잘 해결할 수 있습니다. 또는, 각 시작점에 대해 가능한 끝점을 이분 탐색해도 됩니다.&lt;/li&gt;
-  &lt;li&gt;다만, 두 경우의 차이는, $a-b$ 를 쓰다가 $a-(b+1)$ 을 쓰는걸로 전환하는게 빠르면 투포인터를 쓰고, 임의의 $a-b$를 시도하는 쿼리가 빠르면 이분탐색도 쓸 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;이 문제는, 후자의 쿼리가 어렵기 때문에 (가능할거같긴한데 사실 잘 모르겠습니다) 투포인터를 씁니다. 따라서 고른 $[l_i, r_i]$ 들의 집합이 한개만큼 바뀔때 쿼리당 시간이 짧아야 합니다.&lt;/li&gt;
-  &lt;li&gt;하나를 고를 때마다 $[l_i, r_i]$ 에 1을 더하고 (골랐던걸 뺄때는 당연히 -1), 마지막에 $[1, n]$ 의 최소값이 0인지 (커버하지 못함), 0보다 큰지 (커버함) 판정할 수 있습니다. 이 두 연산 모두 Lazy propagation이 적용된 segment tree로 잘 할수 있음을 알고 있습니다. 이경우 구간 하나를 추가하거나 빼는데 걸리는 시간이 $O(\log n)$, 판정 시간도 $O(\log n)$ 입니다.&lt;/li&gt;
-  &lt;li&gt;이제, 마지막으로 생각할 것은 원래 문제에서는 $[1, 3], [4, 5]$ 가 겹치는 것으로 인정되지 않지만 세그트리로 바꿀때는 전체를 커버한다는 False positive의 가능성입니다. $[l_i, r_i]$ 들을 세그에 더할때는 $[l_i, r_i)$ 로 바꿔서 더하면 됩니다.&lt;/li&gt;
-  &lt;li&gt;여담으로, 저는 $m, n$ 의 범위를 헷갈려서 삽질하다가 1시간 59분 51초에 대회종료 9초를 남겨두고 AC를 받았습니다. ㅋㅋ!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;cf-r736-div1-b---integers-have-friends&quot;&gt;CF R736 Div1 B - Integers have friends&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;간단하게 생각할 수 있는 것은, 주어진 수들의 인접한 수들 간의 차를 새로운 배열로 만들고 나면, 이 배열에서 어떤 sub-array를 뽑아서 그 gcd가 1보다 크면 된다는 것입니다.&lt;/li&gt;
-  &lt;li&gt;GCD가 1이 아닌 가장 긴 subarray를 찾는 것은 역시 위 문제와 똑같이, 투포인터 또는 각 시작점에서의 이분탐색으로 해결가능합니다.&lt;/li&gt;
-  &lt;li&gt;어떤 부분구간의 GCD가 1인지 아닌지 빠르게 판정하기 위해서는, 노드에 gcd값을 저장하는 세그먼트 트리를 사용하면 됩니다.&lt;/li&gt;
-  &lt;li&gt;위 문제와 거의 같은 세그 + (투포인터 or 이분탐색) 문제입니다. 저는 위문제는 투포인터를, 이 문제는 이분 탐색을 썼습니다.&lt;/li&gt;
-  &lt;li&gt;투포인터 사용시 $O(n \log A)$, 이분탐색은 $O(n \log n \log A)$인데, 이분탐색도 넉넉합니다. GCD는 생각보다 빨라서요.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;cf-r736-div1-d1---gregor-and-the-odd-cows-easy&quot;&gt;CF R736 Div1 D1 - Gregor and the Odd Cows (Easy)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;픽의 정리에 의하면, 볼록다각형의 넓이 $A$, 경계면에 있는 격자점의 수 $B$, 안쪽에 들어있는 격자점의 수 $C$에 대해 $A = B/2 + C - 1$ 이 성립합니다.&lt;/li&gt;
-  &lt;li&gt;즉, $A$ 와 $B/2$의 홀짝성이 같다면 $C$가 홀수가 될 것입니다.&lt;/li&gt;
-  &lt;li&gt;고를 수 있는 모든 정수점이 짝수좌표를 갖는 상황에서, $A$와 $B/2$의 홀짝성에 대해 생각해 보겠습니다.&lt;/li&gt;
-  &lt;li&gt;$A$, 즉 넓이는 외적공식을 통해 구할 수 있는데, 어차피 mod 4 위에서 구할 것이므로 원래 점의 좌표의 mod 4 값들만 알아도 충분합니다.&lt;/li&gt;
-  &lt;li&gt;$B$ 를 mod 4한 값을 알아야 하는데, 잘 생각해 보면 $(x_1, y_1)$ 에서 $(x_2, y_2)$까지 선분을 이을 때 그 위의 정수 격자점의 개수는 $\gcd(x_2 - x_1, y_2 - y_1)$ 이 4의 배수인지 여부에 따라 결정됩니다.&lt;/li&gt;
-  &lt;li&gt;따라서, 임의의 세 점 $p_i, p_j, p_k$에 대해, 각 점의 $x, y$ 좌표의 mod 4한 나머지값만 안다면, 이 점들은 사실 $A$와 $B/2$의 부호 면에서는 똑같습니다.&lt;/li&gt;
-  &lt;li&gt;점을 네가지로 구분하고 ($x$와 $y$ 좌표를 0 또는 2로), 클래스 0-3의 점들 중 3개를 고르는 경우의 수 64가지를 생각해 줍니다. 같은 클래스의 점을 2개 고를 때 경우의 수는 이항계수로 구해야 함을 기억합시다.&lt;/li&gt;
-  &lt;li&gt;코드는 간단하지만 Casework가 좀 있습니다.&lt;/li&gt;
-  &lt;li&gt;이문제도 끝나기 10분정도 전에 AC를 받았습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;usaco-2018-february-platinum-problem-3---cow-gymnasts-boj-15744&quot;&gt;USACO 2018 February Platinum Problem 3 - Cow Gymnasts (BOJ 15744)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;난이도 Diamond 3.&lt;/li&gt;
-  &lt;li&gt;DHdroid가 ‘재밌는 문제’ 라면서 들고왔습니다.&lt;/li&gt;
-  &lt;li&gt;먼저, $N$개의 자리를 통틀어 최소값이 $m$ 이라고 하고, 그 최솟값이 있는 자리를 $k$번이라고 합시다.&lt;/li&gt;
-  &lt;li&gt;$k - 1, k - 2, \dots k - m + 1$ 번 까지는 어쩔 수 없이 $k$번에 Contribute합니다.&lt;/li&gt;
-  &lt;li&gt;$k-m$번은 $k$번에 Contribute해서는 안 되므로, 값이 정확히 $m$이여야 합니다.&lt;/li&gt;
-  &lt;li&gt;이와 같은 논증을 반복하면, 다음 조건을 만족하는 조합이 ‘성공하는 조합’ 임을 알 수 있습니다.
-    &lt;ul&gt;
-      &lt;li&gt;먼저 최솟값 $m$에 대해 주기 $\gcd(m, N)$ 을 갖고,&lt;/li&gt;
-      &lt;li&gt;각 주기 내에서의 값은 $m$ 또는 $m+1$ 이어야 합니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;hr /&gt;
-
-&lt;hr /&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ps-weekly" /><summary type="html">Contents</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="snu-courses" /><summary type="html">Contents</summary></entry></feed>

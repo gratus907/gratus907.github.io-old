@@ -33,3 +33,9 @@ author_profile: true
   - Free Abelian Group, Basis
   - Fundamental Thm of Finitely generated Abelian groups
 </details>
+
+<details> <summary markdown = span> <b>8월 11일 (화)</summary>
+- 현대대수학 Fraleigh CH 39. Free Groups & CH.40 Group Presentation
+  - Words, Free Groups
+  - Group Presentation
+</details>

@@ -161,3 +161,19 @@ p>code:before, p>code:after, a>code:before, a>code:after, li>code:before, li>cod
 #postlist li:hover {
     background-color: #ffeeee;
 }
+
+.column {
+    float: left;
+    width: 33.33%;
+  }
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.archive {
+    padding-right: 0px;
+}

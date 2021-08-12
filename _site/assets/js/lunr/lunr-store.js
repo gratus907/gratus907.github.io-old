@@ -320,31 +320,31 @@ var store = [{
         "title": "I. 시간 복잡도와 Big-O Notation",
         "excerpt":"Contents Time Complexity Analysis Asymptotic Notation Additional topics and Problems Time Complexity Analysis 알고리즘 (Algorithm) 과 자료구조 (Data Structure) 를 공부하는 우리의 목표는, 같은 문제를 효율적으로 해결하는 것입니다. 뭔가를 효율적으로 하기 위해서는 항상 효율을 측정하는 기준이 필요할 것입니다. 일반적으로 이 기준에는 다음 두 가지가 가장 중요합니다. 프로그램이 얼마나 오래 걸리는가...","categories": ["ds-alg-note"],
         "tags": [],
-        "url": "http://localhost:4000/ds-alg-note/alg01-time-complexity/",
+        "url": "http://localhost:4000/ds-alg-note/01-time-complexity/",
         "teaser": null
       },{
         "title": "II. 기본 자료구조",
         "excerpt":"Contents 자료 구조 : Data structures Linked Lists Stacks / Queues / Deques Implementation Standard Library 자료 구조 : Data structures 이 장은 자료 구조에 대한 이야기입니다. 자료 구조는 알고리즘과 매우 밀접한 관련이 있는데, 어떤 식으로 자료가 저장되어 있는지에 따라 알고리즘의 소요 시간이 크게 달라지기 때문입니다. 특정한 자료구조를 이용해야만 빠르게...","categories": ["ds-alg-note"],
         "tags": [],
-        "url": "http://localhost:4000/ds-alg-note/alg02-basic-ds/",
+        "url": "http://localhost:4000/ds-alg-note/02-basic-ds/",
         "teaser": null
       },{
         "title": "III. 정렬과 탐색",
         "excerpt":"Contents Slow Sorting Algorithm Fast Sorting Algorithms Heap Sort Merge Sort Quick sort Hybrid Sort Selection Algorithms Quickselect Worst-Case Linear Selection Additional topics and Problems Programming Practice 우리의 목표는, $n$개의 원소를 가진 배열을 정렬하는 것입니다. 편의상, 다음과 같은 사실을 가정합니다. 정렬은 작은 것부터 큰 것 순서로 늘어놓는 것을 말합니다. ex)...","categories": ["ds-alg-note"],
         "tags": [],
-        "url": "http://localhost:4000/ds-alg-note/alg03-sorting-and-searching/",
+        "url": "http://localhost:4000/ds-alg-note/03-sorting-and-searching/",
         "teaser": null
       },{
         "title": "IV. Binary Search",
         "excerpt":"Contents Binary Search Bisection (parametric) Search Ternary Search Binary Search Up &amp; Down 게임을 해 보셨나요? 1부터 1000까지의 수 중 하나를, 10번 정도면 맞출 수 있다는 사실을 알고 계시나요? 아마도, 모두가 절반씩 잘라서 확인하는 전략을 사용할 것입니다. 이 전략을 우리는 Binary Search 라고 부릅니다. $N$ 크기의 배열이 정렬되어 있음을 안다면,...","categories": ["ds-alg-note"],
         "tags": [],
-        "url": "http://localhost:4000/ds-alg-note/alg04-binary-search/",
+        "url": "http://localhost:4000/ds-alg-note/04-binary-search/",
         "teaser": null
       },{
         "title": "V. Graph Basics, Heaps",
         "excerpt":"Contents Graphs Implementation of Graphs Trees / Binary Trees Heaps Heap Operation Heap Sort Heap Implementation Additional topics and Problems Programming Practice 저번 세션에 이어서, 자료구조를 공부하고자 합니다. Graphs 추상적으로, 그래프는 다음과 같이 정의된 $G = (V, E)$를 의미합니다. $V$는 정점의 집합으로, 그냥 원소들을 모은 집합으로 생각하면 됩니다. $E$는 $V...","categories": ["ds-alg-note"],
         "tags": [],
-        "url": "http://localhost:4000/ds-alg-note/alg05-graph-basics/",
+        "url": "http://localhost:4000/ds-alg-note/05-graph-basics/",
         "teaser": null
       },{
         "title": "BOJ 15744, USACO 2018 Feb P3 Cow Gymnasts",

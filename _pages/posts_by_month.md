@@ -4,8 +4,7 @@ layout: single
 permalink: /postings/
 author_profile: true
 ---
-<div id='postlist'>
-    <ul>
+<ul>
     {% for post in site.posts %}
     {% assign currentdate = post.date | date: "%B %Y" %}
     {% if currentdate != date %}
@@ -14,5 +13,4 @@ author_profile: true
     {% endif %}
         <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
-    </ul>
-</div>
+</ul>

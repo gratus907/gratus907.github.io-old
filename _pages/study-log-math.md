@@ -8,6 +8,14 @@ author_profile: true
 수학 공부 기록 (데일리). 개인적인 동기부여용 Study Planner 공개지만 뭔가 다 모아놓고보면 어떤것들을 했는지 알수있지 않을까 하는 생각에 여기에 박제하기로 했습니다. 
 
 ### 2021 8월 
+- 현대대수학 2 예습
+  - 2학기에 창의통합설계 때문에 잡아먹힐게 분명한 과목이라서 미리 조금 내용만 익혀두고 싶었습니다. 
+  - Fraleigh의 현대대수 책으로 가볍게
+- 확률과정 공부 시작 (여름방학 + 2학기 중 여유있을때 + 겨울방학까지 해서 조금씩 볼 예정입니다)
+  - Cohen의 Stochastic Calculus 책 앞부분 1/3 정도 (확률론 + Martingale) 가 목표입니다.
+  - 그후로는 Markov Chain, Queueing theory 같은걸 보고 싶은데 아직 책이나 이런건 모르겠습니다.
+  - Durrett의 Probability Theory 책을 추천 받았습니다.
+
 <details> <summary markdown = span> <b>8월 3일 (화)</summary>
 - 현대대수학 Fraleigh CH 35. Series of Groups 
   - Subnormal / Normal Series of Group
@@ -38,4 +46,21 @@ author_profile: true
 - 현대대수학 Fraleigh CH 39. Free Groups & CH.40 Group Presentation
   - Words, Free Groups
   - Group Presentation
+  
+- 확률과정론 Cohen CH 1.5-1.8
+  - Banach space, Hilbert space, $L^p$ space
+  - Radon-Nikodym Derivative
+</details>
+
+<details> <summary markdown = span> <b>8월 12일 (수)</summary>
+- 현대대수학 Fraleigh CH 45-47
+  - UFD, PID
+  - $D$ 가 UFD이면 $D[x]$ 가 UFD이다. 
+  - 모든 PID는 UFD이다. 
+  - Euclidean Domain
+  - Gaussian Integers
+
+- 확률과정론 Cohen CH 1.5-1.8
+  - Banach space, Hilbert space, $L^p$ space
+  - Radon-Nikodym Derivative
 </details>

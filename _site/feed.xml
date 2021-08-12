@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-13T03:26:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">MATH TESTBED</title><link href="http://localhost:4000/math-test/" rel="alternate" type="text/html" title="MATH TESTBED" /><published>2021-08-13T00:00:00+09:00</published><updated>2021-08-13T00:00:00+09:00</updated><id>http://localhost:4000/math-test</id><content type="html" xml:base="http://localhost:4000/math-test/">&lt;div id=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-13T03:55:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">MATH TESTBED</title><link href="http://localhost:4000/math-test/" rel="alternate" type="text/html" title="MATH TESTBED" /><published>2021-08-13T00:00:00+09:00</published><updated>2021-08-13T00:00:00+09:00</updated><id>http://localhost:4000/math-test</id><content type="html" xml:base="http://localhost:4000/math-test/">&lt;div id=&quot;toc&quot;&gt;
 Contents
 &lt;/div&gt;
 * TOC
 {:toc}
 ----------
 
-정리 테스트 
+정리 테스트
 
 &lt;div class=&quot;definition&quot; data-title=&quot;위상&quot;&gt; 집합 $S$에 대해 다음 조건을 만족하는 $\mathcal{T} \subset \mathcal{P}(S)$ 를 위상(Topology) 라 한다. 
 &lt;/div&gt;
@@ -18,11 +18,12 @@ Contents
 Definition과 Theorem은 따로 번호를 붙인다.
 &lt;div class=&quot;lemma&quot; data-title=&quot;lemma1&quot;&gt; 보조정리1
 &lt;/div&gt;
-보조정리도 쓸 수 있다. 
+보조정리도 쓸 수 있다.
 
-- 증명은 CSS가 깨지므로, 이렇게 쓴다. 
+- 증명은 CSS가 깨지므로, 이렇게 쓴다.
 - 귀납법을 쓰자. $n = 1$일 때 성립한다.
 - $n = k$ 일 때 성립하면 $n = k+1$ 일 때 성립한다.
+- 단어 몇개를 추가했다.
 
 &lt;div class=&quot;lemma&quot; data-title=&quot;Fatou Lemma&quot;&gt; 가측함수열 $f_n$이 $f_n \geq 0$ 을 만족하면, 다음이 성립한다.
 $$\int_X \liminf_{n} f_n \dd{\mu} \leq \liminf_{n} \int_X f_n \dd{\mu}$$

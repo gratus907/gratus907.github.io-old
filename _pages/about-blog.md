@@ -26,3 +26,9 @@ sidebar:
 - `cs_adventure` : 나름 CS Research를 꿈꾸는데도 그런쪽으로는 부족한 거 같아서, 지금부터라도 논문읽기나 세미나 참석하고 정리하기를 조금씩 해 보려고 합니다. 재밌어 보이는 것들 / 추천받은 것들 등등... 을 읽어보고 재밌는 주제들이 있으면 여기에 정리할 계획입니다. 개인적인 흥미가 최우선이다보니 막 세세한 결과같은것보단... 핵심적인 아이디어가 재밌는가? 가 가장 중요한것 같습니다. `cs_adventure` 와 `advanced_algorithm`의 기준이 좀 모호한데, 제가 처음에 읽을때 논문을 읽었거나 세미나 발표를 들었으면 전자에, 수업을 들었거나 다른 사람이 정리해 놓은 자료, 책을 통해 공부했으면 후자에 올라가는 기준입니다. 
   
 - `retrospects_and_plans` : 학기/방학마다 올리는 진로와 공부 과정에 대한 이야기입니다. 
+
+## Blog Changelog
+- 21.01.07 Start this blog.
+- 21.02.08 Started using view-tracking service
+- 21.08.13 Homepage renewal, Statistics
+- 21.08.13 Math

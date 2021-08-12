@@ -352,4 +352,10 @@ var store = [{
         "tags": ["number-theory"],
         "url": "http://localhost:4000/ps-problems/BOJ15744/",
         "teaser": null
+      },{
+        "title": "MATH TESTBED",
+        "excerpt":"Contents 정리 테스트 집합 $S$에 대해 다음 조건을 만족하는 $\\mathcal{T} \\subset \\mathcal{P}(S)$ 를 위상(Topology) 라 한다. 집합 $S$에 대해 다음 조건을 만족하는 $\\mathcal{T} \\subset \\mathcal{P}(S)$ 를 위상(Topology) 라 한다. 함수 $f$가 닫힌 구간 $[a, b]$ 에서 연속이면, 함수 $F(x) = \\int_{a}^{x} f(t) \\dd{t}$ 는 닫힌 구간 $[a, b]$ 에서 연속이고,...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/math-test/",
+        "teaser": null
       }]

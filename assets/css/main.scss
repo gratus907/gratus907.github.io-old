@@ -177,3 +177,63 @@ p>code:before, p>code:after, a>code:before, a>code:after, li>code:before, li>cod
 .archive {
     padding-right: 0px;
 }
+
+
+body
+{
+    counter-reset: theorem;
+    counter-reset: definition;
+    counter-reset: lemma;
+}
+
+.theorem {
+    padding : 0px 20px;
+    counter-increment: theorem;
+    display: block;
+    margin: 12px 0;
+}
+.theorem:before{
+    content: "Theorem " counter(theorem) ".";
+    font-weight: bold;
+    font-style: normal;
+}
+.theorem[data-title]:before {
+    content: "Theorem " counter(theorem) " [" attr(data-title) "].";
+    font-weight: bold;
+    font-style: normal;
+}
+
+.lemma {
+    padding : 0px 20px;
+    counter-increment: lemma;
+    display: block;
+    margin: 12px 0;
+}
+.lemma[data-title]:before {
+    content: "Lemma " counter(lemma) " [" attr(data-title) "].";
+    font-weight: bold;
+    font-style: normal;
+}
+.lemma:before {
+    content: "Lemma " counter(lemma) ".";
+    font-weight: bold;
+    font-style: normal;
+}
+
+.definition {
+    padding : 0px 20px;
+    counter-increment: definition;
+    display: block;
+    margin: 12px 0;
+    font-style: normal;
+}
+.definition[data-title]:before {
+    content: "Definition " counter(definition) " [" attr(data-title) "].";
+    font-weight: bold;
+    font-style: normal;
+}
+.definition:before {
+    content: "Definition " counter(definition) ".";
+    font-weight: bold;
+    font-style: normal;
+}

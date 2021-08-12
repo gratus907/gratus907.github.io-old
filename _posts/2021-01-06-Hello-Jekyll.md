@@ -52,6 +52,3 @@ int main()
 }
 ```
 
-## Blog Changelog
-- 21.01.07 Start this blog.
-- 21.02.08 Started using view-tracking service

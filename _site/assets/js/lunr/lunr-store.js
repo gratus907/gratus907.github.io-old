@@ -353,8 +353,14 @@ var store = [{
         "url": "http://localhost:4000/ps-problems/BOJ15744/",
         "teaser": null
       },{
+        "title": "논문읽기 : Chan-Vese Algorithm",
+        "excerpt":"Contents Introduction Key Ideas Energy functional Introduction 이번에 읽은 논문은 Active Contours Without Edges 라는, 2001년의 논문입니다. 목표는 어떤 이미지가 주어졌을 때, 이 이미지의 외곽선 “Contour” 를 따는 것입니다. 특히, 여기서는 segmentation이라고 해서 그림의 픽셀을 몇개의 클래스로 구분하는 문제를 해결하는 것으로 보고 있습니다. 예를 들어, 배경 앞에 사람이 서 있다면,...","categories": ["cs-adventure"],
+        "tags": [],
+        "url": "http://localhost:4000/cs-adventure/chan-vese/",
+        "teaser": null
+      },{
         "title": "MATH TESTBED",
-        "excerpt":"Contents 정리 테스트 집합 $S$에 대해 다음 조건을 만족하는 $\\mathcal{T} \\subset \\mathcal{P}(S)$ 를 위상(Topology) 라 한다. 집합 $S$에 대해 다음 조건을 만족하는 $\\mathcal{T} \\subset \\mathcal{P}(S)$ 를 위상(Topology) 라 한다. 함수 $f$가 닫힌 구간 $[a, b]$ 에서 연속이면, 함수 $F(x) = \\int_{a}^{x} f(t) \\dd{t}$ 는 닫힌 구간 $[a, b]$ 에서 연속이고,...","categories": [],
+        "excerpt":"Contents 정리 테스트 집합 $S$에 대해 다음 조건을 만족하는 $\\mathcal{T} \\subset \\mathcal{P}(S)$ 를 위상(Topology) 라 한다. 이렇게 정리를 쓸 수 있다. 집합 $S$에 대해 다음 조건을 만족하는 $\\mathcal{T} \\subset \\mathcal{P}(S)$ 를 위상(Topology) 라 한다. 정리에 자동으로 번호를 붙일 수 있다. 함수 $f$가 닫힌 구간 $[a, b]$ 에서 연속이면, 함수 $F(x)...","categories": [],
         "tags": [],
         "url": "http://localhost:4000/math-test/",
         "teaser": null

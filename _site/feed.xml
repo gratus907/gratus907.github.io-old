@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-13T03:55:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">MATH TESTBED</title><link href="http://localhost:4000/math-test/" rel="alternate" type="text/html" title="MATH TESTBED" /><published>2021-08-13T00:00:00+09:00</published><updated>2021-08-13T00:00:00+09:00</updated><id>http://localhost:4000/math-test</id><content type="html" xml:base="http://localhost:4000/math-test/">&lt;div id=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-13T18:01:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">논문읽기 : Chan-Vese Algorithm</title><link href="http://localhost:4000/cs-adventure/chan-vese/" rel="alternate" type="text/html" title="논문읽기 : Chan-Vese Algorithm" /><published>2021-08-13T00:00:00+09:00</published><updated>2021-08-13T00:00:00+09:00</updated><id>http://localhost:4000/cs-adventure/chan-vese</id><content type="html" xml:base="http://localhost:4000/cs-adventure/chan-vese/">&lt;div id=&quot;toc&quot;&gt;
+  &lt;p&gt;Contents&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#introduction&quot; id=&quot;markdown-toc-introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#key-ideas&quot; id=&quot;markdown-toc-key-ideas&quot;&gt;Key Ideas&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#energy-functional&quot; id=&quot;markdown-toc-energy-functional&quot;&gt;Energy functional&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#integral-formulation&quot; id=&quot;markdown-toc-integral-formulation&quot;&gt;Integral formulation&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#relaxation--euler-lagrange&quot; id=&quot;markdown-toc-relaxation--euler-lagrange&quot;&gt;Relaxation &amp;amp; Euler-Lagrange&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#partial-differential-equation&quot; id=&quot;markdown-toc-partial-differential-equation&quot;&gt;Partial Differential Equation&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conclusion&quot; id=&quot;markdown-toc-conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#thoughts&quot; id=&quot;markdown-toc-thoughts&quot;&gt;Thoughts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;이번에 읽은 논문은 &lt;strong&gt;Active Contours Without Edges&lt;/strong&gt; 라는, 2001년의 논문입니다. 2001년 IEEE Transactions on Image Processing, Vol.10, No.2 에 발표된 논문으로, 이 분야 - image processing - 에서는 엄청나게 중요한 논문으로, 현재까지 1만 3천 회 가량 인용되었습니다.&lt;/p&gt;
+
+&lt;p&gt;목표는 어떤 이미지가 주어졌을 때, 이 이미지의 외곽선 &lt;strong&gt;“Contour”&lt;/strong&gt; 를 따는 것입니다. 특히, 여기서는 segmentation이라고 해서 그림의 픽셀을 몇개의 클래스로 구분하는 문제를 해결하는 것으로 보고 있습니다. 예를 들어, 배경 앞에 사람이 서 있다면, 사람과 배경을 구분하는 문제를 classification이라고 할 수 있겠습니다. 꽤 오래 전 (저널 발표일 기준 2001) 논문이므로, 본격적인 Deep Learning의 시대가 오기 전의 방법론을 볼 수 있었습니다.&lt;/p&gt;
+
+&lt;p&gt;먼저, 용어를 간단히 정의합니다. Segmentation과 Contour detection은 원래 약간 다른 문제지만, 여기서는 Segmentation의 방법으로 Level set (등고선) 의 Contour를 따는 방법을 생각하기로 합니다. 이를 위해, 예를 들어 어떤 grayscale 이미지가 주어지면, 이 선을 대충 색이 진한 쪽과 흐린 쪽으로 나누기 위해 진한 점들이 이루는 Contour를 찾고자 한다고 이해하면 되겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;key-ideas&quot;&gt;Key Ideas&lt;/h1&gt;
+&lt;h2 id=&quot;energy-functional&quot;&gt;Energy functional&lt;/h2&gt;
+&lt;p&gt;이 문제에서는, Segmentation 문제를 Functional Optimization의 문제로 환원합니다. 여기서 Functional이란, 정의역이 함수의 집합인 함수를 말합니다.&lt;/p&gt;
+
+&lt;p&gt;특히, 우리는 결과물의 외곽선이 Smooth하기를 원하므로, $X$에서 Lipschitz Continuous 한 함수의 집합 $\mathcal{L}$ 에서 $\R$로 가는 함수열을 생각할 것입니다. 여기서 Lipschitz 연속이란 연속성보다 더 강한 개념으로, 점 $x, y$ 와 어떤 상수 $K$에 대해 $\norm{f(x) - f(y)} \leq K \norm{x - y}$ 를 만족하는 함수들을 의미합니다.&lt;/p&gt;
+
+&lt;p&gt;함수의 Level set에 대해 논의하기 위해, 우리는 함수 $\phi \in \mathcal{L}$ 에 대해, $\phi = 0$ 인 점들을 이은 곡선을 $C$라고 정의합니다. 또한, $\phi(x) &amp;gt; 0$ 인 공간을 $A$, $\phi(x) &amp;lt; 0$ 인 공간을 $B$라고 쓰겠습니다. 마지막으로, 원래의 이미지 픽셀값을 $u_0(x, y)$ 함수로 나타냅니다.&lt;/p&gt;
+
+&lt;p&gt;이제, 다음과 같은 Functional들을 정의합니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$Len(C)$ : 곡선의 길이. 곡선의 길이가 길면 $\phi$ 가 덜 smooth하기 때문에 (해석학적인 term이라기보다는, 기하적인 smooth함), 매끄러운 곡선을 그리도록 페널티를 통해 incentivise 합니다.&lt;/li&gt;
+  &lt;li&gt;$Area(A)$ : $\phi(x) &amp;gt; 0$ 인 부분의 넓이. 길이와 기본적인 의미는 같습니다.&lt;/li&gt;
+  &lt;li&gt;$\int_{A} \abs{u_0(x, y) - c_1}^2 \dd{x}\dd{y}$ : 어떤 실수값 $c_1$ 을 잡아서, $\phi$ 안쪽에서 $u_0$ 의 평균을 나타내고 싶습니다. 이때 이 평균값이 가급적 정확하기를 바란다는 의미입니다.&lt;/li&gt;
+  &lt;li&gt;$\int_{B} \abs{u_0(x, y) - c_2}^2 \dd{x}\dd{y}$ : $\phi$ 바깥쪽에서도 똑같은 작업을 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;직관적으로, 저 네 값 모두 작았으면 좋겠다는것을 알 수 있습니다. 앞 두개가 작으려면 함수가 대충 곡선으로 쭉 매끄럽게 이어져야 하고, 뒤 두개가 작으려면 그 안쪽과 바깥쪽에 어떤 intensity 값을 잡아서 그 값에 가깝게 잘려야 합니다.&lt;br /&gt;
+우리는 저 네 Functional의 선형결합을 “Energy Functional” 이라고 부르기로 하고, 저 값을 minimize하는 $c_1, c_2, \phi$ 를 찾는 것을 목표로 합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;integral-formulation&quot;&gt;Integral formulation&lt;/h2&gt;
+&lt;p&gt;그러나, 저 식은 저대로는 상당히 계산하기가 어렵습니다. 좀더 계산을 잘 하기 위해, 식을 살짝 조절해 봅시다. 이를 위해, 헤비사이드 함수 $H$를 도입합니다. $H$는 $x \geq 0$ 일 때 1, $x &amp;lt; 0$ 일 때 0인 함수입니다. 이를 도입하면 $H(\phi(x, y)) = 1$ iff $\phi(x, y) \geq 0$ 가 성립합니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Length : 길이는 스토크스 정리와 헤비사이드 함수의 정의를 이용하면, 아래와 같이 쓸 수 있습니다. 
+  \(L(\phi) = Len(C) = \int_{\R^2} \abs{\nabla H(\phi(x, y))} \dd{x}\dd{y}\) 
+  당연히 일반적으로 $H(\phi(x, y))$ 는 미분이 불가능하지만, 우리는 Heaviside의 도함수를 Dirac-delta로 쓰고 있으므로 (in distribution function sense) 적분은 잘 됩니다. &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+  &lt;li&gt;Area : 간단한 다변수 적분입니다. 
+  \(S(\phi) = Area(A) = \int_{\R^2} H(\phi(x, y)) \dd{x}\dd{y}\)&lt;/li&gt;
+  &lt;li&gt;역시 간단한 두 개의 다변수 적분식을 쓸 수 있습니다. 
+  \(F_i(C) = \int_{\R^2} \abs{u_0(x, y) - c_1}^2 H(\phi(x, y))\dd{x}\dd{y}\) 
+  \(F_o(C) = \int_{\R^2} \abs{u_0(x, y) - c_2}^2 (1 - H(\phi(x, y)))\dd{x}\dd{y}\)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;하나 관찰할 수 있는 것은, $c_1$과 $c_2$는 $\phi$를 고정하고 최적화하면 최적화할 수 있다는 점입니다. 구체적으로, 첫번째 식을 다시 앞서의 형태인 
+\(\int_{A} \abs{u_0(x, y) - c_1}^2 \dd{x}\dd{y}\) 이렇게 돌려놓고 보면, $c_1$은 자명하게 $u_0$의 $A$에서의 ‘평균’ 이 되어야 합니다. 따라서, 앞으로 $c_1, c_2$는 $\phi$로부터 간단한 적분을 통해 계산 가능하므로, 위 식을 $\phi$로만 최소화한다고 문제를 단순화하겠습니다.&lt;br /&gt;
+또한, 실제 알고리즘은 1, 2, 3에 각각 적당한 상수를 붙여서 계산합니다. 특히, (3) 의 $F_i$ 와 $F_o$에 다른 상수를 붙여서 계산하는데, 실제로는 원본 논문의 저자들도 상수를 대충 잡았고, 이 상수를 어떻게 잡아야 하는지에 대해서는 많은 논증이 없었으므로 저는 여기서 (1) * $\mu$ + (2) * $\nu$ + (3) * $\lambda$ 로 놓고 계산하겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;relaxation--euler-lagrange&quot;&gt;Relaxation &amp;amp; Euler-Lagrange&lt;/h2&gt;
+&lt;p&gt;이제, 여기까지 오면서 우리가 최종적으로 무엇을 최소화하는지 보겠습니다. 
+\(\int_{\R^2} \mu L(\phi) + \nu S(\phi) + \lambda(F_i(\phi) + F_o(\phi)) \dd{x}\dd{y}\)&lt;/p&gt;
+
+&lt;h2 id=&quot;partial-differential-equation&quot;&gt;Partial Differential Equation&lt;/h2&gt;
+&lt;p&gt;우리는 이런 편미분방정식은 풀 방법이 없기 때문에, 마지막으로 수치해석을 적용합니다. 구체적으로, Finite Differnce method를 이용해야 합니다.&lt;/p&gt;
+
+&lt;p&gt;Finite Difference method는 별로 어렵지 않은데, $\Delta_{-}^{x}$ 같은 식으로 $x, y$ 방향 $+, -$ 로 네개의 time differnece를 정의하고 여러 공식들을 적용하기만 하면 됩니다. 편미방이 복잡하게 생겼지만 각 term은 그렇게 어렵지 않습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;이 알고리즘은 Noisy image에서도 생각보다 훌륭한 성능을 보여주고, vector-valued 같은 확장도 그렇게 어렵지 않습니다. 특히, 이런 식의 Energy Functional을 잘 정의하기에 따라서 범용성이 굉장히 높고 원하는 Feature가 있다면 추가로 embed 할 수도 있어서 확장성도 높습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;thoughts&quot;&gt;Thoughts&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Parameter 가 상당히 중요해 보입니다. $\mu, \nu, \lambda$ 의 어떤 조합이 좋은 결과를 내는지에 대해서는 원본 논문에서는 별로 Discuss하지 않았는데, 실험적으로 확인해야 하는 걸까요? $\mu, \nu$ 는 어떻게 실험적으로 검증할 수 있어 보이는데, $\lambda$는 좀 오바인것 같습니다. 검색을 좀 해보니, 다른 논문 몇편에서 이미지의 어떤 computable한 성질들로부터 parameter를 자동으로 튜닝하는 논문들이 있었습니다.&lt;/li&gt;
+  &lt;li&gt;Functional Optimization은 미적분학 II에서 변분법을 배운 이후로 처음인데, 일반적인 optimization의 방법론들과는 좀 다르다보니 어렵습니다. 특히 $f$ 에서 $x$를 움직여서 최적화하는 경우는 $f’$ 같은 정보들이 있는데, Functional은 어떻게 최적화하는지 잘 모르겠습니다. 
+듣기로는 Banach space위에서의 Lagrange Multiplier같은 해괴한게 있다고 합니다. Functional도 결국 Banach space위에서 어떤 함수를 최적화하는 거니까, 비슷한 개념이 있을까요? 구체적으로는 Banach space $X$에서 정의된 Functional $F$의 도함수?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;해석개론을 배우고 나서부터 디랙-델타를 적분에 활용하는게 오히려 정말 이해가 안 갔었는데, 이 개념은 Measure, Distribution function 등 실해석학 및 그 이상의 해석학을 배우면 다시 make sense 합니다. 잠시 공학수학의 관점으로 돌아가서 이 식을 받아들이기로 합니다. 어차피, 이 적분을 실제로 계산할 것은 아니니까요. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cs-adventure" /><summary type="html">Contents</summary></entry><entry><title type="html">MATH TESTBED</title><link href="http://localhost:4000/math-test/" rel="alternate" type="text/html" title="MATH TESTBED" /><published>2021-08-13T00:00:00+09:00</published><updated>2021-08-13T00:00:00+09:00</updated><id>http://localhost:4000/math-test</id><content type="html" xml:base="http://localhost:4000/math-test/">&lt;div id=&quot;toc&quot;&gt;
 Contents
 &lt;/div&gt;
 * TOC
@@ -1237,131 +1331,4 @@ $$r = (1 - d) (I - dW)^{-1} e_u$$
 
 ------
 
-[^1]: 공식적으로 발표된 논문에서는 아주 약간의 차이가 있으나, 식 정리의 문제이고 실제로는 identical합니다.</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="advanced-algorithms" /><category term="graphs" /><category term="data-science" /><summary type="html">Contents</summary></entry><entry><title type="html">서울대학교 컴퓨터공학부 전공과목 (주관적인) 소개</title><link href="http://localhost:4000/snu-courses/SNU-courses-CS/" rel="alternate" type="text/html" title="서울대학교 컴퓨터공학부 전공과목 (주관적인) 소개" /><published>2021-08-03T00:00:00+09:00</published><updated>2021-08-03T00:00:00+09:00</updated><id>http://localhost:4000/snu-courses/SNU-courses-CS</id><content type="html" xml:base="http://localhost:4000/snu-courses/SNU-courses-CS/">&lt;div id=&quot;toc&quot;&gt;
-Contents
-&lt;/div&gt;
-* TOC
-{:toc}
-----------
-
-가장 쓸 말이 많은 3설계 과목 (소개원실, 하시설, 창통설) 은 별개의 글로 남길 예정입니다. 
-
-## 1학년 과목
-### 컴퓨터의 개념 및 실습
-- 2018년 1학기 (1학기차) 에 수강했습니다.
-- 굉장한 과목입니다. 들을 때는 몰랐는데, 다른 학교의 1학년 첫 컴공과 기초 과목이 보통 파이썬이나 C를 가르치는데 비해 이 과목은 무려 컴퓨터구조에 대해 배웁니다. LC-3라는 toy computer의 어셈블리는 물론, 기계어로 직접 뭔가를 짜게 합니다.
-- 이게 무슨 말이냐면, 보통 C를 배운 후 어셈블리로 넘어가서 C를 통해 어셈블리와 컴퓨터 구조를 이해하는게 일반적인 테크지만, 저희는 반대로 컴퓨터의 폰 노이만 구조와 Program counter, memory model을 먼저 배운 뒤, 어셈블리 (진짜 어셈은 아니지만) 단계에서 이를 이해해보고, 거꾸로 C를 그 위에서 쌓아 나갑니다. 이렇게 배우면 포인터가 안 어렵다는 정도? 장점이 있는것 같습니다.
-- 힘들었지만 재밌었습니다. A-인가? 받았습니다. 저는 입학하고 프로그래밍이라는걸 처음 배워본지라... 이때까지는 과고 친구들과 경쟁자체가 안 되더군요 ㅋㅋ 
-
-### 프로그래밍 연습
-- 2018년 2학기 (2학기차) 에 수강했습니다.
-- C언어의 기초를 배웁니다.
-- 기말프로젝트가 카드 뒤집으면서 기억력으로 페어 맞추는 게임 (게임 이름을 까먹었네요) 만드는 거였는데, 재밌었습니다. 
-
-### 이산수학
-- 2021년 1학기 (7학기차) 에 수강했습니다. (왜?? ㅋㅋㅋ)
-- Logic, Group, Probability, Graph, Algorithm 등 종횡무진 뛰어다니며 넓고 얕게 배웁니다.
-- 저는 CS/MATH이고 7학기차였으므로 저는 이 과목에서 배우는 모든 내용을 다른 과목에서 배워본 상태였습니다. 처음 듣는 컴공 전공이라면 증명이나 논증을 체계적으로 하는 법을 익히는 좋은 과목이라고 생각합니다. 저는 그 역할을 해석개론이 대신해 줬습니다. 
-- 너무 늦게 들어서 쉬웠습니다. 1학년 때였다면 느낌이 좀 달랐을것 같습니다. A+.
-
-## 2학년 과목
-### 컴퓨터 프로그래밍
-- 2019년 1학기 (3학기차) 에 수강했습니다.
-- 객체지향 프로그래밍, 객체지향의 개념에 대해 배웁니다.
-- 기말 과제로 체스를 구현하는 과제가 있었습니다. 처음 하면서 꽤 어려웠던 기억이 있습니다.
-- 이런걸 익히려면 해보는 방법밖에 없다는 말을 체감하게 됩니다. 코딩을 하다보면 아 이게 그런 말이구나 할 때가 있습니다. A+.
-
-### 논리설계 
-- 2019년 1학기 (3학기차) 에 수강했습니다.
-- Boolean Algebra와 카르노 맵으로 시작해서, 논리 게이트, Adder 등 간단한 논리 회로에 대해 배웁니다. 끝부분에는 FSM을 다룹니다.
-- 마지막에는 베릴로그로 CPU 짜는 과제가 있었습니다.
-- 강의가 정말 재밌고 흡입력있었지만 저는 내용에서 고통받았습니다.
-- Verilog 3부작 중 1부인데, 저는 정말 힘들었습니다. 저는 Verilog와 진짜 안 맞는다는걸 깨달았습니다. B+.
-
-### 자료구조 
-- 2019년 2학기 (4학기차) 에 수강했습니다.
-- 저는 입학하자마자 SNUPS에서 kipa00님한테 PS를 배우면서 C++를 익히는 것으로 시작해서, PS를 꽤 열심히 했었기 때문에 이때는 블루~퍼플 근처의 실력이었습니다. (지금도 퍼플을 못 벗어나고 있네요 ㅋㅋ) 2년 더 이때처럼 Training했으면 제가 PS를 더 잘 했을까요? 모르겠네요...
-- 가장 집중적으로 PS를 공부했던 시점이라서 자료구조는 쉽게 공부했습니다. A+.
-
-### 컴퓨터구조
-- 2019년 2학기 (4학기차) 에 수강했습니다.
-- 컴퓨터공학이 뭔지 알기 위해 딱 2개의 수업만 들을수 있다면 저는 알고리즘과 컴퓨터구조를 뽑겠습니다. 컴퓨터구조에서는 논설의 끝부분을 시작으로, CPU의 내부 구조, Pipelining, Memory Hierarchy, 멀티코어와 멀티스레드 등을 다룹니다. 
-- 컴퓨터 자체에 대해 가장 많은 내용을 배울 수 있습니다. 언젠가 고급 컴퓨터 구조를 듣고 싶은데 여력이 될지 모르겠습니다.
-- Verilog로 파이프라이닝이 있는 CPU를 짜는 과제가 나왔었는데, 여기서 거의 0점에 가까운 점수를 받았습니다. 이 과제가 아니었다면 나머지는 A+를 충분히 받을 수 있는 성적이었는데 이 과제 하나 때문에 A0를 받았습니다. Verilog는 너무 어려워요...
-
-### 프로그래밍 언어
-- 2019년 2학기 (4학기차) 에 수강했습니다.
-- OCaml로 함수형 프로그래밍, 메모리 관리, 재귀 호출 등 PL의 핵심 아이디어들을 배웁니다.
-- 인터프리터 만드는 과제가 꽤 많은데, 과제가 재밌지만 오래 걸렸습니다.
-- OCaml 프로그래밍이 굉장히 생소했습니다. 그후로 한번도 안써서 이제는 많이 잊어버렸습니다. 
-- 과제만 잘 하면 되는, 시험 없는 꿀과목입니다만 시험이 없어서 공부를 덜 한것 같기는 합니다. 학점은 A+ 받았습니다.
-
-### 전기전자회로
-- 2019년 2학기 (4학기차) 에 수강했습니다.
-- 일반적인 전기전자회로 수업입니다.
-- 힘들고 어려웠습니다. 돌이켜 생각해보면 내용이 막 어렵진 않았는데, 공부하기가 너무 힘들었습니다. 
-- B+ 받았는데, 논설이랑 이건 좀 얘기가 다릅니다. 이과목은 미적분학이나 공학수학 내용 (미방 풀기) 에 대한 기본 이해가 필요하고, 수식전개를 잘 해야 합니다. 저희과는 지금 고등학교때 문과였던 / 공학수학을 이수하지 않은 복부전생들이 많아서, 이런 과목은 엄청나게 어드밴티지가 있습니다. 그럼에도 불구하고 B+를 받았다는건 제 놀라운 실력을 imply합니다.
-
-## 3-4학년 과목
-컴퓨터공학부의 경우, 3-4학년 과목 상당수가 선수관계에 있지 않고 난이도 면에서 큰 차이가 없다고 느껴 같이 서술합니다.  
-대부분의 빡센 전필 과목이 3학년 과목이라서 그렇기도 합니다. 
-
-### 알고리즘
-- 2020년 1학기 (5학기차) 에 수강했습니다.
-- 자료구조와 같은 이유로 비교적 편하게 들었습니다.
-- 모든 알고리즘 강의에서 강의하는 시간복잡도, 정렬, 탐색, DP, 그리디, 그래프, 최단경로, MST까지 배웁니다.
-- 그 후로는 NP-Complete 문제들과 그 환원, matroid 등 재밌는 개념들을 좀 배웠습니다. 이쪽이 주력이셨던 교수님이셨기 때문에 특히 그랬던듯 합니다.
-- 비슷한 PS 실력의 다른 사람들에 비해, 저는 이론적인 알고리즘에 관심이 많은 편입니다. 이때쯤에는 이쪽 분야 진학을 계획하기 시작했기 때문에, PS 공부를 이 이후로는 거의 못 했습니다. 그와는 별개로 알고리즘 수업은 정말 재밌게 들었습니다.
-- 그리고 뭐... 어쨌든 퍼플이면 학부 알고리즘 수업은 무난하게 들을 수 있습니다. 특히 construction에 강한 사람들보다 (PS를 진짜 잘하는건 이분들입니다) 저처럼 대학와서 PS를 시작해서 academic하게 공부한 사람은 더 그렇습니다. A+ 받았습니다.
-
-### 양자 컴퓨팅의 기초
-- 2020년 1학기 (5학기차) 에 수강했습니다.
-- 물리학이라고는 1학년 1학기에 교양 B0 맞은 이후로 쳐다본적도 없는데, 갑자기 양자역학의 기초 원리들을 배우게 되어 어려웠습니다.
-- 선형대수학을 열심히 들었다면 할만하고, 그렇지 않다면 듣기 힘든 과목인것 같습니다.
-- 나머지 CSE 과목들과 아예 다른 트랙 위에 서 있어서, 이것만 들어도 들을만 합니다 (Lin Alg를 안다면)
-- 새롭고 재밌었습니다. 아예 새로운 내용을 배우는 과목은 대체로 좋아하는 편입니다. A+ 받았습니다. 코로나버프가 살짝 있었던듯 합니다.
-
-### 데이터베이스
-- 2020년 1학기 (5학기차) 에 수강했습니다.
-- 제게는 학부 지도교수님이신 교수님께서 강의하시는 과목입니다. 상담때 정말 많은 조언을 받았기 때문에 항상 감사한 마음입니다.
-- 무려 JAVA로 밑바닥부터 SQL 쿼리를 파싱하고, 이를 처리하는 프로젝트가 있습니다.
-- 모든 DB 강의에서 배우는, DB의 원리들, SQL, DB가 가져야할 원칙 등을 배우는, standard한 수업입니다.
-- 공대지만 Engineering스러운 과목은 많이 듣지 못했는데, 이 과목은 좀 CS에서는 Engineering스러운 마인드의 과목이라서 나름의 재미가 있었습니다. 
-- 하지만 프로젝트의 코딩량이 정말 충격적입니다. 저는 주언어가 C++이었고 JAVA 코딩은 컴프-자구 과제 해본게 다였기 때문에 정말 어려웠습니다. 솔직히 C++로 짰으면 짤 수 있었을것 같은데, 뭐 이건 제 코딩실력의 문제이므로 수업 자체의 난이도와는 좀 다른 얘기가 아닌가 싶습니다.
-- 지도교수님께서 강의하시는 과목이라서 그런지 나름 더 열심히 들었고, 재밌었지만 제 JAVA 실력에 의해 B+를 받았습니다. 그와는 별개로 여기서 배운 내용은 이후에도 많은 도움이 됩니다.
-
-### 소프트웨어 개발의 원리 및 실제
-- 2020년 2학기 (6학기차) 에 수강했습니다.
-- 실제 개발의 프로세스, 디자인 패턴 등을 배우고, 팀플로 하나의 웹앱을 직접 만들어서 출시해야 하는 과목입니다.
-- 어느순간부터 머신러닝을 포함해야 한다는 요구조건이 붙었습니다.
-- 대략 5,000 단어 분량의 5부작 후기가 준비되어 있었으나, 다양한 사정으로 퇴고를 거듭한 끝에 블로그에 올리지 못했습니다. 
-- 학교 다니는 중 가장 힘들었습니다. 4학점 과목이지만 체감 로드는 15학점 이상 됩니다. 저는 2020-1학기 전체 18학점과 이 과목 하나가 비교할 만 하다고 생각합니다.
-- 배우는것은 많습니다. SNULife에 있었던 강의평의 일부를 인용하며 짧은 소개를 마치겠습니다. 참고로, snulife 평점 7.8임에도 당도 1.5에 빛납니다. 
-  이 강의평 이상으로 이 과목을 표현할 자신이 없습니다.  
-**&quot;강의가 끝나고 나면 내가 이전의 나와는 다른 프로그래머가 된 것을 느낄 수 있습니다. 그런데 그건 이전의 내가 프로젝트 하다가 죽어서 그런겁니다.&quot;**  
-**&quot;여튼 이걸 아직 안 들었다면 마음의 준비 단단히 하시고, 윗공대 오실 떄 왠만하면 이불이나 담요 챙겨오시길 바랍니다. 파이팅.&quot;**
-- 정말 많은 노력을 (15학점 분량 정도) 했고 A-를 받았습니다. 
-
-### 시스템 프로그래밍
-- 2020년 2학기 (6학기차) 에 수강했습니다.
-- 컴퓨터구조 수업에 이어서, 컴퓨터 내부의 핵심 원리들을 배웁니다. I/O로 시작해서, Virtual memory, malloc의 원리, Pipe와 프로세스간 통신, 멀티스레딩을 배웁니다. 마지막에는 네트워크 기초를 좀 배웁니다.
-- Malloc을 직접 구현하는 malloc lab이 상당히 악명 높습니다.
-- 굉장히 유익하고, 배우는게 많으며, 어렵지만 재밌습니다. 컴구와 함께 반드시 들어야 할 컴퓨터공학과 수업입니다. 크게 컴구/시프와 자구/알골 이렇게까지 4개만 들으면 컴공과의 코어 아이디어는 다 가져갔다고 생각합니다. 이후로는 다 개별 과목이라서요...
-- 소개원실 플젝이 모든것을 잡아먹어서 기말을 터트리고 A-를 받았습니다.
-
-### 하드웨어 시스템 설계 
-- 2021년 1학기 (7학기차) 에 수강했습니다.
-- FPGA 보드로 행렬곱셈을 가속해서 CNN을 빠르게 돌리는... 뭐 그런걸 합니다. 로직은 C++로 짜고, FPGA는 베릴로그를 씁니다.
-- 베릴로그를 정말 못 하는 제게는 너무 힘든 과목이었지만, 베릴로그 파트는 훌륭한 팀원이 멱살잡고 캐리했습니다. 그 대가로 저는 C++ 코드를 하루종일 들여다보고 포인터 연산을 열심히 해야 했지만 그래도 팀원과 제 로드 배분이 6:4 정도로 제가 조금 버스 탔다고 생각합니다. 이 은혜는 창의통합설계 때 갚아야한다고 다짐했습니다.
-- 짧은 후기를 블로그에 쓸 예정입니다.
-- 어렵지만 돌이켜보면 남은건 꽤 많습니다. 아쉬운 점은, 플젝을 한학기 내내 했음에도 실제 로드는 마지막 한주에 몰아져 있었다는 점입니다.
-- 선배들이 사람에 따라 0.2~0.4 소개원실이라고 조언했는데, 마지막 주가 되기 전까지는 전혀 이해를 못 했습니다. 마지막 주에는 왜 그런지 납득하긴 했지만, 그래도 저는 동의할 수 없습니다. 소개원실 로드의 1/10도 안 됩니다. 
-- 혹시 이 글을 보는 19~학번 설컴공이라면 한번쯤 고려해보세요. FPGA같은 유망한 기술에 대해 이정도 이해를 위해 이정도 노력은 들일만한 가치가 있습니다.
-- 학점은 A0 받았습니다. 팀원이 한단계 정도는 버프해줬다고 생각합니다. 
-
-### 창의적 통합 설계
-- 2021년 2학기 (8학기차) 에 수강예정
-
-## 대학원 과목
-### 계산이론 
-- 2021년 2학기 (8학기차) 에 수강예정</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="snu-courses" /><summary type="html">Contents</summary></entry></feed>
+[^1]: 공식적으로 발표된 논문에서는 아주 약간의 차이가 있으나, 식 정리의 문제이고 실제로는 identical합니다.</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="advanced-algorithms" /><category term="graphs" /><category term="data-science" /><summary type="html">Contents</summary></entry></feed>

@@ -4,6 +4,4 @@
 
 layout: home
 author_profile: true
-sidebar:
-  nav: "sidepost"
 ---

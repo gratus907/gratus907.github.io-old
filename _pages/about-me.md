@@ -19,7 +19,11 @@ author_profile: true
 ## Publications 
 ### Domestic Conference
 1. S.Min, **W.Shin**, C.Kim and K.Park, *Improved Adaptive Matching Order for Subgraph Matching Problem*  
-Korea Computer Congress 2021, 2021.6. **Best Paper Award**
+Korea Computer Congress 2021, 2021.6. (**Best Paper Award**)
+
+## Awards / Honors
+### Awards 
+- **Best Paper Award** in Computer Theory, Korea Computer Congress 2021
 
 ## Experience
 - Research Internship (2020.8 ~ present)

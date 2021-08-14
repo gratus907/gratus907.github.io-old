@@ -354,7 +354,7 @@ var store = [{
         "teaser": null
       },{
         "title": "논문읽기 : Chan-Vese Algorithm",
-        "excerpt":"Contents Introduction Key Ideas Energy functional Introduction 이번에 읽은 논문은 Active Contours Without Edges 라는, 2001년의 논문입니다. 목표는 어떤 이미지가 주어졌을 때, 이 이미지의 외곽선 “Contour” 를 따는 것입니다. 특히, 여기서는 segmentation이라고 해서 그림의 픽셀을 몇개의 클래스로 구분하는 문제를 해결하는 것으로 보고 있습니다. 예를 들어, 배경 앞에 사람이 서 있다면,...","categories": ["cs-adventure"],
+        "excerpt":"Contents Introduction Key Ideas Energy functional Integral formulation Regularization &amp; Euler-Lagrange Partial Differential Equation Conclusion Thoughts CS 논문읽기라고 생각하고 연 cs-adventure 카테고리인데 의외로 두번째가 수치해석? 을 쓰는 최적화 관련이 되었네요. Introduction 이번에 읽은 논문은 Active Contours Without Edges 라는, 2001년의 논문입니다. 2001년 IEEE Transactions on Image Processing, Vol.10, No.2 에...","categories": ["cs-adventure"],
         "tags": [],
         "url": "http://localhost:4000/cs-adventure/chan-vese/",
         "teaser": null

@@ -401,7 +401,7 @@
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          909 words
+          1429 words
       </span>
     
   </p>
@@ -421,8 +421,9 @@
     <ul>
       <li><a href="#energy-functional">Energy functional</a></li>
       <li><a href="#integral-formulation">Integral formulation</a></li>
-      <li><a href="#relaxation--euler-lagrange">Relaxation &amp; Euler-Lagrange</a></li>
+      <li><a href="#regularization--euler-lagrange">Regularization &amp; Euler-Lagrange</a></li>
       <li><a href="#partial-differential-equation">Partial Differential Equation</a></li>
+      <li><a href="#reinitialization">Reinitialization</a></li>
     </ul>
   </li>
   <li><a href="#conclusion">Conclusion</a></li>
@@ -440,8 +441,9 @@
   <li><a href="#key-ideas" id="markdown-toc-key-ideas">Key Ideas</a>    <ul>
       <li><a href="#energy-functional" id="markdown-toc-energy-functional">Energy functional</a></li>
       <li><a href="#integral-formulation" id="markdown-toc-integral-formulation">Integral formulation</a></li>
-      <li><a href="#relaxation--euler-lagrange" id="markdown-toc-relaxation--euler-lagrange">Relaxation &amp; Euler-Lagrange</a></li>
+      <li><a href="#regularization--euler-lagrange" id="markdown-toc-regularization--euler-lagrange">Regularization &amp; Euler-Lagrange</a></li>
       <li><a href="#partial-differential-equation" id="markdown-toc-partial-differential-equation">Partial Differential Equation</a></li>
+      <li><a href="#reinitialization" id="markdown-toc-reinitialization">Reinitialization</a></li>
     </ul>
   </li>
   <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
@@ -449,6 +451,7 @@
 </ul>
 <hr />
 
+<p>CS 논문읽기라고 생각하고 연 cs-adventure 카테고리인데 의외로 두번째가 수치해석? 을 쓰는 최적화 관련이 되었네요.</p>
 <h1 id="introduction">Introduction</h1>
 <p>이번에 읽은 논문은 <strong>Active Contours Without Edges</strong> 라는, 2001년의 논문입니다. 2001년 IEEE Transactions on Image Processing, Vol.10, No.2 에 발표된 논문으로, 이 분야 - image processing - 에서는 엄청나게 중요한 논문으로, 현재까지 1만 3천 회 가량 인용되었습니다.</p>
 
@@ -470,7 +473,7 @@
 <ul>
   <li>$Len(C)$ : 곡선의 길이. 곡선의 길이가 길면 $\phi$ 가 덜 smooth하기 때문에 (해석학적인 term이라기보다는, 기하적인 smooth함), 매끄러운 곡선을 그리도록 페널티를 통해 incentivise 합니다.</li>
   <li>$Area(A)$ : $\phi(x) &gt; 0$ 인 부분의 넓이. 길이와 기본적인 의미는 같습니다.</li>
-  <li>$\int_{A} \abs{u_0(x, y) - c_1}^2 \dd{x}\dd{y}$ : 어떤 실수값 $c_1$ 을 잡아서, $\phi$ 안쪽에서 $u_0$ 의 평균을 나타내고 싶습니다. 이때 이 평균값이 가급적 정확하기를 바란다는 의미입니다.</li>
+  <li>$\int_{A} \abs{u_0(x, y) - c_1}^2 \dd{x}\dd{y}$ : 어떤 실수값 $c_1$ 을 잡아서, $\phi$ 안쪽에서 $u_0$ 의 평균을 나타내고 싶습니다. 이때 이 평균값이 가급적 정확하기를 바란다는 의미입니다. 일종의, 영역 안에서의 intensity의 분산으로 생각하면 됩니다. 가급적 영역을 잘 잡아서 밝기의 분산이 작게 자른다는 의미가 되겠습니다.</li>
   <li>$\int_{B} \abs{u_0(x, y) - c_2}^2 \dd{x}\dd{y}$ : $\phi$ 바깥쪽에서도 똑같은 작업을 합니다.</li>
 </ul>
 
@@ -483,39 +486,68 @@
 <ol>
   <li>Length : 길이는 스토크스 정리와 헤비사이드 함수의 정의를 이용하면, 아래와 같이 쓸 수 있습니다. 
   \(L(\phi) = Len(C) = \int_{\R^2} \abs{\nabla H(\phi(x, y))} \dd{x}\dd{y}\) 
-  당연히 일반적으로 $H(\phi(x, y))$ 는 미분이 불가능하지만, 우리는 Heaviside의 도함수를 Dirac-delta로 쓰고 있으므로 (in distribution function sense) 적분은 잘 됩니다. <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></li>
+  당연히 일반적으로 $H(\phi(x, y))$ 는 미분이 불가능하지만, 우리는 Heaviside의 도함수를 Dirac-delta로 쓰고 있으므로 (in distribution function sense) 적분은 잘 됩니다. <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup><br />
+  나머지 식들과 적분하는 변수 등을 맞춰주기 위해, 이 식을 조금 바꾸어 아래와 같이 씁니다. 
+  \(L(\phi) = Len(C) = \int_{\R^2} \delta(\phi(x, y))\abs{\nabla \phi(x, y)} \dd{x}\dd{y}\)</li>
   <li>Area : 간단한 다변수 적분입니다. 
   \(S(\phi) = Area(A) = \int_{\R^2} H(\phi(x, y)) \dd{x}\dd{y}\)</li>
   <li>역시 간단한 두 개의 다변수 적분식을 쓸 수 있습니다. 
-  \(F_i(C) = \int_{\R^2} \abs{u_0(x, y) - c_1}^2 H(\phi(x, y))\dd{x}\dd{y}\) 
-  \(F_o(C) = \int_{\R^2} \abs{u_0(x, y) - c_2}^2 (1 - H(\phi(x, y)))\dd{x}\dd{y}\)</li>
+  \(F_i(\phi) = \int_{\R^2} \abs{u_0(x, y) - c_1}^2 H(\phi(x, y))\dd{x}\dd{y}\) 
+  \(F_o(\phi) = \int_{\R^2} \abs{u_0(x, y) - c_2}^2 (1 - H(\phi(x, y)))\dd{x}\dd{y}\)</li>
 </ol>
 
-<p>하나 관찰할 수 있는 것은, $c_1$과 $c_2$는 $\phi$를 고정하고 최적화하면 최적화할 수 있다는 점입니다. 구체적으로, 첫번째 식을 다시 앞서의 형태인 
-\(\int_{A} \abs{u_0(x, y) - c_1}^2 \dd{x}\dd{y}\) 이렇게 돌려놓고 보면, $c_1$은 자명하게 $u_0$의 $A$에서의 ‘평균’ 이 되어야 합니다. 따라서, 앞으로 $c_1, c_2$는 $\phi$로부터 간단한 적분을 통해 계산 가능하므로, 위 식을 $\phi$로만 최소화한다고 문제를 단순화하겠습니다.<br />
-또한, 실제 알고리즘은 1, 2, 3에 각각 적당한 상수를 붙여서 계산합니다. 특히, (3) 의 $F_i$ 와 $F_o$에 다른 상수를 붙여서 계산하는데, 실제로는 원본 논문의 저자들도 상수를 대충 잡았고, 이 상수를 어떻게 잡아야 하는지에 대해서는 많은 논증이 없었으므로 저는 여기서 (1) * $\mu$ + (2) * $\nu$ + (3) * $\lambda$ 로 놓고 계산하겠습니다.</p>
+<p>하나 관찰할 수 있는 것은, $c_1$과 $c_2$는 $\phi$를 고정하고 최적화할 수 있다는 점입니다. 구체적으로, 첫번째 식을 다시
+\(\int_{A} \abs{u_0(x, y) - c_1}^2 \dd{x}\dd{y}\) 이렇게 돌려놓고 보면, $c_1$은 자명하게 $u_0$의 $A$에서의 ‘평균’ 이 되어야 합니다. (적분을 통해 함수의 평균을 구하는 방법은 standard 하므로 생략) 따라서, 앞으로 $c_1, c_2$는 $\phi$로부터 간단한 적분을 통해 계산 가능하므로, 위 식을 $\phi$로만 최소화한다고 문제를 단순화하겠습니다.<br />
+또한, 실제 알고리즘은 1, 2, 3에 각각 적당한 상수를 붙여서 계산합니다. 특히, (3) 의 $F_i$ 와 $F_o$에 다른 상수를 붙여서 계산하는데, 실제로는 원본 논문의 저자들도 상수를 대충 잡았고, 이 상수를 어떻게 잡아야 하는지에 대해서는 별로 논증이 없었으므로 저는 여기서 (1) * $\mu$ + (2) * $\nu$ + (3) * $\lambda$ 로 놓고 계산하겠습니다. 외곽선이 매끄러운 것이 중요하면 $\mu, \nu$ 를 높게 잡고, 색의 정확도가 중요하면 $\lambda$를 높게 잡으면 됩니다.</p>
 
-<h2 id="relaxation--euler-lagrange">Relaxation &amp; Euler-Lagrange</h2>
-<p>이제, 여기까지 오면서 우리가 최종적으로 무엇을 최소화하는지 보겠습니다. 
-\(\int_{\R^2} \mu L(\phi) + \nu S(\phi) + \lambda(F_i(\phi) + F_o(\phi)) \dd{x}\dd{y}\)</p>
+<h2 id="regularization--euler-lagrange">Regularization &amp; Euler-Lagrange</h2>
+<p>이후의 연산에서 가장 큰 문제 중 하나는, $H$ 와 $\delta$는 미분이 불가능한 함수라는 문제가 있습니다. 이 문제를 해결하기 위해, 우리는 Regularization이라는 방법을 적용합니다.</p>
+
+<p>Regularization은 전혀 어렵지 않은데, $H$ 대신 $\epsilon$ 이라는 factor에 dependent한, 그리고 $H_\epsilon \to H$ as $\epsilon \to 0$ 함수 $H_\epsilon$ 으로 대체하고, 그 도함수를 $\delta_\epsilon$ 으로 쓰면 됩니다. 본 논문에서는 다음의 $H_\epsilon$ 을 제시하고 있습니다. 
+\(H_\epsilon(z) = \frac{1}{2} \left(1 + \frac{2}{\pi} \arctan\left(\frac{z}{\epsilon}\right)\right)\)
+이 식과 그 도함수 $\delta_\epsilon$ 을 이용, 모든 $H$ 와 $\delta$를 대체하면 됩니다.<br />
+이제, 여기까지 오면서 우리가 최종적으로 무엇을 최소화하는지 보겠습니다. 여기서부터는 $F_i, F_o$ 등도 모두 위 식에 따라 relaxation 된 것으로 읽어야 합니다.
+\(\int_{\R^2} \mu L(\phi) + \nu S(\phi) + \lambda(F_i(\phi) + F_o(\phi)) \dd{x}\dd{y}\)
+이 식을 최소화하는 함수 $\phi$를 찾는 대표적인 방법은 <strong>변분법</strong> 입니다. 변분법으로 <del>끔찍한 계산을 통해</del> 오일러-라그랑주 방정식을 유도하면 <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup> <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>, 아래와 같은 편미분 방정식을 얻습니다. 
+\(\delta_\epsilon \left(\mu\nabla\cdot\left(\frac{\nabla \phi}{\abs{\nabla \phi}}\right) - \nu - \lambda(u_0 - c_1)^2 + \lambda(u_0 - c_2)^2\right) = 0 \tag{PDE}\)</p>
 
 <h2 id="partial-differential-equation">Partial Differential Equation</h2>
 <p>우리는 이런 편미분방정식은 풀 방법이 없기 때문에, 마지막으로 수치해석을 적용합니다. 구체적으로, Finite Differnce method를 이용해야 합니다.</p>
 
+<p>편미분방정식을 iterative 하게 풀기 위해, evolving 하는 해 $\phi$ 를 생각합니다. 이런 방법을 쓰는 이유는 $c_1$ 과 $c_2$를 $\phi$로부터 계산해야 해서 위 식을 계산할 수 없으므로, 다음과 같은 알고리즘을 돌리겠다는 의미입니다.</p>
+<ol>
+  <li>$\phi_0$ 을 정합니다.</li>
+  <li>$c_1, c_2$ 를 $\phi_n$ 으로부터 계산합니다.</li>
+  <li>“PDE” 를 한번 풀어서 $\phi_{n+1}$ 을 계산합니다.</li>
+  <li>$\phi_{n+1}$ 이 $\phi_n$ 과 많이 다르다면, (2) 로 돌아가서 반복합니다.</li>
+</ol>
+
 <p>Finite Difference method는 별로 어렵지 않은데, $\Delta_{-}^{x}$ 같은 식으로 $x, y$ 방향 $+, -$ 로 네개의 time differnece를 정의하고 여러 공식들을 적용하기만 하면 됩니다. 편미방이 복잡하게 생겼지만 각 term은 그렇게 어렵지 않습니다.</p>
+
+<p>먼저, $\nu - \lambda(u_0 - c_1)^2 + \lambda(u_0 - c_2)^2$ 부분은 자명합니다. ($c_1, c_2$ 도 $\phi_n$ 으로부터 구했으므로) Divergence 부분이 문제인데, 그 부분은 이미 과거의 선행 연구 논문 <a href="https://www-pequan.lip6.fr/~bereziat/cours/master/vision/papers/rudin92.pdf">(링크)</a> 에 의해 어떻게 해야 하는지 잘 알려져 있다고 합니다. 구체적으로, 충분히 작은 $\Delta t$를 잡아서 이렇게 쓰면 됩니다.</p>
+
+<p><img src="../../images/88f15ccdc6324ec2463d30fe19c7ecb811221c9218659d19d8e6fa891f690d1d.png" alt="formula" width="60%" class="center" /></p>
+
+<p>이제 수치해석 문제도 해결되었고, 위 식을 그냥 열심히 계산하면 됩니다.</p>
+
+<h2 id="reinitialization">Reinitialization</h2>
+<p>Level Set을 구하고자 Dirac delta 같은 함수들을 사용할 때, re-initialization이라는 과정을 거치지 않으면 level set이 지나치게 flat해지는 경향성이 있다고 합니다. 그 이유는 우리가 정상적인 $\delta$ 가 아닌 $\delta_\epsilon$ 같은 비슷한 함수들로 넘어가서 생긴 문제인데, 이를 해결하기 위해 $\phi$를 매번 수정해줄 수 있습니다. 논문에서 저자들은 ‘반드시 필요하지 않다’ 고 쓰고 있고, 실제로도 이 알고리즘에서는 Reinitialize를 하지 않아도 결과가 어떨때는 잘 나오는 것 같습니다만, 추가하고 싶다면 다음의 Evolution equation을 풀면 됩니다.
+\(\pdv{\psi}{t} = sign(\phi(x, y, t))(1 - \abs{\nabla \psi})\)
+여기서 $\phi(x, y, t)$ 는, 앞서 $\phi_n$ 을 실제로는 $t = n\Delta t$에서의 $\phi(x, y, t)$ 값으로 보고 있기 때문에 필요한 지점에서는 계산할 수 있습니다. 우리는 어차피 이 식도 수치해석으로 풀 것이므로 $\phi(x, y, t)$ 의 값은 해석적으로 구할 필요 없습니다.</p>
+
+<p>이 테크닉에 관해서는 다른 논문을 통해 더 알게 되면 보충해 볼 생각입니다. 아직은 실제 예시가 없어서인지 왜 이게 필요한지, 어떤 의미인지 잘 와닿지 않네요.</p>
 
 <hr />
 
 <h1 id="conclusion">Conclusion</h1>
-<p>이 알고리즘은 Noisy image에서도 생각보다 훌륭한 성능을 보여주고, vector-valued 같은 확장도 그렇게 어렵지 않습니다. 특히, 이런 식의 Energy Functional을 잘 정의하기에 따라서 범용성이 굉장히 높고 원하는 Feature가 있다면 추가로 embed 할 수도 있어서 확장성도 높습니다.</p>
+<p>이 알고리즘은 Noisy image에서도 생각보다 훌륭한 성능을 보여주고, vector-valued (= 컬러 이미지) 같은 확장도 그렇게 어렵지 않습니다. 특히, 이런 식의 Energy Functional을 잘 정의하기에 따라서 범용성이 굉장히 높고 원하는 Feature가 있다면 추가로 embed 할 수도 있어서 확장성도 높습니다. 특히, 원본 논문에서는 curvature 같은 정보들을 추가로 이용하는 케이스들도 제시되고 있습니다.</p>
 
 <hr />
 
 <h1 id="thoughts">Thoughts</h1>
 <ol>
-  <li>Parameter 가 상당히 중요해 보입니다. $\mu, \nu, \lambda$ 의 어떤 조합이 좋은 결과를 내는지에 대해서는 원본 논문에서는 별로 Discuss하지 않았는데, 실험적으로 확인해야 하는 걸까요? $\mu, \nu$ 는 어떻게 실험적으로 검증할 수 있어 보이는데, $\lambda$는 좀 오바인것 같습니다. 검색을 좀 해보니, 다른 논문 몇편에서 이미지의 어떤 computable한 성질들로부터 parameter를 자동으로 튜닝하는 논문들이 있었습니다.</li>
-  <li>Functional Optimization은 미적분학 II에서 변분법을 배운 이후로 처음인데, 일반적인 optimization의 방법론들과는 좀 다르다보니 어렵습니다. 특히 $f$ 에서 $x$를 움직여서 최적화하는 경우는 $f’$ 같은 정보들이 있는데, Functional은 어떻게 최적화하는지 잘 모르겠습니다. 
-듣기로는 Banach space위에서의 Lagrange Multiplier같은 해괴한게 있다고 합니다. Functional도 결국 Banach space위에서 어떤 함수를 최적화하는 거니까, 비슷한 개념이 있을까요? 구체적으로는 Banach space $X$에서 정의된 Functional $F$의 도함수?</li>
+  <li>위 알고리즘에서는 Parameter 가 상당히 중요해 보입니다. $\mu, \nu, \lambda$ 의 어떤 조합이 좋은 결과를 내는지에 대해서는 원본 논문에서는 별로 Discuss하지 않았는데, 실험적으로 확인해야 하는 걸까요? $\mu, \nu$ 는 어떻게 실험적으로 검증할 수 있어 보이는데, $\lambda$는 좀 오바인것 같습니다. 검색을 좀 해보니, 다른 논문 몇편에서 이미지의 어떤 computable한 성질들로부터 parameter를 자동으로 튜닝하는 논문들이 있었습니다.</li>
+  <li>Functional Optimization은 일반적인 optimization의 방법론들과는 좀 다르다보니 어렵습니다. 듣기로는 Banach space위에서의 Lagrange Multiplier같은 해괴한게 있다고 합니다. Functional도 결국 Banach space나 Hilbert Space 같은 좋은 공간 위에서 어떤 함수를 최적화하는 거니까, 일반적인 최적화와 비슷한 아이디어들이 있는 걸까요?</li>
 </ol>
 
 <hr />
@@ -524,6 +556,12 @@
   <ol>
     <li id="fn:1" role="doc-endnote">
       <p>해석개론을 배우고 나서부터 디랙-델타를 적분에 활용하는게 오히려 정말 이해가 안 갔었는데, 이 개념은 Measure, Distribution function 등 실해석학 및 그 이상의 해석학을 배우면 다시 make sense 합니다. 잠시 공학수학의 관점으로 돌아가서 이 식을 받아들이기로 합니다. 어차피, 이 적분을 실제로 계산할 것은 아니니까요. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>변분법과 오일러-라그랑주에 관한 내용은 미적분학 II에서 정말 초보적으로 배운 이후로 처음이라서, 거의 다 까먹었던 내용을 다시 보고 추가로 이것저것 더 공부해야 했습니다. 저보다 이런걸 훨씬 많이 써먹는 UNIST 기계공학과(+물리학 부전)의 지인에게 급히 오일러-라그랑주 방정식에 대해 배웠습니다. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>바로 위에서 언급된 지인이 던져준 고전역학 강의노트(제가 이런걸 보게 될줄은 몰랐네요…) 를 다시 보면서, 식을 처음부터 다 유도해 봤는데 진짜 정신이 아득합니다. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -817,7 +855,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version f093d065254179671d1d321a5a44907f74dd21e9</div>
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version dc71bd490e3fa353dade92f97743bbafe2ea7c2c</div>
 
       </footer>
     </div>

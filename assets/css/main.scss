@@ -9,7 +9,11 @@
 $sans-serif: 'Noto Sans KR';
 $monospace: 'Ubuntu Mono';
 $type-size-4-5: 1.12em !default; // Ubuntu Mono is a bit small
-
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 .page__content p {
     margin: 0.75em 0 0.75em 0;
 }

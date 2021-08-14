@@ -42,7 +42,7 @@ author_profile: true
   - Fundamental Thm of Finitely generated Abelian groups
 </details>
 
-<details> <summary markdown = span> <b>8월 11일 (화)</summary>
+<details> <summary markdown = span> <b>8월 11일 (수)</summary>
 - 현대대수학 Fraleigh CH 39. Free Groups & CH.40 Group Presentation
   - Words, Free Groups
   - Group Presentation
@@ -52,15 +52,25 @@ author_profile: true
   - Radon-Nikodym Derivative
 </details>
 
-<details> <summary markdown = span> <b>8월 12일 (수)</summary>
-- 현대대수학 Fraleigh CH 45-47
+<details> <summary markdown = span> <b>8월 12일 (목)</summary>
+- 현대대수학 Fraleigh CH 45
   - UFD, PID
   - $D$ 가 UFD이면 $D[x]$ 가 UFD이다. 
   - 모든 PID는 UFD이다. 
-  - Euclidean Domain
-  - Gaussian Integers
 
 - 확률과정론 Cohen CH 1.5-1.8
   - Banach space, Hilbert space, $L^p$ space
   - Radon-Nikodym Derivative
+</details>
+
+<details> <summary markdown = span> <b>8월 13일 (금)</summary>
+- 현대대수학 Fraleigh CH 46-47
+  - Euclidean Domain
+  - Gaussian Integers
+</details>
+
+<details> <summary markdown = span> <b>8월 14일 (토)</summary>
+- 현대대수학 Fraleigh CH 48
+  - Automorphism over Fields
+  - $G(E/F)$ Group
 </details>

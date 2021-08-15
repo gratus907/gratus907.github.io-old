@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-15T05:09:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">논문읽기 : Chan-Vese Algorithm</title><link href="http://localhost:4000/cs-adventure/chan-vese/" rel="alternate" type="text/html" title="논문읽기 : Chan-Vese Algorithm" /><published>2021-08-13T00:00:00+09:00</published><updated>2021-08-13T00:00:00+09:00</updated><id>http://localhost:4000/cs-adventure/chan-vese</id><content type="html" xml:base="http://localhost:4000/cs-adventure/chan-vese/">&lt;div id=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-15T13:22:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">MATH TESTBED</title><link href="http://localhost:4000/math-test/" rel="alternate" type="text/html" title="MATH TESTBED" /><published>2021-08-13T00:00:00+09:00</published><updated>2021-08-13T00:00:00+09:00</updated><id>http://localhost:4000/math-test</id><content type="html" xml:base="http://localhost:4000/math-test/">&lt;div id=&quot;toc&quot;&gt;
+Contents
+&lt;/div&gt;
+* TOC
+{:toc}
+----------
+
+정리 테스트
+
+&lt;div class=&quot;definition&quot; data-title=&quot;위상&quot;&gt; 집합 $S$에 대해 다음 조건을 만족하는 $\mathcal{T} \subset \mathcal{P}(S)$ 를 위상(Topology) 라 한다. 
+&lt;/div&gt;
+이렇게 정리를 쓸 수 있다. 
+&lt;div class=&quot;definition&quot;&gt; 집합 $S$에 대해 다음 조건을 만족하는 $\mathcal{T} \subset \mathcal{P}(S)$ 를 위상(Topology) 라 한다. 
+&lt;/div&gt;
+정리에 자동으로 번호를 붙일 수 있다.
+&lt;div class=&quot;theorem&quot;&gt; 함수 $f$가 닫힌 구간 $[a, b]$ 에서 연속이면, 함수 $F(x) = \int_{a}^{x} f(t) \dd{t}$ 는 닫힌 구간 $[a, b]$ 에서 연속이고, 열린 구간 $(a, b)$ 에서 미분가능하며, $F' = f$ 이다. 
+&lt;/div&gt;
+Definition과 Theorem은 따로 번호를 붙인다.
+&lt;div class=&quot;lemma&quot; data-title=&quot;lemma1&quot;&gt; 보조정리1
+&lt;/div&gt;
+보조정리도 쓸 수 있다.
+
+- 증명은 CSS가 깨지므로, 이렇게 쓴다.
+- 귀납법을 쓰자. $n = 1$일 때 성립한다.
+- $n = k$ 일 때 성립하면 $n = k+1$ 일 때 성립한다.
+- 단어 몇개를 추가했다.
+
+&lt;div class=&quot;lemma&quot; data-title=&quot;Fatou Lemma&quot;&gt; 가측함수열 $f_n$이 $f_n \geq 0$ 을 만족하면, 다음이 성립한다.
+$$\int_X \liminf_{n} f_n \dd{\mu} \leq \liminf_{n} \int_X f_n \dd{\mu}$$
+&lt;/div&gt;
+이름 있는 보조정리</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><summary type="html">Contents</summary></entry><entry><title type="html">논문읽기 : Chan-Vese Algorithm</title><link href="http://localhost:4000/cs-adventure/chan-vese/" rel="alternate" type="text/html" title="논문읽기 : Chan-Vese Algorithm" /><published>2021-08-13T00:00:00+09:00</published><updated>2021-08-13T00:00:00+09:00</updated><id>http://localhost:4000/cs-adventure/chan-vese</id><content type="html" xml:base="http://localhost:4000/cs-adventure/chan-vese/">&lt;div id=&quot;toc&quot;&gt;
 Contents
 &lt;/div&gt;
 * TOC
@@ -102,37 +132,7 @@ $$\pdv{\psi}{t} = sign(\phi(x, y, t))(1 - \abs{\nabla \psi})$$
 
 [^1]: 해석개론을 배우고 나서부터 디랙-델타를 적분에 활용하는게 오히려 정말 이해가 안 갔었는데, 이 개념은 Measure, Distribution function 등 실해석학 및 그 이상의 해석학을 배우면 다시 make sense 합니다. 잠시 공학수학의 관점으로 돌아가서 이 식을 받아들이기로 합니다. 어차피, 이 적분을 실제로 계산할 것은 아니니까요.
 [^2]: 변분법과 오일러-라그랑주에 관한 내용은 미적분학 II에서 정말 초보적으로 배운 이후로 처음이라서, 거의 다 까먹었던 내용을 다시 보고 추가로 이것저것 더 공부해야 했습니다. 저보다 이런걸 훨씬 많이 써먹는 UNIST 기계공학과(+물리학 부전)의 지인에게 급히 오일러-라그랑주 방정식에 대해 배웠습니다.
-[^3]: 바로 위에서 언급된 지인이 던져준 고전역학 강의노트(제가 이런걸 보게 될줄은 몰랐네요...) 를 다시 보면서, 식을 처음부터 다 유도해 봤는데 진짜 정신이 아득합니다.</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cs-adventure" /><summary type="html">Contents</summary></entry><entry><title type="html">MATH TESTBED</title><link href="http://localhost:4000/math-test/" rel="alternate" type="text/html" title="MATH TESTBED" /><published>2021-08-13T00:00:00+09:00</published><updated>2021-08-13T00:00:00+09:00</updated><id>http://localhost:4000/math-test</id><content type="html" xml:base="http://localhost:4000/math-test/">&lt;div id=&quot;toc&quot;&gt;
-Contents
-&lt;/div&gt;
-* TOC
-{:toc}
-----------
-
-정리 테스트
-
-&lt;div class=&quot;definition&quot; data-title=&quot;위상&quot;&gt; 집합 $S$에 대해 다음 조건을 만족하는 $\mathcal{T} \subset \mathcal{P}(S)$ 를 위상(Topology) 라 한다. 
-&lt;/div&gt;
-이렇게 정리를 쓸 수 있다. 
-&lt;div class=&quot;definition&quot;&gt; 집합 $S$에 대해 다음 조건을 만족하는 $\mathcal{T} \subset \mathcal{P}(S)$ 를 위상(Topology) 라 한다. 
-&lt;/div&gt;
-정리에 자동으로 번호를 붙일 수 있다.
-&lt;div class=&quot;theorem&quot;&gt; 함수 $f$가 닫힌 구간 $[a, b]$ 에서 연속이면, 함수 $F(x) = \int_{a}^{x} f(t) \dd{t}$ 는 닫힌 구간 $[a, b]$ 에서 연속이고, 열린 구간 $(a, b)$ 에서 미분가능하며, $F' = f$ 이다. 
-&lt;/div&gt;
-Definition과 Theorem은 따로 번호를 붙인다.
-&lt;div class=&quot;lemma&quot; data-title=&quot;lemma1&quot;&gt; 보조정리1
-&lt;/div&gt;
-보조정리도 쓸 수 있다.
-
-- 증명은 CSS가 깨지므로, 이렇게 쓴다.
-- 귀납법을 쓰자. $n = 1$일 때 성립한다.
-- $n = k$ 일 때 성립하면 $n = k+1$ 일 때 성립한다.
-- 단어 몇개를 추가했다.
-
-&lt;div class=&quot;lemma&quot; data-title=&quot;Fatou Lemma&quot;&gt; 가측함수열 $f_n$이 $f_n \geq 0$ 을 만족하면, 다음이 성립한다.
-$$\int_X \liminf_{n} f_n \dd{\mu} \leq \liminf_{n} \int_X f_n \dd{\mu}$$
-&lt;/div&gt;
-이름 있는 보조정리</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><summary type="html">Contents</summary></entry><entry><title type="html">BOJ 15744, USACO 2018 Feb P3 Cow Gymnasts</title><link href="http://localhost:4000/ps-problems/BOJ15744/" rel="alternate" type="text/html" title="BOJ 15744, USACO 2018 Feb P3 Cow Gymnasts" /><published>2021-08-11T00:00:00+09:00</published><updated>2021-08-11T00:00:00+09:00</updated><id>http://localhost:4000/ps-problems/BOJ15744</id><content type="html" xml:base="http://localhost:4000/ps-problems/BOJ15744/">&lt;div id=&quot;toc&quot;&gt;
+[^3]: 바로 위에서 언급된 지인이 던져준 고전역학 강의노트(제가 이런걸 보게 될줄은 몰랐네요...) 를 다시 보면서, 식을 처음부터 다 유도해 봤는데 진짜 정신이 아득합니다.</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cs-adventure" /><summary type="html">Contents</summary></entry><entry><title type="html">BOJ 15744, USACO 2018 Feb P3 Cow Gymnasts</title><link href="http://localhost:4000/ps-problems/BOJ15744/" rel="alternate" type="text/html" title="BOJ 15744, USACO 2018 Feb P3 Cow Gymnasts" /><published>2021-08-11T00:00:00+09:00</published><updated>2021-08-11T00:00:00+09:00</updated><id>http://localhost:4000/ps-problems/BOJ15744</id><content type="html" xml:base="http://localhost:4000/ps-problems/BOJ15744/">&lt;div id=&quot;toc&quot;&gt;
 Contents
 &lt;/div&gt;
 * TOC

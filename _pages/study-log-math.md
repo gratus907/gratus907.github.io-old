@@ -46,7 +46,6 @@ author_profile: true
 - 현대대수학 Fraleigh CH 39. Free Groups & CH.40 Group Presentation
   - Words, Free Groups
   - Group Presentation
-  
 - 확률과정론 Cohen CH 1.5-1.8
   - Banach space, Hilbert space, $L^p$ space
   - Radon-Nikodym Derivative
@@ -57,7 +56,6 @@ author_profile: true
   - UFD, PID
   - $D$ 가 UFD이면 $D[x]$ 가 UFD이다. 
   - 모든 PID는 UFD이다. 
-
 - 확률과정론 Cohen CH 1.5-1.8
   - Banach space, Hilbert space, $L^p$ space
   - Radon-Nikodym Derivative
@@ -73,4 +71,10 @@ author_profile: true
 - 현대대수학 Fraleigh CH 48
   - Automorphism over Fields
   - $G(E/F)$ Group
+</details>
+
+<details> <summary markdown = span> <b>8월 15일 (일)</summary>
+- 현대대수학 Fraleigh CH 49
+  - Number of Automorphism over Fields
+  - Isomorphism Extension Theorem
 </details>

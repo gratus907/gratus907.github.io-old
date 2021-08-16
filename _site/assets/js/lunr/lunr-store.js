@@ -353,15 +353,21 @@ var store = [{
         "url": "http://localhost:4000/ps-problems/BOJ15744/",
         "teaser": null
       },{
-        "title": "논문읽기 : Chan-Vese Algorithm",
-        "excerpt":"Contents Introduction Key Ideas Energy functional Integral formulation Regularization &amp; Euler-Lagrange Partial Differential Equation Conclusion Thoughts CS 논문읽기라고 생각하고 연 cs-adventure 카테고리인데 의외로 두번째가 수치해석? 을 쓰는 최적화 관련이 되었네요. Introduction 이번에 읽은 논문은 Active Contours Without Edges 라는, 2001년의 논문입니다. 2001년 IEEE Transactions on Image Processing, Vol.10, No.2 에...","categories": ["cs-adventure"],
-        "tags": [],
-        "url": "http://localhost:4000/cs-adventure/chan-vese/",
-        "teaser": null
-      },{
         "title": "MATH TESTBED",
         "excerpt":"Contents 정리 테스트 집합 $S$에 대해 다음 조건을 만족하는 $\\mathcal{T} \\subset \\mathcal{P}(S)$ 를 위상(Topology) 라 한다. 이렇게 정리를 쓸 수 있다. 집합 $S$에 대해 다음 조건을 만족하는 $\\mathcal{T} \\subset \\mathcal{P}(S)$ 를 위상(Topology) 라 한다. 정리에 자동으로 번호를 붙일 수 있다. 함수 $f$가 닫힌 구간 $[a, b]$ 에서 연속이면, 함수 $F(x)...","categories": [],
         "tags": [],
         "url": "http://localhost:4000/math-test/",
+        "teaser": null
+      },{
+        "title": "논문읽기 : Chan-Vese Algorithm",
+        "excerpt":"Contents Introduction Key Ideas Energy functional Integral formulation Regularization &amp; Euler-Lagrange Partial Differential Equation Reinitialization Conclusion Thoughts CS 논문읽기라고 생각하고 연 cs-adventure 카테고리인데 의외로 두번째가 수치해석? 을 쓰는 최적화 관련이 되었네요. Introduction 이번에 읽은 논문은 Active Contours Without Edges 라는, 2001년의 논문입니다. 2001년 IEEE Transactions on Image Processing, Vol.10, No.2...","categories": ["cs-adventure"],
+        "tags": [],
+        "url": "http://localhost:4000/cs-adventure/chan-vese/",
+        "teaser": null
+      },{
+        "title": "중앙대학교 NPC (Newbie Programming Challenge) 풀이/검수후기",
+        "excerpt":"Contents A. 이진 딸기 B. 주간 달력 C. 교수님 계산기가 고장났어요! D. 백발백준하는 명사수 E. 쿠키크루 F. 선형 연립 방정식 G. RPG 마스터 후기 작년에 중앙대학교 프로그래밍 대회 (CPC) 의 검수를 맡았었는데, 올해는 같은 대학의 신입생용 대회인 Newbie Programming Contest, 줄여서 NPC의 검수를 맡게 되었습니다. 작년 CPC의 풀이는 링크 에...","categories": ["cp-rounds"],
+        "tags": [],
+        "url": "http://localhost:4000/cp-rounds/ChungAngU-NPC2021/",
         "teaser": null
       }]

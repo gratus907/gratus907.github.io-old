@@ -193,10 +193,6 @@
 <lastmod>2021-07-28T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/ps-weekly/ps-weekly-21Aug1/</loc>
-<lastmod>2021-08-02T00:00:00+09:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/snu-courses/SNU-courses-CS/</loc>
 <lastmod>2021-08-03T00:00:00+09:00</lastmod>
 </url>
@@ -211,6 +207,10 @@
 <url>
 <loc>http://localhost:4000/cp-rounds/SCPC-2021-Round2/</loc>
 <lastmod>2021-08-07T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ps-weekly/ps-weekly-21Aug1/</loc>
+<lastmod>2021-08-08T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/ds-alg-note/01-time-complexity/</loc>
@@ -247,6 +247,10 @@
 <url>
 <loc>http://localhost:4000/cp-rounds/ChungAngU-NPC2021/</loc>
 <lastmod>2021-08-16T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ps-weekly/ps-weekly-21Aug2/</loc>
+<lastmod>2021-08-17T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/404/</loc>

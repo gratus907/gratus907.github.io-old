@@ -287,12 +287,6 @@ var store = [{
         "url": "http://localhost:4000/ps-weekly/ps-weekly-21Jul4/",
         "teaser": null
       },{
-        "title": "8월 1주차 Weekly PS",
-        "excerpt":"Contents Recent Updates Rounds Samsung SCPC Round 2 Codeforces Educational Round 112 Codeforces Round 736 (Div 1) Problems CF Edu112 E - Boring Segments CF R736 Div1 B - Integers have friends CF R736 Div1 D1 - Gregor and the Odd Cows (Easy) USACO 2018 February Platinum Problem 3 -...","categories": ["ps-weekly"],
-        "tags": [],
-        "url": "http://localhost:4000/ps-weekly/ps-weekly-21Aug1/",
-        "teaser": null
-      },{
         "title": "서울대학교 컴퓨터공학부 전공과목 (주관적인) 소개",
         "excerpt":"Contents 1학년 과목 컴퓨터의 개념 및 실습 프로그래밍 연습 이산수학 2학년 과목 컴퓨터 프로그래밍 논리설계 자료구조 컴퓨터구조 프로그래밍 언어 전기전자회로 3-4학년 과목 알고리즘 양자 컴퓨팅의 기초 데이터베이스 소프트웨어 개발의 원리 및 실제 시스템 프로그래밍 하드웨어 시스템 설계 창의적 통합 설계 대학원 과목 계산이론 가장 쓸 말이 많은 3설계 과목 (소개원실,...","categories": ["snu-courses"],
         "tags": [],
@@ -315,6 +309,12 @@ var store = [{
         "excerpt":"Contents Intro / Preperation Problem 1. 원 안의 점 (09:09 AC) Problem 2. 직8각형 (09:37 AC) Problem 4. 패턴 매칭 (10:56 209/400점) Problem 3. 산탄총 (16:54 154/300점) Problem 5. Hanoi Tower (20:55 2/500점) 대회를 마치며 Round 1 후기는 여기에, 작년 Round 2 후기는 티스토리 에 있습니다. 작년에 이어, 정말 말도...","categories": ["cp-rounds"],
         "tags": ["algorithms"],
         "url": "http://localhost:4000/cp-rounds/SCPC-2021-Round2/",
+        "teaser": null
+      },{
+        "title": "8월 1주차 Weekly PS",
+        "excerpt":"Contents Recent Updates Rounds Samsung SCPC Round 2 Codeforces Educational Round 112 Codeforces Round 736 (Div 1) Problems CF Edu112 E - Boring Segments CF R736 Div1 B - Integers have friends CF R736 Div1 D1 - Gregor and the Odd Cows (Easy) USACO 2018 February Platinum Problem 3 -...","categories": ["ps-weekly"],
+        "tags": [],
+        "url": "http://localhost:4000/ps-weekly/ps-weekly-21Aug1/",
         "teaser": null
       },{
         "title": "I. 시간 복잡도와 Big-O Notation",
@@ -369,5 +369,11 @@ var store = [{
         "excerpt":"Contents A. 이진 딸기 B. 주간 달력 C. 교수님 계산기가 고장났어요! D. 백발백준하는 명사수 E. 쿠키크루 F. 선형 연립 방정식 G. RPG 마스터 후기 작년에 중앙대학교 프로그래밍 대회 (CPC) 의 검수를 맡았었는데, 올해는 같은 대학의 신입생용 대회인 Newbie Programming Contest, 줄여서 NPC의 검수를 맡게 되었습니다. 작년 CPC의 풀이는 링크 에...","categories": ["cp-rounds"],
         "tags": [],
         "url": "http://localhost:4000/cp-rounds/ChungAngU-NPC2021/",
+        "teaser": null
+      },{
+        "title": "8월 2주차 Weekly PS",
+        "excerpt":"Contents Recent Updates Rounds Codeforces Round 738 (Div. 2) Codeforces Round 730 (Div. 2), Virtual Problems 2016 서울대학교 프로그래밍 경시대회 D번, BOJ 13202 피자 배치 2012 ICPC Daejeon Regional J, BOJ 9015 정사각형 2019 숭고한 Algorithm Camp Contest P, BOJ 17403 가장 높고 넓은 성 2009 Baltic Olympiad of Informatics,...","categories": ["ps-weekly"],
+        "tags": [],
+        "url": "http://localhost:4000/ps-weekly/ps-weekly-21Aug2/",
         "teaser": null
       }]

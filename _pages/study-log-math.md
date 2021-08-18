@@ -78,3 +78,8 @@ author_profile: true
   - Number of Automorphism over Fields
   - Isomorphism Extension Theorem
 </details>
+
+<details> <summary markdown = span> <b>8월 18일 (수)</summary>
+- 현대대수학 Fraleigh CH 50
+  - Splitting Fields
+</details>

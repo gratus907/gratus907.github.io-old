@@ -233,6 +233,12 @@ var store = [{
         "url": "http://localhost:4000/cp-rounds/Codejam-2021-R2/",
         "teaser": null
       },{
+        "title": "2021 여름방학",
+        "excerpt":"방학은 많이 놀았습니다. ㅋㅋ! Academic Courses Biology &amp; Biology Lab 학과마다 교양 이수 요건이 다른데, 저희는 과학 3과목 (물리, 화학, 생물의 1, 2, 단학기 버전 중 자유) 과 각각의 실험을 이수해야 합니다. 1학년에서 늦어도 2학년 정도에 이수하는 것이 일반적이지만, 그러지 않았기 때문에 언젠가 과학을 하나 더 들어야 했습니다. 물리학 II를...","categories": ["retrospects-and-plans"],
+        "tags": [],
+        "url": "http://localhost:4000/retrospects-and-plans/finishing-2021-spring/",
+        "teaser": null
+      },{
         "title": "2021 1학기 종강",
         "excerpt":"이번학기도 무사히…ㅋㅋㅋㅋ 학기에 뭘 배웠는지도 돌아보고, 공부했던거에 대한 생각을 적어보려고 합니다. Academic Spring Semester Courses Hardware System Design (CSE, 3) Verilog를 이용하여 행렬곱셈 하드웨어 가속기를 만들고, CNN을 빨리돌리는..뭐 그런걸 배우는 과목입니다. 저는 베릴로그 코딩을 굉장히 힘들어하기 때문에 팀원이 좀 많이 고생했습니다. 논리설계때 좀 열심히 들을걸 하는 깊은 후회와 미안함을 느끼고...","categories": ["retrospects-and-plans"],
         "tags": [],

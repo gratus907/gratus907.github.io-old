@@ -130,7 +130,7 @@
 <script id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
-<p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}\newcommand{\di}{\mathrel{|}}\newcommand{\limply}{\rightarrow}\newcommand{\fa}{\forall}\newcommand{\e}{\exists}\newcommand{\lxor}{\oplus}\newcommand{\liff}{\leftrightarrow}\newcommand{\lequiv}{\Leftrightarrow}$$</p>
+<p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}\newcommand{\di}{\mathrel{|}}\newcommand{\limply}{\rightarrow}\newcommand{\fa}{\forall}\newcommand{\e}{\exists}\newcommand{\lxor}{\oplus}\newcommand{\liff}{\leftrightarrow}\newcommand{\lequiv}{\Leftrightarrow}\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}$$</p>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M2LK7DWFS"></script>
@@ -323,37 +323,27 @@
     
       <li>
         
-          <a href="/study-note/"><span class="nav__sub-title">Study Note</span></a>
+          <a href="/cs-adventure/"><span class="nav__sub-title">CS 논문읽기</span></a>
         
 
-        
-        <ul>
-          
-            <li><a href="/study-note/#coursera-ml-andrew-ng">Coursera ML Note (2021)</a></li>
-          
-            <li><a href="/study-log-math/">Math study log</a></li>
-          
-            <li><a href="/categories/#advanced-algorithms">Advanced-Algorithms</a></li>
-          
-        </ul>
         
       </li>
     
       <li>
         
-          <span class="nav__sub-title">Algorithm Problem Solving</span>
+          <span class="nav__sub-title">Problem Solving</span>
         
 
         
         <ul>
           
-            <li><a href="/categories/#cp-rounds">대회 (CP Rounds)</a></li>
+            <li><a href="/ps-weekly/">PS Weekly</a></li>
           
             <li><a href="/find-contest/">문제 출처별로 보기</a></li>
           
-            <li><a href="/sac-class/">Solved.ac class별로 보기</a></li>
-          
             <li><a href="/ps-teatime/">PS Teatime</a></li>
+          
+            <li><a href="/competitive-programming-rounds/">Competitive Programming</a></li>
           
         </ul>
         
@@ -361,15 +351,73 @@
     
       <li>
         
-          <a href="/cs-adventure/"><span class="nav__sub-title">Adventure to CS</span></a>
+          <span class="nav__sub-title">주제별 노트정리</span>
         
 
+        
+        <ul>
+          
+            <li><a href="/ds-alg-note/">자료구조/알고리즘</a></li>
+          
+            <li><a href="/ds-alg-advanced/">고급 자료구조/알고리즘</a></li>
+          
+            <li><a href="/foundation-of-ml/">심층신경망의 수학적 기초</a></li>
+          
+            <li><a href="/deep-learning-study/">Deep Learning Notes</a></li>
+          
+        </ul>
         
       </li>
     
   </ul>
 </nav>
 
+    
+    
+    <nav class="toc">
+      <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+      <ul class="toc__menu">
+  <li><a href="#scpc">SCPC</a></li>
+  <li><a href="#문제-풀이--후기">문제 풀이 / 후기</a>
+    <ul>
+      <li><a href="#problem-1-친구들">Problem 1. 친구들</a>
+        <ul>
+          <li><a href="#문제설명">문제설명</a></li>
+          <li><a href="#풀이-disjoint-set">풀이 (Disjoint Set)</a></li>
+        </ul>
+      </li>
+      <li><a href="#problem-2-이진수">Problem 2. 이진수</a>
+        <ul>
+          <li><a href="#문제설명-1">문제설명</a></li>
+          <li><a href="#풀이-greedy">풀이 (Greedy)</a></li>
+        </ul>
+      </li>
+      <li><a href="#problem-3-no-cycle">Problem 3. No Cycle</a>
+        <ul>
+          <li><a href="#문제설명-2">문제설명</a></li>
+          <li><a href="#풀이-greedy--graph">풀이 (Greedy + Graph)</a></li>
+        </ul>
+      </li>
+      <li><a href="#problem-4-예약-시스템">Problem 4. 예약 시스템</a>
+        <ul>
+          <li><a href="#문제설명-3">문제설명</a></li>
+          <li><a href="#풀이-greedy--casework">풀이 (Greedy + Casework)</a></li>
+        </ul>
+      </li>
+      <li><a href="#problem-5">Problem 5</a>
+        <ul>
+          <li><a href="#문제-설명">문제 설명</a></li>
+          <li><a href="#풀이-dsu-based">풀이 (DSU-based)</a></li>
+          <li><a href="#후기">후기</a></li>
+        </ul>
+      </li>
+      <li><a href="#부록--버퍼-이야기-scpc-주의사항">부록 : 버퍼 이야기 (SCPC 주의사항)</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </nav>
+    
     
   
   </div>
@@ -410,54 +458,7 @@
         </header>
       
       <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/cp-rounds/SCPC-2021-Round1/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
-      <section class="page__content" itemprop="text">
-        
-          <aside class="sidebar__right ">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu">
-  <li><a href="#scpc">SCPC</a></li>
-  <li><a href="#문제-풀이--후기">문제 풀이 / 후기</a>
-    <ul>
-      <li><a href="#problem-1-친구들">Problem 1. 친구들</a>
-        <ul>
-          <li><a href="#문제설명">문제설명</a></li>
-          <li><a href="#풀이-disjoint-set">풀이 (Disjoint Set)</a></li>
-        </ul>
-      </li>
-      <li><a href="#problem-2-이진수">Problem 2. 이진수</a>
-        <ul>
-          <li><a href="#문제설명-1">문제설명</a></li>
-          <li><a href="#풀이-greedy">풀이 (Greedy)</a></li>
-        </ul>
-      </li>
-      <li><a href="#problem-3-no-cycle">Problem 3. No Cycle</a>
-        <ul>
-          <li><a href="#문제설명-2">문제설명</a></li>
-          <li><a href="#풀이-greedy--graph">풀이 (Greedy + Graph)</a></li>
-        </ul>
-      </li>
-      <li><a href="#problem-4-예약-시스템">Problem 4. 예약 시스템</a>
-        <ul>
-          <li><a href="#문제설명-3">문제설명</a></li>
-          <li><a href="#풀이-greedy--casework">풀이 (Greedy + Casework)</a></li>
-        </ul>
-      </li>
-      <li><a href="#problem-5">Problem 5</a>
-        <ul>
-          <li><a href="#문제-설명">문제 설명</a></li>
-          <li><a href="#풀이-dsu-based">풀이 (DSU-based)</a></li>
-          <li><a href="#후기">후기</a></li>
-        </ul>
-      </li>
-      <li><a href="#부록--버퍼-이야기-scpc-주의사항">부록 : 버퍼 이야기 (SCPC 주의사항)</a></li>
-    </ul>
-  </li>
-</ul>
-
-            </nav>
-          </aside>
-        
+      <section class="page__content" itemprop="text"> 
         <div id="toc">
   <p>Contents</p>
 </div>
@@ -952,7 +953,7 @@ Case #2
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          137 words
+          148 words
       </span>
     
   </p>
@@ -1009,7 +1010,7 @@ Case #2
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 9138fd35d10174639bb472b0fdaf4936d86ab22e</div>
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 4c35c11117107ccb459c6adbcad2a77806fe2b8a</div>
 
       </footer>
     </div>

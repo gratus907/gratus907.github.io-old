@@ -83,3 +83,20 @@ author_profile: true
 - 현대대수학 Fraleigh CH 50
   - Splitting Fields
 </details>
+
+<details> <summary markdown = span> <b>8월 19일 (목)</summary>
+- 현대대수학 Fraleigh CH 51
+  - Seperable Extensions
+  - Primitive Element Theorem
+</details>
+
+<details> <summary markdown = span> <b>8월 22일 (일)</summary>
+- 현대대수학 Fraleigh CH 53-54
+  - Galois Theory
+</details>
+
+<details> <summary markdown = span> <b>8월 23일 (월)</summary>
+- 현대대수학 Fraleigh CH 55
+  - Cyclotomic Extension
+</details>
+

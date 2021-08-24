@@ -130,7 +130,7 @@
 <script id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
-<p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}\newcommand{\di}{\mathrel{|}}\newcommand{\limply}{\rightarrow}\newcommand{\fa}{\forall}\newcommand{\e}{\exists}\newcommand{\lxor}{\oplus}\newcommand{\liff}{\leftrightarrow}\newcommand{\lequiv}{\Leftrightarrow}$$</p>
+<p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}\newcommand{\di}{\mathrel{|}}\newcommand{\limply}{\rightarrow}\newcommand{\fa}{\forall}\newcommand{\e}{\exists}\newcommand{\lxor}{\oplus}\newcommand{\liff}{\leftrightarrow}\newcommand{\lequiv}{\Leftrightarrow}\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}$$</p>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M2LK7DWFS"></script>
@@ -323,37 +323,27 @@
     
       <li>
         
-          <a href="/study-note/"><span class="nav__sub-title">Study Note</span></a>
+          <a href="/cs-adventure/"><span class="nav__sub-title">CS 논문읽기</span></a>
         
 
-        
-        <ul>
-          
-            <li><a href="/study-note/#coursera-ml-andrew-ng">Coursera ML Note (2021)</a></li>
-          
-            <li><a href="/study-log-math/">Math study log</a></li>
-          
-            <li><a href="/categories/#advanced-algorithms">Advanced-Algorithms</a></li>
-          
-        </ul>
         
       </li>
     
       <li>
         
-          <span class="nav__sub-title">Algorithm Problem Solving</span>
+          <span class="nav__sub-title">Problem Solving</span>
         
 
         
         <ul>
           
-            <li><a href="/categories/#cp-rounds">대회 (CP Rounds)</a></li>
+            <li><a href="/ps-weekly/">PS Weekly</a></li>
           
             <li><a href="/find-contest/">문제 출처별로 보기</a></li>
           
-            <li><a href="/sac-class/">Solved.ac class별로 보기</a></li>
-          
             <li><a href="/ps-teatime/">PS Teatime</a></li>
+          
+            <li><a href="/competitive-programming-rounds/">Competitive Programming</a></li>
           
         </ul>
         
@@ -361,15 +351,53 @@
     
       <li>
         
-          <a href="/cs-adventure/"><span class="nav__sub-title">Adventure to CS</span></a>
+          <span class="nav__sub-title">주제별 노트정리</span>
         
 
+        
+        <ul>
+          
+            <li><a href="/ds-alg-note/">자료구조/알고리즘</a></li>
+          
+            <li><a href="/ds-alg-advanced/">고급 자료구조/알고리즘</a></li>
+          
+            <li><a href="/foundation-of-ml/">심층신경망의 수학적 기초</a></li>
+          
+            <li><a href="/deep-learning-study/">Deep Learning Notes</a></li>
+          
+        </ul>
         
       </li>
     
   </ul>
 </nav>
 
+    
+    
+    <nav class="toc">
+      <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+      <ul class="toc__menu">
+  <li><a href="#slow-sorting-algorithm">Slow Sorting Algorithm</a></li>
+  <li><a href="#fast-sorting-algorithms">Fast Sorting Algorithms</a>
+    <ul>
+      <li><a href="#heap-sort">Heap Sort</a></li>
+      <li><a href="#merge-sort">Merge Sort</a></li>
+      <li><a href="#quick-sort">Quick sort</a></li>
+      <li><a href="#hybrid-sort">Hybrid Sort</a></li>
+    </ul>
+  </li>
+  <li><a href="#selection-algorithms">Selection Algorithms</a>
+    <ul>
+      <li><a href="#quickselect">Quickselect</a></li>
+      <li><a href="#worst-case-linear-selection">Worst-Case Linear Selection</a></li>
+    </ul>
+  </li>
+  <li><a href="#additional-topics-and-problems">Additional topics and Problems</a></li>
+  <li><a href="#programming-practice">Programming Practice</a></li>
+</ul>
+
+    </nav>
+    
     
   
   </div>
@@ -410,34 +438,7 @@
         </header>
       
       <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/ds-alg-note/03-sorting-and-searching/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
-      <section class="page__content" itemprop="text">
-        
-          <aside class="sidebar__right ">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu">
-  <li><a href="#slow-sorting-algorithm">Slow Sorting Algorithm</a></li>
-  <li><a href="#fast-sorting-algorithms">Fast Sorting Algorithms</a>
-    <ul>
-      <li><a href="#heap-sort">Heap Sort</a></li>
-      <li><a href="#merge-sort">Merge Sort</a></li>
-      <li><a href="#quick-sort">Quick sort</a></li>
-      <li><a href="#hybrid-sort">Hybrid Sort</a></li>
-    </ul>
-  </li>
-  <li><a href="#selection-algorithms">Selection Algorithms</a>
-    <ul>
-      <li><a href="#quickselect">Quickselect</a></li>
-      <li><a href="#worst-case-linear-selection">Worst-Case Linear Selection</a></li>
-    </ul>
-  </li>
-  <li><a href="#additional-topics-and-problems">Additional topics and Problems</a></li>
-  <li><a href="#programming-practice">Programming Practice</a></li>
-</ul>
-
-            </nav>
-          </aside>
-        
+      <section class="page__content" itemprop="text"> 
         <div id="toc">
   <p>Contents</p>
 </div>
@@ -1041,7 +1042,7 @@ case에 $O(n \log n)$ 보다 좋은 비교 기반의 정렬 알고리즘이 없�
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          137 words
+          148 words
       </span>
     
   </p>
@@ -1098,7 +1099,7 @@ case에 $O(n \log n)$ 보다 좋은 비교 기반의 정렬 알고리즘이 없�
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 9138fd35d10174639bb472b0fdaf4936d86ab22e</div>
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 4c35c11117107ccb459c6adbcad2a77806fe2b8a</div>
 
       </footer>
     </div>

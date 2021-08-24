@@ -13,24 +13,25 @@ main:
 
 
 sidepost:
-  - title: "Study Note"
-    url : /study-note/
+  - title: "CS 논문읽기"
+    url: /cs-adventure/
+  - title: "Problem Solving"
     children:
-      - title: "Coursera ML Note (2021)"
-        url: /study-note/#coursera-ml-andrew-ng 
-      - title: "Math study log"
-        url : /study-log-math/
-      - title: "Advanced-Algorithms"
-        url: /categories/#advanced-algorithms
-  - title: "Algorithm Problem Solving"
-    children:
-      - title: "대회 (CP Rounds)"
-        url: /categories/#cp-rounds
+      - title: "PS Weekly"
+        url: /ps-weekly/
       - title: "문제 출처별로 보기"
         url: /find-contest/
-      - title: "Solved.ac class별로 보기"
-        url: /sac-class/
       - title: "PS Teatime"
-        url : /ps-teatime/
-  - title: "Adventure to CS"
-    url : /cs-adventure/
+        url: /ps-teatime/
+      - title: "Competitive Programming"
+        url: /competitive-programming-rounds/
+  - title: "주제별 노트정리"
+    children:
+      - title: "자료구조/알고리즘"
+        url: /ds-alg-note/
+      - title: "고급 자료구조/알고리즘"
+        url: /ds-alg-advanced/
+      - title: "심층신경망의 수학적 기초"
+        url: /foundation-of-ml/
+      - title: "Deep Learning Notes"
+        url: /deep-learning-study/ 

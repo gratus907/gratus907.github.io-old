@@ -35,12 +35,12 @@ author_profile: true
 5. [링크](/ds-alg-note/05-graph-basics/) Graph basics
     - 의도적으로 BFS/DFS 등을 배우는 시점을 미뤘습니다. 여기서는 힙과 간단한 이진 트리 등을 다룹니다. 
     - 이렇게 만든 이유는 저희 학교 자료구조 수업 목차랑 비슷하게 맞추기 위해서였습니다.
-6. Binary Search Trees, Union Find
+6. [링크](/ds-alg-note/06-bst-unionfind/) Binary Search Trees, Union Find
 7. Balanced Binary Search Tree
     - 자료 없이 그냥 진행했던 주제입니다. 
     - 이거 자료는 만들기 너무 어려워서 아마 만들지 않을 예정입니다. 
-8. Divide and Conquer / Dynamic Programming
-9. More on DnC / DP
+8. [링크](/ds-alg-note/08-dp-dnc-1/) Divide and Conquer / Dynamic Programming
+9. [링크](/ds-alg-note/09-dp-dnc-2/) More on DnC / DP
     - PS용으로 만들었던 자료가 너무 아까웠고, 결정적으로 멋진 아이디어들을 소개해 주고 싶었습니다.
     - Segment Tree, Merge sort Tree, LCA 등 놀라운 내용들을 '분할 정복 및 다이나믹 프로그래밍' 이라는 지나치게 일반적인 이름 아래에 때려넣었다는 비판을 겸허히 받아들입니다. ㅋㅋ!
     - 처음 이 내용을 읽는 분이 공부하기에는 너무 어려울 수도 있습니다. 통째로 스킵해도 됩니다. 

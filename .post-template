@@ -2,8 +2,6 @@
 layout: single
 title: "TITLE"
 categories: 
-tags:
-  - 
 sidebar:
   nav: "sidepost"
 comment: true

@@ -18,15 +18,17 @@ author_profile: true
 
 경우에 따라, 어떤 논문 A와 그 후속연구 B, C, D를 한번에 다루기도 할 예정입니다.
 
-## Graph Algorithms
+Topic (분야) 는, [Arxiv의 기준](https://arxiv.org/archive/cs)을 따릅니다. Arxiv에 올라와있지 않은 논문은 읽은후에 제가 최대한 비슷하게 분류해 넣었습니다. 
+(아마도) Arxiv 분류 코드 중 제가 보게될 논문들은 이정도가 메인일듯 합니다. 특히 장기적으로는 CC, DM, DS.
+- **AI** : Artificial Intelligence
+- **CC** : Computational Complexity
+- **DM** : Discrete Mathematics
+- **DS** : Data structures / Algortihms
+- **NA** : Numerical Analysis
 
-| Title | Published in | Author(s) | Blog Link |
-|-------|--------------|-----------|-----------|
-|       |              |           |           |
+당분간은 수리과학부 졸업논문을 위해 CV, AI 쪽도 많이 보게 될 예정입니다. 
+- **CV** : Computer Vision
 
-
-## Numerical Analysis
-
-| Title                             | Published in                                | Author(s)          | Blog Link                        |
-|-----------------------------------|---------------------------------------------|--------------------|----------------------------------|
-| **Active Contours Without Edges** | IEEE Transactions on Image Processing, 2001 | T.F.Chan, L.A.Vese | [Link](/cs-adventure/chan-vese/) |
+| Title (Link to post)                                          | Topic  | Published in                                | Author(s)          |
+|---------------------------------------------------------------|--------|---------------------------------------------|--------------------|
+| **[Active Contours Without Edges](/cs-adventure/chan-vese/)** | NA, CV | IEEE Transactions on Image Processing, 2001 | T.F.Chan, L.A.Vese |

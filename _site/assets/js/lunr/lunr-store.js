@@ -233,12 +233,6 @@ var store = [{
         "url": "http://localhost:4000/cp-rounds/Codejam-2021-R2/",
         "teaser": null
       },{
-        "title": "2021 여름방학",
-        "excerpt":"방학은 많이 놀았습니다. ㅋㅋ! Academic Courses Biology &amp; Biology Lab 학과마다 교양 이수 요건이 다른데, 저희는 과학 3과목 (물리, 화학, 생물의 1, 2, 단학기 버전 중 자유) 과 각각의 실험을 이수해야 합니다. 1학년에서 늦어도 2학년 정도에 이수하는 것이 일반적이지만, 그러지 않았기 때문에 언젠가 과학을 하나 더 들어야 했습니다. 물리학 II를...","categories": ["retrospects-and-plans"],
-        "tags": [],
-        "url": "http://localhost:4000/retrospects-and-plans/finishing-2021-spring/",
-        "teaser": null
-      },{
         "title": "2021 1학기 종강",
         "excerpt":"이번학기도 무사히…ㅋㅋㅋㅋ 학기에 뭘 배웠는지도 돌아보고, 공부했던거에 대한 생각을 적어보려고 합니다. Academic Spring Semester Courses Hardware System Design (CSE, 3) Verilog를 이용하여 행렬곱셈 하드웨어 가속기를 만들고, CNN을 빨리돌리는..뭐 그런걸 배우는 과목입니다. 저는 베릴로그 코딩을 굉장히 힘들어하기 때문에 팀원이 좀 많이 고생했습니다. 논리설계때 좀 열심히 들을걸 하는 깊은 후회와 미안함을 느끼고...","categories": ["retrospects-and-plans"],
         "tags": [],
@@ -381,5 +375,29 @@ var store = [{
         "excerpt":"Contents Recent Updates Rounds Codeforces Round 738 (Div. 2) Codeforces Round 730 (Div. 2), Virtual Problems 2016 서울대학교 프로그래밍 경시대회 D번, BOJ 13202 피자 배치 2012 ICPC Daejeon Regional J, BOJ 9015 정사각형 2019 숭고한 Algorithm Camp Contest P, BOJ 17403 가장 높고 넓은 성 2009 Baltic Olympiad of Informatics,...","categories": ["ps-weekly"],
         "tags": [],
         "url": "http://localhost:4000/ps-weekly/ps-weekly-21Aug2/",
+        "teaser": null
+      },{
+        "title": "VI. Binary Search Tree & Union Find",
+        "excerpt":"Contents Binary Search Tree STL set, map Disjoint Set Naive Approach Using Trees Optimizations Time Complexity Additional Topics / Problems Programming Practice Binary Search Tree Binary Search Tree란, 다음과 같은 성질을 만족하는 트리를 말합니다. 이진 트리입니다. 항상 왼쪽 서브트리의 값은 자기 자신보다 작고, 오른쪽 서브트리의 값은 자기 자신보다 큽니다. Binary...","categories": ["ds-alg-note"],
+        "tags": [],
+        "url": "http://localhost:4000/ds-alg-note/06-bst-unionfind/",
+        "teaser": null
+      },{
+        "title": "VIII. Dynamic Programming & Divide and Conquer (1)",
+        "excerpt":"Contents Divide and Conquer Merge Sort 빠른 거듭 제곱 Dynamic Programming Memoization : Top Down DP Bottom Up DP DP 예시 : 2차원 경로 문제 Additional Topics / Problems * 오늘은 특별한 알고리즘을 배우는 것이 아니라, ‘방법론’ 에 가깝기 때문에, Section과 Additional의 구분이 별로 없고 모두 소문제들로 구성되어 있습니다. 여기...","categories": ["ds-alg-note"],
+        "tags": [],
+        "url": "http://localhost:4000/ds-alg-note/08-dp-dnc-1/",
+        "teaser": null
+      },{
+        "title": "IX. Dynamic Programming & Divide and Conquer (2)",
+        "excerpt":"Contents 오늘은 연습문제만 있습니다. Segment Tree : 수열을 다루는 자료구조중 하나입니다. 어떤 수열 $a_1, a_2, \\dots a_n$ 이 주어집니다. 구간 $[i, j]$가 주어지면, $a_i + a_{i+1} + \\dots + a_j$ 의 값을 구합니다. $i, v$ 가 주어지면, $a_i$ 에 $v$를 더합니다. 첫번째 쿼리만 주어지고, 두번째 쿼리가 주어지지 않는다면, 이 문제를...","categories": ["ds-alg-note"],
+        "tags": [],
+        "url": "http://localhost:4000/ds-alg-note/09-dp-dnc-2/",
+        "teaser": null
+      },{
+        "title": "2021 여름방학",
+        "excerpt":"방학은 많이 놀았습니다. ㅋㅋ! Academic Courses Biology &amp; Biology Lab 학과마다 교양 이수 요건이 다른데, 저희는 과학 3과목 (물리, 화학, 생물의 1, 2, 단학기 버전 중 자유) 과 각각의 실험을 이수해야 합니다. 1학년에서 늦어도 2학년 정도에 이수하는 것이 일반적이지만, 그러지 않았기 때문에 언젠가 과학을 하나 더 들어야 했습니다. 물리학 II를...","categories": ["retrospects-and-plans"],
+        "tags": [],
+        "url": "http://localhost:4000/retrospects-and-plans/finishing-2021-summer/",
         "teaser": null
       }]

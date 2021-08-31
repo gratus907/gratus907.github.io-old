@@ -400,4 +400,16 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/retrospects-and-plans/finishing-2021-summer/",
         "teaser": null
+      },{
+        "title": "8월 2주차 Weekly PS",
+        "excerpt":"Contents Recent Updates Rounds Facebook HackerCup, Qualification Round Problems BOJ 1086 박성원 BOJ 1533 길의 개수 2009 Baltic Olympiad of Informatics P2, BOJ 3356 라디오 전송 2013 한국정보올림피아드 지역본선 고등부 5번, BOJ 7575 바이러스 2017 연세대학교 프로그래밍 경진대회, BOJ 14574 헤븐스 키친 2016 Nordic Collegiate Programming Contest, BOJ 13355 Bless...","categories": ["ps-weekly"],
+        "tags": [],
+        "url": "http://localhost:4000/ps-weekly/ps-weekly-21Aug4/",
+        "teaser": null
+      },{
+        "title": "2021 여름방학",
+        "excerpt":"Contents 컴공 전공과목 수학 전공과목 기타 공부 Problem Solving / Competitive Programming 수리과학부 졸업논문 GSIM project Posting 다음 학기 목표. 컴공 전공과목 계산 이론 : 이름은 계산이론이지만 실제로는 고급 알고리즘 느낌의 수업입니다. 진학을 희망하는 분야의 수업이기도 하고, 재밌게 들을 수 있을 것 같습니다. String 알고리즘 쪽을 많이 배우는것 같던데, 이쪽은...","categories": ["retrospects-and-plans"],
+        "tags": [],
+        "url": "http://localhost:4000/retrospects-and-plans/starting-2021-fall/",
+        "teaser": null
       }]

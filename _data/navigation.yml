@@ -31,7 +31,5 @@ sidepost:
         url: /ds-alg-note/
       - title: "고급 자료구조/알고리즘"
         url: /ds-alg-advanced/
-      - title: "심층신경망의 수학적 기초"
-        url: /foundation-of-ml/
       - title: "Deep Learning Notes"
         url: /deep-learning-study/ 

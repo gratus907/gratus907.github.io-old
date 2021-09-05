@@ -277,6 +277,10 @@
 <lastmod>2021-08-31T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/deep-learning-study/opt-and-gd/</loc>
+<lastmod>2021-09-03T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/404/</loc>
 </url>
 <url>
@@ -311,9 +315,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/temp-for-youngjin/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/foundation-of-ml/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/</loc>

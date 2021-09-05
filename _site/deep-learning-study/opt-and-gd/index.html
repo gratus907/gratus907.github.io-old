@@ -19,28 +19,32 @@
 
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Gratus907's Study Note</title>
-<meta name="description" content="Hello World!">
+<!-- begin _includes/seo.html --><title>Introduction to Optimization / Gradient Descent - Gratus907’s Study Note</title>
+<meta name="description" content="Contents">
 
 
   <meta name="author" content="Wonseok Shin">
   
+  <meta property="article:author" content="Wonseok Shin">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Gratus907's Study Note">
-<meta property="og:title" content="Gratus907’s Study Note">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:title" content="Introduction to Optimization / Gradient Descent">
+<meta property="og:url" content="http://localhost:4000/deep-learning-study/opt-and-gd/">
 
 
-  <meta property="og:description" content="Hello World!">
-
-
-
+  <meta property="og:description" content="Contents">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2021-09-03T00:00:00+09:00">
 
 
 
@@ -51,7 +55,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/">
+<link rel="canonical" href="http://localhost:4000/deep-learning-study/opt-and-gd/">
 
 
 
@@ -139,7 +143,7 @@
     </script>
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -188,8 +192,7 @@
 
 
     <div class="initial-content">
-      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+      
 
 
 
@@ -303,88 +306,99 @@
 </div>
 
   
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/cs-adventure/"><span class="nav__sub-title">CS 논문읽기</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Problem Solving</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/ps-weekly/">PS Weekly</a></li>
+          
+            <li><a href="/find-contest/">문제 출처별로 보기</a></li>
+          
+            <li><a href="/ps-teatime/">PS Teatime</a></li>
+          
+            <li><a href="/competitive-programming-rounds/">Competitive Programming</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">주제별 노트정리</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/ds-alg-note/">자료구조/알고리즘</a></li>
+          
+            <li><a href="/ds-alg-advanced/">고급 자료구조/알고리즘</a></li>
+          
+            <li><a href="/deep-learning-study/">Deep Learning Notes</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+    
+    <nav class="toc">
+      <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+      <ul class="toc__menu">
+  <li><a href="#intro-to-optimization">Intro to Optimization</a></li>
+  <li><a href="#gradient-descent">Gradient Descent</a></li>
+</ul>
+
+    </nav>
+    
+    
+  
   </div>
 
 
 
-  
-  
-
-<div class="archive">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Introduction to Optimization / Gradient Descent">
+    <meta itemprop="description" content="  Contents">
+    <meta itemprop="datePublished" content="2021-09-03T00:00:00+09:00">
     
-  <h2 class="home__item" style="margin:0;">안녕하세요!</h2> <hr>
-  <ul>
-    <li>이 블로그는 주로 제가 공부한 내용을 기록하고, 공유하기 위한 장소입니다. </li>
-    <li>More About Me : <a href="/about-me/">[Link]</a></li>
-    <li>More About This Blog : <a href="/about-blog/">[Link]</a></li>
-  </ul> 
-  <br/>
 
-
-<h2 class="home__item" style="margin:0;">Statistics</h2> <hr>
-  
-  
-  
-  
- 
-  <ul>
-    <li>블로그 페이지 수 : 111 Posts (2021-09-06)</li>
-    <li>블로그 페이지들의 단어 수 총합 : 71772 Words (2021-09-06)</li>
-    <li>Visit count (Home) : <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span></span> Times (Since 2021-08-13)</li>
-  </ul> 
-  <br/>
-
-
-<h2 class="home__item" style="margin:0;">주요 링크</h2> <hr>
-  <div class="row">
-    <div class="column">
-      <h3 style="margin:0;">주제별 / 과목별 노트</h3>
-      <ul>
-        <li><a href="/cs-adventure/">CS 논문읽기</a></li>
-        <li><a href="/find-contest/">알고리즘 문제풀이 : 출처별로 보기</a></li>
-        <li><a href="/ds-alg-note/">자료구조 & 알고리즘</a></li>
-        <li><a href="/ds-alg-advanced/">고급 자료구조 & 알고리즘</a></li>
-        <li><a href="/deep-learning-study/">딥러닝 공부노트</a></li>
-      </ul></div>
-    <div class="column">
-      <h3 style="margin:0;">공부 기록</h3>
-      <ul>
-        <li><a href="/study-log-math/">수학 공부 로그</a></li>
-        <li><a href="/ps-teatime/">PS Teatime</a></li>
-        <li><a href="/categories/#ps-weekly">Weekly PS</a></li>
-        <li><a href="/categories/#cp-rounds">Competitive Programming</a></li>
-      </ul></div>
-    <div class="column">
-      <h3 style="margin:0;">기타</h3>
-      <ul>
-        <li><a href="/about-me/">About me</a></li>
-        <li><a href="https://gratus907.com/">Tistory Blog</a></li>
-        <li>전공과목 후기 <a href="/snu-courses/SNU-courses-CS/">[컴공]</a> <a href="/snu-courses/SNU-courses-MATH/">[수리]</a></li>
-      </ul></div>
-  </div>
-  <br/>
-  <h2 class="home__item" style="margin:0;">최근 포스트</h2> <hr>
-
-
-  
-  <div class="entries-list">
-    
-    
-    
+    <div class="page__inner-wrap">
       
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/deep-learning-study/opt-and-gd/" rel="permalink">Introduction to Optimization / Gradient Descent
-</a>
-      
-    </h2>
-    
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Introduction to Optimization / Gradient Descent
+</h1>
+          
 
   <p class="page__meta">
     
@@ -404,23 +418,205 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">
-  Contents
-
-
-
-</p>
-  </article>
+        </header>
+      
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/deep-learning-study/opt-and-gd/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
+      <section class="page__content" itemprop="text"> 
+        <div id="toc">
+  <p>Contents</p>
 </div>
+<ul id="markdown-toc">
+  <li><a href="#intro-to-optimization" id="markdown-toc-intro-to-optimization">Intro to Optimization</a></li>
+  <li><a href="#gradient-descent" id="markdown-toc-gradient-descent">Gradient Descent</a></li>
+</ul>
+<hr />
 
-      
-      
+<p><strong>심층 신경망의 수학적 기초</strong> 1강 (9월 2일) 에 기반합니다.</p>
+
+<p>이 문서는 $\LaTeX$를 pandoc으로 변환하여 작성하였기 때문에, 레이아웃 등이 깔끔하지 않을 수 있습니다. 언젠가 pdf 버전의 노트를 공개한다면 그쪽을 참고하면 좋을 것 같습니다.</p>
+
+<h2 id="intro-to-optimization">Intro to Optimization</h2>
+
+<p>우리는 다음과 같은 최적화 문제를 생각한다.</p>
+
+<p>최적화 문제란, 어떤 Decision variable $x$를 조절하여 Objective function
+$f$를 최소화 / 최대화 하는 문제를 말한다. 이때, equality 또는 inequality
+constraint (제약조건) 들이 주어질 수 있다. 즉 다음과 같은 형태의 문제들.
+\(\underset{x \in \R^p}{\minimize} \ f(x)  \ \subto \  h(x) = 0,\ g(x) \leq 0\)</p>
+
+<p>어차피 최소화와 최대화는 부호를 바꾸면 동치이므로, 앞으로는 최소화
+문제만 생각한다.</p>
+
+<p>모든 제약 조건을 만족하는 점을 <strong>Feasible point</strong>라 한다. Feasible
+point가 아예 없는 경우 <strong>infeasible</strong>하다.</p>
+
+<p>최적화 문제를 Constraint 유무에 따라 Unconstrained / Constrained로
+나눈다.</p>
+
+<p>최적화 문제의 답은 Optimal value $p^\star$ 와 solution $x^\star$를 찾는 것이다.
+즉…
+\(p^* = \inf \Setcond{f(x)}{x \in \R^n, x \text{ feasible }}, \quad f(x^*) = p^*\)
+ML 세팅에서는, $0 \leq p^* &lt; \infty$ 인 경우를 주로 생각한다.</p>
+
+<p><strong>예시</strong> : Curve-Fitting, 즉 입력 데이터 $x_1 \dots x_n$ 과 그 label
+$y_1 \dots y_n$에 대해, 입력값과 label의 관계를 찾는 문제. 대표적으로, Least square 문제를 생각할 수 있다. 주어진 입력과 결과를
+가장 가깝게 근사하는 일차함수 찾기.</p>
+
+<p>최적화 문제에서는 극소 (Local minima) 와 최소 (Global minima) 를
+생각해야 한다. 일반적으로, non-convex 함수의 global minima를 찾는 것은
+어렵다.</p>
+
+<h2 id="gradient-descent">Gradient Descent</h2>
+
+<p>미분가능한 함수 $f$에 대해, 가장 간단한 unconstrained optimization
+problem을 해결하고자 한다. \(\underset{x \in \R^p}{\minimize} \ f(x)\)
+ML 세팅에서는 almost everywhere differentiable이면 대충 미분가능하다고
+말하는 경우 많음.</p>
+
+<p><strong>Algorithm (Gradient Descent)</strong></p>
+<ul>
+  <li>임의의 시작점 $x^0 \in \R^p$ 를 잡고, 적절한 $\alpha_k &gt; 0$ 에 대해
+다음을 반복한다. \(x^{k+1} = x^k - \alpha_k \nabla{f(x^k)}\)</li>
+</ul>
+
+<p><strong>대략의 아이디어</strong> :
+$x^k$ 근처에서 $f$를 테일러 전개하면,
+\(f(x) = f(x^k) + \nabla f (x^k)^T (x - x^k) + \order{\norm{x - x^k}^2}\)
+즉, $x = x^{k+1} = x^k - \alpha_k \nabla{f(x^k)}$ 대입하면,
+\(f(x^{k+1}) = f(x^k) - \alpha_k \norm{\nabla{f(x^k)}}^2 + \order{\alpha_k^2}\)
+적당히 $\alpha_k$를 충분히 작게 잡으면, $f(x^{k+1})$ 이 $f(x^k)$보다
+작게 할 수 있을 것 같다.</p>
+
+<p>일반적으로, Gradient Descent는 Global 한 최적해를 보장하지 않는다.
+Local한 최적해를 찾아간다는 것도 일반적인 조건에서는 안 되고… 대신에,
+조건이 충분히 좋으면 거의 비슷한 명제, $\nabla f(x^k) \to 0$ 을 보일 수
+있다.</p>
+
+<p><strong>정리 (Gradient Descent의 수렴성)</strong><br />
+$f : \R^n \to \R$ 이 미분가능하고, $\nabla f$ 가 $L$-Lipschitz 연속이며,
+$f$가 $-\infty$가 아닌 최소값을 가질 때, Gradient descent
+\(x^{k+1} = x^k - \alpha \nabla{f(x^k)}\) 은,
+$\alpha \in \left(0, \frac{2}{L}\right)$에 대해, $\nabla f(x^k) \to 0$
+을 보장한다.</p>
+
+<p><strong>Remark</strong>
+$L$-Lipschitz 조건이 필요한 이유는, $\nabla f$ 가 적당히 smooth 해야
+테일러 전개의 근사가 잘 맞기 때문.</p>
+
+<p>이 생각을 보조정리로 활용한다.</p>
+
+<p><strong>Lemma (Lipschitz Gradient Lemma)</strong></p>
+<ul>
+  <li>$f : \R^n \to R$ 이 미분가능하고, $\nabla f$ 가 $L$-Lipschitz 연속이면, 다음이 성립한다.
+\(f(x + \delta) \leq f(x) + \nabla f(x)^T \delta + \frac{L}{2}\norm{\delta}^2\)</li>
+</ul>
+
+<p><strong>Lemma의 증명(살짝 Rough하게)</strong></p>
+<ul>
+  <li>$g(t) = f(x + t\delta)$ 로 두면, $g’(t) = \nabla f(x + t\delta)^T \delta$ 가 된다. 이때 $g’$는 직접
+계산해 보면 $L\norm{\delta}^2$-Lipschitz 임을 알 수 있다.</li>
+  <li>이제, $f(x + \delta) = g(1)$ 은, 다음과 같이 계산한다.
+\(f(x + \delta) = g(1) = g(0) + \int_{0}^{1} g'(t) \dd{t} \leq f(x) + \int_{0}^{1} (g'(0) + L\norm{\delta}^2 t) \dd{t} = f(x) + \nabla f(x)^T \delta + \frac{L}{2}\norm{\delta}^2\)</li>
+  <li>따라서 주어진 부등식이 성립한다. ◻</li>
+</ul>
+
+<p>수학적으로 깔끔하게 증명하기 위해, 보조정리를 하나 더 쓰자.<br />
+<strong>Lemma (Summability Lemma)</strong></p>
+<ul>
+  <li>Non-negative sequence $V_i$, $S_i$ 가 $V_{k+1} \leq V_k - S_k$ 를 만족할 때, $S_k \to 0$ 이다.</li>
+</ul>
+
+<p><strong>Lemma의 증명</strong></p>
+<ul>
+  <li>$V_{k+1} + \sum_{i = 0}^{k} S_i \leq V_0$에서, $k \to \infty$ 를 취하면, $\sum_{i = 0}^{\infty} S_i \leq V_0 &lt; \infty$ 이다. 급수가 수렴할 때, 일반항이 0으로 수렴함이 알려져 있으므로, 주어진 명제가 성립한다. ◻</li>
+</ul>
+
+<p>이제 마지막으로 앞선 정리 - Gradient Descent의 수렴성 비슷한 정리 - 를 증명한다.</p>
+<ul>
+  <li>Lipchitz Gradient Lemma에 의해, $f(x^{k+1}) \leq f(x^k) - \alpha\left(1 - \frac{\alpha L}{2}\right)\norm{\nabla(x^k)}^2$ 이다.</li>
+  <li>또한, $V_k = f(x^k) - f(x^\star)$, $S_k = \alpha\left(1 - \frac{\alpha L}{2}\right)\norm{\nabla(x^k)}^2$ 라 하면, 주어진 수열들이 음수가 아니며 Summability Lemma의 조건을 만족함을 안다. 따라서, $S_k \to 0$, 즉 $\norm{\nabla(x^k)}^2 \to 0$ 이므로 $\nabla f(x^k) \to 0$ 이다. ◻</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
     
       
+      
+      <a href="/categories/#deep-learning-study" class="page__taxonomy-item" rel="tag">deep-learning-study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-09-03T00:00:00+09:00">September 3, 2021</time></p>
+
+
+      </footer>
+
+      
+  <nav class="pagination">
+    
+      <a href="/retrospects-and-plans/starting-2021-fall/" class="pagination--pager" title="2021 2학기 시작
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+    
+      <div id="disqus_thread"></div>
+      <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+        var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://gratus907-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -458,14 +654,12 @@
   </article>
 </div>
 
-      
-      
-    
-      
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -503,14 +697,12 @@
   </article>
 </div>
 
-      
-      
-    
-      
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -545,14 +737,12 @@
   </article>
 </div>
 
-      
-      
-    
-      
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -590,18 +780,13 @@
   </article>
 </div>
 
-      
-      
         
-  </div>
-
+      </div>
+    </div>
   
-
-
-</div>
   
-
 </div>
+
     </div>
 
     

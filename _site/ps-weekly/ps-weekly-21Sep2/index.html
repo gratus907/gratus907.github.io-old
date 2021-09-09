@@ -19,28 +19,32 @@
 
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Advanced Algorithms / Data Structures - Gratus907’s Study Note</title>
-<meta name="description" content="Hello World!">
+<!-- begin _includes/seo.html --><title>9월 1-2주차 Weekly PS - Gratus907’s Study Note</title>
+<meta name="description" content="Contents">
 
 
   <meta name="author" content="Wonseok Shin">
   
+  <meta property="article:author" content="Wonseok Shin">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Gratus907's Study Note">
-<meta property="og:title" content="Advanced Algorithms / Data Structures">
-<meta property="og:url" content="http://localhost:4000/ds-alg-advanced/">
+<meta property="og:title" content="9월 1-2주차 Weekly PS">
+<meta property="og:url" content="http://localhost:4000/ps-weekly/ps-weekly-21Sep2/">
 
 
-  <meta property="og:description" content="Hello World!">
-
-
-
+  <meta property="og:description" content="Contents">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2021-09-07T00:00:00+09:00">
 
 
 
@@ -51,7 +55,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/ds-alg-advanced/">
+<link rel="canonical" href="http://localhost:4000/ps-weekly/ps-weekly-21Sep2/">
 
 
 
@@ -355,7 +359,7 @@
           
             <li><a href="/ds-alg-note/">자료구조/알고리즘</a></li>
           
-            <li><a href="/ds-alg-advanced/" class="active">고급 자료구조/알고리즘</a></li>
+            <li><a href="/ds-alg-advanced/">고급 자료구조/알고리즘</a></li>
           
             <li><a href="/deep-learning-study/">Deep Learning Notes</a></li>
           
@@ -368,6 +372,22 @@
 
     
     
+    <nav class="toc">
+      <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+      <ul class="toc__menu">
+  <li><a href="#recent-updates">Recent Updates</a></li>
+  <li><a href="#rounds">Rounds</a>
+    <ul>
+      <li><a href="#snupc-2021-division-2">SNUPC 2021 Division 2</a></li>
+      <li><a href="#facebook-hackercup-2021-round-1">Facebook Hackercup 2021 Round 1</a></li>
+      <li><a href="#virtual-codeforces-educational-round-106">(Virtual) Codeforces Educational Round 106</a></li>
+    </ul>
+  </li>
+  <li><a href="#problems">Problems</a></li>
+</ul>
+
+    </nav>
+    
     
   
   </div>
@@ -375,142 +395,83 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Advanced Algorithms / Data Structures">
-    
-    
+    <meta itemprop="headline" content="9월 1-2주차 Weekly PS">
+    <meta itemprop="description" content="  Contents">
+    <meta itemprop="datePublished" content="2021-09-07T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Advanced Algorithms / Data Structures
+          <h1 id="page-title" class="page__title" itemprop="headline">9월 1-2주차 Weekly PS
 </h1>
           
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          108 words
+      </span>
+    
+  </p>
 
 
         </header>
       
-      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/ds-alg-advanced/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/ps-weekly/ps-weekly-21Sep2/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
       <section class="page__content" itemprop="text"> 
-        <h2 id="what-is-this">What is This?</h2>
+        <div id="toc">
+  <p>Contents</p>
+</div>
+<ul id="markdown-toc">
+  <li><a href="#recent-updates" id="markdown-toc-recent-updates">Recent Updates</a></li>
+  <li><a href="#rounds" id="markdown-toc-rounds">Rounds</a>    <ul>
+      <li><a href="#snupc-2021-division-2" id="markdown-toc-snupc-2021-division-2">SNUPC 2021 Division 2</a></li>
+      <li><a href="#facebook-hackercup-2021-round-1" id="markdown-toc-facebook-hackercup-2021-round-1">Facebook Hackercup 2021 Round 1</a></li>
+      <li><a href="#virtual-codeforces-educational-round-106" id="markdown-toc-virtual-codeforces-educational-round-106">(Virtual) Codeforces Educational Round 106</a></li>
+    </ul>
+  </li>
+  <li><a href="#problems" id="markdown-toc-problems">Problems</a></li>
+</ul>
+<hr />
 
+<p>Sep 01 - Sep 12, 2021</p>
+
+<p>이 글에 구현코드 링크가 없더라도 <a href="https://github.com/gratus907/Gratus_PS">PS 레포 링크</a> 에 가서 대회 단위로 들어가면 보통 올려놓은 코드를 볼 수 있습니다.</p>
+
+<p>BOJ의 문제 중 <code class="language-plaintext highlighter-rouge">[출처]</code> 에 대회명이 적혀있지 않으면 제 레포에서는 <code class="language-plaintext highlighter-rouge">BOJ Original</code>에 있습니다.</p>
+
+<p>읽는 사람이 문제를 읽고 조금 생각해봤다고 가정하고, 대략적인 아이디어만 간단히 적을 생각입니다 ㅎㅎ</p>
+
+<h2 id="recent-updates">Recent Updates</h2>
 <ul>
-  <li>PS에서 쓰는 알고리즘들 외에도 더 theoretical한 자료구조/알고리즘들에 대한 이해가 부족한 것 같아서 공부해 보기로 했습니다. PS에서도 요즘은 더 높은 레벨로 가면 splay tree / link cut tree 같은건 좀 나오는것 같기도 하구요.
-PS틱한 내용들 (DP-optimization이 대표적) 도 섞일 예정입니다.</li>
-  <li>계획 : 고급 자료구조 / 알고리즘 내용들, CLRS에서 아직 제대로 공부하지 않은 부분 몇가지, <br />
-MIT 고급 자료구조 6.851 <a href="https://courses.csail.mit.edu/6.851/fall17/lectures/">링크</a> 이나 고급 알고리즘 <a href="http://people.csail.mit.edu/moitra/854.html">링크 1</a> <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-854j-advanced-algorithms-fall-2008/">링크 2</a> 같은 내용들 중 몇가지 재밌어 보이거나 이건 알아야 한다고 추천받은 내용들을 볼 계획입니다.</li>
-  <li>언젠가 다룰 내용들…</li>
+  <li>SNUPC 2021 Division 2에 참여했습니다.</li>
+  <li>Facebook Hackercup 2021에 참여했습니다.</li>
 </ul>
 
-<h3 id="various-topics">Various topics</h3>
+<h2 id="rounds">Rounds</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Topic</th>
-      <th style="text-align: left">Link</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">Amortized Analysis</td>
-      <td style="text-align: left"> </td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Hashing</td>
-      <td style="text-align: left"> </td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Network Flows</td>
-      <td style="text-align: left"> </td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Linear Programming</td>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tbody>
-</table>
+<h3 id="snupc-2021-division-2">SNUPC 2021 Division 2</h3>
 
-<h3 id="advanced-data-structures">Advanced Data Structures</h3>
+<h3 id="facebook-hackercup-2021-round-1">Facebook Hackercup 2021 Round 1</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Topic</th>
-      <th style="text-align: left">Link</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><strong>Fibonacci Heaps</strong></td>
-      <td style="text-align: left"><a href="/advanced-algorithms/Fibonacci-heaps/">Link</a></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Splay trees</td>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tbody>
-</table>
+<h3 id="virtual-codeforces-educational-round-106">(Virtual) Codeforces Educational Round 106</h3>
+<ul>
+  <li>4문제를 30분만에 밀고, F번을 1시간 30분동안 고민하다가 아무것도 하지 못하고 끝났습니다.</li>
+</ul>
 
-<h3 id="randomized-algorithms">Randomized Algorithms</h3>
+<h2 id="problems">Problems</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Topic</th>
-      <th style="text-align: left">Link</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><strong>Karger-Stein Min Cut</strong></td>
-      <td style="text-align: left"><a href="/advanced-algorithms/karger-stein-mincut/">Link</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="graph-algorithms">Graph Algorithms</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Topic</th>
-      <th style="text-align: left">Link</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><strong>Fixed Subgraph Isomorphism</strong></td>
-      <td style="text-align: left"><a href="/advanced-algorithms/graph-algorithms-lec1/">Link</a></td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>Pagerank &amp; Random walk with Restart</strong></td>
-      <td style="text-align: left"><a href="/advanced-algorithms/random-walk-on-graphs/">Link</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="algorithms-used-in-cp">Algorithms used in CP</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Topic</th>
-      <th style="text-align: left">Link</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><strong>Divide and conquer optimization</strong></td>
-      <td style="text-align: left"><a href="/advanced-algorithms/DP-DnC-Opt/">Link</a></td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>Pollard’s Rho Algorithm</strong></td>
-      <td style="text-align: left"><a href="/advanced-algorithms/Pollards-Rho/">Link</a></td>
-    </tr>
-  </tbody>
-</table>
-
+<hr />
 
         
       </section>
@@ -520,16 +481,248 @@ MIT 고급 자료구조 6.851 <a href="https://courses.csail.mit.edu/6.851/fall1
         
 
 
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#ps-weekly" class="page__taxonomy-item" rel="tag">ps-weekly</a>
+    
+    </span>
+  </p>
+
+
         
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-09-07T00:00:00+09:00">September 7, 2021</time></p>
+
 
       </footer>
 
       
+  <nav class="pagination">
+    
+      <a href="/deep-learning-study/opt-and-gd/" class="pagination--pager" title="Introduction to Optimization / Gradient Descent
+">이전</a>
+    
+    
+      <a href="/cs-adventure/deltacon/" class="pagination--pager" title="논문읽기 : DELTACON
+">다음</a>
+    
+  </nav>
+
     </div>
+    
+      <div id="disqus_thread"></div>
+      <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+        var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://gratus907-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
     
   </article>
 
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cs-adventure/deltacon/" rel="permalink">논문읽기 : DELTACON
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          989 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/deep-learning-study/opt-and-gd/" rel="permalink">Introduction to Optimization / Gradient Descent
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          646 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/retrospects-and-plans/starting-2021-fall/" rel="permalink">2021 2학기 시작
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          279 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ps-weekly/ps-weekly-21Aug4/" rel="permalink">8월 3-4주차 Weekly PS
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          592 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
   
   
 </div>

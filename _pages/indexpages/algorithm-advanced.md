@@ -28,27 +28,27 @@ PS틱한 내용들 (DP-optimization이 대표적) 도 섞일 예정입니다.
 
 | Topic               | Link                                 |
 |:--------------------|:-------------------------------------|
-| **Fibonacci Heaps** | [Link](/algorithms/Fibonacci-heaps/) |
+| **Fibonacci Heaps** | [Link](/advanced-algorithms/Fibonacci-heaps/) |
 | Splay trees         |                                      |
 
 ### Randomized Algorithms
 
 | Topic                    | Link                                              |
 |:-------------------------|:--------------------------------------------------|
-| **Karger-Stein Min Cut** | [Link](/advanced_algorithms/karger-stein-mincut/) |
+| **Karger-Stein Min Cut** | [Link](/advanced-algorithms/karger-stein-mincut/) |
 
 
 ### Graph Algorithms
 
 | Topic                                   | Link                                                |
 |:----------------------------------------|:----------------------------------------------------|
-| **Fixed Subgraph Isomorphism**          | [Link](/algorithms/graph-algorithms-lec1/)          |
+| **Fixed Subgraph Isomorphism**          | [Link](/advanced-algorithms/graph-algorithms-lec1/)          |
 | **Pagerank & Random walk with Restart** | [Link](/advanced-algorithms/random-walk-on-graphs/) |
 
 ### Algorithms used in CP
 
 | Topic                               | Link                              |
 |:------------------------------------|:----------------------------------|
-| **Divide and conquer optimization** | [Link](/algorithms/DP-DnC-Opt/)   |
-| **Pollard's Rho Algorithm**         | [Link](/algorithms/Pollards-Rho/) |
+| **Divide and conquer optimization** | [Link](/advanced-algorithms/DP-DnC-Opt/)   |
+| **Pollard's Rho Algorithm**         | [Link](/advanced-algorithms/Pollards-Rho/) |
 

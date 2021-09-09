@@ -245,12 +245,6 @@ var store = [{
         "url": "http://localhost:4000/ps-weekly/ps-weekly-21Jul1/",
         "teaser": null
       },{
-        "title": "논문읽기 : DELTACON",
-        "excerpt":"   Contents      Introduction    처음으로 정리해볼 논문은 2013년 SDM(SIAM International Conference on Data Mining)에 발표된 DeltaCon입니다.   Introduction  두 그래프 $G_1 = (V_1, E_1), G_2 = (V_2, E_2)$ 가 주어졌을 때, 우리는 두 그래프의 유사도 를 측정하는 어떤 좋은 메트릭을 갖고 싶습니다. 이 메트릭이 있으면  ","categories": ["cs-adventure"],
-        "tags": ["graph theory"],
-        "url": "http://localhost:4000/cs-adventure/deltacon/",
-        "teaser": null
-      },{
         "title": "2021 UCPC 팀연습 #1 : 서강대학교 2020 Div 1",
         "excerpt":"Contents Our Team Practice : Sogang 2020 Div1 Phase 0 : Start Phase 1 : Easy Problems A. 파일 정리 F. 폰친구 C. 연료가 부족해 B. 컨설팅 Phase 2 : 3 Graph Problems E. 사탕 배달 D. 에어컨 설치 G. Confuzzle Phase 3 : Pizza Madness 후기 Our Team 이번...","categories": ["cp-rounds"],
         "tags": [],
@@ -360,7 +354,7 @@ var store = [{
         "teaser": null
       },{
         "title": "논문읽기 : Chan-Vese Algorithm",
-        "excerpt":"Contents Introduction Key Ideas Energy functional Integral formulation Regularization &amp; Euler-Lagrange Partial Differential Equation Reinitialization Conclusion Thoughts CS 논문읽기라고 생각하고 연 cs-adventure 카테고리인데 의외로 두번째가 수치해석? 을 쓰는 최적화 관련이 되었네요. Introduction 이번에 읽은 논문은 Active Contours Without Edges 라는, 2001년의 논문입니다. 2001년 IEEE Transactions on Image Processing, Vol.10, No.2...","categories": ["cs-adventure"],
+        "excerpt":"Contents Introduction Key Ideas Energy functional Integral formulation Regularization &amp; Euler-Lagrange Partial Differential Equation Reinitialization Conclusion Thoughts CS 논문읽기라고 생각하고 연 cs-adventure 카테고리인데 의외로 처음이 수치해석? 을 쓰는 최적화 관련이 되었네요. Introduction 이번에 읽은 논문은 Active Contours Without Edges 라는, 2001년의 논문입니다. 2001년 IEEE Transactions on Image Processing, Vol.10, No.2...","categories": ["cs-adventure"],
         "tags": [],
         "url": "http://localhost:4000/cs-adventure/chan-vese/",
         "teaser": null
@@ -417,5 +411,17 @@ var store = [{
         "excerpt":"Contents Intro to Optimization Gradient Descent 심층 신경망의 수학적 기초 1강 (9월 2일) 에 기반합니다. 이 문서는 $\\LaTeX$를 pandoc으로 변환하여 작성하였기 때문에, 레이아웃 등이 깔끔하지 않을 수 있습니다. 언젠가 pdf 버전의 노트를 공개한다면 그쪽을 참고하면 좋을 것 같습니다. Intro to Optimization 우리는 다음과 같은 최적화 문제를 생각한다. 최적화 문제란, 어떤...","categories": ["deep-learning-study"],
         "tags": [],
         "url": "http://localhost:4000/deep-learning-study/opt-and-gd/",
+        "teaser": null
+      },{
+        "title": "9월 1-2주차 Weekly PS",
+        "excerpt":"Contents Recent Updates Rounds SNUPC 2021 Division 2 Facebook Hackercup 2021 Round 1 (Virtual) Codeforces Educational Round 106 Problems Sep 01 - Sep 12, 2021 이 글에 구현코드 링크가 없더라도 PS 레포 링크 에 가서 대회 단위로 들어가면 보통 올려놓은 코드를 볼 수 있습니다. BOJ의 문제 중 [출처] 에 대회명이...","categories": ["ps-weekly"],
+        "tags": [],
+        "url": "http://localhost:4000/ps-weekly/ps-weekly-21Sep2/",
+        "teaser": null
+      },{
+        "title": "논문읽기 : DELTACON",
+        "excerpt":"Contents Introduction Key Ideas Concepts Similarity measure properties DELTACON Algorithm Scalability Conclusion Thoughts Koutra, D., Vogelstein, J. T., &amp; Faloutsos, C. (2013). DeltaCon : A Principled Massive-Graph Similarity Function. Proceedings of the 2013 SIAM International Conference on Data Mining, 10(3), 162–170. https://doi.org/10.1137/1.9781611972832.18 Introduction 이번에 정리할 논문은 DELTACON 이라는 Graph similarity...","categories": ["cs-adventure"],
+        "tags": ["graph theory"],
+        "url": "http://localhost:4000/cs-adventure/deltacon/",
         "teaser": null
       }]

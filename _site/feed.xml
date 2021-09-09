@@ -1,4 +1,135 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-09-06T04:29:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">Introduction to Optimization / Gradient Descent</title><link href="http://localhost:4000/deep-learning-study/opt-and-gd/" rel="alternate" type="text/html" title="Introduction to Optimization / Gradient Descent" /><published>2021-09-03T00:00:00+09:00</published><updated>2021-09-03T00:00:00+09:00</updated><id>http://localhost:4000/deep-learning-study/opt-and-gd</id><content type="html" xml:base="http://localhost:4000/deep-learning-study/opt-and-gd/">&lt;div id=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-09-10T05:30:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">논문읽기 : DELTACON</title><link href="http://localhost:4000/cs-adventure/deltacon/" rel="alternate" type="text/html" title="논문읽기 : DELTACON" /><published>2021-09-10T00:00:00+09:00</published><updated>2021-09-10T00:00:00+09:00</updated><id>http://localhost:4000/cs-adventure/deltacon</id><content type="html" xml:base="http://localhost:4000/cs-adventure/deltacon/">&lt;div id=&quot;toc&quot;&gt;
+  &lt;p&gt;Contents&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#introduction&quot; id=&quot;markdown-toc-introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#key-ideas&quot; id=&quot;markdown-toc-key-ideas&quot;&gt;Key Ideas&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#concepts&quot; id=&quot;markdown-toc-concepts&quot;&gt;Concepts&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#similarity-measure-properties&quot; id=&quot;markdown-toc-similarity-measure-properties&quot;&gt;Similarity measure properties&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#deltacon-algorithm&quot; id=&quot;markdown-toc-deltacon-algorithm&quot;&gt;DELTACON Algorithm&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#scalability&quot; id=&quot;markdown-toc-scalability&quot;&gt;Scalability&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conclusion&quot; id=&quot;markdown-toc-conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#thoughts&quot; id=&quot;markdown-toc-thoughts&quot;&gt;Thoughts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;Koutra, D., Vogelstein, J. T., &amp;amp; Faloutsos, C. (2013). DeltaCon : A Principled Massive-Graph Similarity Function. Proceedings of the 2013 SIAM International Conference on Data Mining, 10(3), 162–170. https://doi.org/10.1137/1.9781611972832.18&lt;/p&gt;
+
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;이번에 정리할 논문은 &lt;strong&gt;DELTACON&lt;/strong&gt; 이라는 Graph similarity metric을 제시한, DELTACON: A Principled Massive-Graph Similarity Function으로, 2013년 SIAM International Conference on Data Mining에 발표된 논문입니다. (SIAM과 IEEE에서 진행하는 똑같은 이름의 Conference가 있어서, 이쪽을 보통 SDM으로 약칭합니다). 이 논문에서는 그래프 유사도가 만족해야 할 기본적인 기준들을 제시하고, 그 기준에 맞는 실제 유사도 메트릭을 제시하였습니다.&lt;/p&gt;
+
+&lt;p&gt;두 그래프 $G_1 = (V_1, E_1), G_2 = (V_2, E_2)$ 가 주어졌을 때, 우리는 두 그래프의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유사도&lt;/code&gt; 를 측정하는 어떤 좋은 메트릭을 갖고 싶습니다. 예를 들어, 큰 그래프 $G$가 시간의 흐름에 따라 변화한다면 - 즉, $G_1, \dots G_n$ 에 대해서, $d(G_i, G_{i-1})$ 이 최대인 시점 $i$를 확인하면 anomally를 알 수 있을 것입니다. 이 논문에서는 Node correspondence까지 주어진 상황에서의 그래프 유사도에 대해서만 다룹니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;key-ideas&quot;&gt;Key Ideas&lt;/h1&gt;
+&lt;h2 id=&quot;concepts&quot;&gt;Concepts&lt;/h2&gt;
+&lt;p&gt;뭔가 노드 간의 연결관계를 수치화해서 알고 있다면, 이를 비교할 수 있을 것 같습니다. 예를 들어, Random walk with Restart 같은 방법을 이용 (이 방법에 대한 설명은 Advanced-algorithm 쪽으로 제가 포스팅한 적이 있습니다. &lt;a href=&quot;/advanced-algorithms/random-walk-on-graphs/&quot;&gt;링크&lt;/a&gt;) 하여, 노드간의 연결정도를 행렬로 만들어 놨다면 이 행렬이 그래프의 어떤 구조를 가지고 있다고 볼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이 논문에서는, RwR은 아니고 이보다 좀더 최신이며 여러 좋은 성질을 갖는 Fast Belief Propagation이라는 방법을 사용합니다. 이 방법을 사용할 때, 노드 간의 연결성을 포함하는 $n \times n$ 행렬은 다음과 같이 계산됩니다. 
+\(S = [s_{ij}] = \left(I + \epsilon^2 D - \epsilon A\right)^{-1}\)
+여기서, $A$는 그래프의 인접행렬을, $D$는 노드 $i$의 degree를 $d_{ii}$로 하는 대각행렬을 사용합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;similarity-measure-properties&quot;&gt;Similarity measure properties&lt;/h2&gt;
+&lt;p&gt;이 논문에서는 다음과 같은 몇가지 성질들을 &lt;strong&gt;Graph Similarity Measure&lt;/strong&gt;가 가져야 할 성질들이라고 주장합니다. 상당수가 우리의 직관에 기반하였기 때문에 자연스럽게 이해할 수 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Identity&lt;/strong&gt; : $sim(G, G) = 1$. 매우 자연스럽습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Symmetry&lt;/strong&gt; : $sim(G_1, G_2) = sim(G_2, G_1)$. 역시 매우 자연스럽습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Zero Property&lt;/strong&gt; : Complete graph $K_n$ 과 Vertex $n$개에 edge는 하나도 없는 zero graph $Z_n$을 생각해 보겠습니다. 이때, $d(K_n, Z_n) \to 0$ as $n \to \infty$ 를 원합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Edge Importance&lt;/strong&gt; : Edge가 달라지는 변화들 중, connected component의 개수가 바뀌면 특히 더 큰 차이로 간주합니다. 즉, $K_n$ 과 $K_n$을 edge 하나로 이어놓은 그래프에서 bridge는 다른 edge들보다 더 중요합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Weight Awareness&lt;/strong&gt; : Weighted graph에서, weight이 큰 edge에서 일어나는 변화는 더 중요합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Submodularity&lt;/strong&gt; : 같은 크기의 그래프에서, edge 하나의 중요도는 dense graph에서가 sparse graph에서보다 덜 중요합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Focus Awareness&lt;/strong&gt; : 그래프에서 edge들에 변화 (추가 또는 제거) 가 이루어질 때, 한 점을 노리고 한쪽에 집중된 변화는 랜덤한 변화보다 더 중요합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;deltacon-algorithm&quot;&gt;DELTACON Algorithm&lt;/h2&gt;
+&lt;p&gt;DELTACON은 앞서 제시한 행렬 $S$를 이용, 다음과 같은 distance를 계산합니다. 
+\(d(G_1, G_2) = \sqrt{\sum_{i = 1}^{n} \sum_{j = 1}^{n} \left(\sqrt{S_1(i, j)} - \sqrt{S_2(i, j)}\right)^2}\)
+행렬간의 거리가 굉장히 특이하게 정의되는데, 이를 Jefries-Matusita distance 라고 부른다고 합니다. 루트의 차를 제곱하는 신기한 방식으로 동작하는데, 일반적인 Euclidean distance와는 달리 이 distance를 사용할 때 위 &lt;strong&gt;성질들&lt;/strong&gt; 을 잘 만족합니다. 이 부분은 이 논문에서 수학적으로 엄밀하게 논증되지는 않았고, 데이터 그래프에 대해 실험적으로 검증되었습니다.&lt;/p&gt;
+
+&lt;p&gt;우리는 그래프 유사도를 $[0, 1]$ 에 집어넣고 싶기 때문에, $sim(G_1, G_2) = \frac{1}{1 + d(G_1, G_2)}$ 를 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;이 sim 함수를 DELTACON이라고 부릅니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;scalability&quot;&gt;Scalability&lt;/h2&gt;
+&lt;p&gt;Anomally detection 등에 쓰인다는 것을 통해 알 수 있듯이, 그래프 유사도는 많은 수의 그래프를 대상으로 해야 할 수도 있기 때문에, 가능한 빨라야 합니다.&lt;/p&gt;
+
+&lt;p&gt;Deltacon 알고리즘에서 가장 오래 걸리는 부분은 $S$행렬의 계산입니다. $S$행렬은 $S = [s_{ij}] = \left(I + \epsilon^2 D - \epsilon A\right)^{-1}$ 와 같이 역행렬로 정의되는데, 일반적인 matrix가 아니라 특수한 graph structure가 있기 때문에 FaBP 알고리즘을 이용하여 $O(n^2)$ 시간에 계산할 수 있다고 합니다. 이후의 Matusita distance는 당연히 $O(n^2)$에 계산 가능하므로, 이 알고리즘은 $O(n^2)$ 입니다.&lt;/p&gt;
+
+&lt;p&gt;이 논문에서는 DELTACON의 좀더 빠르게 작동하는 approximation 버전을 제시하고 있습니다. $n^2$보다 빠르게 하기 위해서는, Matusita distance 계산이 일단 $O(n^2)$ 시간은 무조건 걸리기 때문에 행렬 자체를 줄여야 합니다. 이를 위해, affinity를 계산하기는 하는데 노드 $i$에 대해 모든 노드 $j$의 affinity가 아닌, 노드를 적당히 묶어 $g$개의 그룹으로 만들어서 $i$에서 $j$번 그룹으로의 affinity를 계산합니다. 이는 즉, $S$행렬에서 임의로 열들을 $g$개의 group으로 묶어서 더함으로써 $n \times g$행렬을 묶는다는 것입니다. $g$를 충분히 작게 하고, 구현을 잘 하면 이 알고리즘을 edge 개수에 대해 linear하게 돌게 할 수 있다고 합니다.&lt;/p&gt;
+
+&lt;p&gt;이때, 이렇게 approximate한 similarity는 항상 실제 similarity보다 큰 값을 갖습니다. (증명은 부록에만 수록되어 있으며, 그렇게 어렵지는 않습니다. 증명이 공개된 링크를 첨부합니다. &lt;a href=&quot;https://web.eecs.umich.edu/~dkoutra/papers/DeltaCon_KoutraVF_withAppendix.pdf&quot;&gt;링크&lt;/a&gt;)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;DELTACON은 무엇보다 Graph Similarity Measure가 가져야 할 좋은 성질들을 (정성적으로나마) 제시하였고, 이 성질들을 만족하는 실제 similarity measure를 찾아냈으며, 실험적으로 이를 검증하였다는 의의가 있습니다. 특히 다른 Similarity measure (Graph edit distance, spectral methods 등) 들은 이러한 그래프에 대한 직관적인 성질들이 전혀 고려되지 않았는데, 이런 유사도들에 비해 DELTACON이 얼마나 제시한 조건들을 잘 맞추는지를 상당히 extensive한 실험을 통해 검증하였습니다. 특히 Graph edit distance 등 계산 시간이 굉장히 오래 걸리는 알고리즘들에 비해, exact도 quadratic이고 이를 edge 개수에 선형이 되게 더 개선했기 때문에 다양한 활용이 가능할 것 같습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;thoughts&quot;&gt;Thoughts&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Graph의 노드 대신 edge에 label이 주어진다면, 이를 자연스럽게 확장할 수 있을까요?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;실험적 검증을 넘어서서, 성질들을 수식으로 표현하고 논증하는 방법은 없을까요?
+    &lt;ul&gt;
+      &lt;li&gt;부록에는 Edge importance 성질과 zero property에 대해서는 증명하고 있으며, 나머지 성질들에 대해서는 &lt;strong&gt;interesting future work&lt;/strong&gt; 라고 남겨두었습니다.&lt;/li&gt;
+      &lt;li&gt;Focus Awareness와 같은 성질들이 문제인데.. 잠깐 생각해보면, edge 하나가 변화할 때, 각 점 $i$에 대해 새로 생긴/제거된 edge까지의 거리를 잴 수 있습니다. 이 거리를 $x_i$라고 하면, 변화 $m$번에 대해 행렬 $x_{m, i}$를 생각할 수 있겠습니다. Edge가 한쪽을 타겟팅한다는 것은, $x_{m, i}$의 각 열 - 즉, $m$번의 변화가 이 vertex로부터 얼마의 거리에서 일어나는지를 모은 벡터 - 의 표준편차 같은 통계적인 성질들을 이용하여 측정할 수 있을 것 같기도 합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Edge 하나가 변화하면서, 변화 전 그래프 $G$와 변화 후 그래프 $G’$간의 deltacon similarity 또는 그 근사값을 측정하는 더 빠른 방법은 없을까요? 바뀌는 edge가 1개인데 $n^2$ 이나 $n$ 시간을 지불하기는 좀 아깝습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Zero Property에서, $d(K_n, G_n)$ 이 항상 0이 아니라 0으로 수렴한다는 것이 약간 오묘합니다. 전체적으로 그래프 유사도가 크기에 많은 영향을 받는 것 같습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;FaBP가 왜 $O(n^2)$ 에 작동하는지는 아직 공부하지 못했습니다. 전반적으로 후반부의 시간 복잡도 증명이 약간 &lt;strong&gt;잘 구현하면 된다&lt;/strong&gt; 는 식으로 쓰여 있고, 엄밀하게 증명되어 있지 않다는 점은 조금 아쉬웠는데, &lt;a href=&quot;https://github.com/ZhenguoChen/DeltaCon&quot;&gt;Github Repo&lt;/a&gt; 에 꽤 읽기 쉬운 코드가 있어서 그럭저럭 납득할 수 있었습니다. Sparse matrix의 성질을 잘 사용하는 것 같습니다.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cs-adventure" /><category term="graph theory" /><summary type="html">Contents</summary></entry><entry><title type="html">9월 1-2주차 Weekly PS</title><link href="http://localhost:4000/ps-weekly/ps-weekly-21Sep2/" rel="alternate" type="text/html" title="9월 1-2주차 Weekly PS" /><published>2021-09-07T00:00:00+09:00</published><updated>2021-09-07T00:00:00+09:00</updated><id>http://localhost:4000/ps-weekly/ps-weekly-21Sep2</id><content type="html" xml:base="http://localhost:4000/ps-weekly/ps-weekly-21Sep2/">&lt;div id=&quot;toc&quot;&gt;
+  &lt;p&gt;Contents&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#recent-updates&quot; id=&quot;markdown-toc-recent-updates&quot;&gt;Recent Updates&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#rounds&quot; id=&quot;markdown-toc-rounds&quot;&gt;Rounds&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#snupc-2021-division-2&quot; id=&quot;markdown-toc-snupc-2021-division-2&quot;&gt;SNUPC 2021 Division 2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#facebook-hackercup-2021-round-1&quot; id=&quot;markdown-toc-facebook-hackercup-2021-round-1&quot;&gt;Facebook Hackercup 2021 Round 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#virtual-codeforces-educational-round-106&quot; id=&quot;markdown-toc-virtual-codeforces-educational-round-106&quot;&gt;(Virtual) Codeforces Educational Round 106&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#problems&quot; id=&quot;markdown-toc-problems&quot;&gt;Problems&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;Sep 01 - Sep 12, 2021&lt;/p&gt;
+
+&lt;p&gt;이 글에 구현코드 링크가 없더라도 &lt;a href=&quot;https://github.com/gratus907/Gratus_PS&quot;&gt;PS 레포 링크&lt;/a&gt; 에 가서 대회 단위로 들어가면 보통 올려놓은 코드를 볼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;BOJ의 문제 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[출처]&lt;/code&gt; 에 대회명이 적혀있지 않으면 제 레포에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BOJ Original&lt;/code&gt;에 있습니다.&lt;/p&gt;
+
+&lt;p&gt;읽는 사람이 문제를 읽고 조금 생각해봤다고 가정하고, 대략적인 아이디어만 간단히 적을 생각입니다 ㅎㅎ&lt;/p&gt;
+
+&lt;h2 id=&quot;recent-updates&quot;&gt;Recent Updates&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;SNUPC 2021 Division 2에 참여했습니다.&lt;/li&gt;
+  &lt;li&gt;Facebook Hackercup 2021에 참여했습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;rounds&quot;&gt;Rounds&lt;/h2&gt;
+
+&lt;h3 id=&quot;snupc-2021-division-2&quot;&gt;SNUPC 2021 Division 2&lt;/h3&gt;
+
+&lt;h3 id=&quot;facebook-hackercup-2021-round-1&quot;&gt;Facebook Hackercup 2021 Round 1&lt;/h3&gt;
+
+&lt;h3 id=&quot;virtual-codeforces-educational-round-106&quot;&gt;(Virtual) Codeforces Educational Round 106&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;4문제를 30분만에 밀고, F번을 1시간 30분동안 고민하다가 아무것도 하지 못하고 끝났습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;problems&quot;&gt;Problems&lt;/h2&gt;
+
+&lt;hr /&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ps-weekly" /><summary type="html">Contents</summary></entry><entry><title type="html">Introduction to Optimization / Gradient Descent</title><link href="http://localhost:4000/deep-learning-study/opt-and-gd/" rel="alternate" type="text/html" title="Introduction to Optimization / Gradient Descent" /><published>2021-09-03T00:00:00+09:00</published><updated>2021-09-03T00:00:00+09:00</updated><id>http://localhost:4000/deep-learning-study/opt-and-gd</id><content type="html" xml:base="http://localhost:4000/deep-learning-study/opt-and-gd/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -578,243 +709,7 @@ disconnect연산을 모두 지원할 수 있을까요? 이 문제는 그래프�
       &lt;p&gt;자료구조의 세계도 끝이 없습니다 :) &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents</summary></entry><entry><title type="html">2021 여름방학</title><link href="http://localhost:4000/retrospects-and-plans/finishing-2021-summer/" rel="alternate" type="text/html" title="2021 여름방학" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>http://localhost:4000/retrospects-and-plans/finishing-2021-summer</id><content type="html" xml:base="http://localhost:4000/retrospects-and-plans/finishing-2021-summer/">&lt;p&gt;방학은 많이 놀았습니다. ㅋㅋ!&lt;/p&gt;
-
-&lt;h2 id=&quot;academic&quot;&gt;Academic&lt;/h2&gt;
-
-&lt;h3 id=&quot;courses&quot;&gt;Courses&lt;/h3&gt;
-
-&lt;h4 id=&quot;biology--biology-lab&quot;&gt;Biology &amp;amp; Biology Lab&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;학과마다 교양 이수 요건이 다른데, 저희는 과학 3과목 (물리, 화학, 생물의 1, 2, 단학기 버전 중 자유) 과 각각의 실험을 이수해야 합니다.&lt;/li&gt;
-  &lt;li&gt;1학년에서 늦어도 2학년 정도에 이수하는 것이 일반적이지만, 그러지 않았기 때문에 언젠가 과학을 하나 더 들어야 했습니다.&lt;/li&gt;
-  &lt;li&gt;물리학 II를 듣고 싶었지만 픽에 실패해서, 아무거나 듣고 졸업에 문제 없게 하자는 생각에 생물학을 듣기로 했습니다.&lt;/li&gt;
-  &lt;li&gt;사실 실험 보고서는 나름 열심히 썼지만 생물학 공부는 제대로 못 했는데 교수님이 학점을 정말 많이 뿌린것 같습니다. ㅋㅋ!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;study&quot;&gt;Study&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;다음학기에 현대대수학 2를 듣는데 공부할 시간이 많지 않을 것 같으므로, Fraleigh 책 뒷부분을 좀 공부했습니다.
-    &lt;ul&gt;
-      &lt;li&gt;정수론과 겹치는게 꽤 많아서 (Unique Factorization Domain 등) 그럭저럭 괜찮았습니다.&lt;/li&gt;
-      &lt;li&gt;대수학을 더 공부할 날이 올까요?&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;확률론을 보려고 했는데 딱히 펴보진 못했습니다. 지난학기에 배운 실해석학을 좀 복습했는데 그것만으로도 시간이 많이 들어서…&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/ds-alg-note/&quot;&gt;알고리즘 노트정리&lt;/a&gt; 에 있는 자료를 이용해서 지인의 알고리즘 공부를 도와줬습니다. 제게도 리뷰하는 좋은 시간이 되었습니다.&lt;/li&gt;
-  &lt;li&gt;남은 방학 1주일 동안, 다음학기 ML 수업을 위해 Vector Calculus를 정말 빠르게 훑어볼 생각입니다. 대략 하루에 한 단원씩 달리면 시간이 맞습니다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;project&quot;&gt;Project&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;수리과학부 졸업논문 주제에 대해 수치해석 및 관련 분야를 연구하시는 교수님께 지도를 받게 되었습니다.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;/cs-adventure/chan-vese/&quot;&gt;Chan-Vese Algorithm&lt;/a&gt; 에 대해 공부해보도록 조언을 받았습니다. Image Processing도 굉장히 새로운 주제여서 재밌었습니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;친한 친구들과 뭔가 주제를 잡고 공부도 해보고, 재밌는게 있으면 직접 실험도 해보고 아이디어가 있으면 공유하면서 뭔가 해보는 프리한 프로젝트에 도전해보고 있습니다. 주제는 일단 Graph Similarity 관련된 쪽으로 하고 있고, 논문 3편정도를 같이 읽고 공부했습니다. &lt;a href=&quot;//advanced-algorithms/random-walk-on-graphs/&quot;&gt;Pagerank와 Graph Random Walk 에 관한 포스트&lt;/a&gt; 도 그쪽에서 공부한 내용.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;pscp&quot;&gt;PS/CP&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;SCPC 2차예선에서 탈락했습니다. &lt;a href=&quot;/cp-rounds/SCPC-2021-Round2/&quot;&gt;FFT와 함께 폭발한 후기&lt;/a&gt; 를 볼 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;코드잼 티셔츠를 수령했습니다. :)&lt;/li&gt;
-  &lt;li&gt;UCPC는 출전하지 못했습니다. 올해의 아쉬운 일 1위일 예정입니다.&lt;/li&gt;
-  &lt;li&gt;DP, Segment tree, Graph 등 주제를 정해서 1주일씩 잡고 몇문제 같이 푸는 식으로 스터디를 했는데, 효과가 나름 괜찮았습니다. Weekly-ps에서 대부분의 풀이를 볼 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;Codeforces에 복귀해서 3라운드만에 170점을 올리고 오렌지 레이팅을 복구했습니다. 제 인생 최고의 CP 퍼포먼스였던듯 합니다.&lt;/li&gt;
-  &lt;li&gt;학기중에는 많이 풀기보다는 천천히 고민하는 과정을 즐기려고 합니다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;miscellaneous&quot;&gt;Miscellaneous&lt;/h2&gt;
-&lt;p&gt;2학기가 끝난 후에는 졸업까지 한 학기를 남겨놓게 됩니다. 이 한 학기를 어떻게 할지 고민 중입니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;2022년 1월부터 8월 정도까지 기업 인턴십 등을 통해 Industry에 대해 조금 알아보고, 진로에 대해 고민하는 방향&lt;/li&gt;
-  &lt;li&gt;바로 다음 학기를 다니고 대학원에 진학하는 방향
-결과적으로 대학원에 진학할 생각은 거의 명확한데, 크게는 세가지 이슈가 있습니다.
-    &lt;ol&gt;
-      &lt;li&gt;진학하고자 하는 희망 연구실이 가을 대학원 입학 가능한가?&lt;/li&gt;
-      &lt;li&gt;정말 내가 연구에 맞는 성향의 사람인가?&lt;/li&gt;
-      &lt;li&gt;병역을 도대체 어떻게 할 것인가?
-이런 문제들 때문에 머리가 복잡합니다. 일단 방법은 아무래도 어차피 유학을 갈게 아니면 연도와 학기를 align 하는게 좋기도 하고, 결정적으로 2번 질문에 스스로 답을 찾기 위해 인턴십을 고려하고 있습니다. 친한 친구이자 ICPC 팀원이었던 학과 동기가 산업기능요원으로 있는 회사를 현재는 가장 마음에 두고 있습니다만, 뭐 그 회사가 자리가 있을지, 저를 뽑아줄 생각이 있을지는 모르니까요… 10-11월쯤 좀더 제대로 고민해 보려고 합니다.&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="retrospects-and-plans" /><summary type="html">방학은 많이 놀았습니다. ㅋㅋ!</summary></entry><entry><title type="html">IX. Dynamic Programming &amp;amp; Divide and Conquer (2)</title><link href="http://localhost:4000/ds-alg-note/09-dp-dnc-2/" rel="alternate" type="text/html" title="IX. Dynamic Programming &amp;amp; Divide and Conquer (2)" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/09-dp-dnc-2</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/09-dp-dnc-2/">&lt;div id=&quot;toc&quot;&gt;
-  &lt;p&gt;Contents&lt;/p&gt;
-&lt;/div&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;오늘은 &lt;strong&gt;연습문제만&lt;/strong&gt; 있습니다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Segment Tree&lt;/strong&gt; : 수열을 다루는 자료구조중 하나입니다. 어떤 수열
-$a_1, a_2, \dots a_n$ 이 주어집니다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;구간 $[i, j]$가 주어지면, $a_i + a_{i+1} + \dots + a_j$ 의 값을
-구합니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;$i, v$ 가 주어지면, $a_i$ 에 $v$를 더합니다.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;
-        &lt;p&gt;첫번째 쿼리만 주어지고, 두번째 쿼리가 주어지지 않는다면, 이
-문제를 쿼리당 $O(1)$ 에 처리할 수 있습니다. 부분합 배열이라고
-부릅니다. 이 방법을 설명하세요.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;우리는 Complete Binary Tree를 만들어서 이 문제를 해결하고자
-합니다. 각 노드는 어떤 구간을 담당할 것입니다. 각 노드들은 다음
-원칙을 지킵니다. “노드의 값은, 두 자식 노드의 값을 합한 값을
-갖는다. 각 노드는 두 자식 노드가 담당하는 구간을 합한 구간을
-담당한다&quot;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;전체 노드의 개수가 몇 개인지 생각해 보세요. 첫 번째 쿼리가
-주어졌을 때, 이를 해결하기 위해 총 확인해야 하는 노드가 몇
-개인지 생각해 보세요. 두 번째 쿼리에 대해서도 같은 과정을 반복해
-보세요.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;이 방법이 두 쿼리를 빠르게 해결할 수 있음을 이해하고, 시간
-복잡도를 계산해 보세요.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Segment Tree with Lazy Propagation&lt;/strong&gt; : 위 문제와 거의 같습니다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;구간 $[i, j]$가 주어지면, $a_i + a_{i+1} + \dots + a_j$ 의 값을
-구합니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;구간 $[i, j]$와 값 $v$ 가 주어지면, $a_i, a_{i+1}, \dots a_j$ 에
-모두 $v$를 더합니다.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;
-        &lt;p&gt;일반적인 세그먼트 트리가 이 문제를 잘 해결하지 못함을
-관찰하세요.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;추가적인 기법으로, 갱신을 “미루는” 방법을 사용하겠습니다. 각
-노드마다, 이 노드가 지금까지 얼마나 갱신을 미루고 있었는지를
-추가로 저장합니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;1번, 2번 쿼리가 주어졌을 때 각각 어떻게 이 정보를 이용하여 값을
-계산할지 제시하고, 그 방법들의 시간 복잡도를 계산하세요.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Merge Sort Tree&lt;/strong&gt; : 이번에는 위와 같이 수열이 주어지는 상황에서,
-이런 문제를 생각하겠습니다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;구간 $[i, j]$와 어떤 수 $k$가 주어지면,
-$a_i, a_{i+1}, \dots a_j$ 에서 $k$보다 큰 값의 개수를 구합니다.&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;
-        &lt;p&gt;머지 소트 트리는, 세그먼트 트리와 거의 같은 방법으로 만들되, 각
-트리가 머지 소트의 중간 과정을 담고 있는 트리입니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;즉, 각 트리가 정수값 하나가 아닌 작은 수열을 들고 있습니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;이 트리가 위 문제를 빠르게 해결할 수 있음을 보이세요. 목표하는
-시간복잡도는 쿼리당 $O(\log^2 n)$ 입니다.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Edit Distance&lt;/strong&gt; : 편집 거리란, 두 수열 $S, T$에 대해, 값의 삽입,
-삭제, 대체 연산을 이용하여 $S$를 $T$로 만들고자 할 때 필요한
-최소한의 연산 횟수로 정의합니다. 각 수열의 길이가 $m, n$ 일 때, 편집
-거리를 $O(mn)$에 구하는 알고리즘을 제시하세요.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Longest Common Subsequence&lt;/strong&gt; : 두 수열 $S, T$에 대해, 두 수열이
-가지고 있는 최대 공통 부분 수열을 구하고자 합니다. 두 수열의 길이가
-$m, n$일 때, LCS의 길이를 $O(mn)$에 구하는 알고리즘을 제시하세요.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Longest Increasing Subsequence&lt;/strong&gt; : 어떤 수열 $a_1, \dots a_n$ 이
-주어졌을 때, 이 중 가장 긴 증가하는 부분 수열 (not necessarily
-contiguous) 의 길이를 구하고자 합니다.&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;
-        &lt;p&gt;자명한 DP식을 생각해 봅시다. 각 $i$에 대해, $D_i$는 $i$번째를 끝
-원소로 하는 가장 긴 증가하는 부분 수열의 길이로 정의합니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;이제, $D_i = \max_{j &amp;lt; i, A_j &amp;lt; A_i} D_j + 1$ 로 계산
-가능합니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;이 DP를 그대로 계산하면 $O(n^2)$ 시간이 걸릴 것입니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;이보다 빠른 시간 복잡도 $O(n \log n)$ 을 달성하는 방법이,
-지금까지 공부한 내용만으로 2가지가 가능합니다. 두 가지를
-제시하세요. &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Lowest Common Ancestor - Binary Lifting &amp;amp; Sparse Table&lt;/strong&gt; : 트리 $T$에 대해, 정점
-$u, v$의 최소 공통 조상을 구하고자 합니다.&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;
-        &lt;p&gt;가장 자명한 방법은 두 노드를 루트까지 타고 올라가면서 모든 조상
-노드를 찾은 뒤, 조상 노드 번호의 수열을 루트부터 거꾸로
-확인하면서 어디까지 겹치는지 확인하는 방법입니다. 이는 $O(n)$
-시간이 걸립니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;약간의 &lt;strong&gt;Preprocessing&lt;/strong&gt;을 통해, 각 쿼리를 $O(\log n)$ 에
-처리하는 방법을 이해해 보고자 합니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;각 노드 $u$의 부모 노드를 안다면, 모든 노드의 2대 부모 노드를
-빠르게 구할 수 있음을 이해하세요. 이를 확장하여 $2^{k-1}$ 번째
-부모를 안다면 $2^{k}$ 번째 부모도 알 수 있음을 이해하세요.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;따라서, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;par[x][i]&lt;/code&gt; 를 $x$의 $2^i$번째 부모로 정의할 때, 이
-배열을 모두 채우는 데 $O(n \log n)$ 시간이 걸립니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;이 배열을 이용, $O(\log n)$ 시간에 각 쿼리에 답하는 방법을
-제시하세요. 일반성을 잃지 않고, 깊이가 같은 경우만 보여도 됨을 관찰하세요.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;목표는 $u$ 의 $k$번째 부모가 $v$의 $k$번째 부모와 같은 최소 $k$ 찾기입니다. $k$ 를 이진수로 맞추고, par 배열로 짜 맞춰 봅시다.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;하나는 Binary Search, 다른 하나는 Segment Tree &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents</summary></entry><entry><title type="html">VIII. Dynamic Programming &amp;amp; Divide and Conquer (1)</title><link href="http://localhost:4000/ds-alg-note/08-dp-dnc-1/" rel="alternate" type="text/html" title="VIII. Dynamic Programming &amp;amp; Divide and Conquer (1)" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/08-dp-dnc-1</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/08-dp-dnc-1/">&lt;div id=&quot;toc&quot;&gt;
+&lt;/div&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents Binary Search Tree STL set, map Disjoint Set Naive Approach Using Trees Optimizations Time Complexity Additional Topics / Problems Programming Practice Binary Search Tree Binary Search Tree란, 다음과 같은 성질을 만족하는 트리를 말합니다. 이진 트리입니다. 항상 왼쪽 서브트리의 값은 자기 자신보다 작고, 오른쪽 서브트리의 값은 자기 자신보다 큽니다. Binary Search Tree는 우리의 맥락에서 약간 벗어나 있으나 자료구조와 알고리즘 시간에 매우 중요하게 다룹니다. 익혀두는 것을 추천하지만, 우리가 앞으로 쓸 일은 아마도 없을 것입니다. 간단하게만 짚고 넘어가도록 하겠습니다. (i) 삽입 : 삽입은 기본적으로, 루트에서부터 출발해서, 삽입할 자리를 찾아가는 식으로 합니다. 대소관계에 따라 왼쪽으로 타고 내려갈지, 오른쪽으로 타고 내려갈지를 정한 다음, 내려가야 할 자리가 비었으면 그 자리에 집어넣습니다. (ii) 삭제 : 삭제는 다음과 같이 수행합니다. 삭제할 값 $x$를 트리에서 찾습니다. (삽입에서 찾는 방법과 비슷합니다.) 이 노드를, $x$의 오른쪽 서브트리에서 가장 작은 값이 있는 노드와 교환합니다. 이제 그 자리에 교환되어 들어간 노드를 삭제합니다. 왼쪽 자식 노드가 있다면 그 노드는 가장 작은 겂이 있는 노드가 아니므로 불가능하고, 따라서 노드의 자식이 2개일 수는 없습니다. 자식이 1개라면, 삭제된 노드 자리로 끌어올립니다. 자식이 없다면 그냥 넘어가도 됩니다. 결국, 두 연산 모두 검색 연산을 이용하여 이루어집니다. 이제, 시간 복잡도를 생각해 봅시다. 삽입 연산의 경우 검색 연산과 거의 동일하므로, 트리의 높이 $h$에 대해 $O(h)$ 시간이 들게 됩니다. 삭제의 경우, 검색 + 오른쪽 서브트리의 가장 작은 값 찾기의 두 번인데, 둘 모두 사실상 검색과 비슷한 연산이므로 $O(h)$ 시간입니다. 결국 삽입과 삭제 모두 $O(h)$ 시간이 드는 연산입니다. 그런데, 이진 트리의 경우 최악의 상황에서 $h$가 $n$까지 커질 수 있습니다. (한 줄로 쭉 늘어서 있는 경우) 우리는 별로 자세히 다루지는 않겠지만, 이러한 문제를 해결하기 위한 방법을 잠깐만 생각해 봅시다. Quick select때랑 약간 비슷한데, “약간의 시간을 지불해서”, “너무 나쁜 상황이 벌어지지 않게” 만들면 됩니다. 이것을 Balanced Binary Search Tree (BBST) 라고 부르고, 이를 구현하는 다양한 방법이 있습니다. 자세한 내용은 알고리즘 수업에서 다룹니다. 추가 자료를 Additional ii에 일부 제시해 두었습니다. STL set, map C++의 라이브러리에는 매우 편한 set 과 map이 있습니다. 이 set과 map은 Balanced Binary Search Tree의 일종인 Red-Black Tree로 구현되어 있기 때문에, BBST를 실제로 구현해서 쓸 일은 보통 없습니다. 이 라이브러리의 사용법을 반드시 익히길 권합니다. 예시 코드 보기 : BOJ 14425 문자열 집합 set, map, multiset, multimap은 활용도가 매우 높습니다. 참고로, priority queue로 할 수 있는 모든 연산은 multiset으로 똑같이 할 수 있고, 시간 복잡도도 $\order{\log n}$으로 같습니다. 그렇다고 해서 두 코드의 수행 시간이 같거나 비슷할 것으로 기대해서는 안 됩니다. 항상, 시간 복잡도는 중요하지만, 그렇다고 해서 전부는 아닙니다. Disjoint Set 이번 section에서 우리의 목표는, 다음과 같은 두 기능을 갖는 자료구조를 만드는 것입니다. (i) Union(a, b) : a가 들어 있는 집합과 b가 들어 있는 집합을 합치는 연산. (ii) Find(x) : x가 들어 있는 집합의 번호를 확인한다. 즉, Find(x) 와 Find(y) 를 통해 두 원소가 같은 집합에 소속되어 있는지 확인하는 작업이 목표. 예를 들어, 1부터 5까지의 숫자가 있다고 할 때, Union(1, 2), Union(3, 4) 를 하고 나면 $\Set{1, 2}, \Set{3, 4}, \Set{5}$ 가 됩니다. 이때 Find(3) 과 Find(4)는 같아야 하고, Find(1)과는 달라야 합니다. 또한, Union(1, 4) 나 Union(2, 3) 등은 모두 $\Set{1, 2, 3, 4}, \Set{5}$ 로 만드는 과정을 수행해야 합니다. Naive Approach 쉬운 방법으로, Linked List를 사용하는 방법을 예로 들 수 있습니다. $n$개의 숫자가 있고, 이들에 적당히 operation을 수행하려고 한다고 합시다. 각각의 원소가 $p$, $q$개인 집합을 합치는 데 드는 시간은 구현에 따라 다르지만, 효율성을 위해 작은 리스트를 큰 리스트에 합치는 식으로 작업하면 $O(\min(p, q))$ 이지만 이는 최대 $n/2$ 까지이고, 결국 한번의 Union에 $O(n)$이 걸릴 수 있습니다. 또한, Find의 경우 모든 element를 뒤지면서 이 리스트에 소속되어 있는지 찾는 방법밖에 없으므로 $O(n)$이 걸리게 됩니다. 물론, 추가적인 메모리를 쓰면, 매번 각 원소가 자신이 소속된 리스트의 헤드를 가리키는 포인터를 관리하는 등 방법을 쓸 수는 있지만, 이것도 Union은 빨리 할 수 없습니다. Using Trees 생각을 달리하여, 다음과 같이 생각해 봅시다. 각 집합은 하나의 트리로 나타낼 것이고, 각 원소마다 자신의 부모 노드의 번호만 적어 놓습니다. 즉, 각 원소에 대해 par(x)를 항상 관리한다고 생각하겠습니다. 이때, Find(x)는 약간 생각을 바꿔서, 자신이 소속된 트리의 루트 노드를 찾는 연산이라고 생각합니다. (부모가 없는 루트 노드의 부모는 자기 자신) 그렇다면, Union을 할 때 굳이 모든 노드의 par을 바꿔야 할까요? 트리 A와 트리 B를 합치려고 한다면, A의 루트를 B의 루트 밑에 달아 주기만 하면 (즉, par[root of A] = root of B) 한 번에 트리 A 전체를 트리 B에 달아 놓은 형태가 됩니다. 두 트리 (집합)의 Union이 끝났습니다! 이 방법을 생각해 보면, Union(x, y) 연산의 시간 복잡도는 결국 Find(x)와 Find(y)에 의해 결정됩니다. Find(x)하여, 그 찾은 루트를 Find(y)에 달아 주는 연산이 $\order{1}$이기 때문입니다. 그런데, Find 연산은 그 트리의 높이에 의해 결정되고, 최악의 경우 트리가 루트 밑으로 한 줄로 쭉 달릴 수 있으므로 $O(h) = O(n)$ 입니다. 그러면 별로 빨라진 것이 없습니다. Optimizations 위와 같은 처참한 상황을 막기 위해, 우리는 크게 세 가지를 생각합니다. Union by Rank : 각 트리마다, 항상 트리의 높이1를 따로 관리합니다. 이때, Union 연산에서 트리를 매달 때, 반드시 높이가 낮은 트리를 높이가 높은 트리에 매달도록 강제합니다. 이렇게 하면, 트리의 높이가 절대 $\log n$ 이상으로 커지지 않음을 보일 수 있습니다. (Additional 3) Union by Size : 각 트리마다, 트리의 크기 (노드의 개수) 를 관리하고, 작은 트리를 큰 트리에 붙이도록 강제합니다. 역시 Union by Rank와 마찬가지로, 트리의 높이가 절대 $\log n$ 이상으로 커지지 않음을 보일 수 있습니다. (Additional 4) Path Compression : 매번 Find 연산을 하다 보면, $x$가 포함된 트리의 루트를 알게 됩니다. 이때, Heuristic적인 생각으로, 내가 3-4-1-5-2-6의 과정으로 3에서부터 parent를 타고 올라가 6에 도달했다면, 이 트리를 모두 뜯어버리고 3, 4, 1, 5, 2를 전부 6에 그대로 매달아도 됩니다. 이 연산은 트리의 높이를 줄여 줄 것 같습니다. 실제 구현에서 사용하는 방법은 [Union by Rank or Size] + [Path Compression] 입니다. 이하, [Union Rule]과 [Path Comp] 라고 줄이겠습니다. Time Complexity Additional 3과 4에서 다룬 바와 같이, [Union Rule] 은 한번 연산에 대략 $\order{\log n}$ 정도가 걸림을 보장합니다. Union Rule 없이 Path Comp 만으로는, 첫 몇번의 Path comp는 별로 효율적이지 못하지만 나중의 case들이 효율적이기 때문에, 상당히 좋은 Bound를 찾을 수 있습니다.2 두 가지를 모두 사용하는, 효율적인 구현의 경우, Find 연산이 평균적으로 대단히 빠르게 수행됩니다. 이때, 이 시간 복잡도를 $\alpha(n)$ 이라는 함수로 씁니다. 이 함수는 Inverse Ackermann 함수라는 것인데, 우리가 상상할 수 있는 대부분의 함수보다 작은 값을 갖습니다. 인간이 가지고 있는 메모리를 모두 합쳐도, 그 안에 들어가는 $n$의 값에 대해 $\alpha(n) &amp;lt; 5$이기 때문에 우리는 이 함수를 사실상 상수라고 생각해도 큰 문제는 없습니다. Additional Topics / Problems Balanced Binary Search Tree의 예시로, AVL-Tree, Red-Black-Tree, B-Tree와 그 특수한 형태인 2-3-4 Tree가 있습니다. 이 자료구조들은 크게 검색과 검색 기반 연산 (삽입, 삭제, 검색)을 $\order{\log n}$ 에 수행합니다. 그 밖에도, 일반적인 이런 트리로는 절대 수행할 수 없어 보이는 기괴한 연산을 제공하는 자료구조들이 존재합니다.3 우리는 다루지 않을 예정이고 사실 저도 코딩할 줄 모르지만 ‘루트를 바꾸는 연산’을 Amortized $\order{\log n}$에 해 준다거나 하는... 뭐 그런 것도 있다고 합니다 (?) Union by rank만 사용하였을 때, 트리의 높이가 $O(\log n)$ 이상으로 증가하지 않는다는 사실을 납득하세요. 트리의 높이가 합치려는 트리의 높이 $h_1, h_2$보다 1만큼 증가하기 위해서는, 양쪽의 높이가 같아야 하며, 그러기 위해서는 그 트리의 노드 수는 적어도 $2h_1$개가 되어야 합니다. 귀납법을 통해, 높이가 $h$인 트리가 되려면 $2^h$개 정도의 노드가 필요함을 보이세요. Union by size에 대해서, 위 문제와 같은 내용을 보이세요. 2, 3에서 제시된 아이디어의 핵심을 요약하면, ‘매번 큰 쪽에 작은 쪽을 붙이도록 강제하면, 한번 합치는 연산을 할 때 결과물의 크기는 적어도 작은 쪽의 2배가 된다’ 라는 것입니다. 이 원칙은 당연해 보이지만, Tree DP 등에서 복잡도를 줄이는 핵심적인 트릭 중 하나입니다. 간단한 제약을 통해 $O(n^2)$ 시간 알고리즘을 $O(n \log n)$ 또는 $O(n \log^2 n)$ 으로 줄일 수 있기 때문입니다. Wikipedia에는 Union Rule + Path Comp를 수행할 때, 시간 복잡도가 $O(\log^* n)$ 임을 보이는 증명이 있습니다. $\log^* n$ 이라는 함수는, 대략 $\log \log \log \dots \log n$의 값이 1보다 작아지기 위해 필요한 $\log$의 개수입니다. 이 함수도 당연히 매우 느리게 증가하기 때문에, 실용적으로는 5 이하의 값을 가진다고 가정해도 됩니다. CLRS 책의 chapter 21에는 Inverse ackermann 함수에 관한 증명이 수록되어 있습니다. 관심이 있다면 참고하세요. 우리가 다루기에는 필요 이상으로 복잡하고, 별로 중요하지 않습니다. 다만 두 증명 모두 상당히 Elegant합니다. ($\star$) Union Find을 그래프의 용어로 쓰면, 노드들을 잇는 연산과 두 노드가 서로 연결되어 있는지 묻는 연산이라고 생각할 수 있습니다. 이를 Incremental connectivity라고 부릅니다. 반대로, 간선이 처음에는 연결되어 있고, 삭제되는 경우의 문제를 해결할 수 있을까요? 즉, union-find의 union 대신 disconnect(u, v) 연산을 빠르게 구현할 수 있을까요? 이 문제는 incremental보다 훨씬 어렵습니다. 처음에 연결된 상태가 Tree인 경우, 1981년에 Evan과 Shiloach가 $O(n \log n)$ 알고리즘을, 1997년에 Alstrup 등이 $O(n + m)$ 에 가능함을 보였습니다. Planar graph에 대해서 선형 시간 알고리즘이 제시된 것은 2015년의 일입니다. ($\star\star$) 이제, 두 문제를 합쳐 봅시다. connect와 disconnect연산을 모두 지원할 수 있을까요? 이 문제는 그래프가 모든 상황에서 Forest (서로 연결되지 않은 트리들) 임이 보장되는 경우 $O(n \log n)$ 에, 일반 그래프에서도 쿼리당 poly-logarithmic 시간에 풀 수 있음이 알려져 있습니다. Programming Practice C++의 STL multiset 등을 사용하여, BOJ 7662번을 해결해 보세요. 처음으로 STL에서 아예 지원하지 않는 자료구조를 구현해 보게 되었습니다. Disjoint set 자료구조를 구현해 보고, 구현체를 BOJ 1717번에 제출해서 확인해 보세요. C++로 구현한 올바른 구현체는 100ms 미만으로 동작합니다. 만약 생각보다 시간이 오래 걸린다면, 다른 사람의 빠른 구현을 참고해서 어떤 부분을 개선할 수 있을지 알아보세요. 엄밀하게는 높이와는 약간 다른데, 대충 높이라고 생각해도 논리진행에는 문제가 없습니다 &amp;#8617; 상당히 복잡하고 별로 중요하지 않으므로 생략합니다 &amp;#8617; 자료구조의 세계도 끝이 없습니다 :) &amp;#8617;</summary></entry><entry><title type="html">VIII. Dynamic Programming &amp;amp; Divide and Conquer (1)</title><link href="http://localhost:4000/ds-alg-note/08-dp-dnc-1/" rel="alternate" type="text/html" title="VIII. Dynamic Programming &amp;amp; Divide and Conquer (1)" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/08-dp-dnc-1</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/08-dp-dnc-1/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -1095,7 +990,243 @@ $x$에 대해, 그 노드를 루트로 하는 서브트리의 정점의 수를 �
 Notation에 대한 “철학” 이 부족한 것입니다. ㅎㅎ &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents</summary></entry><entry><title type="html">8월 2주차 Weekly PS</title><link href="http://localhost:4000/ps-weekly/ps-weekly-21Aug2/" rel="alternate" type="text/html" title="8월 2주차 Weekly PS" /><published>2021-08-17T00:00:00+09:00</published><updated>2021-08-17T00:00:00+09:00</updated><id>http://localhost:4000/ps-weekly/ps-weekly-21Aug2</id><content type="html" xml:base="http://localhost:4000/ps-weekly/ps-weekly-21Aug2/">&lt;div id=&quot;toc&quot;&gt;
+&lt;/div&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents Divide and Conquer Merge Sort 빠른 거듭 제곱 Dynamic Programming Memoization : Top Down DP Bottom Up DP DP 예시 : 2차원 경로 문제 Additional Topics / Problems * 오늘은 특별한 알고리즘을 배우는 것이 아니라, ‘방법론’ 에 가깝기 때문에, Section과 Additional의 구분이 별로 없고 모두 소문제들로 구성되어 있습니다. 여기 나온 모든 소문제를 고민해 보길 권합니다. Divide and Conquer 어떤 문제들은 문제 자체가 재귀적입니다. 즉, 어떤 커다란 문제 X를 풀기 위해, X를 여러 개의 작은 문제 $x_1, x_2, \dots x_k$로 나눈 다음, 각각을 풀고, 합칠 수 있습니다. 프로그래밍으로 생각해 보자면, 재귀함수를 쓰는 것이 자연스러운 문제들이 있습니다. 이러한 문제들에 대해, Divide and Conquer (분할 정복) 이라는 기법이 매우 유용합니다. 지금까지 여러분은 분할 정복을 쓰는 알고리즘을 상당히 많이 만나 보았기 때문에, 분할 정복이라는 말이 익숙하지 않더라도 생각하는 방법 자체는 그렇게 낯설지 않을 것입니다. 이 문제를 풀기 어렵지만, 작은 문제를 풀고 합치는 게 더 쉬울 수도 있다면, 분할 정복을 생각해 볼 수 있겠습니다. Merge Sort 병합 정렬 (Merge Sort) 는 대표적인 분할 정복 기법입니다. 앞서 말한 분할 정복을 쓰는 이유가 가장 잘 나타납니다. $n$ 크기의 배열을 정렬하는 것보다, $n/2$ 크기의 배열 2개를 정렬하고, 두 정렬된 배열을 정렬성을 유지하면서 합치는 것이 더 빠르기 때문입니다. 아래 예시와 Additional (1), (2) 모두 분할 정복을 이용하는 훌륭한 예시입니다. 빠른 거듭 제곱 Divide and Conquer를 사용하는 다른 예시를 생각해 봅시다. 이번의 목표는, 어떤 수 $x$의 $y$제곱을 계산하는 일입니다. 상식적으로, 곱셈을 $y$ 번 하는 일이므로, $O(y)$에 하는 것이 자연스러워 보입니다. 암호학, 특히 RSA 암호 체계에서는 $x^y \pmod{p}$를 계산할 일이 매우 많은데, $y$가 거대한 수인 경우도 많이 있습니다. 만약 $10,702,103$의 $2,718,281,828$ 제곱 같은 것을 계산하려고 한다면, 어떨까요? 이때 우리는 ‘exponentiation by squaring’ 이라는 방법을 쓸 수 있습니다. 만약 $x^y$에서 $y$가 홀수라면, $x^{y-1} \times x$로 식을 정리합니다. 만약 $y$가 짝수라면, $(x^{y/2})^2$ 로 정리합니다. 이 방법이 $\order{\log y}$ 에 제곱을 수행한다는 사실을 생각해 봅시다. Dynamic Programming Memoization : Top Down DP 분할 정복은 정말 강력한 도구입니다. 예를 들어, 피보나치 수열도 분할 정복으로 계산할 수 있습니다. fib(n)을 계산하기 위해, fib(n-1) 과 fib(n-2)를 호출하면 됩니다. 그러나 이 방법의 시간 복잡도는 처참합니다. 호출되는 과정을 보면, $f(n)$ 은 한 번 호출하더라도, $f(1)$ 이나 $f(2)$ 같은 함수들을 수없이 많이 호출하고 있기 때문입니다. 우리는 이런 중복되는 과정을, 약간의 메모리를 이용하여, 한번만 계산하고 싶습니다. 이를 위해 사용하는 기법이 Memoization입니다.1 미리 배열 fib[]에, 매번 호출될 때마다 내가 계산한 값을 적어 놓습니다. 매번 함수가 호출될 때마다, 혹시 이 값이 내가 본 적 있는 값인지 메모지를 확인하고, 메모지에 적힌 값은 다시 계산하는 대신, 메모지를 보고 바로 답하는 것입니다. 함수 호출의 순서를 보면, 큰 값들 (TOP) 이 먼저 호출되고, 그 과정에서 작은 값들 (DOWN)의 값들의 계산이 필요함을 눈치챈 다음, 내려가면서 이 값들을 계산하고 다시 올라오면서 문제를 해결하는 과정을 볼 수 있습니다. 이 과정을 TOP-DOWN 방식의 Dynamic Programming 이라고 부릅니다. Bottom Up DP 물론, 피보나치 수열을 계산하기 위해 꼭 저런 방식을 쓸 필요는 없습니다. 작은 값들을 이용해서 큰 값을 계산할 수만 있다면, 다음과 같이 간단하게 코딩해도 됩니다. for (int i = 2; i&amp;lt;=n; i++) fib[i] = fib[i-1] + fib[i-2] 이 방법은, 계산 순서를 볼 때, 작은 값들을 먼저 계산해놓고 그걸 이용해서 위로 올라가며 계산하는 방법입니다. 이를 Bottom-UP 방식의 Dynamic Programming이라고 부릅니다. Top-Down과 Bottom-Up 중 무엇이 더 구현하기 편하고, 어느쪽이 유리한지는 그때그때 다르기 때문에, 상황에 따라 다른 방법을 사용해야 합니다. 중요한 것은 다음의 원칙입니다. Optimal Substructure : 큰 문제 $f(X)$를 해결하기 위해, $f(Y)$ such that $Y &amp;lt; X$의 답을 이용하는 것입니다.2 즉, 작은 문제의 답이 항상 더 큰 문제의 답을 제공하는데 도움이 되는 경우를 의미합니다. 이 조건은 Divide and Conquer과 Dynamic Programming 모두에 적용됩니다. Overlapping Subproblem : 위 Overlapping Substructure를 적용함에 있어서, 겹치는 문제를 여러번 풀어야 해서 이를 최적화하고 싶은 경우를 의미합니다. Fibonacci가 대표적입니다. 이 원칙은 Dynamic Programming의 기본 원리입니다. DP 예시 : 2차원 경로 문제 양수로 이루어진 $n \times n$ 행렬이 주어져 있습니다. 이때, 우리는 $(1, 1)$ 에서 출발하여, $(n, n)$ 위치까지 이동하되, 아래쪽 또는 오른쪽으로만 이동할 수 있습니다. 이동하는 과정에서, 행렬의 방문한 칸에 쓰여 있는 숫자들을 더한 값이 이 경로의 최종 점수입니다. 점수를 최대화하는 이동 경로를 찾아 봅시다. Optimal Substructure를 생각해 봅시다. 어떤 칸 $(i, j)$ 에 도착하기 위해서는, $(i-1, j)$ 또는 $(i, j-1)$ 에서 와야 합니다. 이때, $(i-1, j)$ 까지 어떻게 왔는지는 별로 관심이 없지만, 이 시점까지 온 점수가 최대가 되면 좋을 것 같습니다. 즉, 경로와 무관하게 일단 어떻게든 최선을 다해 $(i-1, j)$ 또는 $(i, j-1)$ 까지 왔다면, 그 경로들에서 한칸을 연장하여 $(i, j)$ 에 오는 최적 경로가 나타나기 때문입니다. 즉, 다음과 같은 DP를 구상합니다. \(C_{ij} = \begin{cases} 0 &amp;amp; \text{if } i = 0 \text{ or } j = 0\\ \max({C_{i-1, j}, C_{i, j-1}}) + M_{ij} &amp;amp; \text{otherwise} \end{cases}\) 만약 $C_{44}$를 계산하려고 한다면, $C_{34}$와 $C_{43}$ 을 계산해야하고, 그러면 $C_{33}, C_{24}, C_{33}, C_{42}$ 를 계산해야 합니다. 벌써 $C_{33}$ 을 두번 계산했습니다! Overlapping Substructure가 보입니다. 이를 최적화하여 계산해도 좋고, 아래와 같이 Bottom-Up DP를 생각해도 됩니다. for (int i = 1; i&amp;lt;=n; i++) for (int j = 1; j&amp;lt;=n; j++) C[i][j] = M[i][j] + max(C[i-1][j], C[i][j-1]); 이렇게 하면 Dynamic Programming을 이용, $O(n^2)$ 에 계산하게 됩니다. 방금 본 것처럼, 2차원 그리드 위에서도 합리적인 DP 순서를 줄 수 있으면 (왼쪽 위부터 오른쪽 아래) 다이나믹 프로그래밍이 가능합니다. 이외에도 DP는 정말 다양한 형태로 등장하고, 유용하기 때문에 많은 연습이 필요합니다. 추천문제 : 아래 (3), (4), (5) 이후에도 더 풀어보고 싶다면, BOJ 기준 1005, 11066, 9251번을 확인해 보세요. Additional Topics / Problems Karatsuba Algorithm 우리가 곱셈은 $O(1)$에 수행된다고 믿었지만, 사실 생각해 보면 상식적으로 그럴 리가 없습니다. 10억 자리 수를 곱하는 일과 $3 \times 5$를 하는 일이 같은 시간에 수행될 리는 없기 때문입니다. 일상적으로 사용하는 수의 범위에서, 특히 C++의 int 나 long long 범위에서 곱셈이 자연스럽게 상수 비슷한 시간에 수행되기 때문에 우리는 앞으로도 $O(1)$에 기본 사칙연산이 작동한다는 믿음을 갖고 말하겠지만, 여기서는 잠깐만 이 부분을 의심해 봅시다. 다음 흐름을 따라가며, Karatsuba의 아이디어와, 이 아이디어를 처음 들었던 유명한 수학자 Kolmogorov3가 받았던 충격을 느껴봅시다. (1) 초등학교에서 배운 방법대로 $139 \times 312$를 계산해 보고, 이 방법을 그대로 컴퓨터로 구현해 낸다면 $n$자리 수를 곱셈하는데 어느정도의 시간이 들지 예측해 보세요. (2) 이하, $x, y$는 $B$진법의 $n$자리 수라고 합시다. 먼저, 적당한 $m &amp;lt; n$을 골라, $x = x_1 B^m + x_0$, $y = y_1 B^m + y_0$ 이라고 씁시다. $m$을 $n$의 절반이 되게 고르면 됩니다.4 (3) 이제, $xy$ 가 $(x_1 B^m + x_0) (y_1 B^m + y_0)$ 이므로, $x_1y_1 B^{2m} + (x_1y_0 + x_0y_1)B^m + x_0y_0$으로 나타납니다. $x_1y_1, x_0y_0$은 그대로 계산하고, 가운데 항을 계산하는 대신, $(x_1 + x_0) (y_1 + y_0)$을 계산하고 앞 두개를 빼면 같은 항을 얻습니다. (4) 이 알고리즘의 시간 복잡도를 증명하세요. Week 1의 Master Theorem. ($\star$)Closest Pair Problem : BOJ 2261 다음 문제를 고민하고 해결해 봅시다. $\R^2$ 상의 점 $n$개에 대하여, 가장 가까운 두 점 간의 거리를 찾고자 합니다. 조금 더 수학적으로는, $l = \min_{i, j} d(p_i, p_j)$ 을 찾는 문제입니다. 흐름을 따라가며, 분할 정복이 얼마나 강력한 툴인지 다시한번 느껴봅시다. (1) 자명한 ‘쉬운 알고리즘’ 은 $O(n^2)$ 입니다. 우리는 이 문제에 대해 $O(n \log^2 n)$, 나아가 $O(n \log n)$ 알고리즘을 생각하려고 합니다. (2) 먼저, Divide and Conquer를 생각하기 위해, $x$축을 기준으로 반으로 자르겠습니다. (3) 그러면, [두 점이 왼쪽에 있는 경우], [두 점이 오른쪽에 있는 경우], [양쪽에서 하나씩 뽑는 경우] 를 각각 풀면 됩니다. 이 방법이 시간 복잡도에 전혀 발전이 없음을 보이세요. (4) 그러나, [양쪽] 케이스를 정말 모두 확인해야 할까요? 얇은 Strip만 보면 충분함을 관찰하세요. (5) Challenge 양쪽 케이스에서, Strip 안의 점 $p_i$에 대해, 최대 7번의 비교로 충분함을 보이세요. (6) 이 방법의 시간 복잡도를 증명하고, 어떻게 더 줄일지 생각해 보세요. 행렬 곱셈 순서 : BOJ 11049 BOJ 11049번을 보고, 이 문제를 어떻게 해결할 수 있는지 생각해 봅시다. (1) 단순하게는 풀 방법이 잘 떠오르지 않습니다. 하나 가능한 방법은 모든 가능한 행렬 곱셈 순서를 Naive하게 나열하고 확인하는 것인데, 이 방법에서 확인해야 할 곱셈 순서가 몇 가지일까요? 이걸 계산하는 문제는 상당히 어렵습니다. 언젠가 수학 세션을 하게 되면 생각해 보기로 합시다. (2) 마지막 곱셈의 위치를 기준으로 생각해 봅시다. 마지막 곱셈의 위치가 $(A_1 A_2 \dots A_k)$와 $(A_{k+1} A_{k+2} \dots A_n)$ 을 곱하는 것일 때... (3) DP[i][j] = i번째부터 j번째까지의 행렬을 최대한 잘 곱했을 때의 최소 비용 이라고 정의합시다. 점화식을 세워 보고, 그 점화식을 어떻게 빨리 계산할 수 있을지 고민해 보세요. Knapsack Problem : BOJ 12865 이 문제는 매우 유명한 0-1 Knapsack이라는 문제입니다. 각 물품마다 $w_i$의 무게와 $v_i$의 가치가 있고, 가방에 무게가 $W$ 이하가 되게 넣어야 할 때 가치를 최대화하세요. (1) Heuristic은 매우 중요한 알고리즘의 일부이지만 이 문제에서 먹히지 않습니다. 혹시 Naive하게 $v_i / w_i$ 가 최대인것부터 밀어넣는다는 생각을 하셨나요? 가방에 2의 무게만 넣을 수 있고, 무게가 1, 가치가 5인 물건과 무게가 2, 가치가 6인 물건이 있는 경우를 생각해 보세요. (2) DP 문제를 접근하는 좋은 방법은, DP 테이블을 먼저 구상하는 것입니다. DP[i][j] 를 다음과 같이 정의할 때... 라고 시작합시다. 어떻게 정의해야 할까요? 힌트 : DP 칸수를 $N \times W$ 로 시도해 봅시다. DP on data structures : BOJ 15681 고정관념을 버리면 쉽게 풀 수 있습니다. 루트 있는 트리에서, 노드 $x$에 대해, 그 노드를 루트로 하는 서브트리의 정점의 수를 빠르게 답하려면 어떻게 할까요? 이 문제는 쿼리형 문제 라고 부르는 형태인데, “쿼리” 라고 불리는 “질문”이 $Q$개 주어지고 이 쿼리들에 답해야 하는 상황입니다. 자료구조에 대해 얘기할 때, OO에 대한 쿼리를 빠르게 처리하는 자료구조 라는 식으로 이해한 기억이 있을 것입니다. 쿼리가 들어올 때마다 트리를 돌아보면서 대답하면, 한 쿼리를 해결하는 데 $O(n)$ 시간이 들고 (루트만 계속 물어볼 수도 있으니까), 전체 $O(qn)$ 시간이 든다는 의미입니다. 당연히 이 복잡도는 용납할 수 없습니다. 쿼리당 $O(1)$ 에 해결하기 위해, 미리 시간을 좀 써서 전처리 (Preprocessing) 하고, 쿼리가 들어오면 그때그때 답해주면 어떨까요? 즉, $O(n + q)$ 에 해결하겠다는 의미입니다. ‘기억하다’ 라는 뜻의 memorization이 아닙니다. ‘메모하다’ 라고 받아들여 주세요 &amp;#8617; 이렇게 써놓기는 했지만 $X, Y$가 수일 때만 사용가능한 것은 아닙니다. 합리적인 Order를 줄 수 있으면 되겠죠? &amp;#8617; Andrey Kolmogorov. 주로 확률론을 연구했지만 알고리즘에도 상당히 많은 관심을 가졌던 수학자입니다 &amp;#8617; 아직 “$n$이 홀수면 어떻게 하지” 라는 고민이 든다면, Big-O Notation에 대한 “철학” 이 부족한 것입니다. ㅎㅎ &amp;#8617;</summary></entry><entry><title type="html">IX. Dynamic Programming &amp;amp; Divide and Conquer (2)</title><link href="http://localhost:4000/ds-alg-note/09-dp-dnc-2/" rel="alternate" type="text/html" title="IX. Dynamic Programming &amp;amp; Divide and Conquer (2)" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>http://localhost:4000/ds-alg-note/09-dp-dnc-2</id><content type="html" xml:base="http://localhost:4000/ds-alg-note/09-dp-dnc-2/">&lt;div id=&quot;toc&quot;&gt;
+  &lt;p&gt;Contents&lt;/p&gt;
+&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;오늘은 &lt;strong&gt;연습문제만&lt;/strong&gt; 있습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Segment Tree&lt;/strong&gt; : 수열을 다루는 자료구조중 하나입니다. 어떤 수열
+$a_1, a_2, \dots a_n$ 이 주어집니다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;구간 $[i, j]$가 주어지면, $a_i + a_{i+1} + \dots + a_j$ 의 값을
+구합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;$i, v$ 가 주어지면, $a_i$ 에 $v$를 더합니다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;첫번째 쿼리만 주어지고, 두번째 쿼리가 주어지지 않는다면, 이
+문제를 쿼리당 $O(1)$ 에 처리할 수 있습니다. 부분합 배열이라고
+부릅니다. 이 방법을 설명하세요.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;우리는 Complete Binary Tree를 만들어서 이 문제를 해결하고자
+합니다. 각 노드는 어떤 구간을 담당할 것입니다. 각 노드들은 다음
+원칙을 지킵니다. “노드의 값은, 두 자식 노드의 값을 합한 값을
+갖는다. 각 노드는 두 자식 노드가 담당하는 구간을 합한 구간을
+담당한다&quot;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;전체 노드의 개수가 몇 개인지 생각해 보세요. 첫 번째 쿼리가
+주어졌을 때, 이를 해결하기 위해 총 확인해야 하는 노드가 몇
+개인지 생각해 보세요. 두 번째 쿼리에 대해서도 같은 과정을 반복해
+보세요.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;이 방법이 두 쿼리를 빠르게 해결할 수 있음을 이해하고, 시간
+복잡도를 계산해 보세요.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Segment Tree with Lazy Propagation&lt;/strong&gt; : 위 문제와 거의 같습니다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;구간 $[i, j]$가 주어지면, $a_i + a_{i+1} + \dots + a_j$ 의 값을
+구합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;구간 $[i, j]$와 값 $v$ 가 주어지면, $a_i, a_{i+1}, \dots a_j$ 에
+모두 $v$를 더합니다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;일반적인 세그먼트 트리가 이 문제를 잘 해결하지 못함을
+관찰하세요.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;추가적인 기법으로, 갱신을 “미루는” 방법을 사용하겠습니다. 각
+노드마다, 이 노드가 지금까지 얼마나 갱신을 미루고 있었는지를
+추가로 저장합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;1번, 2번 쿼리가 주어졌을 때 각각 어떻게 이 정보를 이용하여 값을
+계산할지 제시하고, 그 방법들의 시간 복잡도를 계산하세요.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Merge Sort Tree&lt;/strong&gt; : 이번에는 위와 같이 수열이 주어지는 상황에서,
+이런 문제를 생각하겠습니다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;구간 $[i, j]$와 어떤 수 $k$가 주어지면,
+$a_i, a_{i+1}, \dots a_j$ 에서 $k$보다 큰 값의 개수를 구합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;머지 소트 트리는, 세그먼트 트리와 거의 같은 방법으로 만들되, 각
+트리가 머지 소트의 중간 과정을 담고 있는 트리입니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;즉, 각 트리가 정수값 하나가 아닌 작은 수열을 들고 있습니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;이 트리가 위 문제를 빠르게 해결할 수 있음을 보이세요. 목표하는
+시간복잡도는 쿼리당 $O(\log^2 n)$ 입니다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Edit Distance&lt;/strong&gt; : 편집 거리란, 두 수열 $S, T$에 대해, 값의 삽입,
+삭제, 대체 연산을 이용하여 $S$를 $T$로 만들고자 할 때 필요한
+최소한의 연산 횟수로 정의합니다. 각 수열의 길이가 $m, n$ 일 때, 편집
+거리를 $O(mn)$에 구하는 알고리즘을 제시하세요.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Longest Common Subsequence&lt;/strong&gt; : 두 수열 $S, T$에 대해, 두 수열이
+가지고 있는 최대 공통 부분 수열을 구하고자 합니다. 두 수열의 길이가
+$m, n$일 때, LCS의 길이를 $O(mn)$에 구하는 알고리즘을 제시하세요.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Longest Increasing Subsequence&lt;/strong&gt; : 어떤 수열 $a_1, \dots a_n$ 이
+주어졌을 때, 이 중 가장 긴 증가하는 부분 수열 (not necessarily
+contiguous) 의 길이를 구하고자 합니다.&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;자명한 DP식을 생각해 봅시다. 각 $i$에 대해, $D_i$는 $i$번째를 끝
+원소로 하는 가장 긴 증가하는 부분 수열의 길이로 정의합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;이제, $D_i = \max_{j &amp;lt; i, A_j &amp;lt; A_i} D_j + 1$ 로 계산
+가능합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;이 DP를 그대로 계산하면 $O(n^2)$ 시간이 걸릴 것입니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;이보다 빠른 시간 복잡도 $O(n \log n)$ 을 달성하는 방법이,
+지금까지 공부한 내용만으로 2가지가 가능합니다. 두 가지를
+제시하세요. &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Lowest Common Ancestor - Binary Lifting &amp;amp; Sparse Table&lt;/strong&gt; : 트리 $T$에 대해, 정점
+$u, v$의 최소 공통 조상을 구하고자 합니다.&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;가장 자명한 방법은 두 노드를 루트까지 타고 올라가면서 모든 조상
+노드를 찾은 뒤, 조상 노드 번호의 수열을 루트부터 거꾸로
+확인하면서 어디까지 겹치는지 확인하는 방법입니다. 이는 $O(n)$
+시간이 걸립니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;약간의 &lt;strong&gt;Preprocessing&lt;/strong&gt;을 통해, 각 쿼리를 $O(\log n)$ 에
+처리하는 방법을 이해해 보고자 합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;각 노드 $u$의 부모 노드를 안다면, 모든 노드의 2대 부모 노드를
+빠르게 구할 수 있음을 이해하세요. 이를 확장하여 $2^{k-1}$ 번째
+부모를 안다면 $2^{k}$ 번째 부모도 알 수 있음을 이해하세요.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;따라서, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;par[x][i]&lt;/code&gt; 를 $x$의 $2^i$번째 부모로 정의할 때, 이
+배열을 모두 채우는 데 $O(n \log n)$ 시간이 걸립니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;이 배열을 이용, $O(\log n)$ 시간에 각 쿼리에 답하는 방법을
+제시하세요. 일반성을 잃지 않고, 깊이가 같은 경우만 보여도 됨을 관찰하세요.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;목표는 $u$ 의 $k$번째 부모가 $v$의 $k$번째 부모와 같은 최소 $k$ 찾기입니다. $k$ 를 이진수로 맞추고, par 배열로 짜 맞춰 봅시다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;하나는 Binary Search, 다른 하나는 Segment Tree &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ds-alg-note" /><summary type="html">Contents 오늘은 연습문제만 있습니다. Segment Tree : 수열을 다루는 자료구조중 하나입니다. 어떤 수열 $a_1, a_2, \dots a_n$ 이 주어집니다. 구간 $[i, j]$가 주어지면, $a_i + a_{i+1} + \dots + a_j$ 의 값을 구합니다. $i, v$ 가 주어지면, $a_i$ 에 $v$를 더합니다. 첫번째 쿼리만 주어지고, 두번째 쿼리가 주어지지 않는다면, 이 문제를 쿼리당 $O(1)$ 에 처리할 수 있습니다. 부분합 배열이라고 부릅니다. 이 방법을 설명하세요. 우리는 Complete Binary Tree를 만들어서 이 문제를 해결하고자 합니다. 각 노드는 어떤 구간을 담당할 것입니다. 각 노드들은 다음 원칙을 지킵니다. “노드의 값은, 두 자식 노드의 값을 합한 값을 갖는다. 각 노드는 두 자식 노드가 담당하는 구간을 합한 구간을 담당한다&quot; 전체 노드의 개수가 몇 개인지 생각해 보세요. 첫 번째 쿼리가 주어졌을 때, 이를 해결하기 위해 총 확인해야 하는 노드가 몇 개인지 생각해 보세요. 두 번째 쿼리에 대해서도 같은 과정을 반복해 보세요. 이 방법이 두 쿼리를 빠르게 해결할 수 있음을 이해하고, 시간 복잡도를 계산해 보세요. Segment Tree with Lazy Propagation : 위 문제와 거의 같습니다. 구간 $[i, j]$가 주어지면, $a_i + a_{i+1} + \dots + a_j$ 의 값을 구합니다. 구간 $[i, j]$와 값 $v$ 가 주어지면, $a_i, a_{i+1}, \dots a_j$ 에 모두 $v$를 더합니다. 일반적인 세그먼트 트리가 이 문제를 잘 해결하지 못함을 관찰하세요. 추가적인 기법으로, 갱신을 “미루는” 방법을 사용하겠습니다. 각 노드마다, 이 노드가 지금까지 얼마나 갱신을 미루고 있었는지를 추가로 저장합니다. 1번, 2번 쿼리가 주어졌을 때 각각 어떻게 이 정보를 이용하여 값을 계산할지 제시하고, 그 방법들의 시간 복잡도를 계산하세요. Merge Sort Tree : 이번에는 위와 같이 수열이 주어지는 상황에서, 이런 문제를 생각하겠습니다. 구간 $[i, j]$와 어떤 수 $k$가 주어지면, $a_i, a_{i+1}, \dots a_j$ 에서 $k$보다 큰 값의 개수를 구합니다. 머지 소트 트리는, 세그먼트 트리와 거의 같은 방법으로 만들되, 각 트리가 머지 소트의 중간 과정을 담고 있는 트리입니다. 즉, 각 트리가 정수값 하나가 아닌 작은 수열을 들고 있습니다. 이 트리가 위 문제를 빠르게 해결할 수 있음을 보이세요. 목표하는 시간복잡도는 쿼리당 $O(\log^2 n)$ 입니다. Edit Distance : 편집 거리란, 두 수열 $S, T$에 대해, 값의 삽입, 삭제, 대체 연산을 이용하여 $S$를 $T$로 만들고자 할 때 필요한 최소한의 연산 횟수로 정의합니다. 각 수열의 길이가 $m, n$ 일 때, 편집 거리를 $O(mn)$에 구하는 알고리즘을 제시하세요. Longest Common Subsequence : 두 수열 $S, T$에 대해, 두 수열이 가지고 있는 최대 공통 부분 수열을 구하고자 합니다. 두 수열의 길이가 $m, n$일 때, LCS의 길이를 $O(mn)$에 구하는 알고리즘을 제시하세요. Longest Increasing Subsequence : 어떤 수열 $a_1, \dots a_n$ 이 주어졌을 때, 이 중 가장 긴 증가하는 부분 수열 (not necessarily contiguous) 의 길이를 구하고자 합니다. 자명한 DP식을 생각해 봅시다. 각 $i$에 대해, $D_i$는 $i$번째를 끝 원소로 하는 가장 긴 증가하는 부분 수열의 길이로 정의합니다. 이제, $D_i = \max_{j &amp;lt; i, A_j &amp;lt; A_i} D_j + 1$ 로 계산 가능합니다. 이 DP를 그대로 계산하면 $O(n^2)$ 시간이 걸릴 것입니다. 이보다 빠른 시간 복잡도 $O(n \log n)$ 을 달성하는 방법이, 지금까지 공부한 내용만으로 2가지가 가능합니다. 두 가지를 제시하세요. 1 Lowest Common Ancestor - Binary Lifting &amp;amp; Sparse Table : 트리 $T$에 대해, 정점 $u, v$의 최소 공통 조상을 구하고자 합니다. 가장 자명한 방법은 두 노드를 루트까지 타고 올라가면서 모든 조상 노드를 찾은 뒤, 조상 노드 번호의 수열을 루트부터 거꾸로 확인하면서 어디까지 겹치는지 확인하는 방법입니다. 이는 $O(n)$ 시간이 걸립니다. 약간의 Preprocessing을 통해, 각 쿼리를 $O(\log n)$ 에 처리하는 방법을 이해해 보고자 합니다. 각 노드 $u$의 부모 노드를 안다면, 모든 노드의 2대 부모 노드를 빠르게 구할 수 있음을 이해하세요. 이를 확장하여 $2^{k-1}$ 번째 부모를 안다면 $2^{k}$ 번째 부모도 알 수 있음을 이해하세요. 따라서, par[x][i] 를 $x$의 $2^i$번째 부모로 정의할 때, 이 배열을 모두 채우는 데 $O(n \log n)$ 시간이 걸립니다. 이 배열을 이용, $O(\log n)$ 시간에 각 쿼리에 답하는 방법을 제시하세요. 일반성을 잃지 않고, 깊이가 같은 경우만 보여도 됨을 관찰하세요. 목표는 $u$ 의 $k$번째 부모가 $v$의 $k$번째 부모와 같은 최소 $k$ 찾기입니다. $k$ 를 이진수로 맞추고, par 배열로 짜 맞춰 봅시다. 하나는 Binary Search, 다른 하나는 Segment Tree &amp;#8617;</summary></entry><entry><title type="html">2021 여름방학</title><link href="http://localhost:4000/retrospects-and-plans/finishing-2021-summer/" rel="alternate" type="text/html" title="2021 여름방학" /><published>2021-08-25T00:00:00+09:00</published><updated>2021-08-25T00:00:00+09:00</updated><id>http://localhost:4000/retrospects-and-plans/finishing-2021-summer</id><content type="html" xml:base="http://localhost:4000/retrospects-and-plans/finishing-2021-summer/">&lt;p&gt;방학은 많이 놀았습니다. ㅋㅋ!&lt;/p&gt;
+
+&lt;h2 id=&quot;academic&quot;&gt;Academic&lt;/h2&gt;
+
+&lt;h3 id=&quot;courses&quot;&gt;Courses&lt;/h3&gt;
+
+&lt;h4 id=&quot;biology--biology-lab&quot;&gt;Biology &amp;amp; Biology Lab&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;학과마다 교양 이수 요건이 다른데, 저희는 과학 3과목 (물리, 화학, 생물의 1, 2, 단학기 버전 중 자유) 과 각각의 실험을 이수해야 합니다.&lt;/li&gt;
+  &lt;li&gt;1학년에서 늦어도 2학년 정도에 이수하는 것이 일반적이지만, 그러지 않았기 때문에 언젠가 과학을 하나 더 들어야 했습니다.&lt;/li&gt;
+  &lt;li&gt;물리학 II를 듣고 싶었지만 픽에 실패해서, 아무거나 듣고 졸업에 문제 없게 하자는 생각에 생물학을 듣기로 했습니다.&lt;/li&gt;
+  &lt;li&gt;사실 실험 보고서는 나름 열심히 썼지만 생물학 공부는 제대로 못 했는데 교수님이 학점을 정말 많이 뿌린것 같습니다. ㅋㅋ!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;study&quot;&gt;Study&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;다음학기에 현대대수학 2를 듣는데 공부할 시간이 많지 않을 것 같으므로, Fraleigh 책 뒷부분을 좀 공부했습니다.
+    &lt;ul&gt;
+      &lt;li&gt;정수론과 겹치는게 꽤 많아서 (Unique Factorization Domain 등) 그럭저럭 괜찮았습니다.&lt;/li&gt;
+      &lt;li&gt;대수학을 더 공부할 날이 올까요?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;확률론을 보려고 했는데 딱히 펴보진 못했습니다. 지난학기에 배운 실해석학을 좀 복습했는데 그것만으로도 시간이 많이 들어서…&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/ds-alg-note/&quot;&gt;알고리즘 노트정리&lt;/a&gt; 에 있는 자료를 이용해서 지인의 알고리즘 공부를 도와줬습니다. 제게도 리뷰하는 좋은 시간이 되었습니다.&lt;/li&gt;
+  &lt;li&gt;남은 방학 1주일 동안, 다음학기 ML 수업을 위해 Vector Calculus를 정말 빠르게 훑어볼 생각입니다. 대략 하루에 한 단원씩 달리면 시간이 맞습니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;project&quot;&gt;Project&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;수리과학부 졸업논문 주제에 대해 수치해석 및 관련 분야를 연구하시는 교수님께 지도를 받게 되었습니다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;/cs-adventure/chan-vese/&quot;&gt;Chan-Vese Algorithm&lt;/a&gt; 에 대해 공부해보도록 조언을 받았습니다. Image Processing도 굉장히 새로운 주제여서 재밌었습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;친한 친구들과 뭔가 주제를 잡고 공부도 해보고, 재밌는게 있으면 직접 실험도 해보고 아이디어가 있으면 공유하면서 뭔가 해보는 프리한 프로젝트에 도전해보고 있습니다. 주제는 일단 Graph Similarity 관련된 쪽으로 하고 있고, 논문 3편정도를 같이 읽고 공부했습니다. &lt;a href=&quot;//advanced-algorithms/random-walk-on-graphs/&quot;&gt;Pagerank와 Graph Random Walk 에 관한 포스트&lt;/a&gt; 도 그쪽에서 공부한 내용.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;pscp&quot;&gt;PS/CP&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;SCPC 2차예선에서 탈락했습니다. &lt;a href=&quot;/cp-rounds/SCPC-2021-Round2/&quot;&gt;FFT와 함께 폭발한 후기&lt;/a&gt; 를 볼 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;코드잼 티셔츠를 수령했습니다. :)&lt;/li&gt;
+  &lt;li&gt;UCPC는 출전하지 못했습니다. 올해의 아쉬운 일 1위일 예정입니다.&lt;/li&gt;
+  &lt;li&gt;DP, Segment tree, Graph 등 주제를 정해서 1주일씩 잡고 몇문제 같이 푸는 식으로 스터디를 했는데, 효과가 나름 괜찮았습니다. Weekly-ps에서 대부분의 풀이를 볼 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;Codeforces에 복귀해서 3라운드만에 170점을 올리고 오렌지 레이팅을 복구했습니다. 제 인생 최고의 CP 퍼포먼스였던듯 합니다.&lt;/li&gt;
+  &lt;li&gt;학기중에는 많이 풀기보다는 천천히 고민하는 과정을 즐기려고 합니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;miscellaneous&quot;&gt;Miscellaneous&lt;/h2&gt;
+&lt;p&gt;2학기가 끝난 후에는 졸업까지 한 학기를 남겨놓게 됩니다. 이 한 학기를 어떻게 할지 고민 중입니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;2022년 1월부터 8월 정도까지 기업 인턴십 등을 통해 Industry에 대해 조금 알아보고, 진로에 대해 고민하는 방향&lt;/li&gt;
+  &lt;li&gt;바로 다음 학기를 다니고 대학원에 진학하는 방향
+결과적으로 대학원에 진학할 생각은 거의 명확한데, 크게는 세가지 이슈가 있습니다.
+    &lt;ol&gt;
+      &lt;li&gt;진학하고자 하는 희망 연구실이 가을 대학원 입학 가능한가?&lt;/li&gt;
+      &lt;li&gt;정말 내가 연구에 맞는 성향의 사람인가?&lt;/li&gt;
+      &lt;li&gt;병역을 도대체 어떻게 할 것인가?
+이런 문제들 때문에 머리가 복잡합니다. 일단 방법은 아무래도 어차피 유학을 갈게 아니면 연도와 학기를 align 하는게 좋기도 하고, 결정적으로 2번 질문에 스스로 답을 찾기 위해 인턴십을 고려하고 있습니다. 친한 친구이자 ICPC 팀원이었던 학과 동기가 산업기능요원으로 있는 회사를 현재는 가장 마음에 두고 있습니다만, 뭐 그 회사가 자리가 있을지, 저를 뽑아줄 생각이 있을지는 모르니까요… 10-11월쯤 좀더 제대로 고민해 보려고 합니다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="retrospects-and-plans" /><summary type="html">방학은 많이 놀았습니다. ㅋㅋ!</summary></entry><entry><title type="html">8월 2주차 Weekly PS</title><link href="http://localhost:4000/ps-weekly/ps-weekly-21Aug2/" rel="alternate" type="text/html" title="8월 2주차 Weekly PS" /><published>2021-08-17T00:00:00+09:00</published><updated>2021-08-17T00:00:00+09:00</updated><id>http://localhost:4000/ps-weekly/ps-weekly-21Aug2</id><content type="html" xml:base="http://localhost:4000/ps-weekly/ps-weekly-21Aug2/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -1202,126 +1333,4 @@ Notation에 대한 “철학” 이 부족한 것입니다. ㅎㅎ &lt;a href=&
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ps-weekly" /><summary type="html">Contents</summary></entry><entry><title type="html">중앙대학교 NPC (Newbie Programming Challenge) 풀이/검수후기</title><link href="http://localhost:4000/cp-rounds/ChungAngU-NPC2021/" rel="alternate" type="text/html" title="중앙대학교 NPC (Newbie Programming Challenge) 풀이/검수후기" /><published>2021-08-16T00:00:00+09:00</published><updated>2021-08-16T00:00:00+09:00</updated><id>http://localhost:4000/cp-rounds/ChungAngU-NPC2021</id><content type="html" xml:base="http://localhost:4000/cp-rounds/ChungAngU-NPC2021/">&lt;div id=&quot;toc&quot;&gt;
-  &lt;p&gt;Contents&lt;/p&gt;
-&lt;/div&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#a-이진-딸기&quot; id=&quot;markdown-toc-a-이진-딸기&quot;&gt;A. 이진 딸기&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#b-주간-달력&quot; id=&quot;markdown-toc-b-주간-달력&quot;&gt;B. 주간 달력&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#c-교수님-계산기가-고장났어요&quot; id=&quot;markdown-toc-c-교수님-계산기가-고장났어요&quot;&gt;C. 교수님 계산기가 고장났어요!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#d-백발백준하는-명사수&quot; id=&quot;markdown-toc-d-백발백준하는-명사수&quot;&gt;D. 백발백준하는 명사수&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#e-쿠키크루&quot; id=&quot;markdown-toc-e-쿠키크루&quot;&gt;E. 쿠키크루&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#f-선형-연립-방정식&quot; id=&quot;markdown-toc-f-선형-연립-방정식&quot;&gt;F. 선형 연립 방정식&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#g-rpg-마스터&quot; id=&quot;markdown-toc-g-rpg-마스터&quot;&gt;G. RPG 마스터&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#후기&quot; id=&quot;markdown-toc-후기&quot;&gt;후기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;작년에 중앙대학교 프로그래밍 대회 (CPC) 의 검수를 맡았었는데, 올해는 같은 대학의 신입생용 대회인 Newbie Programming Contest, 줄여서 NPC의 검수를 맡게 되었습니다.&lt;br /&gt;
-작년 CPC의 풀이는 &lt;a href=&quot;https://gratus-blog.tistory.com/128&quot;&gt;링크&lt;/a&gt; 에 작성했는데, 최대 플래티넘 2까지의 상당한 고난도 문제가 출제되는 CPC와는 달리 NPC는 신입생들을 위해 쉽게 출제되는 대회이므로 약간 성격이 다릅니다. 올해 CPC도 검수에 참여할 수 있으면 재밌을것 같은데 불러주실지 모르겠네요&lt;/p&gt;
-
-&lt;h2 id=&quot;a-이진-딸기&quot;&gt;A. 이진 딸기&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;검수 예상 난이도 : 브론즈 1&lt;/li&gt;
-  &lt;li&gt;패턴을 찾으면 되는 문제입니다. 패턴의 길이가 28개임을 (대충 종이에 써보면 어렵지 않게) 관찰합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;b-주간-달력&quot;&gt;B. 주간 달력&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;검수 예상 난이도 : 골드 4&lt;/li&gt;
-  &lt;li&gt;‘첫 날짜’ 가 며칠인지를 정하면, 나머지는 모두 자연스럽게 계산 가능하다는 것을 파악합니다.&lt;/li&gt;
-  &lt;li&gt;그런데, 그냥 브루트포스 계산에 얼마의 시간이 걸릴까요?&lt;/li&gt;
-  &lt;li&gt;$[S, E]$ 를 알면 모듈러 연산을 통해 직접 다 돌아서 테이프를 자르는 횟수를 구하면 되므로, $O(M)$ 에 한번 계산해 볼 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;가능한 시작일은 1일부터 50000일까지이므로 ($T$라고 하겠습니다. 그 이상은 어차피 일정이 없으므로 무의미합니다)&lt;/li&gt;
-  &lt;li&gt;50000 * 1000 시간에 브루트포스로 해결할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;Sweeping, Segment Tree 등 여러 방법으로 복잡도를 더 줄일 수 있습니다. 스위핑으로는 $O(M + T)$, 세그먼트 트리로는 $O(M + T\log T)$ 같은 시간에 풀 수 있을텐데, 이 문제는 $O(TM)$ 을 허용하도록 출제되었습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;c-교수님-계산기가-고장났어요&quot;&gt;C. 교수님 계산기가 고장났어요!&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;검수 예상 난이도 : 실버 3 (C++ 기준)&lt;/li&gt;
-  &lt;li&gt;가장 많은 논의가 있었던 문제입니다.&lt;/li&gt;
-  &lt;li&gt;그냥 곱셈인데, double의 정밀도를 넘어서는 계산을 어떻게 할 것인가? 를 요구하는 문제입니다.&lt;/li&gt;
-  &lt;li&gt;python의 Decimal 라이브러리를 쓰면 다섯 줄로 풀 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;C++같은 언어로 풀기 위해서는, 실수의 곱셈을 문자열로 구현하거나, 큰 수를 곱해서 unsigned long long 같은 자료형에 집어넣은다음 다시 나중에 소숫점 위치를 정해서 찍어주면 됩니다.&lt;/li&gt;
-  &lt;li&gt;언어에 따라 난이도가 달라지는 문제가 출제되어도 되는가? 라는 논의가 있었는데, 주최측에서는 ‘문제에 적합한 언어를 판단하고 사용하는 것도 대회의 일부’ 라는 견해를 가지고 계셨습니다. 여기부터는 개인의 가치판단의 영역이라고 생각합니다.&lt;/li&gt;
-  &lt;li&gt;별개로, 원래는 16자리였는데 float128로 뚫림을 제보했더니 18자리로 늘어났습니다. 이것보다 정밀도를 더 많이 요구하면 C++가 unsigned long long으로 풀 수 없어서 너무 차이가 벌어진다는 이유로 정해진 아슬아슬한 정밀도입니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;d-백발백준하는-명사수&quot;&gt;D. 백발백준하는 명사수&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;검수 예상 난이도 : 브론즈 2&lt;/li&gt;
-  &lt;li&gt;고등학교 1학년 수학입니다. $R_1 + R_2$ 와 중심간의 거리 $D$를 비교하면 됩니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;e-쿠키크루&quot;&gt;E. 쿠키크루&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;검수 예상 난이도 : 실버 1&lt;/li&gt;
-  &lt;li&gt;구현 문제입니다. 집 1개, 네가지맛 과자가 3개, 도착점 1개가 있으므로 집-&amp;gt;과자1-&amp;gt;과자2-&amp;gt;과자3-&amp;gt;도착점 의 거리를 그냥 다 구하면 됩니다. 여기서, 각 과자 3개에는 순서를 부여해야 하므로 next_permutation같은걸로 6가지 경우를 모두 시도하면 됩니다.&lt;/li&gt;
-  &lt;li&gt;추가적인 제약이 있었으면 더 재밌었을것 같은데, 이 상황에서는 두 점의 거리는 $l_0$ 거리를 그냥 쓰면 됩니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;f-선형-연립-방정식&quot;&gt;F. 선형 연립 방정식&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;검수 에상 난이도 : 골드 4&lt;/li&gt;
-  &lt;li&gt;Gaussian Elimination.&lt;/li&gt;
-  &lt;li&gt;해가 있음이 주어져 있기 때문에, 구현상의 주의점 (0으로 나누는 경우 조심 등) 을 지키지 않아도 구현할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;별개로, 정수만 이용하여 가우스 소거법을 하도록 강제하는 (gcd, lcm을 이용하여) 문제였어도 좋았을 것 같은데 C번과 너무 컨셉이 겹치는것 같기도 하고… 지금은 제약이 작아서 실수연산해도 됩니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;g-rpg-마스터&quot;&gt;G. RPG 마스터&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;검수 예상 난이도 : 실버 2&lt;/li&gt;
-  &lt;li&gt;예전에 코포 B번쯤에 꽤 많이 나오던 유형인데, 게임을 실제 시뮬레이션하면 시간상 통과하기 힘듭니다.&lt;/li&gt;
-  &lt;li&gt;단순한 스텝들 - 그러니까, 어차피 적의 체력이 $S$ 이상이고 내 체력도 충분한 - 을 묶어서 스킵하면 어렵지 않은 구현 문제입니다.&lt;/li&gt;
-  &lt;li&gt;경우를 침착하게 나누는 연습이 필요합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;후기&quot;&gt;후기&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;브론즈 ~ 쉬운 골드 사이의 문제라서 전형적인 문제들도 많이 있었고, 막 멋진 문제가 있는것은 아니었지만 신입생의 프로그래밍 능력 향상이라는 본 목적에 충실한, educational round가 아닌가 싶습니다.&lt;/li&gt;
-  &lt;li&gt;B번 (브루트포스의 복잡도 파악), C번 (실수오차에 대한 이해) 같은 문제들은 처음 PS를 시작하거나 할때 생각해볼만한 주제들을 던져주는 의미가 있을 것 같습니다.&lt;/li&gt;
-  &lt;li&gt;A번 (패턴찾기), G번 (역시 일종의 경우 나누기) 또한 요즘 코포에서는 굉장히 트렌드로 밀고 있는 문제기도 합니다.&lt;/li&gt;
-  &lt;li&gt;D번은 가장 쉬운 문제니까 하나 있어야 하고, E, F도 전형적인 테크닉 (2차원에서 이런거 구현하기, 가우스 소거법) 을 구현하는 문제지만 NPC의 본 목적에 부합한다고 생각합니다.&lt;/li&gt;
-  &lt;li&gt;재밌었습니다 :) CPC때 불러주세요~&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cp-rounds" /><summary type="html">Contents</summary></entry><entry><title type="html">MATH TESTBED</title><link href="http://localhost:4000/math-test/" rel="alternate" type="text/html" title="MATH TESTBED" /><published>2021-08-13T00:00:00+09:00</published><updated>2021-08-13T00:00:00+09:00</updated><id>http://localhost:4000/math-test</id><content type="html" xml:base="http://localhost:4000/math-test/">&lt;div id=&quot;toc&quot;&gt;
-  &lt;p&gt;Contents&lt;/p&gt;
-&lt;/div&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;정리 테스트&lt;/p&gt;
-
-&lt;div class=&quot;definition&quot; data-title=&quot;위상&quot;&gt;
-  &lt;p&gt;집합 $S$에 대해 다음 조건을 만족하는 $\mathcal{T} \subset \mathcal{P}(S)$ 를 위상(Topology) 라 한다.&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;이렇게 정리를 쓸 수 있다.&lt;/p&gt;
-&lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;집합 $S$에 대해 다음 조건을 만족하는 $\mathcal{T} \subset \mathcal{P}(S)$ 를 위상(Topology) 라 한다.&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;정리에 자동으로 번호를 붙일 수 있다.&lt;/p&gt;
-&lt;div class=&quot;theorem&quot;&gt;
-  &lt;p&gt;함수 $f$가 닫힌 구간 $[a, b]$ 에서 연속이면, 함수 $F(x) = \int_{a}^{x} f(t) \dd{t}$ 는 닫힌 구간 $[a, b]$ 에서 연속이고, 열린 구간 $(a, b)$ 에서 미분가능하며, $F’ = f$ 이다.&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Definition과 Theorem은 따로 번호를 붙인다.&lt;/p&gt;
-&lt;div class=&quot;lemma&quot; data-title=&quot;lemma1&quot;&gt;
-  &lt;p&gt;보조정리1&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;보조정리도 쓸 수 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;증명은 CSS가 깨지므로, 이렇게 쓴다.&lt;/li&gt;
-  &lt;li&gt;귀납법을 쓰자. $n = 1$일 때 성립한다.&lt;/li&gt;
-  &lt;li&gt;$n = k$ 일 때 성립하면 $n = k+1$ 일 때 성립한다.&lt;/li&gt;
-  &lt;li&gt;단어 몇개를 추가했다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;lemma&quot; data-title=&quot;Fatou Lemma&quot;&gt;
-  &lt;p&gt;가측함수열 $f_n$이 $f_n \geq 0$ 을 만족하면, 다음이 성립한다.
-\(\int_X \liminf_{n} f_n \dd{\mu} \leq \liminf_{n} \int_X f_n \dd{\mu}\)&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;이름 있는 보조정리&lt;/p&gt;
-
-&lt;p&gt;Expectation 등을 추가했습니다.&lt;br /&gt;
-\(\E{\frac{X - \mu}{\sigma}}\)&lt;/p&gt;
-
-\[\E{X} = \int_{\Omega} X(w) \dd{P}\]</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><summary type="html">Contents</summary></entry></feed>
+&lt;hr /&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="ps-weekly" /><summary type="html">Contents</summary></entry></feed>

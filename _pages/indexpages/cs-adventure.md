@@ -18,7 +18,7 @@ author_profile: true
 
 경우에 따라, 어떤 논문 A와 그 후속연구 B, C, D를 한번에 다루기도 할 예정입니다.
 
-Topic (분야) 는, [Arxiv의 기준](https://arxiv.org/archive/cs)을 따릅니다. Arxiv에 올라와있지 않은 논문은 읽은후에 제가 최대한 비슷하게 분류해 넣었습니다. 
+Topic (분야) 는, 일반적으로는 [Arxiv의 기준](https://arxiv.org/archive/cs)을 따릅니다. Arxiv에 올라와있지 않은 논문은 읽은후에 제가 최대한 비슷하게 분류해 넣었습니다. 
 (아마도) Arxiv 분류 코드 중 제가 보게될 논문들은 이정도가 메인일듯 합니다. 특히 장기적으로는 CC, DM, DS.
 - **AI** : Artificial Intelligence
 - **CC** : Computational Complexity
@@ -26,9 +26,14 @@ Topic (분야) 는, [Arxiv의 기준](https://arxiv.org/archive/cs)을 따릅니
 - **DS** : Data structures / Algortihms
 - **NA** : Numerical Analysis
 
+그래프에 관한 많은 논문들 (저는 DM이나 DS처럼 받아들이게 되는) 은 실제로는 다음과 같은 Topic으로 많이 올라옵니다. 제가 (아마도) DB managament에 관한 뭔가를 읽을 일은 없을 것이므로, 여기 내용들은 거의 100% 그래프에 관한 내용입니다. 
+- **DB** : Databases 
+- **SI** : Social and Information Networks
+
 당분간은 수리과학부 졸업논문을 위해 CV, AI 쪽도 많이 보게 될 예정입니다. 
 - **CV** : Computer Vision
 
-| Title (Link to post)                                          | Topic  | Published in                                | Author(s)          |
-|---------------------------------------------------------------|--------|---------------------------------------------|--------------------|
-| **[Active Contours Without Edges](/cs-adventure/chan-vese/)** | NA, CV | IEEE Transactions on Image Processing, 2001 | T.F.Chan, L.A.Vese |
+| Title (Link to post)                                                                    | Topic  | Published in                                       |
+| --------------------------------------------------------------------------------------- | ------ | -------------------------------------------------- |
+| **[Active Contours Without Edges](/cs-adventure/chan-vese/)**                           | NA, CV | IEEE Transactions on Image Processing, 2001        |
+| **[DELTACON: A Principled Massive-Graph Similarity Function](/cs-adventure/deltacon/)** | SI     | SIAM International Conference on Data Mining, 2013 |

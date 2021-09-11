@@ -26,14 +26,39 @@ Topic (분야) 는, 일반적으로는 [Arxiv의 기준](https://arxiv.org/archi
 - **DS** : Data structures / Algortihms
 - **NA** : Numerical Analysis
 
-그래프에 관한 많은 논문들 (저는 DM이나 DS처럼 받아들이게 되는) 은 실제로는 다음과 같은 Topic으로 많이 올라옵니다. 제가 (아마도) DB managament에 관한 뭔가를 읽을 일은 없을 것이므로, 여기 내용들은 거의 100% 그래프에 관한 내용입니다. 
+그래프에 관한 많은 논문들 (저는 DM이나 DS처럼 받아들이게 되는) 은 실제로는 다음과 같은 Topic으로 많이 올라옵니다. 제가 (아마도) DB management에 관한 뭔가를 읽을 일은 없을 것이므로, 여기 내용들은 거의 100% 그래프에 관한 내용입니다. 
 - **DB** : Databases 
 - **SI** : Social and Information Networks
 
 당분간은 수리과학부 졸업논문을 위해 CV, AI 쪽도 많이 보게 될 예정입니다. 
 - **CV** : Computer Vision
 
-| Title (Link to post)                                                                    | Topic  | Published in                                       |
-| --------------------------------------------------------------------------------------- | ------ | -------------------------------------------------- |
-| **[Active Contours Without Edges](/cs-adventure/chan-vese/)**                           | NA, CV | IEEE Transactions on Image Processing, 2001        |
-| **[DELTACON: A Principled Massive-Graph Similarity Function](/cs-adventure/deltacon/)** | SI     | SIAM International Conference on Data Mining, 2013 |
+<style>
+table th:first-of-type {
+    width: 70%;
+}
+table th:nth-of-type(2) {
+    width: 10%;
+}
+table th:nth-of-type(3) {
+    width: 20%;
+}
+</style>
+
+어떤 한 주제가 있고, 이 주제에 관한 여러 논문이 있는 경우, 그 주제에 대한 개요를 적는 포스팅을 하나씩 더 쓰기도 할 것 같습니다. 이 포스팅은 아래 리뷰 글에서 논문 리뷰 외의 일반적인 개념에 대한 소개를 최소화하기 위해 주로 작성합니다.
+- **[Subgraph Isomorphism : Introduction](/cs-adventure/sub-iso-note)**
+
+| Title (Link to post)                                                                                           | Topic  | Published                 |
+| -------------------------------------------------------------------------------------------------------------- | ------ | ------------------------- |
+| **[Active Contours Without Edges](/cs-adventure/chan-vese/)**                                                  | NA, CV | IEEE TIP[^ieee-tip], 2001 |
+| **[DELTACON: A Principled Massive-Graph Similarity Function](/cs-adventure/deltacon/)**                        | SI     | SDM[^sdm], 2013           |
+| **In-Memory Subgraph Matching: An In-depth Study**[^subiso]                                                    | DS, DB | SIGMOD[^sigmod], 2020     |
+| **[Versatile Equivalences : Speeding up Subgraph Query Processing and Subgraph Matching](/cs-adventure/VEQs)** | DS, DB | SIGMOD[^sigmod], 2021     |
+
+
+[^ieee-tip]: Transactions on Image Processing
+[^sdm]: SIAM International Conference on Data Mining
+[^sigmod]: Proceedings of the ACM SIGMOD International Conference on Management of Data
+
+
+[^subiso]: Subgraph Isomorphism 방법들을 비교하고, 이들을 모두 구현하여 통일된 프레임워크 위에서 실험한 논문이라서 별도로 포스팅을 정리하지는 않았습니다.

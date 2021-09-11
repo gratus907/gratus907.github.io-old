@@ -424,4 +424,16 @@ var store = [{
         "tags": ["graph theory"],
         "url": "http://localhost:4000/cs-adventure/deltacon/",
         "teaser": null
+      },{
+        "title": "논문읽기 : VEQs",
+        "excerpt":"Contents Introduction Key Ideas Filtering : DAG Graph DP Adaptive Matching Order : Static Equivalence Run time Kim, H., Choi, Y., Park, K., Lin, X., Hong, S. H., &amp; Han, W. S. (2021). Versatile Equivalences: Speeding up Subgraph Query Processing and Subgraph Matching. Proceedings of the ACM SIGMOD International Conference...","categories": ["cs-adventure"],
+        "tags": [],
+        "url": "http://localhost:4000/cs-adventure/VEQs/",
+        "teaser": null
+      },{
+        "title": "Subgraph Isomorphism : Introduction",
+        "excerpt":"Contents Subgraph Isomorphism 문제 소개 Subgraph Isomorphism Algorithms Backtracking Algorithms Filtering Matching Order Backtracking References / Papers Subgraph Isomorphism 문제 소개 Subgraph Isomorphism이란, 쿼리 그래프 $q$와 데이터 그래프 $G$가 주어지는 상황에서, $G$가 $q$와 isomorphic한 subgraph를 갖는지 여부를 판단하는 문제입니다. 이 문제는 NP-Complete임이 증명되어 있습니다. NP-Complete를 증명하는 것은 우리의 논의에 그렇게...","categories": ["cs-adventure"],
+        "tags": [],
+        "url": "http://localhost:4000/cs-adventure/sub-iso-note/",
+        "teaser": null
       }]

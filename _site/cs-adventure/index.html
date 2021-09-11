@@ -415,7 +415,7 @@
   <li><strong>NA</strong> : Numerical Analysis</li>
 </ul>
 
-<p>그래프에 관한 많은 논문들 (저는 DM이나 DS처럼 받아들이게 되는) 은 실제로는 다음과 같은 Topic으로 많이 올라옵니다. 제가 (아마도) DB managament에 관한 뭔가를 읽을 일은 없을 것이므로, 여기 내용들은 거의 100% 그래프에 관한 내용입니다.</p>
+<p>그래프에 관한 많은 논문들 (저는 DM이나 DS처럼 받아들이게 되는) 은 실제로는 다음과 같은 Topic으로 많이 올라옵니다. 제가 (아마도) DB management에 관한 뭔가를 읽을 일은 없을 것이므로, 여기 내용들은 거의 100% 그래프에 관한 내용입니다.</p>
 <ul>
   <li><strong>DB</strong> : Databases</li>
   <li><strong>SI</strong> : Social and Information Networks</li>
@@ -426,27 +426,71 @@
   <li><strong>CV</strong> : Computer Vision</li>
 </ul>
 
+<style>
+table th:first-of-type {
+    width: 70%;
+}
+table th:nth-of-type(2) {
+    width: 10%;
+}
+table th:nth-of-type(3) {
+    width: 20%;
+}
+</style>
+
+<p>어떤 한 주제가 있고, 이 주제에 관한 여러 논문이 있는 경우, 그 주제에 대한 개요를 적는 포스팅을 하나씩 더 쓰기도 할 것 같습니다. 이 포스팅은 아래 리뷰 글에서 논문 리뷰 외의 일반적인 개념에 대한 소개를 최소화하기 위해 주로 작성합니다.</p>
+<ul>
+  <li><strong><a href="/cs-adventure/sub-iso-note">Subgraph Isomorphism : Introduction</a></strong></li>
+</ul>
+
 <table>
   <thead>
     <tr>
       <th>Title (Link to post)</th>
       <th>Topic</th>
-      <th>Published in</th>
+      <th>Published</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><strong><a href="/cs-adventure/chan-vese/">Active Contours Without Edges</a></strong></td>
       <td>NA, CV</td>
-      <td>IEEE Transactions on Image Processing, 2001</td>
+      <td>IEEE TIP<sup id="fnref:ieee-tip" role="doc-noteref"><a href="#fn:ieee-tip" class="footnote">1</a></sup>, 2001</td>
     </tr>
     <tr>
       <td><strong><a href="/cs-adventure/deltacon/">DELTACON: A Principled Massive-Graph Similarity Function</a></strong></td>
       <td>SI</td>
-      <td>SIAM International Conference on Data Mining, 2013</td>
+      <td>SDM<sup id="fnref:sdm" role="doc-noteref"><a href="#fn:sdm" class="footnote">2</a></sup>, 2013</td>
+    </tr>
+    <tr>
+      <td><strong>In-Memory Subgraph Matching: An In-depth Study</strong><sup id="fnref:subiso" role="doc-noteref"><a href="#fn:subiso" class="footnote">3</a></sup></td>
+      <td>DS, DB</td>
+      <td>SIGMOD<sup id="fnref:sigmod" role="doc-noteref"><a href="#fn:sigmod" class="footnote">4</a></sup>, 2020</td>
+    </tr>
+    <tr>
+      <td><strong><a href="/cs-adventure/VEQs">Versatile Equivalences : Speeding up Subgraph Query Processing and Subgraph Matching</a></strong></td>
+      <td>DS, DB</td>
+      <td>SIGMOD<sup id="fnref:sigmod:1" role="doc-noteref"><a href="#fn:sigmod" class="footnote">4</a></sup>, 2021</td>
     </tr>
   </tbody>
 </table>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:ieee-tip" role="doc-endnote">
+      <p>Transactions on Image Processing <a href="#fnref:ieee-tip" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:sdm" role="doc-endnote">
+      <p>SIAM International Conference on Data Mining <a href="#fnref:sdm" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:subiso" role="doc-endnote">
+      <p>Subgraph Isomorphism 방법들을 비교하고, 이들을 모두 구현하여 통일된 프레임워크 위에서 실험한 논문이라서 별도로 포스팅을 정리하지는 않았습니다. <a href="#fnref:subiso" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:sigmod" role="doc-endnote">
+      <p>Proceedings of the ACM SIGMOD International Conference on Management of Data <a href="#fnref:sigmod" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:sigmod:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
 
         
       </section>
@@ -505,7 +549,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 88f3c9889b299b11e08531913cd3709559be6776</div>
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version c96aff45ea35a7d1860d3f455d134707781d85fd</div>
 
       </footer>
     </div>

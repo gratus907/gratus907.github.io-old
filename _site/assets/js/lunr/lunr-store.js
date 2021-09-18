@@ -185,22 +185,10 @@ var store = [{
         "url": "http://localhost:4000/cp-rounds/Hashcode-2021-prep/",
         "teaser": null
       },{
-        "title": "정수론 : 2장 1절 Congruences",
-        "excerpt":"Contents Congruence Congruence $a, b, m \\in \\Z$, $m \\neq 0$에 대해, $a \\equiv b \\mod m \\iff m \\di (a - b)$. 이때, $a$를 $m$으로 나눈 나머지를 $[a]_m$으로 나타낸다. 이 Congruence relation은 equivalence이다. 덧셈, 뺄셈, 곱셈은 잘 보존된다. 즉, $a \\equiv b, c \\equiv d$이면 $a + b \\equiv...","categories": ["mathematics"],
-        "tags": ["number-theory"],
-        "url": "http://localhost:4000/mathematics/Number-Theory-Lec3/",
-        "teaser": null
-      },{
         "title": "폴라드-로 소인수분해 알고리즘",
         "excerpt":"Contents Motivation 생일 문제 (Birthday Problem) 가정 Algorithm 예시 구현 시간 복잡도 Motivation 소인수분해는 매우 어려운 과정이다. 실제로 소인수분해는 (입력 비트 수에 대해) 다항 시간에 결정론적으로 풀 수 있는 방법이 알려져 있지 않다. 그러나, 약간의 랜덤성 (확률에 대한 의존) 을 허용한다면 상당히 clever한 알고리즘을 통해 빠르게 소인수분해를 할 수 있는데,...","categories": ["advanced-algorithms"],
         "tags": ["number-theory","algorithms"],
         "url": "http://localhost:4000/advanced-algorithms/Pollards-Rho/",
-        "teaser": null
-      },{
-        "title": "이산수학 주제 1 : Propositional Logic",
-        "excerpt":"Contents Propositional Logic 명제의 역/이/대우 Well-Formed Formula Logical Facts Logic : Formal system for describing knowledge, implement reasoning on knowledge. Set of rules deducing entailments of a set of sentences. Ambiguity 없이 명제를 표현하고 사고를 전개하는 언어 (Syntax, Semantics, Rules). Propositional Logic 기본적인 문장들을 Atomic entity로 간주하고, Boolean connective를 이용하여...","categories": ["dma2021"],
-        "tags": ["logic"],
-        "url": "http://localhost:4000/dma2021/propositional-logic/",
         "teaser": null
       },{
         "title": "2021 1학기 중간점검",
@@ -347,12 +335,6 @@ var store = [{
         "url": "http://localhost:4000/ps-problems/BOJ15744/",
         "teaser": null
       },{
-        "title": "MATH TESTBED",
-        "excerpt":"Contents 정리 테스트 집합 $S$에 대해 다음 조건을 만족하는 $\\mathcal{T} \\subset \\mathcal{P}(S)$ 를 위상(Topology) 라 한다. 이렇게 정리를 쓸 수 있다. 집합 $S$에 대해 다음 조건을 만족하는 $\\mathcal{T} \\subset \\mathcal{P}(S)$ 를 위상(Topology) 라 한다. 정리에 자동으로 번호를 붙일 수 있다. 함수 $f$가 닫힌 구간 $[a, b]$ 에서 연속이면, 함수 $F(x)...","categories": [],
-        "tags": [],
-        "url": "http://localhost:4000/math-test/",
-        "teaser": null
-      },{
         "title": "논문읽기 : Chan-Vese Algorithm",
         "excerpt":"Contents Introduction Key Ideas Energy functional Integral formulation Regularization &amp; Euler-Lagrange Partial Differential Equation Reinitialization Conclusion Thoughts CS 논문읽기라고 생각하고 연 cs-adventure 카테고리인데 의외로 처음이 수치해석? 을 쓰는 최적화 관련이 되었네요. Introduction 이번에 읽은 논문은 Active Contours Without Edges 라는, 2001년의 논문입니다. 2001년 IEEE Transactions on Image Processing, Vol.10, No.2...","categories": ["cs-adventure"],
         "tags": [],
@@ -413,27 +395,27 @@ var store = [{
         "url": "http://localhost:4000/deep-learning-study/opt-and-gd/",
         "teaser": null
       },{
-        "title": "9월 1-2주차 Weekly PS",
-        "excerpt":"Contents Recent Updates Rounds SNUPC 2021 Division 2 Facebook Hackercup 2021 Round 1 (Virtual) Codeforces Educational Round 106 Problems Sep 01 - Sep 12, 2021 이 글에 구현코드 링크가 없더라도 PS 레포 링크 에 가서 대회 단위로 들어가면 보통 올려놓은 코드를 볼 수 있습니다. BOJ의 문제 중 [출처] 에 대회명이...","categories": ["ps-weekly"],
-        "tags": [],
-        "url": "http://localhost:4000/ps-weekly/ps-weekly-21Sep2/",
-        "teaser": null
-      },{
         "title": "논문읽기 : DELTACON",
         "excerpt":"Contents Introduction Key Ideas Concepts Similarity measure properties DELTACON Algorithm Scalability Conclusion Thoughts Koutra, D., Vogelstein, J. T., &amp; Faloutsos, C. (2013). DeltaCon : A Principled Massive-Graph Similarity Function. Proceedings of the 2013 SIAM International Conference on Data Mining, 10(3), 162–170. https://doi.org/10.1137/1.9781611972832.18 Introduction 이번에 정리할 논문은 DELTACON 이라는 Graph similarity...","categories": ["cs-adventure"],
         "tags": ["graph theory"],
         "url": "http://localhost:4000/cs-adventure/deltacon/",
         "teaser": null
       },{
-        "title": "논문읽기 : VEQs",
-        "excerpt":"Contents Introduction Key Ideas Filtering : DAG Graph DP Adaptive Matching Order : Static Equivalence Run time Kim, H., Choi, Y., Park, K., Lin, X., Hong, S. H., &amp; Han, W. S. (2021). Versatile Equivalences: Speeding up Subgraph Query Processing and Subgraph Matching. Proceedings of the ACM SIGMOD International Conference...","categories": ["cs-adventure"],
+        "title": "논문읽기 : VEQ",
+        "excerpt":"Contents Introduction Key Ideas Filtering : DAG Graph DP Adaptive Matching Order : Static Equivalence Run time pruning : Dynamic Equivalence Dynamic Equivalence 예시 실험 (Performance Analysis) Thoughts Kim, H., Choi, Y., Park, K., Lin, X., Hong, S. H., &amp; Han, W. S. (2021). Versatile Equivalences: Speeding up Subgraph Query...","categories": ["cs-adventure"],
         "tags": [],
-        "url": "http://localhost:4000/cs-adventure/VEQs/",
+        "url": "http://localhost:4000/cs-adventure/VEQ/",
         "teaser": null
       },{
         "title": "Subgraph Isomorphism : Introduction",
         "excerpt":"Contents Subgraph Isomorphism 문제 소개 Subgraph Isomorphism Algorithms Backtracking Algorithms Filtering Matching Order Backtracking References / Papers Subgraph Isomorphism 문제 소개 Subgraph Isomorphism이란, 쿼리 그래프 $q$와 데이터 그래프 $G$가 주어지는 상황에서, $G$가 $q$와 isomorphic한 subgraph를 갖는지 여부를 판단하는 문제입니다. 이 문제는 NP-Complete임이 증명되어 있습니다. NP-Complete를 증명하는 것은 우리의 논의에 그렇게...","categories": ["cs-adventure"],
         "tags": [],
         "url": "http://localhost:4000/cs-adventure/sub-iso-note/",
+        "teaser": null
+      },{
+        "title": "서울대학교 프로그래밍 대회 (SNUPC) 2021 후기 / 풀이(A-G) & Whining",
+        "excerpt":"Contents SNUPC Phase 1 : Easy problems (0분 - 60분) A, B G : 자연수 색칠하기 F : AND와 OR Phase 2 : Spurt (60분 - 120분) E : 뛰는 기물 C : 실 전화기 D : 누텔라 트리 Phase 3 : Too hard 대회가 끝나고 9월 11일 (토)에 진행된...","categories": ["cp-rounds"],
+        "tags": [],
+        "url": "http://localhost:4000/cp-rounds/snupc-2021/",
         "teaser": null
       }]

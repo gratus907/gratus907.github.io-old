@@ -2,6 +2,7 @@
 layout: default
 ---
 
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% elsif page.header.video.id and page.header.video.provider %}
@@ -30,7 +31,8 @@ layout: default
           {% include page__meta.html %}
         </header>
       {% endunless %}
-      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io{{ page.url }}&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io{{ page.url }}&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> </div> <br/>
+      <div style="display:none;"><span id="busuanzi_container_site_pv" style="display:none;"><span id="busuanzi_value_site_pv" style="display:none;"></span></span></div>
       <section class="page__content" itemprop="text"> 
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}

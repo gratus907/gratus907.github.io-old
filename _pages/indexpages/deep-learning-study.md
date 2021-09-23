@@ -27,3 +27,8 @@ permalink : /deep-learning-study/
 # Postings
 ## Basics
 - [Introduction to Optimization / Gradient Descent](/deep-learning-study/opt-and-gd/)
+- [Stochastic Gradient Descent](/deep-learning-study/sgd/)
+
+## Shallow Neural Networks 
+- [Introduction to Shallow Neural Networks](/deep-learning-study/shallow-nn/)
+- [Support Vector Machine & Logistic Regression](/deep-learning-study/svm-and-lr/) : Binary Classification 문제를 해결하는 두 모델에 대하여.

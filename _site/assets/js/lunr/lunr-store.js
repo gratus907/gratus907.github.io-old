@@ -418,4 +418,22 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/cp-rounds/snupc-2021/",
         "teaser": null
+      },{
+        "title": "Stochastic Gradient Descent",
+        "excerpt":"Contents Stochastic Gradient Descent Batch SGD / Cyclic SGD SGD Convergence Theorem 심층 신경망의 수학적 기초 2강 (9월 7일), 3강 (9월 9일) 에 기반합니다. 이 문서는 $\\LaTeX$를 pandoc으로 변환하여 작성하였기 때문에, 레이아웃 등이 깔끔하지 않을 수 있습니다. 언젠가 pdf 버전의 노트를 공개한다면 그쪽을 참고하면 좋을 것 같습니다. Stochastic Gradient Descent...","categories": ["deep-learning-study"],
+        "tags": [],
+        "url": "http://localhost:4000/deep-learning-study/sgd/",
+        "teaser": null
+      },{
+        "title": "Shallow Neural Networks - Introduction",
+        "excerpt":"Contents Shallow Neural Network : Introduction KL-Divergence 심층 신경망의 수학적 기초 3강 (9월 9일), 4강 (9월 14일) 에 기반합니다. 이 문서는 $\\LaTeX$를 pandoc으로 변환하여 작성하였기 때문에, 레이아웃 등이 깔끔하지 않을 수 있습니다. 언젠가 pdf 버전의 노트를 공개한다면 그쪽을 참고하면 좋을 것 같습니다. Shallow Neural Network : Introduction 데이터 $X_1, \\dots...","categories": ["deep-learning-study"],
+        "tags": [],
+        "url": "http://localhost:4000/deep-learning-study/shallow-nn/",
+        "teaser": null
+      },{
+        "title": "Binary Classification : Support Vector Machine / Logistic Regression",
+        "excerpt":"Contents Binary Classification Linear Classification Support Vector Machine Logistic Regression 심층 신경망의 수학적 기초 3강 (9월 9일), 4강 (9월 14일) 에 기반합니다. 이 문서는 $\\LaTeX$를 pandoc으로 변환하여 작성하였기 때문에, 레이아웃 등이 깔끔하지 않을 수 있습니다. 언젠가 pdf 버전의 노트를 공개한다면 그쪽을 참고하면 좋을 것 같습니다. Binary Classification 잠시 앞서의 정의를...","categories": ["deep-learning-study"],
+        "tags": [],
+        "url": "http://localhost:4000/deep-learning-study/svm-and-lr/",
+        "teaser": null
       }]

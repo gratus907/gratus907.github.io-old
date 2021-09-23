@@ -1,0 +1,586 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TNVQ3G5D5B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TNVQ3G5D5B');
+</script>
+
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Project Euler Study - Gratus907’s Study Note</title>
+<meta name="description" content="Hello World!">
+
+
+  <meta name="author" content="Wonseok Shin">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Gratus907's Study Note">
+<meta property="og:title" content="Project Euler Study">
+<meta property="og:url" content="http://localhost:4000/project-euler/">
+
+
+  <meta property="og:description" content="Hello World!">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/project-euler/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Wonseok Shin",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Gratus907's Study Note Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']],
+      packages: {'[+]': ['physics']}
+    },
+    loader: {
+      load: ["input/tex", "output/chtml", '[tex]/physics']
+    },
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}\newcommand{\di}{\mathrel{|}}\newcommand{\limply}{\rightarrow}\newcommand{\fa}{\forall}\newcommand{\e}{\exists}\newcommand{\lxor}{\oplus}\newcommand{\liff}{\leftrightarrow}\newcommand{\lequiv}{\Leftrightarrow}\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}\newcommand{\minimize}{\mathrm{minimize}}\newcommand{\subto}{\mathrm{subject\ to}}\newcommand{\minimize}{\mathrm{minimize}}
+  \newcommand{\subto}{\mathrm{subject\ to}}
+  \newcommand{\DKL}[2]{D_{\mathrm{KL}}\left(#1 \di\di #2\right)}
+  \newcommand{\E}{\mathbb{E}}
+  \newcommand{\expect}[1]{\E\left[#1\right]}
+  \newcommand{\expectwith}[2]{\E_{#1}\left[#2\right]}
+  \renewcommand{\P}{\mathbb{P}}
+  \newcommand{\uniform}[2]{\mathrm{Uniform}\left(#1 \dots #2\right)}
+  \newcommand{\sgn}{\text{sign}}$$</p>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M2LK7DWFS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9M2LK7DWFS');
+    </script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Gratus907's Study Note
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/postings/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about-me/">About me</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about-blog/">About Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Wonseok Shin</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>2018- SNU CSE, interested in algorithms, mathematics</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/gratus907" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:gratus907@snu.ac.kr">
+            <meta itemprop="email" content="gratus907@snu.ac.kr" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/cs-adventure/"><span class="nav__sub-title">CS 논문읽기</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Problem Solving</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/ps-weekly/">PS Weekly</a></li>
+          
+            <li><a href="/find-contest/">문제 출처별로 보기</a></li>
+          
+            <li><a href="/ps-teatime/">PS Teatime</a></li>
+          
+            <li><a href="/competitive-programming-rounds/">Competitive Programming</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">주제별 노트정리</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/ds-alg-note/">자료구조/알고리즘</a></li>
+          
+            <li><a href="/ds-alg-advanced/">고급 자료구조/알고리즘</a></li>
+          
+            <li><a href="/deep-learning-study/">Deep Learning Notes</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+    
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Project Euler Study">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Project Euler Study
+</h1>
+          
+
+
+        </header>
+      
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/project-euler/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> </div> <br/>
+      <div style="display:none;"> <span id="busuanzi_container_site_pv" style="display:none;"><span id="busuanzi_value_site_pv" style="display:none;"></span></span></div>
+      <section class="page__content" itemprop="text"> 
+        <h2 id="what-is-this">What is This?</h2>
+<p>Project Euler <a href="https://projecteuler.net/archives">링크</a> 는 PS에서 수학적인 문제들만 따로 떼어서 만들어진 웹사이트입니다.</p>
+
+<p>프로그램을 제출해서 테스트케이스에 대해 정답을 확인하는 것과는 달리, 정답을 제출하는 형태입니다. 예를 들어, 일반적인 PS문제가 “$N$ 번째 소수를 구하여라. $N \leq 1000$” 이런 식으로 생겼다면, Project Euler의 문제는 “$1000$번째 소수는 무엇인가?” 라고 묻습니다. 또한, 일반적인 PS판에서 다루지 않는 정수론과 조합론의 다양한 내용들을 다루고 있습니다.</p>
+
+<p>많은 문제를 해결하지는 않을 것 같지만, 일부 문제들의 풀이를 여기에 공유해보려고 합니다.</p>
+
+<ul>
+  <li>PE의 문제는 특성 상, 느린 알고리즘도 충분히 오래 기다리면 정답을 뱉을 수 있습니다. 일반적으로, PE의 문제들은 1분 이내에 작동되는 정해 C++코드가 있다고 합니다.</li>
+  <li>마찬가지로 256MB 이하의 메모리를 소모하는 솔루션이 있다고 합니다.</li>
+  <li>다만 저는 이 규칙을 엄격하게 지키지는 않을 생각입니다. 대략적인 Rule of Thumb으로 생각하겠습니다.</li>
+  <li>난이도는 5% ~ 100%까지 있고, 5% 단위로 구분됩니다. (즉, 1~20단계)</li>
+</ul>
+
+<h2 id="library">Library</h2>
+<p>기본적인 정수론 함수들은 다양한 문제에서 활용됩니다. 예를 들어 <code class="language-plaintext highlighter-rouge">primes(N)</code> 이 미리 $N$까지의 모든 소수를 반환하게 해둔다면, 많은 쓸모가 있습니다. 저는 가급적 모든 솔루션을 C++에서 외부 라이브러리 없이 해결하려고 노력할 생각이고, 그러기 위해서는 라이브러리를 관리하는 것은 상당히 유용합니다.</p>
+
+<p><a href="https://github.com/gratus907/project-euler-study">링크</a>에서 제 코드를 확인할 수 있고, 특히 lib/ 디렉토리는 라이브러리 함수들을 구현할 계획입니다.</p>
+
+<p>라이브러리의 내용은 다음과 같습니다.</p>
+<ul>
+  <li><strong>Combinatorics</strong> : 팩토리얼과 이항계수. 특히 $\Z_p$ 에서도 팩토리얼을 다룰 수 있게 해두었습니다.</li>
+  <li><strong>Bigint</strong> : 기본적인 사칙연산이 가능한 빅인트 클래스. Codeforces의 상당히 유명한 <code class="language-plaintext highlighter-rouge">arpa</code> 라는 분의 라이브러리를 가져왔고, 이 라이브러리는 Karatsuba 곱셈을 사용합니다.</li>
+  <li><strong>Modint</strong> : $\Z_n$ 을 다루는 클래스. $n$이 소수인 경우, $\Z_p$가 체가 됨이 잘 알려져 있고, 이 위에서는 사칙연산이 작동합니다. 일반적인 $n$에 대해서는 나눗셈이 작동하지 않을 것입니다.</li>
+  <li><strong>PEBasic</strong> : 기본 함수들 (string to int, vector print, timer 등)</li>
+  <li><strong>Primes</strong> : 소수 찾기.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">primes(N)</code> : $N$ 이하의 모든 소수를 담은 벡터를 반환합니다. Linear Sieve입니다.</li>
+      <li><code class="language-plaintext highlighter-rouge">is_prime(N)</code> : $N$의 빠른 소수 판정. $10^{9}$ 이하는 $O(\sqrt{n})$ 소수판정을, 그 이상은 밀러-라빈을 사용합니다.</li>
+    </ul>
+  </li>
+  <li><strong>UnionFind</strong> : DSU 자료구조.</li>
+</ul>
+
+<p>이후 라이브러리의 업데이트는 지속적으로 이루어질 것 같은데, 여기에 기록하려고 합니다.</p>
+
+<h2 id="problems">Problems</h2>
+<p>(난이도는 <code class="language-plaintext highlighter-rouge">●</code> 가 10%, <code class="language-plaintext highlighter-rouge">◐</code>가 5%를 의미합니다)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title (with Link to solution post)</th>
+      <th>Difficulty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>60</td>
+      <td><a href="/project-euler/pe-060"><strong>Prime pair sets</strong></a></td>
+      <td><code class="language-plaintext highlighter-rouge">●●</code></td>
+    </tr>
+    <tr>
+      <td>205</td>
+      <td><a href="/project-euler/pe-205"><strong>Dice Game</strong></a></td>
+      <td><code class="language-plaintext highlighter-rouge">●◐</code></td>
+    </tr>
+    <tr>
+      <td>425</td>
+      <td><a href="/project-euler/pe-425"><strong>Prime Connection</strong></a></td>
+      <td><code class="language-plaintext highlighter-rouge">●●◐</code></td>
+    </tr>
+    <tr>
+      <td>686</td>
+      <td><a href="/project-euler/pe-686"><strong>Powers of Two</strong></a></td>
+      <td><code class="language-plaintext highlighter-rouge">◐</code></td>
+    </tr>
+    <tr>
+      <td>725</td>
+      <td><a href="/project-euler/pe-725"><strong>Digit sum numbers</strong></a></td>
+      <td><code class="language-plaintext highlighter-rouge">●</code></td>
+    </tr>
+  </tbody>
+</table>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+      
+      
+    
+    
+
+    
+  </div>
+</article>
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version ff297b3b08c4d017848e2af8d3af918cfff34f70</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'G-TNVQ3G5D5B']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+
+    <script>
+    
+    var elements = document.querySelectorAll('p');
+    Array.prototype.forEach.call(elements, function(el, i){
+        if(el.innerHTML=='[expand]') {
+            var parentcontent = el.parentNode.innerHTML.replace('<p>[expand]</p>','<div class="expand" style="display: none; height: 0; overflow: hidden;">').replace('<p>[/expand]</p>','</div>');
+            el.parentNode.innerHTML = parentcontent;
+        }
+    });
+
+    var elements = document.querySelectorAll('div.expand');
+    Array.prototype.forEach.call(elements, function(el, i){
+        el.previousElementSibling.innerHTML = el.previousElementSibling.innerHTML + '<span>..&nbsp; <a href="#" style="cursor: pointer;" onclick="this.parentNode.parentNode.nextElementSibling.style.display = \'block\'; this.parentNode.parentNode.nextElementSibling.style.height = \'auto\'; this.parentNode.style.display = \'none\';">read&nbsp;more&nbsp;&rarr;</a></span>';
+    });
+
+</script>
+
+  </body>
+</html>

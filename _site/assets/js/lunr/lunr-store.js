@@ -436,4 +436,10 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/deep-learning-study/svm-and-lr/",
         "teaser": null
+      },{
+        "title": "Semantic Segmentation : Introduction",
+        "excerpt":"Contents 문제 소개 활용 개요 이 글의 상당 부분은, 서베이 논문인 Minaee, S., Boykov, Y., Porikli, F., Plaza, A., Kehtarnavaz, N., &amp; Terzopoulos, D. (2020). Image Segmentation Using Deep Learning: A Survey. IEEE Transactions on Pattern Analysis and Machine Intelligence, 1–22. https://doi.org/10.1109/TPAMI.2021.3059968 을 정리한 내용입니다. 문제 소개 Semantic Segmentation이란, Computer...","categories": ["deep-learning-study"],
+        "tags": [],
+        "url": "http://localhost:4000/deep-learning-study/semantic-segmentation/",
+        "teaser": null
       }]

@@ -236,7 +236,7 @@ var store = [{
         "title": "2021 UCPC 팀연습 #1 : 서강대학교 2020 Div 1",
         "excerpt":"Contents Our Team Practice : Sogang 2020 Div1 Phase 0 : Start Phase 1 : Easy Problems A. 파일 정리 F. 폰친구 C. 연료가 부족해 B. 컨설팅 Phase 2 : 3 Graph Problems E. 사탕 배달 D. 에어컨 설치 G. Confuzzle Phase 3 : Pizza Madness 후기 Our Team 이번...","categories": ["cp-rounds"],
         "tags": [],
-        "url": "http://localhost:4000/cp-rounds/team_practice_1/",
+        "url": "http://localhost:4000/cp-rounds/team-practice-sogang-2020/",
         "teaser": null
       },{
         "title": "삼성 SCPC 예선 1라운드 풀이 / 후기",
@@ -441,5 +441,11 @@ var store = [{
         "excerpt":"Contents 문제 소개 활용 개요 이 글의 상당 부분은, 서베이 논문인 Minaee, S., Boykov, Y., Porikli, F., Plaza, A., Kehtarnavaz, N., &amp; Terzopoulos, D. (2020). Image Segmentation Using Deep Learning: A Survey. IEEE Transactions on Pattern Analysis and Machine Intelligence, 1–22. https://doi.org/10.1109/TPAMI.2021.3059968 을 정리한 내용입니다. 문제 소개 Semantic Segmentation이란, Computer...","categories": ["deep-learning-study"],
         "tags": [],
         "url": "http://localhost:4000/deep-learning-study/semantic-segmentation/",
+        "teaser": null
+      },{
+        "title": "GCPC 2020 팀연습",
+        "excerpt":"Contents F : Flip Flow (10분 AC) A : Adolescent Architecture / K : Knightly Knowledge (45 / 85분 AC, 각 1WA) C : Confined Catching (67분 AC) I : Impressive Integers (103분 AC, 4 WA) D : Decorative Dominoes (142분 AC) G : Gravity Grid (160분 AC, 3 WA)...","categories": ["cp-rounds"],
+        "tags": [],
+        "url": "http://localhost:4000/cp-rounds/team-practice-gcpc-2020/",
         "teaser": null
       }]

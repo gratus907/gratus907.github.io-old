@@ -42,11 +42,15 @@ tt, code, kbd, samp, pre {
     font-size: $type-size-4-5;
 }
 
-.highlight .kt .kn {
+.highlight .kt  {
     color : #ff00ff;
     font-weight: bold;
 }
 
+.highlight .kn {
+    color : #ff00ff;
+    font-weight: bold;
+}
 .highlight .p{
     color: #ffffff;
 }

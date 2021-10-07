@@ -1,4 +1,131 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-02T23:22:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">GCPC 2020 팀연습</title><link href="http://localhost:4000/cp-rounds/team-practice-gcpc-2020/" rel="alternate" type="text/html" title="GCPC 2020 팀연습" /><published>2021-09-28T00:00:00+09:00</published><updated>2021-09-28T00:00:00+09:00</updated><id>http://localhost:4000/cp-rounds/team-practice-gcpc-2020</id><content type="html" xml:base="http://localhost:4000/cp-rounds/team-practice-gcpc-2020/">&lt;div id=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-06T22:44:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gratus907’s Study Note</title><subtitle>Hello World!</subtitle><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><entry><title type="html">Logistic Regression / MLP로 MNIST 풀어보기</title><link href="http://localhost:4000/deep-learning-study/mnist-mlp/" rel="alternate" type="text/html" title="Logistic Regression / MLP로 MNIST 풀어보기" /><published>2021-10-06T00:00:00+09:00</published><updated>2021-10-06T00:00:00+09:00</updated><id>http://localhost:4000/deep-learning-study/mnist-mlp</id><content type="html" xml:base="http://localhost:4000/deep-learning-study/mnist-mlp/">&lt;div id=&quot;toc&quot;&gt;
+  &lt;p&gt;Contents&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#problem--dataset&quot; id=&quot;markdown-toc-problem--dataset&quot;&gt;Problem / Dataset&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#softmax-regression&quot; id=&quot;markdown-toc-softmax-regression&quot;&gt;Softmax Regression&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#multi-layer-perceptron&quot; id=&quot;markdown-toc-multi-layer-perceptron&quot;&gt;Multi-Layer Perceptron&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;심층 신경망의 수학적 기초&lt;/strong&gt; 5강 (9월 16일) 에 기반합니다. 이번 내용은 대부분이 코드에 대한 내용이라서, $\LaTeX$ 노트를 변환하지 않고 여기에 바로 작성했습니다.&lt;/p&gt;
+
+&lt;p&gt;아직 읽지 않았다면, 최소한 Softmax와 MLP에 대한 포스팅 &lt;a href=&quot;&quot;&gt;링크&lt;/a&gt;을, 되도록 &lt;a href=&quot;/deep-learning-study/&quot;&gt;링크&lt;/a&gt; 에 있는 포스팅 중 shallow-nn과 SVM, LR에 대한 내용을 읽으면 이론적 배경이 충분할 것으로 생각합니다 (제가 이 내용을 공부해서 이해한대로 정리했으니까요..?)&lt;/p&gt;
+
+&lt;h2 id=&quot;problem--dataset&quot;&gt;Problem / Dataset&lt;/h2&gt;
+&lt;p&gt;이번에 해결하고자 하는 문제는, MNIST라는 매우 유명한 데이터셋을 이용합니다. MNIST는 Hand-written 숫자로 구성된 데이터셋으로, 널리 알려진 CNN 모델을 처음 제시한 LeCun의 연구에 사용되었던 데이터셋이기도 합니다. 실제로 작동하는 딥 러닝을 만들기에는 너무 작은 데이터셋이지만 공부하는 목적으로 주로 사용됩니다.&lt;/p&gt;
+
+&lt;p&gt;각 이미지는 28 by 28 grayscale image로, 편의상 $\R^{28 \times 28}$ 으로 생각하면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;가장 먼저 해야할 일은 pytorch module을 import하고, 데이터를 받아오고 정리하는 것입니다.&lt;br /&gt;
+Pytorch에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DataLoader&lt;/code&gt;라는 모듈을 이용하여, 편하게 데이터를 Batch로 먹인다거나 하는 작업을 할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch.nn&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch.optim&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Optimizer&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch.utils.data&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DataLoader&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torchvision&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datasets&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torchvision.transforms&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transforms&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;train_set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datasets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MNIST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./mnist_data/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transforms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ToTensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;download&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;test_set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datasets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MNIST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./mnist_data/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transforms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ToTensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;download&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;train_loader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DataLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;test_loader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DataLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;softmax-regression&quot;&gt;Softmax Regression&lt;/h2&gt;
+&lt;p&gt;먼저, 우리는 Softmax regression을 시도해 보겠습니다. Pytorch에서는 다음과 같은 과정으로 머신러닝 모델을 학습합니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Model 정의 : 입력 $x$를 어떤 과정을 거쳐 출력값으로 만들지를 정의합니다. 이 모델에는 훈련가능한 parameter가 있습니다.&lt;/li&gt;
+  &lt;li&gt;Loss function 정의 : 모델이 어떤 방법으로 현재 정확도를 측정할지를 정의합니다.&lt;/li&gt;
+  &lt;li&gt;학습 : Training data를 이용하여 모델의 파라미터를 조정합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이제, Model을 정의해야 합니다. Model은 기본적으로 softmax regression에서 공부했던 모델로, $Ax + b$ 를 10개 만들어야 합니다.&lt;/p&gt;
+
+&lt;p&gt;여기서, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__init__&lt;/code&gt; 을 이용하여 이 모델에서 쓸 Layer들을 정의하고, 그 Layer들을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;forward&lt;/code&gt; 메서드를 통해 사용해서 넘겨주면 됩니다.&lt;/p&gt;
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SoftMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SoftMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Softmax Regression은 이렇게 정의된 model에 다음과 같은 최적화 문제를 푸는 방법입니다. 
+\(\underset{a \in \R^{k \times n}, b \in \R^k}{\minimize}\ \frac{1}{N}\sum_{i = 1}^{N}  \left(-(a_{Y_i}^T X_i + b_{Y_i} + \log\left(\sum_{j = 1}^{k} e^{a_j^TX_i + b}\right)\right)\)&lt;/p&gt;
+
+&lt;p&gt;pytorch에는 $ax + b$의 결과만 받아내면 이를 계산해주는 함수가 있으므로, 모델은 $Ax + b$만 해주면 됩니다.&lt;br /&gt;
+대신 Loss function을 다음과 같이 사용합니다. 여기서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lr&lt;/code&gt; 은 learning rate, $\alpha$ 값을 의미합니다. 최적화 자체에는 Stochastic Gradient Descent를 사용하겠습니다.&lt;/p&gt;
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;loss_function&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CrossEntropyLoss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;    
+&lt;span class=&quot;n&quot;&gt;optimizer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;optim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SGD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.03&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;   
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이제, 우리에게 필요한 모델의 훈련 과정은 이렇게 진행됩니다. Epoch를 많이 돌릴수록 정확해지긴 하지만, 투입하는 시간 대비 얼만큼의 효율이 있는지는 상황마다 다르므로 적당히 판단할 필요가 있습니다.&lt;/p&gt;
+
+&lt;p&gt;워낙 단순한 모델이라 학습할게 많지 않으므로 여기서는 epoch=2 (즉, 전체 데이터를 두바퀴 돌립니다) 만 돌리겠습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;NUM_EPOCH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epoch&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NUM_EPOCH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_loader&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;optimizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zero_grad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;train_loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;loss_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;train_loss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;optimizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이를 뜯어보면,&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;optimizer.zero_grad()&lt;/code&gt; 로 기존 MLP 모델에 남아있던 gradient 값들을 다 날리고&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;train_loss&lt;/code&gt; 는 현재 시점에 모델이 이미지를 받아서 추측을 해보고 그 loss function 값을 확인하고,&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.backward()&lt;/code&gt; 로 현재 시점의 gradient를 계산하고&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;optimizer.step()&lt;/code&gt; 으로 실제 optimization (여기선 SGD)를 수행합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;그렇다면, 이 모델은 얼마나 정확할까요?&lt;/p&gt;
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;test_loss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;correct&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;test_loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;loss_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;pred&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keepdim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;correct&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pred&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view_as&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pred&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;f'''[Test set]&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Average loss: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;, 
+Accuracy: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;correct&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; (&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;100.&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;correct&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%)'''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이 코드는 테스트셋을 모두 한바퀴 돌리면서, test loss의 값과 결과의 정확도를 확인합니다.&lt;/p&gt;
+
+&lt;p&gt;초기화 상황 등에 따라 조금 달라질수는 있을텐데, 저는 2번의 epoch로 92.11%의 정확도를 얻을 수 있었습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;multi-layer-perceptron&quot;&gt;Multi-Layer Perceptron&lt;/h2&gt;
+&lt;p&gt;Pytorch는 굉장히 쓰기 편한 모듈인데, 위 코드에서 정말 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;model&lt;/code&gt;만 바꾸면 바로 MLP를 사용해볼수 있습니다. MLP를 수행하면서 점점 개수가 줄어들어야 하는데, 여기서는 크게 중요하지 않으므로 그냥 편의상 점점 줄어드는 이쁜 값을 몇개 적어넣겠습니다.&lt;/p&gt;
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MLP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;784&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;784&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;functional&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;relu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;functional&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;relu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;functional&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;relu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+    
+&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MLP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이 모델은 activation function으로 ReLU를 쓰는 depth 4짜리 MLP인데, 784 -&amp;gt; 256 -&amp;gt; 128 -&amp;gt; 64 -&amp;gt; 10으로 단계적으로 개수를 줄여나갑니다. 순서대로 Linear-&amp;gt;ReLU-&amp;gt;…-&amp;gt;Linear로 끝납니다.&lt;/p&gt;
+
+&lt;p&gt;위 코드에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;loss_function&lt;/code&gt; 정의부터는 그대로 실행하면 됩니다. 저는 로컬에서 정확도가 96% 정도 나오고, 참을성을 갖고 Epoch를 10으로 바꿨을 때는 98%의 정확도를 얻을 수 있었습니다.&lt;/p&gt;
+
+&lt;p&gt;Q. 왜 4단계 layer를 (3단계, 5단계가 아니라…) 쓰나요?&lt;br /&gt;
+-&amp;gt; 일반적으로 Layer가 깊어질수록 파라미터가 많아져서 training 시간이 오래 걸리고 capacity가 커집니다. 반대로, layer가 얕으면 non-linearity를 충분히 주지 못해서 underfitting할 우려가 있습니다. 
+그렇다고 해서 문제로부터 바로 몇 Layer짜리 MLP를 쓸지 결정할 수 있는 것은 아닙니다. 해보니까 저는 4 Layer 정도가 가장 적당해 보였습니다.&lt;/p&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="deep-learning-study" /><summary type="html">Contents Problem / Dataset Softmax Regression Multi-Layer Perceptron 심층 신경망의 수학적 기초 5강 (9월 16일) 에 기반합니다. 이번 내용은 대부분이 코드에 대한 내용이라서, $\LaTeX$ 노트를 변환하지 않고 여기에 바로 작성했습니다. 아직 읽지 않았다면, 최소한 Softmax와 MLP에 대한 포스팅 링크을, 되도록 링크 에 있는 포스팅 중 shallow-nn과 SVM, LR에 대한 내용을 읽으면 이론적 배경이 충분할 것으로 생각합니다 (제가 이 내용을 공부해서 이해한대로 정리했으니까요..?) Problem / Dataset 이번에 해결하고자 하는 문제는, MNIST라는 매우 유명한 데이터셋을 이용합니다. MNIST는 Hand-written 숫자로 구성된 데이터셋으로, 널리 알려진 CNN 모델을 처음 제시한 LeCun의 연구에 사용되었던 데이터셋이기도 합니다. 실제로 작동하는 딥 러닝을 만들기에는 너무 작은 데이터셋이지만 공부하는 목적으로 주로 사용됩니다. 각 이미지는 28 by 28 grayscale image로, 편의상 $\R^{28 \times 28}$ 으로 생각하면 됩니다. 가장 먼저 해야할 일은 pytorch module을 import하고, 데이터를 받아오고 정리하는 것입니다. Pytorch에서는 DataLoader라는 모듈을 이용하여, 편하게 데이터를 Batch로 먹인다거나 하는 작업을 할 수 있습니다. import torch import torch.nn as nn from torch.optim import Optimizer from torch.utils.data import DataLoader from torchvision import datasets from torchvision.transforms import transforms train_set = datasets.MNIST(root='./mnist_data/', train=True, transform=transforms.ToTensor(), download=True) test_set = datasets.MNIST(root='./mnist_data/', train=False, transform=transforms.ToTensor(), download=True) train_loader = DataLoader(dataset=train_set, batch_size=64, shuffle=True) test_loader = DataLoader(dataset=test_set, batch_size=1, shuffle=False) Softmax Regression 먼저, 우리는 Softmax regression을 시도해 보겠습니다. Pytorch에서는 다음과 같은 과정으로 머신러닝 모델을 학습합니다. Model 정의 : 입력 $x$를 어떤 과정을 거쳐 출력값으로 만들지를 정의합니다. 이 모델에는 훈련가능한 parameter가 있습니다. Loss function 정의 : 모델이 어떤 방법으로 현재 정확도를 측정할지를 정의합니다. 학습 : Training data를 이용하여 모델의 파라미터를 조정합니다. 이제, Model을 정의해야 합니다. Model은 기본적으로 softmax regression에서 공부했던 모델로, $Ax + b$ 를 10개 만들어야 합니다. 여기서, __init__ 을 이용하여 이 모델에서 쓸 Layer들을 정의하고, 그 Layer들을 forward 메서드를 통해 사용해서 넘겨주면 됩니다. class SoftMax(nn.Module): def __init__(self): super().__init__() self.layer = nn.Linear(28*28, 10, bias=True) def forward(self, x): return self.layer(x.float().view(-1, 28 * 28)) model = SoftMax() Softmax Regression은 이렇게 정의된 model에 다음과 같은 최적화 문제를 푸는 방법입니다. \(\underset{a \in \R^{k \times n}, b \in \R^k}{\minimize}\ \frac{1}{N}\sum_{i = 1}^{N} \left(-(a_{Y_i}^T X_i + b_{Y_i} + \log\left(\sum_{j = 1}^{k} e^{a_j^TX_i + b}\right)\right)\) pytorch에는 $ax + b$의 결과만 받아내면 이를 계산해주는 함수가 있으므로, 모델은 $Ax + b$만 해주면 됩니다. 대신 Loss function을 다음과 같이 사용합니다. 여기서 lr 은 learning rate, $\alpha$ 값을 의미합니다. 최적화 자체에는 Stochastic Gradient Descent를 사용하겠습니다. loss_function = torch.nn.CrossEntropyLoss() optimizer = torch.optim.SGD(model.parameters(), lr=0.03) 이제, 우리에게 필요한 모델의 훈련 과정은 이렇게 진행됩니다. Epoch를 많이 돌릴수록 정확해지긴 하지만, 투입하는 시간 대비 얼만큼의 효율이 있는지는 상황마다 다르므로 적당히 판단할 필요가 있습니다. 워낙 단순한 모델이라 학습할게 많지 않으므로 여기서는 epoch=2 (즉, 전체 데이터를 두바퀴 돌립니다) 만 돌리겠습니다. NUM_EPOCH = 2 for epoch in range(NUM_EPOCH) : for images, labels in train_loader : optimizer.zero_grad() train_loss = loss_function(model(images), labels) train_loss.backward() optimizer.step() 이를 뜯어보면, optimizer.zero_grad() 로 기존 MLP 모델에 남아있던 gradient 값들을 다 날리고 train_loss 는 현재 시점에 모델이 이미지를 받아서 추측을 해보고 그 loss function 값을 확인하고, .backward() 로 현재 시점의 gradient를 계산하고 optimizer.step() 으로 실제 optimization (여기선 SGD)를 수행합니다. 그렇다면, 이 모델은 얼마나 정확할까요? test_loss, correct = 0, 0 for ind, (image, label) in enumerate(test_loader) : image, label = image.to(device), label.to(device) output = model(image) test_loss += loss_function(output, label).item() pred = output.max(1, keepdim=True)[1] correct += pred.eq(label.view_as(pred)).sum().item() print(f'''[Test set]\nAverage loss: {test_loss /len(test_loader):.4f}, Accuracy: {correct}/{len(test_loader)} ({100. * correct / len(test_loader):.2f}%)''') 이 코드는 테스트셋을 모두 한바퀴 돌리면서, test loss의 값과 결과의 정확도를 확인합니다. 초기화 상황 등에 따라 조금 달라질수는 있을텐데, 저는 2번의 epoch로 92.11%의 정확도를 얻을 수 있었습니다. Multi-Layer Perceptron Pytorch는 굉장히 쓰기 편한 모듈인데, 위 코드에서 정말 model만 바꾸면 바로 MLP를 사용해볼수 있습니다. MLP를 수행하면서 점점 개수가 줄어들어야 하는데, 여기서는 크게 중요하지 않으므로 그냥 편의상 점점 줄어드는 이쁜 값을 몇개 적어넣겠습니다. class MLP(nn.Module) : def __init__(self,) : super().__init__() self.linear = nn.Linear(784, 256, bias=True) self.linear2 = nn.Linear(256, 128, bias=True) self.linear3 = nn.Linear(128, 64, bias=True) self.linear4 = nn.Linear(64, 10, bias=True) def forward(self, x) : x = x.float().view(-1, 784) x = nn.functional.relu(self.linear(x)) x = nn.functional.relu(self.linear2(x)) x = nn.functional.relu(self.linear3(x)) x = self.linear4(x) return x model = MLP().to(device) 이 모델은 activation function으로 ReLU를 쓰는 depth 4짜리 MLP인데, 784 -&amp;gt; 256 -&amp;gt; 128 -&amp;gt; 64 -&amp;gt; 10으로 단계적으로 개수를 줄여나갑니다. 순서대로 Linear-&amp;gt;ReLU-&amp;gt;…-&amp;gt;Linear로 끝납니다. 위 코드에서 loss_function 정의부터는 그대로 실행하면 됩니다. 저는 로컬에서 정확도가 96% 정도 나오고, 참을성을 갖고 Epoch를 10으로 바꿨을 때는 98%의 정확도를 얻을 수 있었습니다. Q. 왜 4단계 layer를 (3단계, 5단계가 아니라…) 쓰나요? -&amp;gt; 일반적으로 Layer가 깊어질수록 파라미터가 많아져서 training 시간이 오래 걸리고 capacity가 커집니다. 반대로, layer가 얕으면 non-linearity를 충분히 주지 못해서 underfitting할 우려가 있습니다. 그렇다고 해서 문제로부터 바로 몇 Layer짜리 MLP를 쓸지 결정할 수 있는 것은 아닙니다. 해보니까 저는 4 Layer 정도가 가장 적당해 보였습니다.</summary></entry><entry><title type="html">GCPC 2020 팀연습</title><link href="http://localhost:4000/cp-rounds/team-practice-gcpc-2020/" rel="alternate" type="text/html" title="GCPC 2020 팀연습" /><published>2021-09-28T00:00:00+09:00</published><updated>2021-09-28T00:00:00+09:00</updated><id>http://localhost:4000/cp-rounds/team-practice-gcpc-2020</id><content type="html" xml:base="http://localhost:4000/cp-rounds/team-practice-gcpc-2020/">&lt;div id=&quot;toc&quot;&gt;
   &lt;p&gt;Contents&lt;/p&gt;
 &lt;/div&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -923,117 +1050,4 @@ Vertex Labeled graph $G, q$가 주어졌을 때, 함수 $f : V_q \to V_G$가 존
     &lt;p&gt;Zero Property에서, $d(K_n, G_n)$ 이 항상 0이 아니라 0으로 수렴한다는 것이 약간 오묘합니다. 전체적으로 그래프 유사도가 크기에 많은 영향을 받는 것 같습니다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;FaBP가 왜 $O(n^2)$ 에 작동하는지는 아직 공부하지 못했습니다. 전반적으로 후반부의 시간 복잡도 증명이 약간 &lt;strong&gt;잘 구현하면 된다&lt;/strong&gt; 는 식으로 쓰여 있고, 엄밀하게 증명되어 있지 않다는 점은 조금 아쉬웠는데, &lt;a href=&quot;https://github.com/ZhenguoChen/DeltaCon&quot;&gt;Github Repo&lt;/a&gt; 에 꽤 읽기 쉬운 코드가 있어서 그럭저럭 납득할 수 있었습니다. Sparse matrix의 성질을 잘 사용하는 것 같습니다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cs-adventure" /><category term="graph theory" /><summary type="html">Contents</summary></entry><entry><title type="html">Introduction to Optimization / Gradient Descent</title><link href="http://localhost:4000/deep-learning-study/opt-and-gd/" rel="alternate" type="text/html" title="Introduction to Optimization / Gradient Descent" /><published>2021-09-03T00:00:00+09:00</published><updated>2021-09-03T00:00:00+09:00</updated><id>http://localhost:4000/deep-learning-study/opt-and-gd</id><content type="html" xml:base="http://localhost:4000/deep-learning-study/opt-and-gd/">&lt;div id=&quot;toc&quot;&gt;
-  &lt;p&gt;Contents&lt;/p&gt;
-&lt;/div&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#intro-to-optimization&quot; id=&quot;markdown-toc-intro-to-optimization&quot;&gt;Intro to Optimization&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#gradient-descent&quot; id=&quot;markdown-toc-gradient-descent&quot;&gt;Gradient Descent&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;심층 신경망의 수학적 기초&lt;/strong&gt; 1강 (9월 2일) 에 기반합니다.&lt;/p&gt;
-
-&lt;p&gt;이 문서는 $\LaTeX$를 pandoc으로 변환하여 작성하였기 때문에, 레이아웃 등이 깔끔하지 않을 수 있습니다. 언젠가 pdf 버전의 노트를 공개한다면 그쪽을 참고하면 좋을 것 같습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;intro-to-optimization&quot;&gt;Intro to Optimization&lt;/h2&gt;
-
-&lt;p&gt;우리는 다음과 같은 최적화 문제를 생각한다.&lt;/p&gt;
-
-&lt;p&gt;최적화 문제란, 어떤 Decision variable $x$를 조절하여 Objective function
-$f$를 최소화 / 최대화 하는 문제를 말한다. 이때, equality 또는 inequality
-constraint (제약조건) 들이 주어질 수 있다. 즉 다음과 같은 형태의 문제들.
-\(\underset{x \in \R^p}{\minimize} \ f(x)  \ \subto \  h(x) = 0,\ g(x) \leq 0\)&lt;/p&gt;
-
-&lt;p&gt;어차피 최소화와 최대화는 부호를 바꾸면 동치이므로, 앞으로는 최소화
-문제만 생각한다.&lt;/p&gt;
-
-&lt;p&gt;모든 제약 조건을 만족하는 점을 &lt;strong&gt;Feasible point&lt;/strong&gt;라 한다. Feasible
-point가 아예 없는 경우 &lt;strong&gt;infeasible&lt;/strong&gt;하다.&lt;/p&gt;
-
-&lt;p&gt;최적화 문제를 Constraint 유무에 따라 Unconstrained / Constrained로
-나눈다.&lt;/p&gt;
-
-&lt;p&gt;최적화 문제의 답은 Optimal value $p^\star$ 와 solution $x^\star$를 찾는 것이다.
-즉…
-\(p^* = \inf \Setcond{f(x)}{x \in \R^n, x \text{ feasible }}, \quad f(x^*) = p^*\)
-ML 세팅에서는, $0 \leq p^* &amp;lt; \infty$ 인 경우를 주로 생각한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;예시&lt;/strong&gt; : Curve-Fitting, 즉 입력 데이터 $x_1 \dots x_n$ 과 그 label
-$y_1 \dots y_n$에 대해, 입력값과 label의 관계를 찾는 문제. 대표적으로, Least square 문제를 생각할 수 있다. 주어진 입력과 결과를
-가장 가깝게 근사하는 일차함수 찾기.&lt;/p&gt;
-
-&lt;p&gt;최적화 문제에서는 극소 (Local minima) 와 최소 (Global minima) 를
-생각해야 한다. 일반적으로, non-convex 함수의 global minima를 찾는 것은
-어렵다.&lt;/p&gt;
-
-&lt;h2 id=&quot;gradient-descent&quot;&gt;Gradient Descent&lt;/h2&gt;
-
-&lt;p&gt;미분가능한 함수 $f$에 대해, 가장 간단한 unconstrained optimization
-problem을 해결하고자 한다. \(\underset{x \in \R^p}{\minimize} \ f(x)\)
-ML 세팅에서는 almost everywhere differentiable이면 대충 미분가능하다고
-말하는 경우 많음.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Algorithm (Gradient Descent)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;임의의 시작점 $x^0 \in \R^p$ 를 잡고, 적절한 $\alpha_k &amp;gt; 0$ 에 대해
-다음을 반복한다. \(x^{k+1} = x^k - \alpha_k \nabla{f(x^k)}\)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;대략의 아이디어&lt;/strong&gt; :
-$x^k$ 근처에서 $f$를 테일러 전개하면,
-\(f(x) = f(x^k) + \nabla f (x^k)^T (x - x^k) + \order{\norm{x - x^k}^2}\)
-즉, $x = x^{k+1} = x^k - \alpha_k \nabla{f(x^k)}$ 대입하면,
-\(f(x^{k+1}) = f(x^k) - \alpha_k \norm{\nabla{f(x^k)}}^2 + \order{\alpha_k^2}\)
-적당히 $\alpha_k$를 충분히 작게 잡으면, $f(x^{k+1})$ 이 $f(x^k)$보다
-작게 할 수 있을 것 같다.&lt;/p&gt;
-
-&lt;p&gt;일반적으로, Gradient Descent는 Global 한 최적해를 보장하지 않는다.
-Local한 최적해를 찾아간다는 것도 일반적인 조건에서는 안 되고… 대신에,
-조건이 충분히 좋으면 거의 비슷한 명제, $\nabla f(x^k) \to 0$ 을 보일 수
-있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;정리 (Gradient Descent의 수렴성)&lt;/strong&gt;&lt;br /&gt;
-$f : \R^n \to \R$ 이 미분가능하고, $\nabla f$ 가 $L$-Lipschitz 연속이며,
-$f$가 $-\infty$가 아닌 최소값을 가질 때, Gradient descent
-\(x^{k+1} = x^k - \alpha \nabla{f(x^k)}\) 은,
-$\alpha \in \left(0, \frac{2}{L}\right)$에 대해, $\nabla f(x^k) \to 0$
-을 보장한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt;
-$L$-Lipschitz 조건이 필요한 이유는, $\nabla f$ 가 적당히 smooth 해야
-테일러 전개의 근사가 잘 맞기 때문.&lt;/p&gt;
-
-&lt;p&gt;이 생각을 보조정리로 활용한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Lemma (Lipschitz Gradient Lemma)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;$f : \R^n \to R$ 이 미분가능하고, $\nabla f$ 가 $L$-Lipschitz 연속이면, 다음이 성립한다.
-\(f(x + \delta) \leq f(x) + \nabla f(x)^T \delta + \frac{L}{2}\norm{\delta}^2\)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Lemma의 증명(살짝 Rough하게)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;$g(t) = f(x + t\delta)$ 로 두면, $g’(t) = \nabla f(x + t\delta)^T \delta$ 가 된다. 이때 $g’$는 직접
-계산해 보면 $L\norm{\delta}^2$-Lipschitz 임을 알 수 있다.&lt;/li&gt;
-  &lt;li&gt;이제, $f(x + \delta) = g(1)$ 은, 다음과 같이 계산한다.
-\(f(x + \delta) = g(1) = g(0) + \int_{0}^{1} g'(t) \dd{t} \leq f(x) + \int_{0}^{1} (g'(0) + L\norm{\delta}^2 t) \dd{t} = f(x) + \nabla f(x)^T \delta + \frac{L}{2}\norm{\delta}^2\)&lt;/li&gt;
-  &lt;li&gt;따라서 주어진 부등식이 성립한다. ◻&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;수학적으로 깔끔하게 증명하기 위해, 보조정리를 하나 더 쓰자.&lt;br /&gt;
-&lt;strong&gt;Lemma (Summability Lemma)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Non-negative sequence $V_i$, $S_i$ 가 $V_{k+1} \leq V_k - S_k$ 를 만족할 때, $S_k \to 0$ 이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Lemma의 증명&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;$V_{k+1} + \sum_{i = 0}^{k} S_i \leq V_0$에서, $k \to \infty$ 를 취하면, $\sum_{i = 0}^{\infty} S_i \leq V_0 &amp;lt; \infty$ 이다. 급수가 수렴할 때, 일반항이 0으로 수렴함이 알려져 있으므로, 주어진 명제가 성립한다. ◻&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;이제 마지막으로 앞선 정리 - Gradient Descent의 수렴성 비슷한 정리 - 를 증명한다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Lipchitz Gradient Lemma에 의해, $f(x^{k+1}) \leq f(x^k) - \alpha\left(1 - \frac{\alpha L}{2}\right)\norm{\nabla(x^k)}^2$ 이다.&lt;/li&gt;
-  &lt;li&gt;또한, $V_k = f(x^k) - f(x^\star)$, $S_k = \alpha\left(1 - \frac{\alpha L}{2}\right)\norm{\nabla(x^k)}^2$ 라 하면, 주어진 수열들이 음수가 아니며 Summability Lemma의 조건을 만족함을 안다. 따라서, $S_k \to 0$, 즉 $\norm{\nabla(x^k)}^2 \to 0$ 이므로 $\nabla f(x^k) \to 0$ 이다. ◻&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="deep-learning-study" /><summary type="html">Contents</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Wonseok Shin</name><email>gratus907@snu.ac.kr</email></author><category term="cs-adventure" /><category term="graph theory" /><summary type="html">Contents</summary></entry></feed>

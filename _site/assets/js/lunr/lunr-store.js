@@ -448,4 +448,10 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/cp-rounds/team-practice-gcpc-2020/",
         "teaser": null
+      },{
+        "title": "Logistic Regression / MLP로 MNIST 풀어보기",
+        "excerpt":"Contents Problem / Dataset Softmax Regression Multi-Layer Perceptron 심층 신경망의 수학적 기초 5강 (9월 16일) 에 기반합니다. 이번 내용은 대부분이 코드에 대한 내용이라서, $\\LaTeX$ 노트를 변환하지 않고 여기에 바로 작성했습니다. 아직 읽지 않았다면, 최소한 Softmax와 MLP에 대한 포스팅 링크을, 되도록 링크 에 있는 포스팅 중 shallow-nn과 SVM, LR에 대한 내용을...","categories": ["deep-learning-study"],
+        "tags": [],
+        "url": "http://localhost:4000/deep-learning-study/mnist-mlp/",
+        "teaser": null
       }]

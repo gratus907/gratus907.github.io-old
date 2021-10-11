@@ -1,0 +1,863 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TNVQ3G5D5B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TNVQ3G5D5B');
+</script>
+
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[P] Multi Layer Perceptron - Gratus907’s Study Note</title>
+<meta name="description" content="Contents     Linear Layer   Multi Layer Perceptron   Weight Initialization   Gradient Computation : Back propagation    심층 신경망의 수학적 기초 6강 (9월 23일) 에 기반합니다.  이 글은 SVM과 Logistic Regression 링크, Softmax Regression 링크 에 이어지는 내용입니다.  나중에 설명을 보강해서 다시 작성될 예정입니다.    Logistic regression 같은 $f_\theta(x) = a^T x + b$ case를 1-layer (linear layer) neural network로 볼 수 있다.  Softmax Regression 설명 마지막에 했던 것처럼, 적절한 loss function $\ell$ 을 도입한 다음, $\ell(f_\theta(x), y)$ 를 최적화하는 경우를 생각하자. Logistic regression은 여기에 $\ell$로 logistic loss를, $f_\theta$ 자리에 linear model을 넣은 특수한 케이스이다. 이를 좀더 엄밀하게 생각하기 위해, Linear layer를 생각하자.  Linear Layer 입력으로 $X \in \R^{B \x n}$, where $B = $ batch size, $n = $ 입력 크기를 받아서, 출력 $Y \in \R^{B \x m}$ 크기의 텐서를 출력하는데, (Y_{k, i} = \sum_{j = 1}^{n} A_{i, j} X_{k, j} + b_i) 이와 같이 작동하는 layer 를, batch의 각 벡터 $x_k$ 에 대해 $y_k = A x_k + b$ 형태의 선형으로 나타난다는 의미에서 linear layer라 한다. 이때 $A$ 행렬을 weight, $b$ 벡터를 bias라 한다.  따라서, Logistic Regression이란, 하나의 Linear layer를 이용하고, loss function으로 logistic loss (KL-divergence with logistic probability) 를 사용하는 Shallow neural network 라고 다시 정의할 수 있다.  Multi Layer Perceptron Multi-Layer (Deep Network) 를 생각하면, linear function의 깊은 결합은 어차피 linear하므로 아무 의미가 없다.  그러나, 적당한 non-linear activation function $\sigma$ 를 도입하여, 다음과 같은 layer를 구축하면 의미가 있게 된다.    즉, 이를 식으로 쓰면… (\begin{align}     y_L &amp;= W_L y_{L-1} + b_L      y_{L - 1} &amp;= \sigma(W_{L-1} y_{L - 2} + b_{L - 1})      \cdots &amp; \cdots      y_2 &amp;= \sigma (W_2 y_1 + b_2)      y_1 &amp;= \sigma (W_1 x + b_1) \end{align}) where $x \in \R^{n_0}, W_l \in \R^{n_l \x n_{l-1}}, n_L = 1$. (Binary classification만 잠깐 생각하기로 하자)     주로 $\sigma$ 로는 ReLU $ = \max(z, 0)$, Sigmoid $\frac{1}{1 + e^{-z}}$, Hyperbolic tangent $\frac{1 - e^{-2z}}{1 + e^{-2z}}$ 를 쓴다.   관례적으로 마지막 layer에는 $\sigma$를 넣지 않는 경향이 있다.   이 모델을 MultiLayer Perceptron (MLP) 또는 Fully connected neural network 라 한다.  Weight Initialization SGD $\theta^{k + 1} = \theta^k - \alpha g^k$ 에서, $\theta^0$ 은 convex optimization에서는 어떤 점을 골라도 global solution으로 수렴하므로 의미가 없지만, deep learning에서는 $\theta^0$ 을 잘 주는 것이 중요한 문제가 된다.  단순하게 $\theta^0 = 0$ 을 쓰면, vanishing gradient 의 문제가 발생한다. Pytorch에서는 따로 이를 처리하는 방법이 있음.  Gradient Computation : Back propagation 다시 잠깐 logistic regression을 생각하면, loss function을 다 셋업한 다음 결국 마지막에는 stochastic gradient descent 같은 방법을 이용해서 최적화할 계획으로 진행했다. 그렇다는 말은, 결국 어떻게든 뭔가 저 loss function의 gradient를 계산할 방법이 있기는 해야 한다는 의미가 된다. 즉, 각 layer의 weight들과 bias들의 각 원소들 $A_{i, j, k}$에 대해, $\pdv{y_L}{A_{i, j, k}}$ 를 계산할 수 있어야 한다.  MLP에서는 이 gradient 계산이 직접 수행하기에는 매우 어렵기 때문에, 이를 pytorch에서는 autograd 함수로 제공한다. 다만 기본적인 원리는 vector calculus의 chain rule에 기반한다. 나중에 이를 따로 다룬다.">
+
+
+  <meta name="author" content="Wonseok Shin">
+  
+  <meta property="article:author" content="Wonseok Shin">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Gratus907's Study Note">
+<meta property="og:title" content="[P] Multi Layer Perceptron">
+<meta property="og:url" content="http://localhost:4000/deep-learning-study/multilayer-perceptron/">
+
+
+  <meta property="og:description" content="Contents     Linear Layer   Multi Layer Perceptron   Weight Initialization   Gradient Computation : Back propagation    심층 신경망의 수학적 기초 6강 (9월 23일) 에 기반합니다.  이 글은 SVM과 Logistic Regression 링크, Softmax Regression 링크 에 이어지는 내용입니다.  나중에 설명을 보강해서 다시 작성될 예정입니다.    Logistic regression 같은 $f_\theta(x) = a^T x + b$ case를 1-layer (linear layer) neural network로 볼 수 있다.  Softmax Regression 설명 마지막에 했던 것처럼, 적절한 loss function $\ell$ 을 도입한 다음, $\ell(f_\theta(x), y)$ 를 최적화하는 경우를 생각하자. Logistic regression은 여기에 $\ell$로 logistic loss를, $f_\theta$ 자리에 linear model을 넣은 특수한 케이스이다. 이를 좀더 엄밀하게 생각하기 위해, Linear layer를 생각하자.  Linear Layer 입력으로 $X \in \R^{B \x n}$, where $B = $ batch size, $n = $ 입력 크기를 받아서, 출력 $Y \in \R^{B \x m}$ 크기의 텐서를 출력하는데, (Y_{k, i} = \sum_{j = 1}^{n} A_{i, j} X_{k, j} + b_i) 이와 같이 작동하는 layer 를, batch의 각 벡터 $x_k$ 에 대해 $y_k = A x_k + b$ 형태의 선형으로 나타난다는 의미에서 linear layer라 한다. 이때 $A$ 행렬을 weight, $b$ 벡터를 bias라 한다.  따라서, Logistic Regression이란, 하나의 Linear layer를 이용하고, loss function으로 logistic loss (KL-divergence with logistic probability) 를 사용하는 Shallow neural network 라고 다시 정의할 수 있다.  Multi Layer Perceptron Multi-Layer (Deep Network) 를 생각하면, linear function의 깊은 결합은 어차피 linear하므로 아무 의미가 없다.  그러나, 적당한 non-linear activation function $\sigma$ 를 도입하여, 다음과 같은 layer를 구축하면 의미가 있게 된다.    즉, 이를 식으로 쓰면… (\begin{align}     y_L &amp;= W_L y_{L-1} + b_L      y_{L - 1} &amp;= \sigma(W_{L-1} y_{L - 2} + b_{L - 1})      \cdots &amp; \cdots      y_2 &amp;= \sigma (W_2 y_1 + b_2)      y_1 &amp;= \sigma (W_1 x + b_1) \end{align}) where $x \in \R^{n_0}, W_l \in \R^{n_l \x n_{l-1}}, n_L = 1$. (Binary classification만 잠깐 생각하기로 하자)     주로 $\sigma$ 로는 ReLU $ = \max(z, 0)$, Sigmoid $\frac{1}{1 + e^{-z}}$, Hyperbolic tangent $\frac{1 - e^{-2z}}{1 + e^{-2z}}$ 를 쓴다.   관례적으로 마지막 layer에는 $\sigma$를 넣지 않는 경향이 있다.   이 모델을 MultiLayer Perceptron (MLP) 또는 Fully connected neural network 라 한다.  Weight Initialization SGD $\theta^{k + 1} = \theta^k - \alpha g^k$ 에서, $\theta^0$ 은 convex optimization에서는 어떤 점을 골라도 global solution으로 수렴하므로 의미가 없지만, deep learning에서는 $\theta^0$ 을 잘 주는 것이 중요한 문제가 된다.  단순하게 $\theta^0 = 0$ 을 쓰면, vanishing gradient 의 문제가 발생한다. Pytorch에서는 따로 이를 처리하는 방법이 있음.  Gradient Computation : Back propagation 다시 잠깐 logistic regression을 생각하면, loss function을 다 셋업한 다음 결국 마지막에는 stochastic gradient descent 같은 방법을 이용해서 최적화할 계획으로 진행했다. 그렇다는 말은, 결국 어떻게든 뭔가 저 loss function의 gradient를 계산할 방법이 있기는 해야 한다는 의미가 된다. 즉, 각 layer의 weight들과 bias들의 각 원소들 $A_{i, j, k}$에 대해, $\pdv{y_L}{A_{i, j, k}}$ 를 계산할 수 있어야 한다.  MLP에서는 이 gradient 계산이 직접 수행하기에는 매우 어렵기 때문에, 이를 pytorch에서는 autograd 함수로 제공한다. 다만 기본적인 원리는 vector calculus의 chain rule에 기반한다. 나중에 이를 따로 다룬다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-10-12T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/deep-learning-study/multilayer-perceptron/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Wonseok Shin",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Gratus907's Study Note Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']],
+      packages: {'[+]': ['physics']}
+    },
+    loader: {
+      load: ["input/tex", "output/chtml", '[tex]/physics']
+    },
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}\newcommand{\di}{\mathrel{|}}\newcommand{\limply}{\rightarrow}\newcommand{\fa}{\forall}\newcommand{\e}{\exists}\newcommand{\lxor}{\oplus}\newcommand{\liff}{\leftrightarrow}\newcommand{\lequiv}{\Leftrightarrow}\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}\newcommand{\minimize}{\mathrm{minimize}}\newcommand{\subto}{\mathrm{subject\ to}}\newcommand{\minimize}{\mathrm{minimize}}
+  \newcommand{\subto}{\mathrm{subject\ to}}
+  \newcommand{\DKL}[2]{D_{\mathrm{KL}}\left(#1 \di\di #2\right)}
+  \newcommand{\E}{\mathbb{E}}
+  \newcommand{\expect}[1]{\E\left[#1\right]}
+  \newcommand{\expectwith}[2]{\E_{#1}\left[#2\right]}
+  \renewcommand{\P}{\mathbb{P}}
+  \newcommand{\uniform}[2]{\mathrm{Uniform}\left(#1 \dots #2\right)}
+  \newcommand{\sgn}{\text{sign}}
+  \newcommand{\argmin}{\mathrm{argmin}}
+  \newcommand{\argmax}{\mathrm{argmax}}
+  \newcommand{\x}{\times}$$</p>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M2LK7DWFS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9M2LK7DWFS');
+    </script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Gratus907's Study Note
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/postings/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about-me/">About me</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about-blog/">About Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Wonseok Shin</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>2018- SNU CSE, interested in algorithms, mathematics</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/gratus907" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:gratus907@snu.ac.kr">
+            <meta itemprop="email" content="gratus907@snu.ac.kr" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/cs-adventure/"><span class="nav__sub-title">CS 논문읽기</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Problem Solving</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/ps-weekly/">PS Weekly</a></li>
+          
+            <li><a href="/find-contest/">문제 출처별로 보기</a></li>
+          
+            <li><a href="/ps-teatime/">PS Teatime</a></li>
+          
+            <li><a href="/competitive-programming-rounds/">Competitive Programming</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">주제별 노트정리</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/ds-alg-note/">자료구조/알고리즘</a></li>
+          
+            <li><a href="/ds-alg-advanced/">고급 자료구조/알고리즘</a></li>
+          
+            <li><a href="/deep-learning-study/">Deep Learning Notes</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+    
+    <nav class="toc">
+      <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+      <ul class="toc__menu">
+  <li><a href="#linear-layer">Linear Layer</a></li>
+  <li><a href="#multi-layer-perceptron">Multi Layer Perceptron</a></li>
+  <li><a href="#weight-initialization">Weight Initialization</a></li>
+  <li><a href="#gradient-computation--back-propagation">Gradient Computation : Back propagation</a></li>
+</ul>
+
+    </nav>
+    
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[P] Multi Layer Perceptron">
+    <meta itemprop="description" content="  Contents  Linear Layer  Multi Layer Perceptron  Weight Initialization  Gradient Computation : Back propagation심층 신경망의 수학적 기초 6강 (9월 23일) 에 기반합니다.이 글은 SVM과 Logistic Regression 링크, Softmax Regression 링크 에 이어지는 내용입니다.나중에 설명을 보강해서 다시 작성될 예정입니다.Logistic regression 같은 $f_\theta(x) = a^T x + b$ case를 1-layer (linear layer) neural network로 볼 수 있다.Softmax Regression 설명 마지막에 했던 것처럼, 적절한 loss function $\ell$ 을 도입한 다음, $\ell(f_\theta(x), y)$ 를 최적화하는 경우를 생각하자. Logistic regression은 여기에 $\ell$로 logistic loss를, $f_\theta$ 자리에 linear model을 넣은 특수한 케이스이다. 이를 좀더 엄밀하게 생각하기 위해, Linear layer를 생각하자.Linear Layer입력으로 $X \in \R^{B \x n}$, where $B = $ batch size, $n = $ 입력 크기를 받아서, 출력 $Y \in \R^{B \x m}$ 크기의 텐서를 출력하는데,(Y_{k, i} = \sum_{j = 1}^{n} A_{i, j} X_{k, j} + b_i)이와 같이 작동하는 layer 를, batch의 각 벡터 $x_k$ 에 대해 $y_k = A x_k + b$ 형태의 선형으로 나타난다는 의미에서 linear layer라 한다. 이때 $A$ 행렬을 weight, $b$ 벡터를 bias라 한다.따라서, Logistic Regression이란, 하나의 Linear layer를 이용하고, loss function으로 logistic loss (KL-divergence with logistic probability) 를 사용하는 Shallow neural network 라고 다시 정의할 수 있다.Multi Layer PerceptronMulti-Layer (Deep Network) 를 생각하면, linear function의 깊은 결합은 어차피 linear하므로 아무 의미가 없다.그러나, 적당한 non-linear activation function $\sigma$ 를 도입하여, 다음과 같은 layer를 구축하면 의미가 있게 된다.즉, 이를 식으로 쓰면…(\begin{align}    y_L &amp;= W_L y_{L-1} + b_L     y_{L - 1} &amp;= \sigma(W_{L-1} y_{L - 2} + b_{L - 1})     \cdots &amp; \cdots     y_2 &amp;= \sigma (W_2 y_1 + b_2)     y_1 &amp;= \sigma (W_1 x + b_1)\end{align})where $x \in \R^{n_0}, W_l \in \R^{n_l \x n_{l-1}}, n_L = 1$. (Binary classification만 잠깐 생각하기로 하자)  주로 $\sigma$ 로는 ReLU $ = \max(z, 0)$, Sigmoid $\frac{1}{1 + e^{-z}}$, Hyperbolic tangent $\frac{1 - e^{-2z}}{1 + e^{-2z}}$ 를 쓴다.  관례적으로 마지막 layer에는 $\sigma$를 넣지 않는 경향이 있다.이 모델을 MultiLayer Perceptron (MLP) 또는 Fully connected neural network 라 한다.Weight InitializationSGD $\theta^{k + 1} = \theta^k - \alpha g^k$ 에서, $\theta^0$ 은 convex optimization에서는 어떤 점을 골라도 global solution으로 수렴하므로 의미가 없지만, deep learning에서는 $\theta^0$ 을 잘 주는 것이 중요한 문제가 된다.단순하게 $\theta^0 = 0$ 을 쓰면, vanishing gradient 의 문제가 발생한다. Pytorch에서는 따로 이를 처리하는 방법이 있음.Gradient Computation : Back propagation다시 잠깐 logistic regression을 생각하면, loss function을 다 셋업한 다음 결국 마지막에는 stochastic gradient descent 같은 방법을 이용해서 최적화할 계획으로 진행했다. 그렇다는 말은, 결국 어떻게든 뭔가 저 loss function의 gradient를 계산할 방법이 있기는 해야 한다는 의미가 된다. 즉, 각 layer의 weight들과 bias들의 각 원소들 $A_{i, j, k}$에 대해, $\pdv{y_L}{A_{i, j, k}}$ 를 계산할 수 있어야 한다.MLP에서는 이 gradient 계산이 직접 수행하기에는 매우 어렵기 때문에, 이를 pytorch에서는 autograd 함수로 제공한다. 다만 기본적인 원리는 vector calculus의 chain rule에 기반한다. 나중에 이를 따로 다룬다.">
+    <meta itemprop="datePublished" content="2021-10-12T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[P] Multi Layer Perceptron
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          469 words
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/deep-learning-study/multilayer-perceptron/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> </div> <br/>
+      <div style="display:none;"> <span id="busuanzi_container_site_pv" style="display:none;"><span id="busuanzi_value_site_pv" style="display:none;"></span></span></div>
+      <section class="page__content" itemprop="text"> 
+        <div id="toc">
+  <p>Contents</p>
+</div>
+<ul id="markdown-toc">
+  <li><a href="#linear-layer" id="markdown-toc-linear-layer">Linear Layer</a></li>
+  <li><a href="#multi-layer-perceptron" id="markdown-toc-multi-layer-perceptron">Multi Layer Perceptron</a></li>
+  <li><a href="#weight-initialization" id="markdown-toc-weight-initialization">Weight Initialization</a></li>
+  <li><a href="#gradient-computation--back-propagation" id="markdown-toc-gradient-computation--back-propagation">Gradient Computation : Back propagation</a></li>
+</ul>
+<hr />
+
+<p><strong>심층 신경망의 수학적 기초</strong> 6강 (9월 23일) 에 기반합니다.</p>
+
+<p>이 글은 SVM과 Logistic Regression <a href="/deep-learning-study/svm-and-lr">링크</a>, Softmax Regression <a href="/deep-learning-study/softmax-regression">링크</a> 에 이어지는 내용입니다.</p>
+
+<p>나중에 설명을 보강해서 다시 작성될 예정입니다.</p>
+
+<hr />
+
+<p>Logistic regression 같은 $f_\theta(x) = a^T x + b$ case를 1-layer (linear layer) neural network로 볼 수 있다.</p>
+
+<p>Softmax Regression 설명 마지막에 했던 것처럼, 적절한 loss function $\ell$ 을 도입한 다음, $\ell(f_\theta(x), y)$ 를 최적화하는 경우를 생각하자. Logistic regression은 여기에 $\ell$로 logistic loss를, $f_\theta$ 자리에 linear model을 넣은 특수한 케이스이다. 이를 좀더 엄밀하게 생각하기 위해, Linear layer를 생각하자.</p>
+
+<h3 id="linear-layer">Linear Layer</h3>
+<p>입력으로 $X \in \R^{B \x n}$, where $B = $ batch size, $n = $ 입력 크기를 받아서, 출력 $Y \in \R^{B \x m}$ 크기의 텐서를 출력하는데,
+\(Y_{k, i} = \sum_{j = 1}^{n} A_{i, j} X_{k, j} + b_i\)
+이와 같이 작동하는 layer 를, batch의 각 벡터 $x_k$ 에 대해 $y_k = A x_k + b$ 형태의 선형으로 나타난다는 의미에서 linear layer라 한다. 이때 $A$ 행렬을 weight, $b$ 벡터를 bias라 한다.</p>
+
+<p>따라서, Logistic Regression이란, 하나의 Linear layer를 이용하고, loss function으로 logistic loss (KL-divergence with logistic probability) 를 사용하는 Shallow neural network 라고 다시 정의할 수 있다.</p>
+
+<h3 id="multi-layer-perceptron">Multi Layer Perceptron</h3>
+<p>Multi-Layer (Deep Network) 를 생각하면, linear function의 깊은 결합은 어차피 linear하므로 아무 의미가 없다.</p>
+
+<p>그러나, 적당한 non-linear activation function $\sigma$ 를 도입하여, 다음과 같은 layer를 구축하면 의미가 있게 된다.</p>
+
+<p><img src="../../images/ff57f23d2850f3930f519254ad5691f7b02dee930010d30ffa0e4a39b57b8d93.png" alt="picture 1" /></p>
+
+<p>즉, 이를 식으로 쓰면…
+\(\begin{align*}
+    y_L &amp;= W_L y_{L-1} + b_L \\
+    y_{L - 1} &amp;= \sigma(W_{L-1} y_{L - 2} + b_{L - 1}) \\
+    \cdots &amp; \cdots \\
+    y_2 &amp;= \sigma (W_2 y_1 + b_2) \\
+    y_1 &amp;= \sigma (W_1 x + b_1)
+\end{align*}\)
+where $x \in \R^{n_0}, W_l \in \R^{n_l \x n_{l-1}}, n_L = 1$. (Binary classification만 잠깐 생각하기로 하자)</p>
+
+<ul>
+  <li>주로 $\sigma$ 로는 ReLU $ = \max(z, 0)$, Sigmoid $\frac{1}{1 + e^{-z}}$, Hyperbolic tangent $\frac{1 - e^{-2z}}{1 + e^{-2z}}$ 를 쓴다.</li>
+  <li>관례적으로 마지막 layer에는 $\sigma$를 넣지 않는 경향이 있다.</li>
+</ul>
+
+<p>이 모델을 <strong>MultiLayer Perceptron (MLP)</strong> 또는 Fully connected neural network 라 한다.</p>
+
+<h3 id="weight-initialization">Weight Initialization</h3>
+<p>SGD $\theta^{k + 1} = \theta^k - \alpha g^k$ 에서, $\theta^0$ 은 convex optimization에서는 어떤 점을 골라도 global solution으로 수렴하므로 의미가 없지만, deep learning에서는 $\theta^0$ 을 잘 주는 것이 중요한 문제가 된다.</p>
+
+<p>단순하게 $\theta^0 = 0$ 을 쓰면, vanishing gradient 의 문제가 발생한다. Pytorch에서는 따로 이를 처리하는 방법이 있음.</p>
+
+<h3 id="gradient-computation--back-propagation">Gradient Computation : Back propagation</h3>
+<p>다시 잠깐 logistic regression을 생각하면, loss function을 다 셋업한 다음 결국 마지막에는 stochastic gradient descent 같은 방법을 이용해서 최적화할 계획으로 진행했다. 그렇다는 말은, 결국 어떻게든 뭔가 저 loss function의 gradient를 계산할 방법이 있기는 해야 한다는 의미가 된다. 즉, 각 layer의 weight들과 bias들의 각 원소들 $A_{i, j, k}$에 대해, $\pdv{y_L}{A_{i, j, k}}$ 를 계산할 수 있어야 한다.</p>
+
+<p>MLP에서는 이 gradient 계산이 직접 수행하기에는 매우 어렵기 때문에, 이를 pytorch에서는 autograd 함수로 제공한다. 다만 기본적인 원리는 vector calculus의 chain rule에 기반한다. 나중에 이를 따로 다룬다.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#deep-learning-study" class="page__taxonomy-item" rel="tag">deep-learning-study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-10-12T00:00:00+09:00">October 12, 2021</time></p>
+
+
+      </footer>
+      
+  <nav class="pagination">
+    
+      <a href="/deep-learning-study/mnist-mlp/" class="pagination--pager" title="Softmax Regression / MLP로 MNIST 풀어보기
+">이전</a>
+    
+    
+      <a href="/deep-learning-study/softmax-regression/" class="pagination--pager" title="[P] Softmax Regression
+">다음</a>
+    
+  </nav>
+
+      
+      <div id="disqus_thread"></div>
+      <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+        var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://gratus907-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+    
+
+    
+      <div class="page__related">
+        <h4 class="page__related-title">참고</h4>
+        <div class="grid__wrapper">
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/deep-learning-study/softmax-regression/" rel="permalink">[P] Softmax Regression
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          493 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+  Softmax Regression
+
+
+
+심층 신경망의 수학적 기초 6강 (9월 23일) 에 기반합니다.
+
+이 글은 SVM과 Logistic Regression 링크 에 이어지는 내용입니다.
+
+
+
+데이터 $X_1, \dots X_n \in \mathcal...</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/deep-learning-study/mnist-mlp/" rel="permalink">Softmax Regression / MLP로 MNIST 풀어보기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          727 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+  Problem / Dataset
+  Softmax Regression
+  Multi-Layer Perceptron
+
+
+
+심층 신경망의 수학적 기초 5강, 6강 (9월 16일, 23일) 에 기반합니다. 이번 내용은 대부분이 코드에 대한 내용이라서, $\L...</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cp-rounds/team-practice-gcpc-2020/" rel="permalink">GCPC 2020 팀연습
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          1387 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+  F : Flip Flow (10분 AC)
+  A : Adolescent Architecture / K : Knightly Knowledge (45 / 85분 AC, 각 1WA)
+  C : Confined Catching (67분 AC)
+  I : Imp...</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/deep-learning-study/semantic-segmentation/" rel="permalink">Semantic Segmentation : Introduction
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          508 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+  문제 소개
+  활용
+  개요
+
+
+
+이 글의 상당 부분은, 서베이 논문인 Minaee, S., Boykov, Y., Porikli, F., Plaza, A., Kehtarnavaz, N., &amp; Terzopoulos, D. (2020). Image ...</p>
+  </article>
+</div>
+
+          
+        </div>
+      </div>
+    
+    
+  </div>
+</article>
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 801650d5908d23d33fabf8bf453fb26a7c58dabb</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'G-TNVQ3G5D5B']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+
+    <script>
+    
+    var elements = document.querySelectorAll('p');
+    Array.prototype.forEach.call(elements, function(el, i){
+        if(el.innerHTML=='[expand]') {
+            var parentcontent = el.parentNode.innerHTML.replace('<p>[expand]</p>','<div class="expand" style="display: none; height: 0; overflow: hidden;">').replace('<p>[/expand]</p>','</div>');
+            el.parentNode.innerHTML = parentcontent;
+        }
+    });
+
+    var elements = document.querySelectorAll('div.expand');
+    Array.prototype.forEach.call(elements, function(el, i){
+        el.previousElementSibling.innerHTML = el.previousElementSibling.innerHTML + '<span>..&nbsp; <a href="#" style="cursor: pointer;" onclick="this.parentNode.parentNode.nextElementSibling.style.display = \'block\'; this.parentNode.parentNode.nextElementSibling.style.height = \'auto\'; this.parentNode.style.display = \'none\';">read&nbsp;more&nbsp;&rarr;</a></span>';
+    });
+
+</script>
+
+  </body>
+</html>

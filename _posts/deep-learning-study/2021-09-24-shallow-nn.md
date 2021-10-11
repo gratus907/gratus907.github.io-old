@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Shallow Neural Networks - Introduction"
+title: "[P] Shallow Neural Networks - Introduction"
 categories: deep-learning-study
 sidebar:
   nav: "sidepost"

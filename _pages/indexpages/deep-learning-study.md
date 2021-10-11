@@ -32,8 +32,11 @@ permalink : /deep-learning-study/
 ## Shallow Neural Networks 
 - [Introduction to Shallow Neural Networks](/deep-learning-study/shallow-nn/)
 - [Support Vector Machine & Logistic Regression](/deep-learning-study/svm-and-lr/) : Binary Classification 문제를 해결하는 두 모델에 대하여.
-- [Softmax Regression](/deep-learning-study/svm-and-lr/) : Multiclass classification 해결, Logistic Regression의 확장
+- [Softmax Regression](/deep-learning-study/softmax-regression/) : Multiclass classification 해결, Logistic Regression의 확장
 
 ## Multi Layer Perceptron 
 - [Multi-Layer Perceptron](/deep-learning-study/mlp) : 딥 러닝의 시작.
 - [Softmax와 MLP로 MNIST 풀어보기](/deep-learning-study/mnist-mlp) : MNIST 손글씨 숫자인식 with Softmax / MLP
+
+## Computer Vision
+- [Semantic Segmentation 개요](/deep-learning-study/semantic-segmentation) : Semantic segmentation 문제 정의, 개요

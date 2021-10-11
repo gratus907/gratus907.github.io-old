@@ -138,7 +138,10 @@
   \newcommand{\expectwith}[2]{\E_{#1}\left[#2\right]}
   \renewcommand{\P}{\mathbb{P}}
   \newcommand{\uniform}[2]{\mathrm{Uniform}\left(#1 \dots #2\right)}
-  \newcommand{\sgn}{\text{sign}}$$</p>
+  \newcommand{\sgn}{\text{sign}}
+  \newcommand{\argmin}{\mathrm{argmin}}
+  \newcommand{\argmax}{\mathrm{argmax}}
+  \newcommand{\x}{\times}$$</p>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M2LK7DWFS"></script>
@@ -629,7 +632,7 @@ $L$-Lipschitz 조건이 필요한 이유는, $\nabla f$ 가 적당히 smooth 해
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/deep-learning-study/mnist-mlp/" rel="permalink">Logistic Regression / MLP로 MNIST 풀어보기
+        <a href="/deep-learning-study/softmax-regression/" rel="permalink">[P] Softmax Regression
 </a>
       
     </h2>
@@ -647,7 +650,108 @@ $L$-Lipschitz 조건이 필요한 이유는, $\nabla f$ 가 적당히 smooth 해
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          745 words
+          493 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+  Softmax Regression
+
+
+
+심층 신경망의 수학적 기초 6강 (9월 23일) 에 기반합니다.
+
+이 글은 SVM과 Logistic Regression 링크 에 이어지는 내용입니다.
+
+
+
+데이터 $X_1, \dots X_n \in \mathcal...</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/deep-learning-study/multilayer-perceptron/" rel="permalink">[P] Multi Layer Perceptron
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          472 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+  Linear Layer
+  Multi Layer Perceptron
+  Weight Initialization
+  Gradient Computation : Back propagation
+
+
+
+심층 신경망의 수학적 기초 6강 (9월 23일) 에 기반합니다...</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/deep-learning-study/mnist-mlp/" rel="permalink">Softmax Regression / MLP로 MNIST 풀어보기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          747 words
       </span>
     
   </p>
@@ -663,7 +767,7 @@ $L$-Lipschitz 조건이 필요한 이유는, $\nabla f$ 가 적당히 smooth 해
 
 
 
-심층 신경망의 수학적 기초 5강 (9월 16일) 에 기반합니다. 이번 내용은 대부분이 코드에 대한 내용이라서, $\LaTeX$ 노트를...</p>
+심층 신경망의 수학적 기초 5강, 6강 (9월 16일, 23일) 에 기반합니다. 이번 내용은 대부분이 코드에 대한 내용이라서, $\L...</p>
   </article>
 </div>
 
@@ -713,103 +817,6 @@ $L$-Lipschitz 조건이 필요한 이유는, $\nabla f$ 가 적당히 smooth 해
 </div>
 
           
-            
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/deep-learning-study/semantic-segmentation/" rel="permalink">Semantic Segmentation : Introduction
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          523 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-  Contents
-
-
-  문제 소개
-  활용
-  개요
-
-
-
-이 글의 상당 부분은, 서베이 논문인 Minaee, S., Boykov, Y., Porikli, F., Plaza, A., Kehtarnavaz, N., &amp; Terzopoulos, D. (2020). Image ...</p>
-  </article>
-</div>
-
-          
-            
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/deep-learning-study/svm-and-lr/" rel="permalink">Binary Classification : Support Vector Machine / Logistic Regression
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          767 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-  Contents
-
-
-  Binary Classification
-  Linear Classification
-  Support Vector Machine
-  Logistic Regression
-
-
-
-심층 신경망의 수학적 기초 3강 (9월 9일), 4강 (9월 14일) 에 기반합니...</p>
-  </article>
-</div>
-
-          
         </div>
       </div>
     
@@ -853,7 +860,7 @@ $L$-Lipschitz 조건이 필요한 이유는, $\nabla f$ 가 적당히 smooth 해
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version c20bda1e01be30703b9182d91a710faf3b92dc83</div>
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 801650d5908d23d33fabf8bf453fb26a7c58dabb</div>
 
       </footer>
     </div>

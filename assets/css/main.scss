@@ -34,11 +34,11 @@ html {
 }
 
 tt, code, kbd, samp, pre {
-    font-family: $monospace;
+    font-family: "Ubuntu Mono",Monaco,Consolas,"Lucida Console",monospace;
 }
 
 .highlight {
-    font-family: $monospace;
+    font-family: "Ubuntu Mono",Monaco,Consolas,"Lucida Console",monospace;
     font-size: $type-size-4-5;
 }
 
@@ -70,7 +70,7 @@ tt, code, kbd, samp, pre {
 }
 
 .language-plaintext {
-    font-family: $monospace;
+    font-family: "Ubuntu Mono",Monaco,Consolas,"Lucida Console",monospace;
     font-size: $type-size-5;
 }
 
@@ -97,7 +97,7 @@ a:visited {
 }
 
 .language-plaintext{
-    font-family: Monaco,Consolas,"Lucida Console",monospace;
+    font-family: "Ubuntu Mono",Monaco,Consolas,"Lucida Console",monospace;
     background: #ffffff;
 }
 

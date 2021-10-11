@@ -419,19 +419,19 @@ var store = [{
         "url": "http://localhost:4000/cp-rounds/snupc-2021/",
         "teaser": null
       },{
-        "title": "Stochastic Gradient Descent",
+        "title": "[P] Stochastic Gradient Descent",
         "excerpt":"Contents Stochastic Gradient Descent Batch SGD / Cyclic SGD SGD Convergence Theorem 심층 신경망의 수학적 기초 2강 (9월 7일), 3강 (9월 9일) 에 기반합니다. 이 문서는 $\\LaTeX$를 pandoc으로 변환하여 작성하였기 때문에, 레이아웃 등이 깔끔하지 않을 수 있습니다. 언젠가 pdf 버전의 노트를 공개한다면 그쪽을 참고하면 좋을 것 같습니다. Stochastic Gradient Descent...","categories": ["deep-learning-study"],
         "tags": [],
         "url": "http://localhost:4000/deep-learning-study/sgd/",
         "teaser": null
       },{
-        "title": "Shallow Neural Networks - Introduction",
+        "title": "[P] Shallow Neural Networks - Introduction",
         "excerpt":"Contents Shallow Neural Network : Introduction KL-Divergence 심층 신경망의 수학적 기초 3강 (9월 9일), 4강 (9월 14일) 에 기반합니다. 이 문서는 $\\LaTeX$를 pandoc으로 변환하여 작성하였기 때문에, 레이아웃 등이 깔끔하지 않을 수 있습니다. 언젠가 pdf 버전의 노트를 공개한다면 그쪽을 참고하면 좋을 것 같습니다. Shallow Neural Network : Introduction 데이터 $X_1, \\dots...","categories": ["deep-learning-study"],
         "tags": [],
         "url": "http://localhost:4000/deep-learning-study/shallow-nn/",
         "teaser": null
       },{
-        "title": "Binary Classification : Support Vector Machine / Logistic Regression",
+        "title": "[P] Binary Classification : Support Vector Machine / Logistic Regression",
         "excerpt":"Contents Binary Classification Linear Classification Support Vector Machine Logistic Regression 심층 신경망의 수학적 기초 3강 (9월 9일), 4강 (9월 14일) 에 기반합니다. 이 문서는 $\\LaTeX$를 pandoc으로 변환하여 작성하였기 때문에, 레이아웃 등이 깔끔하지 않을 수 있습니다. 언젠가 pdf 버전의 노트를 공개한다면 그쪽을 참고하면 좋을 것 같습니다. Binary Classification 잠시 앞서의 정의를...","categories": ["deep-learning-study"],
         "tags": [],
         "url": "http://localhost:4000/deep-learning-study/svm-and-lr/",
@@ -449,9 +449,21 @@ var store = [{
         "url": "http://localhost:4000/cp-rounds/team-practice-gcpc-2020/",
         "teaser": null
       },{
-        "title": "Logistic Regression / MLP로 MNIST 풀어보기",
-        "excerpt":"Contents Problem / Dataset Softmax Regression Multi-Layer Perceptron 심층 신경망의 수학적 기초 5강 (9월 16일) 에 기반합니다. 이번 내용은 대부분이 코드에 대한 내용이라서, $\\LaTeX$ 노트를 변환하지 않고 여기에 바로 작성했습니다. 아직 읽지 않았다면, 최소한 Softmax와 MLP에 대한 포스팅 링크을, 되도록 링크 에 있는 포스팅 중 shallow-nn과 SVM, LR에 대한 내용을...","categories": ["deep-learning-study"],
+        "title": "Softmax Regression / MLP로 MNIST 풀어보기",
+        "excerpt":"Contents Problem / Dataset Softmax Regression Multi-Layer Perceptron 심층 신경망의 수학적 기초 5강, 6강 (9월 16일, 23일) 에 기반합니다. 이번 내용은 대부분이 코드에 대한 내용이라서, $\\LaTeX$ 노트를 변환하지 않고 여기에 바로 작성했습니다. 아직 읽지 않았다면, 최소한 Softmax(링크)와 MLP(링크)에 대한 포스팅 을, 되도록 링크 에 있는 포스팅 중 shallow-nn과 SVM, LR에...","categories": ["deep-learning-study"],
         "tags": [],
         "url": "http://localhost:4000/deep-learning-study/mnist-mlp/",
+        "teaser": null
+      },{
+        "title": "[P] Multi Layer Perceptron",
+        "excerpt":"Contents Linear Layer Multi Layer Perceptron Weight Initialization Gradient Computation : Back propagation 심층 신경망의 수학적 기초 6강 (9월 23일) 에 기반합니다. 이 글은 SVM과 Logistic Regression 링크, Softmax Regression 링크 에 이어지는 내용입니다. 나중에 설명을 보강해서 다시 작성될 예정입니다. Logistic regression 같은 $f_\\theta(x) = a^T x + b$ case를...","categories": ["deep-learning-study"],
+        "tags": [],
+        "url": "http://localhost:4000/deep-learning-study/multilayer-perceptron/",
+        "teaser": null
+      },{
+        "title": "[P] Softmax Regression",
+        "excerpt":"Contents Softmax Regression 심층 신경망의 수학적 기초 6강 (9월 23일) 에 기반합니다. 이 글은 SVM과 Logistic Regression 링크 에 이어지는 내용입니다. 데이터 $X_1, \\dots X_n \\in \\mathcal{X}$이 있고, 이에 대한 정답 라벨 $Y_1, \\dots Y_n \\in \\mathcal{Y}$이 주어진 경우를 생각해 보자. 이번에는 그런데, $Y_i$ 가 $-1$ 과 $1$ 중에서 고르는...","categories": ["deep-learning-study"],
+        "tags": [],
+        "url": "http://localhost:4000/deep-learning-study/softmax-regression/",
         "teaser": null
       }]

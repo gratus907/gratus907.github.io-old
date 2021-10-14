@@ -455,6 +455,12 @@ var store = [{
         "url": "http://localhost:4000/deep-learning-study/mnist-mlp/",
         "teaser": null
       },{
+        "title": "ICPC Korea First Round 2021 후기 / 풀이",
+        "excerpt":"Contents Preperation / Our Team 본 대회 Problem I : Sport Climbing Combined Problem E : Histogram Problem J : Ten Problem H : Similarity Problem B : Carrot Field Problem K : Treasure Hunter Problem C : Colorful Tower of Hanoi Retrospect About Problemset / Our result About my...","categories": ["cp-rounds"],
+        "tags": [],
+        "url": "http://localhost:4000/cp-rounds/icpc-2021-prelim/",
+        "teaser": null
+      },{
         "title": "[P] Multi Layer Perceptron",
         "excerpt":"Contents Linear Layer Multi Layer Perceptron Weight Initialization Gradient Computation : Back propagation 심층 신경망의 수학적 기초 6강 (9월 23일) 에 기반합니다. 이 글은 SVM과 Logistic Regression 링크, Softmax Regression 링크 에 이어지는 내용입니다. 나중에 설명을 보강해서 다시 작성될 예정입니다. Logistic regression 같은 $f_\\theta(x) = a^T x + b$ case를...","categories": ["deep-learning-study"],
         "tags": [],
@@ -462,7 +468,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[P] Softmax Regression",
-        "excerpt":"Contents Softmax Regression 심층 신경망의 수학적 기초 6강 (9월 23일) 에 기반합니다. 이 글은 SVM과 Logistic Regression 링크 에 이어지는 내용입니다. 데이터 $X_1, \\dots X_n \\in \\mathcal{X}$이 있고, 이에 대한 정답 라벨 $Y_1, \\dots Y_n \\in \\mathcal{Y}$이 주어진 경우를 생각해 보자. 이번에는 그런데, $Y_i$ 가 $-1$ 과 $1$ 중에서 고르는...","categories": ["deep-learning-study"],
+        "excerpt":"Contents Softmax Regression 심층 신경망의 수학적 기초 6강 (9월 23일) 에 기반합니다. 이 글은 SVM과 Logistic Regression 링크 에 이어지는 내용입니다. 나중에 설명을 보강해서 다시 작성될 예정입니다. 데이터 $X_1, \\dots X_n \\in \\mathcal{X}$이 있고, 이에 대한 정답 라벨 $Y_1, \\dots Y_n \\in \\mathcal{Y}$이 주어진 경우를 생각해 보자. 이번에는 그런데, $Y_i$...","categories": ["deep-learning-study"],
         "tags": [],
         "url": "http://localhost:4000/deep-learning-study/softmax-regression/",
         "teaser": null

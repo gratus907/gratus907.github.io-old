@@ -17,8 +17,8 @@ layout: default
 
 <div id="main" role="main">
   {% include sidebar.html %}
-
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
@@ -34,6 +34,7 @@ layout: default
       <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io{{ page.url }}&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> </div> <br/>
       <div style="display:none;"> <span id="busuanzi_container_site_pv" style="display:none;"><span id="busuanzi_value_site_pv" style="display:none;"></span></span></div>
       <section class="page__content" itemprop="text"> 
+        {% include sidetoc.html %}
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>

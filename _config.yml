@@ -212,7 +212,6 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
-  - jekyll-toc
   - jekyll-seo-tag
 
 # mimic GitHub Pages with --safe

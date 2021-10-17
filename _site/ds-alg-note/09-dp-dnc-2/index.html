@@ -72,9 +72,13 @@
 </script>
 
 
+  <meta name="google-site-verification" content="google47004f86a38ab187.html" />
 
 
 
+
+
+  <meta name="naver-site-verification" content="navere133bbae47e70cd9311ce1c7d5cf18d7.html">
 
 <!-- end _includes/seo.html -->
 
@@ -247,7 +251,7 @@
 
 <div id="main" role="main">
   
-  <div class="sidebar sticky">
+  <aside class="sidebar sticky">
   
 
 
@@ -421,19 +425,12 @@
 
     
     
-    <nav class="toc">
-      <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-      
-
-    </nav>
-    
-    
   
-  </div>
-
+  </aside>
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+
     <meta itemprop="headline" content="IX. Dynamic Programming &amp; Divide and Conquer (2)">
     <meta itemprop="description" content="  Contents오늘은 연습문제만 있습니다.      Segment Tree : 수열을 다루는 자료구조중 하나입니다. 어떤 수열$a_1, a_2, \dots a_n$ 이 주어집니다.                  구간 $[i, j]$가 주어지면, $a_i + a_{i+1} + \dots + a_j$ 의 값을구합니다.                    $i, v$ 가 주어지면, $a_i$ 에 $v$를 더합니다.                            첫번째 쿼리만 주어지고, 두번째 쿼리가 주어지지 않는다면, 이문제를 쿼리당 $O(1)$ 에 처리할 수 있습니다. 부분합 배열이라고부릅니다. 이 방법을 설명하세요.                    우리는 Complete Binary Tree를 만들어서 이 문제를 해결하고자합니다. 각 노드는 어떤 구간을 담당할 것입니다. 각 노드들은 다음원칙을 지킵니다. “노드의 값은, 두 자식 노드의 값을 합한 값을갖는다. 각 노드는 두 자식 노드가 담당하는 구간을 합한 구간을담당한다&quot;                    전체 노드의 개수가 몇 개인지 생각해 보세요. 첫 번째 쿼리가주어졌을 때, 이를 해결하기 위해 총 확인해야 하는 노드가 몇개인지 생각해 보세요. 두 번째 쿼리에 대해서도 같은 과정을 반복해보세요.                    이 방법이 두 쿼리를 빠르게 해결할 수 있음을 이해하고, 시간복잡도를 계산해 보세요.                  Segment Tree with Lazy Propagation : 위 문제와 거의 같습니다.                  구간 $[i, j]$가 주어지면, $a_i + a_{i+1} + \dots + a_j$ 의 값을구합니다.                    구간 $[i, j]$와 값 $v$ 가 주어지면, $a_i, a_{i+1}, \dots a_j$ 에모두 $v$를 더합니다.                            일반적인 세그먼트 트리가 이 문제를 잘 해결하지 못함을관찰하세요.                    추가적인 기법으로, 갱신을 “미루는” 방법을 사용하겠습니다. 각노드마다, 이 노드가 지금까지 얼마나 갱신을 미루고 있었는지를추가로 저장합니다.                    1번, 2번 쿼리가 주어졌을 때 각각 어떻게 이 정보를 이용하여 값을계산할지 제시하고, 그 방법들의 시간 복잡도를 계산하세요.                  Merge Sort Tree : 이번에는 위와 같이 수열이 주어지는 상황에서,이런 문제를 생각하겠습니다.          구간 $[i, j]$와 어떤 수 $k$가 주어지면,$a_i, a_{i+1}, \dots a_j$ 에서 $k$보다 큰 값의 개수를 구합니다.                      머지 소트 트리는, 세그먼트 트리와 거의 같은 방법으로 만들되, 각트리가 머지 소트의 중간 과정을 담고 있는 트리입니다.                    즉, 각 트리가 정수값 하나가 아닌 작은 수열을 들고 있습니다.                    이 트리가 위 문제를 빠르게 해결할 수 있음을 보이세요. 목표하는시간복잡도는 쿼리당 $O(\log^2 n)$ 입니다.                  Edit Distance : 편집 거리란, 두 수열 $S, T$에 대해, 값의 삽입,삭제, 대체 연산을 이용하여 $S$를 $T$로 만들고자 할 때 필요한최소한의 연산 횟수로 정의합니다. 각 수열의 길이가 $m, n$ 일 때, 편집거리를 $O(mn)$에 구하는 알고리즘을 제시하세요.        Longest Common Subsequence : 두 수열 $S, T$에 대해, 두 수열이가지고 있는 최대 공통 부분 수열을 구하고자 합니다. 두 수열의 길이가$m, n$일 때, LCS의 길이를 $O(mn)$에 구하는 알고리즘을 제시하세요.        Longest Increasing Subsequence : 어떤 수열 $a_1, \dots a_n$ 이주어졌을 때, 이 중 가장 긴 증가하는 부분 수열 (not necessarilycontiguous) 의 길이를 구하고자 합니다.                  자명한 DP식을 생각해 봅시다. 각 $i$에 대해, $D_i$는 $i$번째를 끝원소로 하는 가장 긴 증가하는 부분 수열의 길이로 정의합니다.                    이제, $D_i = \max_{j &lt; i, A_j &lt; A_i} D_j + 1$ 로 계산가능합니다.                    이 DP를 그대로 계산하면 $O(n^2)$ 시간이 걸릴 것입니다.                    이보다 빠른 시간 복잡도 $O(n \log n)$ 을 달성하는 방법이,지금까지 공부한 내용만으로 2가지가 가능합니다. 두 가지를제시하세요. 1                  Lowest Common Ancestor - Binary Lifting &amp; Sparse Table : 트리 $T$에 대해, 정점$u, v$의 최소 공통 조상을 구하고자 합니다.                  가장 자명한 방법은 두 노드를 루트까지 타고 올라가면서 모든 조상노드를 찾은 뒤, 조상 노드 번호의 수열을 루트부터 거꾸로확인하면서 어디까지 겹치는지 확인하는 방법입니다. 이는 $O(n)$시간이 걸립니다.                    약간의 Preprocessing을 통해, 각 쿼리를 $O(\log n)$ 에처리하는 방법을 이해해 보고자 합니다.                    각 노드 $u$의 부모 노드를 안다면, 모든 노드의 2대 부모 노드를빠르게 구할 수 있음을 이해하세요. 이를 확장하여 $2^{k-1}$ 번째부모를 안다면 $2^{k}$ 번째 부모도 알 수 있음을 이해하세요.                    따라서, par[x][i] 를 $x$의 $2^i$번째 부모로 정의할 때, 이배열을 모두 채우는 데 $O(n \log n)$ 시간이 걸립니다.                    이 배열을 이용, $O(\log n)$ 시간에 각 쿼리에 답하는 방법을제시하세요. 일반성을 잃지 않고, 깊이가 같은 경우만 보여도 됨을 관찰하세요.                    목표는 $u$ 의 $k$번째 부모가 $v$의 $k$번째 부모와 같은 최소 $k$ 찾기입니다. $k$ 를 이진수로 맞추고, par 배열로 짜 맞춰 봅시다.                        하나는 Binary Search, 다른 하나는 Segment Tree &#8617;      ">
     <meta itemprop="datePublished" content="2021-08-25T00:00:00+09:00">
@@ -469,6 +466,16 @@
       <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/ds-alg-note/09-dp-dnc-2/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> </div> <br/>
       <div style="display:none;"> <span id="busuanzi_container_site_pv" style="display:none;"><span id="busuanzi_value_site_pv" style="display:none;"></span></span></div>
       <section class="page__content" itemprop="text"> 
+        
+<aside class="sidebar__right sticky">
+    <nav class="toc">
+      <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+      
+
+    </nav>
+</aside> 
+
+    
         <div id="toc">
   <p>Contents</p>
 </div>
@@ -747,7 +754,7 @@ $u, v$의 최소 공통 조상을 구하고자 합니다.</p>
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          951 words
+          949 words
       </span>
     
   </p>
@@ -761,13 +768,13 @@ $u, v$의 최소 공통 조상을 구하고자 합니다.</p>
   Pooling
   Convolutionary Neural Network
   Why CNN?
-  Models
+  Next posts
 
 
 
 심층 신경망의 수학적 기초 7강 (9월 28일) 에 기반합니다.
 
-매우 유명한 Standford CS231n 자료 ...</p>
+매우 유명한 Standford CS231n...</p>
   </article>
 </div>
 
@@ -965,7 +972,7 @@ $u, v$의 최소 공통 조상을 구하고자 합니다.</p>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version aba51c979561218ebe99a2c1f248151bd313c26c</div>
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 2afd1ef0651ab7145fb9c5af07352d0218b4d253</div>
 
       </footer>
     </div>

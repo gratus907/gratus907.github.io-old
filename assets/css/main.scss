@@ -113,8 +113,11 @@ a:visited {
     margin: 1.5em 0em 0.5em 0em;
 }
 
-div.highlighter-rouge, figure.highlight {
-    color : #ffffff;
+.toc__menu {
+    font-size: .875em;
+}
+.toc .nav__title {
+    font-size: .875em;
 }
 
 .pseudocode {

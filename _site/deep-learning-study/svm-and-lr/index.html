@@ -72,9 +72,13 @@
 </script>
 
 
+  <meta name="google-site-verification" content="google47004f86a38ab187.html" />
 
 
 
+
+
+  <meta name="naver-site-verification" content="navere133bbae47e70cd9311ce1c7d5cf18d7.html">
 
 <!-- end _includes/seo.html -->
 
@@ -247,7 +251,7 @@
 
 <div id="main" role="main">
   
-  <div class="sidebar sticky">
+  <aside class="sidebar sticky">
   
 
 
@@ -421,24 +425,12 @@
 
     
     
-    <nav class="toc">
-      <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-      <ul class="toc__menu">
-  <li><a href="#binary-classification">Binary Classification</a></li>
-  <li><a href="#linear-classification">Linear Classification</a></li>
-  <li><a href="#support-vector-machine">Support Vector Machine</a></li>
-  <li><a href="#logistic-regression">Logistic Regression</a></li>
-</ul>
-
-    </nav>
-    
-    
   
-  </div>
-
+  </aside>
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+
     <meta itemprop="headline" content="[P] Binary Classification : Support Vector Machine / Logistic Regression">
     <meta itemprop="description" content="  Contents  Binary Classification  Linear Classification  Support Vector Machine  Logistic Regression심층 신경망의 수학적 기초 3강 (9월 9일), 4강 (9월 14일) 에 기반합니다.이 문서는 $\LaTeX$를 pandoc으로 변환하여 작성하였기 때문에, 레이아웃 등이 깔끔하지 않을 수 있습니다. 언젠가 pdf 버전의 노트를 공개한다면 그쪽을 참고하면 좋을 것 같습니다.Binary Classification잠시 앞서의 정의를 돌아보자.데이터 $X_1, \dots X_n \in \mathcal{X}$이 있고, 이에 대한 정답 라벨$Y_1, \dots Y_n \in \mathcal{Y}$이 주어진 경우를 생각해 보자. 이때, 어떤True Unknown Function $f_\star : \mathcal{X} \to \mathcal{Y}$ 가있다고 생각하면, $Y_i = f_\star(X_i)$ 를 만족한다.우리는, $X_i, Y_i$로부터, $f_\star$과 가까운 어떤 함수 $f$를 찾아내는작업을 수행하고 싶다. $X_i$들에 대해 $Y_i$는 사람이 수집한 데이터를 쓰기때문에, 이를 Supervised Learning이라고 부른다.Supervised Learning을 위해, 우리는 다음과 같은 최적화 문제를 생각할 것이다.(\underset{\theta \in \Theta}{\minimize}\ \frac{1}{N}\sum_{i = 1}^{N} \ell(f_\theta(x_i), f_\star(x_i)))특히, 이번에는 $\mathcal{X} = \R^p$, $\mathcal{Y} = \Set{-1, +1}$ 인 문제를 생각하자.즉, 데이터를 두 클래스로 분리해내는 것이다. 이때, 특별히 이 데이터가linearly seperable한지를 생각한다. 어떤 초평면 $a^T x + b$ 가존재하여, $y$값을 $a^T x + b$의 부호에 따라 찍어낼 수 있으면 linearlyseperable하다고 정의한다.Linear ClassificationBinary classifcation, 특히 linear classifcation 문제를 해결하기 위해다음과 같은 affine model을 생각한다. (f_{a, b}(x) = \sgn(a^T x + b))여기에 loss function으로, 틀린 라벨의 개수를 세는 것이 매우 자연스럽다.이렇게 컴팩트하게 쓸 수 있다.(\ell(y_1, y_2) = \frac{1}{2}\abs{1 - y_1 y_2})이제, 다음의 최적화 문제를 풀고 싶다.(\underset{a \in \R^p, b \in \R}{\minimize}\ \frac{1}{N}\sum_{i = 1}^{N} \ell(f_{a, b}(x_i), y_i))그러면 Linearly seperable한지는 이 최적화 문제의 최적해가 0인지와동치이다. 그런데, 이 함수는 연속함수가 아니기 때문에 (정확히는 대충미분가능하다는 조건을 요구한다) SGD같은 알고리즘을 돌릴수가 없다.Support Vector Machine따라서, 이 문제를 continuous하게 relaxation하고자 한다. 관점을 바꾸면,이 라벨이 1일 / -1일 ‘Confidence’를 반환하도록 모델을 좀 잘 확장하고자한다. 0.5이면 ‘아마도 1일 것으로 보인다’ 같은 느낌으로.이를 위해서는 $y_i f_{a, b}(x_i) &gt; 0$ 을 만족해야 한다.그런데, 실제로는 이렇게 하면 $f$값이 0 근처에서만 왔다갔다하는 문제가 있고, 이는 numerical한 면에서나 neural network의 confidence라는 해석으로나 적절하지 않으므로 적당히margin을 주는 것이 바람직하다.적당히 margin을 1만큼 줘서, $y_i f_{a, b}(x_i) \geq 1$ 을 만족하면좋을 것 같다. 여기서 ‘좋을 것 같다’ 는 말은 반대로 저 성질을 만족하지않으면 페널티를 부과하겠다는 발상으로도 해석될 수 있고… 이 페널티 함수를 최소화하는 문제로 쓰면,(\underset{a \in \R^p, b \in \R}{\minimize}\ \frac{1}{N}\sum_{i = 1}^{N} \max(0, 1 - y_i f_{a, b}(x_i)) = \frac{1}{N}\sum_{i = 1}^{N} \max(0, 1 - y_i (a^T x_i + b)))데이터가 linearly seperable하면, 이 식도 optimal value가 0임을 알 수있다. 이 방법을 Support Vector Machine 이라고 부르며, 흔히regularizer를 추가한 아래 식으로쓴다.(\underset{a \in \R^p, b \in \R}{\minimize}\ \frac{1}{N}\sum_{i = 1}^{N} \max(0, 1 - y_i (a^T x_i + b)) + \frac{\lambda}{2}\norm{a}^2)이 최적화 문제 (Relaxation 넣기 전!)가 원본 문제의 relaxation이라는사실을 보이는 것은 어렵지 않다. 원래 문제의 최적해를 $p_1^\star$ 라 하고,SVM의 최적해를 $p_2^\star$ 라 하면, $p_1^\star = 0 \iff p_2^\star = 0$ 임을 알 수있다.결국, relaxed supervised learning은 point prediction을 relaxation 해서label value 대신 그 label의 probability를 예측하는 방향으로 생각하는 것.Single prediction보다 훨씬 realistic한 세팅으로 생각할 수 있다.Logistic RegressionLinear binary classification에 대한 또다른 방법. 여전히 Decisionboundary $a^T x + b$ 를 알고자 한다. 먼저…Binary classification에서, 우리가 확인한 데이터의 Label을 확률벡터로만들어서 (만약 완전히 label이 하나라면, (1, 0) 과 (0, 1) 처럼) 표현한것을 empirical distribution $\mathcal{P}(y)$ 라고 정의하기로 한다.다음과 같은 모델을 이용하여 최적화하는 supervised learning을 LogisticRegression이라 한다. (f_{a, b}(x) = \begin{bmatrix}    \frac{1}{1 + e^{a^T x + b}}     \frac{1}{1 + e^{-(a^Tx + b)}}\end{bmatrix})이 모델을 이용하여, 다음과 같은 최적화 문제를 해결하고자 한다.(\underset{a \in \R^p, b \in \R}{\minimize}\ \sum_{i = 1}^{N} \DKL{\mathcal{P}(Y_i)}{f_{a, b}(X_i)})즉, 우리는 empirical distribution과의 KL-Divergence를 최소화하고 싶다.이 식을 정리하면…(\underset{a \in \R^p, b \in \R}{\minimize}\ \sum_{i = 1}^{N} H(\mathcal{P}(Y_i), f_{a, b}(X_i)) + \text{ Terms independent of } a, b)정확히 Cross entropy $H$를 전개하고, 오른쪽 term들을 다 버리면…(\underset{a \in \R^p, b \in \R}{\minimize}\ - \frac{1}{N}\sum_{i = 1}^{N} \P(y_i = -1) \log\left(\frac{1}{1 + e^{a^Tx_i + b}}\right) + \P(y_i = 1)\log\left(\frac{1}{1 + e^{-a^Tx_i - b}}\right))이는 다시, $\P(y_i = 1)$ 과 $\P(y_i = -1)$ 이 one-hot이므로, 둘중에어느쪽이 1인지를 깔끔하게 정리하여,(\underset{a \in \R^p, b \in \R}{\minimize}\ - \frac{1}{N}\sum_{i = 1}^{N} \log\left(\frac{1}{1 + e^{-y_i(a^Tx_i + b)}}\right))단조감소함수인 Loss function $\ell(z) = \log(1 + e^{-z})$를 도입하여부호를 떼고 깔끔하게 정리할 수 있다.(\underset{a \in \R^p, b \in \R}{\minimize}\ \frac{1}{N}\sum_{i = 1}^{N}\ell(y_i(a^T x_i + b)))이 문제를 해결한 후, $a^T x + b$ 의 부호에 따라 prediction한다.SVM과 비교하면, 출발점이 달랐지만 결국은 같은 문제가 되는데, $\ell(z)$를 어떻게 정의하느냐의 문제가 된다. SVM은 $\max(0, 1-z)$이고, Logisticregression은 $\log(1 + e^{-z})$ 를 쓰는 경우로 생각할 수 있다. 좌표에그려보면 두 함수가 사실 굉장히 비슷하게 생겼다.SVM과 LR은 둘다 (Decision boundary가 hyperplane이라는 관점에서) Linearclassifier이지만, LR이 좀더 자연스럽게 multiclass classification으로확장된다. (Softmax Regression)">
     <meta itemprop="datePublished" content="2021-09-24T00:00:00+09:00">
@@ -474,6 +466,21 @@
       <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/deep-learning-study/svm-and-lr/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> </div> <br/>
       <div style="display:none;"> <span id="busuanzi_container_site_pv" style="display:none;"><span id="busuanzi_value_site_pv" style="display:none;"></span></span></div>
       <section class="page__content" itemprop="text"> 
+        
+<aside class="sidebar__right sticky">
+    <nav class="toc">
+      <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+      <ul class="toc__menu">
+  <li><a href="#binary-classification">Binary Classification</a></li>
+  <li><a href="#linear-classification">Linear Classification</a></li>
+  <li><a href="#support-vector-machine">Support Vector Machine</a></li>
+  <li><a href="#logistic-regression">Logistic Regression</a></li>
+</ul>
+
+    </nav>
+</aside> 
+
+    
         <div id="toc">
   <p>Contents</p>
 </div>
@@ -696,7 +703,7 @@ classifier이지만, LR이 좀더 자연스럽게 multiclass classification으�
       
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
-          951 words
+          949 words
       </span>
     
   </p>
@@ -710,13 +717,13 @@ classifier이지만, LR이 좀더 자연스럽게 multiclass classification으�
   Pooling
   Convolutionary Neural Network
   Why CNN?
-  Models
+  Next posts
 
 
 
 심층 신경망의 수학적 기초 7강 (9월 28일) 에 기반합니다.
 
-매우 유명한 Standford CS231n 자료 ...</p>
+매우 유명한 Standford CS231n...</p>
   </article>
 </div>
 
@@ -914,7 +921,7 @@ classifier이지만, LR이 좀더 자연스럽게 multiclass classification으�
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version aba51c979561218ebe99a2c1f248151bd313c26c</div>
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 2afd1ef0651ab7145fb9c5af07352d0218b4d253</div>
 
       </footer>
     </div>

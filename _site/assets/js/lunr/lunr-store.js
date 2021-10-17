@@ -474,7 +474,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Convolutionary Neural Networks : Introduction",
-        "excerpt":"Contents Convolution Pooling Convolutionary Neural Network Why CNN? Models 심층 신경망의 수학적 기초 7강 (9월 28일) 에 기반합니다. 매우 유명한 Standford CS231n 자료 도 참고하면 좋습니다. Convolution Convolution은 수학적으로 굉장히 다양한 대상들에 대해서 잘 정의된 연산인데, 우리는 $n$차원 텐서 (배열) 에 대해서만 생각하겠습니다. 다음 그림과 같이, Convolution은 Filter 또는 Kernel...","categories": ["deep-learning-study"],
+        "excerpt":"Contents Convolution Pooling Convolutionary Neural Network Why CNN? Next posts 심층 신경망의 수학적 기초 7강 (9월 28일) 에 기반합니다. 매우 유명한 Standford CS231n 자료 도 참고하면 좋습니다. Convolution Convolution은 수학적으로 굉장히 다양한 대상들에 대해서 잘 정의된 연산인데, 우리는 $n$차원 텐서 (배열) 에 대해서만 생각하겠습니다. 다음 그림과 같이, Convolution은 Filter 또는...","categories": ["deep-learning-study"],
         "tags": [],
         "url": "http://localhost:4000/deep-learning-study/convolutionary-neural-networks/",
         "teaser": null

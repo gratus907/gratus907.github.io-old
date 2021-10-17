@@ -1,15 +1,591 @@
----
-layout: null
----
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for post in site.posts %}
-    {% unless post.published == false %}    
-    <url>
-      <loc>{{ site.url }}{{ post.url }}</loc>
-      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    {% endunless %}
-  {% endfor %}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	  	  
+<!-- www.check-domains.com sitemap generator -->
+
+<url>
+   <loc>https://gratus907.github.io/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>1.0000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/feed.xml</loc>
+   <lastmod>2021-10-17T08:06:34+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/postings/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/categories/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/tags/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/about-me/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/about-blog/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cs-adventure/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/find-contest/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ds-alg-note/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ds-alg-advanced/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/deep-learning-study/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/study-log-math/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ps-teatime/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/snu-courses/SNU-courses-CS/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/snu-courses/SNU-courses-MATH/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/deep-learning-study/convolutionary-neural-networks/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cp-rounds/icpc-2021-prelim/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/deep-learning-study/softmax-regression/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/deep-learning-study/multilayer-perceptron/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/deep-learning-study/mnist-mlp/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cp-rounds/team-practice-gcpc-2020/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/deep-learning-study/semantic-segmentation/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/deep-learning-study/svm-and-lr/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/deep-learning-study/shallow-nn/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/deep-learning-study/sgd/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cp-rounds/snupc-2021/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cs-adventure/sub-iso-note/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cs-adventure/VEQ/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cs-adventure/deltacon/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/deep-learning-study/opt-and-gd/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/retrospects-and-plans/starting-2021-fall/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ps-weekly/ps-weekly-21Aug4/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/retrospects-and-plans/finishing-2021-summer/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ds-alg-note/09-dp-dnc-2/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ds-alg-note/08-dp-dnc-1/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ds-alg-note/06-bst-unionfind/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ps-weekly/ps-weekly-21Aug2/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cp-rounds/ChungAngU-NPC2021/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cs-adventure/chan-vese/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ps-problems/BOJ15744/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ds-alg-note/05-graph-basics/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ds-alg-note/04-binary-search/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ds-alg-note/03-sorting-and-searching/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ds-alg-note/02-basic-ds/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ds-alg-note/01-time-complexity/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ps-weekly/ps-weekly-21Aug1/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cp-rounds/SCPC-2021-Round2/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/advanced-algorithms/random-walk-on-graphs/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ps-weekly/ps-weekly-21Jul4/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/advanced-algorithms/karger-stein-mincut/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ucpc_team_broken/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ps-weekly/ps-weekly-21Jul3/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cp-rounds/SCPC-2021-Round1/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cp-rounds/team-practice-sogang-2020/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ps-weekly/ps-weekly-21Jul1/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/retrospects-and-plans/finishing-2021-spring/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cp-rounds/Codejam-2021-R2/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ps-weekly/ps-weekly-21may2/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ps-weekly/ps-weekly-21may1/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/numerical-analysis/im-1/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/retrospects-and-plans/halfway-through-2021-spring/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/advanced-algorithms/Pollards-Rho/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cp-rounds/Hashcode-2021-prep/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cp-rounds/Hashcode-2021-prelim/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ16532/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ15907/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ml-study/Coursera-ML-Lec8/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ9373/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ8904/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ml-study/Coursera-ML-Lec7/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ml-study/Coursera-ML-Lec6/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ml-study/Coursera-ML-Lec5/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ml-study/Coursera-ML-Lec4/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ4002/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ15977/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ml-study/Coursera-ML-Lec3/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ20176/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ml-study/Coursera-ML-Lec2/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ml-study/Coursera-ML-Lec1/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ13548/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ml-study/Starting-coursera-ml/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/misc/solvedAC-300M-exp/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ19693/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ18600/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/advanced-algorithms/graph-algorithms-lec1/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ1126/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ2533/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ17371/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ12928/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/advanced-algorithms/DP-DnC-Opt/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/advanced-algorithms/Fibonacci-heaps/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/algorithms/BOJ18194/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/jekyll/Hello-Jekyll/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/about-me/eng/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/ps-weekly/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://gratus907.github.io/cp-rounds/</loc>
+   <lastmod>2021-10-17T08:11:50+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
 </urlset>

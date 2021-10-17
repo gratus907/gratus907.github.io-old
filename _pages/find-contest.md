@@ -52,7 +52,7 @@ Jekyll 블로그를 만들기로 한 가장 큰 이유는 이렇게 생긴 페�
 
 | 번호         | 난이도        | 문제              | 포스팅 링크                              |
 |------------|------------|-----------------|-------------------------------------|
-| **2019-E** | Platinum 5 | 여우가 정보섬에 올라온 이유 | [링크](/algorithms/ps-weekly-21Jul1/) |
+| **2019-E** | Platinum 5 | 여우가 정보섬에 올라온 이유 | [링크](/ps-weekly/ps-weekly-21Jul1/) |
 
 ### 서강대학교 SPC
 
@@ -83,8 +83,8 @@ Jekyll 블로그를 만들기로 한 가장 큰 이유는 이렇게 생긴 페�
 ### International Olymiad of Informatics
 
 | 번호         | 난이도       | 문제          | 포스팅 링크                     | 
-| **2002-4** | Platinum 3 | Batch Scheduling |  [링크](/ps_weekly/ps-weekly-21Jul3)  | 
-| **2009-4** | Gold 1 | 몬스터 |  [링크](/ps_weekly/ps-weekly-21Jul3)  | 
+| **2002-4** | Platinum 3 | Batch Scheduling |  [링크](/ps-weekly/ps-weekly-21Jul3)  | 
+| **2009-4** | Gold 1 | 몬스터 |  [링크](/ps-weekly/ps-weekly-21Jul3)  | 
 
 ### Asia-Pacific Informatics Olympiad
 
@@ -131,7 +131,7 @@ Jekyll 블로그를 만들기로 한 가장 큰 이유는 이렇게 생긴 페�
 | 번호                | 난이도        | 문제     | 포스팅 링크                              |
 |-------------------|------------|--------|-------------------------------------|
 | **2016 Round 1B A** | Gold 3 | Getting the Digits | [링크](/ps-teatime/) (210730) | 
-| **2021 Round 2** | - | Whole Round | [링크](/algorithms/Codejam-2021-R2/) | 
+| **2021 Round 2** | - | Whole Round | [링크](/cp-rounds/Codejam-2021-R2/) | 
 
 ### Samsung SCPC
 - 2021 Round 1 : [포스팅 링크](/cp-rounds/SCPC-2021-Round1/)
@@ -148,4 +148,4 @@ Jekyll 블로그를 만들기로 한 가장 큰 이유는 이렇게 생긴 페�
 
 | 번호         | 난이도        | 문제              | 포스팅 링크                      |
 |------------|------------|-----------------|-----------------------------|
-| **R490-E** | 2000 | Reachability from the Capital | [링크](/algorithms/ps-weekly-21Jul1/)  | 
+| **R490-E** | 2000 | Reachability from the Capital | [링크](/ps-weekly/ps-weekly-21Jul1/)  | 

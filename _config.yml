@@ -21,9 +21,9 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Wonseok Shin"
 description              : "Hello World!"
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://gratus907.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "gratus907/gratus907.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -64,10 +64,10 @@ google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
 # SEO Related
-google_site_verification :
+google_site_verification : "google47004f86a38ab187.html"
 bing_site_verification   :
 yandex_site_verification :
-naver_site_verification  :
+naver_site_verification  : "navere133bbae47e70cd9311ce1c7d5cf18d7.html"
 
 # Social Sharing
 twitter:
@@ -86,9 +86,9 @@ social:
 
 # Analytics
 analytics:
-  provider               : google # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider               : "google" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          : G-TNVQ3G5D5B
+    tracking_id          : "G-TNVQ3G5D5B"
     anonymize_ip         : # true, false (default)
 
 
@@ -213,6 +213,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-toc
+  - jekyll-seo-tag
 
 # mimic GitHub Pages with --safe
 whitelist:

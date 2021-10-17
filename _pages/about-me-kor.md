@@ -8,7 +8,7 @@ author_profile: true
 ## Profile
 - 서울대학교 컴퓨터공학부 학부생 (18학번) 신원석입니다.
 - Email : gratus907@snu.ac.kr
-- Website : 이 블로그와 [tistory 블로그](www.gratus907.com) 가 있습니다. 장기적으로 이쪽으로 모두 옮길 계획에 있습니다.
+- Website : 이 블로그와 tistory 블로그 가 있습니다. 장기적으로 이쪽으로 모두 옮길 계획에 있습니다.
 
 ## Education
 - 서울대학교 (2018.3 ~ 현재)

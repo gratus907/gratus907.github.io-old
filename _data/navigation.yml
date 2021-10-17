@@ -24,7 +24,7 @@ sidepost:
       - title: "PS Teatime"
         url: /ps-teatime/
       - title: "Competitive Programming"
-        url: /competitive-programming-rounds/
+        url: /cp-rounds/
   - title: "주제별 노트정리"
     children:
       - title: "자료구조/알고리즘"

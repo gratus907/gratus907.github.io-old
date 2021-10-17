@@ -12,7 +12,7 @@ comments : true
 toc : true
 ---
 
-이 글은 올해 해시코드 대회 과정에 대한 후기이고, 준비 과정은 앞 글([링크](/Hashcode-2021-prep/))에 있습니다.
+이 글은 올해 해시코드 대회 과정에 대한 후기이고, 준비 과정은 앞 글([링크](/cp-rounds/Hashcode-2021-prep/))에 있습니다.
 
 <div id="toc">
 Contents

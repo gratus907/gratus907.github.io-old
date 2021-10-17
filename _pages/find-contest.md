@@ -26,7 +26,7 @@ Jekyll 블로그를 만들기로 한 가장 큰 이유는 이렇게 생긴 페�
 
 | 번호         | 난이도        | 문제                 | 포스팅 링크                              |
 |------------|------------|--------------------|-------------------------------------|
-| **2010-D** | Platinum 4 | Defense Lines(방어선) | [링크](/algorithms/ps-weekly-21Jul1/) |
+| **2010-D** | Platinum 4 | Defense Lines(방어선) | [링크](/ps-weekly/ps-weekly-21Jul1/) |
 
 ### Korea (Seoul / Daejeon) Regional Contest
 
@@ -58,18 +58,18 @@ Jekyll 블로그를 만들기로 한 가장 큰 이유는 이렇게 생긴 페�
 
 | 번호         | 난이도        | 문제              | 포스팅 링크                              | 
 |------------|------------|-----------------|-------------------------------------|
-| **2015-1F** | Gold 1 | 몬스터 | [링크](/ps_weekly/ps-weekly-21Jul3) | 
-| **2020-1B** | Gold 2 | 컨설팅 | [링크](/cp_practice/team_practice_1/) | 
-| **2020-1D** | Platinum 2 | 에어컨 설치 | [링크](/cp_practice/team_practice_1/) | 
-| **2020-1F** | Platinum 4 | 폰친구 | [링크](/cp_practice/team_practice_1/) | 
-| **2020-1G** | Diamond 5 | Confuzzle | [링크](/cp_practice/team_practice_1/) | 
+| **2015-1F** | Gold 1 | 몬스터 | [링크](/ps-weekly/ps-weekly-21Jul3) | 
+| **2020-1B** | Gold 2 | 컨설팅 | [링크](/cp-rounds/team-practice-sogang-2020/) | 
+| **2020-1D** | Platinum 2 | 에어컨 설치 | [링크](/cp-rounds/team-practice-sogang-2020/) | 
+| **2020-1F** | Platinum 4 | 폰친구 | [링크](/cp-rounds/team-practice-sogang-2020/) | 
+| **2020-1G** | Diamond 5 | Confuzzle | [링크](/cp-rounds/team-practice-sogang-2020/) | 
 
 ### 연세대학교 프로그래밍 경진대회
 
 | 번호         | 난이도        | 문제              | 포스팅 링크                              | 
 |------------|------------|-----------------|-------------------------------------|
-| **2018-C** | Platinum 5 | 나무 위의 입자 | [링크](/ps_weekly/ps-weekly-21Jul3) | 
-| **2018-L** | Platinum 5 | 연세워터파크 | [링크](/ps_weekly/ps-weekly-21Jul3) | 
+| **2018-C** | Platinum 5 | 나무 위의 입자 | [링크](/ps-weekly/ps-weekly-21Jul3) | 
+| **2018-L** | Platinum 5 | 연세워터파크 | [링크](/ps-weekly/ps-weekly-21Jul3) | 
 
 ## High School Contests
 ### 경기과학고

@@ -9,7 +9,6 @@ author_profile: true
 - Name : Wonseok Shin
 - Undergraduate student, Seoul National University
 - Email : gratus907@snu.ac.kr
-- Website : this and [my other website](www.gratus907.com)
 
 ## Education
 - Seoul National University (2018.3 ~ present)

@@ -126,18 +126,55 @@
 <script id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
-<p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}\newcommand{\di}{\mathrel{|}}\newcommand{\limply}{\rightarrow}\newcommand{\fa}{\forall}\newcommand{\e}{\exists}\newcommand{\lxor}{\oplus}\newcommand{\liff}{\leftrightarrow}\newcommand{\lequiv}{\Leftrightarrow}\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}\newcommand{\minimize}{\mathrm{minimize}}\newcommand{\subto}{\mathrm{subject\ to}}\newcommand{\minimize}{\mathrm{minimize}}
-  \newcommand{\subto}{\mathrm{subject\ to}}
-  \newcommand{\DKL}[2]{D_{\mathrm{KL}}\left(#1 \di\di #2\right)}
-  \newcommand{\E}{\mathbb{E}}
-  \newcommand{\expect}[1]{\E\left[#1\right]}
-  \newcommand{\expectwith}[2]{\E_{#1}\left[#2\right]}
-  \renewcommand{\P}{\mathbb{P}}
-  \newcommand{\uniform}[2]{\mathrm{Uniform}\left(#1 \dots #2\right)}
-  \newcommand{\sgn}{\text{sign}}
-  \newcommand{\argmin}{\mathrm{argmin}}
-  \newcommand{\argmax}{\mathrm{argmax}}
-  \newcommand{\x}{\times}$$</p>
+<p style="display: none;">$$
+    \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+    \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+    \newcommand{\N}{\ensuremath{\mathbb{N}}}
+    \newcommand{\R}{\ensuremath{\mathbb{R}}}
+    \newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+    \newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+    \newcommand{\C}{\ensuremath{\mathbb{C}}}
+    \renewcommand{\L}{\ensuremath{\mathcal{L}}}
+    \newcommand{\x}{\ensuremath{\times}}
+    \newcommand{\contra}{\scalebox{1.5}{$\lightning$}}
+    \newcommand{\inner}[2]{\left\langle #1 , #2 \right\rangle}
+    \newcommand{\st}{\text{ such that }}
+    \newcommand{\for}{\text{ for }}
+    \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}}
+    \newcommand{\setcond}[2]{\Setcond{#1}{#2}}
+    \newcommand{\seq}[1]{ \left\langle #1 \right\rangle}
+    \newcommand{\Set}[1]{ \left\{ #1 \right\}}
+    \newcommand{\set}[1]{ \set{#1} }
+    \newcommand{\sgn}{\text{sign}}
+    \newcommand{\infig}[2]{\begin{figure}[H]\centering\includegraphics[width=#1\linewidth]{#2}\end{figure}}
+    \newcommand{\infigcap}[3]{\begin{figure}[H]\centering\includegraphics[width=#1\linewidth]{#2}\caption{#3}\end{figure}}
+    \newcommand{\halfline}{\vspace{0.5em}}
+    \newcommand{\diag}{\text{diag}}
+
+    \newcommand{\legn}[2]{\left(\frac{#1}{#2}\right)} 
+    \newcommand{\ord}{\text{ord}}
+    \newcommand{\di}{\mathrel{|}} 
+    \newcommand{\gen}[1]{\ensuremath{\langle #1\rangle}} 
+    \newcommand{\irr}{\mathrm{irr }}
+    \renewcommand{\deg}{\mathrm{deg }}
+    \newcommand{\nsgeq}{\trianglelefteq}
+    \newcommand{\nsg}{\triangleleft}
+    
+    \newcommand{\argmin}{\mathrm{argmin}}
+    \newcommand{\argmax}{\mathrm{argmax}}
+    \newcommand{\minimize}{\mathrm{minimize}}
+    \newcommand{\maximize}{\mathrm{maximize}}
+    \newcommand{\subto}{\mathrm{subject\ to}}
+    \newcommand{\DKL}[2]{D_{\mathrm{KL}}\left(#1 \di\di #2\right)}
+    \newcommand{\ReLU}{\ensuremath{\mathrm{ReLU}}}
+    
+    \newcommand{\E}{\mathbb{E}}
+    \newcommand{\expect}[1]{\E\left[#1\right]}
+    \newcommand{\expectwith}[2]{\E_{#1}\left[#2\right]}
+    \renewcommand{\P}{\mathbb{P}}
+    \newcommand{\uniform}[2]{\ensuremath{\mathrm{Uniform}\left(#1 \dots #2\right)}}
+    \newcommand{\gdist}[2]{\ensuremath{\mathcal{N}\left(#1, #2\right)}}
+    $$</p>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M2LK7DWFS"></script>
@@ -363,7 +400,7 @@
 
 <h2 id="awards">Awards</h2>
 <ul>
-  <li>KCC 2021 최우수논문상 (컴퓨터이론 분야)</li>
+  <li>KCC 2021 최우수논문상 (컴퓨터이론 분야) <sup id="fnref:kcc" role="doc-noteref"><a href="#fn:kcc" class="footnote">1</a></sup></li>
 </ul>
 
 <h2 id="experience">Experience</h2>
@@ -380,7 +417,7 @@
 
 <h2 id="projects">Projects</h2>
 <ul>
-  <li>FRIDGE
+  <li>FRIDGE : Ingredient management &amp; Recipe recommendation webapp
     <ul>
       <li>서울대학교 “소프트웨어 개발의 원리 및 실제” 프로젝트입니다.</li>
       <li>사용자의 냉장고에 든 식재료를 관리하고, 레시피를 검색하고, 적절한 레시피를 추천하는 웹앱을 개발했습니다.</li>
@@ -392,10 +429,11 @@
   </li>
 </ul>
 
-<h2 id="miscellaneous">Miscellaneous</h2>
+<h2 id="teaching--teaching-assistant">Teaching / Teaching Assistant</h2>
 <ul>
   <li>2020 겨울계절학기 ‘컴퓨팅의 기초 : 처음 만나는 컴퓨팅’ 튜터</li>
   <li>2021 1학기 ‘공학수학 1’ 조교 (Teaching Assistant)</li>
+  <li>2021 2학기 ‘알고리즘’ 조교 (Teaching Assistant)</li>
 </ul>
 
 <h2 id="skills">Skills</h2>
@@ -404,6 +442,7 @@
   <li>Java : 자료구조, 알고리즘, 데이터베이스 등 과목을 통해 익혔습니다.</li>
   <li>Python : FRIDGE 프로젝트를 수행했고 (Django), 2021년에는 컴퓨팅 기초 튜터로 참여하여 데이터 분석 라이브러리 사용법을 튜터링하기도 했습니다.</li>
   <li>Linux : 개인적으로 Ubuntu Linux를 2년 이상 사용해 왔고, Guardian 활동을 통해 공부했습니다.</li>
+  <li>$\LaTeX$</li>
   <li>(Human) Language : 모국어는 한국어고, 영어는 고등학교 때 TEPS (구) 에서 882점 정도를 받은 적 있습니다.</li>
 </ul>
 
@@ -424,10 +463,12 @@
 
 <h3 id="domestic">Domestic</h3>
 <ul>
-  <li>ICPC 2020 인터넷예선 : 26위 (Team : Swift Turtwig)</li>
-  <li>UCPC 2019 : 31위 (Team : Little Piplup)</li>
-  <li>SNUPC (서울대학교 프로그래밍 경시대회) 2020 : Div.2 7위</li>
-  <li>SNUPC 2019 : Div.2 9위</li>
+  <li>ICPC 2021 한국 인터넷예선 : 18위 (Team : Little Piplup) <sup id="fnref:icpc" role="doc-noteref"><a href="#fn:icpc" class="footnote">2</a></sup></li>
+  <li>SNUPC 2021 : Div.2 6위 <sup id="fnref:snupc" role="doc-noteref"><a href="#fn:snupc" class="footnote">3</a></sup></li>
+  <li>ICPC 2020 한국 인터넷예선 : 26위 (Team : Swift Turtwig) <sup id="fnref:icpc:1" role="doc-noteref"><a href="#fn:icpc" class="footnote">2</a></sup></li>
+  <li>UCPC 2019 : 31위 (Team : Little Piplup) <sup id="fnref:ucpc" role="doc-noteref"><a href="#fn:ucpc" class="footnote">4</a></sup></li>
+  <li>SNUPC 2020 : Div.2 7위 <sup id="fnref:snupc:1" role="doc-noteref"><a href="#fn:snupc" class="footnote">3</a></sup></li>
+  <li>SNUPC 2019 : Div.2 9위 <sup id="fnref:snupc:2" role="doc-noteref"><a href="#fn:snupc" class="footnote">3</a></sup></li>
 </ul>
 
 <h3 id="기타-관련-경험">기타 관련 경험</h3>
@@ -442,6 +483,25 @@
   <li>약간 PS는 취미의 영역으로 계속 즐기지 않을까 싶습니다. 주변에 그런 분들 많던데요.</li>
   <li>새 취미로 체스를 즐기고 있습니다. 사실 대학 와서부터 조금씩 두고 있었는데, Over the Board가 불가능해진 지금은 조금 동력이 떨어졌습니다. Lichess gratus907이나 chess.com wonseokshin 으로 친구추가 및 대국신청은 (제가 시간이 된다면 말이지만요) 환영합니다.</li>
 </ul>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:kcc" role="doc-endnote">
+      <p><strong>K</strong>orea <strong>C</strong>omputer <strong>C</strong>ongress, Annual conference held by Korean Institute of Information Scientists and Engineers <a href="#fnref:kcc" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:icpc" role="doc-endnote">
+      <p><strong>I</strong>nternational <strong>C</strong>ollegiate <strong>P</strong>rogramming <strong>C</strong>ontest. Team (3) competition <a href="#fnref:icpc" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:icpc:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:snupc" role="doc-endnote">
+      <p><strong>S</strong>eoul <strong>N</strong>ational <strong>U</strong>niversity <strong>P</strong>rogramming <strong>C</strong>ontest. Individual. <a href="#fnref:snupc" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:snupc:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:snupc:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
+    </li>
+    <li id="fn:ucpc" role="doc-endnote">
+      <p>ICPC-style contest prepared by programming clubs in Korea. Team (3) competition <a href="#fnref:ucpc" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
         
       </section>
@@ -499,7 +559,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 06051a3b3b961ab25d3a3695579dd7b075a69858</div>
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version aba51c979561218ebe99a2c1f248151bd313c26c</div>
 
       </footer>
     </div>

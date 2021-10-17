@@ -130,18 +130,55 @@
 <script id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
-<p style="display: none;">$$\newcommand{\Z}{\mathbb{Z}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}}\newcommand{\C}{\mathbb{C}}  \newcommand{\oiv}[1]{\left] #1 \right[} \newcommand{\civ}[1]{\left[ #1 \right]} \newcommand{\ad}[1]{\text{ad}(#1)} \newcommand{\acc}[1]{\text{acc}(#1)} \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}} \newcommand{\Set}[1]{ \left\{ #1 \right\}} \newcommand{\abs}[1]{ \left\lvert #1 \right\rvert}\newcommand{\prt}{\mathcal{P}}\newcommand{\st}{\text{ such that }}\newcommand{\for}{\text{ for }} \newcommand{\cl}[1]{\text{cl}(#1)}\newcommand{\oiv}[1]{\left] #1 \right[}\newcommand{\interior}[1]{\text{int}(#1)}\newcommand{\di}{\mathrel{|}}\newcommand{\limply}{\rightarrow}\newcommand{\fa}{\forall}\newcommand{\e}{\exists}\newcommand{\lxor}{\oplus}\newcommand{\liff}{\leftrightarrow}\newcommand{\lequiv}{\Leftrightarrow}\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}\newcommand{\minimize}{\mathrm{minimize}}\newcommand{\subto}{\mathrm{subject\ to}}\newcommand{\minimize}{\mathrm{minimize}}
-  \newcommand{\subto}{\mathrm{subject\ to}}
-  \newcommand{\DKL}[2]{D_{\mathrm{KL}}\left(#1 \di\di #2\right)}
-  \newcommand{\E}{\mathbb{E}}
-  \newcommand{\expect}[1]{\E\left[#1\right]}
-  \newcommand{\expectwith}[2]{\E_{#1}\left[#2\right]}
-  \renewcommand{\P}{\mathbb{P}}
-  \newcommand{\uniform}[2]{\mathrm{Uniform}\left(#1 \dots #2\right)}
-  \newcommand{\sgn}{\text{sign}}
-  \newcommand{\argmin}{\mathrm{argmin}}
-  \newcommand{\argmax}{\mathrm{argmax}}
-  \newcommand{\x}{\times}$$</p>
+<p style="display: none;">$$
+    \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+    \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+    \newcommand{\N}{\ensuremath{\mathbb{N}}}
+    \newcommand{\R}{\ensuremath{\mathbb{R}}}
+    \newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+    \newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+    \newcommand{\C}{\ensuremath{\mathbb{C}}}
+    \renewcommand{\L}{\ensuremath{\mathcal{L}}}
+    \newcommand{\x}{\ensuremath{\times}}
+    \newcommand{\contra}{\scalebox{1.5}{$\lightning$}}
+    \newcommand{\inner}[2]{\left\langle #1 , #2 \right\rangle}
+    \newcommand{\st}{\text{ such that }}
+    \newcommand{\for}{\text{ for }}
+    \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}}
+    \newcommand{\setcond}[2]{\Setcond{#1}{#2}}
+    \newcommand{\seq}[1]{ \left\langle #1 \right\rangle}
+    \newcommand{\Set}[1]{ \left\{ #1 \right\}}
+    \newcommand{\set}[1]{ \set{#1} }
+    \newcommand{\sgn}{\text{sign}}
+    \newcommand{\infig}[2]{\begin{figure}[H]\centering\includegraphics[width=#1\linewidth]{#2}\end{figure}}
+    \newcommand{\infigcap}[3]{\begin{figure}[H]\centering\includegraphics[width=#1\linewidth]{#2}\caption{#3}\end{figure}}
+    \newcommand{\halfline}{\vspace{0.5em}}
+    \newcommand{\diag}{\text{diag}}
+
+    \newcommand{\legn}[2]{\left(\frac{#1}{#2}\right)} 
+    \newcommand{\ord}{\text{ord}}
+    \newcommand{\di}{\mathrel{|}} 
+    \newcommand{\gen}[1]{\ensuremath{\langle #1\rangle}} 
+    \newcommand{\irr}{\mathrm{irr }}
+    \renewcommand{\deg}{\mathrm{deg }}
+    \newcommand{\nsgeq}{\trianglelefteq}
+    \newcommand{\nsg}{\triangleleft}
+    
+    \newcommand{\argmin}{\mathrm{argmin}}
+    \newcommand{\argmax}{\mathrm{argmax}}
+    \newcommand{\minimize}{\mathrm{minimize}}
+    \newcommand{\maximize}{\mathrm{maximize}}
+    \newcommand{\subto}{\mathrm{subject\ to}}
+    \newcommand{\DKL}[2]{D_{\mathrm{KL}}\left(#1 \di\di #2\right)}
+    \newcommand{\ReLU}{\ensuremath{\mathrm{ReLU}}}
+    
+    \newcommand{\E}{\mathbb{E}}
+    \newcommand{\expect}[1]{\E\left[#1\right]}
+    \newcommand{\expectwith}[2]{\E_{#1}\left[#2\right]}
+    \renewcommand{\P}{\mathbb{P}}
+    \newcommand{\uniform}[2]{\ensuremath{\mathrm{Uniform}\left(#1 \dots #2\right)}}
+    \newcommand{\gdist}[2]{\ensuremath{\mathcal{N}\left(#1, #2\right)}}
+    $$</p>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M2LK7DWFS"></script>
@@ -651,6 +688,105 @@ $D(u, v)$ 가 1일 필요충분조건 : $u$의 모든 자식 노드 $u_c$에 대
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/deep-learning-study/convolutionary-neural-networks/" rel="permalink">Convolutionary Neural Networks : Introduction
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          951 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+  Convolution
+  Pooling
+  Convolutionary Neural Network
+  Why CNN?
+  Models
+
+
+
+심층 신경망의 수학적 기초 7강 (9월 28일) 에 기반합니다.
+
+매우 유명한 Standford CS231n 자료 ...</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cp-rounds/icpc-2021-prelim/" rel="permalink">ICPC Korea First Round 2021 후기 / 풀이
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          3102 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+  Preperation / Our Team
+  본 대회    
+      Problem I : Sport Climbing Combined
+      Problem E : Histogram
+      Problem J : Ten
+      Problem H...</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/deep-learning-study/softmax-regression/" rel="permalink">[P] Softmax Regression
 </a>
       
@@ -745,101 +881,6 @@ $D(u, v)$ 가 1일 필요충분조건 : $u$의 모든 자식 노드 $u_c$에 대
 </div>
 
           
-            
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/cp-rounds/icpc-2021-prelim/" rel="permalink">ICPC Korea First Round 2021 후기 / 풀이
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          3102 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-  Contents
-
-
-  Preperation / Our Team
-  본 대회    
-      Problem I : Sport Climbing Combined
-      Problem E : Histogram
-      Problem J : Ten
-      Problem H...</p>
-  </article>
-</div>
-
-          
-            
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/deep-learning-study/mnist-mlp/" rel="permalink">Softmax Regression / MLP로 MNIST 풀어보기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-    
-
-    
-      
-      
-      
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-          747 words
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-  Contents
-
-
-  Problem / Dataset
-  Softmax Regression
-  Multi-Layer Perceptron
-
-
-
-심층 신경망의 수학적 기초 5강, 6강 (9월 16일, 23일) 에 기반합니다. 이번 내용은 대부분이 코드에 대한 내용이라서, $\L...</p>
-  </article>
-</div>
-
-          
         </div>
       </div>
     
@@ -883,7 +924,7 @@ $D(u, v)$ 가 1일 필요충분조건 : $u$의 모든 자식 노드 $u_c$에 대
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version 06051a3b3b961ab25d3a3695579dd7b075a69858</div>
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version aba51c979561218ebe99a2c1f248151bd313c26c</div>
 
       </footer>
     </div>

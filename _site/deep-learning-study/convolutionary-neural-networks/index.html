@@ -1,0 +1,939 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TNVQ3G5D5B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TNVQ3G5D5B');
+</script>
+
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Convolutionary Neural Networks : Introduction - Gratus907’s Study Note</title>
+<meta name="description" content="Contents     Convolution   Pooling   Convolutionary Neural Network   Why CNN?   Models    심층 신경망의 수학적 기초 7강 (9월 28일) 에 기반합니다.  매우 유명한 Standford CS231n 자료 도 참고하면 좋습니다.  Convolution Convolution은 수학적으로 굉장히 다양한 대상들에 대해서 잘 정의된 연산인데, 우리는 $n$차원 텐서 (배열) 에 대해서만 생각하겠습니다.  다음 그림과 같이, Convolution은 Filter 또는 Kernel 이라는 (그림의 노란색 행렬) 을 “밀면서” 내적을 반복해서 새로운 행렬을 얻는 연산입니다.   이미지 출처 : towardsdatascience.com  일반적으로, 이미지 처리에서 CNN을 가장 많이 쓰기 때문에 CNN의 입력은 3차원 텐서 (배열) 로 가정하고, filter도 3차원 텐서 (배열) 로 가정합니다. 이미지가 2차원임에도 3차원 텐서를 쓰는 이유는 이 텐서의 정체를 보면 알 수 있습니다. 보통은 세 차원을 Channel * Width * Height 으로 부르는데, Channel은 초기 입력 단계에서는 R G B 의 색 정보를 나타냅니다.  그래서, 3차원 텐서지만 실재로는 여러 채널이 있는 W * H 크기의 행렬의 묶음으로 생각하면 됩니다. $C * W * H$ 입력 이미지에 대해 $C * 3 * 3$ 필터를 쓰게 되면 실제로 공간적으로 필터를 밀어 볼 수 있는 방향은 (가로, 세로) 방향으로만 밀면 되므로, $(W - 2) * (H - 2)$ 크기의 결과를 얻습니다. 그러나 우리는 여러 정보를 동시에 인코딩해서 가져가고 싶기 때문에, 실제로는 동시에 $D$개의 $C * 3 * 3$ 필터를 사용합니다.  이렇게 해서 얻어진 각 행렬들을 모두 연결하면, $D * (W - 2) * (H - 2)$ 크기의 output을 얻습니다.  Padding : 우리가 $W * H$ 크기의 이미지를 가지고 있고, 이 이미지에 $3 * 3$ filter를 convolution하면, $(W - 2) * (H - 2)$ 크기가 된다는 것은 쉽게 알 수 있습니다. 이는 맨 외곽 칸까지 밀게 되면 필터가 이미지 바깥으로 일부가 나가버리기 때문인데, 이를 보정하기 위해 이미지의 맨 외곽선을 0으로 쭉 한칸 더 만들어 주는 방법이 있습니다. 이를 Padding이라고 합니다.  Stride : Filter를 평면상에서 “민다” 고 표현했는데, 위 설명은 매번 “한 칸 씩” 미는 경우를 생각하고 있습니다. 꼭 그럴 필요는 없고, $s$칸씩 한번에 밀 수도 있습니다. 그렇게 하면 당연히 출력의 크기는 더 줄어들게 됩니다. 이 $s$를 Stride라 합니다.  Bias : Convolution한 결과물 전체에 어떤 특정한 상수값을 더해줄 수도 있고, 이를 bias라고 부릅니다.  여기까지 내용의 요약이 다음 image에 잘 드러나 있습니다. 이미지 출처인 Standford CS231n 자료 에서는 저 필터가 진짜 움직이는걸 볼 수 있으니 한번쯤 보면 이해하기 좋은 것 같습니다. 그림에는 3개 채널의 5 by 5 이미지에, padding 1을 주었고, 3채널 by 3 by 3 크기의 필터를 쓰며, stride = 2 인 케이스를 보여주고 있습니다. 아래에는 bias도 포함되어 있습니다.    입력이 $C_i * W_i * H_i$ 이고, padding이 $p$, stride가 $s$이며, 크기가 $C_i * F * F$ 인 필터 $K$개를 쓴다고 하면, convolution을 한번 하고 나면 다음과 같이 계산되는 $C_o * W_o * H_o$ 출력을 얻습니다.  (C_o = K \quad \quad W_o = \floor{\frac{W_i - F + 2P}{S} + 1} \quad \quad H_o = \floor{\frac{H_i - F + 2P}{S} + 1})  Pooling CNN은 보통 큰 이미지 데이터를 대상으로 하며, 최초에는 이미지를 분류하는 목적으로 개발되었습니다. 그렇다 보니, 이미지 전체의 수만 픽셀의 데이터를 전부 보기보다는 그 특징을 잡아내는 것이 필요합니다. 또한 만약 신경망에서 잡아낼 수 있는 특징을 크게 훼손하지 않으면서 돌아다니는 데이터의 양을 줄일 수 있다면, training 및 inference 시간을 크게 개선할 수 있을 것입니다.  이를 위해 pooling이라는 연산을 수행합니다. pooling은 단순히 지금 보고 있는 부분의 max나 avg를 택하는 연산인데, 다음 그림을 보면 쉽게 이해할 수 있습니다.   [이미지 출처 : Stanford CS231n]  위 그림에서 볼 수 있듯, pooling도 convolution처럼 filter라는 표현을 자주 쓰며, stride와 padding을 줄 수 있습니다. 다만 convolution처럼 뭔가를 train할 필요는 없고, 그냥 그 연산을 수행한다고 생각하면 됩니다. 가장 일반적인 형태의 pooling은 2 by 2 필터에 stride 2로 연산하는 것으로, 2 * 2 정사각형에서 max 또는 avg 하나씩을 남김으로서 데이터의 양을 1/4로 줄입니다.  Pooling은 각 채널별로 독립적으로 실행할 수 있으므로, 2D 에서만 생각해도 충분합니다. 3D pooling도 똑같이 정의하면 생각할 수는 있겠지만요.  Convolutionary Neural Network Multi Layer Perceptron 에서는, Linear Layer - Activation - Linear Layer - Activation - … 의 형태로 깊게 이어진 신경망을 구축했고 이를 Multi-Layer Perceptron이라고 불렀습니다.  Convolutinary Neural Network, CNN도 큰 틀에서는 비슷합니다. 다만, 좀더 복잡한 아이디어들이 들어가 있습니다.  가장 기본적인 CNN은 크게 Convolution, Pooling, Activation의 세가지 Layer를 잘 반복해서 구성됩니다.  Convolution은 앞서 설명한 convolution 연산을 적당한 필터에 대해서 수행하는 것으로, MLP에서 weight 행렬이 train의 대상인 것처럼 여기서는 필터 전체가 training의 대상입니다.  Activation은 MLP에서처럼 모든 항에 적당한 activation function을 씌워서 신경망에 non-linearity를 제공하는 것입니다. 역시 MLP에서와 마찬가지로 ReLU, sigmoid, tanh 같은 함수들을 쓸 수 있습니다.  Pooling은 앞서 설명한 pooling을 수행하는 layer입니다.  Why CNN? CNN의 효용에 대해 얘기하려면 기존의 MLP의 특징을 먼저 이야기할 필요가 있습니다.     장점 : 간단하고, 이론적으로 굉장히 general합니다. 모든 연속함수를 어떤 정해진 구간에서는 충분히 큰 MLP로 approximate 가능하다는 굉장한 정리가 있는데 (Universal Approximation Theorem) 제가 찾아본 증명은 실해석학 수준의 해석학 지식을 (Hahn-Banach, Riesz Repr thm) 요구하기 때문에 다룰 수가 없습니다.   단점 : Parameter가 매우 많아서, overfitting의 문제와 training speed 문제가 발생합니다.   단점 : Computer vision에 쓰기에는 shift invariance 같은 것을 잘 처리하지 못한다는 심각한 문제가 있습니다. 특히 image classification 같은 경우, 이미지의 일부를 shift해도 그대로 같은 이미지인데 MLP는 이를 처리하기 어렵습니다.   Convolution은 그 자체로 shift invaraince를 가지기 때문에, 단점 2번을 잘 해결합니다. 또한, 단점 1번의 경우, Convolution의 파라미터가 꽤 많아 보이지만 $W * H$ 이미지를 던져주고 $W * H$ 출력을 만들기 위해서 Linear layer는 파라미터 $W^2H^2$ 개가 필요합니다. 입출력이 200 by 200이면 이 값이 16억인데, convolution은 파라미터가 훨씬 적습니다.  자연스러운 질문은, 파라미터가 그렇게 적으면 충분히 general하게 학습하지 못하는게 아니냐는 의문이 들 수 있습니다. 2018년 논문 에 따르면 수학적으로는 CNN도 universal approximation theorem이 있다고 하는데, 굳이 이런 놀라운 수학적 결과를 들이밀지 않더라도 이미지 처리에서 CNN이 그동안 보여준 놀라운 성과를 보면 이정도 파라미터로도 Convolution 자체가 어떤 이미지를 ‘대략적으로’ 보는 느낌이 굉장히 직관적으로 좋아서, 잘 작동하는 것으로 보입니다.  또한, CNN은 MLP보다 같은 크기에서 훨씬 깊은 네트워크를 만들 수 있습니다 (레이어당 파라미터가 적으므로) 이 점도 장점이 될 수 있겠습니다.  Models CNN Model중 이후 포스팅으로 살펴볼 모델들은 대략 이정도가 있습니다.    LeNet   AlexNet   VGGNet   GoogLeNet   Semantic Segmentation 에서 다룰 모델들.            U-Net       FCN       DeepLab">
+
+
+  <meta name="author" content="Wonseok Shin">
+  
+  <meta property="article:author" content="Wonseok Shin">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Gratus907's Study Note">
+<meta property="og:title" content="Convolutionary Neural Networks : Introduction">
+<meta property="og:url" content="http://localhost:4000/deep-learning-study/convolutionary-neural-networks/">
+
+
+  <meta property="og:description" content="Contents     Convolution   Pooling   Convolutionary Neural Network   Why CNN?   Models    심층 신경망의 수학적 기초 7강 (9월 28일) 에 기반합니다.  매우 유명한 Standford CS231n 자료 도 참고하면 좋습니다.  Convolution Convolution은 수학적으로 굉장히 다양한 대상들에 대해서 잘 정의된 연산인데, 우리는 $n$차원 텐서 (배열) 에 대해서만 생각하겠습니다.  다음 그림과 같이, Convolution은 Filter 또는 Kernel 이라는 (그림의 노란색 행렬) 을 “밀면서” 내적을 반복해서 새로운 행렬을 얻는 연산입니다.   이미지 출처 : towardsdatascience.com  일반적으로, 이미지 처리에서 CNN을 가장 많이 쓰기 때문에 CNN의 입력은 3차원 텐서 (배열) 로 가정하고, filter도 3차원 텐서 (배열) 로 가정합니다. 이미지가 2차원임에도 3차원 텐서를 쓰는 이유는 이 텐서의 정체를 보면 알 수 있습니다. 보통은 세 차원을 Channel * Width * Height 으로 부르는데, Channel은 초기 입력 단계에서는 R G B 의 색 정보를 나타냅니다.  그래서, 3차원 텐서지만 실재로는 여러 채널이 있는 W * H 크기의 행렬의 묶음으로 생각하면 됩니다. $C * W * H$ 입력 이미지에 대해 $C * 3 * 3$ 필터를 쓰게 되면 실제로 공간적으로 필터를 밀어 볼 수 있는 방향은 (가로, 세로) 방향으로만 밀면 되므로, $(W - 2) * (H - 2)$ 크기의 결과를 얻습니다. 그러나 우리는 여러 정보를 동시에 인코딩해서 가져가고 싶기 때문에, 실제로는 동시에 $D$개의 $C * 3 * 3$ 필터를 사용합니다.  이렇게 해서 얻어진 각 행렬들을 모두 연결하면, $D * (W - 2) * (H - 2)$ 크기의 output을 얻습니다.  Padding : 우리가 $W * H$ 크기의 이미지를 가지고 있고, 이 이미지에 $3 * 3$ filter를 convolution하면, $(W - 2) * (H - 2)$ 크기가 된다는 것은 쉽게 알 수 있습니다. 이는 맨 외곽 칸까지 밀게 되면 필터가 이미지 바깥으로 일부가 나가버리기 때문인데, 이를 보정하기 위해 이미지의 맨 외곽선을 0으로 쭉 한칸 더 만들어 주는 방법이 있습니다. 이를 Padding이라고 합니다.  Stride : Filter를 평면상에서 “민다” 고 표현했는데, 위 설명은 매번 “한 칸 씩” 미는 경우를 생각하고 있습니다. 꼭 그럴 필요는 없고, $s$칸씩 한번에 밀 수도 있습니다. 그렇게 하면 당연히 출력의 크기는 더 줄어들게 됩니다. 이 $s$를 Stride라 합니다.  Bias : Convolution한 결과물 전체에 어떤 특정한 상수값을 더해줄 수도 있고, 이를 bias라고 부릅니다.  여기까지 내용의 요약이 다음 image에 잘 드러나 있습니다. 이미지 출처인 Standford CS231n 자료 에서는 저 필터가 진짜 움직이는걸 볼 수 있으니 한번쯤 보면 이해하기 좋은 것 같습니다. 그림에는 3개 채널의 5 by 5 이미지에, padding 1을 주었고, 3채널 by 3 by 3 크기의 필터를 쓰며, stride = 2 인 케이스를 보여주고 있습니다. 아래에는 bias도 포함되어 있습니다.    입력이 $C_i * W_i * H_i$ 이고, padding이 $p$, stride가 $s$이며, 크기가 $C_i * F * F$ 인 필터 $K$개를 쓴다고 하면, convolution을 한번 하고 나면 다음과 같이 계산되는 $C_o * W_o * H_o$ 출력을 얻습니다.  (C_o = K \quad \quad W_o = \floor{\frac{W_i - F + 2P}{S} + 1} \quad \quad H_o = \floor{\frac{H_i - F + 2P}{S} + 1})  Pooling CNN은 보통 큰 이미지 데이터를 대상으로 하며, 최초에는 이미지를 분류하는 목적으로 개발되었습니다. 그렇다 보니, 이미지 전체의 수만 픽셀의 데이터를 전부 보기보다는 그 특징을 잡아내는 것이 필요합니다. 또한 만약 신경망에서 잡아낼 수 있는 특징을 크게 훼손하지 않으면서 돌아다니는 데이터의 양을 줄일 수 있다면, training 및 inference 시간을 크게 개선할 수 있을 것입니다.  이를 위해 pooling이라는 연산을 수행합니다. pooling은 단순히 지금 보고 있는 부분의 max나 avg를 택하는 연산인데, 다음 그림을 보면 쉽게 이해할 수 있습니다.   [이미지 출처 : Stanford CS231n]  위 그림에서 볼 수 있듯, pooling도 convolution처럼 filter라는 표현을 자주 쓰며, stride와 padding을 줄 수 있습니다. 다만 convolution처럼 뭔가를 train할 필요는 없고, 그냥 그 연산을 수행한다고 생각하면 됩니다. 가장 일반적인 형태의 pooling은 2 by 2 필터에 stride 2로 연산하는 것으로, 2 * 2 정사각형에서 max 또는 avg 하나씩을 남김으로서 데이터의 양을 1/4로 줄입니다.  Pooling은 각 채널별로 독립적으로 실행할 수 있으므로, 2D 에서만 생각해도 충분합니다. 3D pooling도 똑같이 정의하면 생각할 수는 있겠지만요.  Convolutionary Neural Network Multi Layer Perceptron 에서는, Linear Layer - Activation - Linear Layer - Activation - … 의 형태로 깊게 이어진 신경망을 구축했고 이를 Multi-Layer Perceptron이라고 불렀습니다.  Convolutinary Neural Network, CNN도 큰 틀에서는 비슷합니다. 다만, 좀더 복잡한 아이디어들이 들어가 있습니다.  가장 기본적인 CNN은 크게 Convolution, Pooling, Activation의 세가지 Layer를 잘 반복해서 구성됩니다.  Convolution은 앞서 설명한 convolution 연산을 적당한 필터에 대해서 수행하는 것으로, MLP에서 weight 행렬이 train의 대상인 것처럼 여기서는 필터 전체가 training의 대상입니다.  Activation은 MLP에서처럼 모든 항에 적당한 activation function을 씌워서 신경망에 non-linearity를 제공하는 것입니다. 역시 MLP에서와 마찬가지로 ReLU, sigmoid, tanh 같은 함수들을 쓸 수 있습니다.  Pooling은 앞서 설명한 pooling을 수행하는 layer입니다.  Why CNN? CNN의 효용에 대해 얘기하려면 기존의 MLP의 특징을 먼저 이야기할 필요가 있습니다.     장점 : 간단하고, 이론적으로 굉장히 general합니다. 모든 연속함수를 어떤 정해진 구간에서는 충분히 큰 MLP로 approximate 가능하다는 굉장한 정리가 있는데 (Universal Approximation Theorem) 제가 찾아본 증명은 실해석학 수준의 해석학 지식을 (Hahn-Banach, Riesz Repr thm) 요구하기 때문에 다룰 수가 없습니다.   단점 : Parameter가 매우 많아서, overfitting의 문제와 training speed 문제가 발생합니다.   단점 : Computer vision에 쓰기에는 shift invariance 같은 것을 잘 처리하지 못한다는 심각한 문제가 있습니다. 특히 image classification 같은 경우, 이미지의 일부를 shift해도 그대로 같은 이미지인데 MLP는 이를 처리하기 어렵습니다.   Convolution은 그 자체로 shift invaraince를 가지기 때문에, 단점 2번을 잘 해결합니다. 또한, 단점 1번의 경우, Convolution의 파라미터가 꽤 많아 보이지만 $W * H$ 이미지를 던져주고 $W * H$ 출력을 만들기 위해서 Linear layer는 파라미터 $W^2H^2$ 개가 필요합니다. 입출력이 200 by 200이면 이 값이 16억인데, convolution은 파라미터가 훨씬 적습니다.  자연스러운 질문은, 파라미터가 그렇게 적으면 충분히 general하게 학습하지 못하는게 아니냐는 의문이 들 수 있습니다. 2018년 논문 에 따르면 수학적으로는 CNN도 universal approximation theorem이 있다고 하는데, 굳이 이런 놀라운 수학적 결과를 들이밀지 않더라도 이미지 처리에서 CNN이 그동안 보여준 놀라운 성과를 보면 이정도 파라미터로도 Convolution 자체가 어떤 이미지를 ‘대략적으로’ 보는 느낌이 굉장히 직관적으로 좋아서, 잘 작동하는 것으로 보입니다.  또한, CNN은 MLP보다 같은 크기에서 훨씬 깊은 네트워크를 만들 수 있습니다 (레이어당 파라미터가 적으므로) 이 점도 장점이 될 수 있겠습니다.  Models CNN Model중 이후 포스팅으로 살펴볼 모델들은 대략 이정도가 있습니다.    LeNet   AlexNet   VGGNet   GoogLeNet   Semantic Segmentation 에서 다룰 모델들.            U-Net       FCN       DeepLab">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-10-17T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/deep-learning-study/convolutionary-neural-networks/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Wonseok Shin",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Gratus907's Study Note Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']],
+      packages: {'[+]': ['physics']}
+    },
+    loader: {
+      load: ["input/tex", "output/chtml", '[tex]/physics']
+    },
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<p style="display: none;">$$
+    \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+    \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+    \newcommand{\N}{\ensuremath{\mathbb{N}}}
+    \newcommand{\R}{\ensuremath{\mathbb{R}}}
+    \newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+    \newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+    \newcommand{\C}{\ensuremath{\mathbb{C}}}
+    \renewcommand{\L}{\ensuremath{\mathcal{L}}}
+    \newcommand{\x}{\ensuremath{\times}}
+    \newcommand{\contra}{\scalebox{1.5}{$\lightning$}}
+    \newcommand{\inner}[2]{\left\langle #1 , #2 \right\rangle}
+    \newcommand{\st}{\text{ such that }}
+    \newcommand{\for}{\text{ for }}
+    \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}}
+    \newcommand{\setcond}[2]{\Setcond{#1}{#2}}
+    \newcommand{\seq}[1]{ \left\langle #1 \right\rangle}
+    \newcommand{\Set}[1]{ \left\{ #1 \right\}}
+    \newcommand{\set}[1]{ \set{#1} }
+    \newcommand{\sgn}{\text{sign}}
+    \newcommand{\infig}[2]{\begin{figure}[H]\centering\includegraphics[width=#1\linewidth]{#2}\end{figure}}
+    \newcommand{\infigcap}[3]{\begin{figure}[H]\centering\includegraphics[width=#1\linewidth]{#2}\caption{#3}\end{figure}}
+    \newcommand{\halfline}{\vspace{0.5em}}
+    \newcommand{\diag}{\text{diag}}
+
+    \newcommand{\legn}[2]{\left(\frac{#1}{#2}\right)} 
+    \newcommand{\ord}{\text{ord}}
+    \newcommand{\di}{\mathrel{|}} 
+    \newcommand{\gen}[1]{\ensuremath{\langle #1\rangle}} 
+    \newcommand{\irr}{\mathrm{irr }}
+    \renewcommand{\deg}{\mathrm{deg }}
+    \newcommand{\nsgeq}{\trianglelefteq}
+    \newcommand{\nsg}{\triangleleft}
+    
+    \newcommand{\argmin}{\mathrm{argmin}}
+    \newcommand{\argmax}{\mathrm{argmax}}
+    \newcommand{\minimize}{\mathrm{minimize}}
+    \newcommand{\maximize}{\mathrm{maximize}}
+    \newcommand{\subto}{\mathrm{subject\ to}}
+    \newcommand{\DKL}[2]{D_{\mathrm{KL}}\left(#1 \di\di #2\right)}
+    \newcommand{\ReLU}{\ensuremath{\mathrm{ReLU}}}
+    
+    \newcommand{\E}{\mathbb{E}}
+    \newcommand{\expect}[1]{\E\left[#1\right]}
+    \newcommand{\expectwith}[2]{\E_{#1}\left[#2\right]}
+    \renewcommand{\P}{\mathbb{P}}
+    \newcommand{\uniform}[2]{\ensuremath{\mathrm{Uniform}\left(#1 \dots #2\right)}}
+    \newcommand{\gdist}[2]{\ensuremath{\mathcal{N}\left(#1, #2\right)}}
+    $$</p>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M2LK7DWFS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9M2LK7DWFS');
+    </script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Gratus907's Study Note
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/postings/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about-me/">About me</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about-blog/">About Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Wonseok Shin</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>2018- SNU CSE, interested in algorithms, mathematics</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/gratus907" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:gratus907@snu.ac.kr">
+            <meta itemprop="email" content="gratus907@snu.ac.kr" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/cs-adventure/"><span class="nav__sub-title">CS 논문읽기</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Problem Solving</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/ps-weekly/">PS Weekly</a></li>
+          
+            <li><a href="/find-contest/">문제 출처별로 보기</a></li>
+          
+            <li><a href="/ps-teatime/">PS Teatime</a></li>
+          
+            <li><a href="/competitive-programming-rounds/">Competitive Programming</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">주제별 노트정리</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/ds-alg-note/">자료구조/알고리즘</a></li>
+          
+            <li><a href="/ds-alg-advanced/">고급 자료구조/알고리즘</a></li>
+          
+            <li><a href="/deep-learning-study/">Deep Learning Notes</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+    
+    <nav class="toc">
+      <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+      <ul class="toc__menu">
+  <li><a href="#convolution">Convolution</a></li>
+  <li><a href="#pooling">Pooling</a></li>
+  <li><a href="#convolutionary-neural-network">Convolutionary Neural Network</a></li>
+  <li><a href="#why-cnn">Why CNN?</a></li>
+  <li><a href="#models">Models</a></li>
+</ul>
+
+    </nav>
+    
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Convolutionary Neural Networks : Introduction">
+    <meta itemprop="description" content="  Contents  Convolution  Pooling  Convolutionary Neural Network  Why CNN?  Models심층 신경망의 수학적 기초 7강 (9월 28일) 에 기반합니다.매우 유명한 Standford CS231n 자료 도 참고하면 좋습니다.ConvolutionConvolution은 수학적으로 굉장히 다양한 대상들에 대해서 잘 정의된 연산인데, 우리는 $n$차원 텐서 (배열) 에 대해서만 생각하겠습니다.다음 그림과 같이, Convolution은 Filter 또는 Kernel 이라는 (그림의 노란색 행렬) 을 “밀면서” 내적을 반복해서 새로운 행렬을 얻는 연산입니다.이미지 출처 : towardsdatascience.com일반적으로, 이미지 처리에서 CNN을 가장 많이 쓰기 때문에 CNN의 입력은 3차원 텐서 (배열) 로 가정하고, filter도 3차원 텐서 (배열) 로 가정합니다. 이미지가 2차원임에도 3차원 텐서를 쓰는 이유는 이 텐서의 정체를 보면 알 수 있습니다. 보통은 세 차원을 Channel * Width * Height 으로 부르는데, Channel은 초기 입력 단계에서는 R G B 의 색 정보를 나타냅니다.그래서, 3차원 텐서지만 실재로는 여러 채널이 있는 W * H 크기의 행렬의 묶음으로 생각하면 됩니다. $C * W * H$ 입력 이미지에 대해 $C * 3 * 3$ 필터를 쓰게 되면 실제로 공간적으로 필터를 밀어 볼 수 있는 방향은 (가로, 세로) 방향으로만 밀면 되므로, $(W - 2) * (H - 2)$ 크기의 결과를 얻습니다. 그러나 우리는 여러 정보를 동시에 인코딩해서 가져가고 싶기 때문에, 실제로는 동시에 $D$개의 $C * 3 * 3$ 필터를 사용합니다.이렇게 해서 얻어진 각 행렬들을 모두 연결하면, $D * (W - 2) * (H - 2)$ 크기의 output을 얻습니다.Padding : 우리가 $W * H$ 크기의 이미지를 가지고 있고, 이 이미지에 $3 * 3$ filter를 convolution하면, $(W - 2) * (H - 2)$ 크기가 된다는 것은 쉽게 알 수 있습니다. 이는 맨 외곽 칸까지 밀게 되면 필터가 이미지 바깥으로 일부가 나가버리기 때문인데, 이를 보정하기 위해 이미지의 맨 외곽선을 0으로 쭉 한칸 더 만들어 주는 방법이 있습니다. 이를 Padding이라고 합니다.Stride : Filter를 평면상에서 “민다” 고 표현했는데, 위 설명은 매번 “한 칸 씩” 미는 경우를 생각하고 있습니다. 꼭 그럴 필요는 없고, $s$칸씩 한번에 밀 수도 있습니다. 그렇게 하면 당연히 출력의 크기는 더 줄어들게 됩니다. 이 $s$를 Stride라 합니다.Bias : Convolution한 결과물 전체에 어떤 특정한 상수값을 더해줄 수도 있고, 이를 bias라고 부릅니다.여기까지 내용의 요약이 다음 image에 잘 드러나 있습니다. 이미지 출처인 Standford CS231n 자료 에서는 저 필터가 진짜 움직이는걸 볼 수 있으니 한번쯤 보면 이해하기 좋은 것 같습니다. 그림에는 3개 채널의 5 by 5 이미지에, padding 1을 주었고, 3채널 by 3 by 3 크기의 필터를 쓰며, stride = 2 인 케이스를 보여주고 있습니다. 아래에는 bias도 포함되어 있습니다.입력이 $C_i * W_i * H_i$ 이고, padding이 $p$, stride가 $s$이며, 크기가 $C_i * F * F$ 인 필터 $K$개를 쓴다고 하면, convolution을 한번 하고 나면 다음과 같이 계산되는 $C_o * W_o * H_o$ 출력을 얻습니다. (C_o = K \quad \quad W_o = \floor{\frac{W_i - F + 2P}{S} + 1} \quad \quad H_o = \floor{\frac{H_i - F + 2P}{S} + 1})PoolingCNN은 보통 큰 이미지 데이터를 대상으로 하며, 최초에는 이미지를 분류하는 목적으로 개발되었습니다. 그렇다 보니, 이미지 전체의 수만 픽셀의 데이터를 전부 보기보다는 그 특징을 잡아내는 것이 필요합니다. 또한 만약 신경망에서 잡아낼 수 있는 특징을 크게 훼손하지 않으면서 돌아다니는 데이터의 양을 줄일 수 있다면, training 및 inference 시간을 크게 개선할 수 있을 것입니다.이를 위해 pooling이라는 연산을 수행합니다. pooling은 단순히 지금 보고 있는 부분의 max나 avg를 택하는 연산인데, 다음 그림을 보면 쉽게 이해할 수 있습니다.[이미지 출처 : Stanford CS231n]위 그림에서 볼 수 있듯, pooling도 convolution처럼 filter라는 표현을 자주 쓰며, stride와 padding을 줄 수 있습니다. 다만 convolution처럼 뭔가를 train할 필요는 없고, 그냥 그 연산을 수행한다고 생각하면 됩니다. 가장 일반적인 형태의 pooling은 2 by 2 필터에 stride 2로 연산하는 것으로, 2 * 2 정사각형에서 max 또는 avg 하나씩을 남김으로서 데이터의 양을 1/4로 줄입니다.Pooling은 각 채널별로 독립적으로 실행할 수 있으므로, 2D 에서만 생각해도 충분합니다. 3D pooling도 똑같이 정의하면 생각할 수는 있겠지만요.Convolutionary Neural NetworkMulti Layer Perceptron 에서는, Linear Layer - Activation - Linear Layer - Activation - … 의 형태로 깊게 이어진 신경망을 구축했고 이를 Multi-Layer Perceptron이라고 불렀습니다.Convolutinary Neural Network, CNN도 큰 틀에서는 비슷합니다. 다만, 좀더 복잡한 아이디어들이 들어가 있습니다.가장 기본적인 CNN은 크게 Convolution, Pooling, Activation의 세가지 Layer를 잘 반복해서 구성됩니다.Convolution은 앞서 설명한 convolution 연산을 적당한 필터에 대해서 수행하는 것으로, MLP에서 weight 행렬이 train의 대상인 것처럼 여기서는 필터 전체가 training의 대상입니다.Activation은 MLP에서처럼 모든 항에 적당한 activation function을 씌워서 신경망에 non-linearity를 제공하는 것입니다. 역시 MLP에서와 마찬가지로 ReLU, sigmoid, tanh 같은 함수들을 쓸 수 있습니다.Pooling은 앞서 설명한 pooling을 수행하는 layer입니다.Why CNN?CNN의 효용에 대해 얘기하려면 기존의 MLP의 특징을 먼저 이야기할 필요가 있습니다.  장점 : 간단하고, 이론적으로 굉장히 general합니다. 모든 연속함수를 어떤 정해진 구간에서는 충분히 큰 MLP로 approximate 가능하다는 굉장한 정리가 있는데 (Universal Approximation Theorem) 제가 찾아본 증명은 실해석학 수준의 해석학 지식을 (Hahn-Banach, Riesz Repr thm) 요구하기 때문에 다룰 수가 없습니다.  단점 : Parameter가 매우 많아서, overfitting의 문제와 training speed 문제가 발생합니다.  단점 : Computer vision에 쓰기에는 shift invariance 같은 것을 잘 처리하지 못한다는 심각한 문제가 있습니다. 특히 image classification 같은 경우, 이미지의 일부를 shift해도 그대로 같은 이미지인데 MLP는 이를 처리하기 어렵습니다.Convolution은 그 자체로 shift invaraince를 가지기 때문에, 단점 2번을 잘 해결합니다. 또한, 단점 1번의 경우, Convolution의 파라미터가 꽤 많아 보이지만 $W * H$ 이미지를 던져주고 $W * H$ 출력을 만들기 위해서 Linear layer는 파라미터 $W^2H^2$ 개가 필요합니다. 입출력이 200 by 200이면 이 값이 16억인데, convolution은 파라미터가 훨씬 적습니다.자연스러운 질문은, 파라미터가 그렇게 적으면 충분히 general하게 학습하지 못하는게 아니냐는 의문이 들 수 있습니다. 2018년 논문 에 따르면 수학적으로는 CNN도 universal approximation theorem이 있다고 하는데, 굳이 이런 놀라운 수학적 결과를 들이밀지 않더라도 이미지 처리에서 CNN이 그동안 보여준 놀라운 성과를 보면 이정도 파라미터로도 Convolution 자체가 어떤 이미지를 ‘대략적으로’ 보는 느낌이 굉장히 직관적으로 좋아서, 잘 작동하는 것으로 보입니다.또한, CNN은 MLP보다 같은 크기에서 훨씬 깊은 네트워크를 만들 수 있습니다 (레이어당 파라미터가 적으므로) 이 점도 장점이 될 수 있겠습니다.ModelsCNN Model중 이후 포스팅으로 살펴볼 모델들은 대략 이정도가 있습니다.  LeNet  AlexNet  VGGNet  GoogLeNet  Semantic Segmentation 에서 다룰 모델들.          U-Net      FCN      DeepLab      ">
+    <meta itemprop="datePublished" content="2021-10-17T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Convolutionary Neural Networks : Introduction
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          933 words
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgratus907.github.io/deep-learning-study/convolutionary-neural-networks/&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> </div> <br/>
+      <div style="display:none;"> <span id="busuanzi_container_site_pv" style="display:none;"><span id="busuanzi_value_site_pv" style="display:none;"></span></span></div>
+      <section class="page__content" itemprop="text"> 
+        <div id="toc">
+  <p>Contents</p>
+</div>
+<ul id="markdown-toc">
+  <li><a href="#convolution" id="markdown-toc-convolution">Convolution</a></li>
+  <li><a href="#pooling" id="markdown-toc-pooling">Pooling</a></li>
+  <li><a href="#convolutionary-neural-network" id="markdown-toc-convolutionary-neural-network">Convolutionary Neural Network</a></li>
+  <li><a href="#why-cnn" id="markdown-toc-why-cnn">Why CNN?</a></li>
+  <li><a href="#models" id="markdown-toc-models">Models</a></li>
+</ul>
+<hr />
+
+<p><strong>심층 신경망의 수학적 기초</strong> 7강 (9월 28일) 에 기반합니다.</p>
+
+<p>매우 유명한 <a href="https://cs231n.github.io/convolutional-networks/">Standford CS231n 자료</a> 도 참고하면 좋습니다.</p>
+
+<h2 id="convolution">Convolution</h2>
+<p>Convolution은 수학적으로 굉장히 다양한 대상들에 대해서 잘 정의된 연산인데, 우리는 $n$차원 텐서 (배열) 에 대해서만 생각하겠습니다.</p>
+
+<p>다음 그림과 같이, Convolution은 Filter 또는 Kernel 이라는 (그림의 노란색 행렬) 을 “밀면서” 내적을 반복해서 새로운 행렬을 얻는 연산입니다.</p>
+
+<p><img src="../../images/86b0e614b1f1445063f784261b4925e98524f0af7c7c3ec0692c3662bb9e631d.png" alt="picture 1" /><br />
+<a href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53">이미지 출처 : towardsdatascience.com</a></p>
+
+<p>일반적으로, 이미지 처리에서 CNN을 가장 많이 쓰기 때문에 CNN의 입력은 3차원 텐서 (배열) 로 가정하고, filter도 3차원 텐서 (배열) 로 가정합니다. 이미지가 2차원임에도 3차원 텐서를 쓰는 이유는 이 텐서의 정체를 보면 알 수 있습니다. 보통은 세 차원을 Channel * Width * Height 으로 부르는데, Channel은 초기 입력 단계에서는 <strong>R G B</strong> 의 색 정보를 나타냅니다.</p>
+
+<p>그래서, 3차원 텐서지만 실재로는 여러 채널이 있는 W * H 크기의 행렬의 묶음으로 생각하면 됩니다. $C * W * H$ 입력 이미지에 대해 $C * 3 * 3$ 필터를 쓰게 되면 실제로 공간적으로 필터를 밀어 볼 수 있는 방향은 (가로, 세로) 방향으로만 밀면 되므로, $(W - 2) * (H - 2)$ 크기의 결과를 얻습니다. 그러나 우리는 여러 정보를 동시에 인코딩해서 가져가고 싶기 때문에, 실제로는 동시에 $D$개의 $C * 3 * 3$ 필터를 사용합니다.</p>
+
+<p>이렇게 해서 얻어진 각 행렬들을 모두 연결하면, $D * (W - 2) * (H - 2)$ 크기의 output을 얻습니다.</p>
+
+<p><strong>Padding :</strong> 우리가 $W * H$ 크기의 이미지를 가지고 있고, 이 이미지에 $3 * 3$ filter를 convolution하면, $(W - 2) * (H - 2)$ 크기가 된다는 것은 쉽게 알 수 있습니다. 이는 맨 외곽 칸까지 밀게 되면 필터가 이미지 바깥으로 일부가 나가버리기 때문인데, 이를 보정하기 위해 이미지의 맨 외곽선을 0으로 쭉 한칸 더 만들어 주는 방법이 있습니다. 이를 Padding이라고 합니다.</p>
+
+<p><strong>Stride :</strong> Filter를 평면상에서 “민다” 고 표현했는데, 위 설명은 매번 “한 칸 씩” 미는 경우를 생각하고 있습니다. 꼭 그럴 필요는 없고, $s$칸씩 한번에 밀 수도 있습니다. 그렇게 하면 당연히 출력의 크기는 더 줄어들게 됩니다. 이 $s$를 Stride라 합니다.</p>
+
+<p><strong>Bias :</strong> Convolution한 결과물 전체에 어떤 특정한 상수값을 더해줄 수도 있고, 이를 bias라고 부릅니다.</p>
+
+<p>여기까지 내용의 요약이 다음 image에 잘 드러나 있습니다. <a href="https://cs231n.github.io/convolutional-networks/">이미지 출처인 Standford CS231n 자료</a> 에서는 저 필터가 진짜 움직이는걸 볼 수 있으니 한번쯤 보면 이해하기 좋은 것 같습니다. 그림에는 3개 채널의 5 by 5 이미지에, padding 1을 주었고, 3채널 by 3 by 3 크기의 필터를 쓰며, stride = 2 인 케이스를 보여주고 있습니다. 아래에는 bias도 포함되어 있습니다.</p>
+
+<p><img src="../../images/67486f42036dc6a5e62931ee5ca802f2c420dc43111f872087eacb39a9417a1c.png" alt="picture 2" /></p>
+
+<p>입력이 $C_i * W_i * H_i$ 이고, padding이 $p$, stride가 $s$이며, 크기가 $C_i * F * F$ 인 필터 $K$개를 쓴다고 하면, convolution을 한번 하고 나면 다음과 같이 계산되는 $C_o * W_o * H_o$ 출력을 얻습니다. 
+\(C_o = K \quad \quad W_o = \floor{\frac{W_i - F + 2P}{S} + 1} \quad \quad H_o = \floor{\frac{H_i - F + 2P}{S} + 1}\)</p>
+
+<h2 id="pooling">Pooling</h2>
+<p>CNN은 보통 큰 이미지 데이터를 대상으로 하며, 최초에는 이미지를 분류하는 목적으로 개발되었습니다. 그렇다 보니, 이미지 전체의 수만 픽셀의 데이터를 전부 보기보다는 그 특징을 잡아내는 것이 필요합니다. 또한 만약 신경망에서 잡아낼 수 있는 특징을 크게 훼손하지 않으면서 돌아다니는 데이터의 양을 줄일 수 있다면, training 및 inference 시간을 크게 개선할 수 있을 것입니다.</p>
+
+<p>이를 위해 pooling이라는 연산을 수행합니다. pooling은 단순히 지금 보고 있는 부분의 max나 avg를 택하는 연산인데, 다음 그림을 보면 쉽게 이해할 수 있습니다.</p>
+
+<p><img src="../../images/f0d16cb834ed161fb9bc6d2930499da42a45d639ef36dcdd8cc51ea8b2f9a0d6.png" alt="picture 3" /><br />
+[이미지 출처 : Stanford CS231n]</p>
+
+<p>위 그림에서 볼 수 있듯, pooling도 convolution처럼 filter라는 표현을 자주 쓰며, stride와 padding을 줄 수 있습니다. 다만 convolution처럼 뭔가를 train할 필요는 없고, 그냥 그 연산을 수행한다고 생각하면 됩니다. 가장 일반적인 형태의 pooling은 2 by 2 필터에 stride 2로 연산하는 것으로, 2 * 2 정사각형에서 max 또는 avg 하나씩을 남김으로서 데이터의 양을 1/4로 줄입니다.</p>
+
+<p>Pooling은 각 채널별로 독립적으로 실행할 수 있으므로, 2D 에서만 생각해도 충분합니다. 3D pooling도 똑같이 정의하면 생각할 수는 있겠지만요.</p>
+
+<h2 id="convolutionary-neural-network">Convolutionary Neural Network</h2>
+<p><a href="/deep-learning-study/multilayer-perceptron">Multi Layer Perceptron</a> 에서는, Linear Layer - Activation - Linear Layer - Activation - … 의 형태로 깊게 이어진 신경망을 구축했고 이를 Multi-Layer Perceptron이라고 불렀습니다.</p>
+
+<p>Convolutinary Neural Network, CNN도 큰 틀에서는 비슷합니다. 다만, 좀더 복잡한 아이디어들이 들어가 있습니다.</p>
+
+<p>가장 기본적인 CNN은 크게 Convolution, Pooling, Activation의 세가지 Layer를 잘 반복해서 구성됩니다.</p>
+
+<p>Convolution은 앞서 설명한 convolution 연산을 적당한 필터에 대해서 수행하는 것으로, MLP에서 weight 행렬이 train의 대상인 것처럼 여기서는 필터 전체가 training의 대상입니다.</p>
+
+<p>Activation은 MLP에서처럼 모든 항에 적당한 activation function을 씌워서 신경망에 non-linearity를 제공하는 것입니다. 역시 MLP에서와 마찬가지로 ReLU, sigmoid, tanh 같은 함수들을 쓸 수 있습니다.</p>
+
+<p>Pooling은 앞서 설명한 pooling을 수행하는 layer입니다.</p>
+
+<h2 id="why-cnn">Why CNN?</h2>
+<p>CNN의 효용에 대해 얘기하려면 기존의 MLP의 특징을 먼저 이야기할 필요가 있습니다.</p>
+
+<ul>
+  <li>장점 : 간단하고, 이론적으로 굉장히 general합니다. 모든 연속함수를 어떤 정해진 구간에서는 충분히 큰 MLP로 approximate 가능하다는 굉장한 정리가 있는데 (Universal Approximation Theorem) 제가 찾아본 증명은 실해석학 수준의 해석학 지식을 (Hahn-Banach, Riesz Repr thm) 요구하기 때문에 다룰 수가 없습니다.</li>
+  <li>단점 : Parameter가 매우 많아서, overfitting의 문제와 training speed 문제가 발생합니다.</li>
+  <li>단점 : Computer vision에 쓰기에는 shift invariance 같은 것을 잘 처리하지 못한다는 심각한 문제가 있습니다. 특히 image classification 같은 경우, 이미지의 일부를 shift해도 그대로 같은 이미지인데 MLP는 이를 처리하기 어렵습니다.</li>
+</ul>
+
+<p>Convolution은 그 자체로 shift invaraince를 가지기 때문에, 단점 2번을 잘 해결합니다. 또한, 단점 1번의 경우, Convolution의 파라미터가 꽤 많아 보이지만 $W * H$ 이미지를 던져주고 $W * H$ 출력을 만들기 위해서 Linear layer는 파라미터 $W^2H^2$ 개가 필요합니다. 입출력이 200 by 200이면 이 값이 16억인데, convolution은 파라미터가 훨씬 적습니다.</p>
+
+<p>자연스러운 질문은, 파라미터가 그렇게 적으면 충분히 general하게 학습하지 못하는게 아니냐는 의문이 들 수 있습니다. <a href="https://arxiv.org/abs/1804.10306">2018년 논문</a> 에 따르면 수학적으로는 CNN도 universal approximation theorem이 있다고 하는데, 굳이 이런 놀라운 수학적 결과를 들이밀지 않더라도 이미지 처리에서 CNN이 그동안 보여준 놀라운 성과를 보면 이정도 파라미터로도 Convolution 자체가 어떤 이미지를 ‘대략적으로’ 보는 느낌이 굉장히 직관적으로 좋아서, 잘 작동하는 것으로 보입니다.</p>
+
+<p>또한, CNN은 MLP보다 같은 크기에서 훨씬 깊은 네트워크를 만들 수 있습니다 (레이어당 파라미터가 적으므로) 이 점도 장점이 될 수 있겠습니다.</p>
+
+<h2 id="models">Models</h2>
+<p>CNN Model중 이후 포스팅으로 살펴볼 모델들은 대략 이정도가 있습니다.</p>
+<ul>
+  <li>LeNet</li>
+  <li>AlexNet</li>
+  <li>VGGNet</li>
+  <li>GoogLeNet</li>
+  <li><a href="/deep-learning-study/semantic-segmentation">Semantic Segmentation</a> 에서 다룰 모델들.
+    <ul>
+      <li>U-Net</li>
+      <li>FCN</li>
+      <li>DeepLab</li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#deep-learning-study" class="page__taxonomy-item" rel="tag">deep-learning-study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-10-17T00:00:00+09:00">October 17, 2021</time></p>
+
+
+      </footer>
+      
+  <nav class="pagination">
+    
+      <a href="/cp-rounds/icpc-2021-prelim/" class="pagination--pager" title="ICPC Korea First Round 2021 후기 / 풀이
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+      
+      <div id="disqus_thread"></div>
+      <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+        var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://gratus907-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+    
+
+    
+      <div class="page__related">
+        <h4 class="page__related-title">참고</h4>
+        <div class="grid__wrapper">
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cp-rounds/icpc-2021-prelim/" rel="permalink">ICPC Korea First Round 2021 후기 / 풀이
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          3090 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+  Preperation / Our Team
+  본 대회    
+      Problem I : Sport Climbing Combined
+      Problem E : Histogram
+      Problem J : Ten
+      Problem H...</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/deep-learning-study/softmax-regression/" rel="permalink">[P] Softmax Regression
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          493 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+  Softmax Regression
+
+
+
+심층 신경망의 수학적 기초 6강 (9월 23일) 에 기반합니다.
+
+이 글은 SVM과 Logistic Regression 링크 에 이어지는 내용입니다.
+
+나중에 설명을 보강해서 다시 작성될 예정입니다.
+
+
+
+데이터 ...</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/deep-learning-study/multilayer-perceptron/" rel="permalink">[P] Multi Layer Perceptron
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          469 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+  Linear Layer
+  Multi Layer Perceptron
+  Weight Initialization
+  Gradient Computation : Back propagation
+
+
+
+심층 신경망의 수학적 기초 6강 (9월 23일) 에 기반합니다...</p>
+  </article>
+</div>
+
+          
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/deep-learning-study/mnist-mlp/" rel="permalink">Softmax Regression / MLP로 MNIST 풀어보기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+    
+
+    
+      
+      
+      
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+          758 words
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Contents
+
+
+  Problem / Dataset
+  Softmax Regression
+  Multi-Layer Perceptron
+
+
+
+심층 신경망의 수학적 기초 5강, 6강 (9월 16일, 23일) 에 기반합니다. 이번 내용은 대부분이 코드에 대한 내용이라서, $\L...</p>
+  </article>
+</div>
+
+          
+        </div>
+      </div>
+    
+    
+  </div>
+</article>
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Wonseok Shin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. Version aba51c979561218ebe99a2c1f248151bd313c26c</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'G-TNVQ3G5D5B']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+
+    <script>
+    
+    var elements = document.querySelectorAll('p');
+    Array.prototype.forEach.call(elements, function(el, i){
+        if(el.innerHTML=='[expand]') {
+            var parentcontent = el.parentNode.innerHTML.replace('<p>[expand]</p>','<div class="expand" style="display: none; height: 0; overflow: hidden;">').replace('<p>[/expand]</p>','</div>');
+            el.parentNode.innerHTML = parentcontent;
+        }
+    });
+
+    var elements = document.querySelectorAll('div.expand');
+    Array.prototype.forEach.call(elements, function(el, i){
+        el.previousElementSibling.innerHTML = el.previousElementSibling.innerHTML + '<span>..&nbsp; <a href="#" style="cursor: pointer;" onclick="this.parentNode.parentNode.nextElementSibling.style.display = \'block\'; this.parentNode.parentNode.nextElementSibling.style.height = \'auto\'; this.parentNode.style.display = \'none\';">read&nbsp;more&nbsp;&rarr;</a></span>';
+    });
+
+</script>
+
+  </body>
+</html>

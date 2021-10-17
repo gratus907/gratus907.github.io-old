@@ -38,5 +38,8 @@ permalink : /deep-learning-study/
 - [Multi-Layer Perceptron](/deep-learning-study/multilayer-perceptron/) : 딥 러닝의 시작.
 - [Softmax와 MLP로 MNIST 풀어보기](/deep-learning-study/mnist-mlp/) : MNIST 손글씨 숫자인식 with Softmax / MLP
 
+## Convolutionary Neural networks
+- [Convolutionary Neural Networks](/deep-learning-study/convolutionary-neural-networks/) : CNN 개요.
+  
 ## Computer Vision
 - [Semantic Segmentation 개요](/deep-learning-study/semantic-segmentation/) : Semantic segmentation 문제 정의, 개요
